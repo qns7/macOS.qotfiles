@@ -33,5 +33,7 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 # 6: SCREENSHOTS : cf. ctrl_hotkeys
 # 11: All Applications / Save As... : shift + cmd - s
 # 11: Finder / New Smart Folder : shift + cmd - x
+# 11: Finder / Back : cmd - left
+# 11: Finder / Forward : cmd - right
 # 11: Notes / Strikethrough : alt + cmd - n (normally stock?)
 ### all other shortcuts are deactivated (like ctrl - f1-f8)
