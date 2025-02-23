@@ -1,0 +1,39 @@
+#!/bin/bash
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
+
+sketchybar --bar color=0xff000000 \
+                 height=38 \
+                 blur_radius=37 \
+                 notch_width=220
+
+default=(
+  icon.font="Chivo Mono:Regular:19.0"
+  label.font="Chivo Mono:Regular:19.0"
+  icon.color=0xffc7c7c7
+  icon.y_offset=1
+  y_offset=1
+)
+sketchybar --default "${default[@]}"
+
+source $ITEM_DIR/space_info.sh
+source $ITEM_DIR/front_app.sh
+
+source $ITEM_DIR/percentages.sh
+source $ITEM_DIR/shutdown.sh # click
+source $ITEM_DIR/restart.sh # click
+source $ITEM_DIR/audio.sh # click
+
+source $ITEM_DIR/week.sh # click
+source $ITEM_DIR/date.sh
+source $ITEM_DIR/bar_right_1.sh
+source $ITEM_DIR/viscosity.sh # click
+source $ITEM_DIR/bar_right_2.sh
+source $ITEM_DIR/cfwarp.sh # click
+source $ITEM_DIR/bar_right_3.sh
+source $ITEM_DIR/logi.sh # click
+source $ITEM_DIR/bar_right_4.sh
+source $ITEM_DIR/badge.sh # click
+
+sketchybar --update

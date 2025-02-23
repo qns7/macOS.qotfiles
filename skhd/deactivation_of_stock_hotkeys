@@ -1,0 +1,20 @@
+ctrl + alt + cmd - 0x1C : return # invert colors, 8
+ctrl + alt + cmd - 0x2B : return # reduce contrast, ,
+ctrl + alt + cmd - 0x2F : return # increase contrast, .
+ctrl + shift - f6 : return # move focus to the previous panel
+ctrl + shift + cmd - t : return # add selected finder item to the dock
+
+# fn/globe is "0xB3" (hold: 0x3F) : set to 'Do Nothing' in systemSettings/Keyboard
+fn + ctrl - r : return # stock window management: resize to previous size
+fn + ctrl - f : return # stock window management: fill
+fn + shift - a : return # show launchpad
+
+alt - f14 : return # open display settings
+alt - f15 : return # open display settings
+
+cmd - h : return # hide
+alt + cmd - h : return # hide others
+cmd - m : return # minimize
+alt + cmd - m : return # minimize all
+
+shift + alt + cmd - q : return # log out of your macOS user account immediately without confirming

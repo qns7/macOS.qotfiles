@@ -1,0 +1,38 @@
+## content of sudoers file: q ALL=(root) NOPASSWD: sha256:1042a454424c6255dfa89286fe0bde05a2416887bda6dad7e84f615ba2e8a499 /opt/homebrew/bin/yabai --load-sa
+## update the sudoers file (1-liner) [alias in zshrc/iTerm is 'uy']:
+## echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai
+## https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)#configure-scripting-addition
+## [   Update Snippet Script (only works with --HEAD, which I do not use!):
+##     https://github.com/koekeishiya/yabai/wiki/Tips-and-tricks
+##     YABAI_CERT=yabai-cert sh -c "$(curl -sSL "https://git.io/update-yabai")" & # YABAI_CERT=yabai-cert sh -c "$(curl -fsSL "https://git.io/update-yabai")" &
+## ]
+
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+yabai -m config menubar_opacity 0.00 # 1.00
+
+yabai -m config mouse_modifier ctrl
+# yabai -m config mouse_follows_focus on # alttab
+yabai -m config focus_follows_mouse autoraise
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize # laggy
+
+yabai -m config window_origin_display cursor
+
+# yabai -m signal --add event=space_changed action="..." # in sketchybar again
+# yabai -m signal --add event=display_changed action="..." # in sketchybar again
+yabai -m signal --add event=mission_control_exit action="sketchybar --update" # "~/bin/del_empty_spaces"
+
+yabai -m signal --add event=system_woke action="~/bin/custom_wake"
+yabai -m signal --add event=display_added action="~/bin/custom_wake"
+yabai -m signal --add event=display_removed action="~/bin/custom_wake"
+
+yabai -m rule --add app="SoundID Reference" display=last
+
+# yabai -m config top_padding 3
+# yabai -m config bottom_padding 3
+# yabai -m config left_padding 3
+# yabai -m config right_padding 3
+# yabai -m config window_gap 3
+# borders active_color=0xffff9500 inactive_color=0x00000000 width=3.0 &

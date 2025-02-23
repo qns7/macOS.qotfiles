@@ -1,0 +1,63 @@
+# fn - 0x35 : keysmith: keyboard light off, esc
+# fn - f* : special features (stock)
+
+# fn - 0x0A : keysmith: keyboard light on, ^
+fn - 1 : return
+fn - 2 : return
+fn - 3 : return
+fn - 4 : return
+fn - 5 : return
+fn - 6 : return
+fn - 7 : skhd -k "alt - 8" # to {
+fn - 8 : skhd -k "alt - 5" # to [
+fn - 9 : skhd -k "alt - 6" # to ]
+fn - 0 : skhd -k "alt - 9" # to }
+fn - 0x1B : skhd -k "shift + alt - 7" # to \
+fn - 0x18 : return # ´
+# fn - backspace/delete : forward delete (stock)
+
+fn - tab : return
+fn - q : skhd -k "alt - l" # to @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
+fn - w : return
+fn - e : skhd -k "alt - e" # to €, show the character viewer, from which you can choose emoji and other symbols (stock)
+fn - r : return
+fn - t : return
+fn - z : return
+fn - u : return
+fn - i : return
+fn - o : return
+fn - p : return
+fn - 0x21 : return # ü
+fn - 0x1E : skhd -k "alt - n" # + to ~
+
+fn - a : return # show or hide the dock (stock)
+fn - s : return
+fn - d : return # start or stop dictation (stock)
+fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable
+fn - g : return
+fn - h : return
+fn - j : return
+fn - k : return
+fn - l : return
+fn - 0x29 : return # ö
+fn - 0x27 : return # ä
+# fn - 0x2A : SwitchAudioSource -s "SoundID Reference" cf. 'q1_specific', #
+# fn - return/enter : keysmith: ..., 0x4C/keypad_enter (stock)
+
+fn - 0x32 : skhd -k "alt - 7" # < to |
+fn - y : cliclick c:+0,+0
+    fn + alt - y : cliclick m:+0,+7
+# fn - x : keysmith: yabai -m window --focus mouse"
+# fn - c : show/hide control center (stock)
+fn - v : return
+fn - b : return
+# fn - n : show(/hide) notification center (stock)
+fn - m : skhd -k "alt - m" # to µ
+# fn - 0x2B : sysdiagnose tailspin (stock), ,
+# fn - 0x2F : sysdiagnose (stock), .
+fn - 0x2C : return # -
+
+fn - space : echo "$(yabai -m query --windows --window)" > ~/Desktop/yabai_debug.txt # for debugging - alternative: w/ ´ | jq -r '.app'´
+# fn - arrows : home/pageup/pagedown/end (stock)
+
+# check ALL keys against inbuilt! Check!!!
