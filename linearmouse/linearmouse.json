@@ -1,0 +1,121 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.1-beta.2",
+  "schemes" : [
+    {
+      "buttons" : {
+        "clickDebouncing" : {
+          "buttons" : [
+            3,
+            4,
+            2
+          ],
+          "timeout" : 500
+        },
+        "mappings" : [
+          {
+            "action" : "mouse.button.left",
+            "button" : 0,
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : "lookUpAndDataDetectors",
+            "button" : 2,
+            "command" : false,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
+            "action" : {
+              "keyPress" : [
+                "commandRight",
+                "0"
+              ]
+            },
+            "button" : 3,
+            "command" : false,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
+            "action" : "appExpose",
+            "button" : 3,
+            "command" : true,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
+            "action" : "smartZoom",
+            "button" : 4,
+            "command" : false,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
+            "action" : "missionControl",
+            "button" : 4,
+            "command" : true,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          }
+        ],
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x82a",
+          "productName" : "Microsoft Pro Intellimouse",
+          "vendorID" : "0x45e"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.5
+      },
+      "scrolling" : {
+        "acceleration" : 2.1,
+        "distance" : "auto",
+        "modifiers" : {
+          "option" : {
+            "scale" : 10,
+            "type" : "changeSpeed"
+          }
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : 21
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 2,
+        "speed" : 1
+      },
+      "scrolling" : {
+        "modifiers" : {
+          "option" : {
+            "scale" : 7,
+            "type" : "changeSpeed"
+          }
+        }
+      }
+    }
+  ]
+}
