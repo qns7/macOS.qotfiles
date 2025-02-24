@@ -35,6 +35,7 @@ ctrl - i : open_or_focus "IINA"
 ctrl + cmd - i : open_or_focus "Ipe"
 ctrl - o: open_or_focus "OBS" # insert a new line after the insertion point (stock)
 ctrl - p : open_or_focus "Passwords" # move up one line (stock)
+ctrl + cmd - p : open_or_focus "PDFGear"
 # ctrl - 0x21 : window_management, snap current window top left quarter
 # ctrl - 0x1E : window_management, snap current window top right quarter
 
