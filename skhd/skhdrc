@@ -6,11 +6,11 @@ cmd - f2 : sketchybar --reload
 alt - delete : skhd -k "shift + alt - right"; skhd -k "backspace" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably stock
 
+.load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
 .load "window_space_and_display_management"
 .load "ctrl_hotkeys"
 .load "fn_hotkeys"
-.load "q1_specific"
 
 .blacklist [
 "Ghostty"

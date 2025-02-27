@@ -1,0 +1,31 @@
+#!/bin/bash
+
+rsync -a /Users/q/bin/brewup /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/bin/custom_wake /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/bin/open_or_focus /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/open_folder /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/quit_script /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/bin/move_current_window_to_previous_display /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/move_current_window_to_next_display /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/cycle_fullscreens_or_del_empty_spaces /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/yabai_prev_space_on_display /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/yabai_next_space_on_display /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/create_and_focus_new_space /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/move_current_window_to_new_space_and_focus /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/change_and_focus_display /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/del_empty_spaces /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/bin/yabaitoggle /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/toggle_brightness /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/bin/threema_start /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/thunderbird_badge /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/tmx_hotkey /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/.zprofile /Users/q/.config/zsh_configs/
+rsync -a /Users/q/.zshrc /Users/q/.config/zsh_configs/
+
+rsync -a /Users/q/bin/SYNC /Users/q/.config/bin_scripts/
