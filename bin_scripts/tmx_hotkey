@@ -1,0 +1,15 @@
+#!/bin/bash
+
+tmx_hotkey() {
+    local key_command=$1
+    local POS
+    POS=$(/opt/homebrew/bin/cliclick p)
+    open -a "Totalmix"
+    sleep 1.73
+    open_or_focus "Totalmix"
+    skhd -k "$key_command"
+    skhd -k "cmd - q"
+    cliclick m:$POS
+}
+
+tmx_hotkey "$1"

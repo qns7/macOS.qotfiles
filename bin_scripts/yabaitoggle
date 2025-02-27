@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$($1)" = "on" ]; then
+    $1 off
+elif [ "$($1)" = "off" ]; then
+    $1 on
+elif [ "$($1)" = "1.0000" ]; then
+    $1 0.0000
+else
+    $1 1.0000
+fi

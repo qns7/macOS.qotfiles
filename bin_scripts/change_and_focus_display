@@ -1,0 +1,8 @@
+#!/bin/bash
+
+osascript -e 'tell application "TRex" to activate'
+yabai -m config mouse_follows_focus on # alttab
+sleep 0.1
+yabai -m display --focus next || yabai -m display --focus prev
+sleep 0.1
+yabai -m config mouse_follows_focus off # alttab

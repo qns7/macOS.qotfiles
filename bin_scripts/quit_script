@@ -1,0 +1,40 @@
+#!/bin/bash
+
+CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
+CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
+CLEANED_APP="${CURRENT_APP// /}"
+CLEANED_APP_ALT="${CURRENT_APP_ALT// /}"
+CURRENT_DISPLAY=$(yabai -m query --displays | jq '.[] | select(.["has-focus"] == true) | .index')
+# # # # # # # #=$(echo $WINDOWS_WINDOW | jq -r '.display')
+if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
+    killall WhatsApp &> /dev/null
+elif [[ "$CURRENT_APP_ALT" == "Finder" ]]; then
+    skhd -k "cmd - w"
+elif [[ "$CURRENT_APP_ALT" == "LogiTune" ]]; then
+    sketchybar --set logi icon.color=0xff4e4e4e
+    osascript -e 'tell application "Logi Tune" to quit'
+    ~/.config/sketchybar/plugins/logi.sh
+elif [[ "$CURRENT_APP_ALT" == "Threema Beta" ]]; then
+    killall ThreemaDesktop &> /dev/null
+elif [[ "$CURRENT_APP_ALT" == "Thunderbird" ]]; then
+    killall thunderbird &> /dev/null
+    sleep 0.1
+    ~/.config/sketchybar/plugins/badge.sh
+elif [[ "$CURRENT_APP_ALT" == "OBS Studio" ]]; then
+    osascript -e 'tell application "OBS" to quit'
+elif [[ "$CURRENT_APP_ALT" == "TotalMix FX" ]]; then
+    osascript -e 'tell application "TotalMix FX" to quit'
+    yabai -m window --focus mouse
+    exit
+else
+    osascript -e "tell application \"$CURRENT_APP\" to quit" &> /dev/null  || \
+    osascript -e "tell application \"$CLEANED_APP\" to quit" &> /dev/null || \
+    osascript -e "tell application \"$CURRENT_APP_ALT\" to quit" &> /dev/null || \
+    osascript -e "tell application \"$CLEANED_APP_ALT\" to quit" &> /dev/null
+fi
+sleep 0.37
+yabai -m display --focus $CURRENT_DISPLAY
+sleep 0.1
+yabai -m window --focus mouse
+sleep 0.1
+sketchybar --update

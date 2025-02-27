@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sketchybar --set front_app icon.color=0xff4e4e4e
+CURRENT_DISPLAY=$(yabai -m query --windows --window | jq -r '.display')
+yabai -m window --display next --focus
+sleep 0.1
+yabai -m window --grid 1:1:0:0:1:1
+change_and_focus_display
+change_and_focus_display
+sketchybar --set front_app icon.color=0xffc7c7c7
