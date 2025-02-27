@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SPASPA=$(yabai -m query --spaces --space)
+CURDIS=$(yabai -m query --displays --display | jq '.index')
+CURSPA=$(echo "$SPASPA" | jq '.index')
+SPACES=$(yabai -m query --spaces --display "$CURDIS")
+ALLSPA=$(echo "$SPACES" | jq ".[].index")
+LOWSPA=$(echo "$SPACES" | jq ".[] | select(.index < $CURSPA) | .index")
+if [ ! -z "$LOWSPA" ]; then
+    set -- $LOWSPA
+    yabai -m space --focus ${@: -1}
+else
+    set -- $ALLSPA
+    yabai -m space --focus ${@: -1}
+fi
+del_empty_spaces
+yabai -m window --focus mouse

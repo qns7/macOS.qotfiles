@@ -1,0 +1,9 @@
+#!/bin/bash
+
+[[ "$(yabai -m query --spaces --space | jq '.["is-native-fullscreen"]')" == "false" ]]
+yabai -m space --create
+index="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
+yabai -m window --space "${index}"
+yabai -m space --focus "${index}"
+sleep 0.1
+sketchybar --update

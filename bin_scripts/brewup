@@ -1,0 +1,14 @@
+#!/bin/bash
+
+TEXTCOLOR1='\033[1;33m'
+TEXTCOLOR2='\033[1;34m'
+printf "${TEXTCOLOR2}mas upgrade..\n"
+mas upgrade
+printf "${TEXTCOLOR1}brew update..\n"
+brew update
+printf "${TEXTCOLOR1}brew upgrade..\n"
+brew upgrade --greedy
+printf "${TEXTCOLOR1}brew cleanup..\n"
+brew cleanup
+printf "${TEXTCOLOR1}brew doctor..\n"
+brew doctor
