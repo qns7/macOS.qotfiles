@@ -8,6 +8,5 @@ sketchybar --add item audio e \
                        icon.y_offset=0 \
                        label.font.family="SF Pro" \
                        label.font.style="Medium" \
-                       label.color=0xffc7c7c7 \
                        label.padding_right=3 \
            --subscribe audio volume_change
