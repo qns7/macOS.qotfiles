@@ -1,3 +1,6 @@
+# main zsh settings, env in ~/.zprofile
+# read second
+
 HISTSIZE=10000
 SAVEHIST=10000
 
