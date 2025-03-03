@@ -36,7 +36,7 @@ alias llo="launchctl load ~/Library/LaunchAgents/com.q.custom_start.plist"
 alias yt='yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b"'
 alias ip="echo \"LAN: \$(ipconfig getifaddr en7)\nWLN: \$(ipconfig getifaddr en0)\nNET: \$(curl -s -4 ifconfig.me)\""
 alias st='(while true; do for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done; done & SPINNER_PID=$!; PYTHONWARNINGS="ignore" speedtest-cli --simple > /tmp/speedtest_output; kill $SPINNER_PID; wait $SPINNER_PID 2>/dev/null; echo -en "\r\033[K"; cat /tmp/speedtest_output; /bin/rm /tmp/speedtest_output)'
-# MAKE CTRL-C WORK!!!
+# MAKE CTRL - C WORK !!
 # alias st='PYTHONWARNINGS="ignore" speedtest-cli --simple'
 alias aw='yabai -m query --windows | jq ".[].app"' # or other yabai/sketchybar queries for debugging
 # alias cheat="curl cheat.sh"
