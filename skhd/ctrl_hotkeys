@@ -92,7 +92,7 @@ ctrl + alt + cmd - x : open_or_focus "texmaker"
 ctrl + alt - 0x32 : return
 ctrl + alt - 0x06 : return
 ctrl + alt - 0x07 : return
-# E N D _ O F _ S C R E E N S H O T H O T K E Y S #
+# E N D _ O F _ S C R E E N S H O T H O T K E Y S # --- PROBLEM WITH NANO USAGE! ---
 
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
 ctrl + cmd - c : skhd -k "fn - c" # show/hide control center (fn - c is stock)
