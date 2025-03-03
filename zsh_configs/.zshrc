@@ -14,7 +14,8 @@ export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
 alias c="clear"
-alias ll="ls -lah"
+alias rm="rm -i"
+alias ll="ls --color=auto -lah"
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
 alias h="code ~/.zsh_history"
 alias k="cat ~/keyboard_info.txt"
