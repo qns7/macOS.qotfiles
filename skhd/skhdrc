@@ -30,7 +30,9 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 # 4: Move focus to the Dock : ctrl + alt + cmd - d
 # 4: Move focus to next window : alt + cmd - tab
 # 4: Show contextual menu : ctrl - return
-# 6: SCREENSHOTS : cf. ctrl_hotkeys
+# 6: Save picture of screen as a file : shift + cmd - 3
+# 6: Save picture of selected area as a file : shift + cmd - 4
+# 6: Screenshot and recording options : shift + cmd - 5
 # 11: All Applications / Save As... : shift + cmd - s
 # 11: Finder / New Smart Folder : shift + cmd - x
 # 11: Finder / Back : cmd - left

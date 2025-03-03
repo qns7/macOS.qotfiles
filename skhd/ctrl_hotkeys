@@ -82,17 +82,22 @@ ctrl - 0x29 : return
 # ctrl - 0x2A : window_management, snap current window bottom right quarter
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
 
-# # # ctrl - <,(+cmd)y,(+cmd)x : SCREENSHOTS (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 5,(+ctrl)3,(+ctrl)4) # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
+ctrl - 0x32 : skhd -k "hyper - 0x32" # Screenshot and recording options (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 5)
 ctrl + cmd - 0x32 : return
-ctrl + alt + cmd - 0x32 : return
-ctrl + alt + cmd - y : return
-ctrl + alt + cmd - x : open_or_focus "texmaker"
-
 ctrl + alt - 0x32 : return
-ctrl + alt - 0x06 : return
-ctrl + alt - 0x07 : return
-# E N D _ O F _ S C R E E N S H O T H O T K E Y S # --- PROBLEM WITH NANO USAGE! ---
+ctrl + alt + cmd - 0x32 : return
+
+ctrl - y : skhd -k "hyper - y" # Save picture of screen as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 3)
+ctrl + cmd - y : return
+ctrl + alt - y : return
+ctrl + alt + cmd - y : return
+
+ctrl - x : skhd -k "hyper - x" # Save picture of selected area as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 4)
+ctrl + cmd - x : return
+ctrl + alt - x : return
+ctrl + alt + cmd - x : return
 
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
 ctrl + cmd - c : skhd -k "fn - c" # show/hide control center (fn - c is stock)
