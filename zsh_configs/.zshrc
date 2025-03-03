@@ -14,6 +14,8 @@ PROMPT_EOL_MARK='🐧'
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
+eval "$(batman --export-env)"
+
 alias c="clear"
 alias rm="rm -i"
 alias ll="ls --color=auto -lah"
