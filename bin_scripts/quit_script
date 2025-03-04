@@ -27,7 +27,7 @@ elif [[ "$CURRENT_APP_ALT" == "TotalMix FX" ]]; then
     yabai -m window --focus mouse
     exit
 else
-    osascript -e "tell application \"$CURRENT_APP\" to quit" &> /dev/null  || \
+    osascript -e "tell application \"$CURRENT_APP\" to quit" &> /dev/null || \
     osascript -e "tell application \"$CLEANED_APP\" to quit" &> /dev/null || \
     osascript -e "tell application \"$CURRENT_APP_ALT\" to quit" &> /dev/null || \
     osascript -e "tell application \"$CLEANED_APP_ALT\" to quit" &> /dev/null

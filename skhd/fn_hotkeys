@@ -57,7 +57,8 @@ fn - m : skhd -k "alt - m" # to µ
 # fn - 0x2F : sysdiagnose (stock), .
 fn - 0x2C : return # -
 
-fn - space : echo "$(yabai -m query --windows --window)" > ~/Desktop/yabai_debug.txt # for debugging - alternative: w/ ´ | jq -r '.app'´
+# fn - space : echo "$(yabai -m query --windows --window)" > ~/Desktop/yabai_debug.txt # for debugging - alternative: w/ ´ | jq -r '.app'´
+fn - space : echo "$(yabai -m query --windows --window | jq -r '.app')" > ~/Desktop/yabai_debug.txt # for debugging - alternative: w/ ´ | jq -r '.app'´
 # fn - arrows : home/pageup/pagedown/end (stock)
 
 # check ALL keys against inbuilt
