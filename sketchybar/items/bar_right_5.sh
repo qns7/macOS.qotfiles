@@ -2,5 +2,6 @@
 
 sketchybar --add item bar_right_5 right \
            --set bar_right_5 icon=":" \
-                             icon.color=0xff4e4e4e \
-                             icon.padding_right=9
+                             icon.color=0xffc7c7c7 \
+                             icon.width=10 \
+                             icon.y_offset=0
