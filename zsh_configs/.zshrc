@@ -23,6 +23,7 @@ alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
 alias h="code ~/.zsh_history"
 alias k="cat ~/keyboard_info.txt"
 
+alias s="source ~/.zshrc"
 alias m="cmatrix -a -b -u 3"
 alias p="btop"
 
