@@ -8,5 +8,6 @@ sketchybar --add item space_info left \
                             label.color=0xffc7c7c7 \
                             label.padding_left=10 \
                             label.width=102 \
-                            update_freq=120 \
-           --subscribe space_info display_change space_change space_windows_change
+           --subscribe space_info display_change space_change
+                            # update_freq=120 or front_app_switched: workaround for tmx bug, but:
+                                # space_windows_change: in yabai because of tmx bug e.g.
