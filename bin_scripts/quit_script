@@ -11,7 +11,7 @@ if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
 elif [[ "$CURRENT_APP_ALT" == "Finder" ]]; then
     skhd -k "cmd - w"
 elif [[ "$CURRENT_APP_ALT" == "LogiTune" ]]; then
-    sketchybar --set logi icon.color=0xff4e4e4e
+    sketchybar --set logi icon.color=0xffc7c7c7
     osascript -e 'tell application "Logi Tune" to quit'
     ~/.config/sketchybar/plugins/logi.sh
 elif [[ "$CURRENT_APP_ALT" == "Threema Beta" ]]; then

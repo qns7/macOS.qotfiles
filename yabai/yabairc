@@ -24,6 +24,11 @@ yabai -m config window_origin_display cursor
 # yabai -m signal --add event=display_changed action="..." # in sketchybar again
 yabai -m signal --add event=mission_control_exit action="sketchybar --update" # "~/bin/del_empty_spaces"
 
+yabai -m signal --add event=application_launched action="sketchybar --update"
+yabai -m signal --add event=application_terminated action="sketchybar --update"
+yabai -m signal --add event=window_created action="sketchybar --update"
+yabai -m signal --add event=window_destroyed action="sketchybar --update"
+
 yabai -m signal --add event=system_woke action="~/bin/custom_wake"
 yabai -m signal --add event=display_added action="~/bin/custom_wake"
 yabai -m signal --add event=display_removed action="~/bin/custom_wake"
