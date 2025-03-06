@@ -2,8 +2,10 @@
 
 RAM="$(memory_pressure | grep "System-wide memory free percentage:" | awk '{ printf("%02.0f\n", 100-$5"%") }')"
 DISK1="$(df -H | grep -E '^(/dev/disk3s5).' | awk '{ printf("%02.0f\n", $5) }' | tr -d '%')"
-DISK2="$(df -H | grep -E 'macData' | awk '{ printf("%02.0f\n", $5) }' | tr -d '%')"
-DISK3="$(df -H | grep -E 'Screenshots' | awk '{ printf("%02.0f\n", $5) }' | tr -d '%')"
+DISK2="$(df -H | grep -E 'macData' | awk '{ printf("%02.0f\n", $5) }' | tr -d '%' )"
+DISK2="${DISK2:-XX}"
+DISK3="$(df -H | grep -E 'Screenshots' | awk '{ printf("%02.0f\n", $5) }' | tr -d '%' )"
+DISK3="${DISK3:-XX}"
 BATTERY="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
 
 if [ "$BATTERY" = "" ]; then
