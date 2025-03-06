@@ -25,6 +25,7 @@ source $ITEM_DIR/shutdown.sh # click
 source $ITEM_DIR/restart.sh # click
 source $ITEM_DIR/audio.sh # click
 
+source $ITEM_DIR/sec_dot.sh
 source $ITEM_DIR/week.sh # click
 source $ITEM_DIR/date.sh
 source $ITEM_DIR/bar_right_1.sh
