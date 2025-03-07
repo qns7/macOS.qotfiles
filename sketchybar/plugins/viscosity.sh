@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 5
+sleep 3
 
 STATUS=$(pgrep -x Viscosity)
 
