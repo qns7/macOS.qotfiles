@@ -7,7 +7,7 @@ if [ "$STATUS" = "" ]; then
     sleep 0.37
     open -a "Cloudflare WARP"
 else
-    sketchybar --set cfwarp icon.color=0xffc7c7c7
+    sketchybar --set cfwarp icon.color=0xff4e4e4e
     sleep 0.37
     killall "Cloudflare WARP" &> /dev/null
     killall "CloudflareWARP" &> /dev/null

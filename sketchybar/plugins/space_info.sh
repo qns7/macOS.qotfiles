@@ -39,7 +39,7 @@ CONVERT_NUM() {
 FOCUSED_DISPLAY_UUID=$(jq -r '.[] | select(.["has-focus"] == true) | .uuid' <<< "$DISPLAYS")
 DISPLAY_ICON=$( [[ "$FOCUSED_DISPLAY_UUID" == "$UUID_INBUILT_DISPLAY" ]] && echo "􁈸" || echo "􀢹" )
 
-ICON_COLOR=$([[ $SUM_FULLSCREENS -gt 0 ]] && echo "0xff4e4e4e" || ([[ $NEW_SUM_EMPTY_SPACES -gt 0 ]] && echo "0xffff9500" || echo "0xffc7c7c7"))
+ICON_COLOR=$([[ $SUM_FULLSCREENS -gt 0 ]] && echo "0xffff9500" || ([[ $NEW_SUM_EMPTY_SPACES -gt 0 ]] && echo "0xff4e4e4e" || echo "0xffc7c7c7"))
 
 CONVERT_0=$(CONVERT_NUM "$SUM_SPACES_CURRENT_DISPLAY")
 CONVERT_1=$(CONVERT_NUM "$CURRENT_SPACE_CURRENT_DISPLAY")

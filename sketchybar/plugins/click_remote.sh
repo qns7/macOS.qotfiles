@@ -7,7 +7,7 @@ if [ "$STATUS" = "" ]; then
     sleep 1
     open -a "Remote for Mac"
 else
-    sketchybar --set remote icon.color=0xffc7c7c7
+    sketchybar --set remote icon.color=0xff4e4e4e
     sleep 1
     osascript -e 'tell application "Remote for Mac" to quit'
     sleep 0.37
