@@ -89,12 +89,12 @@ ctrl + cmd - 0x32 : return
 ctrl + alt - 0x32 : return
 ctrl + alt + cmd - 0x32 : return
 
-ctrl - y : skhd -k "hyper - y" # Save picture of screen as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 3)
+ctrl - y : sleep 0.1; skhd -k "hyper - y" # Save picture of screen as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 3)
 ctrl + cmd - y : return
 ctrl + alt - y : return
 ctrl + alt + cmd - y : return
 
-ctrl - x : skhd -k "hyper - x" # Save picture of selected area as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 4)
+ctrl - x : sleep 0.1; skhd -k "hyper - x" # Save picture of selected area as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 4)
 ctrl + cmd - x : return
 ctrl + alt - x : return
 ctrl + alt + cmd - x : return
