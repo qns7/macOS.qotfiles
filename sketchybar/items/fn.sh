@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sketchybar --add item fn right \
+sketchybar --add item fn q \
            --set fn script="$PLUGIN_DIR/fn.sh" \
                     icon="FN" \
                     icon.font.family="SF Mono" \
