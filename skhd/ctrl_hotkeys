@@ -14,7 +14,7 @@ ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
 ctrl + alt + cmd - e : return
 
 ctrl - r : open_or_focus ~/Applications/DeepL.app # safari webapp, native app buggy
-ctrl + cmd - r : return # swap character in text (stock)
+ctrl + cmd - r : open_or_focus Radioplayer # swap character in text (stock)
 ctrl + alt - r : return
 ctrl + alt + cmd - r : return
 
