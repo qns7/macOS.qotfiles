@@ -60,7 +60,7 @@ fn - m : skhd -k "alt - m" # to µ
 fn - 0x2C : return # -
 
 # FOR DEBUGGING [ alternative: w/ ´ | jq -r '.app'´ ]
-fn - space : echo "$(yabai -m query --windows --window | jq -r '.app')" > ~/Desktop/yabai_debug.txt
+fn - space : echo "$(yabai -m query --windows --window | jq -r '.app')" > ~/Desktop/yabai_debug.txt # oder doch space (€,@,...) ?
 
 # fn - arrows : home/pageup/pagedown/end (stock)
 
