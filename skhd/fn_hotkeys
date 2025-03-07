@@ -1,4 +1,5 @@
 # fn - 0x35 : keysmith: keyboard light off, esc
+    # fn + alt - 0x35 : keysmith: fn toggle, esc
 # fn - f* : special features (stock)
 
 # fn - 0x0A : keysmith: keyboard light on, ^
