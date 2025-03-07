@@ -37,8 +37,10 @@ source $ITEM_DIR/cfwarp.sh # click
 source $ITEM_DIR/bar_right_3.sh
 source $ITEM_DIR/remote.sh # click
 source $ITEM_DIR/bar_right_4.sh
-source $ITEM_DIR/logi.sh # click
+source $ITEM_DIR/elgato.sh # click
 source $ITEM_DIR/bar_right_5.sh
+source $ITEM_DIR/logi.sh # click
+source $ITEM_DIR/bar_right_6.sh
 source $ITEM_DIR/badge.sh # click
 
 sketchybar --update

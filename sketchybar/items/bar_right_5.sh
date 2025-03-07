@@ -1,8 +1,7 @@
 #!/bin/bash
 
 sketchybar --add item bar_right_5 right \
-           --set bar_right_5 icon="_" \
+           --set bar_right_5 icon=":" \
                              icon.color=0xffc7c7c7 \
-                             icon.width=21 \
-                             icon.align=center \
+                             icon.width=10 \
                              icon.y_offset=0
