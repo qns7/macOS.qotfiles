@@ -1,5 +1,5 @@
 # fn - 0x35 : keysmith: keyboard light off, esc
-    # fn + alt - 0x35 : keysmith: fn toggle, esc
+    # fn + alt - 0x35 : keysmith: fn toggle, esc ---> clickable sketchybar item instead! keyboard light too?
 # fn - f* : special features (stock)
 
 # fn - 0x0A : keysmith: keyboard light on, ^
