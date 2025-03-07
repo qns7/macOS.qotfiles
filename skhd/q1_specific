@@ -41,3 +41,6 @@ f15 : skhd -k "0xB1" # spotlight
 f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 # q1 & inbuilt changes in systemSettings/Keyboard/KeyboardShortcuts/ModifierKeys/.. : caps changed to ctrl & ctrl changed to fn/globe
+
+# erinnerung: alt - f14 : return # avoid entering display settings as alt - f1*/f2*/f3*/f10*/f11*/f12* (stock)
+#             alt - f15 : return # avoid entering display settings as alt - f1*/f2*/f3*/f10*/f11*/f12* (stock)

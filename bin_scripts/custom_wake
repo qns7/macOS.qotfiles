@@ -31,7 +31,6 @@ sleep 1
 
 exit 0
 
-
 # #!/bin/bash
 
 # LOCK_FILE="/tmp/yabai_custom_wake.lock"

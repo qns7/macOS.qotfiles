@@ -28,6 +28,8 @@ source $ITEM_DIR/audio.sh # click
 source $ITEM_DIR/sec_dot.sh
 source $ITEM_DIR/week.sh # click
 source $ITEM_DIR/date.sh
+source $ITEM_DIR/bar_right_0.sh
+source $ITEM_DIR/fn.sh # click
 source $ITEM_DIR/bar_right_1.sh
 source $ITEM_DIR/viscosity.sh # click
 source $ITEM_DIR/bar_right_2.sh
