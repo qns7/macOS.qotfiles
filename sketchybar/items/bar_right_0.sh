@@ -6,5 +6,3 @@ sketchybar --add item bar_right_0 right \
                              icon.width=21 \
                              icon.align=center \
                              icon.y_offset=0
-                             # icon=":" \
-                             # icon.width=11 \
