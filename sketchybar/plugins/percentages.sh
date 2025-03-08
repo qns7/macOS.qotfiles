@@ -8,8 +8,6 @@ DISK3="$(df -H | grep -E 'Screenshots' | awk '{ printf("%02.0f\n", $5) }' | tr -
 DISK3="${DISK3:-XX}"
 BATTERY="$(pmset -g batt | grep -Eo "\d+%" | cut -d% -f1)"
 [ "$BATTERY" -eq 100 ] && BATTERY="FF"
-
-# if [ "$BATTERY" -eq 100 ]; then echo "FF:"; else printf "$BATTERY"; fi # IMPLEMENT!
 # the others won't get to 100, so no worries
 
 if [ "$BATTERY" = "" ]; then
