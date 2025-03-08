@@ -7,4 +7,3 @@ sketchybar --add item bar_q_0 q \
                          icon.align=center \
                          icon.y_offset=0 \
                          updates=off
-
