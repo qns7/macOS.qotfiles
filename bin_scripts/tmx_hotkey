@@ -3,7 +3,7 @@
 tmx_hotkey() {
     local key_command=$1
     local POS
-    POS=$(/opt/homebrew/bin/cliclick p)
+    POS=$(cliclick p)
     open -a "Totalmix"
     sleep 1.73
     open_or_focus "Totalmix"
