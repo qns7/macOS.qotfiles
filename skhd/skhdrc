@@ -16,10 +16,10 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 "Ghostty"
 "iTerm2"
 "Maccy"
-"Raycast"
 "Terminal"
 "Windows App"
 ]
+# "Raycast"
 
 ### systemSettings/Keyboard/KeyboardShortcuts :
 # 1: Turn Dock hiding on/off : ctrl - d
