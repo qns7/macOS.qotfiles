@@ -25,8 +25,10 @@ source $ITEM_DIR/bar_q_0.sh
 source $ITEM_DIR/fn.sh # click
 source $ITEM_DIR/bar_q_1.sh
 source $ITEM_DIR/kb.sh # click
+
 source $ITEM_DIR/shutdown.sh # click
 source $ITEM_DIR/restart.sh # click
+
 source $ITEM_DIR/audio.sh # click
 
 source $ITEM_DIR/sec_dot.sh
