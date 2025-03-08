@@ -4,6 +4,7 @@ SPACES=$(yabai -m query --spaces)
 DISPLAYS=$(yabai -m query --displays)
 WINDOWS_CURRENT_SPACE=$(yabai -m query --windows --space)
 
+# workaround for yabai bug (fixxed)
 # SPACES=$(yabai -m query --spaces | sed -E 's/,,/,/g; s/,]/]/; s/\[\s*,/[/')
 # DISPLAYS=$(yabai -m query --displays | sed -E 's/,,/,/g; s/,]/]/; s/\[\s*,/[/')
 # WINDOWS_CURRENT_SPACE=$(yabai -m query --windows --space | sed -E 's/,,/,/g; s/,]/]/; s/\[\s*,/[/')

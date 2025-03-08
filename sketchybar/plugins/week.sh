@@ -10,4 +10,3 @@ fi
     #                       label.color=0xffff9500 \
     #                       label.padding_left=1 \
     #                       label.y_offset=1
-    
