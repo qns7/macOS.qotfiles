@@ -1,8 +1,8 @@
 # fn - 0x35 : keysmith: keyboard light off, esc
-    # fn + alt - 0x35 : keysmith: fn toggle, esc ---> clickable sketchybar item instead! keyboard light too?
+    # fn + alt - 0x35 : keysmith: keyboard light on, esc; fn/sf-toggle ---> clickable sketchybar item instead.
 # fn - f* : special features (stock)
 
-# fn - 0x0A : keysmith: keyboard light on, ^
+fn - 0x0A : return
 fn - 1 : return
 fn - 2 : return
 fn - 3 : return
@@ -43,7 +43,7 @@ fn - l : return
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : SwitchAudioSource -s "SoundID Reference" cf. 'q1_specific', #
-# fn - return/enter : keysmith: ..., 0x4C/keypad_enter (stock)
+# fn - return/enter : keysmith: yabai-debugging [ alternative: w/ ´ | jq -r '.app'´ ], 0x4C/keypad_enter (stock)
 
 fn - 0x32 : skhd -k "alt - 7" # < to |
 fn - y : cliclick c:610,330 # c:+0,+0
@@ -59,9 +59,7 @@ fn - m : skhd -k "alt - m" # to µ
 # fn - 0x2F : sysdiagnose (stock), .
 fn - 0x2C : return # -
 
-# FOR DEBUGGING [ alternative: w/ ´ | jq -r '.app'´ ]
-fn - space : echo "$(yabai -m query --windows --window | jq -r '.app')" > ~/Desktop/yabai_debug.txt # oder doch space (€,@,...) ?
-
+fn - space : skhd -k "space"
 # fn - arrows : home/pageup/pagedown/end (stock)
 
-# check ALL keys against inbuilt
+# check ALL keys against inbuilt, fn - return ist doch nicht pent?
