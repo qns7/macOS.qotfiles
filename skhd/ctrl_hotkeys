@@ -14,9 +14,9 @@ ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
 ctrl + alt + cmd - e : return
 
 ctrl - r : open_or_focus ~/Applications/DeepL.app # safari webapp, native app buggy
-ctrl + cmd - r : open_or_focus Radioplayer # swap character in text (stock)
+ctrl + cmd - r : open_or_focus Reaper # swap character in text (stock)
 ctrl + alt - r : return
-ctrl + alt + cmd - r : return
+ctrl + alt + cmd - r : open_or_focus Radioplayer
 
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
 ctrl + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # add the selected item to the sidebar (stock)
