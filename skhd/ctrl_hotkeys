@@ -43,7 +43,7 @@ ctrl + cmd - p : open_or_focus "PDFGear"
 
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock)
 # ctrl + cmd - a : make an alias of the selected item (stock)
-ctrl + alt - a : return
+# ctrl + alt - a : keysmith: foobar play/pause
 ctrl + alt + cmd - a : return
 
 ctrl - s : open_or_focus "Safari"
