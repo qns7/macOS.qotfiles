@@ -10,4 +10,3 @@ open -a "$1"
 sleep 0.1
 open -a "$1"
 yabai -m config mouse_follows_focus off # alttab
-# del_empty_spaces # cool? NO!
