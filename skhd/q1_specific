@@ -21,7 +21,7 @@ shift + alt - f17 : return
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
-alt - play : open "keysmith://run-macro/8A8DCCF6-0578-4974-88C4-BEE68679C263"
+# alt - play : open "keysmith://run-macro/8A8DCCF6-0578-4974-88C4-BEE68679C263"
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # q1 qmk keymap : imitates inbuilt
