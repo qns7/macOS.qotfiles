@@ -13,7 +13,7 @@ ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (
 ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
 ctrl + alt + cmd - e : return
 
-ctrl - r : open_or_focus ~/Applications/DeepL.app # safari webapp, native app buggy
+ctrl - r : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1; skhd -k "fn + ctrl - c" # safari webapp, native app buggy
 ctrl + cmd - r : open_or_focus Reaper # swap character in text (stock)
 ctrl + alt - r : return
 ctrl + alt + cmd - r : open_or_focus Radioplayer
