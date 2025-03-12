@@ -1,4 +1,4 @@
-# fn - 0x35 : keysmith: kb_light_0 [& fn + alt - 0x35 : keysmith: kb_light_1], esc
+# fn [+ alt] - 0x35 : keysmith: kb_light_0[/1], esc
 # fn - f* : special features (stock)
 
 fn - 0x0A : return
