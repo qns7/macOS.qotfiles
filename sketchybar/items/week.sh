@@ -5,7 +5,7 @@ sketchybar --add item week right \
                       click_script="$PLUGIN_DIR/click_week.sh" \
                       icon=":" \
                       icon.color=0xffc7c7c7 \
-                      icon.width=10 \
+                      icon.width=9 \
                       icon.y_offset=0 \
                       label="$(date +'%V')" \
                       label.padding_left=2 \
