@@ -1,4 +1,4 @@
-# fn [+ alt] - 0x35 : keysmith: kb_light_0[/1], esc --- in sketchybar?
+# fn [+ alt] - 0x35 : keysmith: kb_light_0[/1], esc
 # fn - f* : special features (stock)
 
 fn - 0x0A : return
@@ -60,5 +60,3 @@ fn - 0x2C : return # -
 
 fn - space : skhd -k "space"
 # fn - arrows : home/pageup/pagedown/end (stock)
-
-# check ALL keys against inbuilt, "0x4C/keypad_enter (stock)": fn - return ist doch nicht pent?
