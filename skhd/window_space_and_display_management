@@ -23,4 +23,4 @@ shift + alt + cmd - w : move_current_window_to_new_space_and_focus
 alt + cmd - e : change_and_focus_display; del_empty_spaces
 shift + alt + cmd - e : change_and_focus_display
 
-# move space(s) of secondary display to main display before switching setups? re-implementing?
+# move space(s) [of secondary display to main display before switching setups?] re-implementing?
