@@ -61,7 +61,7 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
 ctrl + alt - f : open_or_focus "Feedback Assistant"
 ctrl + alt + cmd - f : open_or_focus "Freeform"
 
-ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # chatGPT webapp, native app very slow
+ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app very slow
 ctrl + cmd - g : open_or_focus "Guitar Pro 7"
 ctrl + alt - g : return
 ctrl + alt + cmd - g : return
