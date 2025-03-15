@@ -1,32 +1,117 @@
 #!/bin/bash
 
-LOCK_FILE="/tmp/yabai_custom_wake.lock"
-DEBOUNCE_TIME=7
-LOCK_DIR="/tmp/yabai_custom_wake.lockdir"
-
-if ! mkdir "$LOCK_DIR" 2>/dev/null; then
-    exit 0
-fi
-
-trap 'rm -rf "$LOCK_DIR"' EXIT
-
-if [ -f "$LOCK_FILE" ] && [ "$(($(date +%s) - $(stat -f "%m" "$LOCK_FILE")))" -lt "$DEBOUNCE_TIME" ]; then
-    exit 0
-fi
-
-touch "$LOCK_FILE"
-
-sleep 5
-
+sleep 3
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
 else
     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
 fi
-
 sleep 1
 killall "LogiTune" &> /dev/null
 sleep 1
 /opt/homebrew/bin/sketchybar --reload
 
-exit 0
+
+
+# #!/bin/bash
+
+# LOCK_FILE="/tmp/yabai_custom_wake.lock"
+# DEBOUNCE_TIME=7
+
+# # Attempt to create a symbolic link as a lock (atomic operation)
+# if ! ln -s "$$" "$LOCK_FILE" 2>/dev/null; then
+#     exit 0
+# fi
+# trap 'rm -f "$LOCK_FILE"' EXIT
+
+# # Check debounce time
+# if [ -f "$LOCK_FILE" ] && [ "$(($(date +%s) - $(stat -f "%m" "$LOCK_FILE")))" -lt "$DEBOUNCE_TIME" ]; then
+#     exit 0
+# fi
+
+# # Update lock file timestamp
+# touch "$LOCK_FILE"
+
+# sleep 5
+
+# if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+#     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+# else
+#     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
+# fi
+
+# sleep 1
+# killall "LogiTune" &> /dev/null
+# sleep 1
+# /opt/homebrew/bin/sketchybar --reload
+
+# exit 0
+
+
+
+# #!/bin/bash
+
+# LOCK_FILE="/tmp/yabai_custom_wake.lock"
+# DEBOUNCE_TIME=7
+# PID=$$
+
+# # Try to acquire the lock using shlock
+# /usr/bin/shlock -p "$PID" -f "$LOCK_FILE" || exit 0
+
+# # Check if the lock file is recent enough to debounce
+# if [ -f "$LOCK_FILE" ] && [ "$(($(date +%s) - $(stat -f "%m" "$LOCK_FILE")))" -lt "$DEBOUNCE_TIME" ]; then
+#     exit 0
+# fi
+
+# # Update the lock file timestamp
+# touch "$LOCK_FILE"
+
+# sleep 5
+
+# if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+#     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+# else
+#     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
+# fi
+
+# sleep 1
+# killall "LogiTune" &> /dev/null
+# sleep 1
+# /opt/homebrew/bin/sketchybar --reload
+
+# exit 0
+
+
+
+# #!/bin/bash
+
+# LOCK_FILE="/tmp/yabai_custom_wake.lock"
+# DEBOUNCE_TIME=7
+# LOCK_DIR="/tmp/yabai_custom_wake.lockdir"
+
+# if ! mkdir "$LOCK_DIR" 2>/dev/null; then
+#     exit 0
+# fi
+
+# trap 'rm -rf "$LOCK_DIR"' EXIT
+
+# if [ -f "$LOCK_FILE" ] && [ "$(($(date +%s) - $(stat -f "%m" "$LOCK_FILE")))" -lt "$DEBOUNCE_TIME" ]; then
+#     exit 0
+# fi
+
+# touch "$LOCK_FILE"
+
+# sleep 5
+
+# if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+#     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+# else
+#     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
+# fi
+
+# sleep 1
+# killall "LogiTune" &> /dev/null
+# sleep 1
+# /opt/homebrew/bin/sketchybar --reload
+
+# exit 0
