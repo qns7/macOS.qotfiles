@@ -13,7 +13,7 @@ ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (
 ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
 ctrl + alt + cmd - e : return
 
-ctrl - r : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1; skhd -k "fn + ctrl - c" # safari webapp, native app buggy
+ctrl - r : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # ; skhd -k "fn + ctrl - c" # safari webapp, native app buggy
 ctrl + cmd - r : open_or_focus Reaper # swap character in text (stock)
 ctrl + alt - r : return
 ctrl + alt + cmd - r : open_or_focus Radioplayer
@@ -61,7 +61,7 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
 ctrl + alt - f : return
 ctrl + alt + cmd - f : open_or_focus "Freeform"
 
-ctrl - g : open_or_focus ~/Applications/ChatGPT.app # chatGPT webapp, native app very slow
+ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # chatGPT webapp, native app very slow
 ctrl + cmd - g : open_or_focus "Guitar Pro 7"
 ctrl + alt - g : return
 ctrl + alt + cmd - g : return
