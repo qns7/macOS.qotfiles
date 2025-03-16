@@ -1,5 +1,6 @@
 # used together with alttab & keysmith
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
+# alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
 cmd - f1 : yabai --restart-service
 cmd - f2 : sketchybar --reload
