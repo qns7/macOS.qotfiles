@@ -6,6 +6,8 @@ cmd - f2 : sketchybar --reload
 alt - delete : skhd -k "shift + alt - right"; skhd -k "backspace" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably stock
 
+alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.1; eval $(yabai -m query --windows --space | jq -r '.[] | select(.["has-focus"]==true) | .frame | "cliclick m:\(.x + .w/2),\(.y + .h/2)"')
+
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
 .load "window_space_and_display_management"
@@ -19,23 +21,22 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 "Terminal"
 "Windows App"
 ]
-# "Raycast"
 
 ### systemSettings/Keyboard/KeyboardShortcuts :
-# 1: Turn Dock hiding on/off : ctrl - d
-# 1: Show Launchpad : ctrl + cmd - l
-# 3: Show Desktop : ctrl + alt - d
-# 3: Move left a space : ctrl + alt + cmd - 1
-# 3: Move right a space : ctrl + alt + cmd - 2
-# 4: Move focus to the Dock : ctrl + alt + cmd - d
-# 4: Move focus to next window : alt + cmd - tab
-# 4: Show contextual menu : ctrl - return
-# 6: Save picture of screen as a file : shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage
-# 6: Save picture of selected area as a file : shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage
-# 6: Screenshot and recording options : shift + cmd - 5, thumbnail dragging for clipboard functionality, remember spacebar usage
-# 11: All Applications / Save As... : shift + cmd - s
-# 11: Finder / New Smart Folder : shift + cmd - x
-# 11: Finder / Back : cmd - left
-# 11: Finder / Forward : cmd - right
+# 1: Turn Dock hiding on/off : ctrl - d (changed from ...) <--- add to all!
+# 1: Show Launchpad : ctrl + cmd - l (changed from ...)
+# 3: Show Desktop : ctrl + alt - d (changed from ...)
+# 3: Move left a space : ctrl + alt + cmd - 1 (changed from ...)
+# 3: Move right a space : ctrl + alt + cmd - 2 (changed from ...)
+# 4: Move focus to the Dock : ctrl + alt + cmd - d (changed from ...)
+# 4: Move focus to next window : hyper - tab (changed from ...)
+# 4: Show contextual menu : ctrl - return (kept)
+# 6: Save picture of screen as a file : hyper - y (changed from shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage)
+# 6: Save picture of selected area as a file : hyper - x (changed from shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage)
+# 6: Screenshot and recording options : hyper - < (changed from shift + cmd - 5, thumbnail dragging for clipboard functionality, remember spacebar usage)
+# 11: All Applications / Save As... : shift + cmd - s (changed from ...)
+# 11: Finder / New Smart Folder : shift + cmd - x (changed from ...)
+# 11: Finder / Back : cmd - left (changed from ...)
+# 11: Finder / Forward : cmd - right (changed from ...)
 # 11: Notes / Strikethrough : alt + cmd - n (normally stock?)
 ### all other shortcuts are deactivated (like ctrl - f1-f8)
