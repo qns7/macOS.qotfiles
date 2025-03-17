@@ -30,7 +30,7 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 # 3: Move left a space : ctrl + alt + cmd - 1 (changed from ...)
 # 3: Move right a space : ctrl + alt + cmd - 2 (changed from ...)
 # 4: Move focus to the Dock : ctrl + alt + cmd - d (changed from ...)
-# 4: Move focus to next window : hyper - tab (changed from ...)
+# 4: Move focus to next window : hyper - tab (changed from cmd - `)
 # 4: Show contextual menu : ctrl - return (kept)
 # 6: Save picture of screen as a file : hyper - y (changed from shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage)
 # 6: Save picture of selected area as a file : hyper - x (changed from shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage)
