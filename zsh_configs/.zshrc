@@ -22,6 +22,7 @@ alias ll="ls --color=auto -lah"
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
 alias h="code ~/.zsh_history"
 alias k="cat ~/keyboard_info.txt"
+alias sf="sudo nano /etc/pam.d/sudo"
 
 alias s="source ~/.zshrc"
 alias m="cmatrix -a -b -u 3"
