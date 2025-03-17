@@ -18,6 +18,7 @@ ctrl + alt + cmd - down : skhd -k "ctrl + fn - c" # stock window management: cen
 alt + cmd - 0x0A : cycle_fullscreens_or_del_empty_spaces
 alt + cmd - 0x12 : yabai_prev_space_on_display # '|| skhd -k "ctrl + alt + cmd - 0x12"' doesn't work / laggy: use mode instead?, ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), here no del_empty_spaces
 alt + cmd - 0x13 : yabai_next_space_on_display # '|| skhd -k "ctrl + alt + cmd - 0x13"' doesn't work / laggy: use mode instead?, ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), here no del_empty_spaces
+# make it work?!
 
 alt + cmd - w : create_and_focus_new_space
 shift + alt + cmd - w : move_current_window_to_new_space_and_focus
