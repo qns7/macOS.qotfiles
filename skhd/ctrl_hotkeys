@@ -127,7 +127,7 @@ ctrl - 0x2B : return
 ctrl - 0x2F : return
 ctrl - 0x2C : return
 ctrl - space : skhd -k "0xB1" # spotlight
-# ctrl + cmd - space : show the Character Viewer, from which you can choose emoji and other symbols (stock)
+# ctrl + cmd - space : show the Character Viewer, from which you can choose emoji and other symbols (stock) [faster than the 'Press *globe* key to']
 ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'

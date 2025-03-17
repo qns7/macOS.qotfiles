@@ -60,3 +60,4 @@ fn - 0x2C : return # -
 
 fn - space : skhd -k "space"
 # fn - arrows : home/pageup/pagedown/end (stock)
+# fn/globe is "0xB3" (hold: 0x3F) : set to 'Do Nothing' in systemSettings/Keyboard
