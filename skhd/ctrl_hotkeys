@@ -131,3 +131,5 @@ ctrl - space : skhd -k "0xB1" # spotlight
 ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'
+
+# app-specific hotkeys completely removed
