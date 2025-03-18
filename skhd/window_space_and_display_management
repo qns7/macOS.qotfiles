@@ -1,5 +1,5 @@
 ctrl - up : yabai -m window --grid 1:1:0:0:1:1 # fill current window, move to a control adjacent to the text field (stock)
-    ctrl + alt - up : skhd -k "fn + ctrl - f" # stock window management: fill
+    # ctrl + alt - up : skhd -k "fn + ctrl - f" # stock window management: fill
 ctrl - down : skhd -k "ctrl - up"; sleep 0.1; yabai -m window --move abs:0:0 --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c" # =1169-38, resize current window to inbuilt resolution w/o notch @ 0/0, show all windows of the front app (stock), move to a control adjacent to the text field (stock)
 ctrl - left : yabai -m window --grid 1:2:0:0:1:1 # snap current window left half, move to a control adjacent to the text field (stock)
 ctrl - right : yabai -m window --grid 1:2:1:1:1:2 # snap current window right half, move to a control adjacent to the text field (stock)
@@ -9,12 +9,14 @@ ctrl - 0x2A : yabai -m window --grid 2:2:1:1:2:2 # snap current window bottom ri
 ctrl - 0x1E : yabai -m window --grid 2:2:1:0:2:1 # snap current window top right quarter
 ctrl - 0x21 : yabai -m window --grid 2:2:0:0:1:1 # snap current window top left quarter
 
-ctrl + cmd - up : yabai -m window --grid 2:1:0:0:1:1 # snap current window top half, open the folder that contains the current folder in a new window (stock)
-ctrl + cmd - down : yabai -m window --grid 2:1:1:1:1:1 # snap current window bottom half
-ctrl + cmd - left : move_current_window_to_previous_display
-ctrl + cmd - right : move_current_window_to_next_display
+ctrl + alt - up : yabai -m window --grid 2:1:0:0:1:1 # snap current window top half, open the folder that contains the current folder in a new window (stock)
+ctrl + alt - down : yabai -m window --grid 2:1:1:1:1:1 # snap current window bottom half
+ctrl + alt - left : move_current_window_to_previous_display
+ctrl + alt - right : move_current_window_to_next_display
+# ctrl + cmd - down : skhd -k "ctrl + fn - c" # stock window management: center
 
-ctrl + alt + cmd - down : skhd -k "ctrl + fn - c" # stock window management: center
+# ctrl + cmd & ctrl + alt + cmd OPEN
+
 alt + cmd - 0x0A : cycle_fullscreens_or_del_empty_spaces
 alt + cmd - 0x12 : yabai_prev_space_on_display # '|| skhd -k "ctrl + alt + cmd - 0x12"' doesn't work / laggy: use mode instead?, ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), here no del_empty_spaces
 alt + cmd - 0x13 : yabai_next_space_on_display # '|| skhd -k "ctrl + alt + cmd - 0x13"' doesn't work / laggy: use mode instead?, ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), here no del_empty_spaces
