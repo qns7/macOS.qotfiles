@@ -9,8 +9,8 @@ fn + ctrl - r : return # stock window management: resize to previous size
 fn + ctrl - f : return # stock window management: fill
 fn + shift - a : return # show launchpad
 
-alt - f14 : return # open display settings
-alt - f15 : return # open display settings
+alt - f14 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
+alt - f15 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 
 cmd - h : return # hide
 alt + cmd - h : return # hide others

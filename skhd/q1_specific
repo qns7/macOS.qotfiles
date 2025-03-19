@@ -21,7 +21,7 @@ shift + alt - f17 : return
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
-# alt - play : open "keysmith://run-macro/8A8DCCF6-0578-4974-88C4-BEE68679C263" doesn't handle size changes
+# alt - play : open "keysmith://run-macro/8A8DCCF6-0578-4974-88C4-BEE68679C263" didn't handle size changes
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # q1 qmk keymap : imitates inbuilt
@@ -42,6 +42,3 @@ f15 : skhd -k "0xB1" # spotlight
 f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 # q1 & inbuilt changes in systemSettings/Keyboard/KeyboardShortcuts/ModifierKeys/.. : caps changed to ctrl & ctrl changed to fn/globe
-
-# erinnerung: alt - f14 : return # avoid entering display settings as alt - f1*/f2*/f3*/f10*/f11*/f12* (stock)
-#             alt - f15 : return # avoid entering display settings as alt - f1*/f2*/f3*/f10*/f11*/f12* (stock)
