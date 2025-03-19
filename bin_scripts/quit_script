@@ -13,7 +13,7 @@ elif [[ "$CURRENT_APP_ALT" == "Finder" ]]; then
 elif [[ "$CURRENT_APP_ALT" == "LogiTune" ]]; then
     sketchybar --set logi icon.color=0xff4e4e4e
     osascript -e 'tell application "Logi Tune" to quit'
-    ~/.config/sketchybar/plugins/logi.sh
+    sketchybar --update # ~/.config/sketchybar/plugins/logi.sh
 elif [[ "$CURRENT_APP_ALT" == "Threema Beta" ]]; then
     killall ThreemaDesktop &> /dev/null
 elif [[ "$CURRENT_APP_ALT" == "Thunderbird" ]]; then
@@ -28,6 +28,8 @@ elif [[ "$CURRENT_APP_ALT" == "TotalMix FX" ]]; then
     exit
 elif [[ "$CURRENT_APP_ALT" == "Passwords" ]]; then
     skhd -k "cmd - q"
+elif [[ "$CURRENT_APP_ALT" == "IINA" ]]; then
+    skhd -k "cmd + alt - q"
 else
     osascript -e "tell application \"$CURRENT_APP\" to quit" &> /dev/null || \
     osascript -e "tell application \"$CLEANED_APP\" to quit" &> /dev/null || \
