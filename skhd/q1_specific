@@ -16,8 +16,6 @@ shift + alt - f15 : open_or_focus "Totalmix"
 shift + alt - f16 : return
 shift + alt - f17 : return
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
