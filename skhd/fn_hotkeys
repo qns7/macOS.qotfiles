@@ -47,8 +47,10 @@ fn - 0x27 : return # ä
 fn - 0x32 : skhd -k "alt - 7" # < to |
 fn - y : cliclick m:+0,+1
     fn + cmd - y : cliclick c:610,330
+    fn + alt - y : cliclick m:+0,+7
 # fn - x : keysmith: yabai_focus_mouse, also moves like cliclick c:+0,-1
     fn + cmd - x : cliclick c:+0,+0
+    fn + alt - x : cliclick m:+0,-7
 # fn - c : show/hide control center (stock)
 fn - v : return
 fn - b : return
