@@ -1,5 +1,5 @@
 ctrl - up : yabai -m window --grid 1:1:0:0:1:1 # fill current window, move to a control adjacent to the text field (stock)
-ctrl - down : move_current_window_to_previous_display; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c" # =1169-38, resize current window to inbuilt resolution w/o notch @ 0/0, show all windows of the front app (stock), move to a control adjacent to the text field (stock)
+ctrl - down : yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c" # =1169-38, resize current window to inbuilt resolution w/o notch @ 0/0, show all windows of the front app (stock), move to a control adjacent to the text field (stock)
 ctrl - left : yabai -m window --grid 1:2:0:0:1:1 # snap current window left half, move to a control adjacent to the text field (stock)
 ctrl - right : yabai -m window --grid 1:2:1:1:1:2 # snap current window right half, move to a control adjacent to the text field (stock)
 
