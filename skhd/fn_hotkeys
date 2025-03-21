@@ -45,7 +45,7 @@ fn - 0x27 : return # ä
 # fn - return/enter = 0x4C: keysmith: yabai_debugging [pent_to_fn_enter], alternative: w/ ´ | jq -r '.app'´
 
 fn - 0x32 : skhd -k "alt - 7" # < to |
-# fn - y : keysmith: yabai_focus_mouse, also moves like cliclick c:+0,-1
+# fn - y : keysmith: yabai_focus_mouse, also moves like cliclick m:+0,-1
     fn + cmd - y : cliclick c:610,330
     fn + alt - y : cliclick m:+0,-7
 fn - x : cliclick m:+0,+1
