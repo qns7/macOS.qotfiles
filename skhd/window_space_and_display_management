@@ -20,5 +20,5 @@ alt + cmd - 0x13 : yabai_next_space_on_display # '|| skhd -k "ctrl + alt + cmd -
 
 alt + cmd - w : create_and_focus_new_space
 shift + alt + cmd - w : move_current_window_to_new_space_and_focus
-alt + cmd - e : change_and_focus_display; del_empty_spaces
-shift + alt + cmd - e : change_and_focus_display
+alt + cmd - e : change_and_focus_display # ; del_empty_spaces
+# shift + alt + cmd - e : change_and_focus_display
