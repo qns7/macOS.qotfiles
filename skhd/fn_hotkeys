@@ -42,7 +42,7 @@ fn - l : return
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : SwitchAudioSource -s "SoundID Reference" cf. 'q1_specific', #
-# fn - return/enter : keysmith: yabai_debugging [pent_to_fn_enter], alternative: w/ ´ | jq -r '.app'´
+# fn - return/enter = 0x4C: keysmith: yabai_debugging [pent_to_fn_enter], alternative: w/ ´ | jq -r '.app'´
 
 fn - 0x32 : skhd -k "alt - 7" # < to |
 # fn - y : keysmith: yabai_focus_mouse, also moves like cliclick c:+0,-1
