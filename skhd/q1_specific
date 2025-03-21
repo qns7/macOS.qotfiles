@@ -19,8 +19,7 @@ shift + alt - f17 : return
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
-alt - play : open_or_focus foobar2000; sleep 0.07; eval $(yabai -m query --windows --space | jq -r '.[] | select(.["has-focus"]==true) | .frame | "cliclick c:\(.x + .w/2),\(.y + .h - 49)"')
-# alt - play : open "keysmith://run-macro/8A8DCCF6-0578-4974-88C4-BEE68679C263" didn't handle size changes
+alt - play : open_or_focus foobar2000; sleep 0.07; eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick c:\(.x + .w/2 | floor),\(.y + .h - 49 | floor)"')
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # q1 qmk keymap : imitates inbuilt

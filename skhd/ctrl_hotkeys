@@ -3,9 +3,9 @@ ctrl - q : open_or_focus "Notes" # because of quick note bug
     ctrl + alt - q : return
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"
-    ctrl + cmd - w : open_or_focus "Pages"
+    ctrl + cmd - w : skhd -k "cmd - w"; yabai -m window --focus mouse
     ctrl + alt - w : open_or_focus "LibreOffice"
-    ctrl + alt + cmd - w : return
+    ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     # ctrl + cmd - e : keysmith: applescript 'tell application "TRex" to activate' for Windows App
     ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
