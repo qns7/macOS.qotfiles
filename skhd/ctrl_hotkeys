@@ -3,7 +3,7 @@ ctrl - q : open_or_focus "Notes" # because of quick note bug
     ctrl + alt - q : return
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"
-    ctrl + cmd - w : skhd -k "cmd - w"; yabai -m window --focus mouse
+    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse
     ctrl + alt - w : open_or_focus "LibreOffice"
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
