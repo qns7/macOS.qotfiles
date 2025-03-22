@@ -78,7 +78,7 @@ ctrl - x : sleep 0.1; skhd -k "hyper - x" # Save picture of selected area as a f
     ctrl + alt + cmd - x : return
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : skhd -k "fn - c" # show/hide control center (fn - c is stock)
-    ctrl + alt - c : skhd -k "fn - n" # show(/hide) notification center (fn - n is stock)
+    ctrl + alt - c : return # don't use nc anymore: skhd -k "fn - n" # show(/hide) notification center (fn - n is stock)
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : open_or_focus "Cursor"
