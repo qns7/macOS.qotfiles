@@ -21,6 +21,16 @@
             "shift" : false
           },
           {
+            "action" : {
+              "run" : "Users\/q\/.config\/sketchybar\/plugins\/click_week.sh"
+            },
+            "button" : 1,
+            "command" : true,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
             "action" : "lookUpAndDataDetectors",
             "button" : 2,
             "command" : false,
