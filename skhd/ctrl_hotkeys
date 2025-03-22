@@ -24,10 +24,10 @@ ctrl - z : open_or_focus "zoom.us"
     ctrl + alt + cmd - z : return
 ctrl - u : return
 ctrl - i : open_or_focus "IINA"
-ctrl + cmd - i : open_or_focus "Ipe"
+    ctrl + cmd - i : open_or_focus "Ipe"
 ctrl - o: open_or_focus "OBS" # insert a new line after the insertion point (stock)
 ctrl - p : open_or_focus "Passwords" # move up one line (stock)
-ctrl + cmd - p : open_or_focus "PDFGear"
+    ctrl + cmd - p : open_or_focus "PDFGear"
 # ctrl - 0x21 : window_management, snap current window top left quarter
 # ctrl - 0x1E : window_management, snap current window top right quarter
 
@@ -58,7 +58,7 @@ ctrl - h : return # delete/backspace (stock)
 ctrl - j : return
 ctrl - k : open_or_focus Keysmith # delete the text between the insertion point and the end of the line or paragraph (stock)
 ctrl - l : return # center the cursor or selection in the visible area (stock)
-# ctrl + cmd - l : show launchpad (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from none)
+    # ctrl + cmd - l : show launchpad (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from none)
 ctrl - 0x29 : return
 # ctrl - 0x27 : window_management, snap current window bottom left quarter
 # ctrl - 0x2A : window_management, snap current window bottom right quarter
@@ -93,14 +93,14 @@ ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
     ctrl + alt - n : return
     ctrl + alt + cmd - n : return
 ctrl - m : open_or_focus "Audio MIDI Setup"
-ctrl + cmd - m : open_or_focus "Protokol"
+    ctrl + cmd - m : open_or_focus "Protokol"
 ctrl - 0x2B : return
 ctrl - 0x2F : return
 ctrl - 0x2C : return
 ctrl - space : skhd -k "0xB1" # spotlight
-# ctrl + cmd - space : show the Character Viewer, from which you can choose emoji and other symbols (stock) [faster than the 'Press *globe* key to']
-ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
-ctrl + alt + cmd - space : return
+    # ctrl + cmd - space : show the Character Viewer, from which you can choose emoji and other symbols (stock) [faster than the 'Press *globe* key to']
+    ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
+    ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'
 
 # app-specific hotkeys completely removed
