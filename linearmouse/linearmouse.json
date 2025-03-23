@@ -14,30 +14,42 @@
             "control": true
           },
           {
-            "button": 1,
-            "action": { "run": "Users/q/.config/sketchybar/plugins/click_week.sh" },
-            "command": true,
-            "option": true
-          },
-          {
             "button": 2,
             "action": "lookUpAndDataDetectors",
             "option": true
           },
           {
             "button": 3,
-            "action": { "keyPress": ["commandRight", "0"] },
+            "action": { "keyPress": ["command", "0"] },
+            "option": true
+          },
+          {
+            "button": 4,
+            "action": "smartZoom",
+            "option": true
+          },
+          {
+            "button": 0,
+            "action": { "keyPress": ["option", "command", "arrowLeft"] },
+            "command": true,
+            "option": true
+          },
+          {
+            "button": 1,
+            "action": { "keyPress": ["option", "command", "arrowRight"] },
+            "command": true,
+            "option": true
+          },
+          {
+            "button": 2,
+            "action": { "run": "Users/q/.config/sketchybar/plugins/click_week.sh" },
+            "command": true,
             "option": true
           },
           {
             "button": 3,
             "action": "appExpose",
             "command": true,
-            "option": true
-          },
-          {
-            "button": 4,
-            "action": "smartZoom",
             "option": true
           },
           {
@@ -49,6 +61,8 @@
         ],
         "universalBackForward": true
       },
+
+      
       "if": {
         "device": {
           "category": "mouse",
@@ -57,10 +71,14 @@
           "vendorID": "0x45e"
         }
       },
+
+      
       "pointer": {
         "acceleration": 0,
         "speed": 0.5
       },
+
+      
       "scrolling": {
         "acceleration": 2.1,
         "distance": "auto",
@@ -74,6 +92,9 @@
         "speed": 21
       }
     },
+
+
+
     {
       "if": {
         "device": {
@@ -83,10 +104,14 @@
           "vendorID": "0x0"
         }
       },
+      
+      
       "pointer": {
         "acceleration": 2,
         "speed": 1
       },
+      
+      
       "scrolling": {
         "modifiers": {
           "option": {
