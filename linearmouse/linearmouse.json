@@ -1,128 +1,97 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.1-beta.2",
-  "schemes" : [
+  "$schema": "https://schema.linearmouse.app/0.10.1-beta.2",
+  "schemes": [
     {
-      "buttons" : {
-        "clickDebouncing" : {
-          "buttons" : [
-            3,
-            4,
-            2
-          ],
-          "timeout" : 500
+      "buttons": {
+        "clickDebouncing": {
+          "buttons": [3, 4, 2],
+          "timeout": 500
         },
-        "mappings" : [
+        "mappings": [
           {
-            "action" : "mouse.button.left",
-            "button" : 0,
-            "command" : false,
-            "control" : true,
-            "option" : false,
-            "shift" : false
+            "button": 0,
+            "action": "mouse.button.left",
+            "control": true
           },
           {
-            "action" : {
-              "run" : "Users\/q\/.config\/sketchybar\/plugins\/click_week.sh"
-            },
-            "button" : 1,
-            "command" : true,
-            "control" : false,
-            "option" : true,
-            "shift" : false
+            "button": 1,
+            "action": { "run": "Users/q/.config/sketchybar/plugins/click_week.sh" },
+            "command": true,
+            "option": true
           },
           {
-            "action" : "lookUpAndDataDetectors",
-            "button" : 2,
-            "command" : false,
-            "control" : false,
-            "option" : true,
-            "shift" : false
+            "button": 2,
+            "action": "lookUpAndDataDetectors",
+            "option": true
           },
           {
-            "action" : {
-              "keyPress" : [
-                "commandRight",
-                "0"
-              ]
-            },
-            "button" : 3,
-            "command" : false,
-            "control" : false,
-            "option" : true,
-            "shift" : false
+            "button": 3,
+            "action": { "keyPress": ["commandRight", "0"] },
+            "option": true
           },
           {
-            "action" : "appExpose",
-            "button" : 3,
-            "command" : true,
-            "control" : false,
-            "option" : true,
-            "shift" : false
+            "button": 3,
+            "action": "appExpose",
+            "command": true,
+            "option": true
           },
           {
-            "action" : "smartZoom",
-            "button" : 4,
-            "command" : false,
-            "control" : false,
-            "option" : true,
-            "shift" : false
+            "button": 4,
+            "action": "smartZoom",
+            "option": true
           },
           {
-            "action" : "missionControl",
-            "button" : 4,
-            "command" : true,
-            "control" : false,
-            "option" : true,
-            "shift" : false
+            "button": 4,
+            "action": "missionControl",
+            "command": true,
+            "option": true
           }
         ],
-        "universalBackForward" : true
+        "universalBackForward": true
       },
-      "if" : {
-        "device" : {
-          "category" : "mouse",
-          "productID" : "0x82a",
-          "productName" : "Microsoft Pro Intellimouse",
-          "vendorID" : "0x45e"
+      "if": {
+        "device": {
+          "category": "mouse",
+          "productID": "0x82a",
+          "productName": "Microsoft Pro Intellimouse",
+          "vendorID": "0x45e"
         }
       },
-      "pointer" : {
-        "acceleration" : 0,
-        "speed" : 0.5
+      "pointer": {
+        "acceleration": 0,
+        "speed": 0.5
       },
-      "scrolling" : {
-        "acceleration" : 2.1,
-        "distance" : "auto",
-        "modifiers" : {
-          "option" : {
-            "scale" : 10,
-            "type" : "changeSpeed"
+      "scrolling": {
+        "acceleration": 2.1,
+        "distance": "auto",
+        "modifiers": {
+          "option": {
+            "scale": 10,
+            "type": "changeSpeed"
           }
         },
-        "reverse" : {
-          "vertical" : true
-        },
-        "speed" : 21
+        "reverse": { "vertical": true },
+        "speed": 21
       }
     },
     {
-      "if" : {
-        "device" : {
-          "category" : "trackpad",
-          "productID" : "0x0",
-          "productName" : "Apple Internal Keyboard \/ Trackpad",
-          "vendorID" : "0x0"
+      "if": {
+        "device": {
+          "category": "trackpad",
+          "productID": "0x0",
+          "productName": "Apple Internal Keyboard / Trackpad",
+          "vendorID": "0x0"
         }
       },
-      "pointer" : {
-        "acceleration" : 2,
-        "speed" : 1
+      "pointer": {
+        "acceleration": 2,
+        "speed": 1
       },
-      "scrolling" : {
-        "modifiers" : {
-          "option" : {
-            "scale" : 7,
-            "type" : "changeSpeed"
+      "scrolling": {
+        "modifiers": {
+          "option": {
+            "scale": 7,
+            "type": "changeSpeed"
           }
         }
       }
