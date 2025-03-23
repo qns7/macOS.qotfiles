@@ -30,6 +30,8 @@ elif [[ "$CURRENT_APP_ALT" == "Passwords" ]]; then
     skhd -k "cmd - q"
 elif [[ "$CURRENT_APP_ALT" == "IINA" ]]; then
     skhd -k "cmd + alt - q"
+elif [[ "$CURRENT_APP_ALT" == "Voice Memos" ]]; then
+    skhd -k "cmd + alt - q"
 else
     osascript -e "tell application \"$CURRENT_APP\" to quit" &> /dev/null || \
     osascript -e "tell application \"$CLEANED_APP\" to quit" &> /dev/null || \
