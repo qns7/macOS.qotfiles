@@ -16,12 +16,15 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 eval "$(batman --export-env)"
 
-alias c="clear"
+alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
 alias rm="rm -i"
 alias ll="ls --color=auto -lah"
-alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
+
+alias c="clear"
 alias h="code ~/.zsh_history"
 alias k="cat ~/keyboard_info.txt"
+alias 'ä'="/opt/homebrew/opt/util-linux/bin/cal -m"
+
 alias sf="sudo nano /etc/pam.d/sudo"
 alias sv="sudo visudo"
 
