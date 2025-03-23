@@ -8,7 +8,8 @@ SAVEHIST=10000
 
 setopt PROMPT_SUBST
 # PROMPT='%F{white}%B[%b%f %F{208}%D{%I:%M:%S}%f %F{white}m@qBook%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
-PROMPT='%F{white}%B[%b%f %F{208}%D{%I:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
+# PROMPT='%F{white}%B[%b%f %F{208}%D{%I:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
+PROMPT='%F{white}%B[%b%f %F{208}%D{%H:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
 PROMPT_EOL_MARK='🐧'
 
 export CLICOLOR=1
