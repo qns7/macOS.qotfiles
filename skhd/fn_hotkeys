@@ -46,10 +46,10 @@ fn - 0x27 : return # ä
 
 fn - 0x32 : skhd -k "alt - 7" # < to |
 fn - y : yabai -m window --focus mouse # fn - y : keysmith: yabai_focus_mouse, also moves like cliclick m:+0,-1
-    fn + cmd - y : cliclick c:610,330
-    fn + alt - y : cliclick m:+0,-7
+    fn + cmd - y : open_or_focus ~/Applications/DeepL.app; sleep 0.07; eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick c:\(.x + .w/2 - 7 | floor),\(.y + 273 | floor)"') # cliclick c:610,330
+    fn + alt - y : cliclick c:+0,+0 # cliclick m:+0,-7
 fn - x : eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"') # cliclick m:+0,+1
-    fn + cmd - x : cliclick c:+0,+0
+    fn + cmd - x : open_or_focus ~/Applications/DeepL.app; sleep 0.07; eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick c:\(.x + .w/2 + 7 | floor),\(.y + 237 | floor)"') # cliclick c:+0,+0
     fn + alt - x : cliclick m:+0,+7
 # fn - c : show/hide control center (stock)
 fn - v : return
