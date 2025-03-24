@@ -10,6 +10,7 @@ tmx_hotkey() {
     skhd -k "$key_command"
     skhd -k "cmd - q"
     cliclick m:$POS
+    yabai -m window --focus mouse
 }
 
 tmx_hotkey "$1"
