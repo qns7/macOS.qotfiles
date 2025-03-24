@@ -12,5 +12,4 @@ tmx_hotkey() {
     cliclick m:$POS
     yabai -m window --focus mouse
 }
-
 tmx_hotkey "$1"

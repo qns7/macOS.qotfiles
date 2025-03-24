@@ -2,8 +2,8 @@
 
 CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
-CLEANED_APP="${CURRENT_APP// /}"
-CLEANED_APP_ALT="${CURRENT_APP_ALT// /}"
+# CLEANED_APP="${CURRENT_APP// /}"
+# CLEANED_APP_ALT="${CURRENT_APP_ALT// /}"
 CURRENT_DISPLAY=$(yabai -m query --displays | jq '.[] | select(.["has-focus"] == true) | .index')
 # # # # # # # #=$(echo $WINDOWS_WINDOW | jq -r '.display')
 if [[ "$CURRENT_APP" == *WhatsApp* ]]; then

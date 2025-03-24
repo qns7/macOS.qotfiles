@@ -1,14 +1,11 @@
 #!/bin/bash
 
 LOCKFILE="/tmp/custom_wake.lock"
-
 # flock: only one instance runs
 exec 200>"/tmp/custom_wake.lock"
 /opt/homebrew/bin/flock -n 200 || exit 0
-
-# 7 seconds debounce
+# debounce: 7 seconds
 sleep 7
-
 sudo killall coreaudiod
 sleep 7
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
@@ -16,7 +13,6 @@ if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.
 else
     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
 fi
-
 sleep 1
 killall "LogiTune" &> /dev/null
 sleep 1
