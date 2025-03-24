@@ -39,10 +39,10 @@ ctrl - s : open_or_focus "Safari"
     # ctrl + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
     ctrl + alt - s : open_or_focus "System Settings"
     ctrl + alt + cmd - s : return
-ctrl - d : orig_pos=$(cliclick p | awk -F, '{print $1","$2}'); left_x=$(yabai -m query --displays | jq -r 'min_by(.index) | .frame.x | floor'); screen_height=$(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor'); cliclick m:$((left_x+1)),$((screen_height/2)); sleep 1; cliclick m:$orig_pos # turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
+ctrl - d : OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 1; cliclick m:$OPOS # turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
-    # ctrl + alt + cmd - d : move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
+    ctrl + alt + cmd - d : cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)) # move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
