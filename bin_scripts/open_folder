@@ -4,6 +4,7 @@ yabai -m config mouse_follows_focus on # alttab
 osascript -e 'tell application "Finder" to make new Finder window to (POSIX file "'"$1"'")'
 open $1
 sleep 0.1
-eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
+cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+# eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
 # open $1
 yabai -m config mouse_follows_focus off # alttab

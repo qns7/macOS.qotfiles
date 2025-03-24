@@ -10,6 +10,7 @@ open -a "$1"
 # eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
 sleep 0.1
 ## sleep 0.37
-eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
+cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+# eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
 # open -a "$1"
 yabai -m config mouse_follows_focus off # alttab
