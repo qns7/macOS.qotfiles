@@ -39,7 +39,7 @@ ctrl - s : open_or_focus "Safari"
     # ctrl + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
     ctrl + alt - s : open_or_focus "System Settings"
     ctrl + alt + cmd - s : return
-ctrl - d : OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.37; cliclick m:$OPOS # turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
+ctrl - d : OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.73; cliclick m:$OPOS # turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
     ctrl + alt + cmd - d : cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)) # move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
