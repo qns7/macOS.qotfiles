@@ -39,9 +39,11 @@ else
 #     osascript -e "tell application \"$CURRENT_APP_ALT\" to quit" &> /dev/null || \
 #     osascript -e "tell application \"$CLEANED_APP_ALT\" to quit" &> /dev/null
 fi
-sleep 0.37
+# sleep 0.37
+sleep 0.1
 yabai -m display --focus $CURRENT_DISPLAY
 sleep 0.1
 yabai -m window --focus mouse
-sleep 0.1
+eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
+# sleep 0.1
 sketchybar --update
