@@ -45,5 +45,6 @@ yabai -m display --focus $CURRENT_DISPLAY
 sleep 0.1
 yabai -m window --focus mouse
 eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
+# problem wenn genau in der mitte an mouse-pos datei auf desktop xD
 # sleep 0.1
 sketchybar --update
