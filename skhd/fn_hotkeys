@@ -16,7 +16,7 @@ fn - 0x1B : skhd -k "shift + alt - 7" # to \
 fn - 0x18 : return # ´
 # fn - backspace/delete : forward delete (stock)
 
-fn - tab : eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
+fn - tab : return
 fn - q : skhd -k "alt - l" # to @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 fn - w : return
 fn - e : skhd -k "alt - e" # to €, show the character viewer, from which you can choose emoji and other symbols (stock)
@@ -45,10 +45,10 @@ fn - 0x27 : return # ä
 # fn - return/enter = 0x4C: keysmith: yabai_debugging [pent_to_fn_enter], alternative: w/ ´ | jq -r '.app'´
 
 fn - 0x32 : skhd -k "alt - 7" # < to |
-# fn - y : keysmith: yabai_focus_mouse, also moves like cliclick m:+0,-1
+fn - y : yabai -m window --focus mouse # fn - y : keysmith: yabai_focus_mouse, also moves like cliclick m:+0,-1
     fn + cmd - y : cliclick c:610,330
     fn + alt - y : cliclick m:+0,-7
-fn - x : cliclick m:+0,+1
+fn - x : eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"') # cliclick m:+0,+1
     fn + cmd - x : cliclick c:+0,+0
     fn + alt - x : cliclick m:+0,+7
 # fn - c : show/hide control center (stock)
