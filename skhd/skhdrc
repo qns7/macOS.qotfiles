@@ -22,12 +22,10 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 ]
 
 ### systemSettings/Keyboard/KeyboardShortcuts :
-# DELETED! # 1: Turn Dock hiding on/off : ctrl - d (changed from alt + cmd - d) <--- add to all!
 # 1: Show Launchpad : ctrl + cmd - l (changed from none)
 # 3: Show Desktop : ctrl + alt - d (changed from F11)
 # 3: Move left a space : ctrl + alt + cmd - 1 (changed from ctrl - left)
 # 3: Move right a space : ctrl + alt + cmd - 2 (changed from ctrl - right)
-# DELETED! # 4: Move focus to the Dock : ctrl + alt + cmd - d (changed from ctrl - F3)
 # 4: Move focus to next window : hyper - tab (changed from cmd - `)
 alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick m:\(.x + .w/2 | floor),\(.y + .h/2 | floor)"')
 # 4: Show contextual menu : ctrl - return (kept)
