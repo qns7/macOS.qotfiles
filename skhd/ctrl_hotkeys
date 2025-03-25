@@ -10,10 +10,10 @@ ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (
     # ctrl + cmd - e : keysmith: applescript 'tell application "TRex" to activate' for Windows App
     ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
     ctrl + alt + cmd - e : return
-ctrl - r : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy
+ctrl - r : open_or_focus Radioplayer
     ctrl + cmd - r : open_or_focus Reaper # swap character in text (stock)
     ctrl + alt - r : return
-    ctrl + alt + cmd - r : open_or_focus Radioplayer
+    ctrl + alt + cmd - r : return
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
     ctrl + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # add the selected item to the sidebar (stock)
     ctrl + alt - t : open_or_focus "iTerm"
@@ -69,7 +69,7 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # Screenshot and recording options (changed
     ctrl + alt - 0x32 : return
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # Save picture of screen as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 3)
-    ctrl + cmd - y : return
+    ctrl + cmd - y : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy
     ctrl + alt - y : return
     ctrl + alt + cmd - y : return
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # Save picture of selected area as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 4)
