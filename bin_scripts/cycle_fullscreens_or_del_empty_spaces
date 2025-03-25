@@ -15,6 +15,4 @@ if [[ -z "$NEXT_FULLSCREEN_INDEX" || "$NEXT_FULLSCREEN_INDEX" == "null" ]]; then
     exit 1
 fi
 yabai -m config mouse_follows_focus on
-# sleep 0.1
-# cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 { yabai -m space --focus "$NEXT_FULLSCREEN_INDEX" && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || exit 1

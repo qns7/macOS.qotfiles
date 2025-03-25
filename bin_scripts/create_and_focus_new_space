@@ -3,6 +3,4 @@
 yabai -m space --create
 index="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
 yabai -m space --focus "${index}"
-# sleep 0.1
-# cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 sketchybar --update
