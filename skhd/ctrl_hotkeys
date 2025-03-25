@@ -7,7 +7,7 @@ ctrl - w : open_or_focus "TextEdit"
     ctrl + alt - w : open_or_focus "LibreOffice"
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
-    # ctrl + cmd - e : keysmith: applescript 'tell application "TRex" to activate' for Windows App
+    # ctrl + cmd - e : KEYSMITH: applescript 'tell application "TRex" to activate' for Windows App
     ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
     ctrl + alt + cmd - e : return
 ctrl - r : open_or_focus Radioplayer
@@ -33,7 +33,7 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock)
     # ctrl + cmd - a : make an alias of the selected item (stock)
-    # ctrl + alt - a : keysmith: foobar play/pause
+    ctrl + alt - a : return # keysmith: foobar play/pause - NO! : alt - play
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     # ctrl + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)

@@ -22,7 +22,7 @@ alias ll="ls --color=auto -lah"
 alias c="clear"
 alias h="code ~/.zsh_history"
 alias k="cat ~/keyboard_info.txt"
-alias 'ä'="/opt/homebrew/opt/util-linux/bin/cal -m"
+alias cal="/opt/homebrew/opt/util-linux/bin/cal -m"
 
 alias sf="sudo nano /etc/pam.d/sudo"
 alias sv="sudo visudo"
