@@ -4,7 +4,8 @@ CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
 # CLEANED_APP="${CURRENT_APP// /}"
 # CLEANED_APP_ALT="${CURRENT_APP_ALT// /}"
-CURRENT_DISPLAY=$(yabai -m query --displays | jq '.[] | select(.["has-focus"] == true) | .index')
+CURRENT_DISPLAY=$(yabai -m query --displays --display | jq '.index')
+# CURRENT_DISPLAY=$(yabai -m query --displays | jq '.[] | select(.["has-focus"] == true) | .index')
 # # # # # # # #=$(echo $WINDOWS_WINDOW | jq -r '.display')
 if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
     killall WhatsApp &> /dev/null
@@ -42,7 +43,7 @@ fi
 # sleep 0.37
 sleep 0.1
 yabai -m display --focus $CURRENT_DISPLAY
-# sleep 0.1
+sleep 0.1
 yabai -m window --focus mouse || cliclick c:+0,+0
 # sleep 0.1
 cliclick $(yabai -m query --windows --window 2>/dev/null | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"' 2>/dev/null) || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
