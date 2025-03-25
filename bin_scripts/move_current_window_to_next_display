@@ -7,6 +7,7 @@ yabai -m window --display next --focus
 sleep 0.1
 yabai -m window --grid 1:1:0:0:1:1
 # sleep 0.1
+sleep 0.01
 yabai -m window --focus mouse
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 # change_and_focus_display
