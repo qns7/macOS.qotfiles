@@ -1,11 +1,13 @@
 #!/bin/bash
 
-sketchybar --set front_app icon.color=0xff4e4e4e
+# sketchybar --set front_app icon.color=0xff4e4e4e
 yabai -m window --display next --focus
-sleep 0.1
-skhd -k "ctrl - down" # : yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"
+# sleep 0.1
+# skhd -k "ctrl - down" # : yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"
 sleep 0.1
 yabai -m window --grid 1:1:0:0:1:1
-# change_and_focus_display # FIXXED?
-# change_and_focus_display # FIXXED?
-sketchybar --set front_app icon.color=0xffc7c7c7
+# sleep 0.1
+cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+# change_and_focus_display
+# change_and_focus_display
+# sketchybar --set front_app icon.color=0xffc7c7c7
