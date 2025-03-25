@@ -15,5 +15,5 @@ else
 fi
 del_empty_spaces
 yabai -m window --focus mouse
-sleep 0.1
+# sleep 0.1
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
