@@ -14,5 +14,5 @@ NEXT_FULLSCREEN_INDEX=$(echo "$FULLSCREENS" | jq --argjson current "$CURRENT_SPA
 if [[ -z "$NEXT_FULLSCREEN_INDEX" || "$NEXT_FULLSCREEN_INDEX" == "null" ]]; then
     exit 1
 fi
-yabai -m config mouse_follows_focus on
+# yabai -m config mouse_follows_focus on
 { yabai -m space --focus "$NEXT_FULLSCREEN_INDEX" && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || exit 1

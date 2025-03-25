@@ -3,6 +3,5 @@
 yabai -m window --display prev --focus
 sleep 0.1
 yabai -m window --grid 1:1:0:0:1:1
-sleep 0.01
-yabai -m window --focus mouse
+# sleep 0.01
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
