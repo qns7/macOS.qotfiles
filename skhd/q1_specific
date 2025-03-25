@@ -19,7 +19,7 @@ shift + alt - f17 : return
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
-alt - play : pgrep -x foobar2000 && { open_or_focus foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); } # open_or_focus foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"') # eval $(yabai -m query --windows --window | jq -r '.frame | "cliclick c:\(.x + .w/2 | floor),\(.y + .h - 49 | floor)"')
+alt - play : pgrep -x foobar2000 && { open_or_focus foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); }
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # q1 qmk keymap : imitates inbuilt

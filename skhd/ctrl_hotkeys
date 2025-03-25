@@ -3,7 +3,7 @@ ctrl - q : open_or_focus "Notes" # because of quick note bug
     ctrl + alt - q : return
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"
-    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse
+    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
     ctrl + alt - w : open_or_focus "LibreOffice"
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
@@ -39,10 +39,10 @@ ctrl - s : open_or_focus "Safari"
     # ctrl + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
     ctrl + alt - s : open_or_focus "System Settings"
     ctrl + alt + cmd - s : return
-ctrl - d : OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.73; cliclick m:$OPOS # turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
+ctrl - d : OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.73; cliclick m:$OPOS # before: turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
-    ctrl + alt + cmd - d : cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)) # move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
+    ctrl + alt + cmd - d : cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)) # before: move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
