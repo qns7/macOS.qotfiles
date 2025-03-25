@@ -6,5 +6,6 @@ index="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscr
 yabai -m window --space "${index}"
 yabai -m space --focus "${index}"
 sleep 0.1
+yabai -m window --focus mouse
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 sketchybar --update
