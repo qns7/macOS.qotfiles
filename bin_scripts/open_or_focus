@@ -1,15 +1,5 @@
 #!/bin/bash
 
-yabai -m window --focus mouse
-# yabai -m config mouse_follows_focus on # alttab
-yabai -m config mouse_modifier fn
-cliclick m:+0,+39
-cliclick m:+0,-39
-yabai -m config mouse_modifier ctrl
 open -a "$1"
-# sleep 0.1 # 0.37
+sleep 0.1
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# yabai -m config mouse_follows_focus off # alttab
-sleep 1.4
-cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# yabai -m window --focus mouse

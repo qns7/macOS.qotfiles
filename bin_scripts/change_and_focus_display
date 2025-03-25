@@ -1,11 +1,8 @@
 #!/bin/bash
 
 osascript -e 'tell application "TRex" to activate'
-# yabai -m config mouse_follows_focus on # alttab
-# sleep 0.1
 yabai -m display --focus next || yabai -m display --focus prev
-# cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# sleep 0.1
 yabai -m window --focus mouse || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-cliclick $(yabai -m query --windows --window 2>/dev/null | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"' 2>/dev/null) # || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# yabai -m config mouse_follows_focus off # alttab
+cliclick $(yabai -m query --windows --window 2>/dev/null | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"' 2>/dev/null)
+sleep 0.1
+/Users/q/.config/sketchybar/plugins/front_app.sh
