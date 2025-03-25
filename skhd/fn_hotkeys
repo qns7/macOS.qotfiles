@@ -51,7 +51,7 @@ fn - 0x32 : skhd -k "alt - 7" # < to |
 fn - x : cliclick $(yabai -m query --windows --window 2>/dev/null | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"' 2>/dev/null) || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
     fn + cmd - x : pgrep -f "Web App.*deepl" && { open -a ~/Applications/DeepL.app; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); }
     fn + alt - x : return # cliclick m:+0,+7
-fn - c : skhd -k "fn + ctrl - c" # show/hide control center (stock)
+# fn - c : show/hide control center (stock) # tested: skhd -k "fn + ctrl - c"
 fn - v : return
 fn - b : return
 # fn - n : show(/hide) notification center (stock)
