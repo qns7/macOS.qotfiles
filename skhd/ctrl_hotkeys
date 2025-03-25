@@ -42,7 +42,7 @@ ctrl - s : open_or_focus "Safari"
 ctrl - d : local OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.73; cliclick m:$OPOS # before: turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
-    ctrl + alt + cmd - d : cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)) # before: move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
+    ctrl + alt + cmd - d : return # cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)) # before: move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
