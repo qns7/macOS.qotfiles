@@ -5,7 +5,7 @@ if [ -z "$boq" ]; then
     sketchybar --set front_app icon.color=0xff4e4e4e
     yabai -m display --focus first
     sleep 0.1
-    skhd -k "alt + cmd - w"
+    create_and_focus_new_space
     sleep 0.1
     open_or_focus "thunderbird"
     sleep 2
