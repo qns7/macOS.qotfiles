@@ -4,11 +4,6 @@ SPACES=$(yabai -m query --spaces)
 DISPLAYS=$(yabai -m query --displays)
 WINDOWS_CURRENT_SPACE=$(yabai -m query --windows --space)
 
-# workaround for yabai bug (fixxed)
-# SPACES=$(yabai -m query --spaces | sed -E 's/,,/,/g; s/,]/]/; s/\[\s*,/[/')
-# DISPLAYS=$(yabai -m query --displays | sed -E 's/,,/,/g; s/,]/]/; s/\[\s*,/[/')
-# WINDOWS_CURRENT_SPACE=$(yabai -m query --windows --space | sed -E 's/,,/,/g; s/,]/]/; s/\[\s*,/[/')
-
 UUID_INBUILT_DISPLAY="37D8832A-2D66-02CA-B9F7-8F30A301B230"
 INDEX_INBUILT_DISPLAY=$(jq -r --arg uuid "$UUID_INBUILT_DISPLAY" '.[] | select(.uuid == $uuid) | .index' <<< "$DISPLAYS")
 sketchybar --bar display="$INDEX_INBUILT_DISPLAY"
