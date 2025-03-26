@@ -29,9 +29,7 @@ elif [[ "$CURRENT_APP_ALT" == "zoom.us" ]]; then
 else
     skhd -k "cmd - q"
 fi
-sleep 0.1
-yabai -m display --focus $CURRENT_DISPLAY
-sleep 1
+sleep 0.37
 yabai -m display --focus $CURRENT_DISPLAY
 sleep 0.1
 { yabai -m window --focus mouse && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || { cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') && cliclick c:+0,+0; }
