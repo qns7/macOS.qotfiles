@@ -45,7 +45,7 @@ fn - 0x27 : return # ä
 # fn - return/enter = 0x4C: KEYSMITH: yabai_debugging [pent_to_fn_enter], alternative: w/ ´ | jq -r '.app'´
 
 fn - 0x32 : skhd -k "alt - 7" # < to |
-# fn - y : KEYSMITH: yabai -m window --focus mouse # also moves like cliclick m:+0,-1
+# fn - y : KEYSMITH: yabai -m window --focus mouse, also moves like cliclick m:+0,-1
     fn + cmd - y : pgrep -f "Web App.*deepl" && { open -a ~/Applications/DeepL.app; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"'); }
     fn + alt - y : cliclick c:+0,+0
 fn - x : cliclick $(yabai -m query --windows --window 2>/dev/null | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"' 2>/dev/null) || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
