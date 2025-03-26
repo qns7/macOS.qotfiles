@@ -34,6 +34,5 @@ sleep 0.37
 yabai -m display --focus $CURRENT_DISPLAY
 sleep 0.1
 { yabai -m window --focus mouse && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || { cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') && cliclick c:.; }
-# cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || { cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') && cliclick c:.; }
 sleep 0.1
 sketchybar --update
