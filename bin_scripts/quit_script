@@ -2,7 +2,6 @@
 
 CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
-yabai -m window --focus mouse # || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 CURRENT_DISPLAY=$(yabai -m query --displays --display | jq '.index')
 if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
     killall WhatsApp &> /dev/null
@@ -34,6 +33,6 @@ fi
 sleep 0.37
 yabai -m display --focus $CURRENT_DISPLAY
 sleep 0.1
-{ yabai -m window --focus mouse && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || { cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') && cliclick c:+0,+0; }
+{ yabai -m window --focus mouse && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || { cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') && cliclick c:.; }
 sleep 0.1
 sketchybar --update
