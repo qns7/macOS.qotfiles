@@ -10,6 +10,7 @@ if [ -z "$boq" ]; then
     open_or_focus "thunderbird"
     sleep 2
     ~/.config/sketchybar/plugins/badge.sh
+    del_empty_spaces
     sketchybar --set front_app icon.color=0xffc7c7c7
 else
     open_or_focus "thunderbird"
