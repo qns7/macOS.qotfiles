@@ -1,4 +1,4 @@
-ctrl - q : open_or_focus "Notes" # because of quick note bug
+ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
     ctrl + alt - q : return
     ctrl + alt + cmd - q : return
@@ -33,16 +33,16 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock)
     # ctrl + cmd - a : make an alias of the selected item (stock)
-    ctrl + alt - a : return # keysmith: foobar play/pause - NO! : alt - play
+    ctrl + alt - a : return
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     # ctrl + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
     ctrl + alt - s : open_or_focus "System Settings"
     ctrl + alt + cmd - s : return
-ctrl - d : local OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.37; cliclick m:$OPOS # before: turn dock hiding on/off (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from alt + cmd - d), forward delete (stock)
+ctrl - d : local OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.37; cliclick m:$OPOS # forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
-    ctrl + alt + cmd - d : return # cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)) # before: move focus to the dock (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - f3)
+    ctrl + alt + cmd - d : return
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
@@ -51,7 +51,7 @@ ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window
     ctrl + cmd - g : open_or_focus "Guitar Pro 7"
     ctrl + alt - g : return
     ctrl + alt + cmd - g : return
-ctrl - h : return # delete/backspace (stock)
+ctrl - h : return # backspace/delete (stock)
     ctrl + cmd - h : return
     ctrl + alt - h : return
     ctrl + alt + cmd - h : return
@@ -64,21 +64,21 @@ ctrl - 0x29 : return
 # ctrl - 0x2A : window_management, snap current window bottom right quarter
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
 
-ctrl - 0x32 : skhd -k "hyper - 0x32" # Screenshot and recording options (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 5)
+ctrl - 0x32 : skhd -k "hyper - 0x32" # screenshot and recording options (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 5)
     ctrl + cmd - 0x32 : return
     ctrl + alt - 0x32 : return
     ctrl + alt + cmd - 0x32 : return
-ctrl - y : sleep 0.1; skhd -k "hyper - y" # Save picture of screen as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 3)
+ctrl - y : sleep 0.1; skhd -k "hyper - y" # save picture of screen as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 3)
     ctrl + cmd - y : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy
     ctrl + alt - y : return
     ctrl + alt + cmd - y : return
-ctrl - x : sleep 0.1; skhd -k "hyper - x" # Save picture of selected area as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 4)
+ctrl - x : sleep 0.1; skhd -k "hyper - x" # save picture of selected area as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 4)
     ctrl + cmd - x : return # texmaker?
     ctrl + alt - x : return
     ctrl + alt + cmd - x : return
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
-    ctrl + cmd - c : skhd -k "fn - c" # show/hide control center (fn - c is stock)
-    ctrl + alt - c : return # don't use nc anymore: skhd -k "fn - n" # show(/hide) notification center (fn - n is stock)
+    ctrl + cmd - c : skhd -k "fn - c" # show / hide control center (fn - c is stock)
+    ctrl + alt - c : return
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : open_or_focus "Cursor"
@@ -89,7 +89,7 @@ ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + alt - b : return
     ctrl + alt + cmd - b : return
 ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
-    ctrl + cmd - n : threema_start # NOT ANYMORE:skhd -k "fn - n" # show(/hide) notification center (fn - n is stock), create a new folder that contains the currently selected items (stock)
+    ctrl + cmd - n : threema_start # create a new folder that contains the currently selected items (stock)
     ctrl + alt - n : return
     ctrl + alt + cmd - n : return
 ctrl - m : open_or_focus "Audio MIDI Setup"
@@ -98,9 +98,8 @@ ctrl - 0x2B : return
 ctrl - 0x2F : return
 ctrl - 0x2C : return
 ctrl - space : skhd -k "0xB1" # spotlight
-    # ctrl + cmd - space : show the Character Viewer, from which you can choose emoji and other symbols (stock) [faster than the 'Press *globe* key to']
+    # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) [faster than 'Press *globe* key to']
     ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
     ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'
-
-# app-specific hotkeys completely removed
+### app-specific hotkeys completely removed
