@@ -7,10 +7,10 @@ if [[ -z "$FULLSCREENS" || "$(echo "$FULLSCREENS" | jq 'length')" -eq 0 ]]; then
     echo "$SPACES" | jq -r '.[] | select(.windows == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
     sleep 0.1
     sketchybar --update
-    exit 1
+    exit 0
 fi
 NEXT_FULLSCREEN_INDEX=$(echo "$FULLSCREENS" | jq --argjson current "$CURRENT_SPACE_INDEX" 'map(select(.index > $current))[0].index // map(.index)[0]')
 if [[ -z "$NEXT_FULLSCREEN_INDEX" || "$NEXT_FULLSCREEN_INDEX" == "null" ]]; then
-    exit 1
+    exit 0
 fi
-{ yabai -m space --focus "$NEXT_FULLSCREEN_INDEX" && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || exit 1
+{ yabai -m space --focus "$NEXT_FULLSCREEN_INDEX" && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || exit 0
