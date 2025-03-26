@@ -26,6 +26,8 @@ elif [[ "$CURRENT_APP_ALT" == "TotalMix FX" ]]; then
     exit
 elif [[ "$CURRENT_APP_ALT" == "zoom.us" ]]; then
     killall zoom.us
+elif [[ "$CURRENT_APP_ALT" == "LibreOffice" ]]; then
+    osascript -e "tell application \"LibreOffice\" to quit"
 else
     skhd -k "cmd - q"
 fi
