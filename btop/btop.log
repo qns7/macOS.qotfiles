@@ -11,3 +11,6 @@
 
 2025/03/17 (09:48:59) | ===> btop++ v.1.4.0
 2025/03/17 (09:48:59) | ERROR: Exception during Config::unlock() : unordered_map::at: key not found
+
+2025/03/26 (01:09:34) | ===> btop++ v.1.4.0
+2025/03/26 (01:09:34) | ERROR: Exception during Config::unlock() : unordered_map::at: key not found

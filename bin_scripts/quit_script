@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app') # CLEANED_APP="${CURRENT_APP// /}"
-CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value') # CLEANED_APP_ALT="${CURRENT_APP_ALT// /}"
+CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
+CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
 yabai -m window --focus mouse || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-CURRENT_DISPLAY=$(yabai -m query --displays --display | jq '.index') # $(yabai -m query --displays | jq '.[] | select(.["has-focus"] == true) | .index')
+CURRENT_DISPLAY=$(yabai -m query --displays --display | jq '.index')
 if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
     killall WhatsApp &> /dev/null
 elif [[ "$CURRENT_APP_ALT" == "Finder" ]]; then
@@ -29,9 +29,11 @@ elif [[ "$CURRENT_APP_ALT" == "zoom.us" ]]; then
 else
     skhd -k "cmd - q"
 fi
+sleep 0.1
+yabai -m display --focus $CURRENT_DISPLAY
 sleep 1
 yabai -m display --focus $CURRENT_DISPLAY
 sleep 0.1
-{ yabai -m window --focus mouse && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+{ yabai -m window --focus mouse && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || { cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') && cliclick c:+0,+0; }
 sleep 0.1
 sketchybar --update
