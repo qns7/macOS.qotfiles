@@ -1,17 +1,47 @@
 #!/bin/bash
 
-LOCKFILE="/tmp/custom_wake.lock"
-exec 200>"/tmp/custom_wake.lock"
-/opt/homebrew/bin/flock -n 200 || exit 0
-sleep 7
-sudo killall coreaudiod
-sleep 7
-if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
-    /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
-else
-    /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
-fi
-sleep 1
-killall "LogiTune" &> /dev/null
-sleep 1
-/opt/homebrew/bin/sketchybar --reload
+exec 73>"/tmp/custom_wake.lock"
+/opt/homebrew/bin/flock -n 73 || exit 0
+bash -c '
+    sleep 3
+    sudo killall coreaudiod
+    sleep 1
+    for i in {1..7}; do
+        if pgrep -x coreaudiod > /dev/null; then
+            break
+        fi
+        sleep 1
+    done
+    if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+        /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+    else
+        /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
+    fi
+    killall "LogiTune" &> /dev/null
+    sleep 1
+    /opt/homebrew/bin/sketchybar --reload
+    sleep 14 # flock debounce
+'
+
+# No need to explicitly close the lock, it's automatically managed by flock
+
+# exec 73>"/tmp/custom_wake.lock"
+# /opt/homebrew/bin/flock -n 73 || exit 0
+# sudo killall coreaudiod
+# sleep 1
+# for i in {1..7}; do
+#     if pgrep -x coreaudiod > /dev/null; then
+#         break
+#     fi
+#     sleep 1
+# done
+# if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+#     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+# else
+#     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
+# fi
+# killall "LogiTune" &> /dev/null
+# sleep 1
+# /opt/homebrew/bin/sketchybar --reload
+# sleep 14 # flock debounce
+# exec 73>&-  # Close file descriptor, releasing the lock
