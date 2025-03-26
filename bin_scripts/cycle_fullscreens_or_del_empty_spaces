@@ -1,6 +1,5 @@
 #!/bin/bash
 
-trap 'yabai -m config mouse_follows_focus off' EXIT
 SPACES=$(yabai -m query --spaces)
 CURRENT_SPACE_INDEX=$(echo "$SPACES" | jq '.[] | select(."has-focus") | .index')
 FULLSCREENS=$(echo "$SPACES" | jq '[.[] | select(."is-native-fullscreen")]')
