@@ -39,6 +39,8 @@ cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2
 
 yabai -m window --focus mouse || cliclick c:.
 
+cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+
 # if [[ $(yabai -m query --spaces --space | jq -r '."windows"') == "[]" ]]; then
 #     cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 # 
