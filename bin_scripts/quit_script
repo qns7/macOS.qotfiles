@@ -2,8 +2,7 @@
 
 CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
-# CURRENT_DISPLAY=$(yabai -m query --displays --display | jq '.index')
-CURRENT_SPACE=$(yabai -m query --spaces --space | jq '.index')
+CURRENT_SPACE=$(yabai -m query --spaces --space | jq '.index') # CURRENT_DISPLAY=$(yabai -m query --displays --display | jq '.index')
 if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
     killall WhatsApp &> /dev/null
 elif [[ "$CURRENT_APP_ALT" == "Finder" ]]; then
@@ -32,38 +31,12 @@ else
     skhd -k "cmd - q"
 fi
 sleep 0.37
-# sleep 1
 yabai -m space --focus $CURRENT_SPACE
-
+sleep 0.01
 cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-
+sleep 0.01
 yabai -m window --focus mouse || cliclick c:.
-
+sleep 0.01
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-
-# if [[ $(yabai -m query --spaces --space | jq -r '."windows"') == "[]" ]]; then
-#     cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# 
-# else
-#     cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# fi
-
-
-# sleep 0.01
-# cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# sleep 0.01
-# if [[ $(yabai -m query --windows --window | jq -r '."display"') == $CURRENT_DISPLAY ]]; then
-#     yabai -m space --focus recent
-    # if [[ $(yabai -m query --spaces --space | jq -r '."windows"') == "[]" ]]; then
-    #     cliclick c:.
-    # else
-    #     cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-    # fi
-    # yabai -m window --focus $(yabai -m query --windows --window | jq -r '.id')
- # else
-    # yabai -m window --focus $(yabai -m query --windows --display $CURRENT_DISPLAY | jq -r '.[0].id')
-    # cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# fi
-# cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || osascript -e 'tell application "Finder" to activate'
 sleep 0.1
 sketchybar --update
