@@ -1,6 +1,6 @@
 #!/bin/bash
 
-yabai -m display --focus recent # yabai -m display --focus next || yabai -m display --focus prev
+yabai -m display --focus recent # only two displays, yabai -m display --focus next || yabai -m display --focus prev
 sleep 0.01
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || cliclick c:.
 cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
