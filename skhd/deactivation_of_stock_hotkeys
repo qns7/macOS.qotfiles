@@ -18,3 +18,5 @@ cmd - m : return # minimize
 alt + cmd - m : return # minimize all
 
 shift + alt + cmd - q : return # log out of your macOS user account immediately without confirming
+# irgendwann hier dediziert auch noch alle anderen auflisten. 
+# eventuell hier und auch in den anderen files (e.g. ctrl) noch hinzufügen wo die hotkeys/shortcuts definiert sind (e.g.: finder, textfeld, ...)
