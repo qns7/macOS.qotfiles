@@ -3,3 +3,4 @@
 open -a "$1"
 sleep 0.01
 cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+# skhd -k "fn - x"

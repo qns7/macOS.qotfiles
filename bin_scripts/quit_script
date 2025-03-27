@@ -33,6 +33,8 @@ fi
 sleep 0.37
 yabai -m display --focus $CURRENT_DISPLAY
 sleep 0.01
-{ yabai -m window --focus mouse && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || { cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') && cliclick c:.; }
+yabai -m window --focus mouse || osascript -e 'tell application "Finder" to activate' # skhd -k "ctrl + alt - e"
+sleep 0.01
+cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 sleep 0.1
 sketchybar --update
