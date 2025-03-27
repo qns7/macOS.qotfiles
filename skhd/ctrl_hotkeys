@@ -37,7 +37,7 @@ ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or parag
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
-    ctrl + alt - s : open_or_focus "System Settings"
+    ctrl + alt - s : open_or_focus "System Settings"; sleep 0.73; skhd -k "ctrl - left"
     # ctrl + alt + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl - d : mouse_dock # forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
