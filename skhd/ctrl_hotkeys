@@ -8,7 +8,7 @@ ctrl - w : open_or_focus "TextEdit"
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     # ctrl + cmd - e : KEYSMITH: applescript 'tell application "TRex" to activate' for Windows App
-    ctrl + alt - e : osascript -e 'tell application "Finder" to activate'
+    ctrl + alt - e : open -a Finder # osascript -e 'tell application "Finder" to activate'
     ctrl + alt + cmd - e : return
 ctrl - r : open_or_focus Radioplayer
     ctrl + cmd - r : open_or_focus Reaper # swap character in text (stock)
