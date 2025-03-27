@@ -14,4 +14,4 @@ if [[ -z "$NEXT_FULLSCREEN_INDEX" || "$NEXT_FULLSCREEN_INDEX" == "null" ]]; then
     exit 0
 fi
 sleep 0.01
-{ yabai -m space --focus "$NEXT_FULLSCREEN_INDEX" && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); } || exit 0
+yabai -m space --focus "$NEXT_FULLSCREEN_INDEX" && cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
