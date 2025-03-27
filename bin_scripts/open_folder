@@ -3,4 +3,4 @@
 osascript -e 'tell application "Finder" to make new Finder window to (POSIX file "'"$1"'")'
 open $1
 sleep 0.01
-skhd -k "fn - x" # cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+skhd -k "fn - x"

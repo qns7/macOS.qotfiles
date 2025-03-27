@@ -2,7 +2,7 @@
 
 CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
-CURRENT_SPACE=$(yabai -m query --spaces --space | jq '.index') # CURRENT_DISPLAY=$(yabai -m query --displays --display | jq '.index')
+CURRENT_SPACE=$(yabai -m query --spaces --space | jq '.index')
 if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
     killall WhatsApp &> /dev/null
 elif [[ "$CURRENT_APP_ALT" == "Finder" ]]; then
