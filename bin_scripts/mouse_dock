@@ -1,0 +1,36 @@
+#!/bin/bash
+
+POS_FILE="/tmp/mouse_dock.pos"
+WATCHER_PID_FILE="/tmp/mouse_dock_watcher.pid"
+if [ -f "$POS_FILE" ]; then
+    SAVED_POS=$(cat "$POS_FILE")
+    cliclick m:$SAVED_POS
+    rm -f "$POS_FILE"
+    if [ -f "$WATCHER_PID_FILE" ]; then
+        kill "$(cat "$WATCHER_PID_FILE")" 2>/dev/null
+        rm -f "$WATCHER_PID_FILE"
+    fi
+else
+    OPOS=$(cliclick p)
+    echo "$OPOS" > "$POS_FILE"
+    cliclick m:0,$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor') / 2))
+    (
+        PREV_POS=$(cliclick p)
+        start_time=$(date +%s)
+        while [ -f "$POS_FILE" ]; do
+            sleep 0.1
+            CURR_POS=$(cliclick p)
+            if [ "$CURR_POS" != "$PREV_POS" ]; then
+                rm -f "$POS_FILE"
+                rm -f "$WATCHER_PID_FILE"
+                exit 0
+            fi
+            current_time=$(date +%s)
+            if (( current_time - start_time >= 10 )); then
+                rm -f "$POS_FILE"
+                rm -f "$WATCHER_PID_FILE"
+                exit 0
+            fi
+        done
+    ) & echo $! > "$WATCHER_PID_FILE"
+fi

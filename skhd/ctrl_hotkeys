@@ -39,7 +39,7 @@ ctrl - s : open_or_focus "Safari"
     # ctrl + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
     ctrl + alt - s : open_or_focus "System Settings"
     ctrl + alt + cmd - s : return
-ctrl - d : local OPOS=$(cliclick p); cliclick m:$((0)),$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor')/2)); sleep 0.37; cliclick m:$OPOS # forward delete (stock)
+ctrl - d : mouse_dock # forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
     ctrl + alt + cmd - d : return
