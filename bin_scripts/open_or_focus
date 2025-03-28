@@ -1,5 +1,5 @@
 #!/bin/bash
 
 open -a "$1"
-sleep 0.01
+sleep 0.1
 skhd -k "fn - x"
