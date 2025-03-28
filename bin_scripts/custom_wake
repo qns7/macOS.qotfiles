@@ -22,3 +22,24 @@ bash -c '
     /opt/homebrew/bin/sketchybar --reload
     sleep 14 # flock debounce
 '
+
+# /Users/*/Library/LaunchAgents/com.*.custom_start.plist
+#
+# <?xml version="1.0" encoding="UTF-8"?>
+# <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+# <plist version="1.0">
+# <dict>
+#     <key>Label</key>
+#     <string>com.q.custom_start</string>
+#     <key>ProgramArguments</key>
+#     <array>
+#         <string>/Users/q/bin/custom_wake</string>
+#     </array>
+#     <key>RunAtLoad</key>
+#     <true/>
+#     <key>StandardOutPath</key>
+#     <string>/tmp/custom_wake.log</string>
+#     <key>StandardErrorPath</key>
+#     <string>/tmp/custom_wake_error.log</string>
+# </dict>
+# </plist>
