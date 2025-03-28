@@ -3,3 +3,5 @@
 open -a "$1"
 sleep 0.01
 skhd -k "fn - x"
+# osascript -e 'tell application "TRex" to activate'
+# open -a "$1"
