@@ -1,8 +1,8 @@
-## Picture: Sketchybar [March 25]
+# Picture: Sketchybar [March 25]
 
 ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351)
 
-# Explanation (left to right):
+## Explanation (left to right):
 - symbol: indicator if external or internal display is focused
 - numbers: number of spaces on focused display . focused space on focused display : number of windows on focused space . number of apps on focused space
 - Text: focused / active app
