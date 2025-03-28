@@ -48,7 +48,7 @@ fn - 0x32 : skhd -k "alt - 7" # < to |
 # fn - y : KEYSMITH: yabai -m window --focus mouse, also moves like cliclick m:+0,-1 for some reason
     fn + cmd - y : pgrep -f "Web App.*deepl" && { open -a ~/Applications/DeepL.app; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"'); }
     fn + alt - y : cliclick m:+0,+1
-fn - x : cliclick $(yabai -m query --windows --window 2>/dev/null | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"' 2>/dev/null) || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+fn - x : cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
     fn + cmd - x : pgrep -f "Web App.*deepl" && { open -a ~/Applications/DeepL.app; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); }
     fn + alt - x : cliclick c:+0,+0
 # fn - c : show/hide control center (stock)
