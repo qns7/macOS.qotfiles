@@ -45,3 +45,5 @@ yabai -m rule --add app="SoundID Reference" display=last
 # yabai -m config right_padding 3
 # yabai -m config window_gap 3
 # borders active_color=0xffff9500 inactive_color=0x00000000 width=3.0 &
+
+yabai -m config external_bar all:39:0
