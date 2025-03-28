@@ -37,6 +37,6 @@ cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2
 sleep 0.01
 yabai -m window --focus mouse || (cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true')
 sleep 0.01
-cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+skhd -k "fn - x"
 sleep 0.1
 sketchybar --update
