@@ -32,30 +32,26 @@ else
 fi
 sleep 0.37
 
-yabai -m window --focus mouse
+yabai -m space --focus $CURRENT_SPACE
 sleep 0.01
-cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-if [[ $? -ne 0 ]]; then
-    yabai -m space --focus $CURRENT_SPACE
-    sleep 0.01
-    cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-    sleep 0.01
-    cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
-    sleep 0.01
-    skhd -k "fn - x"
-fi
+cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+sleep 0.01
+yabai -m window --focus mouse || (cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true')
+sleep 0.01
+skhd -k "fn - x"
 
 # yabai -m window --focus mouse
 # sleep 0.01
 # cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# sleep 0.01
-# yabai -m space --focus $CURRENT_SPACE
-# sleep 0.01
-# cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
-# sleep 0.01
-# yabai -m window --focus mouse || (cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true')
-# sleep 0.01
-# skhd -k "fn - x"
+# if [[ $? -ne 0 ]]; then
+#     yabai -m space --focus $CURRENT_SPACE
+#     sleep 0.01
+#     cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+#     sleep 0.01
+#     cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+#     sleep 0.01
+#     skhd -k "fn - x"
+# fi
 
 sleep 0.1
 sketchybar --update
