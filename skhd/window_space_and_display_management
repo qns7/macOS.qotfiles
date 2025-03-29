@@ -18,7 +18,6 @@ ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; cliclick $(yabai -m que
 alt + cmd - 0x12 : yabai_prev_space_on_display #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left)
 alt + cmd - 0x13 : yabai_next_space_on_display #  ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right)
 # alt + cmd - 0x14 : mission control, see .skhdrc
-# HOW TO MAKE MC WORK IMPLICITELY? DONE!!! inside the scripts
 
 alt + cmd - w : create_and_focus_new_space
 shift + alt + cmd - w : move_current_window_to_new_space_and_focus
