@@ -54,7 +54,7 @@ fn - x : cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x 
     fn + cmd - x : pgrep -f "Web App.*deepl" && { open -a ~/Applications/DeepL.app; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); }
     fn + alt - x : cliclick c:+0,+0
 # fn - c : show/hide control center (stock)
-fn - v : return
+fn - v : yabai -m display --focus next || yabai -m display --focus prev # return
 fn - b : return
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # to µ
