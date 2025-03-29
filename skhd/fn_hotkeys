@@ -50,7 +50,7 @@ fn - 0x32 : skhd -k "alt - 7" # < to |
     fn + alt - y : cliclick m:+0,+1
 # fn - x : cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 # fn - x : cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || ( if [[ $(yabai -m query --displays --display | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) + 19 | floor)"'); else cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); fi )
-fn - x : cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || ( if [[ $(yabai -m query --displays --window | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then cliclick m:3460,603; else cliclick m:1280,720; fi )
+fn - x : cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') || ( if [[ $(yabai -m query --displays --display | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then cliclick m:3460,603; else cliclick m:1280,720; fi )
     fn + cmd - x : pgrep -f "Web App.*deepl" && { open -a ~/Applications/DeepL.app; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); }
     fn + alt - x : cliclick c:+0,+0
 # fn - c : show/hide control center (stock)
