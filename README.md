@@ -26,3 +26,8 @@
 ### Indication: ...
 
 ## iTerm2
+
+### Hotkey Window
+
+![Screenshot 2025-03-29 at 11 50 01](https://github.com/user-attachments/assets/df4c5621-4fc6-40e6-ac33-6e41be3383cc)
+
