@@ -8,7 +8,8 @@ ctrl - w : open_or_focus "TextEdit"
     ctrl + alt - w : open_or_focus "LibreOffice"
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
-    ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') # skhd -k "fn - x" # osascript -e 'tell application "Finder" to activate' # open -a Finder
+    ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+    # skhd -k "fn - x" # osascript -e 'tell application "Finder" to activate' # open -a Finder
     ctrl + alt - e : return
     # ctrl + alt + cmd - e : KEYSMITH: applescript 'tell application "TRex" to activate' for Windows App and Terminals
 ctrl - r : open_or_focus Radioplayer
@@ -44,8 +45,8 @@ ctrl - d : mouse_dock # forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
     ctrl + alt + cmd - d [
-        "Finder" : skhd -k "alt + cmd - l"
-        * ~
+        "Finder" : skhd -k "shift + cmd - o"
+        * : open_folder ~/Downloads
     ]
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
