@@ -2,7 +2,7 @@
 
 ## Yabai/SKHD/Menuwhere/...
 
-- **Caveats** : only designed maximal two displays, internal and 27"1440p (to the left); new/different external monitor would need a few changes.
+- **Caveats** : only designed for maximal two displays, internal and 27"1440p (to the left); new/different external monitor would need a few changes.
 
 ## Sketchybar
 
