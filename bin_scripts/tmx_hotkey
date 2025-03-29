@@ -1,13 +1,13 @@
 #!/bin/bash
 
 tmx_hotkey() {
-    local key_command=$1
+    local KEY_COMMAND=$1
     local POS
     POS=$(cliclick p)
     open -a "Totalmix"
     sleep 0.73
     open_or_focus "Totalmix"
-    skhd -k "$key_command"
+    skhd -k "$KEY_COMMAND"
     skhd -k "cmd - q"
     cliclick m:$POS
     yabai -m window --focus mouse

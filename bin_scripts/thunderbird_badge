@@ -1,7 +1,7 @@
 #!/bin/bash
 
-boq=$(pgrep -x thunderbird)
-if [ -z "$boq" ]; then
+BOQ=$(pgrep -x thunderbird)
+if [ -z "$BOQ" ]; then
     sketchybar --set front_app icon.color=0xff4e4e4e
     yabai -m display --focus first
     sleep 0.1
