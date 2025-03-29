@@ -1,23 +1,27 @@
 #!/bin/bash
 
-mission_control() {
+# mission_control() {
+#     skhd -k "ctrl + alt + cmd - 0x12"
+#     exit 0
+# }
+# trap 'mission_control' ERR
+if [ -f /tmp/mission_control.open ]; then
     skhd -k "ctrl + alt + cmd - 0x12"
-    exit 0
-}
-trap 'mission_control' ERR
-SPASPA=$(yabai -m query --spaces --space)
-CURDIS=$(yabai -m query --displays --display | jq '.index')
-CURSPA=$(echo "$SPASPA" | jq '.index')
-SPACES=$(yabai -m query --spaces --display "$CURDIS")
-ALLSPA=$(echo "$SPACES" | jq ".[].index")
-LOWSPA=$(echo "$SPACES" | jq ".[] | select(.index < $CURSPA) | .index")
-if [ ! -z "$LOWSPA" ]; then
-    set -- $LOWSPA
-    yabai -m space --focus ${@: -1}
 else
-    set -- $ALLSPA
-    yabai -m space --focus ${@: -1}
+    SPASPA=$(yabai -m query --spaces --space)
+    CURDIS=$(yabai -m query --displays --display | jq '.index')
+    CURSPA=$(echo "$SPASPA" | jq '.index')
+    SPACES=$(yabai -m query --spaces --display "$CURDIS")
+    ALLSPA=$(echo "$SPACES" | jq ".[].index")
+    LOWSPA=$(echo "$SPACES" | jq ".[] | select(.index < $CURSPA) | .index")
+    if [ ! -z "$LOWSPA" ]; then
+        set -- $LOWSPA
+        yabai -m space --focus ${@: -1}
+    else
+        set -- $ALLSPA
+        yabai -m space --focus ${@: -1}
+    fi
+    del_empty_spaces
+    sleep 0.01
+    skhd -k "fn - x"
 fi
-del_empty_spaces
-sleep 0.01
-skhd -k "fn - x"
