@@ -35,8 +35,8 @@ alias p="btop"
 alias up="brewup"
 alias uy='echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai'
 
-alias ug="git pull origin main; sleep 0.37; ~/bin/SYNC; sleep 0.37; cd ~/.config; sleep 0.1; git add skhd yabai sketchybar linearmouse btop bin_scripts zsh_configs .gitignore && git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\" && git push origin main"
-# alias pg="git pull origin main"
+alias ug="~/bin/SYNC; sleep 0.37; cd ~/.config; sleep 0.1; git add skhd yabai sketchybar linearmouse btop bin_scripts zsh_configs .gitignore && git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\" && git push origin main"
+alias pg="git pull origin main"
 
 alias lun="launchctl unload ~/Library/LaunchAgents/com.q.custom_start.plist"
 alias lre="launchctl remove ~/Library/LaunchAgents/com.q.custom_start.plist"
