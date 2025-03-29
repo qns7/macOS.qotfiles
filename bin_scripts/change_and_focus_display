@@ -9,10 +9,8 @@
 ## 3460x584 and 1280x720
 if [[ $(yabai -m query --displays --display | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
     cliclick m:1280,720
-    # cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) + 19 | floor)"')
 else
     cliclick m:3460,603 # (+19)
-    # cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 fi
 sleep 0.01
 yabai -m window --focus mouse || (cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true')
