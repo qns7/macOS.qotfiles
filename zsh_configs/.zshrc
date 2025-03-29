@@ -55,3 +55,4 @@ wt() {
 }
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
+x
