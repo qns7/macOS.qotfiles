@@ -2,6 +2,7 @@
 
 CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
+CURRENT_DISPLAY=$(yabai -m query --displays --window | jq -r '."uuid"')
 if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
     killall WhatsApp &> /dev/null
 elif [[ "$CURRENT_APP_ALT" == "Finder" ]]; then
@@ -30,14 +31,14 @@ else
     skhd -k "cmd - q"
 fi
 sleep 0.37
-if [[ $(yabai -m query --displays --window | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
+if [[ $CURRENT_DISPLAY == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
     cliclick m:3460,603 # (+19)
 else
     cliclick m:1280,720
 fi
 sleep 0.01
 yabai -m window --focus mouse || (cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true')
-# sleep 0.01
-# skhd -k "fn - x"
+sleep 0.01
+skhd -k "fn - x"
 sleep 0.1
 sketchybar --update
