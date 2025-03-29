@@ -1,6 +1,10 @@
 # macOS (Sequoia 15.3.2+) Setup 24/25
 
-## Yabai/SKHD/Menuwhere/...
+## Keyboard-Setup
+
+...
+
+## Yabai/SKHD/Menuwhere
 
 - **Caveats** : only designed for maximal two displays, internal and 27"1440p (to the left); new/different external monitor would need a few changes.
 
