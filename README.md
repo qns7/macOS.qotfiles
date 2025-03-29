@@ -1,8 +1,12 @@
-# Sketchybar
+# macOS Setup 24/25
+
+## Yabai/SKHD/Menuwhere/...
+
+## Sketchybar
 
 ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351)
 
-## Explanation (left to right):
+### Explanation (left to right):
 - **Symbol**: indicator if external or internal display is focused
 - **Numbers**: number of spaces on focused display . focused space on focused display : number of windows on focused space . number of apps on focused space
 - **Text**: focused / active app
@@ -19,8 +23,6 @@
 - **VPN**: Viscosity [clickable: openAndConnect/quit]
 - **Numbers**: date : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
 
-## Indication: ...
+### Indication: ...
 
-# Yabai/SKHD/Menuwhere/...
-
-# iTerm2
+## iTerm2
