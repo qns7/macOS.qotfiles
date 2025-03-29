@@ -37,11 +37,11 @@ sleep 0.37
 # yabai -m display $CURRENT_DISPLAY
 ## yabai -m space --focus $CURRENT_SPACE
 ### if [[ $(yabai -m query --displays --display | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
-if [[ $(yabai -m query --displays --window | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
-    cliclick m:1280,720
+if [[ $(yabai -m query --displays --window | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then # exactly the opposite of change_and_focus_display
+    cliclick m:3460,603 # (+19)
     # cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) + 19 | floor)"')
 else
-    cliclick m:3460,603 # (+19)
+    cliclick m:1280,720
     # cliclick $(yabai -m query --displays --display | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
 fi
 sleep 0.01
