@@ -43,7 +43,10 @@ ctrl - s : open_or_focus "Safari"
 ctrl - d : mouse_dock # forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     # ctrl + alt - d : show desktop (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from f11)
-    ctrl + alt + cmd - d : return
+    ctrl + alt + cmd - d [
+        "Finder" : skhd -k "alt + cmd - l"
+        * ~
+    ]
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
@@ -103,4 +106,3 @@ ctrl - space : skhd -k "0xB1" # spotlight
     ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
     ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'
-### app-specific hotkeys completely removed (for now)
