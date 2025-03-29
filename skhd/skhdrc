@@ -23,8 +23,8 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 
 ### systemSettings/Keyboard/KeyboardShortcuts :
 # 1: Show Launchpad : ctrl + cmd - l (changed from none)
-alt + cmd - 0x14 : skhd -k "0xA0" # mission control
 # 3: Application windows : shift + alt + cmd - 0x0A (changed from ctrl - down), ^
+alt + cmd - 0x14 : skhd -k "0xA0" # mission control
 # 3: Show Desktop : ctrl + alt - d (changed from F11)
 # 3: Move left a space : ctrl + alt + cmd - 1 (changed from ctrl - left)
 # 3: Move right a space : ctrl + alt + cmd - 2 (changed from ctrl - right)
