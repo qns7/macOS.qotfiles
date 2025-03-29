@@ -1,4 +1,4 @@
-# macOS Setup 24/25
+# macOS (Sequoia 15.3.2+) Setup 24/25
 
 ## Yabai/SKHD/Menuwhere/...
 
