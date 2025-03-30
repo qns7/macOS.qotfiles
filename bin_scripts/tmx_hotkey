@@ -7,8 +7,10 @@ tmx_hotkey() {
     open -a "Totalmix"
     sleep 0.73
     open_or_focus "Totalmix"
-    skhd -k "$KEY_COMMAND"
-    skhd -k "cmd - q"
+    if [[ "$(sketchybar --query front_app | jq -r '.icon.value')" == "TotalMix FX" ]]; then
+        skhd -k "$KEY_COMMAND"
+        skhd -k "cmd - q"
+    fi
     cliclick m:$POS
     yabai -m window --focus mouse
 }
