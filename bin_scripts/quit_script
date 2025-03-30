@@ -11,6 +11,7 @@ elif [[ "$CURRENT_APP_ALT" == "LogiTune" ]]; then
     sketchybar --set logi icon.color=0xff4e4e4e
     osascript -e 'tell application "Logi Tune" to quit'
     sketchybar --update
+    CURRENT_DISPLAY="37D8832A-2D66-02CA-B9F7-8F30A301B230"
 elif [[ "$CURRENT_APP_ALT" == "Threema Beta" ]]; then
     killall ThreemaDesktop &> /dev/null
 elif [[ "$CURRENT_APP_ALT" == "Thunderbird" ]]; then
