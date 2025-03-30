@@ -14,13 +14,13 @@ ctrl - 0x1E : yabai -m window --grid 2:2:1:0:2:1; sleep 0.01; cliclick $(yabai -
 ctrl - 0x21 : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') # snap current window top left quarter
 
 ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') # stock window management: center
-# shift + alt + cmd - 0x0A : app exposé, see .skhdrc
+# shift + alt + cmd - 0x0A : app exposé, cf. 'skhdrc'
 alt + cmd - 0x12 : yabai_prev_space_on_display #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left)
 alt + cmd - 0x13 : yabai_next_space_on_display #  ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right)
-# alt + cmd - 0x14 : mission control, see .skhdrc
+# alt + cmd - 0x14 : mission control, cf. 'skhdrc'
 
 alt + cmd - w : create_and_focus_new_space
 shift + alt + cmd - w : move_current_window_to_new_space_and_focus
-alt + cmd - e  : change_and_focus_display # ; del_empty_spaces
-alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A (mission_control_key is 0xA0)
-# shift + alt + cmd - e : change_and_focus_display
+alt + cmd - e  : change_and_focus_display
+# shift + alt + cmd - e : change_and_focus_display; del_empty_spaces
+alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A (^, mission_control_key is 0xA0)
