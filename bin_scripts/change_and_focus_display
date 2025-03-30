@@ -3,7 +3,7 @@
 trap 'yabai -m config mouse_follows_focus off' EXIT
 if [ -f /tmp/mission_control.open ]; then
     yabai -m config mouse_follows_focus on
-    yabai -m display --focus next || yabai -m display --focus prev # bug / why I don't use this overall anymore: mouse_follows_focus when target space is empty
+    yabai -m display --focus next || yabai -m display --focus prev # bug / why I don't use this overall anymore: mouse_follows_focus when target space is empty (while yabai -m config mouse_follows_focus off)
 else
     if [[ $(yabai -m query --displays --display | jq -r '."uuid"') == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
         cliclick m:1280,720
