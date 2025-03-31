@@ -33,7 +33,7 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock)
     # ctrl + cmd - a : make an alias of the selected item (stock)
-    ctrl + alt - a : return
+    ctrl + alt - a : sudo killall coreaudiod # return
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots

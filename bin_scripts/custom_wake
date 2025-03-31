@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# exec 73>"/tmp/custom_wake.lock"
-# /opt/homebrew/bin/flock -n 73 || exit 0
-# bash -c '
+### exec 73>"/tmp/custom_wake.lock"
+### /opt/homebrew/bin/flock -n 73 || exit 0
+### bash -c '
+exec 73>"/tmp/custom_wake.lock"
+/opt/homebrew/bin/flock -n 73 || exit 0
     sleep 3
     sudo killall coreaudiod
     sleep 1
@@ -20,8 +22,10 @@
     killall "LogiTune" &> /dev/null
     sleep 1
     /opt/homebrew/bin/sketchybar --reload
-#    sleep 14 # flock debounce
-# '
+sleep 14  
+exec 73>&-  
+###    sleep 14 # flock debounce
+### '
 
 # /Users/*/Library/LaunchAgents/com.*.custom_start.plist
 #
