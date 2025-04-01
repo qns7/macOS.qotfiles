@@ -34,7 +34,7 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock)
     # ctrl + cmd - a : make an alias of the selected item (stock)
     ctrl + alt - a : sudo killall coreaudiod # return
-    ctrl + alt + cmd - a : return
+    ctrl + alt + cmd - a : skhd -k "shift - f15" # return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
     ctrl + alt - s : open_or_focus "System Settings"
@@ -52,7 +52,7 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     ctrl + alt + cmd - f : open_or_focus "Freeform"
 ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app very slow
     ctrl + cmd - g : open_or_focus "Guitar Pro 7"
-    ctrl + alt - g : return
+    ctrl + alt - g : open_or_focus "GIMP"
     ctrl + alt + cmd - g : return
 ctrl - h : return # backspace/delete (stock)
     ctrl + cmd - h : return
