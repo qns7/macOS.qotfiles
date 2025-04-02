@@ -5,7 +5,9 @@
 cmd - f1 : yabai --restart-service
 cmd - f2 : sketchybar --reload
 alt - delete : skhd -k "shift + alt - right"; skhd -k "backspace" # desirably stock
+# alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably stock
+# cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
