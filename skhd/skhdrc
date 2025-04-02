@@ -8,6 +8,8 @@ alt - delete : skhd -k "shift + alt - right"; skhd -k "backspace" # desirably st
 # alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably stock
 # cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
+alt + cmd - j: skhd -k "alt + cmd - left"
+alt + cmd - l: skhd -k "alt + cmd - right"
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
