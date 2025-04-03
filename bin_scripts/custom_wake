@@ -22,6 +22,7 @@ exec 73>"/tmp/custom_wake.lock"
     killall "LogiTune" &> /dev/null
     killall "foobar2000" &> /dev/null
     killall "Notes" &> /dev/null
+    /opt/homebrew/bin/yabai --restart-service
     sleep 1
     /opt/homebrew/bin/sketchybar --reload
     sleep 7
