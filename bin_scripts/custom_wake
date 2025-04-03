@@ -29,6 +29,7 @@ exec 73>"/tmp/custom_wake.lock"
     if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c | tr -d '[:space:]')" == "SoundIDReference" ]]; then
         /opt/homebrew/bin/skhd -k "shift + alt - f16"
     fi
+sleep 7
 # sleep 14
 exec 73>&-
 ###    sleep 14 # flock debounce
