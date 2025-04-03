@@ -20,10 +20,16 @@ exec 73>"/tmp/custom_wake.lock"
         /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
     fi
     killall "LogiTune" &> /dev/null
+    killall "foobar2000" &> /dev/null
+    killall "Notes" &> /dev/null
     sleep 1
     /opt/homebrew/bin/sketchybar --reload
-sleep 14  
-exec 73>&-  
+    sleep 7
+    if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c | tr -d '[:space:]')" == "SoundIDReference" ]]; then
+        /opt/homebrew/bin/skhd -k "shift + alt - f16"
+    fi
+# sleep 14
+exec 73>&-
 ###    sleep 14 # flock debounce
 ### '
 
