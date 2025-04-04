@@ -31,7 +31,7 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 # ctrl - 0x21 : window_management, snap current window top left quarter
 # ctrl - 0x1E : window_management, snap current window top right quarter
 
-ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock)
+ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), FIX PGREP NOT SHOWING FOOBAR sometimes...
     # ctrl + cmd - a : make an alias of the selected item (stock)
     ctrl + alt - a : skhd -k "shift - f15" # return
     ctrl + alt + cmd - a : sudo killall coreaudiod # return
