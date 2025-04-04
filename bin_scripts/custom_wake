@@ -7,30 +7,37 @@
 # # exec 73>"/tmp/custom_wake.lock"
 # # /opt/homebrew/bin/flock -n 73 || exit 0
     # # sleep 3
-    sudo killall coreaudiod
-    sleep 1
-    for i in {1..7}; do
-        if pgrep -x coreaudiod > /dev/null; then
-            break
+#        sudo killall coreaudiod
+#        sleep 1
+#        for i in {1..7}; do
+#            if pgrep -x coreaudiod > /dev/null; then
+#                break
+#            fi
+#            sleep 2
+#        done
+#        if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+#            /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+#        else
+#            /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
+#        fi
+        if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+            /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+        else
+            /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
         fi
-        sleep 2
-    done
-    if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
-        /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
-    else
-        /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
-    fi
+        sleep 1
+        sudo killall coreaudiod
     # # # sleep 2
     # # # /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 2 1
     # # # sleep 3
     # # # /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
-    sleep 1
-    killall "LogiTune" &> /dev/null
+#        sleep 1
+#        killall "LogiTune" &> /dev/null
     # killall "foobar2000" &> /dev/null
     # killall "Notes" &> /dev/null
     # /opt/homebrew/bin/yabai --restart-service
-    sleep 1
-    /opt/homebrew/bin/sketchybar --reload
+        sleep 1
+        /opt/homebrew/bin/sketchybar --reload
     # sleep 1 - MORE NEEDED!
     # if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c | tr -d '[:space:]')" == "SoundIDReference" ]]; then
     #     /opt/homebrew/bin/skhd -k "shift + alt - f16"

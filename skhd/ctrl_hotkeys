@@ -34,7 +34,7 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), FIX PGREP NOT SHOWING FOOBAR sometimes...
     # ctrl + cmd - a : make an alias of the selected item (stock)
     ctrl + alt - a : skhd -k "shift - f15" # return
-    ctrl + alt + cmd - a : sudo killall coreaudiod # ~/bin/custom_wake # return
+    ctrl + alt + cmd - a : ~/bin/custom_wake # sudo killall coreaudiod # ~/bin/custom_wake # return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
     ctrl + alt - s : open_or_focus "System Settings"
