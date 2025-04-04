@@ -4,9 +4,9 @@
 ### /opt/homebrew/bin/flock -n 73 || exit 0
 ### bash -c '
 
-##exec 73>"/tmp/custom_wake.lock"
-##/opt/homebrew/bin/flock -n 73 || exit 0
-    ##sleep 3
+# # exec 73>"/tmp/custom_wake.lock"
+# # /opt/homebrew/bin/flock -n 73 || exit 0
+    # # sleep 3
     sudo killall coreaudiod
     sleep 1
     for i in {1..7}; do
@@ -37,7 +37,7 @@
     # fi
 # sleep 14
 
-##exec 73>&-
+# # exec 73>&-
 ###    sleep 14 # flock debounce
 ### '
 
