@@ -19,17 +19,21 @@ exec 73>"/tmp/custom_wake.lock"
     else
         /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
     fi
+    sleep 2
+    /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 2 1
+    sleep 3
+    /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
+    sleep 1
     killall "LogiTune" &> /dev/null
-    killall "foobar2000" &> /dev/null
-    killall "Notes" &> /dev/null
-    /opt/homebrew/bin/yabai --restart-service
+    # killall "foobar2000" &> /dev/null
+    # killall "Notes" &> /dev/null
+    # /opt/homebrew/bin/yabai --restart-service
     sleep 1
     /opt/homebrew/bin/sketchybar --reload
-    sleep 7
-    if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c | tr -d '[:space:]')" == "SoundIDReference" ]]; then
-        /opt/homebrew/bin/skhd -k "shift + alt - f16"
-    fi
-sleep 7
+    # sleep 1 - MORE NEEDED!
+    # if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c | tr -d '[:space:]')" == "SoundIDReference" ]]; then
+    #     /opt/homebrew/bin/skhd -k "shift + alt - f16"
+    # fi
 # sleep 14
 exec 73>&-
 ###    sleep 14 # flock debounce
@@ -53,5 +57,30 @@ exec 73>&-
 #     <string>/tmp/custom_wake.log</string>
 #     <key>StandardErrorPath</key>
 #     <string>/tmp/custom_wake_error.log</string>
+# </dict>
+# </plist>
+
+# <?xml version="1.0" encoding="UTF-8"?>
+# <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+# <plist version="1.0">
+# <dict>
+#     <key>Label</key>
+#     <string>com.q.custom_start</string>
+#     <key>ProgramArguments</key>
+#     <array>
+#         <string>/Users/q/bin/custom_wake</string>
+#     </array>
+#     <key>RunAtLoad</key>
+#     <true/>
+#     <key>StandardOutPath</key>
+#     <string>/tmp/custom_wake.log</string>
+#     <key>StandardErrorPath</key>
+#     <string>/tmp/custom_wake_error.log</string>
+#     <key>KeepAlive</key>
+#     <dict>
+#         <key>SuccessfulExit</key>
+#         <false/>
+#     </dict>
+
 # </dict>
 # </plist>
