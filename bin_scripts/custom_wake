@@ -37,6 +37,7 @@
     # killall "Notes" &> /dev/null
     # /opt/homebrew/bin/yabai --restart-service
         sleep 1
+        /opt/homebrew/bin/yabai --restart-service
         /opt/homebrew/bin/sketchybar --reload
     # sleep 1 - MORE NEEDED!
     # if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c | tr -d '[:space:]')" == "SoundIDReference" ]]; then
