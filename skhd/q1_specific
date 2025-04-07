@@ -24,7 +24,7 @@ shift + alt - f17 : ~/bin/tmx_hotkey "f8"
 
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
-fn - 0x2A : skhd -k "shift - f14" # SwitchAudioSource -s "SoundID Reference"
+fn - 0x2A : skhd -k "shift - f14"
 alt - play : skhd -k "shift - f15"
 cmd - play : skhd -k "shift - f15"
 
