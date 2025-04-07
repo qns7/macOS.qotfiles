@@ -6,8 +6,7 @@ f14 : SwitchAudioSource -m toggle
 
 shift - f13 : curl -s "http://192.168.178.42:9123/elgato/lights" | grep -q '"on":1' && curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json" || curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":1}]}' -H "Content-Type: application/json"
 shift - f14 : SwitchAudioSource -s "SoundID Reference" # pmset sleepnow
-shift - f15 : pgrep -x foobar2000 && { OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); cliclick m:$OPOS }
-# ALSO RETURN TO SPACE!
+shift - f15 : pgrep -x foobar2000 && { OSPA=$(yabai -m query --spaces --space | jq -r '."index"'); OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); yabai -m space --focus $OSPA; cliclick m:$OPOS } # ALSO RETURN TO SPACE! done?
 shift - f16 : sendmidi dev "IAC Driver SID" cc 1 1
 shift - f17 : sendmidi dev "IAC Driver SID" cc 2 1
 
