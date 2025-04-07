@@ -5,7 +5,7 @@ f14 : SwitchAudioSource -m toggle
 # next
 
 shift - f13 : curl -s "http://192.168.178.42:9123/elgato/lights" | grep -q '"on":1' && curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json" || curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":1}]}' -H "Content-Type: application/json"
-shift - f14 : pmset sleepnow
+shift - f14 : SwitchAudioSource -s "SoundID Reference" # pmset sleepnow
 shift - f15 : pgrep -x foobar2000 && { OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); cliclick m:$OPOS }
 shift - f16 : sendmidi dev "IAC Driver SID" cc 1 1
 shift - f17 : sendmidi dev "IAC Driver SID" cc 2 1
@@ -21,7 +21,7 @@ shift + alt - f17 : ~/bin/tmx_hotkey "f8"
 
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
-fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
+fn - 0x2A : skhd -k "shift - f14" # SwitchAudioSource -s "SoundID Reference"
 alt - play : skhd -k "shift - f15"
 cmd - play : skhd -k "shift - f15"
 
