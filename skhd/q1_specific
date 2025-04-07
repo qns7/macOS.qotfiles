@@ -9,8 +9,7 @@ shift - f14 [
     "SoundID Reference" : open "keysmith://run-macro/4CF6609D-5962-485A-9D9B-D25CAC5F1DB6"
     * : open_or_focus "SoundID Reference"
 ]
-# SwitchAudioSource -s "SoundID Reference" # pmset sleepnow
-shift - f15 : pgrep -x foobar2000 && { OSPA=$(yabai -m query --spaces --space | jq -r '."index"'); OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); yabai -m space --focus $OSPA; cliclick m:$OPOS } # ALSO RETURN TO SPACE! done?
+shift - f15 : pgrep -x foobar2000 && { OSPA=$(yabai -m query --spaces --space | jq -r '."index"'); OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); yabai -m space --focus $OSPA; cliclick m:$OPOS }
 shift - f16 : sendmidi dev "IAC Driver SID" cc 1 1
 shift - f17 : sendmidi dev "IAC Driver SID" cc 2 1
 
