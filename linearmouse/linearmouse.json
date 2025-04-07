@@ -14,23 +14,6 @@
             "control": true
           },
           {
-            "button": 0,
-            "action": "mouse.button.left",
-            "control": true,
-            "option": true
-          },
-          {
-            "button": 0,
-            "action": "mouse.button.left",
-            "control": true,
-            "command": true
-          },
-          {
-            "button": 2,
-            "action": "lookUpAndDataDetectors",
-            "option": true
-          },
-          {
             "button": 3,
             "action": { "keyPress": ["command", "0"] },
             "option": true
