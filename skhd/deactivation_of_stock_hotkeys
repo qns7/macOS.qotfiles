@@ -15,7 +15,7 @@ alt - f15 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 cmd - h : return # hide
 alt + cmd - h : return # hide others
 cmd - m : return # minimize
-alt + cmd - m : return # minimize all
+alt + cmd - m : return # minimize all : ? or others? wayne...
 
 shift + alt + cmd - q : return # log out of your macOS user account immediately without confirming
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
