@@ -1,5 +1,9 @@
 # macOS (Sequoia 15.3.2+) Setup 24/25
 
+## General Information
+
+- I do not use hiding or minimizing at all in macOS, which is why I deactivated the correspoding hotkeys completely.
+
 ## Keyboard-Setup
 
 ...
