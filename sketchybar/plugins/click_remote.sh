@@ -10,9 +10,6 @@ else
     sketchybar --set remote icon.color=0xff4e4e4e
     sleep 1
     osascript -e 'tell application "Remote for Mac" to quit'
-    sleep 1 # 0.37
+    sleep 1
     /Users/q/.config/sketchybar/plugins/remote.sh
-    # osascript -e 'tell application "Remote for Mac" to quit'
-    # # sleep 1
-    # # sketchybar --set remote icon.color=0xff4e4e4e
 fi
