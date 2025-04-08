@@ -31,7 +31,7 @@ yabai -m signal --add event=application_terminated action="sketchybar --update"
 yabai -m signal --add event=window_created action="sketchybar --update"
 yabai -m signal --add event=window_destroyed action="sketchybar --update"
 
-# yabai -m signal --add event=system_woke action="~/bin/custom_wake" # , with .plist/launchd instead - NO!
+# yabai -m signal --add event=system_woke action="~/bin/custom_wake" # , with .plist/launchd instead - NO! DOCH: FOR LOGITUNE!
 yabai -m signal --add event=display_added action="~/bin/custom_wake"
 yabai -m signal --add event=display_removed action="~/bin/custom_wake" # ALL MANUAL NOW!!! --- no automation --- doch wieder, aber komplett gechanged
 
