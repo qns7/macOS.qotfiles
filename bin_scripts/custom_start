@@ -1,0 +1,27 @@
+#!/bin/bash
+
+sleep 3
+killall "LogiTune" &> /dev/null
+sleep 1
+/opt/homebrew/bin/sketchybar --reload
+
+# /Users/*/Library/LaunchAgents/com.*.custom_start.plist
+#
+# <?xml version="1.0" encoding="UTF-8"?>
+# <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+# <plist version="1.0">
+# <dict>
+#     <key>Label</key>
+#     <string>com.q.custom_start</string>
+#     <key>ProgramArguments</key>
+#     <array>
+#         <string>/Users/q/bin/custom_start</string>
+#     </array>
+#     <key>RunAtLoad</key>
+#     <true/>
+#     <key>StandardOutPath</key>
+#     <string>/tmp/custom_start.log</string>
+#     <key>StandardErrorPath</key>
+#     <string>/tmp/custom_start_error.log</string>
+# </dict>
+# </plist>
