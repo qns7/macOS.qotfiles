@@ -9,4 +9,5 @@ sleep 1
 sudo killall coreaudiod
 sleep 1
 /opt/homebrew/bin/yabai --restart-service
+sleep 1
 /opt/homebrew/bin/sketchybar --reload
