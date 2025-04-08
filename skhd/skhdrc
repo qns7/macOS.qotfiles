@@ -10,6 +10,8 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably st
 # cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 alt + cmd - j: skhd -k "alt + cmd - left"
 alt + cmd - l: skhd -k "alt + cmd - right"
+# play : pgrep -x foobar2000 && { OSPA=$(yabai -m query --spaces --space | jq -r '."index"'); OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); yabai -m space --focus $OSPA; cliclick m:$OPOS }
+# DO IT?
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
