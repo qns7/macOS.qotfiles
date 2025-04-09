@@ -1,15 +1,15 @@
 ctrl - q : open_or_focus "Notes"
-    # ctrl + cmd - q : quit_script # immediately lock your screen (stock), cf. 'skhdrc'
+    # ctrl + cmd - q : cf. 'skhdrc', immediately lock your screen (stock)
     ctrl + alt - q : return
-    ctrl + alt + cmd - q : return # pmset sleepnow # skhd -k "shift - f14" # return
+    ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"
-    # ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; skhd -k "fn - x"; sleep 0.07; sketchybar --update, cf. 'skhdrc'
-    ctrl + alt - w : open_or_focus "LibreOffice" # LibreOffice deinstallieren?
+    # ctrl + cmd - w : cf. 'skhdrc'
+    ctrl + alt - w : open_or_focus "LibreOffice" # DEINSTALL?
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') # osascript -e 'tell application "Finder" to activate' OR open -a Finder
     ctrl + alt - e : return
-    # ctrl + alt + cmd - e : KEYSMITH: applescript: 'tell application "TRex" to activate', for Windows App and Terminals
+    # ctrl + alt + cmd - e : cf. 'skhdrc'
 ctrl - r : open_or_focus Radioplayer
     ctrl + cmd - r : open_or_focus Reaper # swap character in text (stock)
     ctrl + alt - r : return
@@ -28,13 +28,13 @@ ctrl - i : open_or_focus "IINA"
 ctrl - o: open_or_focus "OBS" # insert a new line after the insertion point (stock)
 ctrl - p : open_or_focus "Passwords" # move up one line (stock)
     ctrl + cmd - p : open_or_focus "PDFGear"
-# ctrl - 0x21 : window_management, snap current window top left quarter
-# ctrl - 0x1E : window_management, snap current window top right quarter
+# ctrl - 0x21 : cf. 'window_space_and_display_management'
+# ctrl - 0x1E : cf. 'window_space_and_display_management'
 
-ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), FIX PGREP NOT SHOWING FOOBAR sometimes...
+ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), FIX PGREP NOT SHOWING FOOBAR !?
     # ctrl + cmd - a : make an alias of the selected item (stock)
-    ctrl + alt - a : skhd -k "shift - f15" # return
-    ctrl + alt + cmd - a : return # ~/bin/custom_wake # sudo killall coreaudiod # ~/bin/custom_wake # return
+    ctrl + alt - a : return
+    ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
     ctrl + alt - s : open_or_focus "System Settings"
@@ -63,8 +63,8 @@ ctrl - k : open_or_focus Keysmith # delete the text between the insertion point 
 ctrl - l : return # center the cursor or selection in the visible area (stock)
     # ctrl + cmd - l : show launchpad (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from none)
 ctrl - 0x29 : return
-# ctrl - 0x27 : window_management, snap current window bottom left quarter
-# ctrl - 0x2A : window_management, snap current window bottom right quarter
+# ctrl - 0x27 : cf. 'window_space_and_display_management'
+# ctrl - 0x2A : cf. 'window_space_and_display_management'
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
 
 ctrl - 0x32 : skhd -k "hyper - 0x32" # screenshot and recording options (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 5)
@@ -76,11 +76,11 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # save picture of screen as a file (ch
     ctrl + alt - y : return
     ctrl + alt + cmd - y : return
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # save picture of selected area as a file (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from shift + cmd - 4)
-    ctrl + cmd - x : return # texmaker perhaps?
+    ctrl + cmd - x : return # TEXMAKER ?
     ctrl + alt - x : return
     ctrl + alt + cmd - x : return
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
-    ctrl + cmd - c : return # skhd -k "fn - c" # show / hide control center (fn - c is stock)
+    ctrl + cmd - c : return
     ctrl + alt - c : return
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
