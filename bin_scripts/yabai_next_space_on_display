@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# mission_control() {
-#     skhd -k "ctrl + alt + cmd - 0x13"
-#     exit 0
-# }
-# trap 'mission_control' ERR
 if [ -f /tmp/mission_control.open ]; then
     skhd -k "ctrl + alt + cmd - 0x13"
 else
