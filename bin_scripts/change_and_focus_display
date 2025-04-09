@@ -17,7 +17,9 @@ else
         cliclick m:3460,603
     fi
     sleep 0.01
-    yabai -m window --focus mouse || (cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true')
+    # open "keysmith://run-macro/53DE0E44-C8A2-486F-9712-7994BA30F903"
+    yabai -m window --focus mouse || ([ "$(yabai -m query --spaces --space | jq -r '.windows | length')" -eq 0 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true' || cliclick m:+0,+21)
+    # yabai -m window --focus mouse || (cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true')
     sleep 0.01
     skhd -k "fn - x"
     sleep 0.1
