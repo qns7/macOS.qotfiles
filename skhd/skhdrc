@@ -8,8 +8,8 @@ alt - delete : skhd -k "shift + alt - right"; skhd -k "backspace" # desirably st
 # alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably stock
 # cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
-alt + cmd - j: skhd -k "alt + cmd - left"
-alt + cmd - l: skhd -k "alt + cmd - right" # Finder > Go > Downloads (stock)
+## alt + cmd - j: skhd -k "alt + cmd - left"
+## alt + cmd - l: skhd -k "alt + cmd - right" # Finder > Go > Downloads (stock)
 
 # play : pgrep -x foobar2000 && { OSPA=$(yabai -m query --spaces --space | jq -r '."index"'); OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); yabai -m space --focus $OSPA; cliclick m:$OPOS }
 # DO IT?

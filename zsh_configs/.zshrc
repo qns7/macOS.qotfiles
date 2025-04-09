@@ -25,6 +25,7 @@ alias k="cat ~/keyboard_info.txt"
 alias t="tty-clock -s -c -C 7 -D"
 alias cal="/opt/homebrew/opt/util-linux/bin/cal -m"
 
+alias ff="fastfetch"
 alias sf="sudo nano /etc/pam.d/sudo"
 alias sv="sudo visudo"
 
@@ -55,3 +56,4 @@ wt() {
 }
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
+alias ww="wakeonlan F0:76:1C:D2:7F:C7"

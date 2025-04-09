@@ -85,7 +85,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : open_or_focus "Cursor"
-    ctrl + alt - v : open_or_focus "Windows App"
+    ctrl + alt - v : open -a "Windows App"; sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
     ctrl + alt + cmd - v : return
 ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
