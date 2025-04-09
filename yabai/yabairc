@@ -31,9 +31,9 @@ yabai -m signal --add event=application_terminated action="sketchybar --update"
 yabai -m signal --add event=window_created action="sketchybar --update"
 yabai -m signal --add event=window_destroyed action="sketchybar --update"
 
-# yabai -m signal --add event=system_woke action="~/bin/custom_wake" # , with .plist/launchd instead - NO! DOCH: FOR LOGITUNE! but manually!
+# yabai -m signal --add event=system_woke action="~/bin/custom_wake" # manually now
 yabai -m signal --add event=display_added action="~/bin/custom_wake"
-yabai -m signal --add event=display_removed action="~/bin/custom_wake" # ALL MANUAL NOW!!! --- no automation --- doch wieder, aber komplett gechanged
+yabai -m signal --add event=display_removed action="~/bin/custom_wake"
 
 # yabai -m config window_opacity_duration 0.073
 # yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.73 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
@@ -47,4 +47,4 @@ yabai -m rule --add app="SoundID Reference" display=last
 # yabai -m config window_gap 3
 # borders active_color=0xffff9500 inactive_color=0x00000000 width=3.0 &
 
-# yabai -m config external_bar all:39:0
+# yabai -m config external_bar all:38:0
