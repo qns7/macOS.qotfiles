@@ -2,17 +2,9 @@
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
-# cmd - f1 : yabai --restart-service # custom_wake instead
-# cmd - f2 : sketchybar --reload # custom_wake instead
-alt - delete : skhd -k "shift + alt - right"; skhd -k "backspace" # desirably stock
-# alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
-cmd - delete : skhd -k "shift + cmd - right"; skhd -k "backspace" # desirably stock
-# cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
-## alt + cmd - j: skhd -k "alt + cmd - left"
-## alt + cmd - l: skhd -k "alt + cmd - right" # Finder > Go > Downloads (stock)
-
-# play : pgrep -x foobar2000 && { OSPA=$(yabai -m query --spaces --space | jq -r '."index"'); OPOS=$(cliclick p); open -a foobar2000; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"'); yabai -m space --focus $OSPA; cliclick m:$OPOS }
-# DO IT?
+# cmd - f1 / f2 : yabai --restart-service / sketchybar --reload # custom_wake instead
+alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
+cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
