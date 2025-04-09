@@ -1,7 +1,7 @@
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
     ctrl + alt - q : return
-    ctrl + alt + cmd - q : pmset sleepnow # skhd -k "shift - f14" # return
+    ctrl + alt + cmd - q : return # pmset sleepnow # skhd -k "shift - f14" # return
 ctrl - w : open_or_focus "TextEdit"
     ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; skhd -k "fn - x"; sleep 0.07; sketchybar --update
     ctrl + alt - w : open_or_focus "LibreOffice"
@@ -34,7 +34,7 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), FIX PGREP NOT SHOWING FOOBAR sometimes...
     # ctrl + cmd - a : make an alias of the selected item (stock)
     ctrl + alt - a : skhd -k "shift - f15" # return
-    ctrl + alt + cmd - a : ~/bin/custom_wake # sudo killall coreaudiod # ~/bin/custom_wake # return
+    ctrl + alt + cmd - a : return # ~/bin/custom_wake # sudo killall coreaudiod # ~/bin/custom_wake # return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
     ctrl + alt - s : open_or_focus "System Settings"

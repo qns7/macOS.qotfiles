@@ -2,7 +2,8 @@
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
-# cmd - f1 / f2 : yabai --restart-service / sketchybar --reload # custom_wake instead
+ctrl - 0x35 : pmset sleepnow
+shift + ctrl - 0x35 : ~/bin/custom_wake # cmd - f1 / f2 : yabai --restart-service / sketchybar --reload # custom_wake instead
 alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
