@@ -4,6 +4,8 @@
 
 ctrl - 0x35 : pmset sleepnow
 shift + ctrl - 0x35 : ~/bin/custom_wake
+ctrl + cmd - q : quit_script
+ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; skhd -k "fn - x"; sleep 0.07; sketchybar --update
 alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 

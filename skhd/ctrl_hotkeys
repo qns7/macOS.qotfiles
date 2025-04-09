@@ -1,10 +1,10 @@
 ctrl - q : open_or_focus "Notes"
-    ctrl + cmd - q : quit_script # immediately lock your screen (stock)
+    # ctrl + cmd - q : quit_script # immediately lock your screen (stock), cf. 'skhdrc'
     ctrl + alt - q : return
     ctrl + alt + cmd - q : return # pmset sleepnow # skhd -k "shift - f14" # return
 ctrl - w : open_or_focus "TextEdit"
-    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; skhd -k "fn - x"; sleep 0.07; sketchybar --update
-    ctrl + alt - w : open_or_focus "LibreOffice"
+    # ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; skhd -k "fn - x"; sleep 0.07; sketchybar --update, cf. 'skhdrc'
+    ctrl + alt - w : open_or_focus "LibreOffice" # LibreOffice deinstallieren?
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') # osascript -e 'tell application "Finder" to activate' OR open -a Finder
