@@ -3,7 +3,7 @@
 trap 'yabai -m config mouse_follows_focus off' EXIT
 if [ -f /tmp/mission_control.open ]; then
     yabai -m config mouse_follows_focus on
-    yabai -m display --focus next || yabai -m display --focus prev # bug / why I don't use this overall anymore: mouse_follows_focus when target space is empty (while yabai -m config mouse_follows_focus off)
+    yabai -m display --focus next || yabai -m display --focus prev
 else
     DISPLAYS=$(yabai -m query --displays)
     NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
