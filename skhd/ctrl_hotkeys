@@ -72,11 +72,17 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
     ctrl + alt - 0x32 : return
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
-    ctrl + cmd - y : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy
+    ctrl + cmd - y [
+        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
+        * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy
+    ]
     ctrl + alt - y : return
     ctrl + alt + cmd - y : return
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
-    ctrl + cmd - x : return # TEXMAKER ?
+    ctrl + cmd - x [
+        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
+        * ~
+    ]
     ctrl + alt - x : return
     ctrl + alt + cmd - x : return
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
