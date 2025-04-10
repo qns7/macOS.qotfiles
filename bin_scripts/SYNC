@@ -8,6 +8,8 @@ rsync -a /Users/q/bin/brewup /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/custom_wake /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/custom_start /Users/q/.config/bin_scripts/
 
+rsync -a /Users/q/bin/display_query_cliclick /Users/q/.config/bin_scripts/
+
 rsync -a /Users/q/bin/open_or_focus /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/open_folder /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/quit_script /Users/q/.config/bin_scripts/

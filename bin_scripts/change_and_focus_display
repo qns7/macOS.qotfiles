@@ -18,6 +18,7 @@ else
     fi
     sleep 0.01
     yabai -m window --focus mouse || cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+    # yabai -m display --focus $display_query_cliclick
     sleep 0.01
     skhd -k "fn - x"
     sleep 0.1

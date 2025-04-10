@@ -1,0 +1,13 @@
+#!/bin/bash
+
+NUM_DISPLAYS=$(yabai -m query --displays | jq length)
+if [ "$NUM_DISPLAYS" -eq 1 ]; then
+    echo 1
+    exit 0
+fi
+IFS=',' read -r cliclick_x cliclick_y <<< "$(cliclick p)"
+if [ "$cliclick_x" -gt 2560 ] || [ "$cliclick_y" -gt 1440 ]; then
+    echo 2
+else
+    echo 1
+fi
