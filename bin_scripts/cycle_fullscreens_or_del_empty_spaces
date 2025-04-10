@@ -5,7 +5,7 @@ CURRENT_SPACE_INDEX=$(echo "$SPACES" | jq '.[] | select(."has-focus") | .index')
 FULLSCREENS=$(echo "$SPACES" | jq '[.[] | select(."is-native-fullscreen")]')
 if [[ -z "$FULLSCREENS" || "$(echo "$FULLSCREENS" | jq 'length')" -eq 0 ]]; then
     echo "$SPACES" | jq -r '.[] | select(.windows == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
-    sleep 0.01
+    sleep 0.1
     skhd -k "fn - x"
     sleep 0.1
     sketchybar --update
@@ -16,5 +16,5 @@ if [[ -z "$NEXT_FULLSCREEN_INDEX" || "$NEXT_FULLSCREEN_INDEX" == "null" ]]; then
     exit 0
 fi
 yabai -m space --focus "$NEXT_FULLSCREEN_INDEX"
-sleep 0.01
+sleep 0.1
 skhd -k "fn - x"

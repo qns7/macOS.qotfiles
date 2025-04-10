@@ -5,7 +5,7 @@ yabai -m space --create
 INDEX="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
 yabai -m window --space "${INDEX}"
 yabai -m space --focus "${INDEX}"
-sleep 0.01
+sleep 0.1
 skhd -k "fn - x"
 sleep 0.1
 sketchybar --update

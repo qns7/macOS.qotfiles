@@ -17,6 +17,6 @@ else
         yabai -m space --focus ${@: -1}
     fi
     del_empty_spaces
-    sleep 0.01
+    sleep 0.1
     skhd -k "fn - x"
 fi

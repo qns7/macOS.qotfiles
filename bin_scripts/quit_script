@@ -57,7 +57,8 @@ else
     cliclick m:1280,720
     # DISPLAY_QUERY=1
 fi
-sleep 0.01
+# sleep 0.01
+sleep 0.1
 # yabai -m window --focus mouse || ([ $NUMBER_APPS -eq 1 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true' || cliclick -r m:+0,+21)
 
 # [[ $(yabai -m query --spaces --display $DISPLAY_QUERY | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
@@ -69,7 +70,7 @@ sleep 0.01
 
 # yabai -m display --focus $DISPLAY_QUERY
 # ([ $(yabai -m query --spaces --space | jq '."windows" | length') -eq 0 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
-sleep 0.01
+sleep 0.1
 skhd -k "fn - x"
 sleep 0.1
 sketchybar --update
