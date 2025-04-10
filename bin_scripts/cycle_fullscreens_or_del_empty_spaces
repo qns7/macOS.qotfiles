@@ -18,3 +18,5 @@ fi
 yabai -m space --focus "$NEXT_FULLSCREEN_INDEX"
 sleep 0.1
 skhd -k "fn - x"
+sleep 0.1
+cliclick m:+0,+137
