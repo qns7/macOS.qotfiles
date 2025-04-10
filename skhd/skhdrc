@@ -2,7 +2,7 @@
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
-# fn [+ alt] - 0x35 : cf 'fn_hotkeys'
+# fn [+ alt] - 0x35 : KEYSMITH: kb_light_0[/1]
 fn + shift - 0x35 : pmset sleepnow
 fn + alt - space : ~/bin/custom_wake
     # ctrl - 0x35 : pmset sleepnow
