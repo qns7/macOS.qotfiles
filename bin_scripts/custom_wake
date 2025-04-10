@@ -12,6 +12,6 @@ sleep 1
 sleep 1
 /opt/homebrew/bin/sketchybar --reload
 sleep 1
-if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c | tr -d '[:space:]')" == "SoundIDReference" ]]; then
+if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi

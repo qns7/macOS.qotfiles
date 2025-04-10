@@ -5,5 +5,6 @@ INDEX="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscr
 yabai -m space --focus "${INDEX}"
 sleep 0.01
 skhd -k "fn - x"
+cliclick c:. && sleep 0.1 && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
 sleep 0.1
 sketchybar --update

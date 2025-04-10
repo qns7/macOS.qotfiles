@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# trap 'yabai -m config mouse_follows_focus off' EXIT
-# yabai -m config mouse_follows_focus on
-# 
-WINDOWS_WINDOW=$(yabai -m query --windows --window) # "vereinfachen"
+WINDOWS_WINDOW=$(yabai -m query --windows --window) # SIMPLIFY ?!
 NUMBER_APPS=$(yabai -m query --windows --space | jq 'map(.app) | unique | length')
 DISPLAYS=$(yabai -m query --displays)
 NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
@@ -59,12 +56,6 @@ else
 fi
 sleep 0.01
 yabai -m window --focus mouse || ([ $NUMBER_APPS -eq 1 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true' || cliclick -r m:+0,+21)
-## if [[ "$(yabai -m query --spaces --space | jq -r '.windows | length')" -eq 0 ]]; then
-##     cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
-## else
-##     yabai -m window --focus mouse || cliclick -r m:+0,+21
-## fi
-# yabai -m window --focus mouse || cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
 sleep 0.01
 skhd -k "fn - x"
 sleep 0.1

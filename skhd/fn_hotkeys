@@ -53,7 +53,7 @@ fn - x : cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x 
     fn + alt - x : cliclick c:+0,+0
 # fn - c : show/hide control center (stock)
 fn - v : return # yabai -m display --focus next || yabai -m display --focus prev
-fn - b : return
+fn - b : return # [[ $(yabai -m query --spaces --space | jq -r '.windows | length') == 0 ]] && cliclick c:. # return # yabai -m config mouse_follows_focus on; yabai -m display --focus next || yabai -m display --focus prev; yabai -m config mouse_follows_focus off # return
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # to µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,

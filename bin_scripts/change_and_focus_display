@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# trap 'yabai -m config mouse_follows_focus off' EXIT
+# yabai -m config mouse_follows_focus on
+# yabai -m display --focus next || yabai -m display --focus prev
+# yabai -m window --focus mouse || [[ $(yabai -m query --spaces --space | jq -r '.windows | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true' #  || cliclick -r m:+0,+21)
+# sleep 0.01
+# skhd -k "fn - x"
+# sleep 0.1
+# sketchybar --update
+
 trap 'yabai -m config mouse_follows_focus off' EXIT
 if [ -f /tmp/mission_control.open ]; then
     yabai -m config mouse_follows_focus on
