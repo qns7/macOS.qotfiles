@@ -8,26 +8,34 @@ UUID_INBUILT_DISPLAY="37D8832A-2D66-02CA-B9F7-8F30A301B230"
 CURRENT_APP=$(echo "$WINDOWS_WINDOW" | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
 case "$CURRENT_APP_ALT" in
-    "Finder") skhd -k "cmd - w" ;;
+    "Finder") 
+        skhd -k "cmd - w"
+        ;;
     "LogiTune") 
         sketchybar --set logi icon.color=0xff4e4e4e
         osascript -e 'tell application "Logi Tune" to quit'
         sketchybar --update
         CURRENT_DISPLAY="$UUID_INBUILT_DISPLAY"
         ;;
-    "Threema Beta") killall ThreemaDesktop &> /dev/null ;;
+    "Threema Beta") 
+        killall ThreemaDesktop &> /dev/null
+        ;;
     "Thunderbird") 
         killall thunderbird &> /dev/null
         sleep 0.1
         ~/.config/sketchybar/plugins/badge.sh
         ;;
-    "OBS Studio") osascript -e 'tell application "OBS" to quit' ;;
+    "OBS Studio") 
+        osascript -e 'tell application "OBS" to quit'
+        ;;
     "TotalMix FX") 
         osascript -e 'tell application "TotalMix FX" to quit'
         yabai -m window --focus mouse
         exit
         ;;
-    "zoom.us") killall zoom.us ;;
+    "zoom.us") 
+        killall zoom.us
+        ;;
     "LibreOffice") osascript -e 'tell application "LibreOffice" to quit' ;;
     *) 
         if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
