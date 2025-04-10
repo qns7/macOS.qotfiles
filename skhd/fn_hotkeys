@@ -1,9 +1,9 @@
-# fn [+ alt] - 0x35 : cf 'skhdrc', esc
+# fn - 0x35 : cf 'skhdrc', esc
 # fn - f* : special features / standard function keys (stock)
 
-fn - 0x0A : return
-fn - 1 : return
-fn - 2 : return
+# fn - 0x0A : cf 'skhdrc', ^
+# fn - 1 : cf 'skhdrc'
+# fn - 2 : cf 'skhdrc'
 fn - 3 : return
 fn - 4 : return
 fn - 5 : return

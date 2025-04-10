@@ -2,11 +2,10 @@
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
-# fn [+ alt] - 0x35 : KEYSMITH: kb_light_0[/1]
-fn + shift - 0x35 : pmset sleepnow
-fn + alt - space : ~/bin/custom_wake
-    # ctrl - 0x35 : pmset sleepnow
-    # shift + ctrl - 0x35 : ~/bin/custom_wake
+fn - 0x35 : pmset sleepnow
+fn - 0x0A : ~/bin/custom_wake
+# fn - 1 : KEYSMITH: kb_light_0
+# fn - 2 : KEYSMITH: kb_light_1
 ctrl + cmd - q : quit_script
 ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; skhd -k "fn - x"; sleep 0.07; sketchybar --update
 # ctrl + alt + cmd - e : KEYSMITH: applescript: 'tell application "TRex" to activate', for Windows App and Terminals
