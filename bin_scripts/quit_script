@@ -1,6 +1,9 @@
 #!/bin/bash
 
-WINDOWS_WINDOW=$(yabai -m query --windows --window)
+# trap 'yabai -m config mouse_follows_focus off' EXIT
+# yabai -m config mouse_follows_focus on
+# 
+WINDOWS_WINDOW=$(yabai -m query --windows --window) # "vereinfachen"
 NUMBER_APPS=$(yabai -m query --windows --space | jq 'map(.app) | unique | length')
 DISPLAYS=$(yabai -m query --displays)
 NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
