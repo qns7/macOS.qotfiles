@@ -1,6 +1,6 @@
 #!/bin/bash
 
-WINDOWS_WINDOW=$(yabai -m query --windows --window) # SIMPLIFY ?!
+WINDOWS_WINDOW=$(yabai -m query --windows --window)
 NUMBER_APPS=$(yabai -m query --windows --space | jq 'map(.app) | unique | length')
 DISPLAYS=$(yabai -m query --displays)
 NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
