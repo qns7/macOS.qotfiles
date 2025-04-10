@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WINDOWS_WINDOW=$(yabai -m query --windows --window)
+NUMBER_APPS=$(yabai -m query --windows --space | jq 'map(.app) | unique | length')
 DISPLAYS=$(yabai -m query --displays)
 NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
 CURRENT_DISPLAY=$(echo "$DISPLAYS" | jq -r '.[] | select(.["has-focus"] == true) | .uuid')
@@ -54,7 +55,12 @@ else
     cliclick m:1280,720
 fi
 sleep 0.01
-yabai -m window --focus mouse || ([ "$(yabai -m query --spaces --space | jq -r '.windows | length')" -eq 0 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true' || cliclick -r m:+0,+21)
+yabai -m window --focus mouse || ([ $NUMBER_APPS -eq 1 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true' || cliclick -r m:+0,+21)
+## if [[ "$(yabai -m query --spaces --space | jq -r '.windows | length')" -eq 0 ]]; then
+##     cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+## else
+##     yabai -m window --focus mouse || cliclick -r m:+0,+21
+## fi
 # yabai -m window --focus mouse || cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
 sleep 0.01
 skhd -k "fn - x"
