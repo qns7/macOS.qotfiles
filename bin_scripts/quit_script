@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # NUM_WINDOWS=$(yabai -m query --spaces --space | jq '."windows" | length')
-WINDOWS_WINDOW=$(yabai -m query --windows --window)
-NUMBER_APPS=$(yabai -m query --windows --space | jq 'map(.app) | unique | length')
+# # WINDOWS_WINDOW=$(yabai -m query --windows --window)
+# NUMBER_APPS=$(yabai -m query --windows --space | jq 'map(.app) | unique | length')
 DISPLAYS=$(yabai -m query --displays)
 NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
 CURRENT_DISPLAY=$(echo "$DISPLAYS" | jq -r '.[] | select(.["has-focus"] == true) | .uuid')
 UUID_INBUILT_DISPLAY="37D8832A-2D66-02CA-B9F7-8F30A301B230"
-CURRENT_APP=$(echo "$WINDOWS_WINDOW" | jq -r '.app')
+CURRENT_APP=$(yabai -m query --windows --window | jq -r '.app')
 CURRENT_APP_ALT=$(sketchybar --query front_app | jq -r '.icon.value')
 case "$CURRENT_APP_ALT" in
     "Finder") 
@@ -52,15 +52,18 @@ if [[ $NUM_DISPLAYS -eq 1 ]]; then
     cliclick m:900,603
 elif [[ $CURRENT_DISPLAY == "$UUID_INBUILT_DISPLAY" ]]; then
     cliclick m:3460,603
-    DISPLAY_QUERY=2
+    # DISPLAY_QUERY=2
 else
     cliclick m:1280,720
-    DISPLAY_QUERY=1
+    # DISPLAY_QUERY=1
 fi
 sleep 0.01
 # yabai -m window --focus mouse || ([ $NUMBER_APPS -eq 1 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true' || cliclick -r m:+0,+21)
 
-[ $NUMBER_APPS -eq 1 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+# [[ $(yabai -m query --spaces --display $DISPLAY_QUERY | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+[[ $(yabai -m query --spaces --display $display_query_cliclick | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+
+# [ $NUMBER_APPS -eq 1 ] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
 # cliclick -r m:+0,+1
 # yabai -m window --focus mouse
 
