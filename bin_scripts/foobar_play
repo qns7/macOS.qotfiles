@@ -11,5 +11,5 @@ pgrep -x foobar2000 && {
     yabai -m space --focus "$OSPA"
     cliclick m:"$OPOS"
     [[ $(yabai -m query --spaces --space | jq -r '.windows | length') == 0 ]] && cliclick c:.
-  ) || /opt/homebrew/bin/yabai --restart-service
+  ) || /opt/homebrew/bin/yabai --restart-service # sometimes foobar2000 doesn't get recognized as a window
 }
