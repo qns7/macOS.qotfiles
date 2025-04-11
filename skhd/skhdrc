@@ -6,7 +6,7 @@ fn - 0x35 : pmset sleepnow
 fn - 0x0A : ~/bin/custom_wake
 # fn - 1 : KEYSMITH: kb_light_0
 # fn - 2 : KEYSMITH: kb_light_1
-fn - tab : sketchybar --update
+fn - tab : sketchybar --reload # --update
 fn - y : /opt/homebrew/bin/yabai --restart-service
 ctrl + cmd - q : quit_script
 ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update
