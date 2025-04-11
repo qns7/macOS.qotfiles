@@ -6,6 +6,6 @@ INDEX="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscr
 yabai -m window --space "${INDEX}"
 yabai -m space --focus "${INDEX}"
 sleep 0.1
-skhd -k "fn - x"
+~/bin/cliclick_focus
 sleep 0.1
 sketchybar --update

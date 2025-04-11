@@ -4,4 +4,4 @@
 # yabai -m config mouse_follows_focus on
 open -a "$1"
 sleep 0.1
-skhd -k "fn - x"
+~/bin/cliclick_focus

@@ -4,4 +4,4 @@ yabai -m window --display prev --focus
 sleep 0.1
 yabai -m window --grid 1:1:0:0:1:1
 sleep 0.1
-skhd -k "fn - x"
+~/bin/cliclick_focus

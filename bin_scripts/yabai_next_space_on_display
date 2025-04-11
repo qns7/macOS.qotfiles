@@ -18,5 +18,5 @@ else
     fi
     del_empty_spaces
     sleep 0.1
-    skhd -k "fn - x"
+    ~/bin/cliclick_focus
 fi
