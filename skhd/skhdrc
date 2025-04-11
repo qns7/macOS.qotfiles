@@ -35,7 +35,6 @@ alt + cmd - 0x14 : skhd -k "0xA0" # mission control
 # 3: Move right a space : ctrl + alt + cmd - 2 (changed from ctrl - right)
 # 4: Move focus to next window : hyper - tab (changed from cmd - `)
 alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); sketchybar --update
-
 # 4: Show contextual menu : ctrl - return (kept)
 # 6: Save picture of screen as a file : hyper - y (changed from shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage)
 # 6: Save picture of selected area as a file : hyper - x (changed from shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage)
