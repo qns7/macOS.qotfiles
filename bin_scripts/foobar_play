@@ -5,11 +5,13 @@ pgrep -x foobar2000 && {
     OSPA=$(yabai -m query --spaces --space | jq -r '."index"')
     OPOS=$(cliclick p)
     open -a foobar2000
-    sleep 0.07
+    sleep 0.1
     cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"')
     sleep 0.1
     yabai -m space --focus "$OSPA"
     cliclick m:"$OPOS"
     [[ $(yabai -m query --spaces --space | jq -r '.windows | length') == 0 ]] && cliclick c:.
+    sleep 0.1
+    sketchybar --update
   ) || /opt/homebrew/bin/yabai --restart-service # sometimes foobar2000 doesn't get recognized as a window
 }
