@@ -16,7 +16,7 @@ fn - 0x1B : skhd -k "shift + alt - 7" # to \
 fn - 0x18 : return # ´
 # fn - backspace/delete : forward delete (stock)
 
-fn - tab : return
+# fn - tab : cf 'skhdrc'
 fn - q : skhd -k "alt - l" # to @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 fn - w : return
 fn - e : skhd -k "alt - e" # to €, show the character viewer, from which you can choose emoji and other symbols (stock)
@@ -45,7 +45,7 @@ fn - 0x27 : return # ä
 # fn - return/enter = 0x4C: KEYSMITH: yabai_debugging [pent_to_fn_enter]
 
 fn - 0x32 : skhd -k "alt - 7" # < to |
-# fn - y :  cf 'skhdrc'
+# fn - y : cf 'skhdrc'
 fn - x : return
 # fn - c : show/hide control center (stock)
 fn - v : return
