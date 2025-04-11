@@ -76,15 +76,15 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
         * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy
     ]
-    ctrl + alt - y : return
-    ctrl + alt + cmd - y : return
+    ctrl + alt - y : cliclick m:+0,+21
+    # ctrl + alt + cmd - y : cf. KEYSMITH: do shell script "/opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1" [yabai -m window --focus mouse also moves like cliclick m:+0,-1 for some reason] / open "keysmith://run-macro/53DE0E44-C8A2-486F-9712-7994BA30F903"
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * ~
     ]
-    ctrl + alt - x : return
-    ctrl + alt + cmd - x : return
+    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
+    ctrl + alt + cmd - x : skhd -k "fn - x"
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
     ctrl + alt - c : return
