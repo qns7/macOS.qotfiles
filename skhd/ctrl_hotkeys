@@ -7,7 +7,7 @@ ctrl - w : open_or_focus "TextEdit"
     ctrl + alt - w : open_or_focus "LibreOffice" # DEINSTALL?
     ctrl + alt + cmd - w : open_or_focus "Pages"
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
-    ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"') # osascript -e 'tell application "Finder" to activate' OR open -a Finder
+    ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # osascript -e 'tell application "Finder" to activate' OR open -a Finder
     ctrl + alt - e : return
     # ctrl + alt + cmd - e : cf. 'skhdrc'
 ctrl - r : open_or_focus Radioplayer
@@ -91,7 +91,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : open_or_focus "Cursor"
-    ctrl + alt - v : open -a "Windows App"; sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')
+    ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
     ctrl + alt + cmd - v : return
 ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
