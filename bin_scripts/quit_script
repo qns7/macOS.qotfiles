@@ -35,7 +35,7 @@ case "$CURRENT_APP_ALT" in
     "zoom.us") 
         killall zoom.us
         ;;
-    "LibreOffice") osascript -e 'tell application "LibreOffice" to quit' ;;
+    # "LibreOffice") osascript -e 'tell application "LibreOffice" to quit' ;;
     *) 
         if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
             killall WhatsApp &> /dev/null

@@ -4,8 +4,8 @@ ctrl - q : open_or_focus "Notes"
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"
     # ctrl + cmd - w : cf. 'skhdrc'
-    ctrl + alt - w : open_or_focus "LibreOffice" # DEINSTALL?
-    ctrl + alt + cmd - w : open_or_focus "Pages"
+    ctrl + alt - w : open_or_focus "Pages"
+    ctrl + alt + cmd - w : return
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # osascript -e 'tell application "Finder" to activate' OR open -a Finder
     ctrl + alt - e : return
