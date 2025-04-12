@@ -76,14 +76,14 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
         * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy
     ]
-    ctrl + alt - y : cliclick m:+0,+21
+    # ctrl + alt - y : cf 'skhdrc'
     # ctrl + alt + cmd - y : cf 'skhdrc'
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * ~
     ]
-    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
+    # ctrl + alt - x : cf 'skhdrc'
     # ctrl + alt + cmd - x : cf 'skhdrc'
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
