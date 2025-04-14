@@ -36,20 +36,8 @@
             "option": true
           },
           {
-            "button": 2,
-            "action": { "run": "Users/q/.config/sketchybar/plugins/click_week.sh" },
-            "command": true,
-            "option": true
-          },
-          {
-            "button": 3,
-            "action": "appExpose",
-            "command": true,
-            "option": true
-          },
-          {
             "button": 4,
-            "action": "missionControl",
+            "action": { "run": "Users/q/.config/sketchybar/plugins/click_week.sh" },
             "command": true,
             "option": true
           }
