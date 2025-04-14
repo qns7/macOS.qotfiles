@@ -4,6 +4,7 @@ if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
 else
     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
+    sleep 3
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
     sleep 3
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
