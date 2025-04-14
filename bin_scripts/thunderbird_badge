@@ -5,7 +5,8 @@ if [ -z "$BOQ" ]; then
     sketchybar --set front_app icon.color=0xff4e4e4e
     yabai -m display --focus first
     sleep 0.1
-    create_and_focus_new_space
+    yabai -m space --create # changed from using create_and_focus_new_space because if ctrl is held down still, cliclick c:. will open context menu; but still: if ctrl is held, thunderbird is buggy: doesn't show emails..
+    yabai -m space --focus "$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
     sleep 0.1
     open_or_focus "thunderbird"
     sleep 2
