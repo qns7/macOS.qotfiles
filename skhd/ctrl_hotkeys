@@ -10,10 +10,10 @@ ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # osascript -e 'tell application "Finder" to activate' OR open -a Finder
     ctrl + alt - e : return
     # ctrl + alt + cmd - e : cf. 'skhdrc'
-ctrl - r : open_or_focus Radioplayer
-    ctrl + cmd - r : open_or_focus Reaper # swap character in text (stock)
+ctrl - r : open_or_focus Reaper
+    ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
-    ctrl + alt + cmd - r : return
+    ctrl + alt + cmd - r : open_or_focus Radioplayer
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
     ctrl + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # add the selected item to the sidebar (stock)
     ctrl + alt - t : open_or_focus "iTerm"
