@@ -36,6 +36,9 @@ case "$CURRENT_APP_ALT" in
         killall zoom.us
         ;;
     # "LibreOffice") osascript -e 'tell application "LibreOffice" to quit' ;;
+    "Davinci Resolve")
+        killall Resolve
+        ;;
     *) 
         if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
             killall WhatsApp &> /dev/null
