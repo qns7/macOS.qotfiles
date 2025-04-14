@@ -32,8 +32,8 @@ yabai -m signal --add event=window_created action="/opt/homebrew/bin/sketchybar 
 yabai -m signal --add event=window_destroyed action="/opt/homebrew/bin/sketchybar --update; sleep 0.73; /opt/homebrew/bin/sketchybar --update"
 
 # yabai -m signal --add event=system_woke action="~/bin/custom_wake" # manually now
-yabai -m signal --add event=display_added action="sleep 3; /Users/q/bin/custom_wake"
-yabai -m signal --add event=display_removed action="sleep 3; /Users/q/bin/custom_wake"
+# yabai -m signal --add event=display_added action="sleep 3; /Users/q/bin/custom_wake" # doesn't work (anymore)
+# yabai -m signal --add event=display_removed action="sleep 3; /Users/q/bin/custom_wake" # doesn't work (anymore)
 
 # yabai -m config window_opacity_duration 0.073
 # yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.73 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
