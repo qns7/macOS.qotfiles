@@ -79,6 +79,20 @@
 
 
     {
+      "buttons" : {
+        "mappings" : [
+          {
+            "action" : "mouse.button.left",
+            "button" : 0,
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "shift" : false
+          }
+        ]
+      },
+
+      
       "if": {
         "device": {
           "category": "trackpad",
