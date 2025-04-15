@@ -102,7 +102,7 @@
 #     echo "[step] No hotkey triggered"
 # fi
 
-echo "==== Script finished ===="
+# echo "==== Script finished ===="
 
 
 
