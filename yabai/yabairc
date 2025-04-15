@@ -36,6 +36,7 @@ yabai -m signal --add event=window_destroyed action="/opt/homebrew/bin/sketchyba
 ### yabai -m signal --add event=display_removed action="/Users/q/bin/custom_wake" # doesn't work (anymore)
 # yabai -m signal --add event=display_added action="touch /tmp/display_added_triggered" # testing
 # yabai -m signal --add event=display_removed action="touch /tmp/display_removed_triggered" # testing
+# ONLY MANUAL FRMO NOW ON!!!
 
 # yabai -m config window_opacity_duration 0.073
 # yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.73 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
