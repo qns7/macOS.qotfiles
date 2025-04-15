@@ -32,8 +32,8 @@ yabai -m signal --add event=window_created action="/opt/homebrew/bin/sketchybar 
 yabai -m signal --add event=window_destroyed action="/opt/homebrew/bin/sketchybar --update; sleep 0.73; /opt/homebrew/bin/sketchybar --update"
 
 # yabai -m signal --add event=system_woke action="~/bin/custom_wake" # manually now
-yabai -m signal --add event=display_added action="/Users/q/bin/custom_wake" # doesn't work (anymore)
-yabai -m signal --add event=display_removed action="/Users/q/bin/custom_wake" # doesn't work (anymore)
+### yabai -m signal --add event=display_added action="/Users/q/bin/custom_wake" # doesn't work (anymore)
+### yabai -m signal --add event=display_removed action="/Users/q/bin/custom_wake" # doesn't work (anymore)
 # yabai -m signal --add event=display_added action="touch /tmp/display_added_triggered" # testing
 # yabai -m signal --add event=display_removed action="touch /tmp/display_removed_triggered" # testing
 
