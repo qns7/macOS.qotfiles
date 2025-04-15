@@ -178,13 +178,16 @@ echo "==== Script finished ===="
 
 #!/bin/bash
 
+exec 200>/tmp/.custom_wake.lock
+flock -n 200 || exit 0
+
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
 else
     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
-    sleep 3
+    sleep 1
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
-    sleep 3
+    sleep 1
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
 fi
 sleep 1
