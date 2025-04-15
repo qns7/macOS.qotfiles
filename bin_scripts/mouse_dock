@@ -31,7 +31,7 @@ else
                 cliclick m:$SAVED_POS
                 rm -f "$POS_FILE"
                 rm -f "$WATCHER_PID_FILE"
-                del_empty_spaces # cool?
+                # del_empty_spaces # cool?
                 exit 0
             fi
         done
