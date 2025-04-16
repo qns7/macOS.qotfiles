@@ -4,7 +4,7 @@ TOQ=$(pgrep -x ThreemaDesktop)
 if [ -z "$TOQ" ]; then
     sketchybar --set front_app icon.color=0xff4e4e4e
     open_or_focus "Threema Beta"
-    sleep 1
+    sleep 3
     killall ThreemaDesktopLauncher
     sketchybar --set front_app icon.color=0xffc7c7c7
 else
