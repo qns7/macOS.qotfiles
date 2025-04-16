@@ -42,11 +42,11 @@ ctrl - s : open_or_focus "Safari"
 ctrl - d : mouse_dock # forward delete (stock) ---------> handle native-fullscreens?
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     ctrl + alt - d : skhd -k "hyper - d"; sleep 0.37; yabai -m window --focus mouse || cliclick -r m:+0,+21 # cf. 'skhdrc'
-    ctrl + alt + cmd - d : open_folder ~/Downloads
-    # ctrl + alt + cmd - d [
-    #     "Finder" : skhd -k "shift + cmd - o" # go to documents folder (stock)
-    #     * : open_folder ~/Downloads
-    # ]
+    # ctrl + alt + cmd - d : open_folder ~/Downloads
+    ctrl + alt + cmd - d [
+        "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock)
+        * : open_folder ~/Downloads
+    ]
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
