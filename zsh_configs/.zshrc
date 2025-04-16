@@ -19,9 +19,9 @@ alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
 alias rm="rm -i"
 alias ll="ls --color=auto -lah"
 
-alias c="clear"
 alias h="code ~/.zsh_history"
-alias t="tty-clock -s -c -C 7 -D"
+alias c="clear"
+alias t="clear; tty-clock -s -c -C 7 -D"
 alias k="clear; cat ~/keyboard_info.txt"
 alias a="clear; alias"
 alias cal="clear; /opt/homebrew/opt/util-linux/bin/cal -m"
