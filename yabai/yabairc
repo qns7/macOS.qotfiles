@@ -40,6 +40,7 @@ yabai -m signal --add event=window_destroyed action="/opt/homebrew/bin/sketchyba
 # yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.73 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
 
 yabai -m rule --add app="SoundID Reference" display=last
+yabai -m rule --add app="thunderbird" display=first
 
 # yabai -m config top_padding 3
 # yabai -m config bottom_padding 3
