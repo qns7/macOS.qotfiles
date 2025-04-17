@@ -7,7 +7,7 @@ pgrep -x foobar2000 && {
   sleep 0.1
   CLICLICK_DATA=$(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"')
   if [[ -z "$CLICLICK_DATA" ]]; then
-    /opt/homebrew/bin/yabai --restart-service
+    /Users/q/custom_wake # /opt/homebrew/bin/yabai --restart-service
   else
     cliclick "$CLICLICK_DATA"
     sleep 0.1
