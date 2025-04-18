@@ -13,11 +13,13 @@ else
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
 fi
 sleep 1
-sudo killall coreaudiod
-sleep 3.7
-if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
+# sleep 3.7
+# if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
+if [[ $(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq length) -eq 2 ]]; then
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi
+# sleep 3.7
 sleep 1
+sudo killall coreaudiod
 /opt/homebrew/bin/sketchybar --reload
 /opt/homebrew/bin/yabai --restart-service
