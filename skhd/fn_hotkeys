@@ -3,8 +3,8 @@
 
 # fn - 0x0A : cf 'skhdrc', ^
 # fn - 1 : cf 'skhdrc'
-# fn - 2 : cf 'skhdrc'
-fn - 3 : return
+fn - 2 : skhd -t "²"
+fn - 3 : skhd -t "³"
 fn - 4 : return
 fn - 5 : return
 fn - 6 : return
@@ -31,7 +31,7 @@ fn - 0x21 : return # ü
 fn - 0x1E : skhd -k "alt - n" # + to ~
 
 fn - a : return # show or hide the dock (stock)
-fn - s : return
+# fn - s : cf 'skhdrc'
 fn - d : return # start or stop dictation (stock)
 fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
