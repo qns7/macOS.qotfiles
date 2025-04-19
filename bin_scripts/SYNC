@@ -34,3 +34,4 @@ rsync -a /Users/q/bin/tmx_hotkey /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/foobar_play /Users/q/.config/bin_scripts/
 
 rsync -a /Users/q/bin/mouse_dock /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/show_desktop /Users/q/.config/bin_scripts/
