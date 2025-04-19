@@ -2,6 +2,7 @@
 
 skhd -k "hyper - d"
 sleep 0.37
+# cliclick_focus || {
 yabai -m window --focus mouse || {
     DISPLAYS=$(yabai -m query --displays)
     NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
