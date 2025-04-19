@@ -41,7 +41,7 @@ ctrl - s : open_or_focus "Safari"
     # ctrl + alt + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl - d : mouse_dock # forward delete (stock) ---------> handle native-fullscreens?
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
-    ctrl + alt - d : skhd -k "hyper - d"; sleep 0.37; yabai -m window --focus mouse || cliclick -r m:+0,+21 # cf. 'skhdrc'
+    ctrl + alt - d : skhd -k "hyper - d"; sleep 0.37; yabai -m window --focus mouse || cliclick c:. # -r m:+0,+21 # cf. 'skhdrc'
     # ctrl + alt + cmd - d : open_folder ~/Downloads
     ctrl + alt + cmd - d [
         "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock)
