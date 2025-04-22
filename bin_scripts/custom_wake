@@ -17,7 +17,7 @@ sleep 1
 if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi
-sleep 1
-sudo killall coreaudiod
 /opt/homebrew/bin/sketchybar --reload
 /opt/homebrew/bin/yabai --restart-service
+sleep 1
+sudo killall coreaudiod
