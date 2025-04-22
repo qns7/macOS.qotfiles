@@ -18,6 +18,14 @@ if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; the
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi
 /opt/homebrew/bin/sketchybar --reload
+sleep 1
 /opt/homebrew/bin/yabai --restart-service
 sleep 1
+# /opt/homebrew/bin/sketchybar --set audio icon.color=0xff4e4e4e
+# /opt/homebrew/bin/sketchybar --set audio label.color=0xff4e4e4e
 sudo killall coreaudiod
+# while ! pgrep -x "coreaudiod" > /dev/null; do
+#     sleep 0.1
+# done
+# /opt/homebrew/bin/sketchybar --set audio icon.color=0xffc7c7c7
+# /opt/homebrew/bin/sketchybar --set audio label.color=0xffc7c7c7
