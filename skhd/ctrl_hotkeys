@@ -1,6 +1,6 @@
 ctrl - q : open_or_focus "Notes"
     # ctrl + cmd - q : cf. 'skhdrc', immediately lock your screen (stock)
-    ctrl + alt - q : return
+    ctrl + alt - q : return # perhaps something with "date & time"?
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     # ctrl + cmd - w : cf. 'skhdrc'
@@ -15,9 +15,9 @@ ctrl - r : open_or_focus Reaper
     ctrl + alt - r : return
     ctrl + alt + cmd - r : open_or_focus Radioplayer
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
-    ctrl + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # add the selected item to the sidebar (stock)
+    # ctrl + cmd - t : KEYSMITH: date & date, add the selected item to the sidebar (stock)
     ctrl + alt - t : open_or_focus "iTerm"
-    # ctrl + alt + cmd - t : KEYSMITH: date # return
+    ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c"
 ctrl - z : open_or_focus "zoom.us"
     ctrl + cmd - z : return
     ctrl + alt - z : return
@@ -91,9 +91,9 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt - c : return
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
-    ctrl + cmd - v : open_or_focus "Cursor"
+    # ctrl + cmd - v : KEYSMITH: Shorten copied URL
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
-    ctrl + alt + cmd - v : return
+    ctrl + alt + cmd - v : open_or_focus "Cursor"
 ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
     ctrl + alt - b : return

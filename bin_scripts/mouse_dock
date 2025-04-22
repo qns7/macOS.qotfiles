@@ -16,7 +16,8 @@ else
     cliclick m:0,$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor') / 2))
     (
         PREV_POS=$(cliclick p)
-        START_TIME=$(date +%s)
+        # START_TIME=$(date +%s)
+        START_TIME=$(date +%s.%N)
         while [ -f "$POS_FILE" ]; do
             sleep 0.1
             CURR_POS=$(cliclick p)
@@ -25,8 +26,11 @@ else
                 rm -f "$WATCHER_PID_FILE"
                 exit 0
             fi
-            CURRENT_TIME=$(date +%s)
-            if (( CURRENT_TIME - START_TIME >= 3 )); then
+            # CURRENT_TIME=$(date +%s)
+            # if (( CURRENT_TIME - START_TIME >= 3 )); then
+            CURRENT_TIME=$(date +%s.%N)
+            ELAPSED=$(awk "BEGIN {print $CURRENT_TIME - $START_TIME}")
+            if (( $(echo "$ELAPSED >= 1.37" | bc -l) )); then
                 SAVED_POS=$(cat "$POS_FILE")
                 cliclick m:$SAVED_POS
                 rm -f "$POS_FILE"
