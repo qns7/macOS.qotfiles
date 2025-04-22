@@ -14,7 +14,8 @@
 # ctrl + alt + cmd - y : KEYSMITH: 'yabai_focus_mouse || cliclick_m'
   ctrl + alt + cmd - x : ~/bin/cliclick_focus
   ctrl + cmd - q : quit_script
-  ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
+  # ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
+  ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
 # ctrl + alt + cmd - e : KEYSMITH: applescript: 'tell application "TRex" to activate', for Windows App and Terminals
   alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
   cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
