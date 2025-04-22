@@ -2,7 +2,7 @@ ctrl - q : open_or_focus "Notes"
     # ctrl + cmd - q : cf. 'skhdrc', immediately lock your screen (stock)
     ctrl + alt - q : return
     ctrl + alt + cmd - q : return
-ctrl - w : open_or_focus "TextEdit"
+ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     # ctrl + cmd - w : cf. 'skhdrc'
     ctrl + alt - w : open_or_focus "Pages"
     ctrl + alt + cmd - w : return
