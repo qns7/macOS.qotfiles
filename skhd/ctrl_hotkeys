@@ -106,7 +106,7 @@ ctrl - m : open_or_focus "Audio MIDI Setup"
     ctrl + cmd - m : open_or_focus "Protokol"
 ctrl - 0x2B : return
 ctrl - 0x2F : return
-ctrl - 0x2C : return
+# ctrl - 0x2C : return, cf. 'skhdrc'
 ctrl - space : skhd -k "0xB1" # spotlight
     # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) [faster than 'Press *globe* key to']
     ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
