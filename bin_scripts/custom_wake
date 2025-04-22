@@ -19,6 +19,10 @@ if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; the
 fi
 /opt/homebrew/bin/sketchybar --reload
 sleep 1
+change_and_focus_display
+sleep 1
+change_and_focus_display
+sleep 1
 /opt/homebrew/bin/yabai --restart-service
 sleep 1
 # /opt/homebrew/bin/sketchybar --set audio icon.color=0xff4e4e4e
