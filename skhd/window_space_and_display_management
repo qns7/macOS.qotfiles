@@ -3,16 +3,22 @@ ctrl - down : yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + c
 ctrl - left : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window left half, move to a control adjacent to the text field (stock)
 ctrl - right : yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; ~/bin/cliclick_focus # snap current window right half, move to a control adjacent to the text field (stock)
 
-# ctrl + cmd - up : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top half, open the folder that contains the current folder in a new window (stock)
-# ctrl + cmd - down : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom half
+ctrl + cmd - up [
+    "Finder" ~ # open the folder that contains the current folder in a new window (stock)
+    "Notes" ~
+    * : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top half
+]
+ctrl + cmd - down [
+    "Notes" ~
+    * : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom half
+]
 alt - up [
     "Notes" : skhd -k "ctrl + cmd - up"
-    "Finder" : ~ # open the folder that contains the current folder in a new window (stock)
-    * : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top half
+    * ~
 ]
 alt - down [
     "Notes" : skhd -k "ctrl + cmd - down"
-    * : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom half
+    * ~
 ]
 ctrl + cmd - left : move_current_window_to_previous_display
 ctrl + cmd - right : move_current_window_to_next_display
