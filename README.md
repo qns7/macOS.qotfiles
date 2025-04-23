@@ -28,7 +28,7 @@
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
 - '**Behind the notch**': shutdown and restart (event aevtr) [clickable: execute]
 - '**Sketchybar e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
-- **Envelope**: indicator for new mails (Thunderbird) [clickable: open/focus Thunderbird]
+- **Envelope / XX**: indicator for new mails / Thunderbird quit [clickable: open/focus Thunderbird]
 - **CAM**: LogiTune [clickable: open/focus]
 - **ELG**: Elgato Control Center [clickable: openAndPopUp/quit]
 - **REM**: Remote+ [clickable: startServer/quit]
