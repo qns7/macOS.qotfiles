@@ -1,8 +1,8 @@
-# fn - 0x35 : cf 'skhdrc', esc
+# fn [+ alt] - 0x35 : cf 'skhdrc', esc
 # fn - f* : special features / standard function keys (stock)
 
 # fn - 0x0A : cf 'skhdrc', ^
-# fn - 1 : cf 'skhdrc'
+fn - 1 : return # something cool?
 fn - 2 : skhd -t "²"
 fn - 3 : skhd -t "³"
 fn - 4 : return
