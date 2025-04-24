@@ -4,8 +4,7 @@
 # flock -n 200 || exit 0
 
 sudo killall coreaudiod
-sleep 3.7
-
+sleep 2.1 # 3.7
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
 else
@@ -20,20 +19,7 @@ sleep 2.1
 if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi
-sleep 3.7
+sleep 2.1 # 3.7
 /opt/homebrew/bin/sketchybar --reload
-sleep 2.1
-# change_and_focus_display
-# sleep 1
-# change_and_focus_display
-# sleep 1
+sleep 1.37
 /opt/homebrew/bin/yabai --restart-service
-## sleep 3.7
-# /opt/homebrew/bin/sketchybar --set audio icon.color=0xff4e4e4e
-# /opt/homebrew/bin/sketchybar --set audio label.color=0xff4e4e4e
-## sudo killall coreaudiod
-# while ! pgrep -x "coreaudiod" > /dev/null; do
-#     sleep 0.1
-# done
-# /opt/homebrew/bin/sketchybar --set audio icon.color=0xffc7c7c7
-# /opt/homebrew/bin/sketchybar --set audio label.color=0xffc7c7c7
