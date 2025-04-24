@@ -8,6 +8,7 @@ ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --resta
     ctrl + alt + cmd - w : return
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # osascript -e 'tell application "Finder" to activate' OR open -a Finder
+                                                                                                                        # why this again??!?!?!
     ctrl + alt - e : return
     # ctrl + alt + cmd - e : cf. 'skhdrc'
 ctrl - r : open_or_focus Reaper
