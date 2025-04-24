@@ -69,7 +69,7 @@ ctrl - 0x29 : return
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
 
 ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
-    ctrl + cmd - 0x32 : return
+    # ctrl + cmd - 0x32 : cf. 'skhdrc'
     ctrl + alt - 0x32 : return
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'

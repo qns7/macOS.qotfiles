@@ -3,11 +3,12 @@
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
   fn + alt - 0x35 : pmset sleepnow # esc
-  fn - 0x35 : skhd -k "hyper - 0x35" # only-switch key light toggle, ^ # # # fn - 0x35/0x0A : only-switch key light toggle, KEYSMITH: kb_light_1, esc/^ # # # fn - 0x12 : KEYSMITH: kb_light_0, 1
+  fn - 0x35 : skhd -k "hyper - 0x35" # only-switch : key light toggle, ^ # # # fn - 0x35/0x0A : only-switch key light toggle, KEYSMITH: kb_light_1, esc/^ # # # fn - 0x12 : KEYSMITH: kb_light_0, 1
   fn - 0x0A : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
   fn - s : sketchybar --reload # --update
   fn - y : /opt/homebrew/bin/yabai --restart-service
     ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
+# ctrl + cmd - 0x32 : only-switch : show list, <
   ctrl + alt - y : cliclick m:+0,+21
   ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
 # ctrl + alt + cmd - y : KEYSMITH: 'yabai_focus_mouse || cliclick_m'
