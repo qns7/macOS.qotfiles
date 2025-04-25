@@ -2,36 +2,29 @@
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
-  # fn + alt - 0x35 : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
-  fn - 0x35 : skhd -k "f18" # hyper - 0x35" # only-switch : key light toggle, ^ # # # fn - 0x35/0x0A : only-switch key light toggle, KEYSMITH: kb_light_1, esc/^ # # # fn - 0x12 : KEYSMITH: kb_light_0, 1
-  fn - w : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
-  fn - s : pmset sleepnow # esc
-  # fn + shift - 0x35 : pmset sleepnow # esc
-  # fn - 0x0A : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
-  # fn - x : return # skhd -k "f19" # "shift + alt + cmd - space"
-  fn - b : sketchybar --reload # --update
-  # fn - s : sketchybar --reload # --update
+
+  fn - 0x35 : skhd -k "f18" # only-switch : key light toggle
+  fn - w : ~/bin/custom_wake
+  fn - s : pmset sleepnow
   fn - y : /opt/homebrew/bin/yabai --restart-service
     ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
-# # # # # # ctrl + cmd - 0x32 : only-switch : show list, < NO!
+  fn - b : sketchybar --reload # --update
   ctrl + alt - y : cliclick m:+0,+21
   ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
-# ctrl + alt + cmd - y : KEYSMITH: 'yabai_focus_mouse || cliclick_m'
+# ctrl + alt + cmd - y : keysmith :: 'yabai_focus_mouse || cliclick_m'
   ctrl + alt + cmd - x : ~/bin/cliclick_focus
   ctrl + cmd - q : quit_script
   ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
-    # ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; yabai -m window --focus mouse; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
-# ctrl + alt + cmd - e : KEYSMITH: applescript: 'tell application "TRex" to activate', for Windows App and Terminals
+# ctrl + alt + cmd - e : keysmith : applescript: 'tell application "TRex" to activate', for Windows App and Terminals
   alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
   cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
-
-cmd - play : skhd -k "shift - f15"
-cmd - f8 : skhd -k "shift - f15"
-mute : SwitchAudioSource -m toggle
-cmd - f10 : SwitchAudioSource -m toggle
-alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
-fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
-fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
+  cmd - play : skhd -k "shift - f15"
+  cmd - f8 : skhd -k "shift - f15"
+  mute : SwitchAudioSource -m toggle
+  cmd - f10 : SwitchAudioSource -m toggle
+  alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
+  fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
+  fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
