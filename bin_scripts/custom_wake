@@ -3,6 +3,7 @@
 # exec 200>/tmp/custom_wake.lock
 # flock -n 200 || exit 0
 
+/opt/homebrew/bin/sketchybar --set audio drawing=off
 sudo killall coreaudiod
 sleep 2.1 # 3.7
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
