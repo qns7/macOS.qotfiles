@@ -22,6 +22,14 @@
   alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
   cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
+cmd - play : skhd -k "shift - f15"
+cmd - f8 : skhd -k "shift - f15"
+mute : SwitchAudioSource -m toggle
+cmd - f10 : SwitchAudioSource -m toggle
+alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
+fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
+fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
+
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
 .load "window_space_and_display_management"
