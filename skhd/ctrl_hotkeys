@@ -38,7 +38,7 @@ ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or parag
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
-    ctrl + alt - s : open_or_focus "System Settings"
+    ctrl + alt - s : open -a "System Settings"; sleep 1; open_or_focus "System Settings" # ; sleep 2.1; ! pgrep "System Settings" >/dev/null && open_or_focus "System Settings"
     # ctrl + alt + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl - d : mouse_dock # forward delete (stock) ---------> handle native-fullscreens?
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
@@ -52,8 +52,8 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
     ctrl + alt + cmd - f : open_or_focus "Freeform"
-ctrl - g : open_or_focus ChatGPT # open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app very slow - better now (07:54, 23.04.25, WED)?
-    ctrl + cmd - g : open_or_focus ~/Applications/ChatGPT.app
+ctrl - g : open_or_focus ~/Applications/ChatGPT.app # ChatGPT # open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app very slow - better now (07:54, 23.04.25, WED)?
+    ctrl + cmd - g : open_or_focus ChatGPT # ~/Applications/ChatGPT.app
     ctrl + alt - g : open_or_focus "Guitar Pro 7" # open_or_focus "GIMP"
     ctrl + alt + cmd - g : return
 ctrl - h : return # backspace/delete (stock)
