@@ -23,7 +23,7 @@ source $ITEM_DIR/front_app.sh
 source $ITEM_DIR/percentages.sh
 source $ITEM_DIR/bar_q_0.sh
 source $ITEM_DIR/fn.sh # click
-# source $ITEM_DIR/bar_q_1.sh
+source $ITEM_DIR/bar_q_1.sh
 # source $ITEM_DIR/kb.sh # click
 
 source $ITEM_DIR/shutdown.sh # click
