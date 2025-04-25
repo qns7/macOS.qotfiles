@@ -2,12 +2,15 @@
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
-  fn + alt - 0x35 : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
+  # fn + alt - 0x35 : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
   fn - 0x35 : skhd -k "f18" # hyper - 0x35" # only-switch : key light toggle, ^ # # # fn - 0x35/0x0A : only-switch key light toggle, KEYSMITH: kb_light_1, esc/^ # # # fn - 0x12 : KEYSMITH: kb_light_0, 1
-  fn + shift - 0x35 : pmset sleepnow # esc
+  fn - w : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
+  fn - s : pmset sleepnow # esc
+  # fn + shift - 0x35 : pmset sleepnow # esc
   # fn - 0x0A : ~/bin/custom_wake # fn - tab : ~/bin/custom_wake
-  fn - x : return # skhd -k "f19" # "shift + alt + cmd - space"
-  fn - s : sketchybar --reload # --update
+  # fn - x : return # skhd -k "f19" # "shift + alt + cmd - space"
+  fn - b : sketchybar --reload # --update
+  # fn - s : sketchybar --reload # --update
   fn - y : /opt/homebrew/bin/yabai --restart-service
     ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
 # # # # # # ctrl + cmd - 0x32 : only-switch : show list, < NO!

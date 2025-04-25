@@ -16,7 +16,7 @@ ctrl - r : open_or_focus Reaper
     ctrl + alt - r : return
     ctrl + alt + cmd - r : return # open_or_focus Radioplayer
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
-    # ctrl + cmd - t : KEYSMITH: date & date, add the selected item to the sidebar (stock)
+    # ctrl + cmd - t : keysmith : date & date, add the selected item to the sidebar (stock)
     ctrl + alt - t : open_or_focus "iTerm"
     ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c"
 ctrl - z : open_or_focus "zoom.us"
@@ -92,7 +92,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt - c : return
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
-    # ctrl + cmd - v : KEYSMITH: Shorten copied URL
+    # ctrl + cmd - v : keysmith : shorten copied url
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
     ctrl + alt + cmd - v : open_or_focus "Cursor"
 ctrl - b : thunderbird_badge # move one character backward (stock)

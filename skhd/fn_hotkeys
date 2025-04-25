@@ -1,25 +1,25 @@
-# fn [+ ...] - 0x35 : cf 'skhdrc', esc
+# fn - 0x35 : cf. 'skhdrc', esc
 # fn - f* : special features / standard function keys (stock)
 
-fn - 0x0A : return # cf 'skhdrc', ^
-fn - 1 : return # something cool?
+fn - 0x0A : return # ^
+fn - 1 : return
 fn - 2 : skhd -t "²"
 fn - 3 : skhd -t "³"
 fn - 4 : return
 fn - 5 : return
 fn - 6 : return
-fn - 7 : skhd -k "alt - 8" # to {
-fn - 8 : skhd -k "alt - 5" # to [
-fn - 9 : skhd -k "alt - 6" # to ]
-fn - 0 : skhd -k "alt - 9" # to }
-fn - 0x1B : skhd -k "shift + alt - 7" # to \
+fn - 7 : skhd -k "alt - 8" # {
+fn - 8 : skhd -k "alt - 5" # [
+fn - 9 : skhd -k "alt - 6" # ]
+fn - 0 : skhd -k "alt - 9" # }
+fn - 0x1B : skhd -k "shift + alt - 7" # \
 fn - 0x18 : return # ´
 # fn - backspace/delete : forward delete (stock)
 
-fn - tab : return # cf. 'skhdrc' # fn - tab : return
-fn - q : skhd -k "alt - l" # to @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
-fn - w : return
-fn - e : skhd -k "alt - e" # to €, show the character viewer, from which you can choose emoji and other symbols (stock)
+fn - tab : return
+fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
+# fn - w : cf. 'skhdrc'
+fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
 fn - r : skhd -k "hyper - r" # only-switch : radio
 fn - t : skhd -k "hyper - t" # only-switch : timer (pomodoro)
 fn - z : return
@@ -28,10 +28,10 @@ fn - i : return
 fn - o : return
 fn - p : return
 fn - 0x21 : return # ü
-fn - 0x1E : skhd -k "alt - n" # + to ~
+fn - 0x1E : skhd -k "alt - n" # +, ~
 
 fn - a : return # show or hide the dock (stock)
-# fn - s : cf 'skhdrc'
+# fn - s : cf. 'skhdrc'
 fn - d : return # start or stop dictation (stock)
 fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
@@ -41,17 +41,17 @@ fn - k : return
 fn - l : return
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
-# fn - 0x2A : 'SwitchAudioSource -s "SoundID Reference"'' cf. 'q1_specific', #
-# fn - return/enter = 0x4C: KEYSMITH: yabai_debugging [pent_to_fn_enter]
+# fn - 0x2A : cf. 'q1_specific', #
+# fn - return/enter = 0x4C: keysmith : yabai_debugging [pent_to_fn_enter]
 
-fn - 0x32 : skhd -k "alt - 7" # < to |
-# fn - y : cf 'skhdrc'
+fn - 0x32 : skhd -k "alt - 7" # <, |
+# fn - y : cf. 'skhdrc'
 # fn - x : cf. 'skhdrc'
 # fn - c : show/hide control center (stock)
 fn - v : return
 fn - b : skhd -k "hyper - b" # only-switch : background noise
 # fn - n : show(/hide) notification center (stock)
-fn - m : skhd -k "alt - m" # to µ
+fn - m : skhd -k "alt - m" # µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,
 # fn - 0x2F : sysdiagnose (stock), .
 fn - 0x2C : return # -
