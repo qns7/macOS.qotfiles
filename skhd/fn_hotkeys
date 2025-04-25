@@ -20,8 +20,8 @@ fn - tab : return # cf. 'skhdrc' # fn - tab : return
 fn - q : skhd -k "alt - l" # to @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 fn - w : return
 fn - e : skhd -k "alt - e" # to €, show the character viewer, from which you can choose emoji and other symbols (stock)
-fn - r : return
-fn - t : return
+fn - r : skhd -k "hyper - r" # only-switch : radio
+fn - t : skhd -k "hyper - t" # only-switch : timer (pomodoro)
 fn - z : return
 fn - u : return
 fn - i : return
@@ -49,7 +49,7 @@ fn - 0x32 : skhd -k "alt - 7" # < to |
 # fn - x : cf. 'skhdrc'
 # fn - c : show/hide control center (stock)
 fn - v : return
-fn - b : return
+fn - b : skhd -k "hyper - b" # only-switch : background noise
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # to µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,
