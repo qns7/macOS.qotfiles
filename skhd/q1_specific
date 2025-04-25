@@ -26,8 +26,15 @@ alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
 
-alt - play : skhd -k "shift - f15"
+# alt - play : skhd -k "shift - f15"
 cmd - play : skhd -k "shift - f15"
+# cmd - f7 : skhd -k "previous"
+cmd - f8 : skhd -k "shift - f15"
+# cmd - f9 : skhd -k "next"
+mute : SwitchAudioSource -m toggle
+cmd - f10 : SwitchAudioSource -m toggle
+# cmd - f11 : skhd -k "sound_down"
+# cmd - f12 : skhd -k "sound_up"
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # q1 qmk keymap : imitates inbuilt
