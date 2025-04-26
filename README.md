@@ -24,7 +24,8 @@ ____     C(GRV)   C(Z)     C(X)     C(C)     C(V)     C(B)     C(N)     C(M)    
 ____     ____     ____                                         C(SPC)                     ____     ____     ____     HOME     PGDN     END
 ```
 
-To mimic the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my skhd config
+It is meant to mimic the inuilt keyboard with its layout as best as possible.
+To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my skhd config
 
 ```
 f15 : skhd -k "0xB1" # spotlight
@@ -70,6 +71,15 @@ Since the _Control_ key has basically no function in macOS other than the Termin
 ```
 
 in my skhdrc to ensure a functioning _Control_ key where I need it.
+
+Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...`or I overwrote them with skhd, e.g.: 
+
+`fn + shift - a : return # show launchpad`
+
+My goal was/is to have three modifiers (or modifier-pairs) which together with the available action keys control my whole system:
+1. Control
+2. Globe/fn
+3. Option+Command
 
 ### Caveats
 
