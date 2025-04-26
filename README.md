@@ -4,6 +4,7 @@
 
 - I do not use hiding or minimizing at all in macOS, which is why I deactivated the correspoding hotkeys completely.
 - This description/readme is just an overview, for all the details please check the rep.
+- I don't like using Raycast or Alfred or something similar since the inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the results on Youtube. There are many such "shebangs" for DuckDuckGo.
 
 ## Keyboard-Setup
 
@@ -82,7 +83,7 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 My goal was/is to have three modifiers (or modifier-pairs) which together with the available action keys control my whole system:
 _Control_, _Globe/fn_ and _Option+Command_.
 
-I will now list some important hotkey categories with selection of their acoording hotkeys - to get an idea of the 'system':
+I will now list some important hotkey categories with selection of their acoording hotkeys - to get an idea of the 'system' - I deliberately don't list all stuff you can find in the dotfiles, because they are mostly too specific to my own system. Features that are stock in macOS I will write capitalized and bold.
 
 ### space and display management ###
 
@@ -198,7 +199,7 @@ CTRL ...                           ... ä        # ...
 
 `ctrl + cmd - space` : Show the character viewer, from which you can choose emoji and other symbols
 
----
+-
 
 `fn - f*` : F* / Special Function
 
