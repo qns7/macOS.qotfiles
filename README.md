@@ -199,13 +199,17 @@ CTRL ...                           ... ä        # ...
 
 `ctrl + cmd - space` : Show the character viewer, from which you can choose emoji and other symbols
 
--
+---
 
 `fn - f*` : F* / Special Function
 
 `fn - backspace` : Forward Delete
 
 `fn - esc` : toggle keyboard backlight
+
+`fn - w` : executes custom bash script
+
+`fn - s` : Sleep immediately
 
 `fn - r` : start/stop radio
 
@@ -223,10 +227,13 @@ CTRL ...                           ... ä        # ...
 
 `fn - n` : show/hide notification center
 
-`fn - arrows` : home/pageup/pagedown/end
+`fn - arrows` : Home, PageUp, PageDown, End
 
+---
 
+`alt - delete` : 'reversing' `alt - backspace` which should clearly be stock
 
+`cmd - delete` : 'reversing' `cmd - backspace` which should clearly be stock
 
 ...
 
