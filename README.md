@@ -41,19 +41,19 @@ Therefore from now on `CAPS` will be replaced with `CTRL` and `C( ... )` with `F
 The additional keys of the Q1 I use as follows
 
 ```
-... F13      F14
-...          MPLY
-...          MPRV
-...          MNXT
-...
-...
-... ---------------
-... S(F13)   S(F14)
-...          S(F15)
-...          S(F16)
-...          S(F17)
-...
-...
+F13      F14
+         MPLY
+         MPRV
+         MNXT
+
+
+---------------
+S(F13)   S(F14)
+         S(F15)
+         S(F16)
+         S(F17)
+
+
 ```
 
 where 
@@ -89,12 +89,12 @@ I will now list some important hotkey categories with a selection of their accor
 ### space and display management ###
 
 ```
-                             ...
-^        1        2        3 ...
-                  W        E ...
-                           D ...
-(LSFT)                       ...
-         LOPT     LCMD       ...
+                            
+^        1        2        3
+                  W        E
+                           D
+(LSFT)                      
+         LOPT     LCMD      
 ```
 
 
@@ -117,12 +117,12 @@ I will now list some important hotkey categories with a selection of their accor
 ### window management ###
 
 ```
-                                       ...
-                                       ...
-                                       ... ü        + ...
-CTRL ...                               ... ä        # ...
-                                                                  ... UP
-                  (LCMD) ...                             ... LEFT     DOWN     RGHT
+                                 ...
+                                 ...
+                                 ...         ü        +
+CTRL                             ...         ä        #
+                                 ...                  UP
+                  (LCMD)         ...         LEFT     DOWN     RGHT
 ```
 
 
