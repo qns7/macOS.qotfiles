@@ -77,9 +77,7 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 `fn + shift - a : return # show launchpad`
 
 My goal was/is to have three modifiers (or modifier-pairs) which together with the available action keys control my whole system:
-1. Control
-2. Globe/fn
-3. Option+Command
+_Control_, _Globe/fn_ and _Option+Command_.
 
 ### Caveats
 
