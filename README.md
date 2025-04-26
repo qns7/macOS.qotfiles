@@ -32,7 +32,7 @@ f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 ```
 
-The additional keys of the Q1 
+The additional keys of the Q1 I use as follows
 
 ```
 ... F13      F14
@@ -47,8 +47,12 @@ The additional keys of the Q1
 ...          S(F16)
 ...          S(F17)
 ```
-I use as follows: 
+
+where 
+
+```
 ...
+```
 
 ## Yabai/SKHD/Menuwhere/AltTab
 
