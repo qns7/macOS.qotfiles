@@ -3,6 +3,7 @@
 ## General Information
 
 - I do not use hiding or minimizing at all in macOS, which is why I deactivated the correspoding hotkeys completely.
+- This description/readme is just an overview, for all the details please check the rep.
 
 ## Keyboard-Setup
 
