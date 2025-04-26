@@ -1,0 +1,12 @@
+#!/bin/bash
+
+steps=(100 94 88 81 75 69 63 56 50 44 38 31 25 19 13 6 0)
+current_volume=$(osascript -e "output volume of (get volume settings)")
+prev_step=0
+for step in "${steps[@]}"; do
+    if (( current_volume > step )); then
+        prev_step=$step
+        break
+    fi
+done
+osascript -e "set volume output volume $prev_step"

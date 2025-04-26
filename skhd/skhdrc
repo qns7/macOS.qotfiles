@@ -9,6 +9,7 @@
   fn - y : /opt/homebrew/bin/yabai --restart-service
   fn - x : /opt/homebrew/bin/sketchybar --reload # --update
     ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
+
   ctrl + alt - y : cliclick m:+0,+21
   ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
 # ctrl + alt + cmd - y : keysmith :: 'yabai_focus_mouse || cliclick_m'
@@ -16,13 +17,22 @@
   ctrl + cmd - q : quit_script
   ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
 # ctrl + alt + cmd - e : keysmith : applescript: 'tell application "TRex" to activate', for Windows App and Terminals
+
   alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
   cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
+
   cmd - play : skhd -k "shift - f15"
   cmd - f8 : skhd -k "shift - f15"
-  # mute : skhd -k "f14" # SwitchAudioSource -m toggle
-  cmd - mute : skhd -k "f14" # SwitchAudioSource -m toggle
-  cmd - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
+
+  # mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
+  alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle
+  alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
+  # sound_down : osascript -e "set volume output volume (output volume of (get volume settings) - 5)" # doesn't work
+  # sound_up : osascript -e "set volume output volume (output volume of (get volume settings) + 5)" # doesn't work
+  # 0, 6, 13, 19, 25, 31, 38, 44, 50, 56, 63, 69, 75, 81, 88, 94, 100
+  alt - f11 : ~/bin/volume_down
+  alt - f12 : ~/bin/volume_up
+
   alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
   fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
   fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
@@ -53,7 +63,7 @@ alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketc
 # 4: Show contextual menu : ctrl - return (kept)
 # 6: Save picture of screen as a file : hyper - y (changed from shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage)
 # 6: Save picture of selected area as a file : hyper - x (changed from shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage)
-# 6: Screenshot and recording options : hyper - < (changed from shift + cmd - 5, thumbnail dragging for clipboard functionality, remember spacebar usage)
+# 6: Screenshot and recording options : hyper - <
 # 11: All Applications / Save As... : shift + cmd - s
 # 11: Notes / Strikethrough : shift + cmd - x
 # 11: Finder / Forward : cmd - right
