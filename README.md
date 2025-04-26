@@ -151,6 +151,10 @@ CTRL ...                           ... ä        # ...
 
 ...
 
+### window / app switching 
+
+...
+
 ### general system control ###
 
 `ctrl - q` : open and/or focus Notes
