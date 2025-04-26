@@ -56,7 +56,7 @@ where
 
 ## SKHD/Yabai ---/Menuwhere/AltTab
 
-Since the _Control_ key has basically no function in macOS other than the terminal I use it as my main "appswitcher-key" and for other stuff, which I will explain later, while dedicating the few system functions adn features which use the _Control_ key in the macOS' stock config to other hotkeys/shortcuts and while using 
+Since the _Control_ key has basically no function in macOS other than the Terminal I use it as my main "appswitcher-key" and for other stuff, which I will explain later, while dedicating the few system functions adn features which use the _Control_ key in the macOS' stock config to other hotkeys/shortcuts and while using 
 
 ```
 .blacklist [
