@@ -54,7 +54,20 @@ where
 ...
 ```
 
-## Yabai/SKHD/Menuwhere/AltTab
+## SKHD/Yabai ---/Menuwhere/AltTab
+
+Since the _Control_ key has basically no function in macOS other than the terminal I use it as my main "appswitcher-key" and for other stuff, which I will explain later, while dedicating the few system functions adn features which use the _Control_ key in the macOS' stock config to other hotkeys/shortcuts and while using 
+
+```
+.blacklist [
+"Ghostty"
+"iTerm2"
+"Terminal"
+"Windows App"
+]
+```
+
+in my skhdrc to ensure a functioning _Control_ key where I need it.
 
 ### Caveats
 
