@@ -6,21 +6,21 @@
 
 ## Keyboard-Setup
 
-In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard which is the Keychron Q1 (V1) in my case (2022-2025); QMK Keymap:
+In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard which is the Keychron Q1 (V1, ISO Germany) in my case (2022-2025); QMK Keymap:
 
 ```
 ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
-NUBS     1        2        3        4        5        6        7        8        9        0        MINS     EQL      BSPC              MPLY
-TAB      Q        W        E        R        T        Y        U        I        O        P        LBRC     RBRC                       MPRV
-CAPS     A        S        D        F        G        H        J        K        L        SCLN     QUOT     NUHS     ENT               MNXT
-LSFT     GRV      Z        X        C        V        B        N        M        COMM     DOT      SLSH              RSFT     UP
+^        1        2        3        4        5        6        7        8        9        0        ß        ´        BSPC              MPLY
+TAB      Q        W        E        R        T        Y        U        I        O        P        ü        +                          MPRV
+CAPS     A        S        D        F        G        H        J        K        L        ö        ä        #        ENT               MNXT
+LSFT     <        Z        X        C        V        B        N        M        ,        .        -                 RSFT     UP
 MO(FN2)  LOPT     LCMD                                         SPC                        RCMD     ROPT     MO(FN2)  LEFT     DOWN     RGHT
 ---------------------------------------------------------------------------------------------------------------------------------------------
-C(ESC)            BRID     BRIU     MCTL     F15      F16      F17      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(F13)   S(F14)
-C(NUBS)  C(1)     C(2)     C(3)     C(4)     C(5)     C(6)     C(7)     C(8)     C(9)     C(0)     C(MINS)  C(EQL)   DEL               S(F15)
-C(TAB)   C(Q)     C(W)     C(E)     C(R)     C(T)     C(Y)     C(U)     C(I)     C(O)     C(P)     C(LBRC)  C(RBRC)                    S(F16)
-____     C(A)     C(S)     C(D)     C(F)     C(G)     C(H)     C(J)     C(K)     C(L)     C(SCLN)  C(QUOT)  C(NUHS)  PENT              S(F17)
-____     C(GRV)   C(Z)     C(X)     C(C)     C(V)     C(B)     C(N)     C(M)     C(COMM)  C(DOT)   ____              C(RSFT)  PGUP
+C(ESC)            BRID     BRIU     MCTL     **F15      F16      F17**      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(F13)   S(F14)
+C(^)     C(1)     C(2)     C(3)     C(4)     C(5)     C(6)     C(7)     C(8)     C(9)     C(0)     C(ß)     C(´)     DEL               S(F15)
+C(TAB)   C(Q)     C(W)     C(E)     C(R)     C(T)     C(Y)     C(U)     C(I)     C(O)     C(P)     C(ü)     C(+)                       S(F16)
+____     C(A)     C(S)     C(D)     C(F)     C(G)     C(H)     C(J)     C(K)     C(L)     C(ö)     C(ä)     C(#)     ENT               S(F17)
+____     C(<)     C(Z)     C(X)     C(C)     C(V)     C(B)     C(N)     C(M)     C(,)     C(.)     ____              C(RSFT)  PGUP
 ____     ____     ____                                         C(SPC)                     ____     ____     ____     HOME     PGDN     END
 ```
 
@@ -72,7 +72,7 @@ Since the _Control_ key has basically no function in macOS other than the Termin
 
 in my skhdrc to ensure a functioning _Control_ key where I need it.
 
-Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...` or I overwrote them with skhd, e.g.: 
+Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...` or I overwrote them with skhd either with new functions or with `return`, e.g.: 
 
 `fn + shift - a : return # show launchpad`
 
@@ -87,11 +87,23 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 
 ### space management ###
 
-...
+`alt + cmd - 0x12` : yabai prev space on display
+`alt + cmd - 0x13` : yabai next space on display
 
 ### window management ###
 
-...
+`ctrl - up` : fill current window
+`ctrl - down` : resize current window to inbuilt resolution w/o notch
+`ctrl - left` : snap current window left half
+`ctrl - right` : snap current window right half
+`ctrl - ä` : snap current window bottom left quarter
+`ctrl - #` : snap current window bottom right quarter
+`ctrl - +` : snap current window top right quarter
+`ctrl - ü` : snap current window top left quarter
+`ctrl + cmd - up` : snap current window top half
+`ctrl + cmd - down` : snap current window bottom half
+`ctrl + cmd - left` : move current window to previous display
+`ctrl + cmd - right` : move current window to next display
 
 ### general system control ###
 
