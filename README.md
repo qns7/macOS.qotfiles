@@ -79,6 +79,24 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 My goal was/is to have three modifiers (or modifier-pairs) which together with the available action keys control my whole system:
 _Control_, _Globe/fn_ and _Option+Command_.
 
+I will now list some important hotkeys categories with their acoording hotkeys:
+
+### display management ###
+
+...
+
+### space management ###
+
+...
+
+### window management ###
+
+...
+
+### general system control ###
+
+...
+
 ### Caveats
 
 - **Display/Monitor-Setups** : only designed for maximal two displays, internal and one external 27"1440p (to the left); new/different external monitor would need a few adaptions/changes.
