@@ -88,22 +88,38 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 ### space management ###
 
 `alt + cmd - 0x12` : yabai prev space on display
+
 `alt + cmd - 0x13` : yabai next space on display
+
+...
 
 ### window management ###
 
 `ctrl - up` : fill current window
+
 `ctrl - down` : resize current window to inbuilt resolution w/o notch
+
 `ctrl - left` : snap current window left half
+
 `ctrl - right` : snap current window right half
+
 `ctrl - ä` : snap current window bottom left quarter
+
 `ctrl - #` : snap current window bottom right quarter
+
 `ctrl - +` : snap current window top right quarter
+
 `ctrl - ü` : snap current window top left quarter
+
 `ctrl + cmd - up` : snap current window top half
+
 `ctrl + cmd - down` : snap current window bottom half
+
 `ctrl + cmd - left` : move current window to previous display
+
 `ctrl + cmd - right` : move current window to next display
+
+...
 
 ### general system control ###
 
