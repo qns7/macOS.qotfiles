@@ -34,7 +34,7 @@ f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 ```
 
-Therefore from now on `CAPS` will be replaced with `CTRL` and `C( ... )` with `fn + ...`.
+Therefore from now on `CAPS` will be replaced with `CTRL` and `C( ... )` with `FN( ... )`.
 
 The additional keys of the Q1 I use as follows
 
@@ -118,7 +118,7 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 
 
                                    ... ü        + ...
-CAPS ...                           ... ä        # ...
+CTRL ...                           ... ä        # ...
                                                               ... UP
                  (LCMD) ...                          ... LEFT     DOWN     RGHT
 ```
