@@ -84,6 +84,16 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 
 ### space and display management ###
 
+```
+                             ...
+^        1        2        3 ...
+                  W        E ...
+                           D ...
+(LSFT)                       ...
+         LOPT     LCMD       ...
+```
+
+
 `alt + cmd - ^` : app exposé
 
 `alt + cmd - 1` : yabai prev space on display
@@ -101,6 +111,16 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 `alt + cmd - d` : cycle fullscreens or del empty spaces
 
 ### window management ###
+
+```
+...
+...
+...                                ... ü        + ...
+CAPS ...                           ... ä        # ...
+...                                                           ... UP
+...           ... LCMD ...                           ... LEFT     DOWN     RGHT
+```
+
 
 `ctrl - up` : fill current window
 
