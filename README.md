@@ -6,7 +6,24 @@
 
 ## Keyboard-Setup
 
-...
+In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard which is the Keychron Q1 (V1) in my case (2022-2025); QMK Keymap:
+
+```
+ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
+NUBS     1        2        3        4        5        6        7        8        9        0        MINS     EQL      BSPC              MPLY
+TAB      Q        W        E        R        T        Y        U        I        O        P        LBRC     RBRC                       MPRV
+CAPS     A        S        D        F        G        H        J        K        L        SCLN     QUOT     NUHS     ENT               MNXT
+LSFT     GRV      Z        X        C        V        B        N        M        COMM     DOT      SLSH              RSFT     UP
+MO(FN2)  LOPT     LCMD                                         SPC                        RCMD     ROPT     MO(FN2)  LEFT     DOWN     RGHT
+---------------------------------------------------------------------------------------------------------------------------------------------
+C(ESC)            BRID     BRIU     MCTL     F15      F16      F17      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(F13)   S(F14)
+C(NUBS)  C(1)     C(2)     C(3)     C(4)     C(5)     C(6)     C(7)     C(8)     C(9)     C(0)     C(MINS)  C(EQL)   DEL               S(F15)
+C(TAB)   C(Q)     C(W)     C(E)     C(R)     C(T)     C(Y)     C(U)     C(I)     C(O)     C(P)     C(LBRC)  C(RBRC)                    S(F16)
+____     C(A)     C(S)     C(D)     C(F)     C(G)     C(H)     C(J)     C(K)     C(L)     C(SCLN)  C(QUOT)  C(NUHS)  PENT              S(F17)
+____     C(GRV)   C(Z)     C(X)     C(C)     C(V)     C(B)     C(N)     C(M)     C(COMM)  C(DOT)   ____              C(RSFT)  PGUP
+____     ____     ____                                         C(SPC)                     ____     ____     ____     HOME     PGDN     END
+```
+
 
 ## Yabai/SKHD/Menuwhere/AltTab
 
