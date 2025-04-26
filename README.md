@@ -2,9 +2,9 @@
 
 ## General Information
 
-- I do not use hiding or minimizing at all in macOS, which is why I deactivated the correspoding hotkeys completely.
-- This description/readme is just an overview, for all the details please check the rep.
-- I don't like using Raycast or Alfred or something similar since the inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the results on Youtube. There are many such "shebangs" for DuckDuckGo.
+- I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' (see below) the correspoding hotkeys completely.
+- This description/readme is just an overview, for all the details please check the dotfiles directly.
+- I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
 
 ## Keyboard-Setup
 
@@ -165,6 +165,8 @@ CTRL ...                               ... ä        # ...
 
 `ctrl - t` : terminal (iTerm2 Hotkey Window)
 
+`ctrl + cmd - t` : write date and time like "20:54, 26.04.25, SAT"
+
 `ctrl - p` : open and/or focus Passwords
 
 `ctrl - s` : open and/of focus Safari
@@ -194,6 +196,8 @@ CTRL ...                               ... ä        # ...
 `ctrl - c` : OCR
 
 `ctrl - v` : open and/or focus VS Code
+
+`ctrl + cmd - v` : shorten copied url and paste
 
 `ctrl - b` : open and/or focus Thunderbird
 
