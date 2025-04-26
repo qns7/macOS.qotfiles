@@ -27,9 +27,6 @@
   # mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
   alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle
   alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
-  # sound_down : osascript -e "set volume output volume (output volume of (get volume settings) - 5)" # doesn't work
-  # sound_up : osascript -e "set volume output volume (output volume of (get volume settings) + 5)" # doesn't work
-  # 0, 6, 13, 19, 25, 31, 38, 44, 50, 56, 63, 69, 75, 81, 88, 94, 100
   alt - f11 : ~/bin/volume_down
   alt - f12 : ~/bin/volume_up
 
