@@ -84,6 +84,8 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 
 ### display management ###
 
+`alt + cmd - e` : change_and_focus_display
+
 ...
 
 ### space management ###
@@ -92,7 +94,11 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 
 `alt + cmd - 0x13` : yabai next space on display
 
-...
+`alt + cmd - w` : create_and_focus_new_space
+
+`shift + alt + cmd - w` : move current window to new space and focus
+
+`alt + cmd - d` : cycle fullscreens or del empty spaces
 
 ### window management ###
 
