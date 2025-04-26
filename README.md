@@ -34,6 +34,8 @@ f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 ```
 
+Therefore from now on `CAPS` will be replaced with `CTRL` and `C( ... )` with `fn + ...`.
+
 The additional keys of the Q1 I use as follows
 
 ```
