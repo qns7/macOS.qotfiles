@@ -7,8 +7,8 @@
   fn - w : ~/bin/custom_wake
   fn - s : pmset sleepnow
   fn - y : /opt/homebrew/bin/yabai --restart-service
+  fn - x : /opt/homebrew/bin/sketchybar --reload # --update
     ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
-  fn - b : sketchybar --reload # --update
   ctrl + alt - y : cliclick m:+0,+21
   ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
 # ctrl + alt + cmd - y : keysmith :: 'yabai_focus_mouse || cliclick_m'
