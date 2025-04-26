@@ -41,3 +41,5 @@ else
         done
     ) & echo $! > "$WATCHER_PID_FILE"
 fi
+
+# CHECK FOR NATIVE FULLSCREEN AND ADAPT?!?!?!!?!?!?!?
