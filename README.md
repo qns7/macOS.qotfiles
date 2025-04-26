@@ -118,7 +118,7 @@ I will now list some important hotkeys categories with their acoording hotkeys:
                                    ... ü        + ...
 CAPS ...                           ... ä        # ...
                                                               ... UP
-                  LCMD ...                           ... LEFT     DOWN     RGHT
+                 (LCMD) ...                          ... LEFT     DOWN     RGHT
 ```
 
 
