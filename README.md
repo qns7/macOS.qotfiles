@@ -199,6 +199,7 @@ CTRL ...                           ... ä        # ...
 `ctrl + cmd - space` : Show the character viewer, from which you can choose emoji and other symbols
 
 
+
 `fn - f*` : F* / Special Function
 
 `fn - backspace` : Forward Delete
