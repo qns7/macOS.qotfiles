@@ -72,7 +72,7 @@ Since the _Control_ key has basically no function in macOS other than the Termin
 
 in my skhdrc to ensure a functioning _Control_ key where I need it.
 
-Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...`or I overwrote them with skhd, e.g.: 
+Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...` or I overwrote them with skhd, e.g.: 
 
 `fn + shift - a : return # show launchpad`
 
