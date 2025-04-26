@@ -24,6 +24,13 @@ ____     C(GRV)   C(Z)     C(X)     C(C)     C(V)     C(B)     C(N)     C(M)    
 ____     ____     ____                                         C(SPC)                     ____     ____     ____     HOME     PGDN     END
 ```
 
+To mimic the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my skhd config
+
+```
+f15 : skhd -k "0xB1" # spotlight
+f16 : skhd -k "0xB0" # dictation
+f17 : skhd -k "0xB2" # do not disturb
+```
 
 ## Yabai/SKHD/Menuwhere/AltTab
 
