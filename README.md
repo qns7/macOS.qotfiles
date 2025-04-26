@@ -5,10 +5,11 @@
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' (see below) the correspoding hotkeys completely.
 - This description/readme is just an overview, for all the details please check the dotfiles directly.
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
+- opt = alt
 
 ## Keyboard-Setup
 
-In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard which is the Keychron Q1 (V1, ISO Germany) in my case (2022-2025); QMK Keymap:
+In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard which is the Keychron Q1 (V1, ISO Germany) in my case (2022-2025); QMK Keymap (slightly optimized for readability):
 
 ```
 ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
@@ -16,13 +17,13 @@ ESC               F1       F2       F3       F4       F5       F6       F7      
 TAB      Q        W        E        R        T        Y        U        I        O        P        ü        +                          MPRV
 CAPS     A        S        D        F        G        H        J        K        L        ö        ä        #        ENT               MNXT
 LSFT     <        Z        X        C        V        B        N        M        ,        .        -                 RSFT     UP
-MO(FN2)  LOPT     LCMD                                         SPC                        RCMD     ROPT     MO(FN2)  LEFT     DOWN     RGHT
+LAYER    LOPT     LCMD                                         SPC                        RCMD     ROPT     LAYER    LEFT     DOWN     RGHT
 ---------------------------------------------------------------------------------------------------------------------------------------------
 C(ESC)            BRID     BRIU     MCTL     F15      F16      F17      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(F13)   S(F14)
 C(^)     C(1)     C(2)     C(3)     C(4)     C(5)     C(6)     C(7)     C(8)     C(9)     C(0)     C(ß)     C(´)     DEL               S(F15)
 C(TAB)   C(Q)     C(W)     C(E)     C(R)     C(T)     C(Y)     C(U)     C(I)     C(O)     C(P)     C(ü)     C(+)                       S(F16)
 ____     C(A)     C(S)     C(D)     C(F)     C(G)     C(H)     C(J)     C(K)     C(L)     C(ö)     C(ä)     C(#)     ENT               S(F17)
-____     C(<)     C(Z)     C(X)     C(C)     C(V)     C(B)     C(N)     C(M)     C(,)     C(.)     ____              C(RSFT)  PGUP
+____     C(<)     C(Z)     C(X)     C(C)     C(V)     C(B)     C(N)     C(M)     C(,)     C(.)     ____              ____     PGUP
 ____     ____     ____                                         C(SPC)                     ____     ____     ____     HOME     PGDN     END
 ```
 
