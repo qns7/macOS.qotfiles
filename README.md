@@ -85,7 +85,7 @@ in my skhdrc to ensure a functioning _Control_ key where I need it.
 - **Numbers**: number of spaces on focused display . focused space on focused display : number of windows on focused space . number of apps on focused space
 - **Text**: focused / active app
 - **KC**: KeyboardCleanTool [clickable open/close]
-- **SF**: "Use F1, F2, etc. keys as standard function keys" [clickable: toggle]
+- **FN/SF**: "Use F1, F2, etc. keys as standard function keys" [clickable: toggle]
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
 - '**Behind the notch**': shutdown and restart (event aevtr) [clickable: execute]
 - '**Sketchybar e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
