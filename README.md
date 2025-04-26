@@ -16,7 +16,7 @@ CAPS     A        S        D        F        G        H        J        K       
 LSFT     <        Z        X        C        V        B        N        M        ,        .        -                 RSFT     UP
 MO(FN2)  LOPT     LCMD                                         SPC                        RCMD     ROPT     MO(FN2)  LEFT     DOWN     RGHT
 ---------------------------------------------------------------------------------------------------------------------------------------------
-C(ESC)            BRID     BRIU     MCTL     **F15      F16      F17**      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(F13)   S(F14)
+C(ESC)            BRID     BRIU     MCTL     F15      F16      F17      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(F13)   S(F14)
 C(^)     C(1)     C(2)     C(3)     C(4)     C(5)     C(6)     C(7)     C(8)     C(9)     C(0)     C(ß)     C(´)     DEL               S(F15)
 C(TAB)   C(Q)     C(W)     C(E)     C(R)     C(T)     C(Y)     C(U)     C(I)     C(O)     C(P)     C(ü)     C(+)                       S(F16)
 ____     C(A)     C(S)     C(D)     C(F)     C(G)     C(H)     C(J)     C(K)     C(L)     C(ö)     C(ä)     C(#)     ENT               S(F17)
