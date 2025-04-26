@@ -81,7 +81,7 @@ in my skhdrc to ensure a functioning _Control_ key where I need it.
 ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351)
 
 ### Explanation (left to right):
-- **Symbol**: indicator if external or internal display is focused (greyed-out if there are empty space, orange if there are fullscreen spaces)
+- **_Monitor / MacBook_**: indicator if external or internal display is focused (greyed-out if there are empty space, orange if there are fullscreen spaces)
 - **Numbers**: number of spaces on focused display . focused space on focused display : number of windows on focused space . number of apps on focused space
 - **Text**: focused / active app
 - **KC**: KeyboardCleanTool [clickable open/close]
@@ -89,7 +89,7 @@ in my skhdrc to ensure a functioning _Control_ key where I need it.
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
 - '**Behind the notch**': shutdown and restart (event aevtr) [clickable: execute]
 - '**Sketchybar e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
-- **Envelope / XX**: indicator for new mails / Thunderbird quit [clickable: open/focus Thunderbird]
+- **_Envelope_ / XX**: indicator for new mails / Thunderbird quit [clickable: open/focus Thunderbird]
 - **CAM**: LogiTune [clickable: open/focus]
 - **ELG**: Elgato Control Center [clickable: openAndPopUp/quit]
 - **REM**: Remote+ [clickable: startServer/quit]
