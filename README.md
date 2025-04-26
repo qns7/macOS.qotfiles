@@ -82,7 +82,7 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 My goal was/is to have three modifiers (or modifier-pairs) which together with the available action keys control my whole system:
 _Control_, _Globe/fn_ and _Option+Command_.
 
-I will now list some important hotkeys categories with their acoording hotkeys:
+I will now list some important hotkey categories with selection of their acoording hotkeys - to get an idea of the 'system':
 
 ### space and display management ###
 
@@ -96,13 +96,13 @@ I will now list some important hotkeys categories with their acoording hotkeys:
 ```
 
 
-`alt + cmd - ^` : app exposé
+`alt + cmd - ^` : App Exposé
 
 `alt + cmd - 1` : yabai prev space on display
 
 `alt + cmd - 2` : yabai next space on display
 
-`alt + cmd - 3` : mission control
+`alt + cmd - 3` : Mission Control
 
 `alt + cmd - e` : change and focus display
 
@@ -151,6 +151,80 @@ CTRL ...                           ... ä        # ...
 ...
 
 ### general system control ###
+
+`ctrl - q` : open and/or focus Notes
+
+`ctrl - e` : open and/or focus new Finder window with stock folder
+
+`ctrl + cmd - e` : focus Finder
+
+`ctrl - t` : terminal (iTerm2 Hotkey Window)
+
+`ctrl - p` : open and/or focus Passwords
+
+`ctrl - s` : open and/of focus Safari
+
+`ctrl + cmd - s` : open and/or focus new Finder window with Screenshots
+
+`ctrl + alt - s` : open and/or focus System Settings
+
+`ctrl + alt + cmd - s` : type to Siri
+
+`ctrl - d` : show/hide dock
+
+`ctrl + cmd - d` : look up & data detectors / show or hide the definition of the selected word
+
+`ctrl + alt - d` : show/hide Desktop
+
+`ctrl + alt + cmd - d` : open and/or focus new Finder window with Downloads
+
+`ctrl - return/enter` : show contextual menu
+
+`ctrl - <` : screenshot and recording options
+
+`ctrl - y` : save picture of screen as a file (thumbnail dragging for clipboard functionality)
+
+`ctrl - x` : save picture of selected area as a file  (thumbnail dragging for clipboard functionality, remember spacebar usage)
+
+`ctrl - c` : OCR
+
+`ctrl - v` : open and/or focus VS Code
+
+`ctrl - b` : open and/or focus Thunderbird
+
+`ctrl - m` : open and/or focus Audio Midi Setup
+
+`ctrl - space` : Spotlight
+
+`ctrl + cmd - space` : Show the character viewer, from which you can choose emoji and other symbols
+
+
+`fn - f*` : F* / Special Function
+
+`fn - backspace` : Forward Delete
+
+`fn - esc` : toggle keyboard backlight
+
+`fn - r` : start/stop radio
+
+`fn - t` : pomodoro timer 25/5 (x4)
+
+`fn - f` : (native) Fullscreen
+
+`fn - y` : restart yabai
+
+`fn - x` : reload sketchybar
+
+`fn - c` : show/hide control center
+
+`fn - b` : start/stop background noise (soft rain)
+
+`fn - n` : show/hide notification center
+
+`fn - arrows` : home/pageup/pagedown/end
+
+
+
 
 ...
 
