@@ -84,7 +84,8 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 My goal was/is to have three modifiers (or modifier-pairs) which together with the available action keys control my whole system:
 _Control_, _Globe/fn_ and _Option+Command_.
 
-I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**. This (obiously) heavily relies and is based on skhd and yabai as well as some bash scripting; if other apps are used to achieve the function/feature/behavior they are mentioned in paranthesis.
+I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
+All this (obiously) heavily relies and is based on skhd and yabai as well as some bash scripting; if other apps are used to achieve the function/feature/behavior they are mentioned in paranthesis.
 
 ### space and display management ###
 
