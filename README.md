@@ -226,7 +226,7 @@ CTRL                             ...         ä        #
 
 `fn - t` : pomodoro timer 25/5 (x4) (uses Only-Switch)
 
-`fn - f` : **(native) Fullscreen**
+`fn - f` : **(native) Fullscreen (Space)**
 
 `fn - y` : restart yabai
 
