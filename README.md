@@ -220,9 +220,9 @@ CTRL                             ...         ä        #
 
 `fn - w` : executes custom bash script
 
-`fn - s` : Sleep immediately
+`fn - s` : **Sleep immediately**
 
-`fn - r` : start/stop Radio (uses Only-Switch)
+`fn - r` : start/stop radio (uses Only-Switch)
 
 `fn - t` : pomodoro timer 25/5 (x4) (uses Only-Switch)
 
