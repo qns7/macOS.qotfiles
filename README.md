@@ -60,7 +60,7 @@ where
 ```
 ...
 ```
-4. The option "Use F1, F2, etc. keys as standard function keys" in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according Sketchybar item (see below).
+4. The option "Use F1, F2, etc. keys as standard function keys" in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according Sketchybar item (see below). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
 
 ## Hotkeys / Shortcuts ---SKHD/Yabai ---/Menuwhere/AltTab
 
