@@ -40,12 +40,7 @@ f15 : skhd -k "0xB1" # spotlight
 f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 ```
-3. ...
-
-Therefore from now on `CAPS` will be replaced with `CTRL` and `C( ... )` with `FN( ... )`.
-
-The additional keys of the Q1 I use as follows
-
+3. The additional keys of the Q1 I use as follows
 ```
 F13      F14
          MPLY
@@ -61,12 +56,11 @@ S(F13)   S(F14)
 
 
 ```
-
 where 
-
 ```
 ...
 ```
+4. ...
 
 ## SKHD/Yabai ---/Menuwhere/AltTab
 
