@@ -2,6 +2,7 @@
 
 ## General Information
 
+- I used Windows and Linux only all my life until April 2024 when I bought my first MacBook. Since then I am continuously working on my personal setup and want to share the process here.
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' (see below) the correspoding hotkeys completely.
 - This description/readme is just an overview, for all the details please check the dotfiles directly.
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
@@ -10,7 +11,7 @@
 
 ## Keyboard-Setup
 
-In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard which is the Keychron Q1 (V1, ISO Germany) in my case (2022-2025); QMK Keymap (slightly optimized for readability):
+I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop since 2022. Here is the qmk keymap I use for macOS (slightly optimized for readability) is
 
 ```
 ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
@@ -28,14 +29,18 @@ ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____) 
 ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
 ```
 
-It is meant to mimic the inuilt keyboard with its layout as best as possible.
-To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my skhd config
+which is meant to mimic the inuilt keyboard with its layout as best as possible.
 
+### Remarks
+
+1. In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` I change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard. Therefore from now on `CAPS` will be replaced with `CTRL` and `C(____)` with `FN(____)`.
+2. To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my skhd config.
 ```
 f15 : skhd -k "0xB1" # spotlight
 f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 ```
+3. ...
 
 Therefore from now on `CAPS` will be replaced with `CTRL` and `C( ... )` with `FN( ... )`.
 
