@@ -242,9 +242,9 @@ CTRL                             ...         ä        #
 
 ---
 
-`alt - delete` : 'reversing' `alt - backspace` which should clearly be stock
+`alt - delete` : 'reversing' `alt - backspace` (which should be stock)
 
-`cmd - delete` : 'reversing' `cmd - backspace` which should clearly be stock
+`cmd - delete` : 'reversing' `cmd - backspace` (which should be stock)
 
 ...
 
