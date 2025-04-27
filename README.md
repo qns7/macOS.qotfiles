@@ -62,7 +62,7 @@ where
 ```
 4. The option "Use F1, F2, etc. keys as standard function keys" in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according Sketchybar item (see below).
 
-## SKHD/Yabai ---/Menuwhere/AltTab
+## Hotkeys / Shortcuts ---SKHD/Yabai ---/Menuwhere/AltTab
 
 Since the _Control_ key has basically no function in macOS other than the Terminal I use it as my main "appswitcher-key" and for other stuff, which I'll come to later, while dedicating the few system functions & features which use the _Control_ key in macOS' stock config to other hotkeys/shortcuts and while using 
 
