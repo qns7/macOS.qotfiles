@@ -5,7 +5,8 @@
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' (see below) the correspoding hotkeys completely.
 - This description/readme is just an overview, for all the details please check the dotfiles directly.
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
-- opt = alt
+- The following applies throughout: `alt = opt`
+- ...
 
 ## Keyboard-Setup
 
