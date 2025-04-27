@@ -150,6 +150,8 @@ CTRL                             ...         ä        #
 
 `ctrl + cmd - right` : move current window to next display
 
+`ctrl + alt - down` : **Center current Window**
+
 ...
 
 ### app and window switching
