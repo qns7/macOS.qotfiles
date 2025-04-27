@@ -278,7 +278,7 @@ CTRL                             ...         ä        #
 
 ### Indication: ...
 
-## iTerm2
+## Always & Quickly Available Terminal ---iTerm2
 
 ### Hotkey Window
 
