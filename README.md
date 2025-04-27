@@ -112,7 +112,7 @@ I will now list some important hotkey categories with a selection of their accor
 
 `shift + alt + cmd - w` : create new space and move current window to newly created space and focus
 
-`alt + cmd - d` : cycle fullscreens or del empty spaces
+`alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces
 
 ### window management ###
 
