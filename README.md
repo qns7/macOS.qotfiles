@@ -246,6 +246,8 @@ CTRL                             ...         ä        #
 
 `cmd - delete` : 'reversing' `cmd - backspace` (which should be stock)
 
+### mouse actions ###
+
 ...
 
 ### Caveats
