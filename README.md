@@ -200,7 +200,7 @@ CTRL                             ...         ä        #
 
 `ctrl - v` : open and/or focus VS Code
 
-`ctrl + cmd - v` : shorten copied url and paste (Keysmith/Applescript)
+`ctrl + cmd - v` : shorten copied url and paste (uses Keysmith/Applescript)
 
 `ctrl - b` : open and/or focus Thunderbird
 
