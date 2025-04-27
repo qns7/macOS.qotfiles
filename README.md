@@ -40,7 +40,7 @@ f15 : skhd -k "0xB1" # spotlight
 f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 ```
-3. The additional keys of the Q1 I use as follows
+3. The additional keys on the far right of the Q1 I use as follows
 ```
 F13      F14
          MPLY
@@ -49,7 +49,7 @@ F13      F14
 
 
 ---------------
-S(F13)   S(F14)
+S(____)  S(____)
          S(F15)
          S(F16)
          S(F17)
