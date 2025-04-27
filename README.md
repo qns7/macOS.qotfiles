@@ -98,17 +98,17 @@ I will now list some important hotkey categories with a selection of their accor
 ```
 
 
-`alt + cmd - ^` : App Exposé
+`alt + cmd - ^` : **App Exposé**
 
-`alt + cmd - 1` : yabai prev space on display
+`alt + cmd - 1` : focus previous space on currently focused display
 
-`alt + cmd - 2` : yabai next space on display
+`alt + cmd - 2` : focus next space on currently display
 
-`alt + cmd - 3` : Mission Control
+`alt + cmd - 3` : **Mission Control**
 
 `alt + cmd - e` : change and focus display
 
-`alt + cmd - w` : create_and_focus_new_space
+`alt + cmd - w` : create and focus new space
 
 `shift + alt + cmd - w` : move current window to new space and focus
 
@@ -160,11 +160,11 @@ CTRL                             ...         ä        #
 
 `ctrl - q` : open and/or focus Notes
 
-`ctrl - e` : open and/or focus new Finder window with stock folder
+`ctrl - e` : open and focus new Finder window at stock folder
 
 `ctrl + cmd - e` : focus Finder
 
-`ctrl - t` : terminal (iTerm2 Hotkey Window)
+`ctrl - t` : Terminal (iTerm2 Hotkey Window)
 
 `ctrl + cmd - t` : write date and time like "20:54, 26.04.25, SAT"
 
@@ -172,71 +172,71 @@ CTRL                             ...         ä        #
 
 `ctrl - s` : open and/of focus Safari
 
-`ctrl + cmd - s` : open and/or focus new Finder window with Screenshots
+`ctrl + cmd - s` : open and focus new Finder window at Screenshots
 
 `ctrl + alt - s` : open and/or focus System Settings
 
-`ctrl + alt + cmd - s` : type to Siri
+`ctrl + alt + cmd - s` : **Type to Siri**
 
-`ctrl - d` : show/hide dock
+`ctrl - d` : show/hide Dock
 
-`ctrl + cmd - d` : look up & data detectors / show or hide the definition of the selected word
+`ctrl + cmd - d` : **Look up & data detectors / Show or hide the definition of the selected word**
 
-`ctrl + alt - d` : show/hide Desktop
+`ctrl + alt - d` : **Show/Hide Desktop**
 
-`ctrl + alt + cmd - d` : open and/or focus new Finder window with Downloads
+`ctrl + alt + cmd - d` : open and focus new Finder window at Downloads
 
-`ctrl - return/enter` : show contextual menu
+`ctrl - return/enter` : **Show Contextual Menu**
 
-`ctrl - <` : screenshot and recording options
+`ctrl - <` : **Screenshot and Recording Options**
 
-`ctrl - y` : save picture of screen as a file (thumbnail dragging for clipboard functionality)
+`ctrl - y` : **Save picture of screen as a file (thumbnail dragging for clipboard functionality)**
 
-`ctrl - x` : save picture of selected area as a file  (thumbnail dragging for clipboard functionality, remember spacebar usage)
+`ctrl - x` : **Save picture of selected area as a file  (thumbnail dragging for clipboard functionality, remember spacebar usage)**
 
 `ctrl - c` : OCR
 
 `ctrl - v` : open and/or focus VS Code
 
-`ctrl + cmd - v` : shorten copied url and paste
+`ctrl + cmd - v` : shorten copied url and paste (Keysmith/Applescript)
 
 `ctrl - b` : open and/or focus Thunderbird
 
 `ctrl - m` : open and/or focus Audio Midi Setup
 
-`ctrl - space` : Spotlight
+`ctrl - space` : **Spotlight**
 
-`ctrl + cmd - space` : Show the character viewer, from which you can choose emoji and other symbols
+`ctrl + cmd - space` : **Show the character viewer, from which you can choose emoji and other symbols**
 
 ---
 
-`fn - f*` : F* / Special Function
+`fn - f*` : **F* / Special Function**
 
-`fn - backspace` : Forward Delete
+`fn - backspace` : **Forward Delete**
 
-`fn - esc` : toggle keyboard backlight
+`fn - esc` : toggle keyboard backlight (Only-Switch)
 
 `fn - w` : executes custom bash script
 
 `fn - s` : Sleep immediately
 
-`fn - r` : start/stop radio
+`fn - r` : start/stop Radio (Only-Switch)
 
-`fn - t` : pomodoro timer 25/5 (x4)
+`fn - t` : pomodoro timer 25/5 (x4) (Only-Switch)
 
-`fn - f` : (native) Fullscreen
+`fn - f` : **(native) Fullscreen**
 
 `fn - y` : restart yabai
 
 `fn - x` : reload sketchybar
 
-`fn - c` : show/hide control center
+`fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop background noise (soft rain)
+`fn - b` : start/stop background noise (soft rain) (Only-Switch)
 
-`fn - n` : show/hide notification center
+`fn - n` : **Show/Hide Notification Center**
 
-`fn - arrows` : Home, PageUp, PageDown, End
+`fn - arrows` : **Home, PageUp, PageDown, End**
 
 ---
 
