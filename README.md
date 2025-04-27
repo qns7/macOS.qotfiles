@@ -11,7 +11,7 @@
 
 ## Keyboard Setup
 
-I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop since 2022. Here is the qmk keymap I use for macOS (slightly optimized for readability) is
+I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop since 2022. The qmk keymap I use for macOS (slightly optimized for readability) is
 
 ```
 ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
