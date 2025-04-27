@@ -212,7 +212,7 @@ CTRL                             ...         ä        #
 
 ---
 
-`fn - f*` : **F* / Special Function**
+`fn - fX` : **FX / Special Function**
 
 `fn - backspace` : **Forward Delete**
 
