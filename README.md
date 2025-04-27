@@ -216,15 +216,15 @@ CTRL                             ...         ä        #
 
 `fn - backspace` : **Forward Delete**
 
-`fn - esc` : toggle keyboard backlight (Only-Switch)
+`fn - esc` : toggle keyboard backlight (uses Only-Switch)
 
 `fn - w` : executes custom bash script
 
 `fn - s` : Sleep immediately
 
-`fn - r` : start/stop Radio (Only-Switch)
+`fn - r` : start/stop Radio (uses Only-Switch)
 
-`fn - t` : pomodoro timer 25/5 (x4) (Only-Switch)
+`fn - t` : pomodoro timer 25/5 (x4) (uses Only-Switch)
 
 `fn - f` : **(native) Fullscreen**
 
@@ -234,7 +234,7 @@ CTRL                             ...         ä        #
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop background noise (soft rain) (Only-Switch)
+`fn - b` : start/stop background noise (soft rain) (uses Only-Switch)
 
 `fn - n` : **Show/Hide Notification Center**
 
