@@ -196,7 +196,7 @@ CTRL                             ...         ä        #
 
 `ctrl - x` : **Save picture of selected area as a file  (thumbnail dragging for clipboard functionality, remember spacebar usage)**
 
-`ctrl - c` : OCR
+`ctrl - c` : OCR (TRex)
 
 `ctrl - v` : open and/or focus VS Code
 
