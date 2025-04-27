@@ -9,7 +9,7 @@
 - The following applies throughout: `alt = opt`
 - ...
 
-## Keyboard-Setup
+## Keyboard Setup
 
 I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop since 2022. Here is the qmk keymap I use for macOS (slightly optimized for readability) is
 
