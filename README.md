@@ -168,7 +168,7 @@ CTRL                             ...         ä        #
 
 `ctrl - t` : Terminal (iTerm2 Hotkey Window)
 
-`ctrl + cmd - t` : write date and time like "20:54, 26.04.25, SAT"
+`ctrl + cmd - t` : write date and time at cursor position (text field) like "20:54, 26.04.25, SAT"
 
 `ctrl - p` : open and/or focus Passwords
 
