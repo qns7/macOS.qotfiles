@@ -261,9 +261,9 @@ CTRL                             ...         ä        #
 ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351)
 
 ### Explanation (left to right):
-- **_Monitor / MacBook_**: indicator if external or internal display is focused (greyed-out if there are empty space, orange if there are fullscreen spaces)
-- **Numbers**: number of spaces on focused display . focused space on focused display : number of windows on focused space . number of apps on focused space
-- **Text**: focused / active app
+- **_Monitor / MacBook_**: indicator if external or internal display is currently focused (greyed-out if there are empty space, orange if there are fullscreen spaces)
+- **Numbers**: number of spaces on current display . current space on current display : number of windows on current space . number of apps on current space
+- **Text**: currently focused / active app
 - **KC**: KeyboardCleanTool [clickable open/close]
 - **FN / SF**: "Use F1, F2, etc. keys as standard function keys" [clickable: toggle]
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
