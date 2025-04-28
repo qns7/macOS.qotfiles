@@ -155,9 +155,22 @@ CTRL                             ...         ä        #
 
 ...
 
-### app and window switching
+### window (and app) switching
 
-...
+```
+ESC
+NUBS ^
+TAB      Q        W
+
+
+         LOPT     LCMD 
+```
+
+`cmd - tab/^/q/w/esc` : ...
+
+`alt - tab/^/q/w/esc` : ...
+
+`cmd + alt - tab` : ...
 
 ### general system control ###
 
