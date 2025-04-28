@@ -22,6 +22,9 @@ alt - down [
     "Notes" : skhd -k "ctrl + cmd - down"
     * ~
 ]
+
+ctrl + cmd - up : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top half, Notes: move line up (stock)
+ctrl + cmd - down : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom half, Notes: move line down (stock)
 ctrl + cmd - left : move_current_window_to_previous_display
 ctrl + cmd - right : move_current_window_to_next_display
 
