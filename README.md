@@ -7,7 +7,7 @@
 - This description/readme is just an overview, for all the details please check the dotfiles directly.
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
 - The following applies throughout: `alt = opt`
-- ...
+- I use my Dock at the left side with nothing in there beside the stock items Finder and Trash. It is set so autohide with no delay.
 
 ## Keyboard Setup
 
@@ -101,17 +101,17 @@ All this (obiously) heavily relies and is based on skhd and yabai as well as som
 
 `alt + cmd - ^` : **App Exposé**
 
-`alt + cmd - 1` : focus previous space on currently focused display
+`alt + cmd - 1` : focus previous space on current display
 
-`alt + cmd - 2` : focus next space on currently display
+`alt + cmd - 2` : focus next space on current display
 
 `alt + cmd - 3` : **Mission Control**
 
 `alt + cmd - e` : change and focus display
 
-`alt + cmd - w` : create and focus new space
+`alt + cmd - w` : create and focus new space on current display
 
-`shift + alt + cmd - w` : create new space and move current window to newly created space and focus
+`shift + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window
 
 `alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces
 
@@ -129,7 +129,7 @@ CTRL                             ...         ä        #
 
 `ctrl - up` : fill current window
 
-`ctrl - down` : resize current window to inbuilt resolution w/o notch
+`ctrl - down` : resize current window to inbuilt (scaled) resolution w/o notch
 
 `ctrl - left` : snap current window left half
 
@@ -151,7 +151,7 @@ CTRL                             ...         ä        #
 
 `ctrl + cmd - right` : move current window to next display
 
-`ctrl + alt - down` : **Center current Window**
+`ctrl + alt - down` : **Center Current Window**
 
 ...
 
@@ -169,7 +169,7 @@ CTRL                             ...         ä        #
 
 `ctrl - t` : Terminal (iTerm2 Hotkey Window)
 
-`ctrl + cmd - t` : write date and time at cursor position (text field) like "20:54, 26.04.25, SAT"
+`ctrl + cmd - t` : write date and time at cursor position (textbox), e.g. "07:37, 07.07.37, SUN"
 
 `ctrl - p` : open and/or focus Passwords
 
@@ -179,11 +179,11 @@ CTRL                             ...         ä        #
 
 `ctrl + alt - s` : open and/or focus System Settings
 
-`ctrl + alt + cmd - s` : **Type to Siri**
+`ctrl + alt + cmd - s` : **Type To Siri**
 
-`ctrl - d` : show/hide Dock
+`ctrl - d` : show/hide Dock using automated mouse movement
 
-`ctrl + cmd - d` : **Look up & data detectors / Show or hide the definition of the selected word**
+`ctrl + cmd - d` : **Look Up & Data Detectors / Show Or Hide The Definition Of The Selected Word**
 
 `ctrl + alt - d` : **Show/Hide Desktop**
 
@@ -191,11 +191,11 @@ CTRL                             ...         ä        #
 
 `ctrl - return/enter` : **Show Contextual Menu**
 
-`ctrl - <` : **Screenshot and Recording Options**
+`ctrl - <` : **Screenshot And Recording Options**
 
-`ctrl - y` : **Save picture of screen as a file (thumbnail dragging for clipboard functionality)**
+`ctrl - y` : **Save Picture Of Screen As A File (Thumbnail Dragging For Clipboard Functionality)**
 
-`ctrl - x` : **Save picture of selected area as a file  (thumbnail dragging for clipboard functionality, remember spacebar usage)**
+`ctrl - x` : **Save Picture Of Selected Area As A File (Thumbnail Dragging For Clipboard Functionality, Remember Spacebar Usage)**
 
 `ctrl - c` : OCR (TRex)
 
@@ -209,7 +209,7 @@ CTRL                             ...         ä        #
 
 `ctrl - space` : **Spotlight**
 
-`ctrl + cmd - space` : **Show the character viewer, from which you can choose emoji and other symbols**
+`ctrl + cmd - space` : **Show The Character Viewer, From Which You Can Choose Emoji And Other Symbols**
 
 ---
 
@@ -221,13 +221,13 @@ CTRL                             ...         ä        #
 
 `fn - w` : executes custom bash script
 
-`fn - s` : **Sleep immediately**
+`fn - s` : sleep immediately
 
-`fn - r` : start/stop radio (uses Only-Switch)
+`fn - r` : start/stop Radio (uses Only-Switch)
 
-`fn - t` : pomodoro timer 25/5 (x4) (uses Only-Switch)
+`fn - t` : Pomodoro Timer 25/5 (x4) (uses Only-Switch)
 
-`fn - f` : **(native) Fullscreen (Space)**
+`fn - f` : **(Native) Fullscreen (Space)**
 
 `fn - y` : restart yabai
 
@@ -235,7 +235,7 @@ CTRL                             ...         ä        #
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop background noise (soft rain) (uses Only-Switch)
+`fn - b` : start/stop Background Noise (soft rain) (uses Only-Switch)
 
 `fn - n` : **Show/Hide Notification Center**
 
