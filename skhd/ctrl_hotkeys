@@ -1,5 +1,5 @@
 ctrl - q : open_or_focus "Notes"
-    # ctrl + cmd - q : quit_script, immediately lock your screen (stock)
+    ctrl + cmd - q : quit_script, immediately lock your screen (stock)
     ctrl + alt - q : return # perhaps something with "date & time"?
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service

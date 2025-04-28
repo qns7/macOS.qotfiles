@@ -1,3 +1,5 @@
+ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service, for quick bug-fixing while managing windows
+
 ctrl - up : yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # fill current window, move to a control adjacent to the text field (stock)
 ctrl - down : yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.37; ~/bin/cliclick_focus # =1169-38, resize current window to inbuilt resolution w/o notch @ 0/0, show all windows of the front app (stock), move to a control adjacent to the text field (stock)
 ctrl - left : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window left half, move to a control adjacent to the text field (stock)
@@ -29,20 +31,14 @@ ctrl - 0x1E : yabai -m window --grid 2:2:1:0:2:1; sleep 0.01; ~/bin/cliclick_foc
 ctrl - 0x21 : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top left quarter
 
 ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus # stock window management: center
-# shift + alt + cmd - 0x0A : app exposé, cf. 'skhdrc'
 alt + cmd - 0x12 : yabai_prev_space_on_display #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left)
 alt + cmd - 0x13 : yabai_next_space_on_display #  ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right)
-# alt + cmd - 0x14 : mission control, cf. 'skhdrc'
 
 alt + cmd - w : create_and_focus_new_space
 shift + alt + cmd - w [
     "System Settings" : return # ~
     * :  move_current_window_to_new_space_and_focus
 ]
-alt + cmd - e : change_and_focus_display
-# shift + alt + cmd - e : change_and_focus_display; del_empty_spaces
+alt + cmd - e : change_and_focus_display # shift + alt + cmd - e : change_and_focus_display; del_empty_spaces
 alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A (^, mission_control_key is 0xA0)
 # implement again: space moving to other display !!! why did I delete this note before?
-
-#----------------------------
-ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
