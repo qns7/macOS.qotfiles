@@ -2,37 +2,17 @@
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 
-
-  fn - 0x35 : skhd -k "f18" # only-switch : key light toggle
-  fn - w : ~/bin/custom_wake
-  fn - s : pmset sleepnow
-  fn - y : /opt/homebrew/bin/yabai --restart-service
-  fn - x : /opt/homebrew/bin/sketchybar --reload # --update
-    ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
-
-  ctrl + alt - y : cliclick m:+0,+21
-  ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
-# ctrl + alt + cmd - y : keysmith :: 'yabai_focus_mouse || cliclick_m'
-  ctrl + alt + cmd - x : ~/bin/cliclick_focus
-  ctrl + cmd - q : quit_script
-  ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
-# ctrl + alt + cmd - e : keysmith : applescript: 'tell application "TRex" to activate', for Windows App and Terminals
-
-  alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
-  cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
-
-  cmd - play : skhd -k "shift - f15"
-  cmd - f8 : skhd -k "shift - f15"
-
-  # mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
-  alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle
-  alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
-  alt - f11 : ~/bin/volume_down
-  alt - f12 : ~/bin/volume_up
-
-  alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
-  fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
-  fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
+alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
+cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
+cmd - play : skhd -k "shift - f15"
+cmd - f8 : skhd -k "shift - f15"
+alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle ### mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
+alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
+alt - f11 : ~/bin/volume_down
+alt - f12 : ~/bin/volume_up
+alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
+fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
+fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"

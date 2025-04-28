@@ -1,16 +1,16 @@
 ctrl - q : open_or_focus "Notes"
-    # ctrl + cmd - q : cf. 'skhdrc', immediately lock your screen (stock)
+    # ctrl + cmd - q : quit_script, immediately lock your screen (stock)
     ctrl + alt - q : return # perhaps something with "date & time"?
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
-    # ctrl + cmd - w : cf. 'skhdrc'
+    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
     ctrl + alt - w : open_or_focus "Pages"
     ctrl + alt + cmd - w : return
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # osascript -e 'tell application "Finder" to activate' OR open -a Finder
                                                                                                                         # why this again??!?!?!
     ctrl + alt - e : return
-    # ctrl + alt + cmd - e : cf. 'skhdrc'
+    # ctrl + alt + cmd - e : keysmith : 'tell application "TRex" to activate' (applescript), for Windows App and Terminals
 ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
@@ -43,7 +43,7 @@ ctrl - s : open_or_focus "Safari"
     # ctrl + alt + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl - d : mouse_dock # forward delete (stock) ---------> handle native-fullscreens?
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
-    ctrl + alt - d : ~/bin/show_desktop # skhd -k "hyper - d"; sleep 0.37; yabai -m window --focus mouse || cliclick c:. # -r m:+0,+21 # cf. 'skhdrc'
+    ctrl + alt - d : ~/bin/show_desktop
     # ctrl + alt + cmd - d : open_folder ~/Downloads
     ctrl + alt + cmd - d [
         "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock)
@@ -71,7 +71,7 @@ ctrl - 0x29 : return
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
 
 ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
-    # # # # # # # # # # # ctrl + cmd - 0x32 : cf. 'skhdrc'
+    # # # # # # # # # # # ctrl + cmd - 0x32 : cf. 'skhdrc' --- removed, right?
     ctrl + alt - 0x32 : return
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
@@ -79,15 +79,15 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
         * : open_or_focus ~/Applications/DeepL.app # ; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy, native app auch mal wieder ausprobieren(cf. chatgpt)?
     ]
-    # ctrl + alt - y : cf 'skhdrc'
-    # ctrl + alt + cmd - y : cf 'skhdrc'
+    ctrl + alt - y : cliclick m:+0,+21
+    # ctrl + alt + cmd - y : keysmith : 'yabai_focus_mouse || cliclick_m'
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * ~
     ]
-    # ctrl + alt - x : cf 'skhdrc'
-    # ctrl + alt + cmd - x : cf 'skhdrc'
+    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
+    ctrl + alt + cmd - x : ~/bin/cliclick_focus
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
     ctrl + alt - c : return
@@ -108,7 +108,7 @@ ctrl - m : open_or_focus "Audio MIDI Setup"
     ctrl + cmd - m : open_or_focus "Protokol"
 ctrl - 0x2B : return
 ctrl - 0x2F : return
-# ctrl - 0x2C : return, cf. 'skhdrc'
+# ctrl - 0x2C : cf. window_space_and_display_management
 ctrl - space : skhd -k "0xB1" # spotlight
     # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) [faster than 'Press *globe* key to']
     ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)

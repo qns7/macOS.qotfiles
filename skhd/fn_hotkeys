@@ -1,4 +1,4 @@
-# fn - 0x35 : cf. 'skhdrc', esc
+fn - 0x35 : skhd -k "f18" # only-switch : key light toggle, esc
 # fn - f* : special features / standard function keys (stock)
 
 fn - 0x0A : return # ^
@@ -18,7 +18,7 @@ fn - 0x18 : return # ´
 
 fn - tab : return
 fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
-# fn - w : cf. 'skhdrc'
+fn - w : ~/bin/custom_wake
 fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
 fn - r : skhd -k "hyper - r" # only-switch : radio
 fn - t : skhd -k "hyper - t" # only-switch : timer (pomodoro)
@@ -31,7 +31,7 @@ fn - 0x21 : return # ü
 fn - 0x1E : skhd -k "alt - n" # +, ~
 
 fn - a : return # show or hide the dock (stock)
-# fn - s : cf. 'skhdrc'
+fn - s : pmset sleepnow
 fn - d : return # start or stop dictation (stock)
 fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
@@ -45,8 +45,8 @@ fn - 0x27 : return # ä
 # fn - return/enter = 0x4C: keysmith : yabai_debugging [pent_to_fn_enter]
 
 fn - 0x32 : skhd -k "alt - 7" # <, |
-# fn - y : cf. 'skhdrc'
-# fn - x : cf. 'skhdrc'
+fn - y : /opt/homebrew/bin/yabai --restart-service
+fn - x : /opt/homebrew/bin/sketchybar --reload # --update
 # fn - c : show/hide control center (stock)
 fn - v : return
 fn - b : skhd -k "hyper - b" # only-switch : background noise

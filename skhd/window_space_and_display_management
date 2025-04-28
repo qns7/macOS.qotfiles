@@ -43,3 +43,6 @@ alt + cmd - e : change_and_focus_display
 # shift + alt + cmd - e : change_and_focus_display; del_empty_spaces
 alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A (^, mission_control_key is 0xA0)
 # implement again: space moving to other display !!! why did I delete this note before?
+
+#----------------------------
+ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service
