@@ -107,11 +107,11 @@ All this (obiously) heavily relies and is based on skhd and yabai as well as som
 
 `alt + cmd - 3` : **Mission Control**
 
-`alt + cmd - e` : change and focus display
-
 `alt + cmd - w` : create and focus new space on current display
 
 `shift + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window
+
+`alt + cmd - e` : change and focus display
 
 `alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces
 
