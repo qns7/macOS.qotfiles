@@ -10,9 +10,9 @@ alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle ### mute : skhd -k "f14
 alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
 alt - f11 : ~/bin/volume_down
 alt - f12 : ~/bin/volume_up
-alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A"
-fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"
-fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
+alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #
+fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers" # #
+fn - 0x2A : SwitchAudioSource -s "SoundID Reference" # #
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
