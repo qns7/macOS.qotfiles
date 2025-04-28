@@ -6,7 +6,7 @@
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' (see below) the correspoding hotkeys completely.
 - This description/readme is just an overview, for all the details please check the dotfiles directly.
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
-- The following applies throughout: `alt = opt`
+- The following applies throughout: `alt = opt(ion)`
 - I use my Dock at the left side with nothing in there beside the stock items Finder and Trash. It is set so autohide with no delay.
 
 ## Keyboard Setup
@@ -19,7 +19,7 @@ NUBS ^   1        2        3        4        5        6        7        8       
 TAB      Q        W        E        R        T        Y z      U        I        O        P        LBRC ü   RBRC +                     MPRV
 CAPS     A        S        D        F        G        H        J        K        L        SCLN ö   QUOT ä   NUHS #   ENT               MNXT
 LSFT     GRV <    Z y      X        C        V        B        N        M        COMM ,   DOT .    SLSH -            RSFT     UP
-MO(FN)   LOPT     LCMD                                         SPC                        RCMD     ROPT     MO(FN)   LEFT     DOWN     RGHT
+MO(FN)   LALT     LCMD                                         SPC                        RCMD     RALT     MO(FN)   LEFT     DOWN     RGHT
 ----------------------------------------------------------------------------------------------------------------------------------------------
 C(____)           BRID     BRIU     MCTL     F15      F16      F17      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(____)  S(____)
 C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  DEL               S(F15)
@@ -95,7 +95,7 @@ All this (obiously) heavily relies and is based on skhd and yabai as well as som
                   W        E
                            D
 (LSFT)                      
-         LOPT     LCMD      
+         LALT     LCMD      
 ```
 
 
@@ -163,7 +163,7 @@ NUBS ^
 TAB      Q        W
 
 
-         LOPT     LCMD 
+         LALT     LCMD 
 ```
 
 `cmd - tab/^/q/w/esc` : ...
