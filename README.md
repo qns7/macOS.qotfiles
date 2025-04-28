@@ -84,7 +84,9 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 `fn + shift - a : return # show launchpad`
 
 My goal was/is to have a few modifiers (or modifier-pairs) which together with the available "action keys" control my whole system in kind of a layer-like setup:
+
 _Control_, _Option+Command_, _Option_, _Command_, and _Globe/fn_.
+
 That's in theory not that different from the goal of basically every keyboard usage/layout, I agree, but having your own system and building it "from the ground" up seemed logical to me, since I myself can choose placements, priorities and modifier layering / depth while making it very easy for me to experiment, maintain and bugfix quickly (for which I use a specific VS Code Workspace with the file structure this repo has).
 Another benefit from this is that one basically doesn't have to achingly remember hotkeys and shortcuts like normally, because choosing and setting them up does half the job for you imho.
 
