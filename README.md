@@ -115,7 +115,7 @@ Another benefit from this is that one basically doesn't have to achingly remembe
 I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
 All this (obiously) heavily relies and is based on skhd and yabai as well as some bash scripting; if other apps are used to achieve the function/feature/behavior they are mentioned in paranthesis.
 
-### window management ###
+### Window Management ###
 
 ```
                                  ...
@@ -155,7 +155,7 @@ CTRL                             ...         ä        #
 
 ...
 
-### space and display management ###
+### Space and Display Management ###
 
 ```
                             
@@ -183,7 +183,7 @@ CTRL                             ...         ä        #
 
 `alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces
 
-### window (and app) switching
+### Window (and App) Switching ###
 
 ```
 ESC
@@ -200,7 +200,7 @@ TAB      Q        W
 
 `alt - tab/^/q/w/esc` : ... (AltTab)
 
-### general system control ###
+### General System Control ###
 
 `ctrl - q` : open and/or focus Notes
 
@@ -288,7 +288,7 @@ TAB      Q        W
 
 `cmd - delete` : 'reversing' `cmd - backspace` (which should be stock)
 
-### mouse and trackpad actions/gestures ###
+### Mouse and Trackpad Actions/Gestures
 
 ...
 
