@@ -8,8 +8,8 @@ cmd - play : skhd -k "shift - f15"
 cmd - f8 : skhd -k "shift - f15"
 alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle ### mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
 alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
-alt - f11 : ~/bin/volume_down
-alt - f12 : ~/bin/volume_up
+alt - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
+alt - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers" # #
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference" # #
