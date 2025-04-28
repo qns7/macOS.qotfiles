@@ -217,15 +217,15 @@ CTRL                             ...         ä        #
 
 `fn - backspace` : **Forward Delete**
 
-`fn - esc` : toggle keyboard backlight (uses Only-Switch)
+`fn - esc` : toggle keyboard backlight (uses OnlySwitch)
 
 `fn - w` : executes custom bash script
 
 `fn - s` : sleep immediately
 
-`fn - r` : start/stop Radio (uses Only-Switch)
+`fn - r` : start/stop Radio (uses OnlySwitch)
 
-`fn - t` : Pomodoro Timer 25/5 (x4) (uses Only-Switch)
+`fn - t` : Pomodoro Timer 25/5 (x4) (uses OnlySwitch)
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
@@ -235,7 +235,7 @@ CTRL                             ...         ä        #
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop Background Noise (soft rain) (uses Only-Switch)
+`fn - b` : start/stop Background Noise (soft rain) (uses OnlySwitch)
 
 `fn - n` : **Show/Hide Notification Center**
 
@@ -254,7 +254,7 @@ CTRL                             ...         ä        #
 ### Caveats
 
 - **Display/Monitor-Setups** : only designed for maximal two displays, internal and one external 27"1440p (to the left); new/different external monitor would need a few adaptions/changes.
-- **Dependencies** : cliclick, jq, ... [all available on Homebrew] ... keysmith, only-switch (check references again), 
+- **Dependencies** : cliclick, jq, ... [all available on Homebrew] ... keysmith, OnlySwitch (check references again), 
 
 ## System Status Bar ---Sketchybar 
 
