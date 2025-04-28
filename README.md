@@ -170,7 +170,7 @@ TAB      Q        W
 
 `alt - tab/^/q/w/esc` : ...
 
-`cmd + alt - tab` : ...
+`cmd + alt - tab` : **Move Focus To Next Window**
 
 ### general system control ###
 
