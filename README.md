@@ -121,6 +121,8 @@ CTRL                             ...         ä        #
 
 `ctrl - ü` : snap current window top left quarter
 
+`ctrl + alt - down` : **Center Current Window**
+
 `ctrl + cmd - up` : snap current window top half
 
 `ctrl + cmd - down` : snap current window bottom half
@@ -128,8 +130,6 @@ CTRL                             ...         ä        #
 `ctrl + cmd - left` : move current window to previous display
 
 `ctrl + cmd - right` : move current window to next display
-
-`ctrl + alt - down` : **Center Current Window**
 
 ...
 
