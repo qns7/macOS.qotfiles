@@ -101,7 +101,7 @@ All this (obiously) heavily relies and is based on skhd and yabai as well as som
                                  ...         ü        +
 CTRL                             ...         ä        #
                                  ...                  UP
-                  (LCMD)         ...         LEFT     DOWN     RGHT
+         (LALT)   (LCMD)         ...         LEFT     DOWN     RGHT
 ```
 
 
