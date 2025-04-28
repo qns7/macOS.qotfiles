@@ -8,6 +8,8 @@
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
 - The following applies throughout: `alt = opt(ion)`
 - I use my Dock at the left side with nothing in there beside the stock items Finder and Trash. It is set so autohide with no delay.
+- For my mouse setup I use Yabai's mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
+- Everywhere I can I use cable versions of my peripherals or prectically devices overall, since for me personally the wireless hype of the last years makes mostly no sense to me: Batteries die, are bad for the enviroment and the performance is always worse than their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed in my setup I am happy. Honestly I like the look of well organized cables more than no cables.
 
 ## Keyboard Setup
 
