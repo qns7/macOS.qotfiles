@@ -83,39 +83,13 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 
 `fn + shift - a : return # show launchpad`
 
-My goal was/is to have three modifiers (or modifier-pairs) which together with the available action keys control my whole system:
-_Control_, _Globe/fn_ and _Option+Command_.
+My goal was/is to have a few modifiers (or modifier-pairs) which together with the available "action keys" control my whole system in kind of a layer-like setup:
+_Control_, _Option+Command_, _Option_, _Command_, and _Globe/fn_.
+That's in theory not that different from the goal of basically every keyboard usage/layout, I agree, but having your own system and building it "from the ground" up seemed logical to me, since I myself can choose placements, priorities and modifier layering / depth while making it very easy for me to experiment, maintain and bugfix quickly (for which I use a specific VS Code Workspace with the file structure this repo has).
+Another benefit from this is that one basically doesn't have to achingly remember hotkeys and shortcuts like normally, because choosing and setting them up does half the job for you imho.
 
 I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
 All this (obiously) heavily relies and is based on skhd and yabai as well as some bash scripting; if other apps are used to achieve the function/feature/behavior they are mentioned in paranthesis.
-
-### space and display management ###
-
-```
-                            
-^        1        2        3
-                  W        E
-                           D
-(LSFT)                      
-         LALT     LCMD      
-```
-
-
-`alt + cmd - ^` : **App Exposé**
-
-`alt + cmd - 1` : focus previous space on current display
-
-`alt + cmd - 2` : focus next space on current display
-
-`alt + cmd - 3` : **Mission Control**
-
-`alt + cmd - w` : create and focus new space on current display
-
-`shift + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window
-
-`alt + cmd - e` : change and focus display
-
-`alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces
 
 ### window management ###
 
@@ -156,6 +130,34 @@ CTRL                             ...         ä        #
 `ctrl + alt - down` : **Center Current Window**
 
 ...
+
+### space and display management ###
+
+```
+                            
+^        1        2        3
+                  W        E
+                           D
+(LSFT)                      
+         LALT     LCMD      
+```
+
+
+`alt + cmd - ^` : **App Exposé**
+
+`alt + cmd - 1` : focus previous space on current display
+
+`alt + cmd - 2` : focus next space on current display
+
+`alt + cmd - 3` : **Mission Control**
+
+`alt + cmd - w` : create and focus new space on current display
+
+`shift + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window
+
+`alt + cmd - e` : change and focus display
+
+`alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces
 
 ### window (and app) switching
 
