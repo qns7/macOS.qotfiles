@@ -153,8 +153,6 @@ CTRL                             ...         ä        #
 
 `ctrl + cmd - right` : move current window to next display
 
-...
-
 ### Space and Display Management ###
 
 ```
