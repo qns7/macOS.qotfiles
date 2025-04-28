@@ -262,7 +262,7 @@ TAB      Q        W
 
 `cmd - delete` : 'reversing' `cmd - backspace` (which should be stock)
 
-### mouse actions ###
+### mouse and trackpad actions/gestures ###
 
 ...
 
