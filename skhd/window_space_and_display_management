@@ -1,4 +1,4 @@
-ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service, for quick bug-fixing while managing windows
+ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service, for quick bug-fixing while managing windows, -
 
 ctrl - up : yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # fill current window, move to a control adjacent to the text field (stock)
 ctrl - down : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.37; ~/bin/cliclick_focus # =1169-38, resize current window to inbuilt resolution w/o notch @ 0/0, show all windows of the front app (stock), move to a control adjacent to the text field (stock)
@@ -10,20 +10,20 @@ ctrl + cmd - down : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/clicli
 ctrl + cmd - left : move_current_window_to_previous_display
 ctrl + cmd - right : move_current_window_to_next_display
 
-ctrl - 0x27 : yabai -m window --grid 2:2:0:1:1:2; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom left quarter
-ctrl - 0x2A : yabai -m window --grid 2:2:1:1:2:2; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom right quarter
-ctrl - 0x1E : yabai -m window --grid 2:2:1:0:2:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top right quarter
-ctrl - 0x21 : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top left quarter
+ctrl - 0x27 : yabai -m window --grid 2:2:0:1:1:2; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom left quarter, ä
+ctrl - 0x2A : yabai -m window --grid 2:2:1:1:2:2; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom right quarter, #
+ctrl - 0x1E : yabai -m window --grid 2:2:1:0:2:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top right quarter, +
+ctrl - 0x21 : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top left quarter, ü
 
 ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus # stock window management: center
-alt + cmd - 0x12 : yabai_prev_space_on_display #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left)
-alt + cmd - 0x13 : yabai_next_space_on_display #  ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right)
+alt + cmd - 0x12 : yabai_prev_space_on_display #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
+alt + cmd - 0x13 : yabai_next_space_on_display #  ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
 
 alt + cmd - w : create_and_focus_new_space
 shift + alt + cmd - w [
     "System Settings" : return
     * :  move_current_window_to_new_space_and_focus
 ]
-alt + cmd - e : change_and_focus_display # shift + alt + cmd - e : change_and_focus_display; del_empty_spaces
-alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A (^, mission_control_key is 0xA0)
+alt + cmd - e : change_and_focus_display
+alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A, ^, mission_control_key is 0xA0
 # implement again: space moving to other display !!! why did I delete this note before?
