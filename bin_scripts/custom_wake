@@ -4,8 +4,6 @@
 # flock -n 200 || exit 0
 
 /opt/homebrew/bin/sketchybar --set audio drawing=off
-sudo killall coreaudiod
-sleep 2.1 # 3.7
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
 else
@@ -15,12 +13,13 @@ else
     sleep 1
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
 fi
-sleep 2.1
-# if [[ $(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq length) -eq 2 ]]; then
+sleep 1
 if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi
-sleep 2.1 # 3.7
-/opt/homebrew/bin/sketchybar --reload
-sleep 1.37
+sleep 1
+sudo killall coreaudiod
+sleep 2.1
 /opt/homebrew/bin/yabai --restart-service
+sleep 3.7
+/opt/homebrew/bin/sketchybar --reload
