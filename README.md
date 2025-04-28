@@ -166,9 +166,9 @@ TAB      Q        W
          LALT     LCMD 
 ```
 
-`cmd - tab/^/q/w/esc` : ...
+`cmd - tab/^/q/w/esc` : ... (AltTab)
 
-`alt - tab/^/q/w/esc` : ...
+`alt - tab/^/q/w/esc` : ... (AltTab)
 
 `cmd + alt - tab` : **Move Focus To Next Window**
 
