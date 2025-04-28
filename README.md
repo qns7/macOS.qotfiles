@@ -172,11 +172,11 @@ TAB      Q        W
          LALT     LCMD 
 ```
 
+`cmd + alt - tab` : **Move Focus To Next Window**
+
 `cmd - tab/^/q/w/esc` : ... (AltTab)
 
 `alt - tab/^/q/w/esc` : ... (AltTab)
-
-`cmd + alt - tab` : **Move Focus To Next Window**
 
 ### general system control ###
 
