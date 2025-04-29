@@ -3,7 +3,8 @@
 skhd -k "hyper - d"
 sleep 0.37
 # cliclick_focus || {
-yabai -m window --focus mouse || {
+# yabai -m window --focus mouse || {
+yabai -m window --focus mouse && cliclick_focus || {
     DISPLAYS=$(yabai -m query --displays)
     NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
     CURRENT_DISPLAY=$(echo "$DISPLAYS" | jq -r '.[] | select(.["has-focus"] == true) | .uuid')
