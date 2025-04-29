@@ -120,7 +120,7 @@ CTRL                             ...         ä        #
 ```
 
 
-`ctrl - up` : fill current window
+`ctrl - up` : fill current(ly focused) window
 
 `ctrl - down` : resize current window to inbuilt (scaled) resolution w/o notch
 
@@ -185,7 +185,7 @@ TAB      Q        W
          LALT     LCMD 
 ```
 
-`cmd + alt - tab` : **Move Focus To Next Window** of current app on currently visible spaces
+`cmd + alt - tab` : **Move Focus To Next Window** of current app on current(ly visible) spaces on either display
 
 `cmd - tab / ^ / q / w / esc` : Show windows from applications : All apps, Show windows from Spaces : Visible Spaces, Show windows from screens : Screen showing AltTab, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Recently Focused First / go up instead of down listwise / quit app / close window / exit listview (AltTab)
 
