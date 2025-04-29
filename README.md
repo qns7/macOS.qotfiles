@@ -98,7 +98,7 @@ Since the _Control_ key has basically no function in macOS other than the Termin
 in my skhdrc to ensure a functioning _Control_ key where I need it.
 
 My goal was/is to have a few modifiers (or modifier-pairs) which together with the available "action keys" control my whole system in kind of a layer-like setup:  
-`Control`, `Option + Command`, `Option`, `Command` and `Globe/fn`
+`Control`, `Option + Command`, `Option`, `Command` and `Globe/fn`  
 That's in theory not that different from the goal of basically every keyboard usage/layout, I agree, but having your own system and building it "from the ground" up seemed logical to me, since I myself can choose placements, priorities and modifier layering / depth while making it very easy for me to experiment, maintain and bugfix quickly (for which I use a specific VS Code Workspace with the file structure this repo has).
 Another benefit from this is that one basically doesn't have to achingly remember hotkeys and shortcuts like normally, because choosing and setting them up does half the job for you imho.
 
