@@ -287,7 +287,7 @@ TAB      Q        W
 
 ### Caveats
 
-- **Display/Monitor-Setups** : only designed for maximal two displays, internal and one external 27"1440p (to the left); new/different external monitor would need a few adaptions/changes.
+- **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions/changes.
 - **Dependencies** : cliclick, jq, ... [all available on Homebrew] ... keysmith, OnlySwitch (check references again), 
 
 ## System Status Bar (Sketchybar)
