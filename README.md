@@ -78,11 +78,11 @@ where
 
 `fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer (RME TotalMix FX)
 
-`fn + alt - f15` = `shift + alt - f15` : guitar setup on (RME TotalMix FX)
+`fn + alt - f15` = `shift + alt - f15` : turn guitar setup on (RME TotalMix FX)
 
-`fn + alt - f16` = `shift + alt - f16` : all off (RME TotalMix FX)
+`fn + alt - f16` = `shift + alt - f16` : turn guitar and mic off (RME TotalMix FX)
 
-`fn + alt - f17` = `shift + alt - f17` : mic on (RME TotalMix FX)
+`fn + alt - f17` = `shift + alt - f17` : turn mic on (RME TotalMix FX)
 
 4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according Sketchybar item (see below). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
 
