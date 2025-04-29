@@ -41,47 +41,47 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     f17 : skhd -k "0xB2" # do not disturb
     ```
 3. The additional keys on the far right of the Q1 I use as follows
-```
-                           F13      F14
-                                    MPLY
-                                    MPRV
-                                    MNXT
-
-RALT     FN
--------------------------------------------
-                           S(____)  S(____)
-                                    S(F15)
-                                    S(F16)
-                                    S(F17)
-
-
-```
-where 
-
-`f13` : toggle my inbuilt macbook display on/off
-
-`f14` : mute (SwitchAudioSource)
-
-`fn - f13` = `shift - f13` : toggle my desklight on/on
-
-`fn - f14` = `shift - f14` : open/close room correction software (Sonarworks SoundID Reference)
-
-`fn - f15` = `shift - f15` : dedicated global play/pause button for music player (Foobar2000)
-
-`fn - f16` = `shift - f16` : send midi message to change audio output to my speaker
-
-`fn - f17` = `shift - f17` : send midi message to change audio output to my headphones
-
-`fn + alt - f13` = `shift + alt - f13` : toggle yabai -m config menubar_opacity (0.00/1.00)
-
-`fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer (RME TotalMix FX)
-
-`fn + alt - f15` = `shift + alt - f15` : turn guitar setup on (RME TotalMix FX)
-
-`fn + alt - f16` = `shift + alt - f16` : turn guitar and mic off (RME TotalMix FX)
-
-`fn + alt - f17` = `shift + alt - f17` : turn mic on (RME TotalMix FX)
-
+    ```
+                               F13      F14
+                                        MPLY
+                                        MPRV
+                                        MNXT
+    
+    RALT     FN
+    -------------------------------------------
+                               S(____)  S(____)
+                                        S(F15)
+                                        S(F16)
+                                        S(F17)
+    
+    
+    ```
+    where 
+    
+    `f13` : toggle my inbuilt macbook display on/off
+    
+    `f14` : mute (SwitchAudioSource)
+    
+    `fn - f13` = `shift - f13` : toggle my desklight on/on
+    
+    `fn - f14` = `shift - f14` : open/close room correction software (Sonarworks SoundID Reference)
+    
+    `fn - f15` = `shift - f15` : dedicated global play/pause button for music player (Foobar2000)
+    
+    `fn - f16` = `shift - f16` : send midi message to change audio output to my speaker
+    
+    `fn - f17` = `shift - f17` : send midi message to change audio output to my headphones
+    
+    `fn + alt - f13` = `shift + alt - f13` : toggle yabai -m config menubar_opacity (0.00/1.00)
+    
+    `fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer (RME TotalMix FX)
+    
+    `fn + alt - f15` = `shift + alt - f15` : turn guitar setup on (RME TotalMix FX)
+    
+    `fn + alt - f16` = `shift + alt - f16` : turn guitar and mic off (RME TotalMix FX)
+    
+    `fn + alt - f17` = `shift + alt - f17` : turn mic on (RME TotalMix FX)
+    
 4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according Sketchybar item (see below). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
 
 ## Hotkeys / Shortcuts
