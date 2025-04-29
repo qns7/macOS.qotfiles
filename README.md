@@ -7,7 +7,7 @@
 - I used only Windows and Linux all my life until April 2024 when I bought my first MacBook. Since then I am continuously working on my personal setup and want to share the process here.
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' the correspoding hotkeys completely (see below).
 - I use my Dock at the left side with nothing in there beside the two not-removable stock items Finder and Trash. It is set to autohide with no delay.
-- For my mouse setup I use yabai's mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
+- For my mouse setup I use Yabai's mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
 - Everywhere I can I use cable versions of my peripherals or prectically devices overall, since for me personally the wireless hype of the last years makes mostly no sense to me: Batteries die, are bad for the enviroment and the performance is always worse than their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed in my setup I am happy. Honestly I like the look of well organized cables more than no cables.
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
 
@@ -58,7 +58,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     ```
     where 
     
-    `f13` : toggle my inbuilt macbook display on/off
+    `f13` : toggle my inbuilt macbook display on/off (Brightness)
     
     `f14` : mute (SwitchAudioSource)
     
@@ -68,13 +68,13 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn - f15` = `shift - f15` : dedicated global play/pause button for music player (Foobar2000)
     
-    `fn - f16` = `shift - f16` : send midi message to change audio output to my speaker
+    `fn - f16` = `shift - f16` : send midi message to change audio output to my speaker (Sendmidi)
     
-    `fn - f17` = `shift - f17` : send midi message to change audio output to my headphones
+    `fn - f17` = `shift - f17` : send midi message to change audio output to my headphones (Sendmidi)
     
-    `fn + alt - f13` = `shift + alt - f13` : toggle yabai -m config menubar_opacity (0.00/1.00)
+    `fn + alt - f13` = `shift + alt - f13` : show/hide menubar (Yabai)
     
-    `fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer (RME TotalMix FX)
+    `fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer RME TotalMix FX
     
     `fn + alt - f15` = `shift + alt - f15` : turn guitar setup on (RME TotalMix FX)
     
@@ -106,7 +106,7 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 `fn + shift - a : return # show launchpad`
 
 I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
-All this (obiously) heavily relies and is based on skhd and yabai as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis.
+All this (obiously) heavily relies and is based on Skhd and Yabai as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis.
 
 ### Window Management ###
 
@@ -261,9 +261,9 @@ TAB      Q        W
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
-`fn - y` : restart yabai
+`fn - y` : restart Yabai
 
-`fn - x` : reload sketchybar
+`fn - x` : reload Sketchybar
 
 `fn - c` : **Show/Hide Control Center**
 
