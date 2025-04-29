@@ -297,7 +297,7 @@ TAB      Q        W
 - **Display/Monitor-Setups** : only designed for maximal two displays, internal and one external 27"1440p (to the left); new/different external monitor would need a few adaptions/changes.
 - **Dependencies** : cliclick, jq, ... [all available on Homebrew] ... keysmith, OnlySwitch (check references again), 
 
-## System Status Bar ---Sketchybar 
+## System Status Bar (Sketchybar)
 
 ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351)
 
