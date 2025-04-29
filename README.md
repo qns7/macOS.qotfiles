@@ -195,6 +195,7 @@ TAB      Q        W
 `cmd + alt - tab` : **Move Focus To Next Window**
 
 `cmd - tab/^/q/w/esc` : 
+
 Show windows from applications : All apps
 Show windows from Spaces : Visible Spaces
 Show windows from screens : Screen showing AltTab
@@ -205,6 +206,7 @@ Order windows by : Recently Focused First
 (AltTab)
 
 `alt - tab/^/q/w/esc` : 
+
 Show windows from applications : All apps
 Show windows from Spaces : All Spaces
 Show windows from screens : All screens
