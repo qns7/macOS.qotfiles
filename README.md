@@ -62,7 +62,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `f14` : mute (SwitchAudioSource)
     
-    `fn - f13` = `shift - f13` : toggle my desklight on/on
+    `fn - f13` = `shift - f13` : toggle my desklight on/off (curl/elgato)
     
     `fn - f14` = `shift - f14` : open/close room correction software (Sonarworks SoundID Reference)
     
