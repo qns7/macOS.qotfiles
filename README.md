@@ -8,7 +8,7 @@
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
 - The following applies throughout: `alt = opt(ion)`
 - I use my Dock at the left side with nothing in there beside the stock items Finder and Trash. It is set so autohide with no delay.
-- For my mouse setup I use Yabai's mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
+- For my mouse setup I use yabai's mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
 - Everywhere I can I use cable versions of my peripherals or prectically devices overall, since for me personally the wireless hype of the last years makes mostly no sense to me: Batteries die, are bad for the enviroment and the performance is always worse than their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed in my setup I am happy. Honestly I like the look of well organized cables more than no cables.
 
 ## Keyboard Setup
@@ -86,7 +86,7 @@ where
 
 4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according Sketchybar item (see below). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
 
-## Hotkeys / Shortcuts ---SKHD/Yabai ---/Menuwhere/AltTab
+## Hotkeys / Shortcuts
 
 Since the _Control_ key has basically no function in macOS other than the Terminal I use it as my main "appswitcher-key" and for other stuff, which I'll come to later, while dedicating the few system functions & features which use the _Control_ key in macOS' stock config to other hotkeys/shortcuts and while using 
 
@@ -287,6 +287,8 @@ TAB      Q        W
 `cmd - delete` : 'reversing' `cmd - backspace` (which should be stock)
 
 ### Mouse and Trackpad Actions/Gestures
+
+... (Menuwhere)
 
 ...
 
