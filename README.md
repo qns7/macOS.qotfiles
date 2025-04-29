@@ -34,7 +34,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
 ### Remarks
 
 1. In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` I change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard. Therefore from now on `CAPS` will be replaced with `CTRL` and `C(____)` with `FN(____)`.
-2. To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my skhd config.
+2. To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my skhd config.  
 ```
 f15 : skhd -k "0xB1" # spotlight
 f16 : skhd -k "0xB0" # dictation
