@@ -194,9 +194,9 @@ TAB      Q        W
 
 `cmd + alt - tab` : **Move Focus To Next Window**
 
-`cmd - tab/^/q/w/esc` : Show windows from applications : All apps / Show windows from Spaces : Visible Spaces / Show windows from screens : Screen showing AltTab / Show minimized windows : Show / Show hidden windows : Show / Show fullscreen windows : Show / Order windows by : Recently Focused First (AltTab)
+`cmd - tab/^/q/w/esc` : Show windows from applications : All apps, Show windows from Spaces : Visible Spaces, Show windows from screens : Screen showing AltTab, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Recently Focused First / go up instead of down listwise / quit app / close window / exit listview (AltTab)
 
-`alt - tab/^/q/w/esc` : Show windows from applications : All apps / Show windows from Spaces : All Spaces / Show windows from screens : All screens / Show minimized windows : Show / Show hidden windows : Show / Show fullscreen windows : Show / Order windows by : Alphabetical Order (AltTab)
+`alt - tab/^/q/w/esc` : Show windows from applications : All apps, Show windows from Spaces : All Spaces, Show windows from screens : All screens, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Alphabetical Order, go up instead of down listwise / quit app / close window / exit listview (AltTab)
 
 ### General System Control ###
 
