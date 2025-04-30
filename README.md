@@ -327,12 +327,15 @@ TAB      Q        W
 - **VPN**: Viscosity [clickable: openAndConnect/quit]
 - **Numbers**: date : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
 
+<!-- 
 ### Indication: ...
 
 ## Always & Quickly Available Terminal ---iTerm2
 
 ### Hotkey Window
 
-<!-- ![Screenshot 2025-03-29 at 11 50 01](https://github.com/user-attachments/assets/df4c5621-4fc6-40e6-ac33-6e41be3383cc) -->
+![Screenshot 2025-03-29 at 11 50 01](https://github.com/user-attachments/assets/df4c5621-4fc6-40e6-ac33-6e41be3383cc)
 
 ### Customized btop
+
+-->
