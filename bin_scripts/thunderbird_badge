@@ -8,12 +8,12 @@ if [ -z "$BOQ" ]; then
     yabai -m space --create # changed from using create_and_focus_new_space because if ctrl is held down still, cliclick c:. will open context menu; but still: if ctrl is held, thunderbird is buggy: doesn't show emails..
     yabai -m space --focus "$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
     sleep 0.1
-    # open_or_focus "thunderbird"
-    open -a "thunderbird"
-    sleep 0.73
-    cliclick_focus
-    sleep 1
-    # sleep 2
+    open_or_focus "thunderbird"
+    # open -a "thunderbird"
+    # sleep 0.73
+    # cliclick_focus
+    # sleep 1
+    sleep 2
     ~/.config/sketchybar/plugins/badge.sh
     del_empty_spaces
     sketchybar --set front_app icon.color=0xffc7c7c7
