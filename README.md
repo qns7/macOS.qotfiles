@@ -281,6 +281,8 @@ TAB      Q        W
 
 ### Mouse and Trackpad Actions/Gestures
 
+`forwards_button/backwards_button` : "universal back and forward" (Linearmouse)
+
 `ctrl - left_button` : move window (Yabai)
 
 `ctrl - right_button` : resize window (Yabai)
@@ -289,11 +291,15 @@ TAB      Q        W
 
 `alt - forwards_button` : smart zoom (Linearmouse)
 
-`alt - backwards_button` : `cmd - 0` (Linearmouse)
+`alt - backwards_button` : `cmd - 0` = often zooms out (Linearmouse)
 
-`alt + cmd - left_button` : `alt + cmd - left_arrow`
+`alt + cmd - left_button` : `alt + cmd - left_arrow` = often moves to the tab on the left (Linearmouse)
 
-...
+`alt + cmd - right_button` : `alt + cmd - right_arrow`  = often moves to the tab on the right (Linearmouse)
+
+`three-finger-up` : **Mission Control**
+
+`three-finger-down` : **App Exposé**
 
 ### Caveats
 
