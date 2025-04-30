@@ -1,4 +1,4 @@
-# My Custom macOS (Sequoia 15.4+) Setup 2025
+# My Custom macOS Setup (Sequoia 15.4+)
 
 ## General Information
 
