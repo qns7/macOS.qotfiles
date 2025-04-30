@@ -245,7 +245,7 @@ TAB      Q        W
 
 ---
 
-`fn - fX` : **FX / Special Function**
+`fn - f*` : **F\* / Special Function**
 
 `fn - backspace` : **Forward Delete**
 
@@ -271,7 +271,7 @@ TAB      Q        W
 
 `fn - n` : **Show/Hide Notification Center**
 
-`fn - arrows` : **Home, PageUp, PageDown, End**
+`fn - *_arrow` : **Home, PageUp, PageDown, End**
 
 ---
 
@@ -281,7 +281,17 @@ TAB      Q        W
 
 ### Mouse and Trackpad Actions/Gestures
 
-... (Menuwhere)
+`ctrl - left_button` : move window (Yabai)
+
+`ctrl - right_button` : resize window (Yabai)
+
+`cmd - right_button` : menubar left entries (Menuwhere)
+
+`alt - forwards_button` : smart zoom (Linearmouse)
+
+`alt - backwards_button` : `cmd - 0` (Linearmouse)
+
+`alt + cmd - left_button` : `alt + cmd - left_arrow`
 
 ...
 
