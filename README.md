@@ -279,7 +279,7 @@ TAB      Q        W
 
 `cmd - delete` : 'reversing' `cmd - backspace` (which should be stock)
 
-### Mouse and Trackpad Actions/Gestures
+### Mouse and Trackpad Actions & Gestures
 
 `forwards_button/backwards_button` : "universal back and forward" (Linearmouse)
 
