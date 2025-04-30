@@ -1,14 +1,14 @@
-# macOS (Sequoia 15.4+) Setup 2025
+# My Custom macOS (Sequoia 15.4+) Setup 2025
 
 ## General Information
 
-- This description/readme is just an overview, for all the details please check the dotfiles directly.
+- This description/readme is just an overview, for all the details please check the dotfiles directly, which get updated very often 😬
 - The following applies throughout: `alt = opt(ion)`
-- I used only Windows and Linux all my life until April 2024 when I bought my first MacBook. Since then I am continuously working on my personal setup and want to share the process here.
+- I used only Windows and Linux all my life - until April 2024 when I bought my first MacBook. Since then I am continuously working on my setup and now I want to share the process here.
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' the correspoding hotkeys completely (see below).
 - I use my Dock at the left side with nothing in there beside the two not-removable stock items Finder and Trash. It is set to autohide with no delay.
 - For my mouse setup I use Yabai's mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
-- Everywhere I can I use cable versions of my peripherals or prectically devices overall, since for me personally the wireless hype of the last years makes mostly no sense to me: Batteries die, are bad for the enviroment and the performance is always worse than their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed in my setup I am happy. Honestly I like the look of well organized cables more than no cables.
+- Everywhere I can I use cable versions of my peripherals (or practically devices overall), since personally the wireless hype of the last years makes mostly no sense to me: Batteries die, are bad for the enviroment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed in my setup I am happy. Honestly I like the look of well organized cables more than no cables.
 - I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
 
 ## Keyboard Setup
