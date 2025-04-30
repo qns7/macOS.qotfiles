@@ -201,7 +201,7 @@ TAB      Q        W
 
 `ctrl - t` : Terminal (iTerm2 Hotkey Window)
 
-`ctrl + cmd - t` : write date and time at cursor position (textbox), e.g. "07:37, 07.07.37, SUN"
+`ctrl + cmd - t` : write date and time at cursor position / textbox, e.g. "07:37, 07.07.37, SUN"
 
 `ctrl - p` : open and/or focus Passwords
 
@@ -233,7 +233,7 @@ TAB      Q        W
 
 `ctrl - v` : open and/or focus VS Code
 
-`ctrl + cmd - v` : shorten copied url and paste (uses Keysmith/Applescript)
+`ctrl + cmd - v` : shorten copied url and paste (Keysmith w/Applescript)
 
 `ctrl - b` : open and/or focus Thunderbird
 
@@ -249,15 +249,15 @@ TAB      Q        W
 
 `fn - backspace` : **Forward Delete**
 
-`fn - esc` : toggle keyboard backlight (uses OnlySwitch)
+`fn - esc` : toggle keyboard backlight (OnlySwitch)
 
 `fn - w` : executes custom bash script
 
 `fn - s` : sleep immediately
 
-`fn - r` : start/stop Radio (uses OnlySwitch)
+`fn - r` : start/stop Radio (OnlySwitch)
 
-`fn - t` : Pomodoro Timer 25/5 (x4) (uses OnlySwitch)
+`fn - t` : Pomodoro Timer 25/5 (x4) (OnlySwitch)
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
@@ -267,7 +267,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop Background Noise (soft rain) (uses OnlySwitch)
+`fn - b` : start/stop Background Noise (OnlySwitch)
 
 `fn - n` : **Show/Hide Notification Center**
 
