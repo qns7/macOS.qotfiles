@@ -287,7 +287,7 @@ TAB      Q        W
 
 `ctrl - right_button` : resize window (Yabai)
 
-`cmd - right_button` : menubar left entries (Menuwhere)
+`cmd - right_button` : left menubar content (Menuwhere)
 
 `alt - forwards_button` : smart zoom (Linearmouse)
 
