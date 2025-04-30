@@ -48,7 +48,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
                                         MNXT
     
     RALT     FN
-    -------------------------------------------
+    -----------------FN-LAYER------------------
                                S(____)  S(____)
                                         S(F15)
                                         S(F16)
