@@ -62,9 +62,9 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `f13` : toggle my inbuilt macbook display on/off (**Brightness**)
     
-    `f14` : mute (SwitchAudioSource)
+    `f14` : mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
     
-    `fn - f13` = `shift - f13` : toggle my desklight on/off (curl/Elgato)
+    `fn - f13` = `shift - f13` : toggle my desklight on/off (**Curl** w/ElgatoKeylight)
     
     `fn - f14` = `shift - f14` : open/close room correction software ([Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference))
     
