@@ -106,7 +106,14 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 `fn + shift - a : return # show launchpad`
 
 I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
-All this (obiously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis. I don't use  [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature instead I just use the floating window managment. Why don't I use the newly available inbuilt window management features of macOS? Because they are, like the space switching way to slow for me because of their animations which cannot be disabled completely. Remark: To use  [Yabai](https://github.com/koekeishiya/yabai) one has to deactivate SIP (e.g. for fast space switching).
+All this (obiously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis. 
+
+### Remark
+
+I don't use  [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature instead I just use the floating window managment.  
+> Why don't you use the newly available inbuilt window management features of macOS then?  
+Because they are, like the switching of spaces (virtual desktops), way to slow for me because of their animations which cannot be disabled completely.  
+Warning: To use [Yabai](https://github.com/koekeishiya/yabai) to its fullest one has to deactivate SIP (e.g. for fast space switching).
 
 ### Window Management ###
 
