@@ -6,16 +6,16 @@
 - The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
 - I only used Windows and Linux all my life - until April 2024. Back then I bought my first MacBook; and since then I am continuously work on my setup, which now I want to share here.
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' the correspoding hotkeys completely ([see below](#anchor1)).
-- I use my Dock at the left side with nothing in there beside the two not-removable stock items Finder and Trash. It is set to autohide with no delay.
-- For my mouse setup I use [Yabai](https://github.com/koekeishiya/yabai)'s mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
-- Everywhere I can I use cable versions of my peripherals (or practically devices overall), since personally the wireless hype of the last years makes mostly no sense to me: Batteries die, are bad for the enviroment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed in my setup I am happy. Honestly I like the look of well organized cables more than no cables.
+- I use my Dock at the left side with nothing in there beside the two not-removable stock items Finder and Trash. It is set to autohide with no delay ([Onyx](https://titanium-software.fr/en/onyx.html) or using a terrminal command).
+- For my mouse setup I use [Yabai](https://github.com/koekeishiya/yabai)'s [mouse support features[(https://github.com/koekeishiya/yabai/wiki/Configuration#mouse-support) as well as [Linearmouse](https://linearmouse.app/). Every mouse with the widely available "5 buttons layout" will work.
+- Everywhere I can I use cable versions of my peripherals or even devices in general, since personally the general wireless hype makes mostly no sense to me: Batteries die, are bad for the environment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed I am happy. Honestly.. I like the look of well organized cables more than no cables.
 - I don't like using [Raycast](https://www.raycast.com/) or [Alfred](https://www.alfredapp.com/) or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc are good enough for me.  
   Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.  
-  Another tipp: macOS' Emoji Picker is faster if you use it with the stock hotkey/shortcut `ctrl + cmd - space` or any other other than the "**Press 🌐 key to**" function. My guess is, that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs the delay so many are annoyed by. Using it with another dedicated hotkey/shortcut isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker, but fast enough for me at least.
+  Another tipp: macOS' Emoji Picker is faster if you use it with the stock hotkey `ctrl + cmd - space` or any other custom hotkey other than macOS' "**Press 🌐 key to**" function. My guess is, that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs this slight delay so many are annoyed by. Using it with another dedicated hotkey isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker, but fast enough for me.
 
 ## Keyboard Setup
 
-I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop since 2022. The qmk keymap I use for macOS (slightly optimized for readability) is  
+I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is  
 ```
 ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
 NUBS ^   1        2        3        4        5        6        7        8        9        0        MINS ß   EQL ´    BSPC              MPLY
@@ -35,8 +35,8 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
 
 #### Remarks
 
-1. In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` I change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard. Therefore from now on `CAPS` will be replaced with `CTRL` and `C(____) & ctrl +/- ...` with `FN(____) & fn +/- ...`.
-2. To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my [Skhd](https://github.com/koekeishiya/skhd) config.  
+1. In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` I change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard. Therefore from now on `CAPS` will be replaced with `CTRL` and `C(____)` with `FN(____)`.
+2. To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my [Skhd](https://github.com/koekeishiya/skhd) config (skhdrc).  
     ```
     f15 : skhd -k "0xB1" # spotlight
     f16 : skhd -k "0xB0" # dictation
@@ -84,7 +84,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn + alt - f17` = `shift + alt - f17` : turn mic on (RME TotalMix FX)
     
-4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [Sketchybar](https://github.com/FelixKratz/SketchyBar) item (see below). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
+4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [Sketchybar](https://github.com/FelixKratz/SketchyBar) item ([see below](#anchor2)). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
 
 ## Hotkeys / Shortcuts
 
@@ -328,7 +328,7 @@ Screenshot-Example (17:25, 01.05.25, THU):
 - **Numbers**: number of spaces on current display . current space on current display : number of windows on current space . number of apps on current space
 - **Text**: currently focused / active app
 - **KC**: [KeyboardCleanTool](https://folivora.ai/keyboardcleantool/) [clickable open/close]
-- **FN / SF**: "Use F1, F2, etc. keys as standard function keys" (**check click_fn.sh**) [clickable: toggle]
+- <a id="anchor2"></a>**FN / SF**: "Use F1, F2, etc. keys as standard function keys" (**check click_fn.sh**) [clickable: toggle]
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
 - '**Behind the notch**': shutdown and restart (**event aevtr**) [clickable: execute]
 - '**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
