@@ -334,11 +334,11 @@ Screenshot-Example (17:25, 01.05.25, THU):
 - '**Behind the notch**': shutdown and restart (**event aevtr**) [clickable: execute]
 - '**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
 - **_Envelope_ / XX**: indicator for new mails / [Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/) quit [clickable: open/focus Thunderbird]
-- **CAM**: LogiTune [clickable: open/focus]
-- **ELG**: Elgato Control Center [clickable: openAndPopUp/quit]
-- **REM**: Remote+ [clickable: startServer/quit]
-- **CFW**: Cloudflare Warp [clickable: openAndConnect/quit]
-- **VPN**: Viscosity [clickable: openAndConnect/quit]
+- **CAM**: [LogiTune](https://www.logitech.com/en-us/video-collaboration/software/logi-tune-software.html) [clickable: open/focus]
+- **ELG**: [Elgato Control Center](https://formulae.brew.sh/cask/elgato-control-center) [clickable: openAndPopUp/quit]
+- **REM**: [Remote+](https://cherpake.com/apps/remote-mouse-keyboard/) [clickable: startServer/quit]
+- **CFW**: [Cloudflare Warp](https://formulae.brew.sh/cask/cloudflare-warp) [clickable: openAndConnect/quit]
+- **VPN**: [Viscosity](https://formulae.brew.sh/cask/viscosity#default) [clickable: openAndConnect/quit]
 - **Numbers**: date : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
 
 <!-- 
