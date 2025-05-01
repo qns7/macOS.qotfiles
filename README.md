@@ -234,9 +234,9 @@ TAB      Q        W
 
 `ctrl - <` : **Screenshot And Recording Options**
 
-`ctrl - y` : **Save Picture Of Screen As A File (Thumbnail Dragging For Clipboard Functionality)**
+`ctrl - y` : **Save Picture Of Screen As A File** (Thumbnail Dragging For Clipboard Functionality)
 
-`ctrl - x` : **Save Picture Of Selected Area As A File (Thumbnail Dragging For Clipboard Functionality, Remember Spacebar Usage)**
+`ctrl - x` : **Save Picture Of Selected Area As A File** (Thumbnail Dragging For Clipboard Functionality, Remember Spacebar Usage)
 
 `ctrl - c` : OCR ([TRex](https://github.com/amebalabs/TRex))
 
