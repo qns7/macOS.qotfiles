@@ -264,7 +264,7 @@ TAB      Q        W
 
 `fn - esc` : toggle keyboard backlight ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
-`fn - w` : executes custom bash script
+<!-- `fn - w` : executes custom bash script: adjustments to changes triggered by setup changes (desk / mobile) (also cf. yabai signals...) -->
 
 `fn - s` : sleep immediately (**Pmset**)
 
