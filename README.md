@@ -76,7 +76,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn + alt - f13` = `shift + alt - f13` : show/hide menubar ([Yabai](https://github.com/koekeishiya/yabai))
     
-    `fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer RME TotalMix FX
+    `fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer RME TotalMix FX (Babyface Pro)
     
     `fn + alt - f15` = `shift + alt - f15` : turn guitar setup on (RME TotalMix FX)
     
