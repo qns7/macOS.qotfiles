@@ -70,9 +70,9 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn - f15` = `shift - f15` : dedicated global play/pause button for music player ([Foobar2000](https://www.foobar2000.org/mac))
     
-    `fn - f16` = `shift - f16` : send midi message to change audio output to my speaker (Sendmidi)
+    `fn - f16` = `shift - f16` : send midi message to change audio output to my speaker ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
-    `fn - f17` = `shift - f17` : send midi message to change audio output to my headphones (Sendmidi)
+    `fn - f17` = `shift - f17` : send midi message to change audio output to my headphones ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
     `fn + alt - f13` = `shift + alt - f13` : show/hide menubar ([Yabai](https://github.com/koekeishiya/yabai))
     
