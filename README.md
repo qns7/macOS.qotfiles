@@ -31,7 +31,7 @@ ____     ____     ____                                         C(____)          
 ```
 which is meant to mimic the inuilt keyboard with its layout as best as possible.
 
-### Remarks
+#### Remarks
 
 1. In `System Settings > Keyboard > Keyboard Shortcuts... > Modifier Keys` I change _Control_ to _Globe/fn_ and _Caps Lock_ to _Control_ for both the inbuilt and the external keyboard. Therefore from now on `CAPS` will be replaced with `CTRL` and `C(____) & ctrl +/- ...` with `FN(____) & fn +/- ...`.
 2. To imitate the special functions of the f-row completely with the inbuilt keyboard I use the following three lines in my [Skhd](https://github.com/koekeishiya/skhd) config.  
@@ -108,7 +108,7 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
 All this (obiously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis. 
 
-### Remark
+#### Remark
 
 I don't use  [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature instead I just use the floating window managment.  
 
