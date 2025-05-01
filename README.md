@@ -210,7 +210,7 @@ TAB      Q        W
 
 `ctrl - t` : Terminal ([iTerm2](https://iterm2.com/) Hotkey Window)
 
-`ctrl + cmd - t` : write date and time at cursor position / textbox, e.g. "07:37, 07.07.37, SUN" ([Keysmith](https://www.keysmith.app/))
+`ctrl + cmd - t` : write date and time at cursor position / textbox, e.g. "07:37, 07.07.37, SUN" ([Keysmith](https://www.keysmith.app/) w/Applescript)
 
 `ctrl - p` : open and/or focus **Passwords**
 
@@ -222,7 +222,7 @@ TAB      Q        W
 
 `ctrl + alt + cmd - s` : **Type To Siri**
 
-`ctrl - d` : show/hide Dock using automated mouse movement
+`ctrl - d` : show/hide Dock using automated mouse movement ([cliclick](https://github.com/BlueM/cliclick))
 
 `ctrl + cmd - d` : **Look Up & Data Detectors / Show Or Hide The Definition Of The Selected Word**
 
@@ -238,13 +238,13 @@ TAB      Q        W
 
 `ctrl - x` : **Save Picture Of Selected Area As A File (Thumbnail Dragging For Clipboard Functionality, Remember Spacebar Usage)**
 
-`ctrl - c` : OCR (TRex)
+`ctrl - c` : OCR ([TRex](https://github.com/amebalabs/TRex))
 
-`ctrl - v` : open and/or focus VS Code
+`ctrl - v` : open and/or focus [VS Code](https://code.visualstudio.com/docs/setup/mac)
 
 `ctrl + cmd - v` : shorten copied url and paste ([Keysmith](https://www.keysmith.app/) w/Applescript)
 
-`ctrl - b` : open and/or focus Thunderbird
+`ctrl - b` : open and/or focus [Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/)
 
 `ctrl - m` : open and/or focus **Audio Midi Setup**
 
@@ -290,21 +290,21 @@ TAB      Q        W
 
 ### Mouse and Trackpad Actions & Gestures
 
-`forwards_button/backwards_button` : "universal back and forward" (Linearmouse)
+`forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
 `ctrl - left_button` : move window ([Yabai](https://github.com/koekeishiya/yabai))
 
 `ctrl - right_button` : resize window ([Yabai](https://github.com/koekeishiya/yabai))
 
-`cmd - right_button` : left menubar content (Menuwhere)
+`cmd - right_button` : left menubar content ([Menuwhere](https://manytricks.com/menuwhere/))
 
-`alt - forwards_button` : smart zoom (Linearmouse)
+`alt - forwards_button` : smart zoom ([Linearmouse](https://linearmouse.app/))
 
-`alt - backwards_button` : `cmd - 0` = often zooms out (Linearmouse)
+`alt - backwards_button` : `cmd - 0` = often zooms out ([Linearmouse](https://linearmouse.app/))
 
-`alt + cmd - left_button` : `alt + cmd - left_arrow` = often moves to the tab on the left (Linearmouse)
+`alt + cmd - left_button` : `alt + cmd - left_arrow` = often moves to the tab on the left ([Linearmouse](https://linearmouse.app/))
 
-`alt + cmd - right_button` : `alt + cmd - right_arrow`  = often moves to the tab on the right (Linearmouse)
+`alt + cmd - right_button` : `alt + cmd - right_arrow`  = often moves to the tab on the right ([Linearmouse](https://linearmouse.app/))
 
 `three-finger-up` : **Mission Control**
 
@@ -323,12 +323,12 @@ TAB      Q        W
 - **_Monitor / MacBook_**: indicator if external or internal display is currently focused (greyed-out if there are empty space, orange if there are fullscreen spaces)
 - **Numbers**: number of spaces on current display . current space on current display : number of windows on current space . number of apps on current space
 - **Text**: currently focused / active app
-- **KC**: KeyboardCleanTool [clickable open/close]
-- **FN / SF**: "Use F1, F2, etc. keys as standard function keys" [clickable: toggle]
+- **KC**: [KeyboardCleanTool](https://folivora.ai/keyboardcleantool/) [clickable open/close]
+- **FN / SF**: "Use F1, F2, etc. keys as standard function keys" (**check click_fn.sh**) [clickable: toggle]
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
-- '**Behind the notch**': shutdown and restart (event aevtr) [clickable: execute]
+- '**Behind the notch**': shutdown and restart (**event aevtr**) [clickable: execute]
 - '**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
-- **_Envelope_ / XX**: indicator for new mails / Thunderbird quit [clickable: open/focus Thunderbird]
+- **_Envelope_ / XX**: indicator for new mails / [Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/) quit [clickable: open/focus Thunderbird]
 - **CAM**: LogiTune [clickable: open/focus]
 - **ELG**: Elgato Control Center [clickable: openAndPopUp/quit]
 - **REM**: Remote+ [clickable: startServer/quit]
