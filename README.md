@@ -302,22 +302,22 @@ TAB      Q        W
 
 `cmd - right_button` : left menubar content ([Menuwhere](https://manytricks.com/menuwhere/))
 
-`alt - forwards_button` : smart zoom ([Linearmouse](https://linearmouse.app/))
+`alt - forwards_button` : smart zoom ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`alt - backwards_button` : `cmd - 0` = often zooms out ([Linearmouse](https://linearmouse.app/))
+`alt - backwards_button` : `cmd - 0` = often zooms out ([Linearmouse](https://linearmouse.app/))  (only mouse)
 
-`alt + cmd - left_button` : `alt + cmd - left_arrow` = often moves to the tab on the left ([Linearmouse](https://linearmouse.app/))
+`alt + cmd - left_button` : `alt + cmd - left_arrow` = often moves to the tab on the left ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`alt + cmd - right_button` : `alt + cmd - right_arrow`  = often moves to the tab on the right ([Linearmouse](https://linearmouse.app/))
+`alt + cmd - right_button` : `alt + cmd - right_arrow`  = often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`three-finger-up` : **Mission Control**
+`three-finger-up` : **Mission Control** (only trackpad)
 
-`three-finger-down` : **App Exposé**
+`three-finger-down` : **App Exposé** (only trackpad)
 
 ### Caveats
 
-- **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions/changes.
-- **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via Homebrew. They are all free except of Menuwhere (3$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
+- **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions and/or changes.
+- **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via [Homebrew](https://brew.sh/). They are all free except of [Menuwhere](https://manytricks.com/menuwhere/) (3$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
 
 ## System Status Bar ([Sketchybar](https://github.com/FelixKratz/SketchyBar))
 
