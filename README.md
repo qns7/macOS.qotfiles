@@ -9,7 +9,7 @@
 - I use my Dock at the left side with nothing in there beside the two not-removable stock items Finder and Trash. It is set to autohide with no delay.
 - For my mouse setup I use Yabai's mouse support features as well as Linearmouse. Every mouse with the widely available 5 buttons layout will work.
 - Everywhere I can I use cable versions of my peripherals (or practically devices overall), since personally the wireless hype of the last years makes mostly no sense to me: Batteries die, are bad for the enviroment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed in my setup I am happy. Honestly I like the look of well organized cables more than no cables.
-- I don't like using Raycast or Alfred or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
+- I don't like using [Raycast](https://www.raycast.com/) or [Alfred](https://www.alfredapp.com/) or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc are good enough for me. Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.
 
 ## Keyboard Setup
 
@@ -249,15 +249,15 @@ TAB      Q        W
 
 `fn - backspace` : **Forward Delete**
 
-`fn - esc` : toggle keyboard backlight (OnlySwitch)
+`fn - esc` : toggle keyboard backlight ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - w` : executes custom bash script
 
 `fn - s` : sleep immediately
 
-`fn - r` : start/stop Radio (OnlySwitch)
+`fn - r` : start/stop Radio ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
-`fn - t` : Pomodoro Timer 25/5 (x4) (OnlySwitch)
+`fn - t` : Pomodoro Timer 25/5 (x4) ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
@@ -267,7 +267,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop Background Noise (OnlySwitch)
+`fn - b` : start/stop Background Noise ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - n` : **Show/Hide Notification Center**
 
