@@ -332,7 +332,7 @@ Screenshot-Example (17:25, 01.05.25, THU):
 - <a id="anchor2"></a>**FN / SF**: "Use F1, F2, etc. keys as standard function keys" (**check click_fn.sh**) [clickable: toggle]
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
 - '**Behind the notch**': shutdown and restart (**event aevtr**) [clickable: execute]
-- '**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
+- '**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus ([Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference))]
 - **_Envelope_ / XX**: indicator for new mails / [Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/) quit [clickable: open/focus Thunderbird]
 - **CAM**: [LogiTune](https://www.logitech.com/en-us/video-collaboration/software/logi-tune-software.html) [clickable: open/focus]
 - **ELG**: [Elgato Control Center](https://formulae.brew.sh/cask/elgato-control-center) [clickable: openAndPopUp/quit]
