@@ -111,7 +111,9 @@ All this (obiously) heavily relies and is based on [Skhd](https://github.com/koe
 ### Remark
 
 I don't use  [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature instead I just use the floating window managment.  
-> Why don't you use the newly available inbuilt window management features of macOS then?  
+
+> Why don't you use the newly available inbuilt window management features of macOS then?
+
 Because they are, like the switching of spaces (virtual desktops), way to slow for me because of their animations which cannot be disabled completely.  
 Warning: To use [Yabai](https://github.com/koekeishiya/yabai) to its fullest one has to deactivate SIP (e.g. for fast space switching).
 
