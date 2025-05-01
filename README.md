@@ -82,7 +82,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn + alt - f17` = `shift + alt - f17` : turn mic on (RME TotalMix FX)
     
-4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according Sketchybar item (see below). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
+4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [Sketchybar](https://github.com/FelixKratz/SketchyBar) item (see below). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
 
 ## Hotkeys / Shortcuts
 
@@ -263,7 +263,7 @@ TAB      Q        W
 
 `fn - y` : restart [Yabai](https://github.com/koekeishiya/yabai)
 
-`fn - x` : reload Sketchybar
+`fn - x` : reload [Sketchybar](https://github.com/FelixKratz/SketchyBar)
 
 `fn - c` : **Show/Hide Control Center**
 
@@ -306,7 +306,7 @@ TAB      Q        W
 - **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions/changes.
 - **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via Homebrew. They are all free except of Menuwhere (3$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
 
-## System Status Bar (Sketchybar)
+## System Status Bar ([Sketchybar](https://github.com/FelixKratz/SketchyBar))
 
 ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351)
 
@@ -318,7 +318,7 @@ TAB      Q        W
 - **FN / SF**: "Use F1, F2, etc. keys as standard function keys" [clickable: toggle]
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
 - '**Behind the notch**': shutdown and restart (event aevtr) [clickable: execute]
-- '**Sketchybar e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
+- '**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus Sonarworks SoundID]
 - **_Envelope_ / XX**: indicator for new mails / Thunderbird quit [clickable: open/focus Thunderbird]
 - **CAM**: LogiTune [clickable: open/focus]
 - **ELG**: Elgato Control Center [clickable: openAndPopUp/quit]
