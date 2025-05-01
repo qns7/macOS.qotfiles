@@ -244,11 +244,11 @@ TAB      Q        W
 
 `ctrl - c` : OCR ([TRex](https://github.com/amebalabs/TRex))
 
-`ctrl - v` : open and/or focus [VS Code](https://code.visualstudio.com/docs/setup/mac)
+`ctrl - v` : open and/or focus code editor ([VS Code](https://code.visualstudio.com/docs/setup/mac))
 
 `ctrl + cmd - v` : shorten copied url and paste ([Keysmith](https://www.keysmith.app/) w/Applescript)
 
-`ctrl - b` : open and/or focus [Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/)
+`ctrl - b` : open and/or focus mail agent ([Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/))
 
 `ctrl - m` : open and/or focus **Audio Midi Setup**
 
