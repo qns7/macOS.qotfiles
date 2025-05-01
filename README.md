@@ -58,7 +58,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     ```
     where 
     
-    `f13` : toggle my inbuilt macbook display on/off (Brightness)
+    `f13` : toggle my inbuilt macbook display on/off (**Brightness**)
     
     `f14` : mute (SwitchAudioSource)
     
