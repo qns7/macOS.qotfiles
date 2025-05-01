@@ -64,9 +64,9 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn - f13` = `shift - f13` : toggle my desklight on/off (curl/Elgato)
     
-    `fn - f14` = `shift - f14` : open/close room correction software (Sonarworks SoundID Reference)
+    `fn - f14` = `shift - f14` : open/close room correction software ([Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference))
     
-    `fn - f15` = `shift - f15` : dedicated global play/pause button for music player (Foobar2000)
+    `fn - f15` = `shift - f15` : dedicated global play/pause button for music player ([Foobar2000](https://www.foobar2000.org/mac))
     
     `fn - f16` = `shift - f16` : send midi message to change audio output to my speaker (Sendmidi)
     
@@ -187,29 +187,29 @@ TAB      Q        W
 
 `cmd + alt - tab` : **Move Focus To Next Window** of current app on current(ly visible) spaces on either display
 
-`cmd - tab / ^ / q / w / esc` : Show windows from applications : All apps, Show windows from Spaces : Visible Spaces, Show windows from screens : Screen showing AltTab, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Recently Focused First / go up instead of down listwise / quit app / close window / exit listview (AltTab)
+`cmd - tab / ^ / q / w / esc` : Show windows from applications : All apps, Show windows from Spaces : Visible Spaces, Show windows from screens : Screen showing AltTab, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Recently Focused First / go up instead of down listwise / quit app / close window / exit listview ([AltTab](https://github.com/lwouis/alt-tab-macos))
 
-`alt - tab / ^ / q / w / esc` : Show windows from applications : All apps, Show windows from Spaces : All Spaces, Show windows from screens : All screens, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Alphabetical Order / go up instead of down listwise / quit app / close window / exit listview (AltTab)
+`alt - tab / ^ / q / w / esc` : Show windows from applications : All apps, Show windows from Spaces : All Spaces, Show windows from screens : All screens, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Alphabetical Order / go up instead of down listwise / quit app / close window / exit listview ([AltTab](https://github.com/lwouis/alt-tab-macos))
 
 ### General System Control ###
 
-`ctrl - q` : open and/or focus Notes
+`ctrl - q` : open and/or focus **Notes**
 
-`ctrl - e` : open and focus new Finder window at stock folder
+`ctrl - e` : open and focus new Finder window at stock **folder**
 
-`ctrl + cmd - e` : focus Finder
+`ctrl + cmd - e` : focus **Finder**
 
-`ctrl - t` : Terminal (iTerm2 Hotkey Window)
+`ctrl - t` : Terminal ([iTerm2](https://iterm2.com/) Hotkey Window)
 
-`ctrl + cmd - t` : write date and time at cursor position / textbox, e.g. "07:37, 07.07.37, SUN"
+`ctrl + cmd - t` : write date and time at cursor position / textbox, e.g. "07:37, 07.07.37, SUN" ([Keysmith](https://www.keysmith.app/))
 
-`ctrl - p` : open and/or focus Passwords
+`ctrl - p` : open and/or focus **Passwords**
 
-`ctrl - s` : open and/of focus Safari
+`ctrl - s` : open and/of focus **Safari**
 
-`ctrl + cmd - s` : open and focus new Finder window at Screenshots
+`ctrl + cmd - s` : open and focus new **Finder** window at Screenshots
 
-`ctrl + alt - s` : open and/or focus System Settings
+`ctrl + alt - s` : open and/or focus **System Settings**
 
 `ctrl + alt + cmd - s` : **Type To Siri**
 
@@ -219,7 +219,7 @@ TAB      Q        W
 
 `ctrl + alt - d` : **Show/Hide Desktop**
 
-`ctrl + alt + cmd - d` : open and focus new Finder window at Downloads
+`ctrl + alt + cmd - d` : open and focus new **Finder** window at Downloads
 
 `ctrl - return/enter` : **Show Contextual Menu**
 
@@ -237,7 +237,7 @@ TAB      Q        W
 
 `ctrl - b` : open and/or focus Thunderbird
 
-`ctrl - m` : open and/or focus Audio Midi Setup
+`ctrl - m` : open and/or focus **Audio Midi Setup**
 
 `ctrl - space` : **Spotlight**
 
@@ -253,7 +253,7 @@ TAB      Q        W
 
 `fn - w` : executes custom bash script
 
-`fn - s` : sleep immediately
+`fn - s` : sleep immediately (**Pmset**)
 
 `fn - r` : start/stop Radio ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
