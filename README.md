@@ -86,9 +86,10 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
 4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [Sketchybar](https://github.com/FelixKratz/SketchyBar) item ([see below](#anchor2)). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
 
-## Hotkeys / Shortcuts
+## Hotkeys
 
-Since the _Control_ key has basically no function in macOS other than the Terminal I use it as my main "appswitcher-key" and for other stuff, which I'll come to later, while dedicating the few system functions & features which use the _Control_ key in macOS' stock config to other hotkeys/shortcuts and while using  
+Since the _Control_ key has basically no function in macOS other than inside the Terminal I use it as my main "appswitcher-key" and for other stuff, which I'll come to later, while dedicating the few system functions & features which use the _Control_ key in macOS' stock config to other hotkeys.  
+And while using  
 ```
 .blacklist [
 "Ghostty"
@@ -97,18 +98,18 @@ Since the _Control_ key has basically no function in macOS other than the Termin
 "Windows App"
 ]
 ```
-in my skhdrc to ensure a functioning _Control_ key where I need it.
+in my skhdrc I ensure a functioning _Control_ key where I need it.
 
-My goal was/is to have a few modifiers (or modifier-pairs) which together with the available "action keys" control my whole system in kind of a layer-like setup:  
+My goal is to have a few modifiers (or modifier-pairs) which together with the available "action keys" control my whole system in kind of a layer-like setup:  
 `Control`, `Option + Command`, `Option`, `Command` and `Globe/fn`  
-That's in theory not that different from the goal of basically every keyboard usage/layout, I agree, but having your own system and building it "from the ground" up seemed logical to me, since I myself can choose placements, priorities and modifier layering / depth while making it very easy for me to experiment, maintain and bugfix quickly (for which I use a specific VS Code Workspace with the file structure this repo has).
-Another benefit from this is that one basically doesn't have to achingly remember hotkeys and shortcuts like normally, because choosing and setting them up does half the job for you imho.
+That's in theory not at all different from the goal of basically every keyboard usage or "layout", I agree, but having your own system and building it "from the ground" up seemed logical to me, since I myself can choose placements, priorities and modifier layering and depth; while making it very easy for me to experiment, maintain and bugfix quickly (for which I use a specific VS Code Workspace with the file structure this repo has).  
+Another benefit of this is that one basically doesn't have to achingly remember hotkeys as usual, because choosing and setting them up does half the job for you imho.
 
 <a id="anchor1"></a>  
 
-Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...` or I overwrote them with [Skhd](https://github.com/koekeishiya/skhd) either with new functions or with `return`, e.g.: `fn + shift - a : return # show launchpad`
+Many of the stock macOS' hotkeys I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...` or I overwrote them with [Skhd](https://github.com/koekeishiya/skhd) either with new functions or with `return`, e.g.: `alt + cmd - h : return # hide others` <!-- `fn + shift - a : return # show launchpad` -->
 
-I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
+I will now list some important hotkey-categories with a selection of their according hotkeys - to get an idea of the "system" - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
 All this (obiously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis. 
 
 #### Remark
