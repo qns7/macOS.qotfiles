@@ -195,7 +195,7 @@ TAB      Q        W
 
 `ctrl - q` : open and/or focus **Notes**
 
-`ctrl - e` : open and focus new Finder window at stock **folder**
+`ctrl - e` : open and focus new **Finder** window at stock folder
 
 `ctrl + cmd - e` : focus **Finder**
 
