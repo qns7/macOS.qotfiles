@@ -284,9 +284,9 @@ TAB      Q        W
 
 ---
 
-`alt - delete` : 'reversing' `alt - backspace` (which should be stock)
+`alt - delete` : effectively 'reversing' `alt - backspace` (which should be stock)
 
-`cmd - delete` : 'reversing' `cmd - backspace` (which should be stock)
+`cmd - delete` : effectively 'reversing' `cmd - backspace` (which should be stock)
 
 ### Mouse and Trackpad Actions & Gestures
 
