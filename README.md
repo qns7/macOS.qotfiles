@@ -194,7 +194,7 @@ TAB      Q        W
          LALT     LCMD 
 ```
 
-`cmd + alt - tab` : **Move Focus To Next Window** of current app on current(ly visible) spaces on either display
+`cmd + alt - tab` : **Move Focus To Next Window** (of current app on current(ly visible) spaces on either display)
 
 `cmd - tab / ^ / q / w / esc` : Show windows from applications : All apps, Show windows from Spaces : Visible Spaces, Show windows from screens : Screen showing AltTab, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Recently Focused First / go up instead of down listwise / quit app / close window / exit listview ([AltTab](https://github.com/lwouis/alt-tab-macos))
 
