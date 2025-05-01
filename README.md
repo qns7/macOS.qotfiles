@@ -317,7 +317,7 @@ TAB      Q        W
 
 ## System Status Bar ([Sketchybar](https://github.com/FelixKratz/SketchyBar))
 
-Screenshot-Example:
+Screenshot-Example (17:25, 01.05.25, THU):
 ![Screenshot 2025-05-01 at 17 24 59](https://github.com/user-attachments/assets/d9ab624a-3599-446c-871a-c95dfa9fd40e)
 <!-- ![Screenshot 2025-05-01 at 17 21 50](https://github.com/user-attachments/assets/3b09eec3-1714-45f8-bcd3-dbe89d019a28) <!-- ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351) -->
 ### Explanation (left to right):
