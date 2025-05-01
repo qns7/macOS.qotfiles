@@ -1,6 +1,6 @@
-# My Custom macOS Setup (Sequoia 15.4+)
+<!-- # My Custom macOS Setup (Sequoia 15.4+)
 
-## General Information
+## General Information & Philosophy
 
 - This description/readme is just an overview. For all the details please check the dotfiles directly, which get updated very often 😬
 - The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
@@ -15,7 +15,26 @@
 
 ## Keyboard Setup
 
-I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is  
+I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is  -->
+
+# My Custom macOS Setup (Sequoia 15.4+)
+
+## General Information & Philosophy
+
+- This description/readme is just an overview. For all the details please check the dotfiles directly, which get updated very often 😬
+- The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
+- I only used Windows and Linux all my life - until April 2024. Back then I bought my first MacBook; and since then I am continuously working on my setup, which now I want to share here.
+- I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' the corresponding hotkeys completely ([see below](#anchor1)).
+- I use my Dock at the left side with nothing in there besides the two non-removable stock items Finder and Trash. It is set to autohide with no delay ([OnyX](https://titanium-software.fr/en/onyx.html) or using a terminal command).
+- For my mouse setup I use [Yabai](https://github.com/koekeishiya/yabai)'s [mouse support features](https://github.com/koekeishiya/yabai/wiki/Configuration#mouse-support) as well as [LinearMouse](https://linearmouse.app/). Every mouse with the widely available "5 buttons layout" will work.
+- Everywhere I can I use cable versions of my peripherals or even devices in general, since personally the general wireless hype makes mostly no sense to me: Batteries die, are bad for the environment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the corresponding device(s) involved. As long as all cables are well managed I am happy. Honestly... I like the look of well-organized cables more than no cables.
+- I don't like using [Raycast](https://www.raycast.com/) or [Alfred](https://www.alfredapp.com/) or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc. are good enough for me.  
+  Tip: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default browser with the corresponding results on YouTube. There are many such "shebangs" for DuckDuckGo.  
+  Another tip: macOS' Emoji Picker is faster if you use it with the stock hotkey `ctrl + cmd - space` or any other custom hotkey other than macOS' "**Press 🌐 key to**" function. My guess is that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs this slight delay so many are annoyed by. Using it with another dedicated hotkey isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker, but fast enough for me.
+
+## Keyboard Setup
+
+I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is
 ```
 ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
 NUBS ^   1        2        3        4        5        6        7        8        9        0        MINS ß   EQL ´    BSPC              MPLY
@@ -31,7 +50,7 @@ ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____) 
 ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
 ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
 ```
-which is meant to mimic the inuilt keyboard with its layout as best as possible.
+which is meant to mimic the inbuilt keyboard with its layout as best as possible.
 
 #### Remarks
 
@@ -42,7 +61,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     f16 : skhd -k "0xB0" # dictation
     f17 : skhd -k "0xB2" # do not disturb
     ```
-3. The additional keys on the far right of the Q1 I use as follows
+3. The additional keys on the far right of the Q1 I use as follows:
     ```
                                F13      F14
                                         MPLY
@@ -60,7 +79,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     ```
     where 
     
-    `f13` : toggle my inbuilt macbook display on/off (**Brightness**)
+    `f13` : toggle my inbuilt MacBook display on/off (**Brightness**)
     
     `f14` : mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
     
@@ -70,9 +89,9 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn - f15` = `shift - f15` : dedicated global play/pause button for music player ([Foobar2000](https://www.foobar2000.org/mac))
     
-    `fn - f16` = `shift - f16` : send midi message to change audio output to my speaker ([Sendmidi](https://github.com/gbevin/SendMIDI))
+    `fn - f16` = `shift - f16` : send MIDI message to change audio output to my speaker ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
-    `fn - f17` = `shift - f17` : send midi message to change audio output to my headphones ([Sendmidi](https://github.com/gbevin/SendMIDI))
+    `fn - f17` = `shift - f17` : send MIDI message to change audio output to my headphones ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
     `fn + alt - f13` = `shift + alt - f13` : show/hide menubar ([Yabai](https://github.com/koekeishiya/yabai))
     
@@ -84,7 +103,7 @@ which is meant to mimic the inuilt keyboard with its layout as best as possible.
     
     `fn + alt - f17` = `shift + alt - f17` : turn mic on (RME TotalMix FX)
     
-4. The option 'Use F1, F2, etc. keys as standard function keys' in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [Sketchybar](https://github.com/FelixKratz/SketchyBar) item ([see below](#anchor2)). This only affects the inbuilt keybaord, which honestly is a feature and not a bug in my specfic case.
+4. The option "Use F1, F2, etc. keys as standard function keys" in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [SketchyBar](https://github.com/FelixKratz/SketchyBar) item ([see below](#anchor2)). This only affects the inbuilt keyboard, which honestly is a feature and not a bug in my specific case.
 
 ## Hotkeys
 
