@@ -242,7 +242,7 @@ TAB      Q        W
 
 `ctrl - x` : **Save Picture Of Selected Area As A File** (Thumbnail Dragging For Clipboard Functionality, Remember Spacebar Usage)
 
-`ctrl - c` : OCR ([TRex](https://github.com/amebalabs/TRex))
+`ctrl - c` : ocr ([TRex](https://github.com/amebalabs/TRex))
 
 `ctrl - v` : open and/or focus code editor ([VS Code](https://code.visualstudio.com/docs/setup/mac))
 
