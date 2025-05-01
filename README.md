@@ -304,7 +304,7 @@ TAB      Q        W
 ### Caveats
 
 - **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions/changes.
-- **Dependencies** : cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), 
+- **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via Homebrew. They are all free except of Menuwhere (3$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
 
 ## System Status Bar (Sketchybar)
 
