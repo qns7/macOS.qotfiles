@@ -106,7 +106,7 @@ Many of the stock macOS' hotkeys/shortcuts I have either deactivated directly in
 `fn + shift - a : return # show launchpad`
 
 I will now list some important hotkey categories with a selection of their according hotkeys - to get an idea of the 'system' - where I deliberately don't list all the ones you can find (and/or the intricacies behind the ones shown) in the dotfiles, because they are mostly too specific to me and my peculiar setup. Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.
-All this (obiously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis.
+All this (obiously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in paranthesis. I don't use  [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature instead I just use the floating window managment. Why don't I use the newly available inbuilt window management features of macOS? Because they are, like the space switching way to slow for me because of their animations which cannot be disabled completely. Remark: To use  [Yabai](https://github.com/koekeishiya/yabai) one has to deactivate SIP (e.g. for fast space switching).
 
 ### Window Management ###
 
@@ -120,31 +120,31 @@ CTRL                             ...         ä        #
 ```
 
 
-`ctrl - up` : fill current(ly focused) window
+`ctrl - up` : fill current(ly focused) window ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - down` : resize current window to inbuilt (scaled) resolution w/o notch
+`ctrl - down` : resize current window to inbuilt (scaled) resolution w/o notch ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - left` : snap current window left half
+`ctrl - left` : snap current window left half ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - right` : snap current window right half
+`ctrl - right` : snap current window right half ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - ä` : snap current window bottom left quarter
+`ctrl - ä` : snap current window bottom left quarter ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - #` : snap current window bottom right quarter
+`ctrl - #` : snap current window bottom right quarter ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - +` : snap current window top right quarter
+`ctrl - +` : snap current window top right quarter ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - ü` : snap current window top left quarter
+`ctrl - ü` : snap current window top left quarter ([Yabai](https://github.com/koekeishiya/yabai))
 
 `ctrl + alt - down` : **Center Current Window**
 
-`ctrl + cmd - up` : snap current window top half
+`ctrl + cmd - up` : snap current window top half ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl + cmd - down` : snap current window bottom half
+`ctrl + cmd - down` : snap current window bottom half ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl + cmd - left` : move current window to previous display
+`ctrl + cmd - left` : move current window to previous display ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl + cmd - right` : move current window to next display
+`ctrl + cmd - right` : move current window to next display ([Yabai](https://github.com/koekeishiya/yabai))
 
 ### Space and Display Management ###
 
@@ -160,19 +160,19 @@ CTRL                             ...         ä        #
 
 `alt + cmd - ^` : **App Exposé**
 
-`alt + cmd - 1` : focus previous space on current display
+`alt + cmd - 1` : focus previous space on current display ([Yabai](https://github.com/koekeishiya/yabai))
 
-`alt + cmd - 2` : focus next space on current display
+`alt + cmd - 2` : focus next space on current display ([Yabai](https://github.com/koekeishiya/yabai))
 
 `alt + cmd - 3` : **Mission Control**
 
-`alt + cmd - w` : create and focus new space on current display
+`alt + cmd - w` : create and focus new space on current display ([Yabai](https://github.com/koekeishiya/yabai))
 
-`shift + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window
+`shift + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window ([Yabai](https://github.com/koekeishiya/yabai))
 
-`alt + cmd - e` : change and focus display
+`alt + cmd - e` : change and focus display ([Yabai](https://github.com/koekeishiya/yabai))
 
-`alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces
+`alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces ([Yabai](https://github.com/koekeishiya/yabai))
 
 ### Window (and App) Switching ###
 
