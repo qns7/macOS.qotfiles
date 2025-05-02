@@ -12,6 +12,8 @@ else
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
     sleep 1
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
+    sleep 1
+    osascript -e "set volume output volume 100"
 fi
 sleep 1
 if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
