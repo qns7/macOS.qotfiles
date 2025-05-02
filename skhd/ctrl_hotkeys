@@ -3,7 +3,7 @@ ctrl - q : open_or_focus "Notes"
     ctrl + alt - q : return # perhaps something with "date & time"?
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
-    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update # "close_script"
+    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.07; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; sleep 1.73; sketchybar --update # "close_script"
     ctrl + alt - w : open_or_focus "Pages"
     ctrl + alt + cmd - w : return
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
