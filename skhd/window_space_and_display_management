@@ -25,6 +25,6 @@ shift + alt + cmd - w [
     * :  move_current_window_to_new_space_and_focus
 ]
 alt + cmd - e : change_and_focus_display
-shift + alt + cmd - e : trap 'yabai -m config mouse_follows_focus off' EXIT; yabai -m config mouse_follows_focus on; yabai -m display --focus next || yabai -m display --focus prev
+## shift + alt + cmd - e : trap 'yabai -m config mouse_follows_focus off' EXIT; yabai -m config mouse_follows_focus on; yabai -m display --focus next || yabai -m display --focus prev
 alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A, ^, mission_control_key is 0xA0
 # implement again: space moving to other display !!! why did I delete this note before?

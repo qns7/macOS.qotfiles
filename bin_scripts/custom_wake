@@ -6,6 +6,8 @@
 /opt/homebrew/bin/sketchybar --set audio drawing=off
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
+    sleep 1
+    osascript -e "set volume output volume 50"
 else
     /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
     sleep 1
