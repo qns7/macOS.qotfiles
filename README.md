@@ -306,7 +306,8 @@ TAB      Q        W
 
 `fn - n` : **Show/Hide Notification Center**
 
-`fn - *_arrow` : **Home, PageUp, PageDown, End**
+`fn - left/up/down/right` : **Home, PageUp, PageDown, End**
+<!-- `fn - *_arrow` : **Home, PageUp, PageDown, End** -->
 
 ---
 
@@ -318,7 +319,7 @@ TAB      Q        W
 
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
-`spacebar` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
+`space` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
 
 _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other programs/apps?_
 
@@ -326,7 +327,7 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
-`scrollwheel_button / three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
+`scrollwheel_button/three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
 
 `ctrl - left_button` : move window ([Yabai](https://github.com/koekeishiya/yabai))
 
@@ -342,9 +343,9 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `alt + cmd - right_button` = `alt + cmd - right_arrow` : often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`three-finger-up` : **Mission Control** (only trackpad)
+`three_finger_up` : **Mission Control** (only trackpad)
 
-`three-finger-down` : **App Exposé** (only trackpad)
+`three_finger_down` : **App Exposé** (only trackpad)
 
 ### Caveats
 
