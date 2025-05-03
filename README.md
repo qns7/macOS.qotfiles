@@ -306,7 +306,7 @@ TAB      Q        W
 
 `fn - n` : **Show/Hide Notification Center**
 
-`fn - left/up/down/right` : **Home, PageUp, PageDown, End**
+`fn - left/up/down/right` : **Home/PageUp/PageDown/End**
 <!-- `fn - *_arrow` : **Home, PageUp, PageDown, End** -->
 
 ---
