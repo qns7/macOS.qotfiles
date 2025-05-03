@@ -30,7 +30,7 @@ alias ff="clear; fastfetch"
 alias sf="sudo nano /etc/pam.d/sudo"
 alias sv="sudo visudo"
 
-alias s="source ~/.zshrc"
+alias s="source ~/.zshrc; clear"
 alias m="cmatrix -a -b -u 3"
 alias p="btop"
 
