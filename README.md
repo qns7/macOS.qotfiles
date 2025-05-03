@@ -317,6 +317,8 @@ TAB      Q        W
 
 `forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
+`scrollwheel_button / three_finger` : ... ([MiddleClick](https://github.com/artginzburg/MiddleClick))
+
 `ctrl - left_button` : move window ([Yabai](https://github.com/koekeishiya/yabai))
 
 `ctrl - right_button` : resize window ([Yabai](https://github.com/koekeishiya/yabai))
