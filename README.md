@@ -334,9 +334,9 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `alt - backwards_button` : `cmd - 0` = often zooms out ([Linearmouse](https://linearmouse.app/))  (only mouse)
 
-`alt + cmd - left_button` : `alt + cmd - left_arrow` = often moves to the tab on the left ([Linearmouse](https://linearmouse.app/)) (only mouse)
+`alt + cmd - left_button` = `alt + cmd - left_arrow` : often moves to the tab on the left ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`alt + cmd - right_button` : `alt + cmd - right_arrow`  = often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
+`alt + cmd - right_button` = `alt + cmd - right_arrow` : often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
 `three-finger-up` : **Mission Control** (only trackpad)
 
