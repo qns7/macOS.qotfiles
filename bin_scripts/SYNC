@@ -38,5 +38,5 @@ rsync -a /Users/q/bin/show_desktop /Users/q/.config/bin_scripts/
 
 rsync -a /Users/q/bin/volume_down /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/volume_up /Users/q/.config/bin_scripts/
-rsync -a /Users/q/bin/brightness_up /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/brightness_down /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/brightness_up /Users/q/.config/bin_scripts/
