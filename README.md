@@ -31,6 +31,7 @@ I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop w
 - I don't like using [Raycast](https://www.raycast.com/) or [Alfred](https://www.alfredapp.com/) or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc. are good enough for me.  
   Tip: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default browser with the corresponding results on YouTube. There are many such "shebangs" for DuckDuckGo.  
   Another tip: macOS' Emoji Picker is faster if you use it with the stock hotkey `ctrl + cmd - space` or any other custom hotkey other than macOS' "**Press 🌐 key to**" function. My guess is that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs this slight delay so many are annoyed by. Using it with another dedicated hotkey isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker, but fast enough for me.
+- _Something about the use of the "hyper" key in my setup.._
 
 ## Keyboard Setup
 
