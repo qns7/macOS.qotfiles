@@ -314,6 +314,10 @@ TAB      Q        W
 
 `cmd - delete` : effectively 'reversing' `cmd - backspace` (which should be stock)
 
+`alt - f1` : decrease inbuilt display brightness incremental like `shift + alt - brightness_down`
+
+`alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up`
+
 `spacebar` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), new since 18:32, 03.05.25, SAT)
 
 _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other programs/apps?_
