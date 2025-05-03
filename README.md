@@ -318,7 +318,7 @@ TAB      Q        W
 
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
-`spacebar` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), new since 18:32, 03.05.25, SAT)
+`spacebar` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
 
 _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other programs/apps?_
 
