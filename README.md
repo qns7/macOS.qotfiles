@@ -24,7 +24,7 @@ I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop w
 - This description/readme is just an overview. For all the details please check the dotfiles directly, which get updated very often 😬
 - The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
 - I only used Windows and Linux all my life - until April 2024. Back then I bought my first MacBook; and since then I am continuously working on my setup, which now I want to share here.
-- I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' the corresponding hotkeys completely ([see below](#anchor1)).
+- I do not use macOS' hiding or minimizing at all, which is why I "deactivated" the corresponding hotkeys completely ([see below](#anchor1)).
 - I use my Dock at the left side with nothing in there besides the two non-removable stock items Finder and Trash. It is set to autohide with no delay ([OnyX](https://titanium-software.fr/en/onyx.html) or using a terminal command).
 - For my mouse setup I use [Yabai](https://github.com/koekeishiya/yabai)'s [mouse support features](https://github.com/koekeishiya/yabai/wiki/Configuration#mouse-support) as well as [LinearMouse](https://linearmouse.app/). Every mouse with the widely available "5 buttons layout" will work.
 - Everywhere I can I use cable versions of my peripherals or even devices in general, since personally the general wireless hype makes mostly no sense to me: Batteries die, are bad for the environment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the corresponding device(s) involved. As long as all cables are well managed I am happy. Honestly... I like the look of well-organized cables more than no cables.
@@ -311,9 +311,9 @@ TAB      Q        W
 
 ---
 
-`alt - delete` : effectively 'reversing' `alt - backspace` (which should be stock)
+`alt - delete` : effectively "reversing" `alt - backspace` (which should be stock)
 
-`cmd - delete` : effectively 'reversing' `cmd - backspace` (which should be stock)
+`cmd - delete` : effectively "reversing" `cmd - backspace` (which should be stock)
 
 `alt - f1` : decrease inbuilt display brightness incremental like `shift + alt - brightness_down` ([Brightness](https://github.com/nriley/brightness))
 
@@ -364,8 +364,8 @@ Screenshot-Example (17:25, 01.05.25, THU):
 - **KC**: [KeyboardCleanTool](https://folivora.ai/keyboardcleantool/) [clickable open/close]
 - <a id="anchor2"></a>**FN / SF**: "Use F1, F2, etc. keys as standard function keys" (**check click_fn.sh**) [clickable: toggle]
 - **Numbers with one letter**: used swap . used ram : inbuilt storage . external storage . sd card : battery
-- '**Behind the notch**': shutdown and restart (**event aevtr**) [clickable: execute]
-- '**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**': Audio percentage or AI for 'audio interface' : active output device [clickable: open/focus [Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference)]
+- "**Behind the notch**": shutdown and restart (**event aevtr**) [clickable: execute]
+- "**[Sketchybar](https://github.com/FelixKratz/SketchyBar) e position**": Audio percentage or AI for "audio interface" : active output device [clickable: open/focus [Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference)]
 - **_Envelope_ / XX**: indicator for new mails / [Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/) quit [clickable: open/focus Thunderbird]
 - **CAM**: [LogiTune](https://www.logitech.com/en-us/video-collaboration/software/logi-tune-software.html) [clickable: open/focus]
 - **ELG**: [Elgato Control Center](https://formulae.brew.sh/cask/elgato-control-center) [clickable: openAndPopUp/quit]
