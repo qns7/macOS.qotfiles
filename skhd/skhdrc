@@ -13,6 +13,8 @@ alt - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers" # #
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference" # #
+alt - f1 : ~/bin/brightness_down
+alt - f2 : ~/bin/brightness_up
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"

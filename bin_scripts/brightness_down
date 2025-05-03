@@ -1,0 +1,7 @@
+#!/bin/bash
+
+STEP=0.015625
+CURRENT=$(brightness -l | grep brightness | awk '{print $4}')
+NEW=$(echo "$CURRENT - $STEP" | bc)
+if (( $(echo "$NEW < 0.0" | bc -l) )); then NEW=0.0; fi
+brightness $NEW

@@ -84,7 +84,7 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
-        * ~
+        * : skhd -k "ctrl + alt + cmd - x" # ~
     ]
     ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
     ctrl + alt + cmd - x : ~/bin/cliclick_focus
