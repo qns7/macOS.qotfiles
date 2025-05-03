@@ -80,7 +80,7 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     ```
     where 
     
-    `f13` : toggle my inbuilt MacBook display on/off (**Brightness**)
+    `f13` : toggle my inbuilt MacBook display on/off ([Brightness](https://github.com/nriley/brightness))
     
     `f14` : mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
     
@@ -314,9 +314,9 @@ TAB      Q        W
 
 `cmd - delete` : effectively 'reversing' `cmd - backspace` (which should be stock)
 
-`alt - f1` : decrease inbuilt display brightness incremental like `shift + alt - brightness_down`
+`alt - f1` : decrease inbuilt display brightness incremental like `shift + alt - brightness_down` ([Brightness](https://github.com/nriley/brightness))
 
-`alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up`
+`alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
 `spacebar` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), new since 18:32, 03.05.25, SAT)
 
