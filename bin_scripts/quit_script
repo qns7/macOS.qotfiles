@@ -55,10 +55,10 @@ elif [[ $CURRENT_DISPLAY == "$UUID_INBUILT_DISPLAY" ]]; then
 else
     cliclick m:1280,720
 fi
-sleep 0.1
+# sleep 0.1
 [[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
-sleep 0.1
+# sleep 0.1
 ~/bin/cliclick_focus
-sleep 0.1
+# sleep 0.1
 sketchybar --update
 # instead of change_display_... needed: when closing last app in space!
