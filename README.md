@@ -317,7 +317,7 @@ TAB      Q        W
 
 `forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
-`scrollwheel_button / three_finger` : ... ([MiddleClick](https://github.com/artginzburg/MiddleClick))
+`scrollwheel_button / three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
 
 `ctrl - left_button` : move window ([Yabai](https://github.com/koekeishiya/yabai))
 
