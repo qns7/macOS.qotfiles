@@ -42,7 +42,8 @@ fn - l : return
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : cf. 'q1_specific', #
-# fn - return/enter = 0x4C: keysmith : yabai_debugging [pent_to_fn_enter]
+fn - return : /opt/homebrew/bin/yabai -m query --windows --window > ~/Desktop/yabai_debug.txt #.../enter = 0x4C: keysmith : yabai_debugging [pent_to_fn_enter]
+    0x4C : skhd -k "fn - return"
 
 fn - 0x32 : skhd -k "alt - 7" # <, |
 fn - y : /opt/homebrew/bin/yabai --restart-service

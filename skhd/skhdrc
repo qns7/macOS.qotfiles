@@ -15,6 +15,7 @@ fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers" # #
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference" # #
 alt - f1 : ~/bin/brightness_down
 alt - f2 : ~/bin/brightness_up
+hyper - q : osascript ~/bin/quit_all_apps.scpt
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
