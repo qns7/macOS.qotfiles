@@ -62,7 +62,7 @@ ctrl - h : return # backspace/delete (stock)
     ctrl + alt - h : return
     ctrl + alt + cmd - h : return
 ctrl - j : return
-ctrl - k : open_or_focus Keysmith # delete the text between the insertion point and the end of the line or paragraph (stock)
+ctrl - k : return # open_or_focus Keysmith # delete the text between the insertion point and the end of the line or paragraph (stock)
 ctrl - l : return # center the cursor or selection in the visible area (stock)
     # ctrl + cmd - l : cf. 'skhdrc'
 ctrl - 0x29 : return

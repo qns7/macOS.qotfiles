@@ -6,7 +6,7 @@ f14 : SwitchAudioSource -m toggle
 
 shift - f13 : curl -s "http://192.168.178.42:9123/elgato/lights" | grep -q '"on":1' && curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json" || curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":1}]}' -H "Content-Type: application/json"
 shift - f14 [ 
-    "SoundID Reference" : open "keysmith://run-macro/4CF6609D-5962-485A-9D9B-D25CAC5F1DB6"
+    "SoundID Reference" : ~/bin/close_soundid # open "keysmith://run-macro/4CF6609D-5962-485A-9D9B-D25CAC5F1DB6"
     * : open_or_focus "SoundID Reference"
 ]
 shift - f15 : ~/bin/foobar_play
