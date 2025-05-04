@@ -98,9 +98,9 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     
     `fn - f17` = `shift - f17` : send MIDI message to change audio output to my headphones ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
-    `fn + alt - f13` = `shift + alt - f13` : show/hide menubar ([Yabai](https://github.com/koekeishiya/yabai))
+    `fn + alt - f13` = `shift + alt - f13` : open/close digital audio mixer RME TotalMix FX (Babyface Pro) <!-- show/hide menubar ([Yabai](https://github.com/koekeishiya/yabai)) -->
     
-    `fn + alt - f14` = `shift + alt - f14` : open/close digital audio mixer RME TotalMix FX (Babyface Pro)
+    `fn + alt - f14` = `shift + alt - f14` : ... tmx mute?
     
     `fn + alt - f15` = `shift + alt - f15` : turn guitar setup on (RME TotalMix FX)
     
