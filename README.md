@@ -236,7 +236,7 @@ TAB      Q        W
 
 `ctrl - t` : Terminal ([iTerm2](https://iterm2.com/) Hotkey Window)
 
-`ctrl + cmd - t` : write date and time at cursor position / textbox, e.g. "07:37, 07.07.37, SUN" ([Keysmith](https://www.keysmith.app/) w/Applescript)
+`ctrl + cmd - t` : write date and time at cursor position / textbox, e.g. "07:37, 07.07.37, SUN" (**Applescript**)
 
 `ctrl - p` : open and/or focus **Passwords**
 
@@ -268,7 +268,7 @@ TAB      Q        W
 
 `ctrl - v` : open and/or focus code editor ([VS Code](https://code.visualstudio.com/docs/setup/mac))
 
-`ctrl + cmd - v` : shorten copied url and paste ([Keysmith](https://www.keysmith.app/) w/Applescript)
+`ctrl + cmd - v` : shorten copied url and paste (**Applescript**)
 
 `ctrl - b` : open and/or focus mail agent ([Thunderbird](https://www.thunderbird.net/en-US/thunderbird/all/))
 
@@ -320,6 +320,8 @@ TAB      Q        W
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
 `space` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
+
+`hyper - q` : quit all apps (**Applescript**)
 
 _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other programs/apps?_
 
