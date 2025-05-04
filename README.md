@@ -360,7 +360,7 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 ### Caveats
 
 - **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions and/or changes.
-- **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via [Homebrew](https://brew.sh/). They are all free except of [Menuwhere](https://manytricks.com/menuwhere/) (3$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
+- **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via [Homebrew](https://brew.sh/). They are all free except of [Menuwhere](https://manytricks.com/menuwhere/) (3$) and [Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12) (2$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
 
 ## System Status Bar ([Sketchybar](https://github.com/FelixKratz/SketchyBar))
 
