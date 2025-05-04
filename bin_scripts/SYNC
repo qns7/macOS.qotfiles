@@ -40,6 +40,7 @@ rsync -a /Users/q/bin/volume_down /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/volume_up /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/brightness_down /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/brightness_up /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/close_soundid /Users/q/.config/bin_scripts/
 
 rsync -a /Users/q/bin/quit_all_apps.scpt /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/paste_time_n_date.scpt /Users/q/.config/bin_scripts/
