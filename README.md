@@ -87,6 +87,8 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     `f13` : toggle my inbuilt MacBook display on/off ([Brightness](https://github.com/nriley/brightness))
     
     `f14` : mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
+
+   ---
     
     `fn - f13` = `shift - f13` : toggle my desklight on/off (**Curl** w/ElgatoKeylight)
     
@@ -97,6 +99,8 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     `fn - f16` = `shift - f16` : send MIDI message to change audio output to my speaker ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
     `fn - f17` = `shift - f17` : send MIDI message to change audio output to my headphones ([Sendmidi](https://github.com/gbevin/SendMIDI))
+
+   ---
     
     `fn + alt - f13` = `shift + alt - f13` : open/close digital audio mixer RME TotalMix FX (Babyface Pro) <!-- show/hide menubar ([Yabai](https://github.com/koekeishiya/yabai)) -->
     
@@ -108,7 +112,7 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     
     `fn + alt - f17` = `shift + alt - f17` : turn mic on (RME TotalMix FX)
     
-4. The option "Use F1, F2, etc. keys as standard function keys" in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [SketchyBar](https://github.com/FelixKratz/SketchyBar) item ([see below](#anchor2)). This only affects the inbuilt keyboard, which honestly is a feature and not a bug in my specific case.
+5. The option "Use F1, F2, etc. keys as standard function keys" in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [SketchyBar](https://github.com/FelixKratz/SketchyBar) item ([see below](#anchor2)). This only affects the inbuilt keyboard, which honestly is a feature and not a bug in my specific case.
 
 ## Hotkeys
 
