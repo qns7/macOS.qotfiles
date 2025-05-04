@@ -33,7 +33,7 @@ I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop w
   Another tip: macOS' Emoji Picker is faster if you use it with the stock hotkey `ctrl + cmd - space` or any other custom hotkey other than macOS' "**Press 🌐 key to**" function. My guess is that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs this slight delay so many are annoyed by. Using it with another dedicated hotkey isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker, but fast enough for me.
 - _Something about the use of the "hyper" key in my setup.._
 - I used also [Keysmith](https://www.keysmith.app/) quite a bit for quick debugging and testing, since it's super convenient, but in the end I can implement all stuff I came across within a year via bash or osascript (Applescript) using jq, cliclick and all these awesome Homebrew formulaes.
-- I want to have my setup quite minimal in the sense that I want to use as few as possible programs and ressources. 
+- I want to have my setup quite minimal in the sense that I want to use as few as possible programs and ressources. That said I use quite a few of apps to get to the state I want it to be. 😂 It would be cool to have ONE all in one app, preferably just a "formulae" like Skhd + Yabai which has no UI, but a very clean way to manage the config in dedicated dotfiles. That would be awesome..
 
 ## Keyboard Setup
 
