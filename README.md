@@ -2,7 +2,7 @@
 
 ## General Information & Philosophy
 
-- This description/readme is just an overview. For all the details please check the dotfiles directly, which get updated very often 😬
+- This description/readme is just an overview. For all the details please check the dotfiles directly. Which get updated very often. 😬
 - The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
 - I only used Windows and Linux all my life - until April 2024. Back then I bought my first MacBook; and since then I am continuously work on my setup, which now I want to share here.
 - I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' the correspoding hotkeys completely ([see below](#anchor1)).
