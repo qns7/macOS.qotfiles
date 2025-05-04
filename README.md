@@ -141,7 +141,7 @@ Many of the stock macOS' hotkeys I have either deactivated directly in `System S
 
 I will now list some important hotkey-categories with a selection of their according hotkeys - to get an idea of the "system" - where I deliberately don't list all the ones (and/or the intricacies behind the ones shown) you can find in the dotfiles, because they are mostly too specific to me and my peculiar setup.  
 Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.  
-All this (obviously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some bash scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in parentheses.  
+All this (obviously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some <!--bash -->scripting; if other apps are used to achieve the mentioned function/feature/behavior they are mentioned in parentheses.  
 
 #### Remark
 
