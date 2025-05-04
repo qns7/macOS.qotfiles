@@ -93,7 +93,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt - c : return
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
-    ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt # keysmith : shorten copied url
+    ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v" # keysmith : shorten copied url
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
     ctrl + alt + cmd - v : open_or_focus "Cursor"
 ctrl - b : thunderbird_badge # move one character backward (stock)

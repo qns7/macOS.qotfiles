@@ -13,11 +13,12 @@ shift - f15 : ~/bin/foobar_play
 shift - f16 : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 shift - f17 : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 
-shift + alt - f13 : ~/.config/sketchybar/plugins/click_week.sh # also alt + cmd - mouse_button_4 (linearmouse) // perhaps delete and here what's in "shift + alt - f14" and then in "shift + alt - f14" tmx_mute or mute_group
-shift + alt - f14 [ 
+# shift + alt - f13 : ~/.config/sketchybar/plugins/click_week.sh # also alt + cmd - mouse_button_4 (linearmouse) // perhaps delete and here what's in "shift + alt - f14" and then in "shift + alt - f14" tmx_mute or mute_group
+shift + alt - f13 [ 
     "TotalMix FX" : quit_script
     * : open -a "Totalmix" && sleep 0.73 && ~/bin/cliclick_focus
 ]
+shift + alt - f14 : return # TMX mute?
 shift + alt - f15 : ~/bin/tmx_hotkey "f6"
 shift + alt - f16 : ~/bin/tmx_hotkey "f7"
 shift + alt - f17 : ~/bin/tmx_hotkey "f8"
