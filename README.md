@@ -96,9 +96,9 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     
     `fn - f15` = `shift - f15` : dedicated global play/pause button for music player ([Foobar2000](https://www.foobar2000.org/mac))
     
-    `fn - f16` = `shift - f16` : send MIDI message to change audio output to my speaker ([Sendmidi](https://github.com/gbevin/SendMIDI))
+    `fn - f16` = `shift - f16` : send MIDI message to change audio output to my speaker in [Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference) ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
-    `fn - f17` = `shift - f17` : send MIDI message to change audio output to my headphones ([Sendmidi](https://github.com/gbevin/SendMIDI))
+    `fn - f17` = `shift - f17` : send MIDI message to change audio output to my headphones in [Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference) ([Sendmidi](https://github.com/gbevin/SendMIDI))
 
    ---
     
