@@ -116,7 +116,7 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
 
 ## Hotkeys
 
-Since the _Control_ key has basically no function in macOS other than inside the Terminal I use it as my main "appswitcher-key" and for other stuff, which I'll come to later, while dedicating the few system functions & features which use the _Control_ key in macOS' stock config to other hotkeys.  
+Since the _Control_ key has basically no function in macOS other than inside the Terminal I use it as my main "appswitcher-key" and for other stuff, which I'll come to later, while dedicating the few system functions & features which use the _Control_ key in macOS' stock config to other hotkeys (remapping).  
 And while using  
 ```
 .blacklist [
