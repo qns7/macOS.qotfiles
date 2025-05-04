@@ -160,7 +160,7 @@ Warning: To use [Yabai](https://github.com/koekeishiya/yabai) to its fullest one
                                  ...         ü        +
 CTRL                             ...         ä        #
                                  ...                  UP
-         (LALT)   (LCMD)         ...         LEFT     DOWN     RGHT
+         (LALT  /  LCMD)         ...         LEFT     DOWN     RGHT
 ```
 
 
