@@ -243,7 +243,9 @@ TAB      Q        W
 
 `ctrl - e` : open and focus new **Finder** window at stock folder
 
-`ctrl + cmd - e` : focus **Finder**
+`ctrl + cme - e` : focus any background app to be able to use Skhd's hotkeys while in a blacklisted app (**Shortcuts**)
+
+`ctrl + alt - e` : focus **Finder**
 
 `ctrl - t` : Terminal ([iTerm2](https://iterm2.com/) Hotkey Window)
 
@@ -259,7 +261,7 @@ TAB      Q        W
 
 `ctrl + alt + cmd - s` : **Type To Siri**
 
-`ctrl - d` : show/hide Dock using automated mouse movement ([cliclick](https://github.com/BlueM/cliclick))
+`ctrl - d` : show/hide Dock using automated mouse movement ([cliclick](https://github.com/BlueM/cliclick)) - doesn't work in native fullscreens
 
 `ctrl + cmd - d` : **Look Up & Data Detectors / Show Or Hide The Definition Of The Selected Word**
 
