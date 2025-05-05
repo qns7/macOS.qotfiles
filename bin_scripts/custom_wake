@@ -10,7 +10,7 @@ if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.
     osascript -e "set volume output volume 50"
 else
     killall "SoundID Reference" &> /dev/null
-    sleep 1
+    sleep 0.1
     open -a "SoundID Reference" &> /dev/null
     sleep 3.7
     # /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
@@ -19,16 +19,16 @@ else
     /Users/q/bin/close_soundid
     sleep 1
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
-    sleep 1
+    sleep 0.37
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
     sleep 1
     osascript -e "set volume output volume 100"
 fi
-sleep 1
+sleep 0.17
 if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi
-sleep 1
+sleep 0.1
 sudo killall coreaudiod # # # what's systemsoundserverd doing?
 sleep 2.1
 /opt/homebrew/bin/yabai --restart-service
