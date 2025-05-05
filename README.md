@@ -338,25 +338,25 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 ### Mouse and Trackpad Actions & Gestures
 
-`forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
-
-`scrollwheel_button/three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
-
 `ctrl - left_button` : move window ([Yabai](https://github.com/koekeishiya/yabai))
 
 `ctrl - right_button` : resize window ([Yabai](https://github.com/koekeishiya/yabai))
 
 `cmd - right_button` : left menubar content ([Menuwhere](https://manytricks.com/menuwhere/))
 
+`scrollwheel_button/three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
+
+`forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
+
 `alt - forwards_button` : smart zoom ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
 `alt - backwards_button` : `cmd - 0` = often zooms out ([Linearmouse](https://linearmouse.app/))  (only mouse)
 
-`alt + cmd - forwards_button` = `alt + cmd - forwards_button` : toggle stock menubar visibility (cf. [Sketchybar item](#anchor3)) ([Yabai](https://github.com/koekeishiya/yabai)) (only mouse)
-
 `alt + cmd - left_button` = `alt + cmd - left_arrow` : often moves to the tab on the left ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
 `alt + cmd - right_button` = `alt + cmd - right_arrow` : often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
+
+`alt + cmd - forwards_button` = `alt + cmd - forwards_button` : toggle stock menubar visibility (cf. [last Sketchybar item](#anchor3)) ([Yabai](https://github.com/koekeishiya/yabai)) (only mouse)
 
 `three_finger_up` : **Mission Control** (only trackpad)
 
