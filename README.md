@@ -243,7 +243,7 @@ TAB      Q        W
 
 `ctrl - e` : open and focus new **Finder** window at stock folder
 
-`ctrl + cme - e` : focus any background app to be able to use Skhd's hotkeys while in a blacklisted app (**Shortcuts**)
+`ctrl + cme - e` : focus any background app to be able to use Skhd's hotkeys while in a blacklisted app (**Shortcuts w/Applescript**)
 
 `ctrl + alt - e` : focus **Finder**
 
