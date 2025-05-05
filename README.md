@@ -352,6 +352,8 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `alt - backwards_button` : `cmd - 0` = often zooms out ([Linearmouse](https://linearmouse.app/))  (only mouse)
 
+`alt + cmd - forwards_button` = `alt + cmd - forwards_button` : toggle stock menubar visibility (cf. [Sketchybar item](#anchor3)) ([Yabai](https://github.com/koekeishiya/yabai)) (only mouse)
+
 `alt + cmd - left_button` = `alt + cmd - left_arrow` : often moves to the tab on the left ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
 `alt + cmd - right_button` = `alt + cmd - right_arrow` : often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
@@ -385,7 +387,7 @@ Screenshot-Example (17:25, 01.05.25, THU):
 - **REM**: [Remote+](https://cherpake.com/apps/remote-mouse-keyboard/) [clickable: startServer/quit]
 - **CFW**: [Cloudflare Warp](https://formulae.brew.sh/cask/cloudflare-warp) [clickable: openAndConnect/quit]
 - **VPN**: [Viscosity](https://formulae.brew.sh/cask/viscosity#default) [clickable: openAndConnect/quit]
-- **Numbers**: date : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
+- <a id="anchor3"></a>**Numbers**: date : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
 
 <!-- 
 ### Indication: ...
