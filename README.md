@@ -317,7 +317,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop background noise ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - b` : start/stop background noise (bash scripting for macOS' one or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - n` : **Show/Hide Notification Center**
 
