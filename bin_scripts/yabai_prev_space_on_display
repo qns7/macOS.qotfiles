@@ -16,7 +16,7 @@ else
         set -- $ALLSPA
         yabai -m space --focus ${@: -1}
     fi
-    del_empty_spaces
-    sleep 0.1
-    ~/bin/cliclick_focus
+    # del_empty_spaces
+    # sleep 0.1
+    # ~/bin/cliclick_focus
 fi
