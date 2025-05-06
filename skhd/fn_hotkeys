@@ -20,7 +20,7 @@ fn - tab : return
 fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 fn - w : ~/bin/custom_wake
 fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
-fn - r : skhd -k "hyper - r" # only-switch : radio
+fn - r : ~/bin/radio # skhd -k "hyper - r" # only-switch : radio
 fn - t : skhd -k "hyper - t" # only-switch : timer (pomodoro)
 fn - z : return
 fn - u : return

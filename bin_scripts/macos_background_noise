@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]]; then
+    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+else
+    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+fi
+launchctl kill SIGHUP gui/501/com.apple.accessibility.heard

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+RADIO_URL="https://liveradio.swr.de/sw282p3/swr2/"
+PID_FILE="/tmp/mpv_radio.pid"
+if [[ -f "$PID_FILE" ]]; then
+    PID=$(cat "$PID_FILE")
+    if ps -p $PID > /dev/null; then
+        kill $PID
+        rm "$PID_FILE"
+    else
+        mpv "$RADIO_URL" & echo $! > "$PID_FILE"
+    fi
+else
+    mpv "$RADIO_URL" & echo $! > "$PID_FILE"
+fi

@@ -45,3 +45,6 @@ rsync -a /Users/q/bin/close_soundid /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/quit_all_apps.scpt /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/paste_time_n_date.scpt /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/paste_shortened_url.scpt /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/bin/macos_background_noise /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/radio /Users/q/.config/bin_scripts/
