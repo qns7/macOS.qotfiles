@@ -1,17 +1,19 @@
 #!/bin/bash
 
-# AUFPASSEN MIT ANDEREM AUDIO... hängt manchmal auch einfach so... weird... 
-# launchctl kill SIGHUP gui/501/com.apple.accessibility.heard
-# sleep 1
-sleep 1
 if [[ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]]; then
-    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
-    sleep 1
-    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+    defaults write com.apple.ComfortSounds comfortSoundsEnabled -bool YES
+    defaults write com.apple.ComfortSounds lastEnablementTimestamp $(date +%s)
+    # defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+    # # defaults write com.apple.ComfortSounds comfortSoundsEnabled -bool YES
+    # defaults write com.apple.ComfortSounds lastEnablementTimestamp $(date +%s)
 else
-    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
-    sleep 1
-    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+    defaults write com.apple.ComfortSounds comfortSoundsEnabled -bool NO
+    launchctl kill SIGHUP gui/$(id -u)/com.apple.accessibility.heard
+    # defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+    # # defaults write com.apple.ComfortSounds comfortSoundsEnabled -bool NO
 fi
-sleep 1
-launchctl kill SIGHUP gui/501/com.apple.accessibility.heard
+launchctl kill SIGHUP gui/$(id -u)/com.apple.accessibility.heard
+# launchctl kill SIGHUP gui/501/com.apple.accessibility.heard
+# launchctl kill SIGHUP gui/$(id -u)/com.apple.accessibility.heard
+
+# weird behaviour with other audio playing...
