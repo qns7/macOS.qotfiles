@@ -305,7 +305,7 @@ TAB      Q        W
 
 `fn - s` : sleep immediately (**Pmset**)
 
-`fn - r` : start/stop radio ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - r` : start/stop radio (bash w/mpv or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - t` : pomodoro timer 25/5 (x4) ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
@@ -317,7 +317,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop background noise (bash scripting for macOS' one or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - b` : start/stop background noise (bash w/**defaults**&**launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - n` : **Show/Hide Notification Center**
 
