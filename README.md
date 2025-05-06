@@ -341,7 +341,7 @@ TAB      Q        W
 
 `alt - f12` : ...
 
-`space` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
+`space` : In Finder: "pimped" quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
 
 `hyper - q` : quit all apps (**Applescript**)
 
