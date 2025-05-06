@@ -349,6 +349,10 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `scrollwheel_button/three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
 
+`shift + scrolling` : horizontal scrolling
+
+`alt (+shift) + scrolling` : faster scrolling ([Linearmouse](https://linearmouse.app/))
+
 `forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
 `alt - forwards_button` : smart zoom ([Linearmouse](https://linearmouse.app/)) (only mouse)
