@@ -330,7 +330,7 @@ TAB      Q        W
 
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
-`alt - f8` : dedicated global play/pause button for music player ([cliclick](https://github.com/BlueM/cliclick) & [Foobar2000](https://www.foobar2000.org/mac))
+`cmd - f8` : dedicated global play/pause button for music player ([cliclick](https://github.com/BlueM/cliclick) & [Foobar2000](https://www.foobar2000.org/mac))
 
 `alt - f10` :  mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
 
