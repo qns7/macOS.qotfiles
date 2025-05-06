@@ -295,9 +295,9 @@ TAB      Q        W
 
 ---
 
-`fn - f*` : **F\* / Special Function**
-
 `fn - esc` : toggle keyboard backlight ([mac-brightnessctl](https://github.com/rakalex/mac-brightnessctl))<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
+
+`fn - f*` : **F\* / Special Function**
 
 `fn - backspace` : **(Forward) Delete**
 
