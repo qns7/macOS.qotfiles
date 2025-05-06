@@ -296,7 +296,7 @@ TAB      Q        W
 
 `fn - f*` : **F\* / Special Function**
 
-`fn - backspace` : **Forward Delete**
+`fn - backspace` : **(Forward) Delete**
 
 `fn - esc` : toggle keyboard backlight ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
@@ -325,9 +325,9 @@ TAB      Q        W
 
 ---
 
-`alt - delete` : effectively "reversing" `alt - backspace` (which should be stock)
+`alt - delete` = `alt + fn - backspace` : effectively "reversing" `alt - backspace` (which should be stock)
 
-`cmd - delete` : effectively "reversing" `cmd - backspace` (which should be stock)
+`cmd - delete` = `cmd + fn - backspace` : effectively "reversing" `cmd - backspace` (which should be stock)
 
 `alt - f1` : decrease inbuilt display brightness incremental like `shift + alt - brightness_down` ([Brightness](https://github.com/nriley/brightness))
 
