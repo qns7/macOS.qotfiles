@@ -98,7 +98,7 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     
     `fn - f14` = `shift - f14` : open/close room correction software ([Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference))
     
-    `fn - f15` = `shift - f15` : dedicated global play/pause button for music player ([Foobar2000](https://www.foobar2000.org/mac))
+    `fn - f15` = `shift - f15` : dedicated global play/pause button for music player ([cliclick](https://github.com/BlueM/cliclick) & [Foobar2000](https://www.foobar2000.org/mac))
     
     `fn - f16` = `shift - f16` : send MIDI message to change audio output to my speaker in [Sonarworks SoundID Reference](https://www.sonarworks.com/soundid-reference) ([Sendmidi](https://github.com/gbevin/SendMIDI))
     
@@ -334,13 +334,13 @@ TAB      Q        W
 
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
-`alt - f8` : ...
+`alt - f8` : dedicated global play/pause button for music player ([cliclick](https://github.com/BlueM/cliclick) & [Foobar2000](https://www.foobar2000.org/mac))
 
-`alt - f10` : ...
+`alt - f10` :  mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
 
-`alt - f11` : ...
+`alt - f11` : `vulome_down`
 
-`alt - f12` : ...
+`alt - f12` : `volume_up`
 
 `space` : In Finder: "pimped" quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
 
