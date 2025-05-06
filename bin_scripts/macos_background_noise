@@ -1,8 +1,17 @@
 #!/bin/bash
 
+# AUFPASSEN MIT ANDEREM AUDIO... hängt manchmal auch einfach so... weird... 
+# launchctl kill SIGHUP gui/501/com.apple.accessibility.heard
+# sleep 1
+sleep 1
 if [[ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]]; then
+    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+    sleep 1
     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
 else
+    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+    sleep 1
     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
 fi
+sleep 1
 launchctl kill SIGHUP gui/501/com.apple.accessibility.heard

@@ -1,4 +1,4 @@
-fn - 0x35 : skhd -k "f18" # only-switch : key light toggle, esc
+fn - 0x35 : ~/bin/keyboard_backlight # skhd -k "f18" # only-switch : key light toggle, esc
 # fn - f* : special features / standard function keys (stock)
 
 fn - 0x0A : return # ^
