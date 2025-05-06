@@ -350,17 +350,17 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 ### Mouse and Trackpad Actions & Gestures
 
-`ctrl - left_button` : move window ([Yabai](https://github.com/koekeishiya/yabai))
+`ctrl - left_button` (drag) : move window ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl - right_button` : resize window ([Yabai](https://github.com/koekeishiya/yabai))
+`ctrl - right_button` (drag) : resize window ([Yabai](https://github.com/koekeishiya/yabai))
 
 `cmd - right_button` : left menubar content ([Menuwhere](https://manytricks.com/menuwhere/))
 
-`scrollwheel_button/three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
+`scrollwheel_button / three_finger` : classic "middle_click-functions" like opening and closing tabs in the browser, pasting marked text in the terminal, etc.. ([MiddleClick](https://github.com/artginzburg/MiddleClick))
 
 `shift + scrolling` : horizontal scrolling
 
-`alt (+shift) + scrolling` : faster scrolling ([Linearmouse](https://linearmouse.app/))
+`alt (+shift) + scrolling` : faster (horizontal) scrolling ([Linearmouse](https://linearmouse.app/))
 
 `forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
