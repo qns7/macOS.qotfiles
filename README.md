@@ -37,7 +37,7 @@ I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop w
 - I want to have my setup quite minimal in the sense that I want to use as few as possible apps<!--programs --> and ressources. That said, I DO use quite a few of apps to get my setup to the state I want it to be. 😂 It would be cool to have ONE all-in-one app, preferably just a "formulae" like [Skhd](https://github.com/koekeishiya/skhd) + [Yabai](https://github.com/koekeishiya/yabai), which has no UI, but a very clean way to manage the config in dedicated dotfiles. That would be awesome.. // add LIST: ... AND merge it with the dependencies at the end...
 - Mentioning unpresent clock in sketchybar and hotkey window etc...
 - [Sketchybar](https://github.com/FelixKratz/SketchyBar) replaces the stock menubar and shows the system information I want to see up there while also having some other important "active"/clickable features I like. The stock menubar is set to autohide and also made invisable using yabai. The visability is quickly toggleable so that the menubar is still usable if needed. ... Also: 1. the "System Status Bar" is only visable on the inbuilt screen, while the external screen has no permanent bar at all. 2. Additionally you gain a few pixels under the notch on the inbuilt screen. ...
-- ice ersetzung durch onlyswitch etc... mentioning. Und wie onylswitch eine app ist, die viele andere ersetzt. vielleicht selbst aktiv werden und eine traumapp bauen? macOS+/macOSmax(like q4max?).
+- ice ersetzung durch onlyswitch etc... mentioning. Und wie onylswitch eine app ist, die viele andere ersetzt. vielleicht selbst aktiv werden und eine traumapp bauen? macOS+/macOSmax(like q4max?). 20:04, 06.05.25, TUE: NO, switched back to ice and custom solutions for the rest!
 - Mention BatFi and other apps?
 - ...
 
@@ -299,13 +299,13 @@ TAB      Q        W
 
 `fn - backspace` : **(Forward) Delete**
 
-`fn - esc` : toggle keyboard backlight ([mac-brightnessctl](https://github.com/rakalex/mac-brightnessctl) or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - esc` : toggle keyboard backlight ([mac-brightnessctl](https://github.com/rakalex/mac-brightnessctl))<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
 <!-- `fn - w` : executes custom bash script: adjustments to changes triggered by setup changes (desk / mobile) (also cf. yabai signals...) -->
 
 `fn - s` : sleep immediately (**Pmset**)
 
-`fn - r` : start/stop radio ([mpv](https://mpv.io/installation/) or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - r` : start/stop radio ([mpv](https://mpv.io/installation/)<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)-->)
 
 <!--`fn - t` : pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
