@@ -303,11 +303,11 @@ TAB      Q        W
 
 <!-- `fn - w` : executes custom bash script: adjustments to changes triggered by setup changes (desk / mobile) (also cf. yabai signals...) -->
 
-`fn - s` : sleep immediately (**Pmset**)
-
 `fn - r` : start/stop radio ([mpv](https://mpv.io/installation/)<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)-->)
 
 <!--`fn - t` : pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
+
+`fn - s` : sleep immediately (**Pmset**)
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
