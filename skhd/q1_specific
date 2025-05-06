@@ -18,7 +18,7 @@ shift + alt - f13 [
     "TotalMix FX" : quit_script
     * : open -a "Totalmix" && sleep 0.73 && ~/bin/cliclick_focus
 ]
-shift + alt - f14 : return # TMX mute?
+shift + alt - f14 : return # TMX mute ??
 shift + alt - f15 : ~/bin/tmx_hotkey "f6"
 shift + alt - f16 : ~/bin/tmx_hotkey "f7"
 shift + alt - f17 : ~/bin/tmx_hotkey "f8"
