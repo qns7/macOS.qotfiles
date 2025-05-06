@@ -21,7 +21,7 @@ fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in sy
 fn - w : ~/bin/custom_wake
 fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
 fn - r : ~/bin/radio # skhd -k "hyper - r" # only-switch : radio
-fn - t : skhd -k "hyper - t" # only-switch : timer (pomodoro)
+fn - t : return # Alternative zu OnlySwitch Pomodoro Timer # skhd -k "hyper - t" # only-switch : timer (pomodoro)
 fn - z : return
 fn - u : return
 fn - i : return
