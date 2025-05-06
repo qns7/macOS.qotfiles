@@ -297,9 +297,9 @@ TAB      Q        W
 
 `fn - f*` : **F\* / Special Function**
 
-`fn - backspace` : **(Forward) Delete**
-
 `fn - esc` : toggle keyboard backlight ([mac-brightnessctl](https://github.com/rakalex/mac-brightnessctl))<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
+
+`fn - backspace` : **(Forward) Delete**
 
 <!-- `fn - w` : executes custom bash script: adjustments to changes triggered by setup changes (desk / mobile) (also cf. yabai signals...) -->
 
