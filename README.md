@@ -299,15 +299,15 @@ TAB      Q        W
 
 `fn - backspace` : **(Forward) Delete**
 
-`fn - esc` : toggle keyboard backlight ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - esc` : toggle keyboard backlight ([mac-brightnessctl](https://github.com/rakalex/mac-brightnessctl) or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 <!-- `fn - w` : executes custom bash script: adjustments to changes triggered by setup changes (desk / mobile) (also cf. yabai signals...) -->
 
 `fn - s` : sleep immediately (**Pmset**)
 
-`fn - r` : start/stop radio (bash w/mpv or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - r` : start/stop radio ([mpv](https://mpv.io/installation/) or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
-`fn - t` : pomodoro timer 25/5 (x4) ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - t` : pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
@@ -317,7 +317,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop background noise (bash w/**defaults**&**launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - b` : start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - n` : **Show/Hide Notification Center**
 
