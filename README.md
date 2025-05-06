@@ -362,7 +362,7 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `alt (+shift) + scrolling` : faster (horizontal) scrolling ([Linearmouse](https://linearmouse.app/))
 
-`forwards_button/backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
+`forwards_button / backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
 `alt - forwards_button` : smart zoom ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
