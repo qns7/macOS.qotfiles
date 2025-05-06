@@ -326,10 +326,6 @@ TAB      Q        W
 
 ---
 
-`alt - delete` = `alt + fn - backspace` : effectively "reversing" `alt - backspace` (which should be stock)
-
-`cmd - delete` = `cmd + fn - backspace` : effectively "reversing" `cmd - backspace` (which should be stock)
-
 `alt - f1` : decrease inbuilt display brightness incremental like `shift + alt - brightness_down` ([Brightness](https://github.com/nriley/brightness))
 
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
@@ -342,9 +338,13 @@ TAB      Q        W
 
 `alt - f12` : `volume_up`
 
-`space` : In Finder: "pimped" quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
-
 `hyper - q` : quit all apps (**Applescript**)
+
+`alt - delete` = `alt + fn - backspace` : effectively "reversing" `alt - backspace` (which should be stock)
+
+`cmd - delete` = `cmd + fn - backspace` : effectively "reversing" `cmd - backspace` (which should be stock)
+
+`space` : In Finder: "pimped" quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
 
 _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other programs/apps?_
 
