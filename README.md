@@ -307,7 +307,7 @@ TAB      Q        W
 
 `fn - r` : start/stop radio ([mpv](https://mpv.io/installation/) or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
-`fn - t` : pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+<!--`fn - t` : pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
