@@ -17,7 +17,7 @@
 
 I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is  -->
 
-# My Custom macOS Setup (Sequoia 15.4+)
+# "macOSmax" : My Custom macOS Setup (Sequoia 15.4+)
 
 ## General Information & Philosophy
 
