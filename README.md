@@ -333,6 +333,14 @@ TAB      Q        W
 
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
+`alt - f8` : ...
+
+`alt - f10` : ...
+
+`alt - f11` : ...
+
+`alt - f12` : ...
+
 `space` : In Finder: pimped quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
 
 `hyper - q` : quit all apps (**Applescript**)
