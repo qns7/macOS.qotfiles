@@ -363,7 +363,7 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `alt + cmd - right_button` = `alt + cmd - right_arrow` : often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`alt + cmd - forwards_button` = `alt + cmd - forwards_button` : toggle stock menubar visibility (cf. [last Sketchybar item](#anchor3)) ([Yabai](https://github.com/koekeishiya/yabai)) (only mouse)
+`alt + cmd - forwards_button` <!--= `alt + cmd - forwards_button` -->: toggle stock menubar visibility (cf. [last Sketchybar item](#anchor3)) ([Yabai](https://github.com/koekeishiya/yabai)) (only mouse)
 
 `three_finger_up` : **Mission Control** (only trackpad)
 
