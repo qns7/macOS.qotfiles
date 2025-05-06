@@ -27,6 +27,7 @@ alias a="clear; alias"
 alias cal="clear; /opt/homebrew/opt/util-linux/bin/cal -m"
 # alias b="macos_background_noise"
 alias po="pydoro"
+alias poda="cd ~/.local/pipx/venvs/pydoro; source ~/.local/pipx/venvs/pydoro/bin/activate"
 
 alias ff="clear; fastfetch"
 alias sf="sudo nano /etc/pam.d/sudo"
