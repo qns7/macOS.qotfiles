@@ -1,7 +1,7 @@
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
     ctrl + alt - q : return # perhaps something with "date & time" - NOTES w/ date and time i mean..?
-    ctrl + alt + cmd - q : return
+    ctrl + alt + cmd - q : return # osascript ~/bin/quit_all_apps.scpt # return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.17; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; sleep 1.73; sketchybar --update # "close_script"
     ctrl + alt - w : open_or_focus "Pages"
