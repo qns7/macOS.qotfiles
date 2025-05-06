@@ -59,3 +59,6 @@ wt() {
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"
+
+# Created by `pipx` on 2025-05-06 15:57:21
+export PATH="$PATH:/Users/q/.local/bin"
