@@ -304,9 +304,9 @@ TAB      Q        W
 
 `fn - s` : sleep immediately (**Pmset**)
 
-`fn - r` : start/stop Radio ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - r` : start/stop radio ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
-`fn - t` : Pomodoro Timer 25/5 (x4) ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - t` : pomodoro timer 25/5 (x4) ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - f` : **(Native) Fullscreen (Space)**
 
@@ -316,7 +316,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : start/stop Background Noise ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
+`fn - b` : start/stop background noise ([OnlySwitch](https://github.com/jacklandrin/OnlySwitch))
 
 `fn - n` : **Show/Hide Notification Center**
 
