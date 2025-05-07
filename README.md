@@ -90,7 +90,7 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
     ```
     where 
     
-    `f13` : toggle inbuilt MacBook display on/off ([Brightness](https://github.com/nriley/brightness))
+    `f13` : toggle inbuilt MacBook display ([Brightness](https://github.com/nriley/brightness))
     
     `f14` : mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
 
