@@ -16,16 +16,18 @@ ctrl - 0x1E : yabai -m window --grid 2:2:1:0:2:1; sleep 0.01; ~/bin/cliclick_foc
 ctrl - 0x21 : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top left quarter, ü
 
 ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus # stock window management: center
+
 alt + cmd - 0x12 : yabai_prev_space_on_display; del_empty_spaces; sleep 0.1; ~/bin/cliclick_focus #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
-ctrl + alt + cmd - 0x12 : yabai_prev_space_on_display; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
+    ctrl + alt + cmd - 0x12 : yabai_prev_space_on_display; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
 alt + cmd - 0x13 : yabai_next_space_on_display; del_empty_spaces; sleep 0.1; ~/bin/cliclick_focus  # ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
-ctrl + alt + cmd - 0x13 : yabai_next_space_on_display; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
+    ctrl + alt + cmd - 0x13 : yabai_next_space_on_display; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
 
 alt + cmd - w : create_and_focus_new_space
-shift + alt + cmd - w [
-    "System Settings" : return
-    * :  move_current_window_to_new_space_and_focus
-]
+# shift + alt + cmd - w [
+    ctrl + alt + cmd - w [
+        "System Settings" : return
+        * :  move_current_window_to_new_space_and_focus
+    ]
 alt + cmd - e : change_and_focus_display
 ## shift + alt + cmd - e : trap 'yabai -m config mouse_follows_focus off' EXIT; yabai -m config mouse_follows_focus on; yabai -m display --focus next || yabai -m display --focus prev
 alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A, ^, mission_control_key is 0xA0
