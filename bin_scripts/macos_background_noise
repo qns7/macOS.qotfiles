@@ -8,7 +8,7 @@ if [[ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]
     # defaults write com.apple.ComfortSounds lastEnablementTimestamp $(date +%s)
 else
     defaults write com.apple.ComfortSounds comfortSoundsEnabled -bool NO
-    launchctl kill SIGHUP gui/$(id -u)/com.apple.accessibility.heard
+    # launchctl kill SIGHUP gui/$(id -u)/com.apple.accessibility.heard
     # defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
     # # defaults write com.apple.ComfortSounds comfortSoundsEnabled -bool NO
 fi
