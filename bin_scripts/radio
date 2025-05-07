@@ -10,6 +10,7 @@ else
     nohup mpv "$RADIO_URL" > /dev/null 2>&1 &
     echo $! > "$PID_FILE"
 fi
+~/.config/sketchybar/plugins/radio.sh
 exit 0
 
 # #!/bin/bash
