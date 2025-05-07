@@ -305,7 +305,7 @@ TAB      Q        W
 
 <!-- `fn - w` : executes custom bash script: adjustments to changes triggered by setup changes (desk / mobile) (also cf. yabai signals...) -->
 
-`fn - r` : start/stop radio ([mpv](https://mpv.io/installation/)<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)-->)
+`fn - r` : toggle favorite radio station ([mpv](https://mpv.io/installation/)<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)-->)
 
 <!--`fn - t` : pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
@@ -319,7 +319,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : open and/or focus **Safari Webapp** w/[rain.today](https://rain.today/) <!--start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
+`fn - b` : toggle **Backgruound Sounds Rain** <!--open and/or focus **Safari Webapp** w/[rain.today](https://rain.today/)--> <!--start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
 `fn - n` : **Show/Hide Notification Center**
 
