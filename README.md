@@ -202,7 +202,7 @@ CTRL                             ...         ä        #
                   W        E
 (CTRL)                     D
 
-         LALT     LCMD      
+         LALT  &  LCMD      
 ```
 
 
@@ -230,7 +230,7 @@ NUBS ^
 TAB      Q        W
 
 
-         LALT     LCMD 
+         LALT &|/ LCMD 
 ```
 
 `cmd + alt - tab` : **Move Focus To Next Window** (of current app on current(ly visible) spaces on either display)
