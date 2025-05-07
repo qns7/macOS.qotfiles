@@ -1,6 +1,7 @@
 #!/bin/bash
 
 RADIO_URL="https://liveradio.swr.de/sw282p3/swr2/"
+# RADIO_URL="https://st01.sslstream.dlf.de/dlf/01/high/aac/stream.aac?aggregator=web"
 PID_FILE="/tmp/mpv_radio.pid"
 if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
     kill -INT "$(cat "$PID_FILE")" 2>/dev/null
