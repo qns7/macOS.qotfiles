@@ -19,6 +19,8 @@ I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop w
 
 # "macOSmax" : My Custom macOS Setup (Sequoia 15.4+)
 
+VERY BIG UNDER CONSTRUCTION !!
+
 ## General Information & Philosophy
 
 - This description/readme is just an overview. For all the details please check the dotfiles directly, which get updated very often 😬
