@@ -319,7 +319,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : toggle **Backgruound Sounds Rain** <!--open and/or focus **Safari Webapp** w/[rain.today](https://rain.today/)--> <!--start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
+`fn - b` : toggle **Backgruound Sounds (Rain)** <!--open and/or focus **Safari Webapp** w/[rain.today](https://rain.today/)--> <!--start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
 `fn - n` : **Show/Hide Notification Center**
 
