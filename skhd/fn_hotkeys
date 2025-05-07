@@ -52,7 +52,7 @@ fn - y : /opt/homebrew/bin/yabai --restart-service
 fn - x : /opt/homebrew/bin/sketchybar --reload # --update
 # fn - c : show/hide control center (stock)
 fn - v : return
-fn - b : open_or_focus ~/Applications/rain.today.app # return # NOT RELIABLE # ~/bin/macos_background_noise # skhd -k "hyper - b" # only-switch : background noise
+fn - b : ~/bin/rain_today # open_or_focus ~/Applications/rain.today.app # return # NOT RELIABLE # ~/bin/macos_background_noise # skhd -k "hyper - b" # only-switch : background noise
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,

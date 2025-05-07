@@ -55,7 +55,7 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
     ctrl + alt + cmd - f : open_or_focus "Freeform"
-ctrl - g : open_or_focus ~/Applications/ChatGPT.app # ChatGPT # open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app very slow - better now (07:54, 23.04.25, WED)?
+ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # ChatGPT # open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app very slow - better now (07:54, 23.04.25, WED)?
     ctrl + cmd - g : open_or_focus ChatGPT # ~/Applications/ChatGPT.app
     ctrl + alt - g : open_or_focus "Guitar Pro 7" # open_or_focus "GIMP"
     ctrl + alt + cmd - g : return
@@ -79,7 +79,7 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
     ctrl + cmd - y [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
-        * : open_or_focus ~/Applications/DeepL.app # ; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy, native app auch mal wieder ausprobieren(cf. chatgpt)?
+        * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # ; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy, native app auch mal wieder ausprobieren(cf. chatgpt)?
     ]
     ctrl + alt - y : cliclick m:+0,+21
     ctrl + alt + cmd - y : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1 # keysmith : 'yabai_focus_mouse || cliclick_m'
