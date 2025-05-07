@@ -53,7 +53,7 @@ fn - x : /opt/homebrew/bin/sketchybar --reload # --update
 # fn - c : show/hide control center (stock)
 fn - v : return
 fn - b : return # ~/bin/macos_background_noise # ~/bin/rain_today # open_or_focus ~/Applications/rain.today.app # return # NOT RELIABLE # ~/bin/macos_background_noise # skhd -k "hyper - b" # only-switch : background noise
-    # just use the control center for that
+    # just use the control center for that / doch kein sketchybar item - unnötig: ich höre ja ob an oder aus...
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,
