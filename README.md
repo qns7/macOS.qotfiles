@@ -216,7 +216,7 @@ CTRL                             ...         ä        #
 
 `alt + cmd - w` : create and focus new space on current display ([Yabai](https://github.com/koekeishiya/yabai))
 
-`shift + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window ([Yabai](https://github.com/koekeishiya/yabai))
+`<!--shift-->ctrl + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window ([Yabai](https://github.com/koekeishiya/yabai))
 
 `alt + cmd - e` : change and focus display ([Yabai](https://github.com/koekeishiya/yabai))
 
