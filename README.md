@@ -200,8 +200,8 @@ CTRL                             ...         ä        #
                             
 ^        1        2        3
                   W        E
-                           D
-(LSFT)                      
+(CTRL)                     D
+
          LALT     LCMD      
 ```
 
