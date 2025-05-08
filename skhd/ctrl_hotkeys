@@ -78,7 +78,7 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
         * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy, native app auch mal wieder ausprobieren (cf. chatgpt)
         ]
     ctrl + alt - y : cliclick m:+0,+21
-    # ctrl + alt + cmd - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1 # make available at all apps so terminal, windows app, etc too
+    # ctrl + alt + cmd - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
