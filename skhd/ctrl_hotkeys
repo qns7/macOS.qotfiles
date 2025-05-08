@@ -1,24 +1,21 @@
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
-    ctrl + alt - q : return # perhaps something with "date & time" - NOTES w/ date and time i mean..?
-    ctrl + alt + cmd - q : return # osascript ~/bin/quit_all_apps.scpt # return
+    ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
+    ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.17; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; sleep 1.73; sketchybar --update # "close_script"
     ctrl + alt - w : open_or_focus "Pages"
     # ctrl + alt + cmd - w : cf. 'window_space_and_display_management'
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
-    # ctrl + cmd - e : # .. -. # osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # osascript -e 'tell application "Finder" to activate' OR open -a Finder
-    # ctrl + cmd - e : macOS Shortcut w/ Applescript 
-                                                             #'tell application "TRex" # osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # osascript -e 'tell application "Finder" to activate' OR open -a Finder
-                                                                                                                        # why this again??!?!?!
-    ctrl + alt - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # return
-    ctrl + alt + cmd - e : return # osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus # return ### # ctrl + alt + cmd - e : macOS Shortcut w/ Applescript 'tell application "TRex" to activate'################################## W/O KEYSMITH --- -# ctrl + alt + cmd - e : keysmith : 'tell application "TRex" to activate' (applescript), for Windows App and Terminals
+    ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus
+    ctrl + alt - e : macOS Shortcut w/ Applescript : 'tell application "TRex" to activate'
+    ctrl + alt + cmd - e : return
 ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
-    ctrl + alt + cmd - r : return # open_or_focus Radioplayer
+    ctrl + alt + cmd - r : return # open_or_focus Radioplayer -> now 'fn - r' toggles swrKultur
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
-    ctrl + cmd - t : osascript ~/bin/paste_time_n_date.scpt; skhd -k "cmd - v" # keysmith : date & date, add the selected item to the sidebar (stock)
+    ctrl + cmd - t : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
     ctrl + alt - t : open_or_focus "iTerm"
     ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c"
 ctrl - z : open_or_focus "zoom.us"
@@ -34,37 +31,36 @@ ctrl - p : open_or_focus "Passwords" # move up one line (stock)
 # ctrl - 0x21 : cf. 'window_space_and_display_management'
 # ctrl - 0x1E : cf. 'window_space_and_display_management'
 
-ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), FIX PGREP NOT SHOWING FOOBAR !?
+ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), fix pgrep not catching foobar at 'first opening' !?
     # ctrl + cmd - a : make an alias of the selected item (stock)
     ctrl + alt - a : return
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
     ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 1; open_or_focus "System Settings"; }
-        ### ctrl + alt - s : open -a "System Settings"; sleep 1; open_or_focus "System Settings" # ; sleep 2.1; ! pgrep "System Settings" >/dev/null && open_or_focus "System Settings"
     # ctrl + alt + cmd - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
-ctrl - d : mouse_dock # forward delete (stock) ---------> handle native-fullscreens?
+ctrl - d : mouse_dock # feature: handle native-fullscreens !?, forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
     ctrl + alt - d : ~/bin/show_desktop
     # ctrl + alt + cmd - d : open_folder ~/Downloads
     ctrl + alt + cmd - d [
         "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock)
         * : open_folder ~/Downloads
-    ]
+        ]
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
     ctrl + alt + cmd - f : open_or_focus "Freeform"
-ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # ChatGPT # open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app very slow - better now (07:54, 23.04.25, WED)?
-    ctrl + cmd - g : open_or_focus ChatGPT # ~/Applications/ChatGPT.app
-    ctrl + alt - g : open_or_focus "Guitar Pro 7" # open_or_focus "GIMP"
+ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp
+    ctrl + cmd - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower
+    ctrl + alt - g : open_or_focus "Guitar Pro 7" # open_or_focus "GIMP" -> get Pixelmator Pro
     ctrl + alt + cmd - g : return
 ctrl - h : return # backspace/delete (stock)
     ctrl + cmd - h : return
     ctrl + alt - h : return
     ctrl + alt + cmd - h : return
 ctrl - j : return
-ctrl - k : return # open_or_focus Keysmith # delete the text between the insertion point and the end of the line or paragraph (stock)
+ctrl - k : return # open_or_focus Keysmith, delete the text between the insertion point and the end of the line or paragraph (stock)
 ctrl - l : return # center the cursor or selection in the visible area (stock)
     # ctrl + cmd - l : cf. 'skhdrc'
 ctrl - 0x29 : return
@@ -79,15 +75,15 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
     ctrl + cmd - y [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
-        * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # ; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy, native app auch mal wieder ausprobieren(cf. chatgpt)?
-    ]
+        * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy, native app auch mal wieder ausprobieren (cf. chatgpt)
+        ]
     ctrl + alt - y : cliclick m:+0,+21
-    ctrl + alt + cmd - y : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1 # keysmith : 'yabai_focus_mouse || cliclick_m'
+    ctrl + alt + cmd - y : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1 # make available at all apps so terminal, windows app, etc too
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * : skhd -k "ctrl + alt + cmd - x" # ~
-    ]
+        ]
     ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
     ctrl + alt + cmd - x : ~/bin/cliclick_focus
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
@@ -95,7 +91,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt - c : return
     ctrl + alt + cmd - c : open_or_focus Calculator
 ctrl - v : open_or_focus "Visual Studio Code"
-    ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v" # keysmith : shorten copied url
+    ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
     ctrl + alt + cmd - v : open_or_focus "Cursor"
 ctrl - b : thunderbird_badge # move one character backward (stock)

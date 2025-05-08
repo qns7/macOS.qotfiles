@@ -1,4 +1,4 @@
-fn - 0x35 : ~/bin/keyboard_backlight # skhd -k "f18" # only-switch : key light toggle, esc
+fn - 0x35 : ~/bin/keyboard_backlight # esc
 # fn - f* : special features / standard function keys (stock)
 
 fn - 0x0A : return # ^
@@ -14,14 +14,14 @@ fn - 9 : skhd -k "alt - 6" # ]
 fn - 0 : skhd -k "alt - 9" # }
 fn - 0x1B : skhd -k "shift + alt - 7" # \
 fn - 0x18 : return # ´
-# fn - backspace/delete : forward delete (stock)
+# fn - backspace/delete : (forward) delete (stock)
 
 fn - tab : return
 fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 fn - w : ~/bin/custom_wake
 fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
 fn - r : ~/bin/radio # skhd -k "hyper - r" # only-switch : radio
-fn - t : return # Alternative zu OnlySwitch Pomodoro Timer # skhd -k "hyper - t" # only-switch : timer (pomodoro)
+fn - t : return
 fn - z : return
 fn - u : return
 fn - i : return
@@ -42,9 +42,7 @@ fn - l : return
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : cf. 'q1_specific', #
-# fn - return : /opt/homebrew/bin/yabai -m query --windows --window > ~/Desktop/yabai_debug.txt #.../enter = 0x4C: keysmith : yabai_debugging [pent_to_fn_enter]
-# fn - return : yabai -m query --windows --window | jq '."frame"."y"' > ~/Desktop/yabai_debug.txt
-fn - return : SIDPOS=$(yabai -m query --windows --window); echo "$SIDPOS" | jq '."frame"."x"' > ~/Desktop/yabai_debug.txt
+fn - return : ~/bin/yabai_debug
     0x4C : skhd -k "fn - return"
 
 fn - 0x32 : skhd -k "alt - 7" # <, |
@@ -52,8 +50,7 @@ fn - y : /opt/homebrew/bin/yabai --restart-service
 fn - x : /opt/homebrew/bin/sketchybar --reload # --update
 # fn - c : show/hide control center (stock)
 fn - v : return
-fn - b : ~/bin/macos_background_noise # ~/bin/rain_today # open_or_focus ~/Applications/rain.today.app # return # NOT RELIABLE # ~/bin/macos_background_noise # skhd -k "hyper - b" # only-switch : background noise
-    # just use the control center for that / doch kein sketchybar item - unnötig: ich höre ja ob an oder aus...
+fn - b : ~/bin/macos_background_noise
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,

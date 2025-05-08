@@ -19,7 +19,7 @@ alt + cmd - m : return # minimize all
 cmd - y [
     "Finder" : return # quick look like spacebar
     * ~
-]
+    ]
 
 shift + alt + cmd - q : return # log out of your macOS user account immediately without confirming
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
