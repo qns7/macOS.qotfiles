@@ -34,6 +34,7 @@ hyper - q : osascript ~/bin/quit_all_apps.scpt
 "Terminal"
 "Windows App"
 ]
+# Warp? testen...
 
 ### systemSettings/Keyboard/KeyboardShortcuts :
 # 1: Show Launchpad : ctrl + cmd - l (changed from none)
