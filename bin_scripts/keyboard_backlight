@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [[ "$(mac-brightnessctl | awk '{print $NF}')" == "0.49" ]]; then # 0.00
+    mac-brightnessctl 0.00 # 0.49 # 0.37
+else
+    mac-brightnessctl 0.49 # 0.00
+fi
