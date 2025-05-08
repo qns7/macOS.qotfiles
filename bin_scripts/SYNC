@@ -2,6 +2,7 @@
 
 rsync -a /Users/q/.zprofile /Users/q/.config/zsh_configs/
 rsync -a /Users/q/.zshrc /Users/q/.config/zsh_configs/
+rsync -a /Users/q/.pydoro.ini /Users/q/.config/zsh_configs/
 
 # ------- #
 
