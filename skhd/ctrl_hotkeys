@@ -8,7 +8,7 @@ ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --resta
     # ctrl + alt + cmd - w : cf. 'window_space_and_display_management'
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus
-    ctrl + alt - e : macOS Shortcut w/ Applescript : 'tell application "TRex" to activate'
+    ctrl + alt - e : shortcuts run "Focus TRex" # macOS Shortcut w/ Applescript : 'tell application "TRex" to activate'
     ctrl + alt + cmd - e : return
 ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
