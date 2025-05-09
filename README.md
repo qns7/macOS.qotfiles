@@ -390,7 +390,9 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 
 `three_finger_down` : **App Exposé** (only trackpad)
 
+---
 ### Caveats
+---
 
 - **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions and/or changes.
 - **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via [Homebrew](https://brew.sh/). They are all free except of [Menuwhere](https://manytricks.com/menuwhere/) (3$) and [Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12) (2$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
@@ -401,7 +403,9 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 Screenshot-Example (17:25, 01.05.25, THU):
 ![Screenshot 2025-05-01 at 17 24 59](https://github.com/user-attachments/assets/d9ab624a-3599-446c-871a-c95dfa9fd40e)
 <!-- ![Screenshot 2025-05-01 at 17 21 50](https://github.com/user-attachments/assets/3b09eec3-1714-45f8-bcd3-dbe89d019a28) <!-- ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351) -->
-### Explanation of [Sketchybar](https://github.com/FelixKratz/SketchyBar) items (left to right):
+---
+### Explanation of [Sketchybar](https://github.com/FelixKratz/SketchyBar) items (left to right)
+---
 - **_Monitor / MacBook_**: indicator if external or internal display is currently focused (greyed-out if there are empty space, orange if there are fullscreen spaces)
 - **Numbers**: number of spaces on current display . current space on current display : number of windows on current space . number of apps on current space
 - **Text**: currently focused / active app
