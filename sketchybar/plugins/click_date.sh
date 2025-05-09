@@ -3,6 +3,7 @@
 CLOCK="$HOME/.config/sketchybar/clock"
 PID=$(pgrep -f "$CLOCK")
 if [ -z "$PID" ]; then
+  sketchybar --set date icon=""
   "$CLOCK" &
 else
   kill "$PID"
