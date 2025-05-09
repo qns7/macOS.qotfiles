@@ -1,5 +1,7 @@
 # #!/bin/bash
 
+#launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+#sleep 1
 current_state=$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")
 while [ "$current_state" == "$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")" ]; do
     if [ "$current_state" == "0" ]; then
@@ -7,12 +9,13 @@ while [ "$current_state" == "$(defaults read com.apple.ComfortSounds "comfortSou
     else
         defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
     fi
-    sleep 3
+    sleep 2
 done
-sleep 1
-launchctl kill SIGHUP gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
-sleep 1
-launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+sleep 0.1
+# launchctl kill SIGHUP gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+# sleep 1
+# launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+launchctl kickstart -kp gui/501/com.apple.accessibility.heard
 
 ## if [ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]; then
 ##     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"

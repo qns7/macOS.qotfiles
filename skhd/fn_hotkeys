@@ -50,7 +50,7 @@ fn - y : /opt/homebrew/bin/yabai --restart-service
 fn - x : /opt/homebrew/bin/sketchybar --reload # --update
 # fn - c : show/hide control center (stock)
 fn - v : return
-fn - b : ~/bin/macos_background_noise
+fn - b : return # ~/bin/macos_background_noise # still unreliable
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,
