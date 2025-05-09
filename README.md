@@ -158,7 +158,9 @@ I don't use  [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature, ins
 Because they are, like the switching of spaces (virtual desktops), way too slow for me because of their animations which cannot be disabled completely.  
 Warning: To use [Yabai](https://github.com/koekeishiya/yabai) to its fullest one has to deactivate SIP (e.g. for fast space switching).
 
+---
 ### Window Management ###
+---
 
 ```
                                  ...
@@ -196,7 +198,9 @@ CTRL                             ...         ä        #
 
 `ctrl + cmd - right` : move current window to next display ([Yabai](https://github.com/koekeishiya/yabai))
 
+---
 ### Space and Display Management ###
+---
 
 ```
                             
@@ -224,7 +228,9 @@ CTRL                             ...         ä        #
 
 `alt + cmd - d` : cycle fullscreen spaces if present or delete empty spaces ([Yabai](https://github.com/koekeishiya/yabai))
 
+---
 ### Window (and App) Switching ###
+---
 
 ```
 ESC
@@ -241,7 +247,9 @@ TAB      Q        W
 
 `alt - tab / ^ / q / w / esc` : Show windows from applications : All apps, Show windows from Spaces : All Spaces, Show windows from screens : All screens, Show minimized windows : Show, Show hidden windows : Show, Show fullscreen windows : Show, Order windows by : Alphabetical Order / go up instead of down listwise / quit app / close window / exit listview ([AltTab](https://github.com/lwouis/alt-tab-macos))
 
+---
 ### General System Control ###
+---
 
 `ctrl - q` : open and/or focus **Notes**
 
@@ -350,7 +358,9 @@ TAB      Q        W
 
 _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other programs/apps?_
 
+---
 ### Mouse and Trackpad Actions & Gestures
+---
 
 `ctrl - left_button` (drag) : move window ([Yabai](https://github.com/koekeishiya/yabai))
 
