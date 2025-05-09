@@ -17,7 +17,7 @@
 
 I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is  -->
 
-# "macOSmax" : My Custom macOS Setup (Sequoia 15.4+)
+# "maqOS/macOSmax" : My Custom macOS Setup (Sequoia 15.4+)
 
 VERY BIG UNDER CONSTRUCTION !! all over the place and messy for a few days now 10:37, 07.05.25, WED
 
@@ -406,7 +406,7 @@ Screenshot-Example (17:25, 01.05.25, THU):
 - **REM**: [Remote+](https://cherpake.com/apps/remote-mouse-keyboard/) [clickable: startServer/quit]
 - **CFW**: [Cloudflare Warp](https://formulae.brew.sh/cask/cloudflare-warp) [clickable: openAndConnect/quit]
 - **VPN**: [Viscosity](https://formulae.brew.sh/cask/viscosity#default) [clickable: openAndConnect/quit]
-- <a id="anchor3"></a>**Numbers**: date : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
+- <a id="anchor3"></a>**Numbers**: date [clickable: toggle date/time] : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
 
 <!-- 
 ### Indication: ...
