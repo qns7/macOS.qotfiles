@@ -21,7 +21,7 @@ alias ll="ls --color=auto -lah"
 
 alias h="code ~/.zsh_history"
 alias c="clear"
-alias t="clear; tty-clock -s -c -C 7 -D"
+alias t="clear; tty-clock -c -C 7 -D" # -s
 alias k="clear; cat ~/keyboard_info.txt"
 alias a="clear; alias"
 alias cal="clear; /opt/homebrew/opt/util-linux/bin/cal -m"
