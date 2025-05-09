@@ -1,15 +1,13 @@
 #!/bin/bash
 
-# ...
-
-# CLOCK="$HOME/.config/sketchybar/clock"
-# PID=$(pgrep -f "$CLOCK")
-# if [ -z "$PID" ]; then
-#   "$CLOCK" &
-# else
-#   kill "$PID"
-# fi
-# ~/.config/sketchybar/plugins/date.sh
+CLOCK="$HOME/.config/sketchybar/clock"
+PID=$(pgrep -f "$CLOCK")
+if [ -z "$PID" ]; then
+  "$CLOCK" &
+else
+  kill "$PID"
+fi
+~/.config/sketchybar/plugins/date.sh
 
 # if [ -f /tmp/show.clock ]; then
 #     rm /tmp/show.clock

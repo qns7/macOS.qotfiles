@@ -2,7 +2,7 @@
 
 sleep 3
 killall "LogiTune" &> /dev/null
-/Users/q/.config/sketchybar/.clock &
+# /Users/q/.config/sketchybar/.clock &
 sleep 1
 /opt/homebrew/bin/sketchybar --reload
 
