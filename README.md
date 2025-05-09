@@ -18,10 +18,12 @@
 I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is  -->
 
 # "maqOS/macOSmax" : My Custom macOS Setup (Sequoia 15.4+)
+---
 
 VERY BIG UNDER CONSTRUCTION !! all over the place and messy for a few days now 10:37, 07.05.25, WED
 
 ## General Information & Philosophy
+---
 
 - This description/readme is just an overview. For all the details please check the dotfiles directly, which get updated very often 😬
 - The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
@@ -44,6 +46,7 @@ VERY BIG UNDER CONSTRUCTION !! all over the place and messy for a few days now 1
 - ...
 
 ## Keyboard Setup
+---
 
 I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is
 ```
@@ -121,6 +124,7 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
 5. The option "Use F1, F2, etc. keys as standard function keys" in `System Settings > Keyboard > Keyboard Shortcuts... > Function Keys` I can easily toggle with an according [SketchyBar](https://github.com/FelixKratz/SketchyBar) item ([see below](#anchor2)). This only affects the inbuilt keyboard, which honestly is a feature and not a bug in my specific case.
 
 ## Hotkeys
+---
 
 Since the _Control_ key has basically no function in macOS other than inside the Terminal I use it as my main "appswitcher-key" and for other stuff, which I'll come to later, while dedicating the few system functions & features which use the _Control_ key in macOS' stock config to other hotkeys (remapping).  
 And while using  
@@ -399,6 +403,7 @@ _ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other progra
 - [Brightness](https://github.com/nriley/brightness) has to be ["installed from source"](https://github.com/nriley/brightness/pull/36#issuecomment-2835998750) to work. Installing it via Homebrew the normal way doesn't work.
 
 ## System Status Bar ([Sketchybar](https://github.com/FelixKratz/SketchyBar))
+---
 
 Screenshot-Example (17:25, 01.05.25, THU):
 ![Screenshot 2025-05-01 at 17 24 59](https://github.com/user-attachments/assets/d9ab624a-3599-446c-871a-c95dfa9fd40e)
