@@ -7,11 +7,11 @@ while [ "$current_state" == "$(defaults read com.apple.ComfortSounds "comfortSou
     else
         defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
     fi
-    sleep 2
+    sleep 3
 done
-sleep 0.1
+sleep 1
 launchctl kill SIGHUP gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
-sleep 0.1
+sleep 1
 launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
 
 ## if [ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]; then
