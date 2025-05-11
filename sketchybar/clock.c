@@ -1,3 +1,5 @@
+// STILL LAGGY!
+
 #include "sketchybar.h"
 #include <dispatch/dispatch.h>
 #include <time.h>
