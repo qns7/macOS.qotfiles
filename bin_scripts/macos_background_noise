@@ -1,49 +1,62 @@
-# # #!/bin/bash
+#!/bin/bash
 
-# skhd -k "fn - c"
-# sleep 0.37
-# OPOS=$(cliclick p: | tr -d '[:space:]')
-# CDW=$(yabai -m query --displays --display | jq '.frame.w')
-# CDW=${CDW%.*}
-# BNP1=$((CDW - 35))
-# BNP2=$((CDW - 278))
-# sleep 0.1
-# cliclick c:$BNP1,422
-# sleep 1
-# cliclick dc:$BNP2,96
-# sleep 1
-# skhd -k "0x35"
-# sleep 0.1
-# cliclick m:$OPOS
-# cliclick_focus
-# # SIDPOS_X=$(echo "$SIDPOS" | jq '.frame.x | floor')
-# # SIDPOS_Y=$(echo "$SIDPOS" | jq '.frame.y | floor')
+AUDIO_DIR="/System/Library/AssetsV2/com_apple_MobileAsset_ComfortSoundsAssets/5fc7b4c9d2edbceb5f660e31dc33f38989e57430.asset/AssetData"
+PID_FILE="/tmp/mpv_background.pid"
+if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
+    kill -INT "$(cat "$PID_FILE")" 2>/dev/null
+    rm -f "$PID_FILE"
+else
+    mpv --shuffle --gapless-audio --audio-display=no --volume=50 --loop=inf "$AUDIO_DIR"/Rain_*.m4a &
+    echo $! > "$PID_FILE"
+fi
+exit 0
 
+# # # #!/bin/bash
 
-# #launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
-# #sleep 1
-## current_state=$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")
-## while [ "$current_state" == "$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")" ]; do
-    if [ "$current_state" == "0" ]; then
-        defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
-    else
-        defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
-    fi
-##     sleep 2
-## done
-sleep 0.1
-# launchctl kill SIGHUP gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+# # skhd -k "fn - c"
+# # sleep 0.37
+# # OPOS=$(cliclick p: | tr -d '[:space:]')
+# # CDW=$(yabai -m query --displays --display | jq '.frame.w')
+# # CDW=${CDW%.*}
+# # BNP1=$((CDW - 35))
+# # BNP2=$((CDW - 278))
+# # sleep 0.1
+# # cliclick c:$BNP1,422
 # # sleep 1
-launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
-# launchctl kickstart -kp gui/501/com.apple.accessibility.heard
+# # cliclick dc:$BNP2,96
+# # sleep 1
+# # skhd -k "0x35"
+# # sleep 0.1
+# # cliclick m:$OPOS
+# # cliclick_focus
+# # # SIDPOS_X=$(echo "$SIDPOS" | jq '.frame.x | floor')
+# # # SIDPOS_Y=$(echo "$SIDPOS" | jq '.frame.y | floor')
 
 
-## if [ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]; then
-##     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
-## else
-##     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
-## fi
-## # launchctl kill SIGHUP gui/501/com.apple.accessibility.heard
-## # launchctl kickstart -kp gui/501/com.apple.accessibility.heard
-## sleep 0.1
-## launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+# # #launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+# # #sleep 1
+# ## current_state=$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")
+# ## while [ "$current_state" == "$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")" ]; do
+#     if [ "$current_state" == "0" ]; then
+#         defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+#     else
+#         defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+#     fi
+# ##     sleep 2
+# ## done
+# sleep 0.1
+# # launchctl kill SIGHUP gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+# # # sleep 1
+# launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+# # launchctl kickstart -kp gui/501/com.apple.accessibility.heard
+
+
+# ## if [ $( defaults read com.apple.ComfortSounds "comfortSoundsEnabled" ) == "0" ]; then
+# ##     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+# ## else
+# ##     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+# ## fi
+# ## # launchctl kill SIGHUP gui/501/com.apple.accessibility.heard
+# ## # launchctl kickstart -kp gui/501/com.apple.accessibility.heard
+# ## sleep 0.1
+# ## launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
