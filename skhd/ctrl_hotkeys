@@ -51,7 +51,7 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Feedback Assistant"
     ctrl + alt + cmd - f : open_or_focus "Freeform"
-ctrl - g : open_or_focus ~/Applications/ChatGPT.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp
+ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
     ctrl + cmd - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower
     ctrl + alt - g : open_or_focus "Guitar Pro 7" # open_or_focus "GIMP" -> get Pixelmator Pro
     ctrl + alt + cmd - g : return
@@ -75,7 +75,7 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
     ctrl + cmd - y [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
-        * : open_or_focus ~/Applications/DeepL.app; sleep 0.37; yabai -m window --grid 1:1:0:0:1:1 # safari webapp, native app buggy, native app auch mal wieder ausprobieren (cf. chatgpt)
+        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1) # safari webapp, native app buggy, native app auch mal wieder ausprobieren (cf. chatgpt)
         ]
     ctrl + alt - y : cliclick m:+0,+21
     # ctrl + alt + cmd - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1
