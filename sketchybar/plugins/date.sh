@@ -1,9 +1,7 @@
 # #!/bin/bash
 
 if [ -f /tmp/show.clock ]; then
-    sketchybar --set date icon="$(date +'%H:%M:XX:%u')" \
-                          update_freq=1
+    sketchybar --set date icon="$(date +'%H:%M___:%u')"
 else
-    sketchybar --set date icon="$(date +'%d.%m.%y:%u')" \
-                          update_freq=120
+    sketchybar --set date icon="$(date +'%d.%m.%y:%u')"
 fi
