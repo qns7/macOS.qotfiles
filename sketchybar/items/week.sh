@@ -7,8 +7,7 @@ sketchybar --add item week right \
                       icon.color=0xffc7c7c7 \
                       icon.width=9 \
                       icon.y_offset=0 \
-                      label="$(date +'%V')" \
                       label.padding_left=2 \
                       label.width=24 \
                       label.y_offset=0 \
-                      update_freq=120
+                      update_freq=30
