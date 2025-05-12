@@ -1,4 +1,4 @@
-#!/bin/bash
+# #!/bin/bash
 
 # CLOCK="$HOME/.config/sketchybar/clock"
 # PID=$(pgrep -f "$CLOCK")
@@ -15,5 +15,4 @@ else
     sketchybar --set date icon="$(date +'%d.%m.%y:%u')" \
                           width=113 \
                           # update_freq=120
-
 fi

@@ -10,4 +10,4 @@ sketchybar --add item week right \
                       label.padding_left=2 \
                       label.width=24 \
                       label.y_offset=0 \
-                      update_freq=30
+                      update_freq=120
