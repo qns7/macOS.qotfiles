@@ -3,6 +3,8 @@
 # exec 200>/tmp/custom_wake.lock
 # flock -n 200 || exit 0
 
+# add change_and_focus_display two times to fix the "bug" with yabais display recognition and all in intricacies... soundid, ...
+
 /opt/homebrew/bin/sketchybar --set audio drawing=off
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
