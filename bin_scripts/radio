@@ -7,7 +7,7 @@ if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
     kill -INT "$(cat "$PID_FILE")" 2>/dev/null
     rm -f "$PID_FILE"
 else
-    nohup mpv --volume=100 "$RADIO_URL" > /dev/null 2>&1 &
+    nohup mpv --audio-display=no --volume=100 "$RADIO_URL" > /dev/null 2>&1 &
     echo $! > "$PID_FILE"
 fi
 # ~/.config/sketchybar/plugins/radio.sh

@@ -20,6 +20,9 @@ alt - f2 : ~/bin/brightness_up
 #     * ~
 # ]
 hyper - q : osascript ~/bin/quit_all_apps.scpt
+#
+alt + cmd - j : skhd -k "alt + cmd - left"
+alt + cmd - l : skhd -k "alt + cmd - right"
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"

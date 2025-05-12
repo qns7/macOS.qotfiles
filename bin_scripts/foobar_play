@@ -1,6 +1,7 @@
 #!/bin/bash
 
 pgrep -x foobar2000 && {
+  # killall mpv
   OSPA=$(yabai -m query --spaces --space | jq -r '."index"')
   OPOS=$(cliclick p)
   open -a foobar2000
