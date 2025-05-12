@@ -6,7 +6,7 @@ if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
     kill -INT "$(cat "$PID_FILE")" 2>/dev/null
     rm -f "$PID_FILE"
 else
-    mpv --shuffle --gapless-audio --audio-display=no --volume=50 --loop=inf "$AUDIO_DIR"/Rain_*.m4a &
+    mpv --shuffle --gapless-audio --audio-display=no --volume=42 --loop=inf "$AUDIO_DIR"/Rain_*.m4a &
     echo $! > "$PID_FILE"
 fi
 exit 0

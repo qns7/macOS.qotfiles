@@ -31,7 +31,7 @@ fn - 0x21 : return # ü
 fn - 0x1E : skhd -k "alt - n" # +, ~
 
 fn - a : return # show or hide the dock (stock)
-fn - s : pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; pmset sleepnow
+fn - s : pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
 fn - d : return # start or stop dictation (stock)
 fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
