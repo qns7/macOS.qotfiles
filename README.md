@@ -319,7 +319,7 @@ TAB      Q        W
 
 `fn - r` : toggle favorite radio station ([mpv](https://mpv.io/installation/)<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)-->)
 
-<!--`fn - t` : pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
+`fn - t` : SHOW CLOCK ... <!-- pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)) -->
 
 `fn - s` : sleep immediately (**Pmset**)
 
