@@ -8,7 +8,7 @@ SAVEHIST=100000
 
 setopt PROMPT_SUBST
 PROMPT='%F{white}%B[%b%f %F{208}%D{%H:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
-PROMPT_EOL_MARK='⮐'
+PROMPT_EOL_MARK=' ⮐'
 
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
@@ -58,6 +58,8 @@ ct() {
 wt() {
     curl "wttr.in/$1"
 }
+alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiskam?format=%l:+%C+%t # Zeiskam?0
+# alias wtt="curl -s 'wttr.in/Zeiskam?format=%l:+%C+%t,+Wind:+%w,+Pressure:+%P,+Sunset:+%S" | sed 's/\([↑↓←→↖↗↘↙]\)/\1 /' | sed -E 's/(Sunset:[ ]?[0-9]{2}:[0-9]{2}):[0-9]{2}/\1/''
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"

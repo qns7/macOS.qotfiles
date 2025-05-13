@@ -8,7 +8,7 @@
 /opt/homebrew/bin/sketchybar --set audio drawing=off
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
-    sleep 1
+    sleep 0.37 # 1
     osascript -e "set volume output volume 50"
 else
     killall "SoundID Reference" &> /dev/null
@@ -19,11 +19,11 @@ else
     /Users/q/bin/open_or_focus "SoundID Reference"
     sleep 0.1
     /Users/q/bin/close_soundid
-    sleep 1
+    sleep 0.37 # 1
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
     sleep 0.37
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
-    sleep 1
+    sleep 0.37 # 1
     osascript -e "set volume output volume 100"
 fi
 sleep 0.17
@@ -34,5 +34,5 @@ sleep 0.1
 sudo killall coreaudiod # what's systemsoundserverd doing?
 sleep 2.1
 /opt/homebrew/bin/yabai --restart-service
-sleep 3.7
+sleep 0.37 # 3.7
 /opt/homebrew/bin/sketchybar --reload

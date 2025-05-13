@@ -15,6 +15,11 @@
           },
           {
             "button": 3,
+            "action": { "run": "/opt/homebrew/bin/skhd -k 'fn - y'" },
+            "control": true
+          },
+          {
+            "button": 3,
             "action": { "keyPress": ["command", "0"] },
             "option": true
           },
