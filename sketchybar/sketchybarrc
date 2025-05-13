@@ -9,8 +9,8 @@ sketchybar --bar color=0xff000000 \
                  notch_width=220
 
 default=(
-  icon.font="Chivo Mono:Regular:19.0"
-  label.font="Chivo Mono:Regular:19.0"
+  icon.font="Chivo Mono:Regular:19.0" # Medium?
+  label.font="Chivo Mono:Regular:19.0" # Medium?
   icon.color=0xffc7c7c7
   icon.y_offset=1
   y_offset=1
