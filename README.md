@@ -331,7 +331,7 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : toggle **Backgruound Sounds (Rain)** <!--open and/or focus **Safari Webapp** w/[rain.today](https://rain.today/)--> <!--start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
+`fn - b` : toggle **Backgruound Sounds (Rain)** ([mpv](https://mpv.io/installation/) <!--open and/or focus **Safari Webapp** w/[rain.today](https://rain.today/)--> <!--start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
 `fn - n` : **Show/Hide Notification Center**
 
@@ -344,7 +344,7 @@ TAB      Q        W
 
 `alt - f2` : increase inbuilt display brightness incremental like `shift + alt - brightness_up` ([Brightness](https://github.com/nriley/brightness))
 
-`cmd - f8` : dedicated global play/pause button for music player ([cliclick](https://github.com/BlueM/cliclick) & [Foobar2000](https://www.foobar2000.org/mac))
+`cmd - f8` : dedicated global play/pause button for favorite audio player ([cliclick](https://github.com/BlueM/cliclick) & [Foobar2000](https://www.foobar2000.org/mac))
 
 `alt - f10` :  mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
 
