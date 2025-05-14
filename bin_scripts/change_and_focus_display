@@ -9,6 +9,7 @@ sleep 0.1
 ~/bin/cliclick_focus
 # sleep 0.1
 sketchybar --update
+# omitted this because of the weird mousemovement when no window is open on inbuilt...
 
 # trap 'yabai -m config mouse_follows_focus off' EXIT
 # if [ -f /tmp/mission_control.open ]; then
