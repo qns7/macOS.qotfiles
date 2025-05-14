@@ -4,9 +4,12 @@ trap 'yabai -m config mouse_follows_focus off' EXIT
 yabai -m config mouse_follows_focus on
 yabai -m display --focus next || yabai -m display --focus prev
 sleep 0.1
-[[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+~/bin/cliclick_focus;
+[[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && \
+cliclick c:. && \
+osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
 # sleep 0.1
-~/bin/cliclick_focus
+# ~/bin/cliclick_focus
 # sleep 0.1
 sketchybar --update
 # omitted this because of the weird mousemovement when no window is open on inbuilt...
