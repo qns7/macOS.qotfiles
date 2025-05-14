@@ -83,6 +83,7 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
     ctrl + alt - y : cliclick m:+0,+21
     # ctrl + alt + cmd - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
+    ctrl + shift - x: open_or_focus "texmaker"
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * : skhd -k "ctrl + alt + cmd - x" # ~
