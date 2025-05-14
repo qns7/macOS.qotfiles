@@ -64,5 +64,7 @@ alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiska
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"
 
+alias qu="cd ~/Qobuz-DL && git reset --hard HEAD && git pull origin main"
+
 # Created by `pipx` on 2025-05-06 15:57:21
 export PATH="$PATH:/Users/q/.local/bin"
