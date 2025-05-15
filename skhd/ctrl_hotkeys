@@ -2,7 +2,6 @@ ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
     ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
     ctrl + alt + cmd - q : return
-ctrl + shift - w : ~/bin/custom_wake
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
     ctrl + alt - w : open_or_focus "Pages"
@@ -11,17 +10,15 @@ ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus
     # ctrl + alt - e : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'
     ctrl + alt + cmd - e : return
-ctrl + shift - r : ~/bin/radio
 ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
     ctrl + alt + cmd - r : return # open_or_focus Radioplayer -> now 'fn - r' toggles swrKultur
-# ctrl + shift - t : skhd -k "fn - t" ---> c
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
     ctrl + cmd - t [
         "Finder" : echo -n "$(date +"%d.%m.%y" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" 
         * : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
-    ]
+        ]
     ctrl + alt - t : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "iTerm"
     ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c"
 ctrl - z : open_or_focus "zoom.us"
@@ -41,8 +38,6 @@ ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or parag
     # ctrl + cmd - a : make an alias of the selected item (stock)
     ctrl + alt - a : return
     ctrl + alt + cmd - a : return
-# ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
-ctrl + shift - s : ~/bin/macos_background_noise # native still unreliable, script seems nice..
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
     ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 1; open_or_focus "System Settings"; }
@@ -87,7 +82,6 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
         ]
     ctrl + alt - y : cliclick m:+0,+21
     # ctrl + alt + cmd - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse || /opt/homebrew/bin/cliclick -r m:+0,+1
-ctrl + shift - x: open_or_focus "texmaker" # on every action key? pretty nice
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
@@ -95,7 +89,6 @@ ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
         ]
     ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
     ctrl + alt + cmd - x : ~/bin/cliclick_focus
-ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
     ctrl + alt - c : return
@@ -122,3 +115,11 @@ ctrl - space : skhd -k "0xB1" # spotlight
     ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
     ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'
+
+ctrl + shift - w : ~/bin/custom_wake
+ctrl + shift - r : ~/bin/radio
+ctrl + shift - t : return # *go to middle of files* (Finder)
+ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, script seems nice..
+# ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
+ctrl + shift - x: open_or_focus "texmaker" # on every action key? pretty nice
+ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh
