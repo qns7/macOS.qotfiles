@@ -32,7 +32,7 @@ if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; the
 fi
 sleep 0.1
 sudo killall coreaudiod # what's systemsoundserverd doing?
-sleep 2.1
+sleep 0.1
 /opt/homebrew/bin/yabai --restart-service
-sleep 0.37 # 3.7
+sleep 4.9
 /opt/homebrew/bin/sketchybar --reload

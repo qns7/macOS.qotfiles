@@ -18,10 +18,10 @@ fn - 0x18 : return # ´
 
 fn - tab : return
 fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
-fn - w : ~/bin/custom_wake
+fn - w : return
 fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
-fn - r : ~/bin/radio
-fn - t : ~/.config/sketchybar/plugins/click_date.sh
+fn - r : return
+fn - t : return
 fn - z : return
 fn - u : return
 fn - i : return
@@ -50,7 +50,7 @@ fn - y : /opt/homebrew/bin/yabai --restart-service
 fn - x : /opt/homebrew/bin/sketchybar --reload # --update
 # fn - c : show/hide control center (stock)
 fn - v : return
-fn - b : ~/bin/macos_background_noise # native still unreliable, script seems nice..
+fn - b : return
 # fn - n : show(/hide) notification center (stock)
 fn - m : skhd -k "alt - m" # µ
 # fn - 0x2B : sysdiagnose tailspin (stock), ,
