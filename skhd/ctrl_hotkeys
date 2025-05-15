@@ -14,6 +14,7 @@ ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
     ctrl + alt + cmd - r : return # open_or_focus Radioplayer -> now 'fn - r' toggles swrKultur
+ctrl + shift - t : skhd -k "fn - t"
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock)
     ctrl + cmd - t [
         "Finder" : echo -n "$(date +"%d.%m.%y" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" 
