@@ -1,22 +1,25 @@
 #!/bin/bash
 
-# ~/bin/foobar_play
-# AUDIO_DIR="/System/Library/AssetsV2/com_apple_MobileAsset_ComfortSoundsAssets/5fc7b4c9d2edbceb5f660e31dc33f38989e57430.asset/AssetData"
-AUDIO_FILE="/Users/q/Documents/REAPER Media/Media/macOSrain0525-01.flac"
-PID_FILE="/tmp/mpv_background.pid"
-if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
-    kill -INT "$(cat "$PID_FILE")" 2>/dev/null
-    rm -f "$PID_FILE"
-else
-    nohup mpv --gapless-audio --audio-display=no --volume=73 --loop=inf --start=33:37 "$AUDIO_FILE" &
-    echo $! > "$PID_FILE"
-fi
-exit 0
-# if [ "$current_state" == "0" ]; then
-#     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+# ### ~/bin/foobar_play
+# ### AUDIO_DIR="/System/Library/AssetsV2/com_apple_MobileAsset_ComfortSoundsAssets/5fc7b4c9d2edbceb5f660e31dc33f38989e57430.asset/AssetData"
+# AUDIO_FILE="/Users/q/Documents/REAPER Media/Media/macOSrain0525-01.flac"
+# PID_FILE="/tmp/mpv_background.pid"
+# if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
+#     kill -INT "$(cat "$PID_FILE")" 2>/dev/null
+#     rm -f "$PID_FILE"
 # else
-#     defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+#     nohup mpv --gapless-audio --audio-display=no --volume=73 --loop=inf --start=33:37 "$AUDIO_FILE" &
+#     echo $! > "$PID_FILE"
 # fi
-# launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
-# launchctl kickstart -kp gui/501/com.apple.accessibility.heard
-# launchctl kill SIGHUP gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+# exit 0
+
+### fixxed w/15.5 ??
+if [ "$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")" == "0" ]; then
+    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "true"
+else
+    defaults write com.apple.ComfortSounds "comfortSoundsEnabled" -bool "false"
+fi
+sleep 0.37
+launchctl kickstart -kp gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
+## launchctl kickstart -kp gui/501/com.apple.accessibility.heard
+## launchctl kill SIGHUP gui/$(id -u "$(whoami)")/com.apple.accessibility.heard
