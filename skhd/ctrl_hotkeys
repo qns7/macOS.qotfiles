@@ -123,4 +123,4 @@ ctrl + shift - t : return # *go to middle of files* (Finder) ---> like so many n
 ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, script seems nice..
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl + shift - x: open_or_focus "texmaker" # on every action key? pretty nice
-ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh
+ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
