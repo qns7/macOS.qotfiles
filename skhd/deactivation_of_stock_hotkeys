@@ -12,6 +12,7 @@ fn + shift - a : return # show launchpad
 alt - f14 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 alt - f15 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 
+# cmd - d : duplicate file (Finder)
 cmd - h : return # hide
 alt + cmd - h : return # hide others
 cmd - m : return # minimize
@@ -22,5 +23,9 @@ cmd - y [
     ]
 
 shift + alt + cmd - q : return # log out of your macOS user account immediately without confirming
+shift + cmd - backspace [
+    "Finder" : return # empty trash hotkey
+    * ~
+    ]
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
 # eventuell hier und auch in den anderen files (e.g. ctrl) noch hinzufügen wo die hotkeys/shortcuts definiert sind (e.g.: finder, textfeld, ...)
