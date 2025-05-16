@@ -1,41 +1,41 @@
 #!/bin/bash
 
-trap 'yabai -m config mouse_follows_focus off' EXIT
-yabai -m config mouse_follows_focus on
-yabai -m display --focus next || yabai -m display --focus prev
-sleep 0.1
-~/bin/cliclick_focus;
-[[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && \
-cliclick c:. && \
-osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
-# sleep 0.1
-# ~/bin/cliclick_focus
-# sleep 0.1
-sketchybar --update
-# omitted this because of the weird mousemovement when no window is open on inbuilt...
+#   trap 'yabai -m config mouse_follows_focus off' EXIT
+#   yabai -m config mouse_follows_focus on
+#   yabai -m display --focus next || yabai -m display --focus prev
+#   sleep 0.1
+#   ~/bin/cliclick_focus;
+#   [[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && \
+#   cliclick c:. && \
+#   osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+#   # sleep 0.1
+#   # ~/bin/cliclick_focus
+#   # sleep 0.1
+#   sketchybar --update
+#   # omitted this because of the weird mousemovement when no window is open on inbuilt...
 
-# trap 'yabai -m config mouse_follows_focus off' EXIT
-# if [ -f /tmp/mission_control.open ]; then
-#     yabai -m config mouse_follows_focus on
-#     yabai -m display --focus next || yabai -m display --focus prev
-# else
-#     DISPLAYS=$(yabai -m query --displays)
-#     NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
-#     CURRENT_DISPLAY=$(echo "$DISPLAYS" | jq -r '.[] | select(.["has-focus"] == true) | .uuid')
-#     UUID_INBUILT_DISPLAY="37D8832A-2D66-02CA-B9F7-8F30A301B230"
-#     if [[ $NUM_DISPLAYS -eq 1 ]]; then
-#         cliclick m:900,603
-#     elif [[ $CURRENT_DISPLAY == "$UUID_INBUILT_DISPLAY" ]]; then
-#         cliclick m:1280,720
-#     else
-#         cliclick m:3460,603
-#     fi
-#     sleep 0.1
-#     [[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
-#     sleep 0.1
-#     ~/bin/cliclick_focus
-#     sleep 0.1
-#     sketchybar --update
-# fi
-# buggy sometimes again... why? [springt wieder zurück manchmal - aber yabai restart fixt es... komisch... notes, foobar related? don't know]
-# -> FIXXED NOT?
+trap 'yabai -m config mouse_follows_focus off' EXIT
+if [ -f /tmp/mission_control.open ]; then
+    yabai -m config mouse_follows_focus on
+    yabai -m display --focus next || yabai -m display --focus prev
+else
+    DISPLAYS=$(yabai -m query --displays)
+    NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
+    CURRENT_DISPLAY=$(echo "$DISPLAYS" | jq -r '.[] | select(.["has-focus"] == true) | .uuid')
+    UUID_INBUILT_DISPLAY="37D8832A-2D66-02CA-B9F7-8F30A301B230"
+    if [[ $NUM_DISPLAYS -eq 1 ]]; then
+        cliclick m:900,603
+    elif [[ $CURRENT_DISPLAY == "$UUID_INBUILT_DISPLAY" ]]; then
+        cliclick m:1280,720
+    else
+        cliclick m:3460,603
+    fi
+    sleep 0.1
+    [[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+    sleep 0.1
+    ~/bin/cliclick_focus
+    sleep 0.1
+    sketchybar --update
+fi
+buggy sometimes again... why? [springt wieder zurück manchmal - aber yabai restart fixt es... komisch... notes, foobar related? don't know]
+-> FIXXED NOT?
