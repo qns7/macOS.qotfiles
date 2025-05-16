@@ -116,6 +116,7 @@ ctrl - space : skhd -k "0xB1" # spotlight
     ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'
 
+ctrl + shift - q : killall mpv; sleep 0.37; pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
 ctrl + shift - w : ~/bin/custom_wake
 ctrl + shift - r : ~/bin/radio
 ctrl + shift - t : return # *go to middle of files* (Finder) ---> like so many not listed in any macos hotkey list... weird
