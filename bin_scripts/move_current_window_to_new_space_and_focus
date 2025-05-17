@@ -2,9 +2,20 @@
 
 [[ "$(yabai -m query --spaces --space | jq '.["is-native-fullscreen"]')" == "false" ]]
 yabai -m space --create
+
+# APP NOT ONLY WINDOW! ---> change file-name soon!
 INDEX="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
-yabai -m window --space "${INDEX}"
-yabai -m space --focus "${INDEX}"
+APP_NAME=$(yabai -m query --windows --window | jq -r '.app')
+yabai -m query --windows | jq -c ".[] | select(.app == \"$APP_NAME\")" | while read -r win; do
+  WIN_ID=$(echo "$win" | jq -r '.id')
+  yabai -m window "$WIN_ID" --space "$INDEX"
+done
+yabai -m space --focus "$INDEX"
+
+# INDEX="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
+# yabai -m window --space "${INDEX}"
+# yabai -m space --focus "${INDEX}"
+
 sleep 0.1
 ~/bin/cliclick_focus
 sleep 0.1
