@@ -4,7 +4,7 @@ OPOS=$(cliclick p: | tr -d '[:space:]')
 SIDPOS=$(yabai -m query --windows --window)
 SIDPOS_X=$(echo "$SIDPOS" | jq '.frame.x | floor')
 SIDPOS_Y=$(echo "$SIDPOS" | jq '.frame.y | floor')
-cliclick c:$((SIDPOS_X + 7)),$((SIDPOS_Y + 7))
+cliclick c:$((SIDPOS_X + 14)),$((SIDPOS_Y + 14))
 sleep 0.1
 cliclick m:$OPOS
 cliclick_focus
