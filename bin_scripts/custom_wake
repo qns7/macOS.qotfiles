@@ -5,6 +5,13 @@
 
 # add change_and_focus_display two times to fix the "bug" with yabais display recognition and all in intricacies... soundid, ...
 
+trap 'yabai -m config mouse_follows_focus off' EXIT
+/opt/homebrew/bin/yabai -m config mouse_follows_focus on
+/opt/homebrew/bin/yabai -m display --focus next || yabai -m display --focus prev
+sleep 0.1
+/opt/homebrew/bin/yabai -m display --focus next || yabai -m display --focus prev
+sleep 0.1
+
 /opt/homebrew/bin/sketchybar --set audio drawing=off
 if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0]."uuid"')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &> /dev/null
