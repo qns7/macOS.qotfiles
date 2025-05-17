@@ -5,7 +5,7 @@ tmx_hotkey() {
     local POS
     POS=$(cliclick p)
     open -a "Totalmix"
-    sleep 0.73
+    sleep 1.37 # 0.73
     open_or_focus "Totalmix"
     if [[ "$(sketchybar --query front_app | jq -r '.icon.value')" == "TotalMix FX" ]]; then
         skhd -k "$KEY_COMMAND"
