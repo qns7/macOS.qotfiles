@@ -42,7 +42,7 @@
           },
           {
             "button": 4,
-            "action": { "run": "Users/q/.config/sketchybar/plugins/click_week.sh" },
+            "action": { "run": "/opt/homebrew/bin/skhd -k 'shift + alt - f13'" },
             "command": true,
             "option": true
           }
