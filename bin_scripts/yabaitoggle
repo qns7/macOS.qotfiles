@@ -8,4 +8,5 @@ elif [ "$($1)" = "1.0000" ]; then
     $1 0.0000
 else
     $1 1.0000
+    cliclick m:$(yabai -m query --displays | jq -r '.[] | select(.["has-focus"] == true) | "\((.frame.x + .frame.w - 1) | floor),\((.frame.y) | floor)"')
 fi

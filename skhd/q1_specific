@@ -13,7 +13,7 @@ shift - f15 : ~/bin/foobar_play
 shift - f16 : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 shift - f17 : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 
-shift + alt - f13 : return
+shift + alt - f13 : Users/q/.config/sketchybar/plugins/click_week.sh
 shift + alt - f14 [ 
     "TotalMix FX" : quit_script
     * : open -a "Totalmix" && sleep 0.73 && ~/bin/cliclick_focus
