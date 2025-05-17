@@ -13,6 +13,12 @@ if [ -z "$BOQ" ]; then
     # sleep 0.73
     # cliclick_focus
     # sleep 1
+
+    sleep 0.37
+    killall "thunderbird"
+    sleep 0.1
+    open_or_focus "thunderbird"
+
     sleep 2
     ~/.config/sketchybar/plugins/badge.sh
     del_empty_spaces
