@@ -33,11 +33,11 @@ else
     sleep 0.37 # 1
     osascript -e "set volume output volume 100"
 fi
-sleep 0.17
+sleep 0.37 # 0.17
 if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
     /opt/homebrew/bin/skhd -k "shift + alt - f16"
 fi
-sleep 0.1
+sleep 1 # .37 # 0.1
 sudo killall coreaudiod # what's systemsoundserverd doing?
 sleep 0.1
 /opt/homebrew/bin/yabai --restart-service
