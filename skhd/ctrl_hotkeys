@@ -88,7 +88,7 @@ ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
         * : ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
         ]
     ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
-    ctrl + alt + cmd - x : sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
+    ctrl + alt + cmd - x : return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
     ctrl + alt - c : return
