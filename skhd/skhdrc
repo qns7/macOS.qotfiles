@@ -48,6 +48,7 @@ alt + cmd - l [
 ### systemSettings/Keyboard/KeyboardShortcuts :
 # 1: Show Launchpad : ctrl + cmd - l (changed from none)
 # 3: Application windows : alt + cmd - 0x0A (changed from ctrl - down), ^
+alt + cmd - 0x0A : cliclick m:+0,+1; skhd -k "hyper - 0x0A" # workaround for the mouse hiding...
 alt + cmd - 0x14 : skhd -k "0xA0" # mission control
 # 3: Show Desktop : hyper - d (changed from F11)
 # 3: Move left a space : hyper - 1 (changed from ctrl - left)
