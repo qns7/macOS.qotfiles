@@ -6,6 +6,7 @@ elif [ "$($1)" = "off" ]; then
     $1 on
 elif [ "$($1)" = "1.0000" ]; then
     $1 0.0000
+    /Users/q/bin/cliclick_focus
 else
     $1 1.0000
     /opt/homebrew/bin/cliclick m:$(yabai -m query --displays | jq -r '.[] | select(.["has-focus"] == true) | "\((.frame.x + .frame.w - 49) | floor),\((.frame.y) | floor)"')
