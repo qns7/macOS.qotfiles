@@ -122,5 +122,6 @@ ctrl + shift - r : ~/bin/radio
 ctrl + shift - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # return # *go to middle of files* (Finder) ---> like so many not listed in any macos hotkey list... weird
 ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, script seems nice..
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
-ctrl + shift - x : return
+ctrl + shift - y : skhd -k "ctrl + alt - y"
+ctrl + shift - x : skhd -k "ctrl + alt - x"
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
