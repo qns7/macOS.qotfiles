@@ -87,7 +87,7 @@ ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * : ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
         ]
-    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0
+    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0; sleep 0.37; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + alt + cmd - x : return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
@@ -122,7 +122,7 @@ ctrl + shift - r : ~/bin/radio
 ctrl + shift - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # return # *go to middle of files* (Finder) ---> like so many not listed in any macos hotkey list... weird
 ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, script seems nice..
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
-ctrl + shift - 0x32 : ~/bin/cliclick_focus
-ctrl + shift - y : skhd -k "ctrl + alt - y"
-ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
+# ctrl + shift - 0x32 : ~/bin/cliclick_focus
+# ctrl + shift - y : skhd -k "ctrl + alt - y"
+# ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
