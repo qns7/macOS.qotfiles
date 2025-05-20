@@ -48,7 +48,7 @@ alt + cmd - l [
 ### systemSettings/Keyboard/KeyboardShortcuts :
 # 1: Show Launchpad : ctrl + cmd - l (changed from none)
 # 3: Application windows : alt + cmd - 0x0A (changed from ctrl - down), ^
-alt + cmd - 0x0A : cliclick m:+0,+1 && cliclick m:+0,-1 && skhd -k "hyper - 0x0A" # workaround for the mouse hiding...
+alt + cmd - 0x0A : cliclick m:+0,+1 && ~/bin/cliclick_focus && cliclick m:+0,-1 && skhd -k "hyper - 0x0A" # workaround for the mouse hiding...
 alt + cmd - 0x14 : skhd -k "0xA0" # mission control
 # 3: Show Desktop : hyper - d (changed from F11)
 # 3: Move left a space : hyper - 1 (changed from ctrl - left)
@@ -69,3 +69,6 @@ alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketc
 # 11: Finder / Back : cmd - left
 # 11: Finder / New Smart Folder : alt + cmd - n (normally stock?)
 ### all other shortcuts are deactivated (like ctrl - f1-f8)
+
+# cmd - tab : ~/bin/focus_next_window # not cool... just use alt(-)tab
+# cmd < : rm -f /tmp/yabai-window-cycle
