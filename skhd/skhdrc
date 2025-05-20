@@ -62,6 +62,7 @@ alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketc
 # 6: Save picture of screen as a file : hyper - y (changed from shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage)
 # 6: Save picture of selected area as a file : hyper - x (changed from shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage)
 # 6: Screenshot and recording options : hyper - <
+# 9: ... 3 hotkeys + 5 contextual menu items
 # 11: All Applications / Save As... : shift + cmd - s
 # 11: Notes / Strikethrough : shift + cmd - x
 # 11: Finder / Forward : cmd - right
