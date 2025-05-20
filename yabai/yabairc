@@ -31,6 +31,7 @@ yabai -m signal --add event=application_terminated action="/opt/homebrew/bin/ske
 yabai -m signal --add event=window_created action="/opt/homebrew/bin/sketchybar --update" # ; sleep 1.73; skhd -k 'alt + cmd - d'" # /opt/homebrew/bin/sketchybar --update"
 yabai -m signal --add event=window_destroyed action="/opt/homebrew/bin/sketchybar --update" # ; sleep 1.73; skhd -k 'alt + cmd - d'" # /opt/homebrew/bin/sketchybar --update"
 # doesn't quite work ... still have to push alt + cmd - d sometimes ... AUTOMATE?
+# enetering native fullscreen : move mouse slightly for dissapperance
 
 # yabai -m signal --add event=system_woke action="pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update" # "~/bin/custom_wake"
 # only manually from now on :
