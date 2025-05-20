@@ -45,4 +45,4 @@ else
 fi
 cliclick m:+0,+1 && cliclick m:+0,-1
 
-# CHECK FOR NATIVE FULLSCREEN AND ADAPT ?!
+# CHECK FOR NATIVE FULLSCREEN AND ADAPT ?! moving further left while holding on trackpad, what on mouse? and how to implement this?
