@@ -9,21 +9,23 @@ printf "${TEXTCOLOR1}brew update..\n"
 brew update
 BREW_REPO_DIR="$(brew --repo)"
 if [ -d "$BREW_REPO_DIR/.git" ]; then
-  printf "${TEXTCOLOR1}checking for merge conflicts..\n"
+  printf "Checking for merge conflicts..\n"
   ORIG_DIR=$(pwd)
   cd "$BREW_REPO_DIR" || exit
   if git status --porcelain | grep -E '^(UU|AA|DD|DU|UD) ' > /dev/null; then
-    printf "${TEXTCOLOR1}merge conflicts found:\n"
-    printf "${TEXTCOLOR1}some files were deleted upstream and are in conflict.\n"
-    read -p "auto-resolve and accept the deletions? [y/N] " choice
+    printf "Merge conflicts found:\n"
+    printf "Some files were deleted upstream and are in conflict.\n"
+    read -p "Auto-resolve and accept the deletions? [y/N] " choice
     if [[ "${choice}" =~ ^[Yy]$ ]]; then
-      printf "${TEXTCOLOR1}auto-resolving..\n"
+      printf "Auto-resolving..\n"
       git add -u
-      git commit -m "auto-resolve deleted file conflicts from upstream."
-      printf "${TEXTCOLOR1}conflicts resolved and committed.\n"
+      git commit -m "Auto-resolve deleted file conflicts from upstream."
+      printf "Conflicts resolved and committed.\n"
     else
-      printf "${TEXTCOLOR1}skipped conflict resolution: you can resolve manually later.\n"
+      printf "Skipped conflict resolution: you can resolve manually later.\n"
     fi
+  else
+    printf "No merge conflicts found.\n"
   fi
   cd "$ORIG_DIR" || exit
 fi
@@ -35,8 +37,6 @@ printf "${TEXTCOLOR1}brew doctor..\n"
 brew doctor
 printf "${RESET}"
 
-
-# #!/bin/bash
 
 # TEXTCOLOR1='\033[1;33m'
 # TEXTCOLOR2='\033[1;34m'
