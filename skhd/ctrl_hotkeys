@@ -87,7 +87,7 @@ ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * : return # ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
         ]
-    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0; sleep 0.37; cliclick m:+0,+7 && cliclick m:+0,-7
+    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + alt + cmd - x : return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
@@ -127,9 +127,11 @@ ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, scrip
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ## ctrl + shift - 0x32 : ~/bin/cliclick_focus
 ## ctrl + shift - y : skhd -k "ctrl + alt - y"
+# ctrl + shift - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
 ## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
+# ctrl + shift - x : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
 
-# ctrl + cmd - tab : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate', "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €" --- yeah "forgot" that and tried again, now this is my solution..
-# ctrl + alt - tab : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
-# perhaps shift instead of ctrl?
+#        # ctrl + shift - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
+#   NO   # ctrl + shift - x : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate', "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €" --- yeah "forgot" that and tried again, now this is my solution..
+#        # perhaps shift instead of ctrl? - totally different..
