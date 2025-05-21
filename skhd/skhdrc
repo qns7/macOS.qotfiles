@@ -50,7 +50,7 @@ alt + cmd - l [
 # 3: Application windows : alt + cmd - 0x0A (changed from ctrl - down), ^
 alt + cmd - 0x0A : cliclick m:+0,+1 && ~/bin/cliclick_focus && cliclick m:+0,-1 && skhd -k "hyper - 0x0A" # workaround for the mouse hiding...
 # # # shift + alt + cmd - 0x14 : cliclick m:+0,+1 && ~/bin/cliclick_focus && cliclick m:+0,-1 && skhd -k "hyper - 0x0A" # workaround for the mouse hiding...
-alt + cmd - 0x14 : skhd -k "0xA0" # mission control
+alt + cmd - 0x14 : skhd -k "0xA0"; sleep 0.1; [[ ! -f /tmp/mission_control.open ]] && { cliclick m:$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.w | floor') / 2)),0 && sleep 0.21 && cliclick m:$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.w | floor') / 2)),0 } || { sleep 0.1 && cliclick_focus } # mission control
 # # # alt + cmd - 0x14 : skhd -k "0xA0" # mission control
 # 3: Show Desktop : hyper - d (changed from F11)
 # 3: Move left a space : hyper - 1 (changed from ctrl - left)
