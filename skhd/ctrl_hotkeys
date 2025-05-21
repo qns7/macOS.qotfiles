@@ -135,3 +135,4 @@ ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3
 #        # ctrl + shift - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
 #   NO   # ctrl + shift - x : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate', "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €" --- yeah "forgot" that and tried again, now this is my solution..
 #        # perhaps shift instead of ctrl? - totally different..
+# 22:47, 21.05.25, WED
