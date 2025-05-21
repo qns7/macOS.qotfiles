@@ -8,8 +8,8 @@ ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --resta
     # ctrl + alt + cmd - w : cf. 'window_space_and_display_management'
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus
-    # ctrl + alt - e : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
-    # ctrl + alt + cmd - e : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate', "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
+    ctrl + alt - e : return
+    ctrl + alt + cmd - e : return
 ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
@@ -129,3 +129,7 @@ ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, scrip
 ## ctrl + shift - y : skhd -k "ctrl + alt - y"
 ## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
+
+# ctrl + cmd - tab : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate', "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €" --- yeah "forgot" that and tried again, now this is my solution..
+# ctrl + alt - tab : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
+# perhaps shift instead of ctrl?
