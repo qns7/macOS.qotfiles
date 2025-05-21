@@ -16,7 +16,10 @@ ctrl - r : open_or_focus Reaper
     ctrl + alt + cmd - r : return # open_or_focus Radioplayer -> now 'fn - r' toggles swrKultur
 # ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock) (Tippfehler)
     ctrl + cmd - t : open_or_focus "texmaker"
-    ctrl + alt - t : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "iTerm" # skhd -k "hyper - t" ---> systemSettings/Keyboard/KeyboardShortcuts/Services/...
+    ctrl + alt - t [
+        "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "iTerm" # skhd -k "hyper - t" ---> systemSettings/Keyboard/KeyboardShortcuts/Services/...
+        * : return
+        ]
     ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c"
 ctrl - z : open_or_focus "zoom.us"
     ctrl + cmd - z : return
@@ -53,8 +56,8 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     ctrl + alt + cmd - f : open_or_focus "Freeform"
 ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
     ctrl + cmd - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower
-    ctrl + alt - g : open_or_focus "Guitar Pro 7" # open_or_focus "GIMP" -> get Pixelmator Pro
-    ctrl + alt + cmd - g : return
+    ctrl + alt - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
+    ctrl + alt + cmd - g : open_or_focus "Guitar Pro 7"
 ctrl - h : return # backspace/delete (stock)
     ctrl + cmd - h : return
     ctrl + alt - h : return
@@ -82,7 +85,7 @@ ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
-        * : ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
+        * : return # ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
         ]
     ctrl + alt - x : sleep 0.37; cliclick c:+0,+0; sleep 0.37; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + alt + cmd - x : return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
@@ -93,7 +96,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
-    ctrl + alt + cmd - v : open_or_focus "Cursor"
+    ctrl + alt + cmd - v : return # open_or_focus "Cursor"
 ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
     ctrl + alt - b : return
@@ -103,7 +106,7 @@ ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
     ctrl + alt - n : return
     ctrl + alt + cmd - n : return
 ctrl - m : open_or_focus "Audio MIDI Setup"
-    ctrl + cmd - m : open_or_focus "Protokol"
+    ctrl + cmd - m : open_or_focus "Protokol" # the other midi signal app (homewbrew)
 ctrl - 0x2B : return
 ctrl - 0x2F : return
 # ctrl - 0x2C : cf. window_space_and_display_management
@@ -122,7 +125,7 @@ ctrl + shift - t [
         ] # *go to middle of files* (Finder) ---> like so many not listed in any macos hotkey list... weird
 ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, script seems nice..
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
-# ctrl + shift - 0x32 : ~/bin/cliclick_focus
-# ctrl + shift - y : skhd -k "ctrl + alt - y"
-# ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
+## ctrl + shift - 0x32 : ~/bin/cliclick_focus
+## ctrl + shift - y : skhd -k "ctrl + alt - y"
+## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
