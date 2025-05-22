@@ -23,12 +23,14 @@ hyper - q : osascript ~/bin/quit_all_apps.scpt
 #
 alt + cmd - j [
     "Finder" ~
-    * :  skhd -k "alt + cmd - left" # "ctrl + shift - tab"
+    * : skhd -k "alt + cmd - left" # "ctrl + shift - tab"
 ]
+ctrl + alt + cmd - 1 : skhd -k "alt + cmd - left"
 alt + cmd - l [
     "Finder" ~ # for download folder hotkey
-    * :  skhd -k "alt + cmd - right" # "ctrl - tab"
+    * : skhd -k "alt + cmd - right" # "ctrl - tab"
 ]
+ctrl + alt + cmd - 2 : skhd -k "alt + cmd - right"
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
