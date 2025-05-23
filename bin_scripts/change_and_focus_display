@@ -39,7 +39,7 @@ else
     ~/bin/cliclick_focus
     sleep 0.1
     sketchybar --update
-    sleep 0.1
+    sleep 0.37 # 0.1
     CURRENT_MOUSE_POS=$(cliclick p:)
     if ! [[ $CURRENT_MOUSE_POS == *"3460"* || $CURRENT_MOUSE_POS == *"1280"* || $CURRENT_MOUSE_POS == *"900"* ]]; then
         fallback
