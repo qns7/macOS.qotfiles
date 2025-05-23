@@ -2,5 +2,7 @@
 
 # /opt/homebrew/bin/yabai -m query --windows --window > ~/Desktop/yabai_debug.txt #.../enter = 0x4C: keysmith : yabai_debugging [pent_to_fn_enter]
 # yabai -m query --windows --window | jq '."frame"."y"' > ~/Desktop/yabai_debug.txt
-COM=$(yabai -m query --windows --window)
+# yabai -m query --windows --window
+# COM=$(yabai -m query --windows --space | jq --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id]')
+COM=$(yabai -m query --windows --space | jq -r --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id] | last')
 echo "$COM" > ~/Desktop/yabai_debug.txt

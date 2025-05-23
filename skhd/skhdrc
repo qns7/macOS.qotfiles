@@ -22,16 +22,17 @@ alt - f2 : ~/bin/brightness_up
 hyper - q : osascript ~/bin/quit_all_apps.scpt
 #
 #alt + cmd - h [
-alt + cmd - j [
-    "Finder" ~
-    * : skhd -k "alt + cmd - left" # "ctrl + shift - tab"
-]
+#alt + cmd - j [
+#    "Finder" ~
+#    * : skhd -k "alt + cmd - left" # "ctrl + shift - tab"
+#]
 # ctrl + alt + cmd - 1 : skhd -k "alt + cmd - left"
-alt + cmd - l [
-    "Finder" ~ # for download folder hotkey
-    * : skhd -k "alt + cmd - right" # "ctrl - tab"
-]
+#alt + cmd - l [
+#    "Finder" ~ # for download folder hotkey
+#    * : skhd -k "alt + cmd - right" # "ctrl - tab"
+#]
 # ctrl + alt + cmd - 2 : skhd -k "alt + cmd - right"
+# ctrl + shift + cmd - r : yabai -m window --focus recent # doesn't work
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
@@ -61,8 +62,10 @@ alt + cmd - 0x14 : skhd -k "0xA0"; sleep 0.1; [[ ! -f /tmp/mission_control.open 
 # 4: Move focus to next window : hyper - tab (changed from cmd - `)
 # # # test new 'setup' # # # alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
 ##cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update # test: ohne alttab
-alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
-    fn + alt - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
+#alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
+#shift + alt + cmd - tab : yabai -m window --focus $(yabai -m query --windows --space | jq -r --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id] | last')
+  alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
+    #fn + alt - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
     #alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
     #ctrl + alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
     ##alt - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update # test: ohne alttab
