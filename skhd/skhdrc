@@ -21,7 +21,8 @@ alt - f2 : ~/bin/brightness_up
 # ]
 hyper - q : osascript ~/bin/quit_all_apps.scpt
 #
-alt + cmd - h [
+#alt + cmd - h [
+alt + cmd - j [
     "Finder" ~
     * : skhd -k "alt + cmd - left" # "ctrl + shift - tab"
 ]
