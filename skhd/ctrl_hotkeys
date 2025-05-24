@@ -127,9 +127,11 @@ ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, scrip
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ## ctrl + shift - 0x32 : ~/bin/cliclick_focus
 ## ctrl + shift - y : skhd -k "ctrl + alt - y"
+
 # ctrl + shift - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
-## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 # ctrl + shift - x : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'
+
+## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
 
 #        # ctrl + shift - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
