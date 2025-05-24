@@ -1,6 +1,7 @@
 #!/bin/bash
 
 osascript -e 'tell application "Finder" to make new Finder window to (POSIX file "'"$1"'")'
-open $1
-sleep 0.1
-~/bin/cliclick_focus
+open_or_focus "Finder"
+# open $1
+# sleep 0.1
+# ~/bin/cliclick_focus
