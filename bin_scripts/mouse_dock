@@ -24,7 +24,7 @@ else
             if [ "$CURR_POS" != "$PREV_POS" ]; then
                 rm -f "$POS_FILE"
                 rm -f "$WATCHER_PID_FILE"
-                cliclick m:+0,+7 && cliclick m:+0,-7
+                cliclick m:+0,+1 && cliclick m:+0,-1
                 exit 0
             fi
             # CURRENT_TIME=$(date +%s)
@@ -37,12 +37,12 @@ else
                 rm -f "$POS_FILE"
                 rm -f "$WATCHER_PID_FILE"
                 # del_empty_spaces # cool?
-                cliclick m:+0,+7 && cliclick m:+0,-7
+                cliclick m:+0,+1 && cliclick m:+0,-1
                 exit 0
             fi
         done
     ) & echo $! > "$WATCHER_PID_FILE"
 fi
-cliclick m:+0,+7 && cliclick m:+0,-7
+cliclick m:+0,+1 && cliclick m:+0,-1
 
 # CHECK FOR NATIVE FULLSCREEN AND ADAPT ?! moving further left while holding on trackpad, what on mouse? and how to implement this?
