@@ -1,5 +1,5 @@
 #fn - 0x35 : ~/bin/keyboard_backlight # esc ---> Perhaps change caps_lock in second layer of q1-map from _______ to C(_______)
-f18 : ~/bin/keyboard_backlight # esc
+f15 : ~/bin/keyboard_backlight # esc [old: f18]
   # fn - f* : special features / standard function keys (stock)
 
 fn - 0x0A : return # ^

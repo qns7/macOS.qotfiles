@@ -53,7 +53,7 @@
             "simple_modifications": [
                 {
                     "from": { "key_code": "escape" },
-                    "to": [{ "key_code": "f18" }]
+                    "to": [{ "key_code": "f15" }]
                 },
                 {
                     "from": { "key_code": "grave_accent_and_tilde" },
