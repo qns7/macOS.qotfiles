@@ -36,14 +36,16 @@ fn - s : return
 fn - d : return # start or stop dictation (stock)
 fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
-fn - h : skhd -k "left"
-#  fn + alt + cmd - h : skhd -k "alt + cmd - left"
-#fn - j : skhd -k "down"
-#  fn + alt + cmd - j : skhd -k "cmd - down"
-#fn - k : skhd -k "up"
-#  fn + alt + cmd - k : skhd -k "cmd - up"
-#fn - l : skhd -k "right"
-#  fn + alt + cmd - l : skhd -k "alt + cmd - right"
+#
+# fn - h : karabiner remap to left
+# fn - j : karabiner remap to down
+# fn - k : karabiner remap to up
+# fn - l : karabiner remap to right
+# # fn + alt + cmd - h : skhd -k "alt + cmd - left"
+# # fn + alt + cmd - j : skhd -k "cmd - down"
+# # fn + alt + cmd - k : skhd -k "cmd - up"
+# # fn + alt + cmd - l : skhd -k "alt + cmd - right"
+#
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : cf. 'q1_specific', #
