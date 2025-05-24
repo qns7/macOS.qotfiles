@@ -69,3 +69,5 @@ alias qs="cd ~/Qobuz-DL && npm i && npm run dev"
 
 # Created by `pipx` on 2025-05-06 15:57:21
 export PATH="$PATH:/Users/q/.local/bin"
+
+alias tb="toggle_brightness"
