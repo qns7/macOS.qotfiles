@@ -38,9 +38,9 @@ fn - g : return
 fn - h : skhd -k "left"
   fn + alt + cmd - h : skhd -k "alt + cmd - left"
 fn - j : skhd -k "down"
-  fn + alt + cmd - j : skhd -k "alt + cmd - down"
+  fn + alt + cmd - j : skhd -k "cmd - down"
 fn - k : skhd -k "up"
-  fn + alt + cmd - k : skhd -k "alt + cmd - up"
+  fn + alt + cmd - k : skhd -k "cmd - up"
 fn - l : skhd -k "right"
   fn + alt + cmd - l : skhd -k "alt + cmd - right"
 fn - 0x29 : return # ö

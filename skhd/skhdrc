@@ -21,8 +21,8 @@ alt - f2 : ~/bin/brightness_up
 # ]
 hyper - q : osascript ~/bin/quit_all_apps.scpt
 #
-#alt + cmd - h [
-alt + cmd - j [
+#alt + cmd - j [
+alt + cmd - h [
     "Finder" ~
     * : skhd -k "alt + cmd - left" # "ctrl + shift - tab"
 ]
@@ -33,6 +33,14 @@ alt + cmd - l [
 ]
 # ctrl + alt + cmd - 2 : skhd -k "alt + cmd - right"
 # ctrl + shift + cmd - r : yabai -m window --focus recent # doesn't work
+alt + cmd - j [
+    "Firefox" : skhd -k "cmd - down" # "ctrl - tab"
+    * ~
+]
+alt + cmd - k [
+    "Firefox" : skhd -k "cmd - up" # "ctrl - tab"
+    * ~
+]
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
