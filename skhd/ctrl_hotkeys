@@ -72,22 +72,16 @@ ctrl - 0x29 : return
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
 
 ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
-    ctrl + cmd - 0x32 : return # # # # # # # # # # # ctrl + cmd - 0x32 : cf. 'skhdrc' --- removed, right?
-    ctrl + alt - 0x32 :  ~/bin/cliclick_focus # return
+    ctrl + cmd - 0x32 : ~/bin/cliclick_focus # return # return # # # # # # # # # # # ctrl + cmd - 0x32 : cf. 'skhdrc' --- removed, right?
+    ctrl + alt - 0x32 : return
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
-    ctrl + cmd - y [
-        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
-        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy, native app auch mal wieder ausprobieren (cf. chatgpt)
-        ]
-    ctrl + alt - y : cliclick m:+0,+21
+    ctrl + cmd - y : cliclick m:+0,+21
+    ctrl + alt - y : return
     ctrl + alt + cmd - y : return # shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse # NO: || /opt/homebrew/bin/cliclick -r m:+0,+1
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
-    ctrl + cmd - x [
-        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
-        * : return # ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
-        ]
-    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
+    ctrl + cmd - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
+    ctrl + alt - x : return
     ctrl + alt + cmd - x : return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
@@ -124,7 +118,15 @@ ctrl + shift - t [
         * : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
         ] # *go to middle of files* (Finder) ---> like so many not listed in any macos hotkey list... weird
 ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, script seems nice..
-ctrl + shift - d : open_folder /Users/q/Developer
+ctrl + shift + alt - d : open_folder /Users/q/Developer
+ctrl + shift - d [
+        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
+        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy, native app auch mal wieder ausprobieren (cf. chatgpt)
+        ]
+ctrl + shift + cmd - d [
+        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
+        * : return # ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
+        ]
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ## ctrl + shift - 0x32 : ~/bin/cliclick_focus
 ## ctrl + shift - y : skhd -k "ctrl + alt - y"
