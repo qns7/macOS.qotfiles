@@ -42,4 +42,4 @@ f16 : skhd -k "0xB0" # dictation
 f17 : skhd -k "0xB2" # do not disturb
 # q1 & inbuilt changes in systemSettings/Keyboard/KeyboardShortcuts/ModifierKeys/.. : caps changed to ctrl & ctrl changed to fn/globe
 
-# MCTL doesn't work anymore with karabiner elements... weird. 
+# MCTL doesn't work anymore with karabiner elements... weird.
