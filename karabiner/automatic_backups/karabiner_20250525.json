@@ -4,17 +4,7 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "escape : toogle keyboard_backlight",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "escape" },
-                                "to": [{ "shell_command": "/Users/q/bin/keyboard_backlight" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "caps_lock : mod/tap = left_control/escape",
+                        "description": "caps_lock : left_control & escape",
                         "manipulators": [
                             {
                                 "from": {
@@ -28,7 +18,7 @@
                         ]
                     },
                     {
-                        "description": "fn - h/j/k/l : *arrows* (vim)",
+                        "description": "fn - h/j/k/l : arrows (vim)",
                         "manipulators": [
                             {
                                 "from": {
@@ -110,6 +100,10 @@
             "name": "q",
             "selected": true,
             "simple_modifications": [
+                {
+                    "from": { "key_code": "escape" },
+                    "to": [{ "key_code": "f15" }]
+                },
                 {
                     "from": { "key_code": "grave_accent_and_tilde" },
                     "to": [{ "key_code": "non_us_backslash" }]
