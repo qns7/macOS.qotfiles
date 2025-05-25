@@ -22,6 +22,22 @@ shift + alt - f15 : ~/bin/tmx_hotkey "f6"
 shift + alt - f16 : ~/bin/tmx_hotkey "f7"
 shift + alt - f17 : ~/bin/tmx_hotkey "f8"
 
+# TEST:
+# q1 qmk keymap : imitates inbuilt
+# ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
+# NUBS ^   1        2        3        4        5        6        7        8        9        0        MINS ß   EQL ´    BSPC              F15
+# TAB      Q        W        E        R        T        Y z      U        I        O        P        LBRC ü   RBRC +                     MPRV
+# CAPS     A        S        D        F        G        H        J        K        L        SCLN ö   QUOT ä   NUHS #   ENT               MNXT
+# LSFT     GRV <    Z y      X        C        V        B        N        M        COMM ,   DOT .    SLSH -            RSFT     UP
+# MO(FN)   LOPT     LCMD                                         SPC                        RCMD     ROPT     MO(FN)   LEFT     DOWN     RGHT
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+# C(____)           BRID     BRIU     F16      F17      F18      F19      MPRV     MPLY     MNXT     MUTE     VOLD     VOLU     S(____)  S(____)
+# C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  DEL               S(____)
+# C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)                    S(____)
+# C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  PENT              S(____)
+# ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
+# ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
+
 # NEW : KARABINER ELEMENTS !! # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # q1 qmk keymap : imitates inbuilt
 # ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
