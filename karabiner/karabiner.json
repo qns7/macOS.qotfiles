@@ -109,6 +109,19 @@
                         ]
                     },
                     {
+                        "description": "shift - f15 : play",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f15",
+                                    "modifiers": { "mandatory": ["shift"] }
+                                },
+                                "to": [{ "consumer_key_code": "play_or_pause" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "tab : mod/tap = hyper/tab",
                         "enabled": false,
                         "manipulators": [
