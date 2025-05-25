@@ -20,7 +20,8 @@ ctrl - r : open_or_focus Reaper
         "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "iTerm" # skhd -k "hyper - t" ---> systemSettings/Keyboard/KeyboardShortcuts/Services/...
         * : return
         ]
-    ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c"
+    #ctrl + alt + cmd - t : shortcuts run "Focus TRex"; sleep 0.1; open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # ; cliclick_focus
+    ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.17; skhd -k "fn + ctrl - c" #; shortcuts run ... # ; cliclick_focus
 ctrl - z : open_or_focus "zoom.us"
     ctrl + cmd - z : return
     ctrl + alt - z : return
@@ -63,7 +64,7 @@ ctrl - h : return # backspace/delete (stock)
     ctrl + alt - h : return
     ctrl + alt + cmd - h : return
 ctrl - j : return
-ctrl - k : return # open_or_focus Keysmith, delete the text between the insertion point and the end of the line or paragraph (stock)
+ctrl - k : open_or_focus Karabiner-Elements; sleep 0.37; open_or_focus Karabiner-Elements; sleep 0.1; skhd -k "ctrl - down" # return # open_or_focus Keysmith, delete the text between the insertion point and the end of the line or paragraph (stock)
 ctrl - l : return # center the cursor or selection in the visible area (stock)
     # ctrl + cmd - l : cf. 'skhdrc'
 ctrl - 0x29 : return
@@ -78,11 +79,11 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
     ctrl + cmd - y : cliclick m:+0,+21
     ctrl + alt - y : return
-    ctrl + alt + cmd - y : return # shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse # NO: || /opt/homebrew/bin/cliclick -r m:+0,+1
+    # ctrl + alt + cmd - y : shortcuts run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse       .......... # return # shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse # NO: || /opt/homebrew/bin/cliclick -r m:+0,+1
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + alt - x : return
-    ctrl + alt + cmd - x : return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
+    # ctrl + alt + cmd - x : shortcuts run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'# --- shortcuts run "Focus TRex" # return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : return
     ctrl + alt - c : return
@@ -131,9 +132,9 @@ ctrl + shift + cmd - d [
 ## ctrl + shift - 0x32 : ~/bin/cliclick_focus
 ## ctrl + shift - y : skhd -k "ctrl + alt - y"
 
-# ctrl + shift - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
-# ctrl + shift - x : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'
-ctrl + shift - v : skhd -k "ctrl + alt - v"
+    #changed To ctrl alt cmd y x :::     # ctrl + shift - y : shortcuts run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
+                                        # ctrl + shift - x : shortcuts run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'
+# not necessary anymore because I changed shortcuts hotkeys... ctrl + shift - v : skhd -k "ctrl + alt - v"
 
 ## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
