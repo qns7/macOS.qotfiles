@@ -1,6 +1,7 @@
 # used together with alttab & w/o_keysmith-!!!- & linearmouse [& onlyswitch & trex & ...]
 # alttab: mods are alt and cmd, shortcuts are tab, ^, escape, q and w. 
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
+# ---> karabiner elements!!
 
 alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
