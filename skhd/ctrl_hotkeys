@@ -44,7 +44,7 @@ ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or parag
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
-    ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 1; open_or_focus "System Settings"; }
+    ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 0.1; skhd -k "cmd - q"; sleep 0.21; open -a "System Settings"; sleep 0.49; open_or_focus "System Settings"; } # weird shit with focusing... workaround - works? 
     ctrl + alt + cmd - s : return
 ctrl - d : mouse_dock # feature: handle native-fullscreens !?, forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
