@@ -15,6 +15,7 @@
                     },
                     {
                         "description": "tab : mod/tap = hyper/tab",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
