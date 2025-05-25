@@ -4,51 +4,6 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "escape : toogle keyboard_backlight",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "escape" },
-                                "to": [{ "shell_command": "/Users/q/bin/keyboard_backlight" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "tab : mod/tap = hyper/tab",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
-                                "to_if_alone": [{ "key_code": "tab" }],
-                                "to_if_held_down": [
-                                    {
-                                        "key_code": "left_shift",
-                                        "modifiers": ["left_control", "left_option", "left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "caps_lock : mod/tap = left_control/escape",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "left_control" }],
-                                "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "fn - hjkl = arrows and fn - uiop = navKeys",
                         "manipulators": [
                             {
@@ -125,6 +80,51 @@
                                     "modifiers": { "mandatory": ["fn"] }
                                 },
                                 "to": [{ "key_code": "end" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "escape : toogle keyboard_backlight",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "escape" },
+                                "to": [{ "shell_command": "/Users/q/bin/keyboard_backlight" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "caps_lock : mod/tap = left_control/escape",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "tab : mod/tap = hyper/tab",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to_if_alone": [{ "key_code": "tab" }],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_control", "left_option", "left_command"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
