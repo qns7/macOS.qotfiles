@@ -1,6 +1,6 @@
 f13 : toggle_brightness
 f14 : SwitchAudioSource -m toggle
-# play
+f15 : ~/bin/foobar_play
 # previous
 # next
 
@@ -9,9 +9,9 @@ shift - f14 [
     "SoundID Reference" : ~/bin/close_soundid # open "keysmith://run-macro/4CF6609D-5962-485A-9D9B-D25CAC5F1DB6"
     * : open_or_focus "SoundID Reference"
     ]
-shift - f15 : ~/bin/foobar_play
-shift - f16 : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
-shift - f17 : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
+shift - f15 : return
+shift - previous : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
+shift - next : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 
 shift + alt - f13 : Users/q/.config/sketchybar/plugins/click_week.sh
 shift + alt - f14 [ 
@@ -19,8 +19,8 @@ shift + alt - f14 [
     * : open -a "Totalmix" && sleep 0.73 && ~/bin/cliclick_focus
     ]
 shift + alt - f15 : ~/bin/tmx_hotkey "f6"
-shift + alt - f16 : ~/bin/tmx_hotkey "f7"
-shift + alt - f17 : ~/bin/tmx_hotkey "f8"
+shift + alt - previous : ~/bin/tmx_hotkey "f7"
+shift + alt - next : ~/bin/tmx_hotkey "f8"
 
 # TEST:
 # q1 qmk keymap : imitates inbuilt

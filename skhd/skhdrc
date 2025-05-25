@@ -5,8 +5,8 @@
 
 alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
-cmd - play : skhd -k "shift - f15"
-cmd - f8 : skhd -k "shift - f15"
+cmd - play : skhd -k "f15"
+cmd - f8 : skhd -k "f15"
 alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle ### mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
 alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
 alt - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
