@@ -14,7 +14,7 @@ ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
     ctrl + alt + cmd - r : return # open_or_focus Radioplayer -> now 'fn - r' toggles swrKultur
-# ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock) (Tippfehler)
+# ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock) (Tippfehler) --- when I have to start iterm again: spotlight!
     ctrl + cmd - t : open_or_focus "texmaker"
     ctrl + alt - t [
         "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "iTerm" # skhd -k "hyper - t" ---> systemSettings/Keyboard/KeyboardShortcuts/Services/...
