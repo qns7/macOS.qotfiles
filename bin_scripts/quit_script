@@ -39,6 +39,11 @@ case "$CURRENT_APP_ALT" in
     "Davinci Resolve")
         killall Resolve
         ;;
+    "Elgato Control Center")
+        sketchybar --set elgato icon.color=0xff4e4e4e
+        killall "Elgato Control Center" &> /dev/null
+        # osascript -e 'tell application "Elgato Control Center" to quit'
+        ;;
     *) 
         if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
             killall WhatsApp &> /dev/null
