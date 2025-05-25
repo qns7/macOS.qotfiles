@@ -20,7 +20,7 @@ alt - f2 : ~/bin/brightness_up
 #     "SoundID Reference" : osascript ~/bin/close_soundid
 #     * ~
 # ]
-hyper - q : osascript ~/bin/quit_all_apps.scpt
+#hyper - q : skhd -k "0xA0" # osascript ~/bin/quit_all_apps.scpt ---> just use terminal for this...
 #
 #alt + cmd - j [
 ### alt + cmd - h [

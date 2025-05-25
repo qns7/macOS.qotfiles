@@ -14,6 +14,26 @@
                         ]
                     },
                     {
+                        "description": "tab : mod/tap = hyper/tab",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "tab",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to_if_alone": [{ "key_code": "tab" }],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_control", "left_option", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "caps_lock : mod/tap = left_control/escape",
                         "manipulators": [
                             {
@@ -28,7 +48,7 @@
                         ]
                     },
                     {
-                        "description": "fn - h/j/k/l : *arrows* (vim)",
+                        "description": "fn - h/j/k/l : hold/tap = nav/arrows",
                         "manipulators": [
                             {
                                 "from": {
@@ -38,7 +58,14 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "left_arrow" }],
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to_if_alone": [{ "key_code": "left_arrow" }],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "home",
+                                        "repeat": false
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -49,7 +76,14 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "down_arrow" }],
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to_if_alone": [{ "key_code": "down_arrow" }],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "page_down",
+                                        "repeat": false
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -60,7 +94,14 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "up_arrow" }],
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to_if_alone": [{ "key_code": "up_arrow" }],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "page_up",
+                                        "repeat": false
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -71,7 +112,14 @@
                                         "optional": ["any"]
                                     }
                                 },
-                                "to": [{ "key_code": "right_arrow" }],
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to_if_alone": [{ "key_code": "right_arrow" }],
+                                "to_if_held_down": [
+                                    {
+                                        "key_code": "end",
+                                        "repeat": false
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]

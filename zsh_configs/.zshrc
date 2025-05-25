@@ -71,3 +71,4 @@ alias qs="cd ~/Qobuz-DL && npm i && npm run dev"
 export PATH="$PATH:/Users/q/.local/bin"
 
 alias tb="toggle_brightness"
+alias qaa="osascript ~/bin/quit_all_apps.scpt"
