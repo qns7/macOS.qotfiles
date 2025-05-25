@@ -24,10 +24,10 @@ fn - w : return
 fn - r : return
 fn - t : return
 fn - z : return
-fn - u : return
-fn - i : return
-fn - o : return
-fn - p : return
+#fn - u : return
+#fn - i : return  A A I E
+#fn - o : return K R B N R
+#fn - p : return
 fn - 0x21 : return # ü
   fn - 0x1E : skhd -k "alt - n" # +, ~
 
