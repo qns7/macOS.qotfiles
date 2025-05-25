@@ -32,3 +32,16 @@ alt + cmd - e : change_and_focus_display
 ctrl + alt + cmd - e : trap 'yabai -m config mouse_follows_focus off' EXIT; yabai -m config mouse_follows_focus on; yabai -m display --focus next || yabai -m display --focus prev; sleep 0.1; ~/bin/cliclick_focus; [[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'; sketchybar --update
 alt + cmd - d : cycle_fullscreens_or_del_empty_spaces # from 0x0A, ^, mission_control_key is 0xA0
 # implement again: space moving to other display !!! why did I delete this note before?
+
+#test:...
+fn - k : yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+fn - j : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.37; ~/bin/cliclick_focus
+fn - h : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+fn - l : yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; ~/bin/cliclick_focus
+
+fn + cmd - k : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+fn + cmd - j : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus
+fn + cmd - h : move_current_window_to_previous_display
+fn + cmd - l : move_current_window_to_next_display
+
+fn + alt - j : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus

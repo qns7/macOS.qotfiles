@@ -29,3 +29,6 @@ shift + cmd - backspace [
     ]
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
 # eventuell hier und auch in den anderen files (e.g. ctrl) noch hinzufügen wo die hotkeys/shortcuts definiert sind (e.g.: finder, textfeld, ...)
+
+ctrl - tab : return # "alternative way to tab switchting"
+ctrl + shift - tab : return # "alternative way to tab switchting"
