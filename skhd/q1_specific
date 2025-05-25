@@ -9,7 +9,7 @@ shift - f14 [
     "SoundID Reference" : ~/bin/close_soundid # open "keysmith://run-macro/4CF6609D-5962-485A-9D9B-D25CAC5F1DB6"
     * : open_or_focus "SoundID Reference"
     ]
-shift - f15 : return
+shift - f15 : return # oder doch (wieder) f15 -> play (karabiner) und ...
 shift - previous : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 shift - next : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 
