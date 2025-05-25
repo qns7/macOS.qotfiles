@@ -25,10 +25,10 @@ fn - w : return
 fn - r : return
 fn - t : return
 fn - z : return
-#fn - u : return
-#fn - i : return  A A I E
-#fn - o : return K R B N R
-#fn - p : return
+fn - u : return
+fn - i : return
+fn - o : return
+fn - p : return
 fn - 0x21 : return # ü
   fn - 0x1E : skhd -k "alt - n" # +, ~
 
@@ -38,10 +38,11 @@ fn - d : return # start or stop dictation (stock)
 fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
 #
-# fn - h : karabiner remap to left
-# fn - j : karabiner remap to down
-# fn - k : karabiner remap to up
-# fn - l : karabiner remap to right
+fn - h : return # karabiner remap to left
+fn - j : return # karabiner remap to down
+#fn - k : return # karabiner remap to up
+fn - k : ctrl + shift - k : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down") || open_or_focus "Karabiner-Elements"
+fn - l : skhd -k "hyper - l" # cf. 'skhdrc' # karabiner remap to right
 # # fn + alt + cmd - h : skhd -k "alt + cmd - left"
 # # fn + alt + cmd - j : skhd -k "cmd - down"
 # # fn + alt + cmd - k : skhd -k "cmd - up"

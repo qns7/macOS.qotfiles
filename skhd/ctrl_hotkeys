@@ -22,18 +22,21 @@ ctrl - r : open_or_focus Reaper
         ]
     #ctrl + alt + cmd - t : shortcuts run "Focus TRex"; sleep 0.1; open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # ; cliclick_focus
     ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.17; skhd -k "fn + ctrl - c" #; shortcuts run ... # ; cliclick_focus
+
 ctrl - z : open_or_focus "zoom.us"
-    ctrl + cmd - z : return
-    ctrl + alt - z : return
-    ctrl + alt + cmd - z : return
-ctrl - u : return
-ctrl - i : open_or_focus "IINA"
+# ctrl - u : karabiner
+# ctrl - i : karabiner
     ctrl + cmd - i : open_or_focus "Ipe"
-ctrl - o: open_or_focus "OBS" # insert a new line after the insertion point (stock)
-ctrl - p : open_or_focus "Passwords" # move up one line (stock)
-    ctrl + cmd - p : open_or_focus "PDFGear"
+    ctrl + alt - i : open_or_focus "IINA"
+# ctrl - o: karabiner, insert a new line after the insertion point (stock)
+    ctrl + cmd - o : open_or_focus "OBS"
+# ctrl - p : karabiner, move up one line (stock)
+    ctrl + cmd - p : open_or_focus "Passwords"
+    ctrl + alt - p : open_or_focus "PDFGear"
 # ctrl - 0x21 : cf. 'window_space_and_display_management'
 # ctrl - 0x1E : cf. 'window_space_and_display_management'
+
+
 
 ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), fix pgrep not catching foobar at 'first opening' !?
     # ctrl + cmd - a : make an alias of the selected item (stock)
@@ -59,18 +62,17 @@ ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/Ch
     ctrl + cmd - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower
     ctrl + alt - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
     ctrl + alt + cmd - g : open_or_focus "Guitar Pro 7"
-ctrl - h : return # backspace/delete (stock)
-    ctrl + cmd - h : return
-    ctrl + alt - h : return
-    ctrl + alt + cmd - h : return
-ctrl - j : return
-ctrl - k : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down") || open_or_focus "Karabiner-Elements" # return # open_or_focus Keysmith, delete the text between the insertion point and the end of the line or paragraph (stock)
-ctrl - l : return # center the cursor or selection in the visible area (stock)
-    # ctrl + cmd - l : cf. 'skhdrc'
+
+# ctrl - h : karabiner, backspace/delete (stock)
+# ctrl - j : karabiner
+# ctrl - k : karabiner, delete the text between the insertion point and the end of the line or paragraph (stock)
+# ctrl - l : karabiner, center the cursor or selection in the visible area (stock)
 ctrl - 0x29 : return
 # ctrl - 0x27 : cf. 'window_space_and_display_management'
 # ctrl - 0x2A : cf. 'window_space_and_display_management'
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
+
+
 
 ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
     ctrl + cmd - 0x32 : ~/bin/cliclick_focus # return # return # # # # # # # # # # # ctrl + cmd - 0x32 : cf. 'skhdrc' --- removed, right?
@@ -96,20 +98,21 @@ ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
     ctrl + alt - b : return
     ctrl + alt + cmd - b : return
+
 ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
     ctrl + cmd - n : threema_start # create a new folder that contains the currently selected items (stock)
-    ctrl + alt - n : return
-    ctrl + alt + cmd - n : return
-ctrl - m : open_or_focus "Audio MIDI Setup"
-    ctrl + cmd - m : open_or_focus "Protokol" # the other midi signal app (homewbrew)
+ctrl - m : return # midi signal event viewer
 ctrl - 0x2B : return
 ctrl - 0x2F : return
 # ctrl - 0x2C : cf. window_space_and_display_management
+
 ctrl - space : skhd -k "0xB1" # spotlight
     # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) [faster than 'Press *globe* key to']
     ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
     ctrl + alt + cmd - space : return
 # ctrl - arrows : cf. 'window_space_and_display_management'
+
+
 
 ctrl + shift - q : killall mpv; sleep 0.37; pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
 ctrl + shift - w : ~/bin/custom_wake
@@ -135,6 +138,8 @@ ctrl + shift + cmd - d [
     #changed To ctrl alt cmd y x :::     # ctrl + shift - y : shortcuts run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
                                         # ctrl + shift - x : shortcuts run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'
 # not necessary anymore because I changed shortcuts hotkeys... ctrl + shift - v : skhd -k "ctrl + alt - v"
+
+# ...
 
 ## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
