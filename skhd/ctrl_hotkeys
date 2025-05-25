@@ -114,7 +114,8 @@ ctrl - space : skhd -k "0xB1" # spotlight
 
 
 
-ctrl + shift - q : killall mpv; sleep 0.37; pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
+ctrl + shift - q : killall mpv; curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json"; sleep 0.37; pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
+    ctrl + shift + alt - q : killall mpv; sleep 0.37; pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
 ctrl + shift - w : ~/bin/custom_wake
 ctrl + shift - r : ~/bin/radio
 ctrl + shift - t [
