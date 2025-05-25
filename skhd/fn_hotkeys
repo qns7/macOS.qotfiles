@@ -41,7 +41,7 @@ fn - g : return
 fn - h : return # karabiner remap to left
 fn - j : return # karabiner remap to down
 #fn - k : return # karabiner remap to up
-fn - k : ctrl + shift - k : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down") || open_or_focus "Karabiner-Elements"
+fn - k : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down") || open_or_focus "Karabiner-Elements"
 fn - l : skhd -k "hyper - l" # cf. 'skhdrc' # karabiner remap to right
 # # fn + alt + cmd - h : skhd -k "alt + cmd - left"
 # # fn + alt + cmd - j : skhd -k "cmd - down"
