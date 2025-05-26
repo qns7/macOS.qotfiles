@@ -206,6 +206,23 @@
                         ]
                     },
                     {
+                        "description": "shift - f15 : play(+all)",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f15",
+                                    "modifiers": {
+                                        "mandatory": ["shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "consumer_key_code": "play_or_pause" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "fn + left_shift - * : f*(+all)",
                         "enabled": false,
                         "manipulators": [
@@ -339,23 +356,6 @@
                                     }
                                 },
                                 "to": [{ "key_code": "f12" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "shift - f15 : play(+all)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "f15",
-                                    "modifiers": {
-                                        "mandatory": ["shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "consumer_key_code": "play_or_pause" }],
                                 "type": "basic"
                             }
                         ]
