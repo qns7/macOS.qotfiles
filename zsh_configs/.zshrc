@@ -55,11 +55,33 @@ alias aw='yabai -m query --windows | jq ".[].app"' # or other yabai / sketchybar
 ct() {
     curl "cheat.sh/$1"
 }
-wt() {
-    curl "wttr.in/$1"
-}
-alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiskam?format=%l:+%C+%t # Zeiskam?0
+# wt() {
+#     curl "wttr.in/$1"
+# }
+# alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiskam?format=%l:+%C+%t # Zeiskam?0
 # alias wtt="curl -s 'wttr.in/Zeiskam?format=%l:+%C+%t,+Wind:+%w,+Pressure:+%P,+Sunset:+%S" | sed 's/\([↑↓←→↖↗↘↙]\)/\1 /' | sed -E 's/(Sunset:[ ]?[0-9]{2}:[0-9]{2}):[0-9]{2}/\1/''
+wt() {
+  [ -z "$1" ] && { echo "Usage: wt <location>"; return 1; }
+  current_hour=$(date +%H)
+  current_hour=$(( current_hour - current_hour % 3 ))
+
+  curl -s "https://wttr.in/${1}?format=j1&m" | jq -r --argjson current_hour "$current_hour" '
+    .weather[0].hourly as $today |
+    .weather[1].hourly as $tomorrow |
+    ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
+    ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
+    .[] | [
+      ((.time|tonumber)/100|floor|tostring + ":00"),
+      .weatherDesc[0].value,
+      (.tempC + "°C"),
+      (.windspeedKmph + " km/h"),
+      (.precipMM + " mm")
+    ] | @tsv
+  ' | while IFS=$'\t' read -r t c tmp w p; do
+    printf "%-5s | %-20s | %-5s | %-10s | %-6s\n" "$t" "$c" "$tmp" "$w" "$p"
+  done
+}
+alias wtt="wt Zeiskam"
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"
