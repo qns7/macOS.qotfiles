@@ -6,19 +6,20 @@
 alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
-alt - f1 : ~/bin/brightness_down
-cmd - f1 : ~/bin/brightness_down
-alt - f2 : ~/bin/brightness_up
-cmd - f2 : ~/bin/brightness_up
+# alt - f1 : ~/bin/brightness_down
+# cmd - f1 : ~/bin/brightness_down
+# alt - f2 : ~/bin/brightness_up
+# cmd - f2 : ~/bin/brightness_up
+# cmd - f8 : skhd -k "f15"
 #cmd - play : skhd -k "f15"
-cmd - f8 : skhd -k "f15"
+# cmd - f8 : skhd -k "f15"
 #alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle ### mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
-alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
-cmd - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
-alt - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
-cmd - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
-alt - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
-cmd - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
+#alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
+#cmd - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
+# alt - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
+# cmd - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
+# alt - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
+# cmd - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #
 fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"; sleep 0.37; osascript -e "set volume output volume 50" # #
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference" # #
