@@ -44,4 +44,9 @@ fn + cmd - j : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_fo
 fn + cmd - h : move_current_window_to_previous_display
 fn + cmd - l : move_current_window_to_next_display
 
+fn - 0x29 : yabai -m window --grid 2:2:0:1:1:2; sleep 0.01; ~/bin/cliclick_focus
+fn - 0x27 : yabai -m window --grid 2:2:1:1:2:2; sleep 0.01; ~/bin/cliclick_focus
+fn - 0x21 : yabai -m window --grid 2:2:1:0:2:1; sleep 0.01; ~/bin/cliclick_focus
+fn - p : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+
 fn + alt - j : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus
