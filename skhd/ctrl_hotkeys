@@ -27,16 +27,14 @@ ctrl - r : open_or_focus Reaper
     #ctrl + alt + cmd - t : shortcuts run "Focus TRex"; sleep 0.1; open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # ; cliclick_focus
     ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.17; skhd -k "fn + ctrl - c" #; shortcuts run ... # ; cliclick_focus
 
-# ctrl - z : karabiner (y <-> z) # open_or_focus "zoom.us"
-# ctrl - u : karabiner
-# ctrl - i : karabiner
+ctrl - z : open_or_focus "zoom.us"
+ctrl - u : return
+ctrl - i : return
     ctrl + cmd - i : open_or_focus "Ipe"
     ctrl + alt - i : open_or_focus "IINA"
-# ctrl - o: karabiner, insert a new line after the insertion point (stock)
-    ctrl + cmd - o : open_or_focus "OBS"
-ctrl - p : return # move up one line (stock)
-    ctrl + cmd - p : skhd -k "hyper - l"
-    ctrl + alt - p : open_or_focus "Passwords"
+ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (stock)
+ctrl - p : open_or_focus "Passwords" # move up one line (stock)
+    ctrl + cmd - p : skhd -k "hyper - l" # cf. 'skhdrc'
     ctrl + alt + cmd - p : open_or_focus "PDFGear"
 # ctrl - 0x21 : cf. 'window_space_and_display_management'
 # ctrl - 0x1E : cf. 'window_space_and_display_management'
@@ -98,7 +96,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
-    ctrl + alt + cmd - v : open_or_focus "zoom.us" # return # open_or_focus "Cursor"
+    ctrl + alt + cmd - v : return # open_or_focus "zoom.us" # return # open_or_focus "Cursor"
 ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
     ctrl + alt - b : return
