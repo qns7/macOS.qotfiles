@@ -9,7 +9,7 @@
                 },
                 "rules": [
                     {
-                        "description": "f19 : toogle_kb_light(+none) $ fn - f19 : sleep(+none)",
+                        "description": "f19 : keyboard_backlight(+none) & fn - f19 : sleepnow(+none) & cmd - f19 : toggle_brightness(+none)",
                         "manipulators": [
                             {
                                 "from": {
