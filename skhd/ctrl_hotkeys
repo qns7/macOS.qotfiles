@@ -10,6 +10,7 @@ ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus
     ctrl + alt - e : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down") || open_or_focus "Karabiner-Elements"
     # ctrl + alt + cmd - e : cf. 'window_space_and_display_management'
+        hyper - e : open_folder /Users/q/Developer
 ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
@@ -132,7 +133,6 @@ ctrl + shift + cmd - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
         * : return # ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
         ]
-hyper - d : open_folder /Users/q/Developer
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ## ctrl + shift - 0x32 : ~/bin/cliclick_focus
 ## ctrl + shift - y : skhd -k "ctrl + alt - y"

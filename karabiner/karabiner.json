@@ -50,52 +50,8 @@
                         ]
                     },
                     {
-                        "description": "alpha_nav(+var)",
+                        "description": "ctrl - hjkl : arrows(+all)",
                         "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "y",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["left_shift"]
-                                    }
-                                },
-                                "to": [{ "key_code": "home" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["left_shift"]
-                                    }
-                                },
-                                "to": [{ "key_code": "page_down" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["left_shift"]
-                                    }
-                                },
-                                "to": [{ "key_code": "page_up" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": ["left_shift"]
-                                    }
-                                },
-                                "to": [{ "key_code": "end" }],
-                                "type": "basic"
-                            },
                             {
                                 "from": {
                                     "key_code": "h",
@@ -143,7 +99,7 @@
                         ]
                     },
                     {
-                        "description": "alpha_sf(+var)",
+                        "description": "alpha_sf(+none)",
                         "manipulators": [
                             {
                                 "from": {
@@ -241,6 +197,10 @@
                     "to": [{ "key_code": "vk_none" }]
                 },
                 {
+                    "from": { "key_code": "escape" },
+                    "to": [{ "key_code": "f20" }]
+                },
+                {
                     "from": { "key_code": "grave_accent_and_tilde" },
                     "to": [{ "key_code": "non_us_backslash" }]
                 },
@@ -263,10 +223,6 @@
                 {
                     "from": { "key_code": "up_arrow" },
                     "to": [{ "key_code": "vk_none" }]
-                },
-                {
-                    "from": { "key_code": "escape" },
-                    "to": [{ "key_code": "f20" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
