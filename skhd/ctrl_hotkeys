@@ -3,7 +3,10 @@ ctrl - q : open_or_focus "Notes"
     ctrl + alt - q : return # cf. 'skhdrc' - - - - >   ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
-    ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
+    ctrl + cmd - w [
+        "SoundID Reference" : ~/bin/close_soundid; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
+        * : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
+        ]
     ctrl + alt - w : open_or_focus "Pages"
     # ctrl + alt + cmd - w : cf. 'window_space_and_display_management'
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
@@ -151,9 +154,9 @@ ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3
 #        # perhaps shift instead of ctrl? - totally different..
 # 22:47, 21.05.25, WED
 
-ctrl + shift - 1 : ~/bin/brightness_down
-ctrl + shift - 2 : ~/bin/brightness_up
+#ctrl + shift - 1 : ~/bin/brightness_down
+#ctrl + shift - 2 : ~/bin/brightness_up
 ctrl + shift + cmd - 8 : ~/bin/foobar_play
-ctrl + shift - 0 : skhd -k "f14" # SwitchAudioSource -m toggle
+#ctrl + shift - 0 : skhd -k "f14" # SwitchAudioSource -m toggle
 #ctrl + shift - 0x1B : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
 #ctrl + shift - 0x18 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
