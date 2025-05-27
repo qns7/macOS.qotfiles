@@ -31,8 +31,9 @@ ctrl - r : open_or_focus Reaper
 # ctrl - o: karabiner, insert a new line after the insertion point (stock)
     ctrl + cmd - o : open_or_focus "OBS"
 ctrl - p : return # move up one line (stock)
-    ctrl + cmd - p : open_or_focus "Passwords"
-    ctrl + alt - p : open_or_focus "PDFGear"
+    ctrl + cmd - p : skhd -k "hyper - l"
+    ctrl + alt - p : open_or_focus "Passwords"
+    ctrl + alt + cmd - p : open_or_focus "PDFGear"
 # ctrl - 0x21 : cf. 'window_space_and_display_management'
 # ctrl - 0x1E : cf. 'window_space_and_display_management'
 

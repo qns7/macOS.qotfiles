@@ -9,11 +9,11 @@
                 },
                 "rules": [
                     {
-                        "description": "esc : toogle_kb_light(+none) $ fn - esc : sleep(+none)",
+                        "description": "f20 : toogle_kb_light(+none) $ fn - f20 : sleep(+none)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "escape",
+                                    "key_code": "f20",
                                     "modifiers": {
                                         "mandatory": [],
                                         "optional": []
@@ -24,7 +24,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "escape",
+                                    "key_code": "f20",
                                     "modifiers": {
                                         "mandatory": ["fn"],
                                         "optional": []
@@ -36,7 +36,7 @@
                         ]
                     },
                     {
-                        "description": "caps_lock : left_control(+all) / escape(+all)",
+                        "description": "caps_lock : left_ctrl(+all) / esc(+all)",
                         "manipulators": [
                             {
                                 "from": {
@@ -263,6 +263,10 @@
                 {
                     "from": { "key_code": "up_arrow" },
                     "to": [{ "key_code": "vk_none" }]
+                },
+                {
+                    "from": { "key_code": "escape" },
+                    "to": [{ "key_code": "f20" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }

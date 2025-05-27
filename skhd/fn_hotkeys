@@ -42,6 +42,7 @@ fn - g : return
 ##-fn - j : return
 ##-fn - k : return
 ##-fn - l : skhd -k "hyper - l" # cf. 'skhdrc'
+  #fn + alt - l : skhd -k "hyper - l"
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : cf. 'q1_specific', #
