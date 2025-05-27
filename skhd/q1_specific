@@ -49,10 +49,10 @@ shift + alt - 0x55 : return
 # C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  PENT              S(____)
 # ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
 # ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
-# karabiner: esc ---> f20, caps ---> ctrl/esc, ctrl ---> fn and ...
+# karabiner: esc ---> f19, caps ---> ctrl/esc, ctrl ---> fn and ...
 f15 : skhd -k "0xA0" # mission control, here instead of karabiner,     available in qmk (KC_MCTL) too BUT doesn't work with karabiner
-f16 : skhd -k "0xB1" # spotlight,       here instead of karabiner,     available in qmk (KC_MCTL) too
-f17 : skhd -k "0xB0" # dictation,       here instead of karabiner,     available in qmk (KC_MCTL) too
+f16 : skhd -k "0xB1" # spotlight,       here instead of karabiner, not abailable in qmk
+f17 : skhd -k "0xB0" # dictation,       here instead of karabiner, not abailable in qmk
 f18 : skhd -k "0xB2" # do not disturb, not available in karabiner, not abailable in qmk
 # also available in qmk: KC_LPAD, KC_EJCT, KC_MNXT, KC_MPRV, [PWR, SLEP, WAKE], ..?
 # 0x4C : skhd -k "fn - return" # PENT - changed
