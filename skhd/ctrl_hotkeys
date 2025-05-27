@@ -153,7 +153,7 @@ ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3
 
 ctrl + shift - 1 : ~/bin/brightness_down
 ctrl + shift - 2 : ~/bin/brightness_up
-ctrl + shift + cmd - 8 : skhd -k "f15"
+ctrl + shift + cmd - 8 : ~/bin/foobar_play
 ctrl + shift - 0 : skhd -k "f14" # SwitchAudioSource -m toggle
 #ctrl + shift - 0x1B : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
 #ctrl + shift - 0x18 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
