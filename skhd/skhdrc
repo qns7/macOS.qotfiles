@@ -3,6 +3,13 @@
 # alttab: 'Cursor follows focus', because it works better with Zoom (e.g.) than yabai's mouse_follows_focus
 # ---> karabiner elements!!
 
+# # # NOTES ON KARABINER AND HIERARCHY OF ALL THE SIGNAL HANDLERS: ... # # #
+# Hardware (macbook or qmk) ---> Karabiner Elements (how does it interact with macos modifier changes?) ---> skhd ---> apps .
+# karabiner: REMAPS KEYS OR KEY COMBINATIONS TO NEW KEYS OR KEY COMBINATIONS. IT IS POSSIBLE TO DIS/ALLOWS ADDITIONAL MODIFIERS, hence if e.g.:
+#                                                                                                                                karabiner: ctrl - i ---> alt - a      DISALLOWED OR ALLOWED
+#                                                                                                                                physical: shift + ctrl - i ---> shift + ctrl - i OR shift + alt - a
+# further there are options for mod/tap and other stuff...
+
 alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
