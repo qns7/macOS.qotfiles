@@ -1,6 +1,6 @@
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
-    ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
+    ctrl + alt - q : skhd -k "hyper - n" # cf. 'skhdrc' - - - - >   ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
@@ -44,7 +44,7 @@ ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or parag
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
-    ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 0.1; skhd -k "cmd - q"; sleep 0.21; open -a "System Settings"; sleep 0.49; open_or_focus "System Settings"; } # weird shit with focusing... workaround - works? 
+    ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 0.1; skhd -k "cmd - q"; sleep 0.21; open -a "System Settings"; sleep 0.73; open_or_focus "System Settings"; } # weird shit with focusing... workaround - works? 
     ctrl + alt + cmd - s : return
 ctrl - d : mouse_dock # feature: handle native-fullscreens !?, forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
