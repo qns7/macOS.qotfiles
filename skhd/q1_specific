@@ -1,27 +1,39 @@
-f13 : toggle_brightness
+f13 : curl -s "http://192.168.178.42:9123/elgato/lights" | grep -q '"on":1' && curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json" || curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":1}]}' -H "Content-Type: application/json"
 f14 : SwitchAudioSource -m toggle
-f15 : ~/bin/foobar_play
-# previous
-# next
+0x53 : ~/bin/foobar_play
+0x54 : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
+0x55 : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 
-shift - f13 : curl -s "http://192.168.178.42:9123/elgato/lights" | grep -q '"on":1' && curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json" || curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":1}]}' -H "Content-Type: application/json"
+shift - f13 : toggle_brightness
 shift - f14 [ 
-    "SoundID Reference" : ~/bin/close_soundid # open "keysmith://run-macro/4CF6609D-5962-485A-9D9B-D25CAC5F1DB6"
-    * : open_or_focus "SoundID Reference"
-    ]
-shift - f15 : return # WHAT?
-shift - previous : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
-shift - next : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
-
-shift + alt - f13 : Users/q/.config/sketchybar/plugins/click_week.sh
-shift + alt - f14 [ 
     "TotalMix FX" : quit_script
     * : open -a "Totalmix" && sleep 0.73 && ~/bin/cliclick_focus
     ]
-shift + alt - f15 : ~/bin/tmx_hotkey "f6"
-shift + alt - previous : ~/bin/tmx_hotkey "f7"
-shift + alt - next : ~/bin/tmx_hotkey "f8"
+shift - 0x53 : ~/bin/tmx_hotkey "f6"
+shift - 0x54 : ~/bin/tmx_hotkey "f7"
+shift - 0x55 :  ~/bin/tmx_hotkey "f8"
 
+shift + alt - f13 : Users/q/.config/sketchybar/plugins/click_week.sh
+shift + alt - f14 : return
+shift + alt - 0x53 : return
+shift + alt - 0x54 : return
+shift + alt - 0x55 : return
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# q1 qmk keymap : imitates inbuilt
+# ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
+# NUBS ^   1        2        3        4        5        6        7        8        9        0        MINS ß   EQL ´    BSPC              P1
+# TAB      Q        W        E        R        T        Y z      U        I        O        P        LBRC ü   RBRC +                     P2
+# CAPS     A        S        D        F        G        H        J        K        L        SCLN ö   QUOT ä   NUHS #   ENT               P3
+# LSFT     GRV <    Z y      X        C        V        B        N        M        COMM ,   DOT .    SLSH -            RSFT     UP
+# MO(FN)   LOPT     LCMD                                         SPC                        RCMD     ROPT     MO(FN)   LEFT     DOWN     RGHT
+# ----------------------------------------------------------------------------------------------------------------------------------------------
+# C(____)           BRID     BRIU     F15      F16      F17      F18      MRWD     MPLY     MFFD     MUTE     VOLD     VOLU     S(____)  S(____)
+# C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  DEL               S(____)
+# C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)                    S(____)
+# C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           S(____)
+# ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
+# ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # q1 qmk keymap : imitates inbuilt
 # ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
@@ -38,11 +50,12 @@ shift + alt - next : ~/bin/tmx_hotkey "f8"
 # ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
 # ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
 # karabiner: esc ---> f20, caps ---> ctrl/esc, ctrl ---> fn and ...
-f16 : skhd -k "0xA0" # mission control, here instead of karabiner,     available in qmk (KC_MCTL) too BUT doesn't work with karabiner
-f17 : skhd -k "0xB1" # spotlight,       here instead of karabiner,     available in qmk (KC_MCTL) too
-f18 : skhd -k "0xB0" # dictation,       here instead of karabiner,     available in qmk (KC_MCTL) too
-f19 : skhd -k "0xB2" # do not disturb, not available in karabiner, not abailable in qmk
-0x4C : skhd -k "fn - return" # PENT
+f15 : skhd -k "0xA0" # mission control, here instead of karabiner,     available in qmk (KC_MCTL) too BUT doesn't work with karabiner
+f16 : skhd -k "0xB1" # spotlight,       here instead of karabiner,     available in qmk (KC_MCTL) too
+f17 : skhd -k "0xB0" # dictation,       here instead of karabiner,     available in qmk (KC_MCTL) too
+f18 : skhd -k "0xB2" # do not disturb, not available in karabiner, not abailable in qmk
+# also available in qmk: KC_LPAD, KC_EJCT, KC_MNXT, KC_MPRV, [PWR, SLEP, WAKE], ..?
+# 0x4C : skhd -k "fn - return" # PENT - changed
 # q1 & inbuilt changes in systemSettings/Keyboard/KeyboardShortcuts/ModifierKeys/.. : caps changed to ctrl & ctrl changed to fn/globe ------> karabiner now!
 
 # MCTL doesn't work anymore with karabiner elements... weird. --- caps to c(caps) --- and ...  DONE
