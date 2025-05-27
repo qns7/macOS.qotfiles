@@ -5,3 +5,5 @@ if [[ "$(/usr/local/bin/brightness -l 2>/dev/null | sed -n '3p' | awk '{print $4
 else
     /usr/local/bin/brightness 0.470000
 fi
+
+# Erinnerung, dass die Installation über Homebrew nicht funktionierte..
