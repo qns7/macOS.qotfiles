@@ -1,7 +1,7 @@
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
-    ctrl + alt - q : skhd -k "hyper - n" # cf. 'skhdrc' - - - - >   ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
-    ctrl + alt + cmd - q : return
+    ctrl + alt - q : return # cf. 'skhdrc' - - - - >   ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
+    ctrl + alt + cmd - q : skhd -k "hyper - n"; sleep 1; open_or_focus "Notes"
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     ctrl + cmd - w : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
     ctrl + alt - w : open_or_focus "Pages"
