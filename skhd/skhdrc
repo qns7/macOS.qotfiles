@@ -110,3 +110,8 @@ alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketc
 #                   "Finder" ~
 #                   * : skhd -k "shift + alt + cmd - v"
 #                   ] ?
+#
+#          shift + cmd - r [
+#                   "Safari" : skhd -k "alt + cmd - r"
+#                   * ~
+#                   ]
