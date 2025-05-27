@@ -14,7 +14,8 @@ alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
 ctrl + shift + cmd - 8 : ~/bin/foobar_play
-alt + cmd - f8 : ~/bin/foobar_play
+#alt + cmd - f8 : ~/bin/foobar_play
+shift + cmd - f8 : ~/bin/foobar_play
 # ctrl + shift + cmd - 0 : SwitchAudioSource -m toggle
 mute : SwitchAudioSource -m toggle
 
