@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [[ "$(brightness -l 2>/dev/null | sed -n '3p' | awk '{print $4}')" == "0.470000" ]]; then
-    brightness 0.000000
+if [[ "$(/usr/local/bin/brightness -l 2>/dev/null | sed -n '3p' | awk '{print $4}')" == "0.470000" ]]; then
+    /usr/local/bin/brightness 0.000000
 else
-    brightness 0.470000
+    /usr/local/bin/brightness 0.470000
 fi

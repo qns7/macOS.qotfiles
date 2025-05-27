@@ -32,6 +32,17 @@
                                 },
                                 "to": [{ "shell_command": "killall mpv; sleep 0.1; pmset sleepnow" }],
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f19",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [{ "shell_command": "/Users/q/bin/toggle_brightness" }],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -155,7 +166,7 @@
                                 "from": {
                                     "key_code": "f1",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -171,7 +182,7 @@
                                 "from": {
                                     "key_code": "f2",
                                     "modifiers": {
-                                        "mandatory": ["left_option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -198,7 +209,7 @@
                                 "from": {
                                     "key_code": "f7",
                                     "modifiers": {
-                                        "mandatory": ["right_command"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -220,7 +231,7 @@
                                 "from": {
                                     "key_code": "f8",
                                     "modifiers": {
-                                        "mandatory": ["right_command"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -242,7 +253,7 @@
                                 "from": {
                                     "key_code": "f9",
                                     "modifiers": {
-                                        "mandatory": ["right_command"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -264,7 +275,7 @@
                                 "from": {
                                     "key_code": "f10",
                                     "modifiers": {
-                                        "mandatory": ["right_option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -286,7 +297,7 @@
                                 "from": {
                                     "key_code": "f11",
                                     "modifiers": {
-                                        "mandatory": ["right_option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -308,7 +319,7 @@
                                 "from": {
                                     "key_code": "f12",
                                     "modifiers": {
-                                        "mandatory": ["right_option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },

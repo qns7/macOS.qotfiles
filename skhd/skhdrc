@@ -13,6 +13,9 @@
 alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
+ctrl + shift + cmd - 8 : ~/bin/foobar_play
+alt + cmd - f8 : ~/bin/foobar_play
+
 # alt - f1 : ~/bin/brightness_down
 # cmd - f1 : ~/bin/brightness_down
 # alt - f2 : ~/bin/brightness_up
