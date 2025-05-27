@@ -75,6 +75,7 @@ alt + cmd - 0x14 : skhd -k "0xA0"; sleep 0.1; [[ ! -f /tmp/mission_control.open 
 # 3: Show Desktop : hyper - d (changed from F11)
 # 3: Move left a space : hyper - 1 (changed from ctrl - left)
 # 3: Move right a space : hyper - 2 (changed from ctrl - right)
+# 3: Quick Note : hyper - n (changed from fn/globe - q)
 # 4: Move focus to next window : hyper - tab (changed from cmd - `)
 # # # test new 'setup' # # # alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
 ##cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update # test: ohne alttab
@@ -104,3 +105,8 @@ alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketc
 # shift + ctrl - f : ...
 
 # alt + cmd - left_click (e.g.) : open trash folder from the dock ... (stock) deactivated in my setup ---> cf. linearmouse!
+
+# perhaps: alt + cmd - v [
+#                   "Finder" ~
+#                   * : skhd -k "shift + alt + cmd - v"
+#                   ] ?
