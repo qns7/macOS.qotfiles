@@ -80,7 +80,7 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
     ctrl + cmd - y : cliclick m:+0,+21
-    ctrl + alt - y : return
+    ctrl + alt - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return"
     # ctrl + alt + cmd - y : shortcuts run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse       .......... # return # shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse # NO: || /opt/homebrew/bin/cliclick -r m:+0,+1
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
     ctrl + cmd - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
