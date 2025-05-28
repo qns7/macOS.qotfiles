@@ -17,14 +17,22 @@ ctrl - 0x21 : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_foc
 
 ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus # stock window management: center
 
-    fn - k : yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
-    fn - j : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.37; ~/bin/cliclick_focus
-    fn - h : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+    # fn - k : yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+    # fn - j : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.37; ~/bin/cliclick_focus
+    # fn - h : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+    # fn - l : yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; ~/bin/cliclick_focus
+    fn - i : yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+    fn - k : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.37; ~/bin/cliclick_focus
+    fn - j : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
     fn - l : yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; ~/bin/cliclick_focus
 
-    fn + cmd - k : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
-    fn + cmd - j : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus
-    fn + cmd - h : move_current_window_to_previous_display
+    # fn + cmd - k : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+    # fn + cmd - j : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus
+    # fn + cmd - h : move_current_window_to_previous_display
+    # fn + cmd - l : move_current_window_to_next_display
+    fn + cmd - i : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+    fn + cmd - k : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus
+    fn + cmd - j : move_current_window_to_previous_display
     fn + cmd - l : move_current_window_to_next_display
 
     fn - 0x29 : yabai -m window --grid 2:2:0:1:1:2; sleep 0.01; ~/bin/cliclick_focus
@@ -32,7 +40,8 @@ ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus # 
     fn - 0x21 : yabai -m window --grid 2:2:1:0:2:1; sleep 0.01; ~/bin/cliclick_focus
     fn - p : yabai -m window --grid 2:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
 
-    fn + alt - j : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus
+    # fn + alt - j : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus
+    fn + alt - k : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus
 
 alt + cmd - 0x12 : yabai_prev_space_on_display; del_empty_spaces; sleep 0.1; ~/bin/cliclick_focus #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
     ctrl + alt + cmd - 0x12 : yabai_prev_space_on_display; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1

@@ -35,16 +35,16 @@ shift + alt - 0x55 : return
 # C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           S(____)
 # ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
 # ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
-# also available in qmk: KC_LPAD, KC_EJCT, KC_MNXT, KC_MPRV, [PWR, SLEP, WAKE], ..?
+# also available in qmk: KC_LPAD, KC_EJCT, KC_MPRV, KC_MNXT, [PWR, SLEP, WAKE], ..?
 # karabiner:
+# ctrl ---> fn
 # esc  ---> f19
 # caps ---> ctrl/esc
-# ctrl ---> fn
 # ...
-f15 : skhd -k "0xA0" # mission control, karabiner too,     available in qmk (KC_MCTL) BUT karabiner problem
-f16 : skhd -k "0xB1" # spotlight,       karabiner too, not abailable in qmk
-f17 : skhd -k "0xB0" # dictation,       karabiner too, not abailable in qmk
-f18 : skhd -k "0xB2" # do not disturb,  karabiner not, not abailable in qmk
+f15 : skhd -k "0xA0" # mission control, karabiner too, qmk too (KC_MCTL) BUT karabiner problem
+f16 : skhd -k "0xB1" # spotlight,       karabiner too, qmk not
+f17 : skhd -k "0xB0" # dictation,       karabiner too, qmk not
+f18 : skhd -k "0xB2" # do not disturb,  karabiner not, qmk not
 
 # 0x4C : skhd -k "fn - return" # PENT - changed
 # q1 & inbuilt changes in systemSettings/Keyboard/KeyboardShortcuts/ModifierKeys/.. : caps changed to ctrl & ctrl changed to fn/globe ------> karabiner now!

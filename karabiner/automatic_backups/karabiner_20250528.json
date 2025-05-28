@@ -62,7 +62,6 @@
                     },
                     {
                         "description": "ctrl - hjkl : arrows(+all)",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -112,6 +111,7 @@
                     },
                     {
                         "description": "ctrl - ijkl : arrows(+all)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
