@@ -4,7 +4,7 @@ f14 : SwitchAudioSource -m toggle
 0x54 : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127
 0x55 : ~/bin/foobar_play
 
-shift - f13 : Users/q/.config/sketchybar/plugins/click_week.sh # SMOETHING DIFFERENT? # return # toggle_brightness
+shift - f13 : Users/q/.config/sketchybar/plugins/click_week.sh # SOMETHING DIFFERENT?
 shift - f14 : if [[ $(yabai -m query --windows --window | jq -r '.app') != "TotalMix FX" ]]; then open -a "Totalmix"; sleep 0.73; ~/bin/cliclick_focus; else ~/bin/quit_script; fi
 shift - 0x53 : ~/bin/tmx_hotkey "f6"
 shift - 0x54 : ~/bin/tmx_hotkey "f7"
@@ -35,8 +35,10 @@ shift + alt - 0x55 : return
 # karabiner:
 # ctrl ---> fn
 # esc  ---> f19
+# fn - return ---> penter
 # caps ---> ctrl/esc
-# ...
+# alpha_navigation
+# alpha_special_functions
 f15 : skhd -k "0xA0" # mission control, karabiner too, qmk too (KC_MCTL) BUT karabiner problem
 f16 : skhd -k "0xB1" # spotlight,       karabiner too, qmk not
 f17 : skhd -k "0xB0" # dictation,       karabiner too, qmk not
