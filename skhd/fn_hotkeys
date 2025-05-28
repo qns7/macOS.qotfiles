@@ -1,6 +1,4 @@
-fn - 0x35 : return
-#fn - 0x35 : ~/bin/keyboard_backlight # esc ---> Perhaps change caps_lock in second layer of q1-map from _______ to C(_______)
-#f15 : ~/bin/keyboard_backlight # esc [old: f18] ---> karabiner now!! escape now directly to keyboard light toggle... nothing more since escape now is a capsloch/control...
+fn - 0x35 : return # esc
   # fn - f* : special features / standard function keys (stock)
 
 fn - 0x0A : return # ^
@@ -35,14 +33,12 @@ fn - 0x21 : return # ü
 fn - a : return # show or hide the dock (stock)
 fn - s : return
 fn - d : return # start or stop dictation (stock)
-fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
+  fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
-#
-##-fn - h : return
-##-fn - j : return
-##-fn - k : return
-##-fn - l : skhd -k "hyper - l" # cf. 'skhdrc'
-  #fn + alt - l : skhd -k "hyper - l"
+# fn - h : cf. 'window_space_and_display_management'
+# fn - j : cf. 'window_space_and_display_management'
+# fn - k : cf. 'window_space_and_display_management'
+# fn - l : cf. 'window_space_and_display_management'
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : cf. 'q1_specific', #
