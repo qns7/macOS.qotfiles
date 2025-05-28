@@ -1,6 +1,6 @@
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
-    ctrl + alt - q : return # cf. 'skhdrc' - - - - >   ctrl + alt - q : return # new note with time and date tag ?? 09:21, 08.05.25, THU
+    ctrl + alt - q : return
     ctrl + alt + cmd - q : return
 ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service
     ctrl + cmd - w [
@@ -8,154 +8,129 @@ ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --resta
         * : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
         ]
     ctrl + alt - w : open_or_focus "Pages"
-    # ctrl + alt + cmd - w : cf. 'window_space_and_display_management'
+    # ctrl + alt + cmd - w : new-space-move, cf. 'window_space_and_display_management'
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus
-    ctrl + alt - e : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down") || open_or_focus "Karabiner-Elements"
-    # ctrl + alt + cmd - e : cf. 'window_space_and_display_management'
-        hyper - e : open_folder /Users/q/Developer
+    ctrl + alt - e : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down"; open_or_focus "Karabiner-Elements") || open_or_focus "Karabiner-Elements"
+    # ctrl + alt + cmd - e : cf. alternative-display-change, 'window_space_and_display_management'
 ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
-    ctrl + alt + cmd - r : return # open_or_focus Radioplayer -> now 'fn - r' toggles swrKultur
-# ctrl - t : iterm hotkey window, swap the character behind the insertion point with the character in front of the insertion point (stock) (Tippfehler) --- when I have to start iterm again: spotlight!
-    ctrl + cmd - t : open_or_focus "texmaker"
+    ctrl + alt + cmd - r : return
+# ctrl - t : iterm hotkey window (restart? spotlight), swap the character behind the insertion point with the character in front of the insertion point (stock) (Tippfehler)
+    ctrl + cmd - t : open_or_focus "texmaker" # Underleaf?
     ctrl + alt - t [
-        "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "iTerm" # skhd -k "hyper - t" ---> systemSettings/Keyboard/KeyboardShortcuts/Services/...
+        "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # also an option in systemSettings/Keyboard/KeyboardShortcuts/Services/.. like many others
         * : return
         ]
-    #ctrl + alt + cmd - t : shortcuts run "Focus TRex"; sleep 0.1; open_or_focus "Ghostty"; sleep 0.37; skhd -k "fn + ctrl - c" # ; cliclick_focus
-    ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.17; skhd -k "fn + ctrl - c" #; shortcuts run ... # ; cliclick_focus
+    ctrl + alt + cmd - t : open_or_focus "Ghostty"; sleep 0.17; skhd -k "fn + ctrl - c"
 
 ctrl - z : open_or_focus "zoom.us"
 ctrl - u : return
-ctrl - i : return
-    ctrl + cmd - i : open_or_focus "Ipe"
-    ctrl + alt - i : open_or_focus "IINA"
+ctrl - i : open_or_focus "Ipe"
+    ctrl + cmd - i : open_or_focus "IINA"
 ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (stock)
-ctrl - p : open_or_focus "Passwords" # move up one line (stock)
-    ctrl + cmd - p : skhd -k "hyper - l" # cf. 'skhdrc'
+ctrl - p : open_or_focus "Passwords" # removed from menubar again, move up one line (stock)
+    ctrl + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc'
     ctrl + alt + cmd - p : open_or_focus "PDFGear"
-# ctrl - 0x21 : cf. 'window_space_and_display_management'
-# ctrl - 0x1E : cf. 'window_space_and_display_management'
+# ctrl - 0x21 : up-left-quarter, cf. 'window_space_and_display_management'
+# ctrl - 0x1E : up-right-quarter, cf. 'window_space_and_display_management'
 
 
 
-ctrl - a : open_or_focus foobar2000 # move to the beginning of the line or paragraph (stock), fix pgrep not catching foobar at 'first opening' !?
+ctrl - a : pgrep "foobar2000" >/dev/null && open_or_focus "foobar2000" || { open -a "foobar2000"; sleep 0.1; skhd -k "cmd - q"; sleep 0.21; open -a "foobar2000"; sleep 0.73; open_or_focus "foobar2000"; } # pgrep-yabai_query>cliclick-workaround-fix, move to the beginning of the line or paragraph (stock)
     # ctrl + cmd - a : make an alias of the selected item (stock)
     ctrl + alt - a : return
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
-    ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 0.1; skhd -k "cmd - q"; sleep 0.21; open -a "System Settings"; sleep 0.73; open_or_focus "System Settings"; } # weird shit with focusing... workaround - works? 
+    ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 0.1; skhd -k "cmd - q"; sleep 0.21; open -a "System Settings"; sleep 0.73; open_or_focus "System Settings"; } # pgrep-yabai_query>cliclick-workaround-fix
     ctrl + alt + cmd - s : return
-ctrl - d : mouse_dock # feature: handle native-fullscreens !?, forward delete (stock)
-    # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock)
+ctrl - d : mouse_dock # feature-request: handle native-fullscreens, forward delete (stock)
+    # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock) (acc.force-click-function deactivated)
     ctrl + alt - d : ~/bin/show_desktop
-    # ctrl + alt + cmd - d : open_folder ~/Downloads
     ctrl + alt + cmd - d [
         "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock)
         * : open_folder ~/Downloads
         ]
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
-    ctrl + alt - f : open_or_focus "Feedback Assistant"
-    ctrl + alt + cmd - f : open_or_focus "Freeform"
+    ctrl + alt - f : open_or_focus "Freeform"
+    ctrl + alt + cmd - f : open_or_focus "Feedback Assistant"
 ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
-    ctrl + cmd - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower
-    ctrl + alt - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
-    ctrl + alt + cmd - g : open_or_focus "Guitar Pro 7"
+    ctrl + cmd - g : open_or_focus "Guitar Pro 7"
+    ctrl + alt - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower, search-function now available though
+    ctrl + alt + cmd - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
 
-# ctrl - h : karabiner, backspace/delete (stock)
-# ctrl - j : karabiner
-# ctrl - k : karabiner, delete the text between the insertion point and the end of the line or paragraph (stock)
-# ctrl - l : karabiner, center the cursor or selection in the visible area (stock)
+# ctrl - h : karabiner: left, backspace/delete (stock)
+# ctrl - j : karabiner: down
+# ctrl - k : karabiner: up, delete the text between the insertion point and the end of the line or paragraph (stock)
+# ctrl - l : karabiner: right, center the cursor or selection in the visible area (stock)
 ctrl - 0x29 : return
-# ctrl - 0x27 : cf. 'window_space_and_display_management'
-# ctrl - 0x2A : cf. 'window_space_and_display_management'
+# ctrl - 0x27 : down-left-quarter, cf. 'window_space_and_display_management'
+# ctrl - 0x2A : down-right-quarter, cf. 'window_space_and_display_management'
 # ctrl - return/enter : show contextual menu (kept in systemSettings/Keyboard/KeyboardShortcuts/..)
 
 
 
-ctrl - 0x32 : skhd -k "hyper - 0x32" # cf. 'skhdrc'
-    ctrl + cmd - 0x32 : ~/bin/cliclick_focus # return # return # # # # # # # # # # # ctrl + cmd - 0x32 : cf. 'skhdrc' --- removed, right?
+ctrl - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
+    ctrl + cmd - 0x32 : ~/bin/cliclick_focus
     ctrl + alt - 0x32 : return
     ctrl + alt + cmd - 0x32 : return
-ctrl - y : sleep 0.1; skhd -k "hyper - y" # cf. 'skhdrc'
+ctrl - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
     ctrl + cmd - y : cliclick m:+0,+21
-    ctrl + alt - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return"
-    # ctrl + alt + cmd - y : shortcuts run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse       .......... # return # shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse # NO: || /opt/homebrew/bin/cliclick -r m:+0,+1
-ctrl - x : sleep 0.1; skhd -k "hyper - x" # cf. 'skhdrc'
+    ctrl + alt - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download
+    # ctrl + alt + cmd - y : "shortcuts run 'yabai_focus_mouse'"
+ctrl - x : sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
     ctrl + cmd - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
-    ctrl + alt - x : return
-    # ctrl + alt + cmd - x : shortcuts run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'# --- shortcuts run "Focus TRex" # return # sleep 0.37; cliclick c:+0,+0 # ~/bin/cliclick_focus
+    ctrl + alt - x : sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
+    # ctrl + alt + cmd - x : "shortcuts run 'focus_trex'", "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
-    ctrl + cmd - c : return
+    ctrl + cmd - c : open_or_focus Calculator
     ctrl + alt - c : return
-    ctrl + alt + cmd - c : open_or_focus Calculator
+    ctrl + alt + cmd - c : return
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
-    ctrl + alt + cmd - v : return # open_or_focus "zoom.us" # return # open_or_focus "Cursor"
+    ctrl + alt + cmd - v : return
 ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
     ctrl + alt - b : return
     ctrl + alt + cmd - b : return
 
 ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
-    ctrl + cmd - n : threema_start # create a new folder that contains the currently selected items (stock)
+    ctrl + cmd - n [
+        "Finder" ~ # create a new folder that contains the currently selected items (stock)
+        * : threema_start 
+        ]
 ctrl - m : return # midi signal event viewer
 ctrl - 0x2B : return
 ctrl - 0x2F : return
-# ctrl - 0x2C : cf. window_space_and_display_management
+# ctrl - 0x2C : yabai--restart-service, cf. 'window_space_and_display_management'
 
 ctrl - space : skhd -k "0xB1" # spotlight
-    # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) [faster than 'Press *globe* key to']
+    # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) (faster than 'Press *globe* key to')
     ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
     ctrl + alt + cmd - space : return
-# ctrl - arrows : cf. 'window_space_and_display_management'
+# ctrl - arrows : left-half/center/fill/right-half cf. 'window_space_and_display_management'
 
 
 
-ctrl + shift - q : skhd -k "hyper - n"; sleep 0.1; open_or_focus "Notes" # killall mpv && curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json" && pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
-    ctrl + shift + alt - q : killall mpv; sleep 0.37; pmset sleepnow # pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update; sleep 0.37; ...
+ctrl + shift - q : skhd -k "hyper - n"; sleep 0.1; open_or_focus "Notes" # quick-notes, cf. 'skhdrc'
 ctrl + shift - w : ~/bin/custom_wake
 ctrl + shift - r : ~/bin/radio
-ctrl + shift - t [
+ctrl + shift - t [ # "*go to middle of files* (Finder)": like so many: not listed in any macos hotkey list
         "Finder" : echo -n "$(date +"%d.%m.%y" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" 
         * : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
-        ] # *go to middle of files* (Finder) ---> like so many not listed in any macos hotkey list... weird
-ctrl + shift - a : ~/bin/macos_background_noise # native still unreliable, script seems nice..
+        ]
+ctrl + shift - a : ~/bin/macos_background_noise # "native" still unreliable
 ctrl + shift - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 25 | floor),\(.y + 290 | floor)"')
-        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy, native app auch mal wieder ausprobieren (cf. chatgpt)
+        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
         ]
 ctrl + shift + cmd - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 7 | floor),\(.y + 237 | floor)"')
-        * : return # ~/bin/cliclick_focus # skhd -k "ctrl + alt + cmd - x" # ~
+        * : return
         ]
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
-## ctrl + shift - 0x32 : ~/bin/cliclick_focus
-## ctrl + shift - y : skhd -k "ctrl + alt - y"
-
-    #changed To ctrl alt cmd y x :::     # ctrl + shift - y : shortcuts run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
-                                        # ctrl + shift - x : shortcuts run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate'
-# not necessary anymore because I changed shortcuts hotkeys... ctrl + shift - v : skhd -k "ctrl + alt - v"
-
-# ...
-
-## ctrl + shift - x : skhd -k "ctrl + alt - x" # also put double click somewhere?
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
-
-#        # ctrl + shift - y : shortcut run "yabai_focus_mouse" : /opt/homebrew/bin/yabai -m window --focus mouse
-#   NO   # ctrl + shift - x : shortcut run "Focus TRex" : w/ Applescript : 'tell application "TRex" to activate', "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €" --- yeah "forgot" that and tried again, now this is my solution..
-#        # perhaps shift instead of ctrl? - totally different..
-# 22:47, 21.05.25, WED
-
-#ctrl + shift - 1 : ~/bin/brightness_down
-#ctrl + shift - 2 : ~/bin/brightness_up
-# ctrl + shift + cmd - 8 : ~/bin/foobar_play
-# alt + cmd - f8 : ~/bin/foobar_play
-#ctrl + shift - 0 : skhd -k "f14" # SwitchAudioSource -m toggle
-#ctrl + shift - 0x1B : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
-#ctrl + shift - 0x18 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up

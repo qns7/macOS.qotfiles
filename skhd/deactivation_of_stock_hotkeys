@@ -12,7 +12,10 @@ fn + shift - a : return # show launchpad
 alt - f14 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 alt - f15 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 
-# cmd - d : duplicate file (Finder)
+cmd - d [
+    "Finder" ~ # : duplicate file, useful!
+    * : return
+    ]
 cmd - h : return # hide
 alt + cmd - h : return # hide others
 cmd - m : return # minimize
@@ -28,7 +31,7 @@ shift + cmd - backspace [
     * ~
     ]
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
-# eventuell hier und auch in den anderen files (e.g. ctrl) noch hinzufügen wo die hotkeys/shortcuts definiert sind (e.g.: finder, textfeld, ...)
+# eventuell hier und auch in den anderen files (e.g. ctrl) noch hinzufügen wo die hotkeys/shortcuts definiert sind (e.g.: Finder, textfeld, ...)
 
-ctrl - tab : return # "alternative way to tab switchting"
-ctrl + shift - tab : return # "alternative way to tab switchting"
+ctrl - tab : return # "alternative way to browser-tab-switchting"
+ctrl + shift - tab : return # "alternative way to browser-tab switchting"
