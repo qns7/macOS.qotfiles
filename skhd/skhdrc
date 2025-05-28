@@ -16,54 +16,11 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 hyper - e : open_folder /Users/q/Developer
 
 ctrl + shift + cmd - 8 : ~/bin/foobar_play
-#alt + cmd - f8 : ~/bin/foobar_play
 shift + cmd - f8 : ~/bin/foobar_play
-# ctrl + shift + cmd - 0 : SwitchAudioSource -m toggle
 mute : SwitchAudioSource -m toggle
-
-# alt - f1 : ~/bin/brightness_down
-# cmd - f1 : ~/bin/brightness_down
-# alt - f2 : ~/bin/brightness_up
-# cmd - f2 : ~/bin/brightness_up
-# cmd - f8 : skhd -k "f15"
-#cmd - play : skhd -k "f15"
-# cmd - f8 : skhd -k "f15"
-#alt - mute : skhd -k "f14" # SwitchAudioSource -m toggle ### mute : skhd -k "f14" # SwitchAudioSource -m toggle, keep original here... 
-#alt - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
-#cmd - f10 : skhd -k "f14" # SwitchAudioSource -m toggle
-# alt - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
-# cmd - f11 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_down
-# alt - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
-# cmd - f12 : [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" != "SoundID Reference" ]] && ~/bin/volume_up
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #
-fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"; sleep 0.37; osascript -e "set volume output volume 50" # #
+  fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"; sleep 0.37; osascript -e "set volume output volume 50" # #
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference" # #
-# cmd - q [
-#     "SoundID Reference" : osascript ~/bin/close_soundid
-#     * ~
-# ]
-#hyper - q : skhd -k "0xA0" # osascript ~/bin/quit_all_apps.scpt ---> just use terminal for this...
-#
-#alt + cmd - j [
-### alt + cmd - h [
-###     "Finder" ~
-###     * : skhd -k "alt + cmd - left" # "ctrl + shift - tab"
-### ]
-### # ctrl + alt + cmd - 1 : skhd -k "alt + cmd - left"
-### alt + cmd - l [
-###     "Finder" ~ # for download folder hotkey
-###     * : skhd -k "alt + cmd - right" # "ctrl - tab"
-### ]
-### # ctrl + alt + cmd - 2 : skhd -k "alt + cmd - right"
-### # ctrl + shift + cmd - r : yabai -m window --focus recent # doesn't work
-### alt + cmd - j [
-###     "Firefox" : skhd -k "cmd - down" # "ctrl - tab"
-###     * ~
-### ]
-### alt + cmd - k [
-###     "Firefox" : skhd -k "cmd - up" # "ctrl - tab"
-###     * ~
-### ]
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
@@ -78,29 +35,19 @@ fn - 0x2A : SwitchAudioSource -s "SoundID Reference" # #
 "Terminal"
 "Windows App"
 ]
-# Warp? testen...
 
 ### systemSettings/Keyboard/KeyboardShortcuts :
 # 1: Show Launchpad : hyper - l (changed from none)
 # 3: Application windows : alt + cmd - 0x0A (changed from ctrl - down), ^
-alt + cmd - 0x0A : cliclick m:+0,+1 && cliclick m:+0,-1 && ~/bin/cliclick_focus && skhd -k "hyper - 0x0A" # workaround for the mouse hiding...
-# # # shift + alt + cmd - 0x14 : cliclick m:+0,+1 && ~/bin/cliclick_focus && cliclick m:+0,-1 && skhd -k "hyper - 0x0A" # workaround for the mouse hiding...
+alt + cmd - 0x0A : cliclick m:+0,+1 && cliclick m:+0,-1 && ~/bin/cliclick_focus && skhd -k "hyper - 0x0A" # workaround mouse hiding
 alt + cmd - 0x14 : skhd -k "0xA0"; sleep 0.1; [[ ! -f /tmp/mission_control.open ]] && { cliclick m:$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.w | floor') / 2)),0 && sleep 0.21 && cliclick m:$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.w | floor') / 2)),0 } || { rm /tmp/mission_control.open && sleep 0.21 && cliclick_focus } # mission control / dobblgemobblt mit rm
-# # # alt + cmd - 0x14 : skhd -k "0xA0" # mission control
 # 3: Show Desktop : hyper - d (changed from F11)
 # 3: Move left a space : hyper - 1 (changed from ctrl - left)
 # 3: Move right a space : hyper - 2 (changed from ctrl - right)
 # 3: Quick Note : hyper - n (changed from fn/globe - q)
 # 4: Move focus to next window : hyper - tab (changed from cmd - `)
-# # # test new 'setup' # # # alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
-##cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update # test: ohne alttab
 alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
-#shift + alt + cmd - tab : yabai -m window --focus $(yabai -m query --windows --space | jq -r --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id] | last')
-  #alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
     fn + alt - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
-    #alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
-    #ctrl + alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
-    ##alt - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update # test: ohne alttab
 # 4: Show contextual menu : ctrl - return (kept)
 # 6: Save picture of screen as a file : hyper - y (changed from shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage)
 # 6: Save picture of selected area as a file : hyper - x (changed from shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage)
@@ -112,21 +59,3 @@ alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketc
 # 11: Finder / Back : cmd - left
 # 11: Finder / New Smart Folder : alt + cmd - n (normally stock?)
 ### all other shortcuts are deactivated (like ctrl - f1-f8)
-
-# cmd - tab : ~/bin/focus_next_window # not cool... just use alt(-)tab
-# cmd < : rm -f /tmp/yabai-window-cycle
-
-# alt + cmd - 0x35 : skhd -k "0x35" # for alttab abort, force quit app window (stock), esc
-# shift + ctrl - f : ...
-
-# alt + cmd - left_click (e.g.) : open trash folder from the dock ... (stock) deactivated in my setup ---> cf. linearmouse!
-
-# perhaps: alt + cmd - v [
-#                   "Finder" ~
-#                   * : skhd -k "shift + alt + cmd - v"
-#                   ] ?
-#
-#          shift + cmd - r [
-#                   "Safari" : skhd -k "alt + cmd - r"
-#                   * ~
-#                   ]
