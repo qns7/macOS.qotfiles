@@ -301,7 +301,12 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "consumer_key_code": "volume_decrement" }],
+                                "to": [
+                                    {
+                                        "consumer_key_code": "volume_decrement",
+                                        "modifiers": ["left_shift", "left_option"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -323,7 +328,12 @@
                                         "optional": []
                                     }
                                 },
-                                "to": [{ "consumer_key_code": "volume_increment" }],
+                                "to": [
+                                    {
+                                        "consumer_key_code": "volume_increment",
+                                        "modifiers": ["left_shift", "left_option"]
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
