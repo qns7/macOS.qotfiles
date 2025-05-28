@@ -12,10 +12,7 @@ fn + shift - a : return # show launchpad
 alt - f14 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 alt - f15 : return # open display settings as alt - f1*/f2*/f3*/f10*/f11*/f12*
 
-cmd - d [
-    "Finder" ~ # : duplicate file, useful!
-    * : return
-    ]
+# cmd - d : duplicate file (Finder)
 cmd - h : return # hide
 alt + cmd - h : return # hide others
 cmd - m : return # minimize
