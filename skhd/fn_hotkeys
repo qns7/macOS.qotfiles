@@ -42,7 +42,8 @@ fn - g : return
 fn - 0x29 : return # ö
 fn - 0x27 : return # ä
 # fn - 0x2A : cf. 'q1_specific', #
-fn - return : ~/bin/yabai_debug
+# karabiner: fn - return : penter
+  0x4C : ~/bin/yabai_debug
 
   fn - 0x32 : skhd -k "alt - 7" # <, |
 fn - y : /opt/homebrew/bin/yabai --restart-service

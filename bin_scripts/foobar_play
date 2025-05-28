@@ -1,5 +1,6 @@
 #!/bin/bash
 
+/opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true
 pgrep -x foobar2000 && {
   # killall mpv
   OSPA=$(yabai -m query --spaces --space | jq -r '."index"')

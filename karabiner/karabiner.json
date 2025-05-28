@@ -9,6 +9,22 @@
                 },
                 "rules": [
                     {
+                        "description": "fn - return : penter(+all)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "keypad_enter" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "f19 : keyboard_backlight(+none) & fn - f19 : sleepnow(+none) & cmd - f19 : toggle_brightness(+none)",
                         "manipulators": [
                             {
@@ -411,10 +427,6 @@
             "selected": true,
             "simple_modifications": [
                 {
-                    "from": { "key_code": "escape" },
-                    "to": [{ "key_code": "f19" }]
-                },
-                {
                     "from": { "key_code": "grave_accent_and_tilde" },
                     "to": [{ "key_code": "non_us_backslash" }]
                 },
@@ -425,6 +437,10 @@
                 {
                     "from": { "key_code": "non_us_backslash" },
                     "to": [{ "key_code": "grave_accent_and_tilde" }]
+                },
+                {
+                    "from": { "key_code": "escape" },
+                    "to": [{ "key_code": "f19" }]
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }

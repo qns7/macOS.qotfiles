@@ -4,5 +4,6 @@
 # yabai -m query --windows --window | jq '."frame"."y"' > ~/Desktop/yabai_debug.txt
 # yabai -m query --windows --window
 # COM=$(yabai -m query --windows --space | jq --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id]')
-COM=$(yabai -m query --windows --space | jq -r --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id] | last')
+# COM=$(yabai -m query --windows --space | jq -r --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id] | last')
+COM=$(yabai -m query --windows --window | jq -r '.app')
 echo "$COM" > ~/Desktop/yabai_debug.txt
