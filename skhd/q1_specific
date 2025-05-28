@@ -32,19 +32,8 @@ shift + alt - 0x55 : return
 # ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
 # ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
 # also available in qmk: KC_LPAD, KC_EJCT, KC_MPRV, KC_MNXT, [PWR, SLEP, WAKE], ..?
-# karabiner:
-# ctrl ---> fn
-# esc  ---> f19
-# fn - return ---> penter
-# caps ---> ctrl/esc
-# alpha_navigation
-# alpha_special_functions
-f15 : skhd -k "0xA0" # mission control, karabiner too, qmk too (KC_MCTL) BUT karabiner problem
+# karabiner: ctrl -> fn, esc -> f19, fn - return -> penter, caps -> ctrl/esc, alpha_navigation, alpha_special_functions
+f15 : skhd -k "0xA0" # mission control, karabiner too, qmk too (KC_MCTL) but karabiner problem
 f16 : skhd -k "0xB1" # spotlight,       karabiner too, qmk not
 f17 : skhd -k "0xB0" # dictation,       karabiner too, qmk not
 f18 : skhd -k "0xB2" # do not disturb,  karabiner not, qmk not
-
-# 0x4C : skhd -k "fn - return" # PENT - changed
-# q1 & inbuilt changes in systemSettings/Keyboard/KeyboardShortcuts/ModifierKeys/.. : caps changed to ctrl & ctrl changed to fn/globe ------> karabiner now!
-
-# MCTL doesn't work anymore with karabiner elements... weird. --- caps to c(caps) --- and ...  DONE
