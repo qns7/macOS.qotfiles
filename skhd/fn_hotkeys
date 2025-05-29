@@ -35,7 +35,7 @@ fn - s : return
 fn - d : return # start or stop dictation (stock)
   fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
-fn - h : return
+fn - h : return # show desktop (stock?)
 # fn - j : cf. 'window_space_and_display_management'
 # fn - k : cf. 'window_space_and_display_management'
 # fn - l : cf. 'window_space_and_display_management'

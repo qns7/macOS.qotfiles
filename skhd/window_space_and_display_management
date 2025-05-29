@@ -5,7 +5,7 @@ ctrl - down : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resiz
 ctrl - left : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window left half, move to a control adjacent to the text field (stock)
 ctrl - right : yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; ~/bin/cliclick_focus # snap current window right half, move to a control adjacent to the text field (stock)
 
-ctrl + cmd - up : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top half, Notes: move line up (stock)
+ctrl + cmd - up : yabai -m window --grid 2:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window top half, Notes: move line up (stock), Open the folder that contains the current folder in a new window. (stock?)
 ctrl + cmd - down : yabai -m window --grid 2:1:1:1:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window bottom half, Notes: move line down (stock)
 ctrl + cmd - left : move_current_window_to_previous_display
 ctrl + cmd - right : move_current_window_to_next_display
