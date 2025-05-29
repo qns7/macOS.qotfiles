@@ -24,10 +24,10 @@ fn - r : return
 fn - t : return
 fn - z : return
 fn - u : return
-fn - i : return
+# fn - i : cf. 'window_space_and_display_management'
 fn - o : return
-fn - p : return
-fn - 0x21 : return # ü
+# fn - p : cf. 'window_space_and_display_management'
+# fn - 0x21 : cf. 'window_space_and_display_management' # ü
   fn - 0x1E : skhd -k "alt - n" # +, ~
 
 fn - a : return # show or hide the dock (stock)
@@ -35,12 +35,12 @@ fn - s : return
 fn - d : return # start or stop dictation (stock)
   fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
-# fn - h : cf. 'window_space_and_display_management'
+fn - h : return
 # fn - j : cf. 'window_space_and_display_management'
 # fn - k : cf. 'window_space_and_display_management'
 # fn - l : cf. 'window_space_and_display_management'
-fn - 0x29 : return # ö
-fn - 0x27 : return # ä
+# fn - 0x29 : cf. 'window_space_and_display_management' # ö
+# fn - 0x27 : cf. 'window_space_and_display_management' # ä
 # fn - 0x2A : cf. 'q1_specific', #
 0x4C : ~/bin/yabai_debug # karabiner: fn - return : 0x4C (penter), because skhd has a problem with fn - return
 

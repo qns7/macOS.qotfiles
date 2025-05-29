@@ -15,7 +15,7 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
 hyper - e : open_folder /Users/q/Developer
 
-ctrl + shift + cmd - 8 : ~/bin/foobar_play
+ctrl + cmd - 8 : ~/bin/foobar_play
 shift + cmd - f8 : ~/bin/foobar_play
 mute : SwitchAudioSource -m toggle
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #

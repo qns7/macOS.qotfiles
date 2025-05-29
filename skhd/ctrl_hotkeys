@@ -27,8 +27,9 @@ ctrl - r : open_or_focus Reaper
 
 ctrl - z : open_or_focus "zoom.us"
 ctrl - u : return
-ctrl - i : open_or_focus "Ipe"
-    ctrl + cmd - i : open_or_focus "IINA"
+# ctrl - i : karabiner: up, ... (stock)?
+    ctrl + cmd - i : open_or_focus "Ipe"
+    ctrl + alt - i : open_or_focus "IINA"
 ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (stock)
 ctrl - p : open_or_focus "Passwords" # removed from menubar again, move up one line (stock)
     ctrl + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc'
@@ -62,9 +63,9 @@ ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/Ch
     ctrl + alt - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower, search-function now available though
     ctrl + alt + cmd - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
 
-# ctrl - h : karabiner: left, backspace/delete (stock)
-# ctrl - j : karabiner: down
-# ctrl - k : karabiner: up, delete the text between the insertion point and the end of the line or paragraph (stock)
+ctrl - h : return # backspace/delete (stock)
+# ctrl - j : karabiner: left
+# ctrl - k : karabiner: down, delete the text between the insertion point and the end of the line or paragraph (stock)
 # ctrl - l : karabiner: right, center the cursor or selection in the visible area (stock)
 ctrl - 0x29 : return
 # ctrl - 0x27 : down-left-quarter, cf. 'window_space_and_display_management'
