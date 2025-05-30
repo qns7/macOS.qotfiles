@@ -60,7 +60,7 @@ ct() {
 # }
 # alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiskam?format=%l:+%C+%t # Zeiskam?0
 # alias wtt="curl -s 'wttr.in/Zeiskam?format=%l:+%C+%t,+Wind:+%w,+Pressure:+%P,+Sunset:+%S" | sed 's/\([↑↓←→↖↗↘↙]\)/\1 /' | sed -E 's/(Sunset:[ ]?[0-9]{2}:[0-9]{2}):[0-9]{2}/\1/''
-wt() {
+wth() {
   [ -z "$1" ] && { echo "Usage: wt <location>"; return 1; }
   current_hour=$(date +%H)
   current_hour=$(( current_hour - current_hour % 3 ))
@@ -81,7 +81,7 @@ wt() {
     printf "%-5s | %-19s | %-4s | %-8s | %-6s\n" "$t" "$c" "$tmp" "$w" "$p"
   done
 }
-alias wtt="wt Zeiskam"
+alias wt="wth Zeiskam"
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"
