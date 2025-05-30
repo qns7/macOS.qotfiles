@@ -104,7 +104,7 @@ ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
         "Finder" ~ # create a new folder that contains the currently selected items (stock)
         * : threema_start 
         ]
-ctrl - m : return # midi signal event viewer
+ctrl - m : open_or_focus "Jitsi Meet" # midi signal event viewer
 ctrl - 0x2B : return
 ctrl - 0x2F : return
 # ctrl - 0x2C : yabai--restart-service, cf. 'window_space_and_display_management'
