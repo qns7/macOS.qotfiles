@@ -16,8 +16,7 @@ shift + alt - 0x53 : return
 shift + alt - 0x54 : return
 shift + alt - 0x55 : return
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# q1 qmk keymap (imitates inbuilt):
+# Q1 QMK KEYMAP [IMITATES INBUILT] # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # ESC               F1       F2       F3       F4       F5       F6       F7       F8       F9       F10      F11      F12      F13      F14
 # NUBS ^   1        2        3        4        5        6        7        8        9        0        MINS ß   EQL ´    BSPC              P1
 # TAB      Q        W        E        R        T        Y z      U        I        O        P        LBRC ü   RBRC +                     P2
@@ -31,7 +30,7 @@ shift + alt - 0x55 : return
 # C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           S(____)
 # ____     C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)  C(____)           ----     PGUP
 # ____     ____     ____                                         C(____)                    ____     ____     ____     HOME     PGDN     END
-# also available in qmk: KC_LPAD, KC_EJCT, KC_MPRV, KC_MNXT, [PWR, SLEP, WAKE], ..?
+# # # KC_LPAD, KC_EJCT, KC_MPRV, KC_MNXT, [PWR, SLEP, WAKE],.. # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # karabiner: ctrl -> fn, esc -> f19, fn - return -> penter, caps -> ctrl/esc, alpha_navigation, alpha_special_functions
 f15 : skhd -k "0xA0" # mission control, karabiner too, qmk too (KC_MCTL) but karabiner problem
 f16 : skhd -k "0xB1" # spotlight,       karabiner too, qmk not
