@@ -19,6 +19,11 @@
             "control": true
           },
           {
+            "button": 4,
+            "action": { "run": "/opt/homebrew/bin/skhd -k 'shift - f13'" },
+            "control": true
+          },
+          {
             "button": 3,
             "action": { "keyPress": ["command", "0"] },
             "option": true
@@ -37,12 +42,6 @@
           {
             "button": 1,
             "action": { "keyPress": ["option", "command", "arrowRight"] },
-            "command": true,
-            "option": true
-          },
-          {
-            "button": 4,
-            "action": { "run": "/opt/homebrew/bin/skhd -k 'shift - f13'" },
             "command": true,
             "option": true
           }
