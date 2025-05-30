@@ -18,7 +18,7 @@ ctrl - r : open_or_focus Reaper
     ctrl + alt - r : return
     ctrl + alt + cmd - r : return
 # ctrl - t : iterm hotkey window (restart? spotlight), swap the character behind the insertion point with the character in front of the insertion point (stock) (Tippfehler)
-    ctrl + cmd - t : open_or_focus "texmaker" # add the selected item to the sidebar (stock?), Underleaf? 
+    ctrl + cmd - t : open_or_focus "texmaker" # add the selected item to the sidebar (stock?), Underleaf? Overleaf?
     ctrl + alt - t [
         "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # also an option in systemSettings/Keyboard/KeyboardShortcuts/Services/.. like many others
         * : return
