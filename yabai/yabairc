@@ -22,6 +22,8 @@ yabai -m config window_origin_display cursor
 
 # yabai -m signal --add event=space_changed action="..." # in sketchybar again
 # yabai -m signal --add event=display_changed action="..." # in sketchybar again
+yabai -m signal --add event=space_changed action="/Users/q/bin/custom_wake"
+yabai -m signal --add event=display_changed action="/Users/q/bin/custom_wake"
 
 yabai -m signal --add event=mission_control_enter action="touch /tmp/mission_control.open"
 yabai -m signal --add event=mission_control_exit action="sketchybar --update; rm /tmp/mission_control.open" # "~/bin/del_empty_spaces"
