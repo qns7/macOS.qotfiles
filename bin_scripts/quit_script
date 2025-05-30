@@ -36,7 +36,7 @@ case "$CURRENT_APP_ALT" in
         killall zoom.us
         ;;
     # "LibreOffice") osascript -e 'tell application "LibreOffice" to quit' ;;
-    "Davinci Resolve")
+    "DaVinci Resolve")
         killall Resolve
         ;;
     "Elgato Control Center")
