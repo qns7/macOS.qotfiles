@@ -36,9 +36,6 @@ case "$CURRENT_APP_ALT" in
         killall zoom.us
         ;;
     # "LibreOffice") osascript -e 'tell application "LibreOffice" to quit' ;;
-    "DaVinci Resolve")
-        killall Resolve
-        ;;
     "Elgato Control Center")
         sketchybar --set elgato icon.color=0xff4e4e4e
         killall "Elgato Control Center" &> /dev/null
@@ -47,6 +44,8 @@ case "$CURRENT_APP_ALT" in
     *) 
         if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
             killall WhatsApp &> /dev/null
+        elif [[ "$CURRENT_APP" == "DaVinci Resolve" ]]; then
+            killall Resolve
         else
             skhd -k "cmd - q"
         fi
