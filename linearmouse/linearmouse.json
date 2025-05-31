@@ -20,7 +20,7 @@
           },
           {
             "button": 4,
-            "action": { "run": "/opt/homebrew/bin/skhd -k 'shift - f13'" },
+            "action": { "run": "/bin/bash -c '/Users/q/.config/sketchybar/plugins/click_week.sh'" },
             "control": true
           },
           {
