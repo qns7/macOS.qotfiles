@@ -78,7 +78,7 @@ wth() {
       (.precipMM + " mm")
     ] | @tsv
   ' | while IFS=$'\t' read -r t c tmp w p; do
-    printf "%-5s | %-19s | %-4s | %-8s | %-6s\n" "$t" "$c" "$tmp" "$w" "$p"
+    printf "%-5s | %-4s | %-7s | %-6s | %-1s\n" "$t" "$tmp" "$w" "$p" "$c"
   done
 }
 alias wt="wth Zeiskam"
