@@ -51,7 +51,7 @@ case "$CURRENT_APP_ALT" in
         fi
         ;;
 esac
-sleep 0.37
+sleep 0.73
 if [[ $NUM_DISPLAYS -eq 1 ]]; then
     cliclick m:900,603
 elif [[ $CURRENT_DISPLAY == "$UUID_INBUILT_DISPLAY" ]]; then
