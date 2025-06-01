@@ -49,7 +49,8 @@ alias llo="launchctl load ~/Library/LaunchAgents/com.q.custom_start.plist"
 
 alias yt='yt-dlp -S "vcodec:h264,res,acodec:m4a" -P ~/Desktop/' # 'yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/bv*+ba/b" -P ~/Desktop/' # QUICKLOOKable now!
 alias ip="echo \"LAN: \$(ipconfig getifaddr en7)\nWLN: \$(ipconfig getifaddr en0)\nNET: \$(curl -s -4 ifconfig.me)\""
-alias st='(while true; do for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done; done & SPINNER_PID=$!; PYTHONWARNINGS="ignore" speedtest-cli --simple > /tmp/speedtest_output; kill $SPINNER_PID; wait $SPINNER_PID 2>/dev/null; echo -en "\r\033[K"; cat /tmp/speedtest_output; /bin/rm /tmp/speedtest_output)'
+alias st='clear; (while true; do for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done; done & SPINNER_PID=$!; PYTHONWARNINGS="ignore" speedtest-cli --simple > /tmp/speedtest_output; kill $SPINNER_PID; wait $SPINNER_PID 2>/dev/null; echo -en "\r\033[K"; cat /tmp/speedtest_output; /bin/rm /tmp/speedtest_output)'
+#                 while true; do for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done; done
 
 alias aw='yabai -m query --windows | jq ".[].app"' # or other yabai / sketchybar queries for debugging
 ct() {
@@ -61,27 +62,46 @@ ct() {
 # alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiskam?format=%l:+%C+%t # Zeiskam?0
 # alias wtt="curl -s 'wttr.in/Zeiskam?format=%l:+%C+%t,+Wind:+%w,+Pressure:+%P,+Sunset:+%S" | sed 's/\([↑↓←→↖↗↘↙]\)/\1 /' | sed -E 's/(Sunset:[ ]?[0-9]{2}:[0-9]{2}):[0-9]{2}/\1/''
 wth() {
-  [ -z "$1" ] && { echo "Usage: wt <location>"; return 1; }
-  current_hour=$(date +%H)
-  current_hour=$(( current_hour - current_hour % 3 ))
+  (  # <<< start subshell to suppress job output
 
-  curl -s "https://wttr.in/${1}?format=j1&m" | jq -r --argjson current_hour "$current_hour" '
-    .weather[0].hourly as $today |
-    .weather[1].hourly as $tomorrow |
-    ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
-    ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
-    .[] | [
-      ((.time|tonumber)/100|floor|tostring + ":00"),
-      .weatherDesc[0].value,
-      (.tempC + "°C"),
-      (.windspeedKmph + " km/h"),
-      (.precipMM + " mm")
-    ] | @tsv
-  ' | while IFS=$'\t' read -r t c tmp w p; do
-    printf "%-5s | %-4s | %-7s | %-6s | %-1s\n" "$t" "$tmp" "$w" "$p" "$c"
-  done
+    [ -z "$1" ] && { echo "Usage: wt <location>"; return 1; }
+
+    current_hour=$(date +%H)
+    current_hour=$(( current_hour - current_hour % 3 ))
+
+    # Start spinner
+    while true; do
+      for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done
+    done & SPINNER_PID=$!
+
+    # Fetch and process weather data
+    WEATHER_OUTPUT=$(curl -s "https://wttr.in/${1}?format=j1&m" | jq -r --argjson current_hour "$current_hour" '
+      .weather[0].hourly as $today |
+      .weather[1].hourly as $tomorrow |
+      ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
+      ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
+      .[] | [
+        ((.time|tonumber)/100|floor|tostring + ":00"),
+        .weatherDesc[0].value,
+        (.tempC + "°C"),
+        (.windspeedKmph + " km/h"),
+        (.precipMM + " mm")
+      ] | @tsv
+    ')
+
+    # Kill spinner
+    kill $SPINNER_PID 2>/dev/null
+    wait $SPINNER_PID 2>/dev/null
+    echo -en "\r\033[K"
+
+    # Print formatted output
+    echo "$WEATHER_OUTPUT" | while IFS=$'\t' read -r t c tmp w p; do
+      printf "%-5s | %-4s | %-7s | %-6s | %-1s\n" "$t" "$tmp" "$w" "$p" "$c"
+    done
+
+  )  # <<< end subshell
 }
-alias wt="wth Zeiskam"
+alias wt="clear; wth Zeiskam"
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"
