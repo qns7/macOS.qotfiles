@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! cliclick $(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"'); then
+if ! cliclick "$(yabai -m query --windows --window | jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')"; then
     DISPLAYS=$(yabai -m query --displays)
     NUM_DISPLAYS=$(echo "$DISPLAYS" | jq length)
     CURRENT_DISPLAY=$(echo "$DISPLAYS" | jq -r '.[] | select(.["has-focus"] == true) | .uuid')

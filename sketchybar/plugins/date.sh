@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 
 if [ -f /tmp/show.clock ]; then
     sketchybar --set date icon="$(date +'%H:%M')" \

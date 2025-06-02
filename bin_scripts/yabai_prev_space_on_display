@@ -11,10 +11,10 @@ else
     LOWSPA=$(echo "$SPACES" | jq ".[] | select(.index < $CURSPA) | .index")
     if [ ! -z "$LOWSPA" ]; then
         set -- $LOWSPA
-        yabai -m space --focus ${@: -1}
+        yabai -m space --focus "${@: -1}"
     else
         set -- $ALLSPA
-        yabai -m space --focus ${@: -1}
+        yabai -m space --focus "${@: -1}"
     fi
     # del_empty_spaces
     # sleep 0.1
