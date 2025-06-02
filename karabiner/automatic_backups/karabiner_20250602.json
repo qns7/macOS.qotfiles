@@ -9,6 +9,22 @@
                 },
                 "rules": [
                     {
+                        "description": "fn - return : penter(+all)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "keypad_enter" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "f19 : keyboard_backlight(+none) & fn - f19 : sleepnow(+none) & cmd - f19 : toggle_brightness(+none)",
                         "manipulators": [
                             {
@@ -47,21 +63,6 @@
                         ]
                     },
                     {
-                        "description": "tab : left_ctrl(+all) / tab(+all)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "tab",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "left_control" }],
-                                "to_if_alone": [{ "key_code": "tab" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "caps_lock : left_ctrl(+all) / esc(+all)",
                         "manipulators": [
                             {
@@ -71,37 +72,6 @@
                                 },
                                 "to": [{ "key_code": "left_control" }],
                                 "to_if_alone": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "spacebar : fn(+all) / spacebar(+all)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "fn" }],
-                                "to_if_alone": [{ "key_code": "spacebar" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "fn - return : penter(+all)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "return_or_enter",
-                                    "modifiers": {
-                                        "mandatory": ["fn"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "keypad_enter" }],
                                 "type": "basic"
                             }
                         ]

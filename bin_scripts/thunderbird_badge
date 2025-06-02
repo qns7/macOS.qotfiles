@@ -16,7 +16,7 @@ if [ -z "$BOQ" ]; then
 
     sleep 0.37
     killall "thunderbird"
-    sleep 0.1
+    sleep 1.37 # 0.1
     open_or_focus "thunderbird"
 
     sleep 2
