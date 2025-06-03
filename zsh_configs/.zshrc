@@ -101,7 +101,7 @@ wth() {
 
   )  # <<< end subshell
 }
-alias wt="clear; wth Zeiskam"
+alias wt="clear; wth "~49.2359868,8.2454157"" # Zeiskam"
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"
