@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# PLUGIN_DIR="$CONFIG_DIR/plugins"
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+export PLUGIN_DIR
 ITEM_DIR="$CONFIG_DIR/items"
 
 sketchybar --bar color=0xff000000 \
