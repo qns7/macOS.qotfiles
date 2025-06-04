@@ -1,7 +1,7 @@
 ctrl - 0x2C : skhd -k "fn - y" # /opt/homebrew/bin/yabai --restart-service, for quick bug-fixing while managing windows, -
 
 ctrl - up : yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # fill current window, move to a control adjacent to the text field (stock)
-ctrl - down : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.37; ~/bin/cliclick_focus # =1169-38, resize current window to inbuilt resolution w/o notch @ 0/0, show all windows of the front app (stock), move to a control adjacent to the text field (stock)
+ctrl - down : yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus # =1169-38, resize current window to inbuilt resolution w/o notch @ 0/0, show all windows of the front app (stock), move to a control adjacent to the text field (stock)
 ctrl - left : yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus # snap current window left half, move to a control adjacent to the text field (stock)
 ctrl - right : yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; ~/bin/cliclick_focus # snap current window right half, move to a control adjacent to the text field (stock)
 

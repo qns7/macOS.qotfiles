@@ -132,7 +132,9 @@ ctrl + shift - t [ # "*go to middle of files* (Finder)": like so many: not liste
 ctrl + shift - a : ~/bin/macos_background_noise # "native" still unreliable
 ctrl + shift - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
-        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
+        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1737:1073; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
+        # * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
+        # * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
         ]
 ctrl + shift + cmd - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
