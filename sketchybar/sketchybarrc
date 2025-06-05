@@ -15,7 +15,7 @@ default=(
   label.font="Chivo Mono:Regular:19.0" # Medium?
   icon.color=0xffc7c7c7
   icon.y_offset=1
-  y_offset=7
+  y_offset=8 # 1
 )
 sketchybar --default "${default[@]}"
 

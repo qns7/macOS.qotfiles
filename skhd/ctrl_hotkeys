@@ -106,7 +106,7 @@ ctrl - b : thunderbird_badge # move one character backward (stock)
 
 ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
     ctrl + cmd - n [
-        "Finder" ~ # create a new folder that contains the currently selected items (stock)
+        "Finder" ~ # create a new folder that contains the currently selected items (stock) *REMEMBER!*
         * : threema_start 
         ]
 ctrl - m : open_or_focus "Jitsi Meet" # midi signal event viewer
