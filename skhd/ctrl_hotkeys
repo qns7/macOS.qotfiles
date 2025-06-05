@@ -86,11 +86,11 @@ ctrl - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
 ctrl - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
     ctrl + cmd - y : cliclick m:+0,+21
     ctrl + alt - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download
-    # ctrl + alt + cmd - y : "shortcuts run 'yabai_focus_mouse'"
+    # ctrl + alt + cmd - y : karabiner: yabai_focus_mouse
 ctrl - x : sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
     ctrl + cmd - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + alt - x : sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
-    # ctrl + alt + cmd - x : "shortcuts run 'focus_trex'", "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
+    # ctrl + alt + cmd - x : karabiner: focus_trex, "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : open_or_focus Calculator
     ctrl + alt - c : return
