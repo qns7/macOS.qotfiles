@@ -3,6 +3,7 @@
 yabai -m space --create
 INDEX="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
 yabai -m space --focus "${INDEX}"
+~/bin/cliclick_focus
 cliclick c:. && sleep 0.1 && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
 sleep 0.1
 sketchybar --update
