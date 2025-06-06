@@ -81,11 +81,12 @@ wth() {
       ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
       ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
       .[] | [
-        ((.time|tonumber)/100|floor|tostring + ":00"),
-        .weatherDesc[0].value,
+        ( ((.time|tonumber)/100|floor|tostring) | if length == 1 then "0" + . else . end + ":00" ),  # padded time
         (.tempC + "°C"),
         (.windspeedKmph + " km/h"),
-        (.precipMM + " mm")
+        (.precipMM + " mm"),
+        (.chanceofrain + "%"),
+        .weatherDesc[0].value
       ] | @tsv
     ')
 
@@ -94,9 +95,37 @@ wth() {
     wait $SPINNER_PID 2>/dev/null
     echo -en "\r\033[K"
 
-    # Print formatted output
-    echo "$WEATHER_OUTPUT" | while IFS=$'\t' read -r t c tmp w p; do
-      printf "%-5s | %-4s | %-7s | %-6s | %-1s\n" "$t" "$tmp" "$w" "$p" "$c"
+    # Read into array (zsh-compatible way)
+    lines=()
+    while IFS= read -r line; do
+      lines+=("$line")
+    done <<< "$WEATHER_OUTPUT"
+
+    # Initialize column widths (1-based for zsh)
+    widths=( 0 0 0 0 0 0 )
+
+    # Compute max width for each column
+    for line in "${lines[@]}"; do
+      IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+      [[ ${#t}    -gt ${widths[1]} ]] && widths[1]=${#t}
+      [[ ${#tmp}  -gt ${widths[2]} ]] && widths[2]=${#tmp}
+      [[ ${#w}    -gt ${widths[3]} ]] && widths[3]=${#w}
+      [[ ${#p}    -gt ${widths[4]} ]] && widths[4]=${#p}
+      [[ ${#r}    -gt ${widths[5]} ]] && widths[5]=${#r}
+      [[ ${#desc} -gt ${widths[6]} ]] && widths[6]=${#desc}
+    done
+
+    # Print data rows:
+    # columns 1-5 right-aligned (%*s), column 6 left-aligned (%-*s)
+    for line in "${lines[@]}"; do
+      IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+      printf "%*s | %*s | %*s | %*s | %*s | %-*s\n" \
+        "${widths[1]}" "$t" \
+        "${widths[2]}" "$tmp" \
+        "${widths[3]}" "$w" \
+        "${widths[4]}" "$p" \
+        "${widths[5]}" "$r" \
+        "${widths[6]}" "$desc"
     done
 
   )  # <<< end subshell
