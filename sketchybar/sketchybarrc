@@ -8,14 +8,14 @@ sketchybar --bar color=0xff000000 \
                  height=45 \
                  blur_radius=37 \
                  notch_width=220 \
-                 # shadow=off # height before 38, 45 for countering rounded corners
+                 shadow=on # height before 38, 45 for countering rounded corners OR 44 with shadow OR both?
 
 default=(
   icon.font="Chivo Mono:Regular:19.0" # Medium?
   label.font="Chivo Mono:Regular:19.0" # Medium?
   icon.color=0xffc7c7c7
   icon.y_offset=1
-  y_offset=8 # 1
+  y_offset=7 # 1
 )
 sketchybar --default "${default[@]}"
 
