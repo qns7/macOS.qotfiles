@@ -130,6 +130,7 @@ ctrl + shift - t [ # "*go to middle of files* (Finder)": like so many: not liste
         * : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
         ]
 ctrl + shift - a : ~/bin/macos_background_noise # "native" still unreliable
+# ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl + shift - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
         * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1737:1073; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
@@ -140,5 +141,4 @@ ctrl + shift + cmd - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
         * : return
         ]
-# ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s
