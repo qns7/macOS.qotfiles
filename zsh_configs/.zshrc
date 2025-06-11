@@ -130,7 +130,11 @@ wth() {
 
   )  # <<< end subshell
 }
-alias wt='clear; wth "49.23031918078996,8.250524609839939"'
+# alias wt='clear; wth "49.2303,8.2505"'
+alias wt='clear; wth "49.2303485,8.2504211"'
+# alias wt='clear; wth "49.23031918078996,8.250524609839939"'
+# alias wt='clear; wth "Zeiskam"'
+# alias wt='clear; wth "NYC"'
 # alias wt="clear; wth "~49.2359868,8.2454157"" # Zeiskam"
 
 alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
