@@ -61,77 +61,77 @@ ct() {
 # }
 # alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiskam?format=%l:+%C+%t # Zeiskam?0
 # alias wtt="curl -s 'wttr.in/Zeiskam?format=%l:+%C+%t,+Wind:+%w,+Pressure:+%P,+Sunset:+%S" | sed 's/\([↑↓←→↖↗↘↙]\)/\1 /' | sed -E 's/(Sunset:[ ]?[0-9]{2}:[0-9]{2}):[0-9]{2}/\1/''
-wth() {
-  (  # <<< start subshell to suppress job output
-
-    [ -z "$1" ] && { echo "Usage: wt <location>"; return 1; }
-
-    current_hour=$(date +%H)
-    current_hour=$(( current_hour - current_hour % 3 ))
-
-    # Start spinner
-    while true; do
-      for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done
-    done & SPINNER_PID=$!
-
-    # Fetch and process weather data
-    WEATHER_OUTPUT=$(curl -s "https://wttr.in/${1}?format=j1&m" | jq -r --argjson current_hour "$current_hour" '
-      .weather[0].hourly as $today |
-      .weather[1].hourly as $tomorrow |
-      ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
-      ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
-      .[] | [
-        ( ((.time|tonumber)/100|floor|tostring) | if length == 1 then "0" + . else . end + ":00" ),  # padded time
-        (.tempC + "°C"),
-        (.windspeedKmph + " km/h"),
-        (.precipMM + " mm"),
-        (.chanceofrain + "%"),
-        .weatherDesc[0].value
-      ] | @tsv
-    ')
-
-    # Kill spinner
-    kill $SPINNER_PID 2>/dev/null
-    wait $SPINNER_PID 2>/dev/null
-    echo -en "\r\033[K"
-
-    # Read into array (zsh-compatible way)
-    lines=()
-    while IFS= read -r line; do
-      lines+=("$line")
-    done <<< "$WEATHER_OUTPUT"
-
-    # Initialize column widths (1-based for zsh)
-    widths=( 0 0 0 0 0 0 )
-
-    # Compute max width for each column
-    for line in "${lines[@]}"; do
-      IFS=$'\t' read -r t tmp w p r desc <<< "$line"
-      [[ ${#t}    -gt ${widths[1]} ]] && widths[1]=${#t}
-      [[ ${#tmp}  -gt ${widths[2]} ]] && widths[2]=${#tmp}
-      [[ ${#w}    -gt ${widths[3]} ]] && widths[3]=${#w}
-      [[ ${#p}    -gt ${widths[4]} ]] && widths[4]=${#p}
-      [[ ${#r}    -gt ${widths[5]} ]] && widths[5]=${#r}
-      [[ ${#desc} -gt ${widths[6]} ]] && widths[6]=${#desc}
-    done
-
-    # Print data rows:
-    # columns 1-5 right-aligned (%*s), column 6 left-aligned (%-*s)
-    for line in "${lines[@]}"; do
-      IFS=$'\t' read -r t tmp w p r desc <<< "$line"
-      printf "%*s | %*s | %*s | %*s | %*s | %-*s\n" \
-        "${widths[1]}" "$t" \
-        "${widths[2]}" "$tmp" \
-        "${widths[3]}" "$w" \
-        "${widths[4]}" "$p" \
-        "${widths[5]}" "$r" \
-        "${widths[6]}" "$desc"
-    done
-
-  )  # <<< end subshell
-}
+### wth() {
+###   (  # <<< start subshell to suppress job output
+### 
+###     [ -z "$1" ] && { echo "Usage: wt <location>"; return 1; }
+### 
+###     current_hour=$(date +%H)
+###     current_hour=$(( current_hour - current_hour % 3 ))
+### 
+###     # Start spinner
+###     while true; do
+###       for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done
+###     done & SPINNER_PID=$!
+### 
+###     # Fetch and process weather data
+###     WEATHER_OUTPUT=$(curl -s "https://wttr.in/${1}?format=j1&m" | jq -r --argjson current_hour "$current_hour" '
+###       .weather[0].hourly as $today |
+###       .weather[1].hourly as $tomorrow |
+###       ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
+###       ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
+###       .[] | [
+###         ( ((.time|tonumber)/100|floor|tostring) | if length == 1 then "0" + . else . end + ":00" ),  # padded time
+###         (.tempC + "°C"),
+###         (.windspeedKmph + " km/h"),
+###         (.precipMM + " mm"),
+###         (.chanceofrain + "%"),
+###         .weatherDesc[0].value
+###       ] | @tsv
+###     ')
+### 
+###     # Kill spinner
+###     kill $SPINNER_PID 2>/dev/null
+###     wait $SPINNER_PID 2>/dev/null
+###     echo -en "\r\033[K"
+### 
+###     # Read into array (zsh-compatible way)
+###     lines=()
+###     while IFS= read -r line; do
+###       lines+=("$line")
+###     done <<< "$WEATHER_OUTPUT"
+### 
+###     # Initialize column widths (1-based for zsh)
+###     widths=( 0 0 0 0 0 0 )
+### 
+###     # Compute max width for each column
+###     for line in "${lines[@]}"; do
+###       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+###       [[ ${#t}    -gt ${widths[1]} ]] && widths[1]=${#t}
+###       [[ ${#tmp}  -gt ${widths[2]} ]] && widths[2]=${#tmp}
+###       [[ ${#w}    -gt ${widths[3]} ]] && widths[3]=${#w}
+###       [[ ${#p}    -gt ${widths[4]} ]] && widths[4]=${#p}
+###       [[ ${#r}    -gt ${widths[5]} ]] && widths[5]=${#r}
+###       [[ ${#desc} -gt ${widths[6]} ]] && widths[6]=${#desc}
+###     done
+### 
+###     # Print data rows:
+###     # columns 1-5 right-aligned (%*s), column 6 left-aligned (%-*s)
+###     for line in "${lines[@]}"; do
+###       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+###       printf "%*s | %*s | %*s | %*s | %*s | %-*s\n" \
+###         "${widths[1]}" "$t" \
+###         "${widths[2]}" "$tmp" \
+###         "${widths[3]}" "$w" \
+###         "${widths[4]}" "$p" \
+###         "${widths[5]}" "$r" \
+###         "${widths[6]}" "$desc"
+###     done
+### 
+###   )  # <<< end subshell
+### }
 # alias wt='clear; wth "49.2303,8.2505"'
-alias wt='clear; wth "49.2303485,8.2504211"'
+# alias wt='clear; wth "49.2303485,8.2504211"'
 # alias wt='clear; wth "49.23031918078996,8.250524609839939"'
 # alias wt='clear; wth "Zeiskam"'
 # alias wt='clear; wth "NYC"'
