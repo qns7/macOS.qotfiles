@@ -111,7 +111,7 @@ wth() {
     done
   )
 }
-# alias wt='clear; wth "49.2303,8.2505"'
+alias wt='clear; wth "49.2303,8.2505"'
 # alias wt='clear; wth "49.2303485,8.2504211"'
 # alias wt='clear; wth "49.23031918078996,8.250524609839939"'
 # alias wt='clear; wth "Zeiskam"'
