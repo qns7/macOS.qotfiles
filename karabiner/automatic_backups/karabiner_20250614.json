@@ -36,7 +36,7 @@
                         ]
                     },
                     {
-                        "description": "f19 : keyboard_backlight(+none) & fn - f19 : sleepnow(+none) & alt - f19 : toggle_brightness(+none)",
+                        "description": "f19 : keyboard_backlight(+none) & fn - f19 : sleepnow(+none) & cmd - f19 : toggle_brightness(+none)",
                         "manipulators": [
                             {
                                 "from": {
@@ -64,7 +64,7 @@
                                 "from": {
                                     "key_code": "f19",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -239,7 +239,7 @@
                                 "from": {
                                     "key_code": "f1",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -255,7 +255,7 @@
                                 "from": {
                                     "key_code": "f2",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -348,7 +348,7 @@
                                 "from": {
                                     "key_code": "f10",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -370,7 +370,7 @@
                                 "from": {
                                     "key_code": "f11",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -397,7 +397,7 @@
                                 "from": {
                                     "key_code": "f12",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
