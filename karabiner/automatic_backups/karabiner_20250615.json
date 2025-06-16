@@ -280,6 +280,17 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "f7",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [{ "consumer_key_code": "rewind" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "8",
                                     "modifiers": {
                                         "mandatory": ["left_control"],
@@ -291,9 +302,31 @@
                             },
                             {
                                 "from": {
+                                    "key_code": "f8",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [{ "consumer_key_code": "play_or_pause" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
                                     "key_code": "9",
                                     "modifiers": {
                                         "mandatory": ["left_control"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [{ "consumer_key_code": "fast_forward" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "f9",
+                                    "modifiers": {
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
