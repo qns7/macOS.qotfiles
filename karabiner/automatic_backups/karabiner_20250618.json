@@ -233,7 +233,7 @@
                         ]
                     },
                     {
-                        "description": "sf & brackets",
+                        "description": "alpha_sf(+none) & brackets",
                         "manipulators": [
                             {
                                 "from": {
@@ -353,7 +353,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "5",
+                                        "key_code": "8",
                                         "modifiers": ["left_option"]
                                     }
                                 ],
@@ -362,6 +362,38 @@
                             {
                                 "from": {
                                     "key_code": "9",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "0",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "hyphen",
                                     "modifiers": {
                                         "mandatory": ["left_control"],
                                         "optional": []
