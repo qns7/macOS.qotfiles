@@ -15,8 +15,8 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
 hyper - e : open_folder /Users/q/Developer
 
-ctrl + cmd - 8 : ~/bin/foobar_play
-ctrl + cmd - f8 : ~/bin/foobar_play
+# ctrl + cmd - 8 : ~/bin/foobar_play
+# ctrl + cmd - f8 : ~/bin/foobar_play
 mute : SwitchAudioSource -m toggle
 alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #
   fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"; sleep 0.37; osascript -e "set volume output volume 50"
