@@ -1,17 +1,32 @@
 #!/bin/bash
 
-### ~/bin/foobar_play
-### AUDIO_DIR="/System/Library/AssetsV2/com_apple_MobileAsset_ComfortSoundsAssets/5fc7b4c9d2edbceb5f660e31dc33f38989e57430.asset/AssetData"
 AUDIO_FILE='/Users/q/Documents/REAPER Media/macOSrain0525.flac'
 PID_FILE="/tmp/mpv_background.pid"
+AUDIO_LENGTH_SECONDS=$((34 * 60 + 37))
+
 if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
     kill -INT "$(cat "$PID_FILE")" 2>/dev/null
     rm -f "$PID_FILE"
 else
-    nohup mpv --gapless-audio --audio-display=no --volume=73 --loop=inf --start=34:27 "$AUDIO_FILE" & # 10s vor Ende (34:37)
+    RANDOM_START=$((RANDOM % AUDIO_LENGTH_SECONDS))
+    nohup mpv --gapless-audio --audio-display=no --volume=73 --loop=inf --start="$RANDOM_START" "$AUDIO_FILE" & 
     echo $! > "$PID_FILE"
 fi
+
 exit 0
+
+### ~/bin/foobar_play
+### AUDIO_DIR="/System/Library/AssetsV2/com_apple_MobileAsset_ComfortSoundsAssets/5fc7b4c9d2edbceb5f660e31dc33f38989e57430.asset/AssetData"
+# AUDIO_FILE='/Users/q/Documents/REAPER Media/macOSrain0525.flac'
+# PID_FILE="/tmp/mpv_background.pid"
+# if [[ -f "$PID_FILE" ]] && ps -p "$(cat "$PID_FILE")" > /dev/null 2>&1; then
+#     kill -INT "$(cat "$PID_FILE")" 2>/dev/null
+#     rm -f "$PID_FILE"
+# else
+#     nohup mpv --gapless-audio --audio-display=no --volume=73 --loop=inf --start=34:27 "$AUDIO_FILE" & # 10s vor Ende (34:37)
+#     echo $! > "$PID_FILE"
+# fi
+# exit 0
 
 # ### fixxed w/15.5 ??
 # if [ "$(defaults read com.apple.ComfortSounds "comfortSoundsEnabled")" == "0" ]; then
