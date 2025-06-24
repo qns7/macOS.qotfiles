@@ -2,7 +2,7 @@ ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
     ctrl + alt - q : return
     ctrl + alt + cmd - q : return
-ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service # some fix needed!
+ctrl - w : open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service; sleep 0.1; /opt/homebrew/bin/sketchybar --reload # some fix needed!
     ctrl + cmd - w [
         "SoundID Reference" : ~/bin/close_soundid; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
         * : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
@@ -138,7 +138,7 @@ ctrl + shift - d [
         # * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
         ]
 ctrl + shift + cmd - d [
-        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
+        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); # sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
         * : return
         ]
 # ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s ---> to ctrl - cmd - c
