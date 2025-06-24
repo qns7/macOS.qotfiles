@@ -122,7 +122,8 @@ alias gc="ghostty +show-config --default --docs > ~/Shelf/ghostty_man_cfg.txt"
 alias ww="wakeonlan F0:76:1C:D2:7F:C7"
 
 alias qu="cd ~/Qobuz-DL && git reset --hard HEAD && git pull origin main && echo '-------------------------------> update APP-ID, SECRET & TOKEN !!'"
-alias qs="cd ~/Qobuz-DL && npm i && npm run dev"
+# alias qs="cd ~/Qobuz-DL && npm audit fix && npm i && npm run dev" # sleep, close terminal, open http://localhost:3000 in firefox...
+alias qs="cd ~/Qobuz-DL && git restore package-lock.json && git pull && npm audit fix && npm i && npm run dev" # sleep, close terminal, open http://localhost:3000 in firefox...
 
 # Created by `pipx` on 2025-05-06 15:57:21
 export PATH="$PATH:/Users/q/.local/bin"

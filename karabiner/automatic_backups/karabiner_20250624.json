@@ -345,22 +345,6 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "7",
-                                    "modifiers": {
-                                        "mandatory": ["left_control"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "7",
-                                        "modifiers": ["left_shift", "left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
                                     "key_code": "8",
                                     "modifiers": {
                                         "mandatory": ["left_control"],
