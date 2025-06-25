@@ -31,7 +31,8 @@ else
             # if (( CURRENT_TIME - START_TIME >= 3 )); then
             CURRENT_TIME=$(date +%s.%N)
             ELAPSED=$(awk "BEGIN {print $CURRENT_TIME - $START_TIME}")
-            if (( $(echo "$ELAPSED >= 1.37" | bc -l) )); then
+            # from 1.37 to 1
+            if (( $(echo "$ELAPSED >= 1" | bc -l) )); then
                 SAVED_POS=$(cat "$POS_FILE")
                 cliclick m:$SAVED_POS
                 rm -f "$POS_FILE"
