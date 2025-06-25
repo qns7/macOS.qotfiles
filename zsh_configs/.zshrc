@@ -131,5 +131,5 @@ export PATH="$PATH:/Users/q/.local/bin"
 alias tb="toggle_brightness"
 alias qaa="osascript ~/bin/quit_all_apps.scpt"
 
-export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
-export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
+# export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
+# export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
