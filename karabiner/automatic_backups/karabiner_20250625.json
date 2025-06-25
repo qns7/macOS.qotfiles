@@ -271,7 +271,7 @@
                                 "from": {
                                     "key_code": "f7",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -282,7 +282,7 @@
                                 "from": {
                                     "key_code": "f8",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
@@ -293,7 +293,7 @@
                                 "from": {
                                     "key_code": "f9",
                                     "modifiers": {
-                                        "mandatory": ["option"],
+                                        "mandatory": ["command"],
                                         "optional": []
                                     }
                                 },
