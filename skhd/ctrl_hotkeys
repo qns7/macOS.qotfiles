@@ -48,7 +48,7 @@ ctrl - s : open_or_focus "Safari"
     ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 0.37; skhd -k "cmd - q"; sleep 1; open -a "System Settings"; sleep 1; open_or_focus "System Settings"; } # pgrep-yabai_query>cliclick-workaround-fix
     ctrl + alt + cmd - s : return
 ctrl - d : mouse_dock # feature-request: handle native-fullscreens, forward delete (stock)
-    # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock) (acc.force-click-function deactivated)
+    # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock) (acc.force-click-function deactivated) # acc?!?!?! according?
     ctrl + alt - d : ~/bin/show_desktop
     ctrl + alt + cmd - d [
         "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock)
