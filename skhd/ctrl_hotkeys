@@ -79,17 +79,17 @@ ctrl - 0x29 : return
 
 
 
-ctrl - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
-    ctrl + cmd - 0x32 : ~/bin/cliclick_focus
-    ctrl + alt - 0x32 : return
+ctrl - 0x32 : ~/bin/cliclick_focus
+    ctrl + cmd - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
+    ctrl + alt - 0x32 : return # right click?
     ctrl + alt + cmd - 0x32 : return
-ctrl - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
-    ctrl + cmd - y : cliclick m:+0,+21
-    ctrl + alt - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download
+ctrl - y : cliclick m:+0,+21
+    ctrl + cmd - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
+    ctrl + alt - y : return # middle click?
     # ctrl + alt + cmd - y : karabiner: yabai_focus_mouse
-ctrl - x : sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
-    ctrl + cmd - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
-    ctrl + alt - x : sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
+ctrl - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
+    ctrl + cmd - x : sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
+    ctrl + alt - x : sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7 # double click
     # ctrl + alt + cmd - x : karabiner: focus_trex, "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : ~/.config/sketchybar/plugins/click_date.sh
@@ -141,4 +141,5 @@ ctrl + shift + cmd - d [
         "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); # sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
         * : return
         ]
+ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download
 # ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s ---> to ctrl - cmd - c
