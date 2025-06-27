@@ -23,8 +23,8 @@ cmd - y [
     ]
 
 shift + alt + cmd - q : return # log out of your macOS user account immediately without confirming
-shift + cmd - backspace [
-    "Finder" : return # empty trash hotkey
+shift + alt + cmd - backspace [
+    "Finder" : return # empty trash w/o confirmation hotkey
     * ~
     ]
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
