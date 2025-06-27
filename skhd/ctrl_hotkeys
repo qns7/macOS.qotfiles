@@ -4,7 +4,7 @@ ctrl - q : open_or_focus "Notes"
     ctrl + alt + cmd - q : return
 ctrl - w : pgrep "TextEdit" >/dev/null && open_or_focus "TextEdit" || { open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service; sleep 0.1; /opt/homebrew/bin/sketchybar --reload; } # some fix needed!
     ctrl + cmd - w [
-        "SoundID Reference" : ~/bin/close_soundid; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
+        "SoundID Reference" : ~/bin/close_soundid; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script" : perhaps use just close_soundid
         * : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
         ]
     ctrl + alt - w : open_or_focus "Pages"
@@ -32,7 +32,7 @@ ctrl - u : return
     ctrl + alt - i : open_or_focus "IINA"
 ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (stock)
 ctrl - p : open_or_focus "Passwords" # removed from menubar again, move up one line (stock)
-    ctrl + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc'
+    ctrl + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc' : deprecated in Tahoe then...
     ctrl + alt + cmd - p : open_or_focus "PDFGear"
 # ctrl - 0x21 : up-left-quarter, cf. 'window_space_and_display_management'
 # ctrl - 0x1E : up-right-quarter, cf. 'window_space_and_display_management'
@@ -40,7 +40,7 @@ ctrl - p : open_or_focus "Passwords" # removed from menubar again, move up one l
 
 
 ctrl - a : pgrep "foobar2000" >/dev/null && open_or_focus "foobar2000" || { open -a "foobar2000"; sleep 0.37; skhd -k "cmd - q"; sleep 0.21; open -a "foobar2000"; sleep 1.37; open_or_focus "foobar2000"; } # pgrep-yabai_query>cliclick-workaround-fix, move to the beginning of the line or paragraph (stock)
-    # ctrl + cmd - a : make an alias of the selected item (stock)
+    # ctrl + cmd - a : make an alias of the selected item (stock) : perhaps just in finder and something different otherwise?
     ctrl + alt - a : ~/bin/foobar_play
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
@@ -61,7 +61,7 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
 ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
     ctrl + alt - g : open_or_focus "Guitar Pro 7"
     ctrl + cmd - g [
-        "Code" ~
+        "Code" ~ # jump to line (custom)
         * : return # ?
         ]
     #ctrl + cmd - g : open_or_focus "Guitar Pro 7"
@@ -85,7 +85,7 @@ ctrl - 0x32 : ~/bin/cliclick_focus
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : cliclick m:+0,+21
     ctrl + cmd - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
-    ctrl + alt - y : return # middle click?
+    ctrl + alt - y : return # middle click? war vorher ytdlp-script, aber das ist nun in shift area..
     # ctrl + alt + cmd - y : karabiner: yabai_focus_mouse
 ctrl - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + cmd - x : sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
