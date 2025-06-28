@@ -94,7 +94,7 @@ ctrl - 0x32 : ~/bin/cliclick_focus
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : cliclick m:+0,+21
     ctrl + cmd - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
-    ctrl + alt - y : return # middle click? war vorher ytdlp-script, aber das ist nun in shift area..
+    ctrl + alt - y : return # middle click?->not possible with cliclick war vorher ytdlp-script, aber das ist nun in shift area..
     # ctrl + alt + cmd - y : karabiner: yabai_focus_mouse
 ctrl - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + cmd - x : sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
