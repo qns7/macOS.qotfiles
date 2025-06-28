@@ -4,7 +4,7 @@ ctrl - q : open_or_focus "Notes"
     ctrl + alt + cmd - q : return
 ctrl - w : pgrep "TextEdit" >/dev/null && open_or_focus "TextEdit" || { open_or_focus "TextEdit"; sleep 0.37; /opt/homebrew/bin/yabai --restart-service; sleep 0.1; /opt/homebrew/bin/sketchybar --reload; } # some fix needed!
     ctrl + cmd - w [
-        "SoundID Reference" : ~/bin/close_soundid; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script" : perhaps use just close_soundid
+        "SoundID Reference" : ~/bin/close_soundid; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script" : perhaps use just/only close_soundid
         * : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
         ]
     ctrl + alt - w : open_or_focus "Pages"
@@ -31,9 +31,9 @@ ctrl - u : return
     ctrl + cmd - i : open_or_focus "Ipe"
     ctrl + alt - i : open_or_focus "IINA"
 ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (stock)
-ctrl - p : open_or_focus "Passwords" # removed from menubar again, move up one line (stock)
-    ctrl + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc' : deprecated in Tahoe then...
-    ctrl + alt + cmd - p : open_or_focus "PDFGear"
+ctrl - p : open_or_focus "PDFGear" # move up one line (stock)
+    ctrl + cmd - p : open_or_focus "Passwords" # removed from menubar again
+    # ctrl + alt + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc' : deprecated in Tahoe then...
 # ctrl - 0x21 : up-left-quarter, cf. 'window_space_and_display_management'
 # ctrl - 0x1E : up-right-quarter, cf. 'window_space_and_display_management'
 
@@ -41,7 +41,7 @@ ctrl - p : open_or_focus "Passwords" # removed from menubar again, move up one l
 
 ctrl - a : pgrep "foobar2000" >/dev/null && open_or_focus "foobar2000" || { open -a "foobar2000"; sleep 0.37; skhd -k "cmd - q"; sleep 0.21; open -a "foobar2000"; sleep 1.37; open_or_focus "foobar2000"; } # pgrep-yabai_query>cliclick-workaround-fix, move to the beginning of the line or paragraph (stock)
     # ctrl + cmd - a : make an alias of the selected item (stock) : perhaps just in finder and something different otherwise?
-    ctrl + alt - a : ~/bin/foobar_play
+    ctrl + alt - a : return
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
@@ -49,9 +49,15 @@ ctrl - s : open_or_focus "Safari"
     ctrl + alt + cmd - s : return
 ctrl - d : mouse_dock # feature-request: handle native-fullscreens, forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock) (acc.force-click-function deactivated) # acc?!?!?! according?
-    ctrl + alt - d : ~/bin/show_desktop
+    ctrl + alt - d [
+        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
+        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1737:1073; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
+        # * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
+        # * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
+        ]
     ctrl + alt + cmd - d [
-        "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock)
+        "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock), shift + alt - d is desktop
+        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); # sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
         * : open_folder ~/Downloads
         ]
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
@@ -81,7 +87,7 @@ ctrl - 0x29 : return
 
 ctrl - 0x32 : ~/bin/cliclick_focus
     ctrl + cmd - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
-    ctrl + alt - 0x32 : return # right click?
+    ctrl + alt - 0x32 : return # right click? ---> remember feature not bug: hold ctrl :-)
     ctrl + alt + cmd - 0x32 : return
 ctrl - y : cliclick m:+0,+21
     ctrl + cmd - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
@@ -96,7 +102,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt - c : open_or_focus Calculator
     ctrl + alt + cmd - c : return
 ctrl - v : open_or_focus "Visual Studio Code"
-    ctrl + cmd - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
+    ctrl + cmd - v : return
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
     ctrl + alt + cmd - v : return
 ctrl - b : thunderbird_badge # move one character backward (stock)
@@ -129,17 +135,10 @@ ctrl + shift - t [ # "*go to middle of files* (Finder)": like so many: not liste
         "Finder" : echo -n "$(date +"%d.%m.%y" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" 
         * : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
         ]
-ctrl + shift - a : ~/bin/macos_background_noise # "native" still unreliable
+ctrl + shift - a : ~/bin/foobar_play
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
-ctrl + shift - d [
-        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
-        * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1737:1073; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
-        # * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1800:1131; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
-        # * : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --grid 1:1:0:0:1:1 && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
-        ]
-ctrl + shift + cmd - d [
-        "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); # sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
-        * : return
-        ]
+ctrl + shift - d : ~/bin/show_desktop # also remember feature not bug: hold ctrl :-)
 ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download
 # ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s ---> to ctrl - cmd - c
+ctrl + shift - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
+ctrl + shift - b : ~/bin/macos_background_noise # "native" still unreliable
