@@ -59,10 +59,6 @@ ctrl - d : mouse_dock # feature-request: handle native-fullscreens, forward dele
         "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock), shift + alt - d is desktop
         * : open_folder ~/Downloads
         ]
-        cmd - s [
-            "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); # sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
-            * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
-        ]
 ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Freeform"
