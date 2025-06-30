@@ -27,6 +27,10 @@ cmd - s [
     "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); # sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
     * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
 ]
+cmd - d [
+    "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
+    * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
+]
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
