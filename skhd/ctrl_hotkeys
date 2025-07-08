@@ -143,3 +143,4 @@ ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; s
 ctrl + shift - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
 ctrl + shift - b : ~/bin/macos_background_noise # "native" still unreliable
 ctrl + shift - m : killall mouseless; sleep 0.37; open -g -a Mouseless
+ctrl + shift - return : /Users/q/.config/sketchybar/plugins/click_week.sh
