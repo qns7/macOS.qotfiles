@@ -6,7 +6,8 @@ yabai -m space --create
 # APP NOT ONLY WINDOW! ---> change file-name soon!
 INDEX="$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
 APP_NAME=$(yabai -m query --windows --window | jq -r '.app')
-yabai -m query --windows | jq -c ".[] | select(.app == \"$APP_NAME\")" | while read -r win; do
+# 14:33, 08.07.25, TUE : only from the current space, not from all spaces
+yabai -m query --windows --space | jq -c ".[] | select(.app == \"$APP_NAME\")" | while read -r win; do
   WIN_ID=$(echo "$win" | jq -r '.id')
   yabai -m window "$WIN_ID" --space "$INDEX"
 done
