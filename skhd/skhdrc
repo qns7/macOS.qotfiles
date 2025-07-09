@@ -22,7 +22,7 @@ alt + cmd - 0x2A : skhd -k "fn + alt - 0x2A" # #
   fn + alt - 0x2A : SwitchAudioSource -s "MacBook Pro Speakers"; sleep 0.37; osascript -e "set volume output volume 50"
 fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
 
-# APP-SPECIFIC HOTKEYS with cmd and/or alt/opt or ... like in classy apps... OR JUST WITH MOUSELESS EVERYTHING BECAUSE IT'S PRETTY AWESOME ANA 'REMEMBERABLE'
+# APP-SPECIFIC HOTKEYS with cmd and/or alt/opt or ... like in classy apps... OR JUST WITH MOUSELESS EVERYTHING BECAUSE IT'S PRETTY AWESOME ANA 'REMEMBERABLE' - is doch schon geil die app-specifics
 cmd - s [
     "DeepL" : sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"'); # sleep 0.37; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
     * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
