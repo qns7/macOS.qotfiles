@@ -144,3 +144,7 @@ ctrl + shift - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
 ctrl + shift - b : ~/bin/macos_background_noise # "native" still unreliable
 ctrl + shift - m : killall mouseless; sleep 0.37; open -g -a Mouseless
 ctrl + shift - return : /Users/q/.config/sketchybar/plugins/click_week.sh
+# ctrl + shift - i : skhd -k "pageup"
+# ctrl + shift - k : skhd -k "pagedown"
+# ctrl + shift - j : skhd -k "home"
+# ctrl + shift - l : skhd -k "end"
