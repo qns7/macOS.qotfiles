@@ -21,7 +21,7 @@ else
     killall "SoundID Reference" &> /dev/null
     sleep 0.1
     open -a "SoundID Reference" &> /dev/null
-    sleep 4.2 # 3.7
+    sleep 4.9 # 4.2 # 3.7
     # /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
     /Users/q/bin/open_or_focus "SoundID Reference"
     sleep 0.1
