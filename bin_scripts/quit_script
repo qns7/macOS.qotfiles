@@ -33,9 +33,12 @@ case "$CURRENT_APP_ALT" in
         exit
         ;;
     "zoom.us") 
-        killall zoom.us
+        killall zoom.us &> /dev/null
         ;;
     # "LibreOffice") osascript -e 'tell application "LibreOffice" to quit' ;;
+    "calibre")
+        killall calibre &> /dev/null
+        ;;
     "Elgato Control Center")
         sketchybar --set elgato icon.color=0xff4e4e4e
         killall "Elgato Control Center" &> /dev/null
