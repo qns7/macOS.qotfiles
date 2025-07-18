@@ -9,44 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "rcmd - m/,/. : mousebuttons",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "pointing_button": "button1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "pointing_button": "button3" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "pointing_button": "button2" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "yabai_focus_mouse & focus_trex",
                         "manipulators": [
                             {
