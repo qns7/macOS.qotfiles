@@ -85,18 +85,18 @@ ctrl - 0x29 : return
 
 
 
-ctrl - 0x32 : ~/bin/cliclick_focus
-    ctrl + cmd - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
-    ctrl + alt - 0x32 : ~/bin/cliclick_focus # double click # return # right click? ---> remember feature not bug: hold ctrl :-)
+ctrl + cmd - 0x32 : ~/bin/cliclick_focus
+    ctrl - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
+    ctrl + alt - 0x32 : return # ~/bin/cliclick_focus # double click # return # right click? ---> remember feature not bug: hold ctrl :-)
     ctrl + alt + cmd - 0x32 : return
-# ctrl - y : karabiner: yabai_focus_mouse
-    ctrl + cmd - y : sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
-    ctrl + alt - y : cliclick m:+0,+21
+# ctrl + cmd - y : karabiner: yabai_focus_mouse
+    ctrl - y : skhd -k "hyper - y" # sleep 0.1; skhd -k "hyper - y" # full-screenshot, cf. 'skhdrc'
+    ctrl + alt - y : return # cliclick m:+0,+21
     ctrl + alt + cmd - y : return # middle click?->not possible with cliclick war vorher ytdlp-script, aber das ist nun in shift area..
-# ctrl - x : karabiner: focus_trex, "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
-    ctrl + cmd - x : sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
-    ctrl + alt - x : sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
-    ctrl + alt + cmd - x : sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
+# ctrl + cmd - x : karabiner: focus_trex, "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
+    ctrl - x : skhd -k "hyper - x" # sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
+    ctrl + alt - x : return # sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
+    ctrl + alt + cmd - x : return # sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
 ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + cmd - c : ~/.config/sketchybar/plugins/click_date.sh
     ctrl + alt - c : open_or_focus Calculator

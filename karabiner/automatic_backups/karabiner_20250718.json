@@ -43,17 +43,6 @@
                                 },
                                 "to": [{ "pointing_button": "button2" }],
                                 "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [{ "shell_command": "/Users/q/bin/cliclick_focus" }],
-                                "type": "basic"
                             }
                         ]
                     },
@@ -64,7 +53,7 @@
                                 "from": {
                                     "key_code": "z",
                                     "modifiers": {
-                                        "mandatory": ["left_control", "left_command"],
+                                        "mandatory": ["left_control"],
                                         "optional": []
                                     }
                                 },
@@ -75,7 +64,7 @@
                                 "from": {
                                     "key_code": "x",
                                     "modifiers": {
-                                        "mandatory": ["left_control", "left_command"],
+                                        "mandatory": ["left_control"],
                                         "optional": []
                                     }
                                 },
