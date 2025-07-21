@@ -6,7 +6,7 @@ pgrep -x foobar2000 && {
   OSPA=$(yabai -m query --spaces --space | jq -r '."index"')
   OPOS=$(cliclick p)
   open -a foobar2000
-#  sleep 0.1
+  sleep 0.01
   CLICLICK_DATA=$(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"')
   if [[ -z "$CLICLICK_DATA" ]]; then
      /opt/homebrew/bin/yabai --restart-service, sleep 0.37; /opt/homebrew/bin/sketchybar --update # /Users/q/bin/custom_wake
@@ -14,10 +14,10 @@ pgrep -x foobar2000 && {
   else
     cliclick "$CLICLICK_DATA"
   fi
-#  sleep 0.21
+  sleep 0.01
   yabai -m space --focus "$OSPA"
   cliclick m:"$OPOS"
   [[ $(yabai -m query --spaces --space | jq -r '.windows | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
-#  sleep 0.1
+  sleep 0.01
   sketchybar --update
 }
