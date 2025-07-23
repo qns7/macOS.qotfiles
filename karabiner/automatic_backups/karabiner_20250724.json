@@ -264,7 +264,7 @@
                                 "from": {
                                     "key_code": "7",
                                     "modifiers": {
-                                        "mandatory": ["fn"],
+                                        "mandatory": ["left_control"],
                                         "optional": []
                                     }
                                 },

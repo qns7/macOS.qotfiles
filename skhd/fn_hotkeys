@@ -3,15 +3,15 @@ fn - 0x35 : return # esc
 
 fn - 0x0A : return # ^
 fn - 1 : return
-  fn - 2 : skhd -t "²"
-  fn - 3 : skhd -t "³"
+  fn - 2 : skhd -t "²" # doesn't work in spotlight for example : different solution?
+  fn - 3 : skhd -t "³" # doesn't work in spotlight for example : different solution?
 fn - 4 : return
 fn - 5 : return
 fn - 6 : return
-  fn - 7 : skhd -k "alt - 8" # {
+  # fn - 7 : skhd -k "alt - 8" # { KARABINER: \ --- 9 dann auch löschen? - yes : testen... keycaps dann tauschen?
   fn - 8 : skhd -k "alt - 5" # [
   fn - 9 : skhd -k "alt - 6" # ]
-  fn - 0 : skhd -k "alt - 9" # }
+  # fn - 0 : skhd -k "alt - 9" # }
   fn - 0x1B : skhd -k "shift + alt - 7" # \
 fn - 0x18 : return # ´
   # fn - backspace/delete : (forward) delete (stock)
