@@ -3,21 +3,21 @@
 /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true
 pgrep -x foobar2000 && {
   # killall mpv
-  OSPA=$(yabai -m query --spaces --space | jq -r '."index"')
-  OPOS=$(cliclick p)
+  OSPA=$(/opt/homebrew/bin/yabai -m query --spaces --space | /opt/homebrew/bin/jq -r '."index"')
+  OPOS=$(/opt/homebrew/bin/cliclick p)
   open -a foobar2000
   sleep 0.1
-  CLICLICK_DATA=$(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"')
+  CLICLICK_DATA=$(/opt/homebrew/bin/yabai -m query --windows --window | /opt/homebrew/bin/jq -r '.frame | "c:\(.x + (.w/2) | floor),\(.y + .h - 49 | floor)"')
   if [[ -z "$CLICLICK_DATA" ]]; then
      /opt/homebrew/bin/yabai --restart-service, sleep 0.37; /opt/homebrew/bin/sketchybar --update # /Users/q/bin/custom_wake
                        # "yabai: '--restart-service,' is not a valid option!"" ???
   else
-    cliclick "$CLICLICK_DATA"
+    /opt/homebrew/bin/cliclick "$CLICLICK_DATA"
   fi
   sleep 0.01
-  yabai -m space --focus "$OSPA"
-  cliclick m:"$OPOS"
-  [[ $(yabai -m query --spaces --space | jq -r '.windows | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
+  /opt/homebrew/bin/yabai -m space --focus "$OSPA"
+  /opt/homebrew/bin/cliclick m:"$OPOS"
+  [[ $(/opt/homebrew/bin/yabai -m query --spaces --space | /opt/homebrew/bin/jq -r '.windows | length') == 0 ]] && /opt/homebrew/bin/cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
   sleep 0.01
-  sketchybar --update
+  /opt/homebrew/bin/sketchybar --update
 }
