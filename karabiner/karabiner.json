@@ -197,9 +197,9 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "k",
+                                    "key_code": "i",
                                     "modifiers": {
-                                        "mandatory": ["option", "command", "fn", "control"],
+                                        "mandatory": ["option", "command", "shift", "control"],
                                         "optional": []
                                     }
                                 },
