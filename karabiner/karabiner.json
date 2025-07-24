@@ -47,7 +47,7 @@
                         ]
                     },
                     {
-                        "description": "rcmd - m/,/. : mousebuttons",
+                        "description": "rcmd - n/m/,/. : mousebuttons",
                         "manipulators": [
                             {
                                 "from": {
