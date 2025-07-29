@@ -24,7 +24,7 @@ if [ -z "$BOQ" ]; then
     del_empty_spaces
     sketchybar --set front_app icon.color=0xffc7c7c7
 else
-    yabai -m space --focus $(yabai -m query --windows | jq -r 'map(select(.app == "Thunderbird")) | sort_by(.frame.w * .frame.h) | reverse | .[0].space')
+    yabai -m space --focus "$(yabai -m query --windows | jq -r 'map(select(.app == "Thunderbird")) | sort_by(.frame.w * .frame.h) | reverse | .[0].space')"
     # yabai -m query --windows | jq '.[] | select(.app=="Thunderbird") | .space' | head -n1
     open_or_focus "thunderbird"
 fi
