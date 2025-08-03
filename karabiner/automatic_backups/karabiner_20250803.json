@@ -543,10 +543,6 @@
                 }
             ],
             "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
-        },
-        {
-            "name": "OFF",
-            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
         }
     ]
 }
