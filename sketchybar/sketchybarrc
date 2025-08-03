@@ -5,10 +5,10 @@ export PLUGIN_DIR
 ITEM_DIR="$CONFIG_DIR/items"
 
 sketchybar --bar color=0xff000000 \
-                 height=45 \
+                 height=38 \
                  blur_radius=37 \
                  notch_width=220 \
-                 shadow=off #on # height before 38, 45 for countering rounded corners OR 44 with shadow OR both?
+                 shadow=on #on # height before 38, 45 for countering rounded corners OR 44 with shadow OR both?
 
 default=(
   icon.font="Chivo Mono:Regular:19.0" # Medium?
