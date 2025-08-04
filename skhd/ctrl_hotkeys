@@ -135,6 +135,7 @@ ctrl + shift - t [ # "*go to middle of files* (Finder)": like so many: not liste
         "Finder" : echo -n "$(date +"%d.%m.%y" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" 
         * : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
         ]
+ctrl + shift - p : open_or_focus "Photos" # "Pixelmator Pro" :-) buy?!... 15:45, 04.08.25, MON
 ctrl + shift - a : ~/bin/foobar_play          # |/
 #    fn + cmd + alt - down : ~/bin/foobar_play  |\ A R A B I N E R
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
