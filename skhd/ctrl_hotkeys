@@ -1,3 +1,5 @@
+ctrl - backspade : skhd -k "fn - backspace" # forward delete (stock)
+
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
     ctrl + alt - q : return
@@ -120,9 +122,9 @@ ctrl - 0x2B : return
 ctrl - 0x2F : return
 # ctrl - 0x2C : yabai--restart-service, cf. 'window_space_and_display_management'
 
-ctrl - space : skhd -k "0xB1" # spotlight
+ctrl - space : skhd -k "space" # "0xB1" # spotlight
     # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) (faster than 'Press *globe* key to')
-    ctrl + alt - space : return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
+    ctrl + alt - space : skhd -k "0xB1" # spotlight --- return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
     ctrl + alt + cmd - space : return
 # ctrl - arrows : left-half/center/fill/right-half cf. 'window_space_and_display_management'
 

@@ -17,7 +17,9 @@ yabai -m space --focus "$INDEX"
 # yabai -m window --space "${INDEX}"
 # yabai -m space --focus "${INDEX}"
 
-sleep 0.1
+sleep 1 # 0.1
 ~/bin/cliclick_focus
 sleep 0.1
+sketchybar --update
+sleep 2.1
 sketchybar --update
