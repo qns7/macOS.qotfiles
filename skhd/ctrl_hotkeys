@@ -1,4 +1,4 @@
-ctrl - backspade : skhd -k "fn - backspace" # forward delete (stock)
+ctrl - backspace : skhd -k "fn - backspace" # forward delete (stock)
 
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
