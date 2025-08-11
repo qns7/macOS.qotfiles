@@ -137,6 +137,7 @@ ctrl + shift - t [ # "*go to middle of files* (Finder)": like so many: not liste
         "Finder" : echo -n "$(date +"%d.%m.%y" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" 
         * : echo -n "$(date +"%H:%M, %d.%m.%y, %a" | tr '[:lower:]' '[:upper:]')" | pbcopy; skhd -k "cmd - v" # osascript ~/bin/paste_time_n_date.scpt, add the selected item to the sidebar (stock)
         ]
+    ctrl + shift + alt - t : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # just for testing after restart : adding " osascript -e 'tell application "System Events" to key up {shift, control, option, command}' " would reset the ...
 ctrl + shift - p : open_or_focus "Photos" # "Pixelmator Pro" :-) buy?!... 15:45, 04.08.25, MON
 ctrl + shift - a : ~/bin/foobar_play          # |/
 #    fn + cmd + alt - down : ~/bin/foobar_play  |\ A R A B I N E R
