@@ -5,3 +5,5 @@
 open -a "$1"
 sleep 0.1
 ~/bin/cliclick_focus
+# sleep 0.27
+# ~/bin/cliclick_focus

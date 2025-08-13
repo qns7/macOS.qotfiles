@@ -55,7 +55,7 @@ case "$CURRENT_APP_ALT" in
         ;;
 esac
 # sleep 0.37 # 0.73
-sleep 0.73 #0.37 # 1 # 2.1 # # # 
+sleep 0.37 # sleep 0.73 #0.37 # 1 # 2.1 # # # 
 if [[ $NUM_DISPLAYS -eq 1 ]]; then
     cliclick m:900,603
 elif [[ $CURRENT_DISPLAY == "$UUID_INBUILT_DISPLAY" ]]; then
@@ -65,7 +65,7 @@ else
 fi
 # ~/bin/cliclick_focus # # # 
 # sleep 0.1
-sleep 1 # # # 
+sleep 0.37 # sleep 1 # # # 
 [[ $(yabai -m query --spaces --display "$(display_query_cliclick)" | jq '.[] | select(."is-visible" == true) | ."windows" | length') == 0 ]] && cliclick c:. && osascript -e 'tell application "System Events" to set visible of every process whose visible is false to true'
 # sleep 0.1
 ~/bin/cliclick_focus
