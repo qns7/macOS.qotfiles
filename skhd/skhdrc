@@ -62,8 +62,8 @@ alt + cmd - 0x14 : skhd -k "0xA0"; sleep 0.1; [[ ! -f /tmp/mission_control.open 
 # 3: Move right a space : hyper - 2 (changed from ctrl - right)
 # 3: Quick Note : hyper - n (changed from fn/globe - q)
 # 4: Move focus to next window : hyper - tab (changed from cmd - `)
-alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
-    fn + alt - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
+alt + cmd - tab : ~/bin/custom_focus_next; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update # alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
+    fn + alt - tab : ~/bin/custom_focus_next; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update # skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
 # 4: Show contextual menu : ctrl - return (kept)
 # 6: Save picture of screen as a file : hyper - y (changed from shift + cmd - 3, thumbnail dragging for clipboard functionality, remember spacebar usage)
 # 6: Save picture of selected area as a file : hyper - x (changed from shift + cmd - 4, thumbnail dragging for clipboard functionality, remember spacebar usage)
