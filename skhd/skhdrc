@@ -74,4 +74,9 @@ alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketc
 # 11: Finder / Forward : cmd - right
 # 11: Finder / Back : cmd - left
 # 11: Finder / New Smart Folder : alt + cmd - n (normally stock?)
+# 11: Finder / Open in New Window : alt + cmd - down
+    # ctrl + cmd - n : new folder including selected items
+    # shift + cmd - n : new folder
+    # option + cmd - n : new smart folder
+    # cmd - n : new finder window
 ### all other shortcuts are deactivated (like ctrl - f1-f8)
