@@ -87,8 +87,8 @@ ctrl - 0x29 : return
 
 
 
-ctrl + cmd - 0x32 : ~/bin/cliclick_focus
-    ctrl - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
+ctrl + cmd - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc' ### ~/bin/cliclick_focus
+    ctrl - 0x32 : ~/bin/cliclick_focus ### skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc'
     ctrl + alt - 0x32 : return # ~/bin/cliclick_focus # double click # return # right click? ---> remember feature not bug: hold ctrl :-)
     ctrl + alt + cmd - 0x32 : return
 # ctrl + cmd - y : karabiner: yabai_focus_mouse
