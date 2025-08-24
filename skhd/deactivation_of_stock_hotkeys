@@ -30,5 +30,5 @@ shift + alt + cmd - backspace [
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
 # eventuell hier und auch in den anderen files (e.g. ctrl) noch hinzufügen wo die hotkeys/shortcuts definiert sind (e.g.: Finder, textfeld, ...)
 
-ctrl - tab : return # "alternative way to browser-tab-switchting"
+# ctrl - tab : return # "alternative way to browser-tab-switchting" ---> alt-tab app-specific swtiching! shift - tab is needed for focus fields reverse way..
 ctrl + shift - tab : return # "alternative way to browser-tab switchting"
