@@ -1,0 +1,63 @@
+#!/bin/bash
+
+pos=1
+while [[ "$#" -gt 0 ]]; do
+  case $1 in
+    -f|--focus)
+      if [ "$2" = "prev" ]; then
+        pos=-1
+      else
+        pos=1
+      fi
+      shift
+      ;;
+  esac
+  shift
+done
+
+cur="$(yabai -m query --windows --window)"
+app="$(printf '%s' "$cur" | jq -r '.app')"
+id="$(printf '%s' "$cur" | jq '.id')"
+
+# all windows of this app on current space, sorted by creation id
+wins="$(yabai -m query --windows --space | jq --arg app "$app" '[.[] | select(.app==$app) | .id] | sort')"
+len="$(printf '%s' "$wins" | jq 'length')"
+[ "$len" -eq 0 ] && exit 0
+
+idx="$(printf '%s' "$wins" | jq --argjson id "$id" 'index($id)')"
+if [ "$idx" = "null" ]; then
+  next="$(printf '%s' "$wins" | jq '.[0]')"
+else
+  next="$(printf '%s' "$wins" | jq --argjson idx "$idx" --argjson pos "$pos" --argjson len "$len" '.[(($idx + $pos + $len) % $len)]')"
+fi
+
+yabai -m window --focus "$next"
+
+# while [[ "$#" -gt 0 ]]
+#   do
+#     case $1 in
+#       -f|--focus)
+#         if [ "$2" = "prev" ]
+#         then
+#           pos=-1
+#         else
+#           pos=1
+#         fi
+#         ;;
+#     esac
+#     shift
+#   done
+
+# pos=${pos:-1}
+
+# focus="$(yabai -m query --windows | \
+#     jq -e --argjson pos $pos '(.[] | select(."has-focus")) as {$id, $app}
+#       | map( select( .app==$app and ((."is-hidden" or ."is-minimized") | not) ) )
+#       | sort_by(.space, .frame.x, .frame.y)
+#       | map(.id)
+#       | .[(index($id)+($pos))%length]'
+#   )"
+
+# yabai -m window --focus "$focus"
+
+# LAST FROM YABAI GITHUB THREAD : NOT WHAT I WANT!

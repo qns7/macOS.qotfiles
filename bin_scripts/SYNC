@@ -50,6 +50,10 @@ rsync -a /Users/q/bin/radio /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/keyboard_backlight /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/yabai_debug /Users/q/.config/bin_scripts/
 
+rsync -a /Users/q/bin/custom_focus_next /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/update_qobuz_env /Users/q/.config/bin_scripts/
+# focus_next_window and yt_dlp were just tests - not in use?! & fb_newip needs to be tested first.. 
+
 # ------- #
 
 rsync -a /Users/q/bin/quit_all_apps.scpt /Users/q/.config/bin_scripts/
