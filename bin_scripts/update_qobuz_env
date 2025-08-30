@@ -12,13 +12,13 @@ source "$VENV_DIR/bin/activate"
 CREDS=$(python3 "$PROJECT_DIR/main.py")
 # Example output: {'app_id': '798273057', 'secret': 'abb21364945c0583309667d13ca3d93a'}
 
-# Extract values using grep + sed
-NEW_APP_ID=$(echo "$CREDS" | grep -oP "'app_id': '\K[0-9]+")
-NEW_SECRET=$(echo "$CREDS" | grep -oP "'secret': '\K[a-z0-9]+")
+# Extract values using sed
+NEW_APP_ID=$(echo "$CREDS" | sed -n "s/.*'app_id': '\([0-9]\+\)'.*/\1/p")
+NEW_SECRET=$(echo "$CREDS" | sed -n "s/.*'secret': '\([a-z0-9]\+\)'.*/\1/p")
 
 # Read current values from .env
-CURRENT_APP_ID=$(grep -oP '^QOBUZ_APP_ID\s*=\s*\K[0-9]+' "$ENV_FILE")
-CURRENT_SECRET=$(grep -oP '^QOBUZ_SECRET\s*=\s*\K[a-z0-9]+' "$ENV_FILE")
+CURRENT_APP_ID=$(sed -n "s/^QOBUZ_APP_ID\s*=\s*\([0-9]\+\)/\1/p" "$ENV_FILE")
+CURRENT_SECRET=$(sed -n "s/^QOBUZ_SECRET\s*=\s*\([a-z0-9]\+\)/\1/p" "$ENV_FILE")
 
 # Compare
 if [[ "$NEW_APP_ID" == "$CURRENT_APP_ID" && "$NEW_SECRET" == "$CURRENT_SECRET" ]]; then
@@ -33,3 +33,40 @@ fi
 
 # Deactivate virtual environment
 deactivate
+
+
+# #!/bin/bash
+
+# # Path to your project
+# PROJECT_DIR="$HOME/Qobuz-DL"
+# ENV_FILE="$PROJECT_DIR/.env"
+# VENV_DIR="$PROJECT_DIR/venv"
+
+# # Activate virtual environment
+# source "$VENV_DIR/bin/activate"
+
+# # Fetch current APP_ID and SECRET using Python script
+# CREDS=$(python3 "$PROJECT_DIR/main.py")
+# # Example output: {'app_id': '798273057', 'secret': 'abb21364945c0583309667d13ca3d93a'}
+
+# # Extract values using grep + sed
+# NEW_APP_ID=$(echo "$CREDS" | grep -oP "'app_id': '\K[0-9]+")
+# NEW_SECRET=$(echo "$CREDS" | grep -oP "'secret': '\K[a-z0-9]+")
+
+# # Read current values from .env
+# CURRENT_APP_ID=$(grep -oP '^QOBUZ_APP_ID\s*=\s*\K[0-9]+' "$ENV_FILE")
+# CURRENT_SECRET=$(grep -oP '^QOBUZ_SECRET\s*=\s*\K[a-z0-9]+' "$ENV_FILE")
+
+# # Compare
+# if [[ "$NEW_APP_ID" == "$CURRENT_APP_ID" && "$NEW_SECRET" == "$CURRENT_SECRET" ]]; then
+#     echo "No update needed. .env is up to date."
+# else
+#     echo "Updating .env with new credentials..."
+#     # Use sed to replace the values
+#     sed -i.bak -E "s/^(QOBUZ_APP_ID\s*=\s*).*/\1$NEW_APP_ID/" "$ENV_FILE"
+#     sed -i.bak -E "s/^(QOBUZ_SECRET\s*=\s*).*/\1$NEW_SECRET/" "$ENV_FILE"
+#     echo ".env updated. Backup saved as .env.bak"
+# fi
+
+# # Deactivate virtual environment
+# deactivate

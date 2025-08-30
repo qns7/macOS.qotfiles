@@ -126,8 +126,7 @@ alias qu="cd ~/Qobuz-DL && git reset --hard HEAD && git pull origin main && echo
 # alias qs='~/bin/update_qobuz_env && sleep 0.37 && CURRENT=$(npm -v) && LATEST=$(npm view npm version) && [ "$CURRENT" != "$LATEST" ] && npm install -g npm@latest; cd ~/Qobuz-DL && git restore package-lock.json && git pull && npm audit fix && npm i && npm run dev' # "cd ~/Qobuz-DL && git restore package-lock.json && git pull && npm audit fix && npm i && npm run dev" # sleep, close terminal, open http://localhost:3000 in firefox...
 
 qs() {
-    set -e
-    echo "=== Checking npm version ==="
+    echo "Checking npm version..."
     CURRENT=$(npm -v)
     LATEST=$(npm view npm version)
     if [ "$CURRENT" != "$LATEST" ]; then
@@ -136,16 +135,16 @@ qs() {
     else
         echo "npm is up to date ($CURRENT)."
     fi
-    echo "=== Updating Qobuz credentials ==="
+    echo "Updating Qobuz credentials..."
     ~/bin/update_qobuz_env
-    echo "=== Updating project repository ==="
+    echo "Updating project repository..."
     cd ~/Qobuz-DL
     git restore package-lock.json
     git pull
-    echo "=== Fixing vulnerabilities and installing dependencies ==="
+    echo "Fixing vulnerabilities and installing dependencies..."
     npm audit fix
     npm install
-    echo "=== Starting development server ==="
+    echo "Starting development server..."
     npm run dev
 }
 
