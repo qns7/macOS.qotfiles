@@ -20,7 +20,7 @@ fn - tab : return
   fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
 fn - w : return
   fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
-fn - r : return
+fn - r : skhd -k "hyper - r"
 fn - t : open_or_focus "Strobe Tuner"; sleep 1; skhd -k "fn + ctrl - c"
 fn - z : return
 fn - u : return

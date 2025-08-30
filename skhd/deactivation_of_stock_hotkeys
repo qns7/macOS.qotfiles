@@ -27,6 +27,10 @@ shift + alt + cmd - backspace [
     "Finder" : return # empty trash w/o confirmation hotkey
     * ~
     ]
+alt + cmd - backspace [
+    "Finder" : return # delete w/o confirmation hotkey
+    * ~
+    ]
 # irgendwann hier dediziert auch noch alle anderen (aktiven) auflisten. 
 # eventuell hier und auch in den anderen files (e.g. ctrl) noch hinzufügen wo die hotkeys/shortcuts definiert sind (e.g.: Finder, textfeld, ...)
 

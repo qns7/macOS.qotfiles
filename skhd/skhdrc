@@ -15,6 +15,10 @@ cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
 hyper - e : open_folder /Users/q/Developer
 # hyper - t : open_or_focus ~/Applications/StroboTuner.app; sleep 1; skhd -k "fn + ctrl - c"
+space [
+    "OBS Studio" : skhd -k "hyper - r"
+    * ~
+]
 
 # ctrl + cmd - 8 : ~/bin/foobar_play
 # ctrl + cmd - f8 : ~/bin/foobar_play
