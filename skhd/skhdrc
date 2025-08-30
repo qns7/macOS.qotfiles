@@ -14,7 +14,7 @@ alt - delete : skhd -k "shift + alt - right"; skhd -k "delete" # desirably stock
 cmd - delete : skhd -k "shift + cmd - right"; skhd -k "delete" # desirably stock
 
 hyper - e : open_folder /Users/q/Developer
-hyper - t : open_or_focus ~/Applications/StroboTuner.app; sleep 1; skhd -k "fn + ctrl - c"
+# hyper - t : open_or_focus ~/Applications/StroboTuner.app; sleep 1; skhd -k "fn + ctrl - c"
 
 # ctrl + cmd - 8 : ~/bin/foobar_play
 # ctrl + cmd - f8 : ~/bin/foobar_play

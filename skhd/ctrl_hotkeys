@@ -30,8 +30,8 @@ ctrl - r : open_or_focus Reaper
 ctrl - z : open_or_focus "zoom.us"
 ctrl - u : return
 # ctrl - i : karabiner: up, ... (stock)?
-    ctrl + cmd - i : open_or_focus "Ipe"
-    ctrl + alt - i : open_or_focus "IINA"
+    #ctrl + cmd - i : open_or_focus "Ipe"  O   O R E D E N   O K !  ---> ?
+    #ctrl + alt - i : open_or_focus "IINA"  F C U S   O S T W R  !  ---> to v
 ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (stock)
 ctrl - p : open_or_focus "PDFGear" # move up one line (stock)
     ctrl + cmd - p : open_or_focus "Passwords" # removed from menubar again
@@ -104,7 +104,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
     ctrl + alt - c : open_or_focus Calculator
     ctrl + alt + cmd - c : return
 ctrl - v : open_or_focus "Visual Studio Code"
-    ctrl + cmd - v : return
+    ctrl + cmd - v : open_or_focus "IINA"
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
     ctrl + alt + cmd - v : return
 ctrl - b : thunderbird_badge # move one character backward (stock)

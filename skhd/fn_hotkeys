@@ -21,7 +21,7 @@ fn - tab : return
 fn - w : return
   fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
 fn - r : return
-fn - t : return
+fn - t : open_or_focus "Strobe Tuner"; sleep 1; skhd -k "fn + ctrl - c"
 fn - z : return
 fn - u : return
 # fn - i : cf. 'window_space_and_display_management'
