@@ -25,7 +25,7 @@ ctrl - r : open_or_focus Reaper
     #     "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.4 && echo "cd '$(cat /tmp/finder_path)'; clear" | pbcopy && skhd -k "cmd - v" && osascript -e 'tell application "System Events" to key code 36' # osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # also an option in systemSettings/Keyboard/KeyboardShortcuts/Services/.. like many others
     #     * : open ~/.Trash; sleep 0.37; ~/bin/cliclick_focus
     #     ]
-        ctrl + alt - t : open ~/.Trash && sleep 0.37 && ~/bin/cliclick_focus && yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+        ctrl + alt - t : skhd -k "ctrl - e"; sleep 0.37; skhd -k "shift + cmd - g"; sleep 0.1; skhd -t "trash"; sleep 0.1; skhd -k "return" # open ~/.Trash && sleep 0.37 && ~/bin/cliclick_focus && yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
     ctrl + alt + cmd - t : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.4 && echo "cd '$(cat /tmp/finder_path)'; clear" | pbcopy && skhd -k "cmd - v" && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "Ghostty"; sleep 0.17; skhd -k "fn + ctrl - c"
 
 ctrl - z : open_or_focus "zoom.us"
