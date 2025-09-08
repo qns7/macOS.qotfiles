@@ -42,6 +42,10 @@ cmd - f [
     "Foobar2000" : cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w*3/4) | floor),\(.y + .h - 95 | floor)"')
     * ~
 ]
+# cmd - p [
+#     "Finder" : *print*?! and then killall preview - how to?
+#     * ~
+# ]
 
 .load "q1_specific"
 .load "deactivation_of_stock_hotkeys"
