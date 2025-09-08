@@ -110,7 +110,7 @@ ctrl - c : skhd -k "hyper - c" # trex (ocr)
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : open_or_focus "IINA"
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
-    ctrl + alt + cmd - v : return
+    ctrl + alt + cmd - v : skhd -k "hyper - v" # for obs virtual cam
 ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + cmd - b : return
     ctrl + alt - b : return
@@ -121,7 +121,7 @@ ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
         "Finder" ~ # create a new folder that contains the currently selected items (stock) *REMEMBER!*
         * : threema_start 
         ]
-ctrl - m : open_or_focus "Jitsi Meet" # midi signal event viewer
+ctrl - m : open_or_focus "Facetime" # "Jitsi Meet" (conference) room starten is kacke... selbst hosten oder wie? ... oder halt facetime nutzen (mit funktionierendem OBS) # midi signal event viewer
 ctrl - 0x2B : return
 ctrl - 0x2F : return
 # ctrl - 0x2C : yabai--restart-service, cf. 'window_space_and_display_management'
