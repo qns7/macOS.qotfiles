@@ -117,7 +117,7 @@ ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + alt + cmd - b : return
 
 ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
-    # ctrl + cmd - n [
+    # ctrl + cmd - n [ # USE JUST FOR FINDER THING!... to confusing / to many errors in daily use^^
     #     "Finder" ~ # create a new folder that contains the currently selected items (stock) *REMEMBER!*
     #     * : threema_start 
     #     ]
