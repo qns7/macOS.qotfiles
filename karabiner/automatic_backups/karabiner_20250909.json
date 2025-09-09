@@ -374,29 +374,6 @@
                         ]
                     },
                     {
-                        "description": "DOESN'T WORK --- Map ctrl+cmd+space to fn (single tap, no modifiers)",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "simultaneous": [
-                                        { "key_code": "left_control" },
-                                        { "key_code": "left_command" },
-                                        { "key_code": "spacebar" }
-                                    ],
-                                    "simultaneous_options": {
-                                        "detect_key_down_uninterruptedly": true,
-                                        "key_down_order": "insensitive",
-                                        "key_up_order": "insensitive"
-                                    }
-                                },
-                                "to": [{ "key_code": "fn" }],
-                                "to_if_alone": [{ "key_code": "fn" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "tab : left_ctrl(+all) / tab(+all)",
                         "enabled": false,
                         "manipulators": [

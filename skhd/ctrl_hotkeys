@@ -117,10 +117,11 @@ ctrl - b : thunderbird_badge # move one character backward (stock)
     ctrl + alt + cmd - b : return
 
 ctrl - n : open_or_focus "WhatsApp" # move down one line (stock)
-    ctrl + cmd - n [
-        "Finder" ~ # create a new folder that contains the currently selected items (stock) *REMEMBER!*
-        * : threema_start 
-        ]
+    # ctrl + cmd - n [
+    #     "Finder" ~ # create a new folder that contains the currently selected items (stock) *REMEMBER!*
+    #     * : threema_start 
+    #     ]
+    ctrl + alt - n : threema_start
 ctrl - m : pgrep -x "FaceTime" >/dev/null && open_or_focus "FaceTime" || { open_or_focus "FaceTime"; sleep 1.37; /opt/homebrew/bin/yabai --restart-service; sleep 0.1; /opt/homebrew/bin/sketchybar --reload; } # open_or_focus "Facetime" # "Jitsi Meet" (conference) room starten is kacke... selbst hosten oder wie? ... oder halt facetime nutzen (mit funktionierendem OBS) # midi signal event viewer
 ctrl - 0x2B : return
 ctrl - 0x2F : return
