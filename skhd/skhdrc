@@ -53,6 +53,7 @@ cmd - f [
 .load "ctrl_hotkeys"
 .load "fn_hotkeys"
 
+# to have stock ctrl stuff available:
 .blacklist [
 "Ghostty"
 "iTerm2"
