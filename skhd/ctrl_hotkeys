@@ -9,12 +9,12 @@ ctrl - q : open_or_focus "Notes"
 ctrl - w : pgrep "TextEdit" >/dev/null && open_or_focus "TextEdit" || { open_or_focus "TextEdit"; sleep 1.37; /opt/homebrew/bin/yabai --restart-service; sleep 0.1; /opt/homebrew/bin/sketchybar --reload; } # some fix needed!
     ctrl + cmd - w [
         "SoundID Reference" : ~/bin/close_soundid; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script" : perhaps use just/only close_soundid
-        * : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; sleep 1.73; sketchybar --update # "close_script"
+        * : skhd -k "cmd - w"; sleep 0.37; ~/bin/cliclick_focus; sleep 0.07; sketchybar --update; yabai -m window --focus mouse; ~/bin/cliclick_focus; sleep 1.73; sketchybar --update # "close_script"
         ]
     ctrl + alt - w : open_or_focus "Pages"
     # ctrl + alt + cmd - w : new-space-move, cf. 'window_space_and_display_management'
 ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
-    ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.07; ~/bin/cliclick_focus
+    ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.21; ~/bin/cliclick_focus
     ctrl + alt - e : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down"; sleep 0.37; open_or_focus "Karabiner-Elements") || open_or_focus "Karabiner-Elements"
     # ctrl + alt + cmd - e : cf. alternative-display-change, 'window_space_and_display_management'
 ctrl - r : open_or_focus Reaper
@@ -27,7 +27,7 @@ ctrl - r : open_or_focus Reaper
     #     "Finder" : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.4 && echo "cd '$(cat /tmp/finder_path)'; clear" | pbcopy && skhd -k "cmd - v" && osascript -e 'tell application "System Events" to key code 36' # osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.37 && osascript -e 'tell application "System Events" to keystroke "cd \"$(cat /tmp/finder_path)\"; clear;"' && osascript -e 'tell application "System Events" to key code 36' # also an option in systemSettings/Keyboard/KeyboardShortcuts/Services/.. like many others
     #     * : open ~/.Trash; sleep 0.37; ~/bin/cliclick_focus
     #     ]
-        ctrl + alt - t : skhd -k "ctrl - e"; sleep 1; skhd -k "shift + cmd - g"; sleep 0.21; skhd -t "trash"; sleep 0.1; skhd -k "return" # 0.73 to 1 and 0.1 to 0.21 # open ~/.Trash && sleep 0.37 && ~/bin/cliclick_focus && yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+        ctrl + alt - t : skhd -k "ctrl - e"; sleep 1.73; skhd -k "shift + cmd - g"; sleep 0.21; skhd -t "trash"; sleep 0.1; skhd -k "return" # 0.73 to 1 and 0.1 to 0.21 # open ~/.Trash && sleep 0.37 && ~/bin/cliclick_focus && yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
     ctrl + alt + cmd - t : osascript ~/bin/focused_finder_path.scpt && skhd -k "ctrl - t" && sleep 0.4 && echo "cd '$(cat /tmp/finder_path)'; clear" | pbcopy && skhd -k "cmd - v" && osascript -e 'tell application "System Events" to key code 36' # open_or_focus "Ghostty"; sleep 0.17; skhd -k "fn + ctrl - c"
 
 ctrl - z : open_or_focus "zoom.us"
