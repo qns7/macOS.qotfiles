@@ -10,10 +10,12 @@ if [ -f "$POS_FILE" ]; then
         kill "$(cat "$WATCHER_PID_FILE")" 2>/dev/null
         rm -f "$WATCHER_PID_FILE"
     fi
+    cliclick m:+0,+1 && cliclick m:+0,-1
 else
     OPOS=$(cliclick p)
     echo "$OPOS" > "$POS_FILE"
     cliclick m:0,$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor') / 2))
+    # move a bit left to get dock in fullscreen
     (
         PREV_POS=$(cliclick p)
         # START_TIME=$(date +%s)
@@ -44,6 +46,6 @@ else
         done
     ) & echo $! > "$WATCHER_PID_FILE"
 fi
-cliclick m:+0,+1 && cliclick m:+0,-1
+# cliclick m:+0,+1 && cliclick m:+0,-1
 
 # CHECK FOR NATIVE FULLSCREEN AND ADAPT ?! moving further left while holding on trackpad, what on mouse? and how to implement this?
