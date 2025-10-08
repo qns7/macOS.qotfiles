@@ -6,5 +6,6 @@
 # COM=$(yabai -m query --windows --space | jq --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id]')
 # COM=$(yabai -m query --windows --space | jq -r --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id] | last')
 # COM=$(yabai -m query --windows --window | jq -r '.app')
-COM=$(yabai -m query --windows --space)
+# COM=$(yabai -m query --windows --space)
+COM=$(yabai -m space --create)
 echo "$COM" > ~/Desktop/yabai_debug.txt
