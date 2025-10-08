@@ -73,7 +73,8 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Freeform"
     ctrl + alt + cmd - f : open_or_focus "Feedback Assistant"
-ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
+# ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
+ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "ChatGPT" || (open_or_focus "ChatGPT" && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
     ctrl + alt - g : open_or_focus "Guitar Pro 7"
     ctrl + cmd - g [
         "Code" ~ # jump to line (custom)
@@ -81,7 +82,8 @@ ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/Ch
         ]
     #ctrl + cmd - g : open_or_focus "Guitar Pro 7"
     #ctrl + alt - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower, search-function now available though
-    ctrl + alt + cmd - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
+    #ctrl + alt + cmd - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
+    ctrl + alt + cmd - g :  pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
 
 ctrl - h : return # backspace/delete (stock)
 # ctrl - j : karabiner: left
