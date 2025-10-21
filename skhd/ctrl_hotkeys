@@ -13,7 +13,7 @@ ctrl - w : pgrep "TextEdit" >/dev/null && open_or_focus "TextEdit" || { open_or_
         ]
     ctrl + alt - w : open_or_focus "Pages"
     # ctrl + alt + cmd - w : new-space-move, cf. 'window_space_and_display_management'
-ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock)
+ctrl - e : open_folder /Users/q/Shelf # move to the end of a line or paragraph (stock) # ALSO MOVE IT TO CURRENT DISPLAY !! --- very weird behavior when both screens have finder windows... FIXXX!!!! !!!!
     ctrl + cmd - e : osascript -e 'tell application "System Events" to tell process "Finder" to set frontmost to true'; sleep 0.21; ~/bin/cliclick_focus
     ctrl + alt - e : ! pgrep -x "Karabiner-Elements" > /dev/null && (open_or_focus "Karabiner-Elements"; sleep 0.37; open_or_focus "Karabiner-Elements"; sleep 0.1; skhd -k "ctrl - down"; sleep 0.37; open_or_focus "Karabiner-Elements") || open_or_focus "Karabiner-Elements"
     # ctrl + alt + cmd - e : cf. alternative-display-change, 'window_space_and_display_management'
