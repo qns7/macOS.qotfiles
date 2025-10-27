@@ -44,6 +44,11 @@ case "$CURRENT_APP_ALT" in
         killall "Elgato Control Center" &> /dev/null
         # osascript -e 'tell application "Elgato Control Center" to quit'
         ;;
+    "Mouseless")
+        killall mouseless &> /dev/null
+        sleep 2 # 1.37
+        open_or_focus "Mouseless"
+        ;;
     *) 
         if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
             killall WhatsApp &> /dev/null

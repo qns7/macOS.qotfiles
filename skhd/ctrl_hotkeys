@@ -74,7 +74,7 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     ctrl + alt - f : open_or_focus "Freeform"
     ctrl + alt + cmd - f : open_or_focus "Feedback Assistant"
 # ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
-ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "ChatGPT" || (open_or_focus "ChatGPT" && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
+ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/Applications/ChatGPT.app" || (open_or_focus "ChatGPT" && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
     ctrl + alt - g : open_or_focus "Guitar Pro 7"
     ctrl + cmd - g [
         "Code" ~ # jump to line (custom)

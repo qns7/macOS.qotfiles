@@ -47,7 +47,7 @@
                         ]
                     },
                     {
-                        "description": "rcmd - n/m/,/. : mousebuttons",
+                        "description": "rcmd - n/m/,/. : mousebuttons (rcmd not recognized as optional on internal..)",
                         "manipulators": [
                             {
                                 "from": {
@@ -520,10 +520,7 @@
                         "product_id": 258,
                         "vendor_id": 13364
                     },
-                    "manipulate_caps_lock_led": false
-                },
-                {
-                    "identifiers": { "is_keyboard": true },
+                    "ignore_vendor_events": true,
                     "manipulate_caps_lock_led": false
                 }
             ],

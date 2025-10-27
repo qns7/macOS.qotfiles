@@ -1,87 +1,105 @@
 {
-  "$schema": "https://schema.linearmouse.app/0.10.1-beta.2",
-  "schemes": [
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
+  "schemes" : [
     {
-      "buttons": {
-        "clickDebouncing": {
-          "buttons": [3, 4, 2],
-          "timeout": 500
+      "buttons" : {
+        "clickDebouncing" : {
+          "buttons" : [
+            3,
+            4,
+            2
+          ],
+          "timeout" : 500
         },
-        "mappings": [
+        "mappings" : [
           {
-            "button": 0,
-            "action": "mouse.button.left",
-            "control": true
+            "action" : "mouse.button.left",
+            "button" : 0,
+            "control" : true
           },
           {
-            "button": 3,
-            "action": { "run": "/opt/homebrew/bin/skhd -k 'fn - y'" },
-            "control": true
+            "action" : {
+              "run" : "\/opt\/homebrew\/bin\/skhd -k 'fn - y'"
+            },
+            "button" : 3,
+            "control" : true
           },
           {
-            "button": 4,
-            "action": { "run": "/bin/bash -c '/Users/q/.config/sketchybar/plugins/click_week.sh'" },
-            "control": true
+            "action" : {
+              "run" : "\/bin\/bash -c '\/Users\/q\/.config\/sketchybar\/plugins\/click_week.sh'"
+            },
+            "button" : 4,
+            "control" : true
           },
           {
-            "button": 3,
-            "action": { "keyPress": ["command", "0"] },
-            "option": true
+            "action" : {
+              "keyPress" : [
+                "command",
+                "0"
+              ]
+            },
+            "button" : 3,
+            "option" : true
           },
           {
-            "button": 4,
-            "action": "smartZoom",
-            "option": true
+            "action" : "smartZoom",
+            "button" : 4,
+            "option" : true
           },
           {
-            "button": 0,
-            "action": { "keyPress": ["option", "command", "arrowLeft"] },
-            "command": true,
-            "option": true
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
+                "arrowLeft"
+              ]
+            },
+            "button" : 0,
+            "command" : true,
+            "option" : true
           },
           {
-            "button": 1,
-            "action": { "keyPress": ["option", "command", "arrowRight"] },
-            "command": true,
-            "option": true
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
+                "arrowRight"
+              ]
+            },
+            "button" : 1,
+            "command" : true,
+            "option" : true
           }
         ],
-        "universalBackForward": true
+        "universalBackForward" : true
       },
-
-      
-      "if": {
-        "device": {
-          "category": "mouse",
-          "productID": "0x82a",
-          "productName": "Microsoft Pro Intellimouse",
-          "vendorID": "0x45e"
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x82a",
+          "productName" : "Microsoft Pro Intellimouse",
+          "vendorID" : "0x45e"
         }
       },
-
-      
-      "pointer": {
-        "acceleration": 0,
-        "speed": 0.5
+      "pointer" : {
+        "acceleration" : 0,
+        "speed" : 0.5
       },
-
-      
-      "scrolling": {
-        "acceleration": 2.1,
-        "distance": "auto",
-        "modifiers": {
-          "option": {
-            "scale": 10,
-            "type": "changeSpeed"
+      "scrolling" : {
+        "acceleration" : 2.1,
+        "distance" : "auto",
+        "modifiers" : {
+          "option" : {
+            "scale" : 10,
+            "type" : "changeSpeed"
           }
         },
-        "reverse": { "vertical": true },
-        "speed": 21
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : 21
       }
     },
-
-
-
     {
       "buttons" : {
         "mappings" : [
@@ -95,30 +113,40 @@
           }
         ]
       },
-
-      
-      "if": {
-        "device": {
-          "category": "trackpad",
-          "productID": "0x0",
-          "productName": "Apple Internal Keyboard / Trackpad",
-          "vendorID": "0x0"
+      "if" : {
+        "device" : {
+          "category" : "trackpad",
+          "productID" : "0x0",
+          "productName" : "Apple Internal Keyboard \/ Trackpad",
+          "vendorID" : "0x0"
         }
       },
-      
-      
-      "pointer": {
-        "acceleration": 2,
-        "speed": 1
+      "pointer" : {
+        "acceleration" : 2,
+        "speed" : 1
       },
-      
-      
-      "scrolling": {
-        "modifiers": {
-          "option": {
-            "scale": 7,
-            "type": "changeSpeed"
+      "scrolling" : {
+        "modifiers" : {
+          "option" : {
+            "scale" : 7,
+            "type" : "changeSpeed"
           }
+        }
+      }
+    },
+    {
+      "buttons" : {
+        "mappings" : [
+
+        ]
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x27da",
+          "productName" : "Karabiner DriverKit VirtualHIDPointing 1.8.0",
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
+          "vendorID" : "0x16c0"
         }
       }
     }

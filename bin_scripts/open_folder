@@ -1,7 +1,7 @@
 #!/bin/bash
 
 osascript -e 'tell application "Finder" to make new Finder window to (POSIX file "'"$1"'")'
-open_or_focus "Finder" && yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+open_or_focus "Finder" && sleep 0.37 && yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
 # sleep 0.73
 # yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus --- see above - is this the way in general perhaps? time tells - testing..!
 # open $1

@@ -7,5 +7,8 @@
 # COM=$(yabai -m query --windows --space | jq -r --arg app "$(yabai -m query --windows --window | jq -r '.app')" '[.[] | select(.app == $app) | .id] | last')
 # COM=$(yabai -m query --windows --window | jq -r '.app')
 # COM=$(yabai -m query --windows --space)
-COM=$(yabai -m space --create)
-echo "$COM" > ~/Desktop/yabai_debug.txt
+# COM=$(yabai -m space --create)
+# echo "$COM" > ~/Desktop/yabai_debug.txt
+
+# COM=$(yabai -m space --create)
+bash -x ~/bin/custom_focus_next > ~/Desktop/yabai_debug.txt 2>&1 # echo $focus_next_window > ~/Desktop/yabai_debug.txt

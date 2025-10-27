@@ -54,6 +54,7 @@ fn - b : skhd -k "ctrl - t"; sleep 0.37; skhd -t "set_keylight_brightness"; slee
   fn - m : skhd -k "alt - m" # µ, actually no sign on q1-keys..
   # fn - 0x2B : sysdiagnose tailspin (stock), ,
   # fn - 0x2F : sysdiagnose (stock), .
+  # fn + cmd - 0x2F : skhd -k "space" # hmmm....
 fn - 0x2C : return # -
 
   fn - space : skhd -k "space"
