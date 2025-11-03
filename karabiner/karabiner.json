@@ -47,7 +47,7 @@
                         ]
                     },
                     {
-                        "description": "rcmd - n/m/,/. : mousebuttons (rcmd not recognized as optional on internal..)",
+                        "description": "rcmd - n/m/,/. : mousebuttons (lcmd not recognized as optional on internal..)",
                         "manipulators": [
                             {
                                 "from": {

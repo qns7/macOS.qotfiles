@@ -94,3 +94,5 @@ alt + cmd - down [
     # alt + cmd - n : new smart folder
     # cmd - n : new finder window
 ### all other shortcuts are deactivated (like ctrl - f1-f8)
+
+# shift: (), fn/ctrl: [], opt/alt: {},. <>,.
