@@ -6,8 +6,8 @@ f14 : SwitchAudioSource -m toggle
 
 shift - f13 : return # Users/q/.config/sketchybar/plugins/click_week.sh # SOMETHING DIFFERENT?
 shift - f14 : if [[ $(yabai -m query --windows --window | jq -r '.app') != "TotalMix FX" ]]; then open -a "Totalmix"; sleep 0.73; ~/bin/cliclick_focus; else ~/bin/quit_script; fi
-shift - 0x53 : ~/bin/tmx_hotkey "f6"
-shift - 0x54 : ~/bin/tmx_hotkey "f7"
+shift - 0x53 : ~/bin/tmx_hotkey "f5" #6
+shift - 0x54 : ~/bin/tmx_hotkey "f6" #7
 shift - 0x55 :  ~/bin/tmx_hotkey "f8"
 
 shift + alt - f13 : return
