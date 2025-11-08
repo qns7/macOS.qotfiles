@@ -72,7 +72,10 @@ alt + cmd - 0x14 : skhd -k "0xA0"; sleep 0.1; [[ ! -f /tmp/mission_control.open 
 # 3: Move right a space : hyper - 2 (changed from ctrl - right)
 # 3: Quick Note : hyper - n (changed from fn/globe - q)
 # 4: Move focus to next window : hyper - tab (changed from cmd - `)
-### gemacht wegen switching über verschiedene monitore hinweg, was nervte: aber diese custom-Lösung ist einfach buggy und ich kriege es nicht so einfach gefixxt. Also back und einfach aufpassen bei mehrere Monitoren/Displays/Screens...
+### Gemacht wegen "switching über verschiedene monitore hinweg", was nervte: 
+  # Aber diese custom-Lösung ist einfach buggy (firefox and writer: case-sensitive-bug) und ich kriege es nicht so einfach gefixxt. 
+  # Also back; und einfach aufpassen bei mehrere Monitoren/Displays/Screens...
+  # Oder gab es noch einen anderen Grund?
 alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
     fn + alt - tab : skhd -k "hyper - tab"; sleep 0.07; yabai -m window --grid 1:1:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus; sketchybar --update
     ## alt + cmd - tab : ~/bin/custom_focus_next; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update # alt + cmd - tab : skhd -k "hyper - tab"; sleep 0.07; ~/bin/cliclick_focus; sketchybar --update
