@@ -37,8 +37,8 @@ yabai -m signal --add event=window_destroyed action="/opt/homebrew/bin/sketchyba
 
 # yabai -m signal --add event=system_woke action="pgrep -f "$HOME/.config/sketchybar/clock" && kill $(pgrep -f "$HOME/.config/sketchybar/clock"); sketchybar --update" # "~/bin/custom_wake"
 # only manually from now on :
-# yabai -m signal --add event=display_added action="~/bin/custom_wake"
-# yabai -m signal --add event=display_removed action="~/bin/custom_wake"
+yabai -m signal --add event=display_added action="sleep 1.73; /opt/homebrew/bin/skhd -k 'shift + ctrl - w'" # "~/bin/custom_wake"
+yabai -m signal --add event=display_removed action="sleep 1.73; /opt/homebrew/bin/skhd -k 'shift + ctrl - w'" # "~/bin/custom_wake"
 
 # yabai -m config window_opacity_duration 0.073
 # yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.73 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
