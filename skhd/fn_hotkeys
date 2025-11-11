@@ -18,7 +18,7 @@ fn - 0x18 : return # ´
 
 fn - tab : return
   fn - q : skhd -k "alt - l" # @, quick note (overwritten here & deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
-fn - w : return
+fn - w : skhd -k "ctrl + shift - w"
   fn - e : skhd -k "alt - e" # €, show the character viewer, from which you can choose emoji and other symbols (stock)
 fn - r : skhd -k "hyper - r"
 fn - t : open_or_focus "Strobe Tuner"; sleep 1; skhd -k "fn + ctrl - c"
@@ -32,7 +32,7 @@ fn - o : return
 
 fn - a : return # show or hide the dock (stock)
 fn - s : return
-fn - d : return # start or stop dictation (stock)
+fn - d : skhd -k "shift + ctrl - d" # return # start or stop dictation (stock)
   fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
 fn - h : return # show desktop (stock?)
