@@ -48,7 +48,7 @@ fn - h : return # show desktop (stock?)
 fn - y : /opt/homebrew/bin/yabai --restart-service
 fn - x : /opt/homebrew/bin/sketchybar --reload # --update
   # fn - c : show/hide control center (stock)
-fn - v : return
+fn - v : skhd -k "hyper - v" # obs virual camera toggle
 fn - b : skhd -k "ctrl - t"; sleep 0.37; skhd -t "set_keylight_brightness"; sleep 0.13; skhd -k "return"
   # fn - n : show(/hide) notification center (stock)
   fn - m : skhd -k "alt - m" # µ, actually no sign on q1-keys..
