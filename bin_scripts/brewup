@@ -37,8 +37,12 @@ printf "${TEXTCOLOR1}brew doctor..\n"
 brew doctor
 printf "${RESET}"
 
-printf "${TEXTCOLOR2}mas upgrade..\n"
-mas upgrade
+### RIGHT NOW IT DOESN'T WOTK: Purchase of this item is not
+#                              currently available
+#                              This item is being modified. Please try
+#                              again later.
+### printf "${TEXTCOLOR2}mas upgrade..\n"
+### mas upgrade
 
 # TEXTCOLOR1='\033[1;33m'
 # TEXTCOLOR2='\033[1;34m'
