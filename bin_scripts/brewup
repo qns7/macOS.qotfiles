@@ -3,8 +3,8 @@
 TEXTCOLOR1='\033[1;33m'
 TEXTCOLOR2='\033[1;34m'
 RESET='\033[0m'
-printf "${TEXTCOLOR2}mas upgrade..\n"
-mas upgrade
+# printf "${TEXTCOLOR2}mas upgrade..\n"
+# mas upgrade
 printf "${TEXTCOLOR1}brew update..\n"
 brew update
 BREW_REPO_DIR="$(brew --repo)"
@@ -37,6 +37,8 @@ printf "${TEXTCOLOR1}brew doctor..\n"
 brew doctor
 printf "${RESET}"
 
+printf "${TEXTCOLOR2}mas upgrade..\n"
+mas upgrade
 
 # TEXTCOLOR1='\033[1;33m'
 # TEXTCOLOR2='\033[1;34m'
