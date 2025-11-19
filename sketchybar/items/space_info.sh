@@ -8,6 +8,6 @@ sketchybar --add item space_info left \
                             label.color=0xffc7c7c7 \
                             label.padding_left=10 \
                             label.width=102 \
-           --subscribe space_info display_change space_change
+           --subscribe space_info display_change space_change space_windows_change
                        # space_windows_change
                        # + yabai signal - doesn't work both, just one
