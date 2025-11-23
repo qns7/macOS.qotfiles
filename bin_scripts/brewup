@@ -1,8 +1,8 @@
 #!/bin/bash
 
 TEXTCOLOR1='\033[1;33m'
-TEXTCOLOR2='\033[1;34m'
-TEXTCOLOR3='\033[1;30m'
+# TEXTCOLOR2='\033[1;34m'
+# TEXTCOLOR3='\033[1;30m'
 RESET='\033[0m'
 # printf "${TEXTCOLOR2}mas upgrade..\n"
 # mas upgrade
@@ -43,10 +43,11 @@ printf "${RESET}"
 #                              This item is being modified. Please try
 #                              again later.
 ## works again (deprecated apps had to be removed: radioplayer and perhaps personalausweis app too)
-printf "${TEXTCOLOR2}mas upgrade..\n"
-mas upgrade
-sleep 1
-printf "${TEXTCOLOR3}DONE\n"
+
+      # printf "${TEXTCOLOR2}mas upgrade..\n"
+      # mas upgrade
+      # sleep 1
+      # printf "${TEXTCOLOR3}DONE\n"
 
 # TEXTCOLOR1='\033[1;33m'
 # TEXTCOLOR2='\033[1;34m'
