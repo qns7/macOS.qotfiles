@@ -153,7 +153,7 @@ ctrl + shift - a : ~/bin/foobar_play          # |/
 #    fn + cmd + alt - down : ~/bin/foobar_play  |\ A R A B I N E R
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl + shift - d : ~/bin/show_desktop # also remember feature not bug: hold ctrl :-)
-ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yt \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download
+ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yta \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download // 20:55, 26.11.25, WED : now yta statt yt !!
 # ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s ---> to ctrl - cmd - c
 ctrl + shift - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
 ctrl + shift - b : ~/bin/macos_background_noise # "native" still unreliable
