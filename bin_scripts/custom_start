@@ -1,9 +1,9 @@
 #!/bin/bash
 
-sleep 3
+sleep 3.7
 killall "LogiTune" &> /dev/null
 # /Users/q/.config/sketchybar/.clock &
-sleep 1
+sleep 3.7
 /opt/homebrew/bin/sketchybar --reload
 
 # /Users/*/Library/LaunchAgents/com.*.custom_start.plist
