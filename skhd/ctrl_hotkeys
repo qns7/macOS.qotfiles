@@ -85,7 +85,7 @@ ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/Applications/Ch
     #ctrl + alt + cmd - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
     ctrl + alt + cmd - g :  pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
 
-ctrl - h : return # backspace/delete (stock)
+ctrl - h : open_or_focus "Helium" # return # backspace/delete (stock)
 # ctrl - j : karabiner: left
 # ctrl - k : karabiner: down, delete the text between the insertion point and the end of the line or paragraph (stock)
 # ctrl - l : karabiner: right, center the cursor or selection in the visible area (stock)

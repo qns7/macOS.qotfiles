@@ -34,7 +34,7 @@ cmd - s [
     * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
 ]
 cmd - d [
-    "DeepL" : cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
+    "DeepL" : cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"'); sleep 1; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
     "Foobar2000" : sleep 0.21; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w*3/4) | floor),\(.y + (.h/2) | floor)"')
     * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
 ]
