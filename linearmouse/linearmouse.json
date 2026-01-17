@@ -1,5 +1,5 @@
 {
-  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.2",
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.3-beta.2",
   "schemes" : [
     {
       "buttons" : {
@@ -148,6 +148,121 @@
           "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
           "vendorID" : "0x16c0"
         }
+      }
+    },
+    {
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x1020",
+          "productName" : "Kensington Expert Mouse",
+          "vendorID" : "0x47d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : "unset",
+        "disableAcceleration" : false,
+        "redirectsToScroll" : false,
+        "speed" : "unset"
+      }
+    },
+    {
+      "buttons" : {
+        "clickDebouncing" : {
+          "buttons" : [
+            3,
+            4,
+            2
+          ],
+          "timeout" : 500
+        },
+        "mappings" : [
+          {
+            "action" : "mouse.button.left",
+            "button" : 0,
+            "control" : true
+          },
+          {
+            "action" : {
+              "run" : "\/opt\/homebrew\/bin\/skhd -k 'fn - y'"
+            },
+            "button" : 3,
+            "control" : true
+          },
+          {
+            "action" : {
+              "run" : "\/bin\/bash -c '\/Users\/q\/.config\/sketchybar\/plugins\/click_week.sh'"
+            },
+            "button" : 4,
+            "control" : true
+          },
+          {
+            "action" : {
+              "keyPress" : [
+                "command",
+                "0"
+              ]
+            },
+            "button" : 3,
+            "option" : true
+          },
+          {
+            "action" : "smartZoom",
+            "button" : 4,
+            "option" : true
+          },
+          {
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
+                "arrowLeft"
+              ]
+            },
+            "button" : 0,
+            "command" : true,
+            "option" : true
+          },
+          {
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
+                "arrowRight"
+              ]
+            },
+            "button" : 1,
+            "command" : true,
+            "option" : true
+          }
+        ],
+        "universalBackForward" : true
+      },
+      "if" : {
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0xfff0",
+          "productName" : "tbwDKPointer  v.0.2.0 ",
+          "serialNumber" : "kensington.com:VirtualHIDPointing",
+          "vendorID" : "0x47d"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 0.37,
+        "disableAcceleration" : false,
+        "redirectsToScroll" : false,
+        "speed" : 0.21
+      },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 1,
+        "modifiers" : {
+          "option" : {
+            "scale" : 10,
+            "type" : "changeSpeed"
+          }
+        },
+        "speed" : 0
       }
     }
   ]
