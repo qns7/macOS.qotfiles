@@ -201,6 +201,16 @@
           },
           {
             "action" : {
+              "run" : "\/opt\/homebrew\/bin\/cliclick kd:alt rc:. ku:alt"
+            },
+            "button" : 3,
+            "command" : false,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
+            "action" : {
               "keyPress" : [
                 "option",
                 "command",
