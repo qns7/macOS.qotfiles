@@ -11,4 +11,4 @@
 # echo "$COM" > ~/Desktop/yabai_debug.txt
 
 # COM=$(yabai -m space --create)
-bash -x ~/bin/custom_focus_next > ~/Desktop/yabai_debug.txt 2>&1 # echo $focus_next_window > ~/Desktop/yabai_debug.txt
+bash -x ~/bin/quit_script > ~/Desktop/yabai_debug.txt 2>&1 # echo $focus_next_window > ~/Desktop/yabai_debug.txt

@@ -30,11 +30,11 @@ fn - 0x2A : SwitchAudioSource -s "SoundID Reference"
 
 # APP-SPECIFIC HOTKEYS with cmd and/or alt/opt or ... like in classy apps... OR JUST WITH MOUSELESS EVERYTHING BECAUSE IT'S PRETTY AWESOME ANA 'REMEMBERABLE' - is doch schon geil die app-specifics
 cmd - s [
-    "DeepL" : cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"') # ; sleep 0.73; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
+    "DeepL" : cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 375 | floor)"') # 237 # ; sleep 0.73; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) + 25 | floor),\(.y + 237 | floor)"')
     * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
 ]
 cmd - d [
-    "DeepL" : cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 297 | floor)"')
+    "DeepL" : cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w/2) - 5 | floor),\(.y + 435 | floor)"') # 297
     "Foobar2000" : sleep 0.21; cliclick $(yabai -m query --windows --window | jq -r '.frame | "c:\(.x + (.w*3/4) | floor),\(.y + (.h/2) | floor)"')
     * ~ # that is it --- vllt löschen bei deepl auch auf andere kombi? cmd - d vllt?
 ]
