@@ -5,8 +5,9 @@ killall "LogiTune" &> /dev/null
 # /Users/q/.config/sketchybar/.clock &
 sleep 3.7
 /opt/homebrew/bin/sketchybar --reload
-sleep 7.3
+sleep 13.7 # Karabiner Update Agent is done also after this time - for sure it seems.
 /Users/q/bin/cliclick_focus
+/opt/homebrew/bin/cliclick c:. # to "remove" iTerm focus
 
 # /Users/*/Library/LaunchAgents/com.*.custom_start.plist
 #
