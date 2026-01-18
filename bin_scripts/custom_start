@@ -5,6 +5,8 @@ killall "LogiTune" &> /dev/null
 # /Users/q/.config/sketchybar/.clock &
 sleep 3.7
 /opt/homebrew/bin/sketchybar --reload
+sleep 7.3
+/Users/q/bin/cliclick_focus
 
 # /Users/*/Library/LaunchAgents/com.*.custom_start.plist
 #
