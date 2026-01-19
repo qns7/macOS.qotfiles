@@ -537,7 +537,13 @@
                         "vendor_id": 13364
                     },
                     "ignore_vendor_events": true,
-                    "manipulate_caps_lock_led": false
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "keypad_3" },
+                            "to": [{ "key_code": "return_or_enter" }]
+                        }
+                    ]
                 },
                 {
                     "identifiers": {
