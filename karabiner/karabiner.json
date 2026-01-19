@@ -9,6 +9,22 @@
                 },
                 "rules": [
                     {
+                        "description": "Use trackball as scroll wheel while holding left shift",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": {
+                                        "mandatory": ["left_shift"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "options": { "speed_multiplier": 1.0 },
+                                "type": "mouse_motion_to_scroll"
+                            }
+                        ]
+                    },
+                    {
                         "description": "f19 : keyboard_backlight(+none) & fn - f19 : sleepnow(+none) & alt - f19 : toggle_brightness(+none)",
                         "manipulators": [
                             {
@@ -522,6 +538,25 @@
                     },
                     "ignore_vendor_events": true,
                     "manipulate_caps_lock_led": false
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 4128,
+                        "vendor_id": 1149
+                    },
+                    "ignore": false,
+                    "ignore_vendor_events": true,
+                    "simple_modifications": [
+                        {
+                            "from": { "pointing_button": "button4" },
+                            "to": [{ "pointing_button": "button2" }]
+                        },
+                        {
+                            "from": { "pointing_button": "button2" },
+                            "to": [{ "pointing_button": "button4" }]
+                        }
+                    ]
                 }
             ],
             "fn_function_keys": [

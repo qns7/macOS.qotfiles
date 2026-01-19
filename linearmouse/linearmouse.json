@@ -137,8 +137,62 @@
     {
       "buttons" : {
         "mappings" : [
-
-        ]
+          {
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
+                "arrowRight"
+              ]
+            },
+            "button" : 1,
+            "command" : true,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
+            "action" : "mouse.button.forward",
+            "button" : 1,
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
+                "arrowLeft"
+              ]
+            },
+            "button" : 2,
+            "command" : true,
+            "control" : false,
+            "option" : true,
+            "shift" : false
+          },
+          {
+            "action" : "mouse.button.back",
+            "button" : 2,
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : {
+              "run" : "\/bin\/bash -c '\/Users\/q\/.config\/sketchybar\/plugins\/click_week.sh'"
+            },
+            "button" : 3,
+            "command" : false,
+            "control" : true,
+            "option" : false,
+            "shift" : false
+          }
+        ],
+        "universalBackForward" : true
       },
       "if" : {
         "device" : {
@@ -148,6 +202,26 @@
           "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
           "vendorID" : "0x16c0"
         }
+      },
+      "pointer" : {
+        "acceleration" : 7.73,
+        "disableAcceleration" : false,
+        "redirectsToScroll" : false,
+        "speed" : 0.073
+      },
+      "scrolling" : {
+        "acceleration" : 1,
+        "distance" : 10,
+        "modifiers" : {
+          "option" : {
+            "scale" : 7.5,
+            "type" : "changeSpeed"
+          }
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : 0
       }
     },
     {
@@ -243,7 +317,7 @@
         }
       },
       "pointer" : {
-        "acceleration" : 7.3,
+        "acceleration" : 7.7777,
         "disableAcceleration" : false,
         "redirectsToScroll" : false,
         "speed" : 0.1337
