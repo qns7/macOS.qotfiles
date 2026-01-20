@@ -182,14 +182,22 @@
             "shift" : false
           },
           {
+            "action" : "media.playPause",
+            "button" : 3,
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "shift" : false
+          },
+          {
             "action" : {
-              "run" : "\/bin\/bash -c '\/Users\/q\/.config\/sketchybar\/plugins\/click_week.sh'"
+              "run" : "\/bin\/bash -c '\/Users\/q\/bin\/foobar_play'"
             },
             "button" : 3,
             "command" : false,
-            "control" : true,
+            "control" : false,
             "option" : false,
-            "shift" : false
+            "shift" : true
           }
         ],
         "universalBackForward" : true
@@ -222,6 +230,21 @@
           "vertical" : true
         },
         "speed" : 0
+      }
+    },
+    {
+      "if" : {
+        "app" : "com.microsoft.VSCode",
+        "device" : {
+          "category" : "mouse",
+          "productID" : "0x27da",
+          "productName" : "Karabiner DriverKit VirtualHIDPointing 1.8.0",
+          "serialNumber" : "pqrs.org:Karabiner-DriverKit-VirtualHIDPointing",
+          "vendorID" : "0x16c0"
+        }
+      },
+      "scrolling" : {
+        "distance" : 1
       }
     },
     {

@@ -2,19 +2,19 @@ f13 : curl -s "http://192.168.178.42:9123/elgato/lights" | grep -q '"on":1' && c
 f14 : SwitchAudioSource -m toggle
 0x53 : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127 # auch tmx profil wechseln? vorallem um feedback zu verhindern?
 0x54 : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127 # auch tmx profil wechseln?
-# 0x55 : karabiner :-> enter # skhd -k "return" # ~/bin/foobar_play
+# 0x55 : karabiner :-> shift / enter # skhd -k "return" # ~/bin/foobar_play
 
 shift - f13 : return # Users/q/.config/sketchybar/plugins/click_week.sh # SOMETHING DIFFERENT?
 shift - f14 : if [[ $(yabai -m query --windows --window | jq -r '.app') != "TotalMix FX" ]]; then open -a "Totalmix"; sleep 0.73; ~/bin/cliclick_focus; else ~/bin/quit_script; fi
-shift - 0x53 : ~/bin/tmx_hotkey "f5" #6
-shift - 0x54 : ~/bin/tmx_hotkey "f6" #7
-shift - 0x55 :  ~/bin/tmx_hotkey "f8"
+shift - 0x53 : ~/bin/tmx_hotkey "f6" # 5 #6 
+shift - 0x54 : ~/bin/tmx_hotkey "f8" # 6 #7
+# shift - 0x55 :  ~/bin/tmx_hotkey "f8"
 
 shift + alt - f13 : return
 shift + alt - f14 : return
 shift + alt - 0x53 : return
 shift + alt - 0x54 : return
-shift + alt - 0x55 : return # skhd -k "return"
+# shift + alt - 0x55 : return # skhd -k "return"
 #    cmd + alt - 0x55 : skhd -k "return"
 
 # Q1 QMK KEYMAP [IMITATES INBUILT] # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

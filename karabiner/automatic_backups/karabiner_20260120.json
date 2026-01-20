@@ -374,20 +374,6 @@
                         ]
                     },
                     {
-                        "description": "keypad_3 : right_shift / return_or_enter",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "keypad_3",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "right_shift" }],
-                                "to_if_alone": [{ "key_code": "return_or_enter" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Keypad 3 → Enter; Control+Keypad 3 → Mouse Button 7",
                         "enabled": false,
                         "manipulators": [
@@ -576,7 +562,13 @@
                         "vendor_id": 13364
                     },
                     "ignore_vendor_events": true,
-                    "manipulate_caps_lock_led": false
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "keypad_3" },
+                            "to": [{ "key_code": "return_or_enter" }]
+                        }
+                    ]
                 },
                 {
                     "identifiers": {
