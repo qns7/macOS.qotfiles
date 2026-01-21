@@ -42,7 +42,9 @@ fn - h : return # show desktop (stock?)
 # fn - 0x29 : cf. 'window_space_and_display_management' # ö
 # fn - 0x27 : cf. 'window_space_and_display_management' # ä
 # fn - 0x2A : cf. 'q1_specific', #
-0x4C : ~/bin/yabai_debug # karabiner: fn - return : 0x4C (penter), because skhd has a problem with fn - return
+0x4C : 0x4C : screencapture -m "/Volumes/Screenshots/Screenshot $(date '+\%Y-\%m-\%d at \%H.\%M.\%S').png" # jpg?
+  # screencapture -m ~/Desktop/screen_$(date +%Y%m%d_%H%M%S).jpg # ~/bin/yabai_debug # 
+  # karabiner: fn - return : 0x4C (penter), because skhd has a problem with fn - return
 
   fn - 0x32 : skhd -k "alt - 7" # <, |
 fn - y : /opt/homebrew/bin/yabai --restart-service
