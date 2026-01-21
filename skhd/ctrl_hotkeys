@@ -40,6 +40,7 @@ ctrl - u : return
     #ctrl + alt - i : open_or_focus "IINA"  F C U S   O S T W R  !  ---> to v
 ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (stock)
     # ctrl + cmd - o : see skhdrc
+    # hyper - o : SHOTTR!
 ctrl - p : open_or_focus "PDFGear" # move up one line (stock)
     ctrl + cmd - p : open_or_focus "Passwords" # removed from menubar again
     # ctrl + alt + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc' : deprecated in Tahoe then...
@@ -56,6 +57,7 @@ ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
     ctrl + alt - s : pgrep "System Settings" >/dev/null && open_or_focus "System Settings" || { open -a "System Settings"; sleep 0.37; skhd -k "cmd - q"; sleep 1; open -a "System Settings"; sleep 1; open_or_focus "System Settings"; } # pgrep-yabai_query>cliclick-workaround-fix
     ctrl + alt + cmd - s : return
+    # hyper - s : SHOTTR!
 ctrl - d : mouse_dock # feature-request: handle native-fullscreens, forward delete (stock)
     # ctrl + cmd - d : look up & data detectors / show or hide the definition of the selected word (stock) (acc.force-click-function deactivated) # acc?!?!?! according?
     ctrl + alt - d : pgrep -fl "DeepL.app" >/dev/null && open_or_focus ~/Applications/DeepL.app || (open_or_focus ~/Applications/DeepL.app && sleep 0.73 && yabai -m window --move abs:0:0; sleep 0.1; yabai -m window --resize abs:1737:1073; sleep 0.1; skhd -k "fn + ctrl - c"; sleep 0.73; ~/bin/cliclick_focus && sleep 0.37 && skhd -k "cmd - r") # safari webapp, native app buggy: try again (07:07, 28.05.25, WED)? (cf. chatgpt)
@@ -112,8 +114,8 @@ ctrl + cmd - 0x32 : skhd -k "hyper - 0x32" # screenshot-menu, cf. 'skhdrc' ### ~
 ## SHOTTR
 ctrl - c : skhd -k "hyper - o" #c" # trex (ocr)
     ctrl + cmd - c : ~/.config/sketchybar/plugins/click_date.sh
-    ctrl + alt - c : open_or_focus Calculator
-    ctrl + alt + cmd - c : return
+    ctrl + alt - c : skhd -k "hyper - c" # trex (ocr) # open_or_focus Calculator
+    ctrl + alt + cmd - c : open_or_focus Calculator # return
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : open_or_focus "IINA"
     ctrl + alt - v : open -a "Windows App"; sleep 0.37; ~/bin/cliclick_focus
