@@ -139,6 +139,16 @@
         "mappings" : [
           {
             "action" : {
+              "run" : "\/bin\/bash -c '\/Users\/q\/bin\/foobar_play'"
+            },
+            "button" : 1,
+            "command" : false,
+            "control" : false,
+            "option" : false,
+            "shift" : true
+          },
+          {
+            "action" : {
               "keyPress" : [
                 "option",
                 "command",
