@@ -231,9 +231,20 @@
         "acceleration" : 1,
         "distance" : 10,
         "modifiers" : {
-          "option" : {
-            "scale" : 7.5,
-            "type" : "changeSpeed"
+          "horizontal" : {
+            "control" : {
+              "type" : "preventDefault"
+            },
+            "option" : {
+              "scale" : 7.5,
+              "type" : "changeSpeed"
+            }
+          },
+          "vertical" : {
+            "option" : {
+              "scale" : 7.5,
+              "type" : "changeSpeed"
+            }
           }
         },
         "reverse" : {
