@@ -150,6 +150,43 @@ qs() {
     npm run dev
 }
 
+__case_clip() {
+  local mode="$1"
+  shift
+  local input
+  local output
+  if [ -t 0 ]; then
+    input="$*"
+  else
+    input="$(cat)"
+  fi
+  case "$mode" in
+    upper)
+      output="$(printf "%s" "$input" | tr '[:lower:]' '[:upper:]')"
+      ;;
+    lower)
+      output="$(printf "%s" "$input" | tr '[:upper:]' '[:lower:]')"
+      ;;
+    *)
+      printf "Invalid mode: %s\n" "$mode" >&2
+      return 1
+      ;;
+  esac
+  printf "%s\n" "$output"
+  if command -v pbcopy >/dev/null 2>&1; then
+    printf "%s" "$output" | pbcopy
+  elif command -v wl-copy >/dev/null 2>&1; then
+    printf "%s" "$output" | wl-copy
+  elif command -v xclip >/dev/null 2>&1; then
+    printf "%s" "$output" | xclip -selection clipboard
+  else
+    printf "Warning: no clipboard utility found\n" >&2
+    return 1
+  fi
+}
+upp(){ __case_clip upper "$@"; }
+loww(){ __case_clip lower "$@"; }
+
 # Created by `pipx` on 2025-05-06 15:57:21
 export PATH="$PATH:/Users/q/.local/bin"
 

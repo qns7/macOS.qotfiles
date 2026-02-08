@@ -2,6 +2,13 @@ ctrl - backspace : skhd -k "fn - backspace" # forward delete (stock)
 
 
 
+ctrl - 1 : open_or_focus pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/Applications/ChatGPT.app" || (open_or_focus "ChatGPT" && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
+ctrl - 2 : open_or_focus "Claude"
+ctrl - 3 : open_or_focus "Helium"
+ctrl - 4 : open_or_focus "texmaker"
+
+
+
 ctrl - q : open_or_focus "Notes"
     ctrl + cmd - q : quit_script # immediately lock your screen (stock)
     ctrl + alt - q : return
@@ -75,10 +82,12 @@ ctrl - f : open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + alt - f : open_or_focus "Freeform"
     ctrl + alt + cmd - f : open_or_focus "Feedback Assistant"
+#-------------------------
+#ctrl - g : open_or_focus "Guitar Pro 7"
 # ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
-ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/Applications/ChatGPT.app" || (open_or_focus "ChatGPT" && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
-    ctrl + alt - g : open_or_focus "Guitar Pro 7"
-    ctrl + cmd - g : open_or_focus /Users/q/Applications/GEMINI.app
+# ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/Applications/ChatGPT.app" || (open_or_focus "ChatGPT" && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
+#     ctrl + alt - g : open_or_focus "Guitar Pro 7"
+#     ctrl + cmd - g : open_or_focus /Users/q/Applications/GEMINI.app
     # [
     #     "Code" ~ # jump to line (custom)
     #     * : return # ?
@@ -86,7 +95,8 @@ ctrl - g : pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/Applications/Ch
     #ctrl + cmd - g : open_or_focus "Guitar Pro 7"
     #ctrl + alt - g : open_or_focus ChatGPT # native app : still looses connection pretty often and is slower, search-function now available though
     #ctrl + alt + cmd - g : return # open_or_focus "GIMP" -> get Pixelmator Pro
-    ctrl + alt + cmd - g :  pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
+#    ctrl + alt + cmd - g :  pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus ~/Applications/ChatGPT.app || (open_or_focus ~/Applications/ChatGPT.app && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
+#-------------------------
 
 ctrl - h : open_or_focus "Helium" # return # backspace/delete (stock)
 # ctrl - j : karabiner: left
@@ -162,6 +172,7 @@ ctrl + shift - p : open_or_focus "Photos" # "Pixelmator Pro" :-) buy?!... 15:45,
 #    fn + cmd + alt - down : ~/bin/foobar_play  |\ A R A B I N E R
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl + shift - d : ~/bin/show_desktop # also remember feature not bug: hold ctrl :-)
+### ctrl + shift + cmd - d : ~/bin/ma_vers_auto # WEIRD BEHAVIOR!!!
 ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yta \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download // 20:55, 26.11.25, WED : now yta statt yt !!
 # ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s ---> to ctrl - cmd - c
 ctrl + shift - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"

@@ -131,6 +131,9 @@
             "scale" : 7,
             "type" : "changeSpeed"
           }
+        },
+        "reverse" : {
+          "vertical" : false
         }
       }
     },
@@ -174,6 +177,20 @@
               "keyPress" : [
                 "option",
                 "command",
+                "arrowRight"
+              ]
+            },
+            "button" : 1,
+            "command" : true,
+            "control" : true,
+            "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
                 "arrowLeft"
               ]
             },
@@ -187,6 +204,20 @@
             "action" : "mouse.button.back",
             "button" : 2,
             "command" : false,
+            "control" : true,
+            "option" : false,
+            "shift" : false
+          },
+          {
+            "action" : {
+              "keyPress" : [
+                "option",
+                "command",
+                "arrowLeft"
+              ]
+            },
+            "button" : 2,
+            "command" : true,
             "control" : true,
             "option" : false,
             "shift" : false
@@ -229,7 +260,7 @@
       },
       "scrolling" : {
         "acceleration" : 1,
-        "distance" : 10,
+        "distance" : 6,
         "modifiers" : {
           "horizontal" : {
             "control" : {

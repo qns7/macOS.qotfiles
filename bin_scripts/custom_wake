@@ -33,7 +33,7 @@ else
     sleep 0.37 # 1
     osascript -e "set volume output volume 100"
 fi
-sleep 0.37 # 0.17
+sleep 1.73 #0.37 # 0.17
 if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
     # /opt/homebrew/bin/skhd -k "shift + alt - previous"
     Users/q/bin/tmx_hotkey "f6"
@@ -44,5 +44,5 @@ sudo killall coreaudiod # what's systemsoundserverd doing?
 sleep 0.1
 /opt/homebrew/bin/yabai --restart-service
 /opt/homebrew/bin/skhd -k "ctrl + shift - m" # restart mouseless
-sleep 4.9
+sleep 7.3
 /opt/homebrew/bin/sketchybar --reload
