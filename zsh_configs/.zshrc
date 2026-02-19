@@ -127,6 +127,22 @@ alias qu="cd ~/Qobuz-DL && git reset --hard HEAD && git pull origin main && echo
 # alias qs="cd ~/Qobuz-DL && npm audit fix && npm i && npm run dev" # sleep, close terminal, open http://localhost:3000 in firefox...
 # alias qs='~/bin/update_qobuz_env && sleep 0.37 && CURRENT=$(npm -v) && LATEST=$(npm view npm version) && [ "$CURRENT" != "$LATEST" ] && npm install -g npm@latest; cd ~/Qobuz-DL && git restore package-lock.json && git pull && npm audit fix && npm i && npm run dev' # "cd ~/Qobuz-DL && git restore package-lock.json && git pull && npm audit fix && npm i && npm run dev" # sleep, close terminal, open http://localhost:3000 in firefox...
 
+pcb() {
+  mkdir -p print_ready
+  for f in *.png; do
+    magick "$f" \
+      -background white -alpha remove -alpha off \
+      -colorspace Gray \
+      -auto-level \
+      -negate \
+      -threshold 50% \
+      -colorspace sRGB \
+      -type TrueColor \
+      -depth 8 \
+      "print_ready/$f"
+  done
+}
+
 qs() {
     echo "Checking npm version..."
     CURRENT=$(npm -v)
