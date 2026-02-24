@@ -6,6 +6,7 @@ ctrl - 1 : open_or_focus pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/A
 ctrl - 2 : open_or_focus "Claude"
 ctrl - 3 : open_or_focus "Helium"
 ctrl - 4 : open_or_focus "texmaker"
+ctrl - 5 : skhd -k "ctrl - p"
 
 
 
