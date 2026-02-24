@@ -125,6 +125,7 @@ ctrl - y : skhd -k "ctrl + alt - y"; sleep 0.37; skhd -k "escape"
     ctrl + alt + cmd - y : return # middle click?->not possible with cliclick war vorher ytdlp-script, aber das ist nun in shift area..
     # ctrl + cmd - x : karabiner: focus_trex, "ctrl + alt - e" doesn't work, because in textboxes it gets recognized as "alt - e = €"
 ## SHOTTR#    ctrl - x : skhd -k "hyper - x" # sleep 0.1; skhd -k "hyper - x" # area-screenshot, cf. 'skhdrc'
+        ctrl - x : skhd -k "hyper - x" # shottr wrapAround - iterm-fix
 ## SHOTTR    ctrl + alt - x : open_or_focus "texmaker" # sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + alt + cmd - x : open_or_focus "texmaker" # open_or_focus "Ipe" # sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
 ## SHOTTR
