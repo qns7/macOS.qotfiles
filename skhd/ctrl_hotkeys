@@ -4,8 +4,10 @@ ctrl - backspace : skhd -k "fn - backspace" # forward delete (stock)
 
 ctrl - 1 : open_or_focus pgrep -fl "ChatGPT.app" >/dev/null && open_or_focus "/Applications/ChatGPT.app" || (open_or_focus "ChatGPT" && sleep 0.37 && yabai -m window --grid 1:1:0:0:1:1)
 ctrl - 2 : open_or_focus "Claude"
-ctrl - 3 : open_or_focus "Helium"
+ctrl - 3 : open_or_focus "Helium" # "/Users/q/Applications/GEMINI.app" # "Helium"
+ctrl + cmd - 3 : open_or_focus "/Users/q/Applications/GEMINI.app"
 ctrl - 4 : open_or_focus "texmaker"
+ctrl + cmd - 4 : open_or_focus "DiffChecker"
 ctrl - 5 : skhd -k "ctrl - p"
 
 
