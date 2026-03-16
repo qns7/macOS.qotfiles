@@ -20,8 +20,16 @@ fi
 
 CHARGING="$(pmset -g batt | grep 'AC Power')"
 
+# Memory pressure color
+PRESSURE="$(sysctl -n kern.memorystatus_vm_pressure_level)"
+case "$PRESSURE" in
+    2) ICON_COLOR="icon.color=0xFFFEBC2E" ;;  # 🟡 apple yellow
+    4) ICON_COLOR="icon.color=0xFFFF5F57" ;;  # 🔴 apple red
+    *) ICON_COLOR="icon.color=0xffc7c7c7" ;;  # 🟢 apple green : 0xFF28C840, default: 0xffc7c7c7
+esac
+
 if [[ "$CHARGING" != "" ]]; then
-    sketchybar --set percentages icon="${SWAP}S.${RAM}R:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}C"
+    sketchybar --set percentages $ICON_COLOR icon="${SWAP}S.${RAM}R:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}C"
 else
-    sketchybar --set percentages icon="${SWAP}S.${RAM}R:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}B"
+    sketchybar --set percentages $ICON_COLOR icon="${SWAP}S.${RAM}R:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}B"
 fi
