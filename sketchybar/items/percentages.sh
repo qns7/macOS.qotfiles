@@ -3,7 +3,7 @@
 sketchybar --add item percentages q \
            --set percentages script="$PLUGIN_DIR/percentages.sh" \
                              icon.padding_right=3 \
-                             icon.width=183 \
+                             icon.width=182 \
                              icon.align=right \
                              icon.y_offset=0 \
                              update_freq=30 \
