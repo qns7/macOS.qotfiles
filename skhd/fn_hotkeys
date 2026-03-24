@@ -47,7 +47,8 @@ fn - h : return # show desktop (stock?)
   # karabiner: fn - return : 0x4C (penter), because skhd has a problem with fn - return
 
   fn - 0x32 : skhd -k "alt - 7" # <, |
-fn - y : /opt/homebrew/bin/yabai --restart-service
+fn - y : /opt/homebrew/bin/yabai -m config focus_follows_mouse autoraise # --restart-service # yabai -m config focus_follows_mouse autofocus
+  fn + alt - y : /opt/homebrew/bin/yabai --restart-service
 fn - x : /opt/homebrew/bin/sketchybar --reload # --update
   # fn - c : show/hide control center (stock)
 fn - v : skhd -k "hyper - v" # obs virual camera toggle
