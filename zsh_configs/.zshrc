@@ -294,3 +294,10 @@ alias qaa="osascript ~/bin/quit_all_apps.scpt"
 
 # export PATH="/opt/homebrew/opt/util-linux/bin:$PATH"
 # export PATH="/opt/homebrew/opt/util-linux/sbin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/q/.lmstudio/bin"
+# End of LM Studio CLI section
+
+# OpenClaw Completion
+source "/Users/q/.openclaw/completions/openclaw.zsh"
