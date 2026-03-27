@@ -7,7 +7,12 @@ SAVEHIST=100000
 # echo -n -e "\033]0;zsh.iTerm\007"
 
 setopt PROMPT_SUBST
-PROMPT='%F{white}%B[%b%f %F{208}%D{%H:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
+
+_oc_status() {
+  [[ -f /tmp/.openclaw_running ]] && echo "🦞 " || echo ""
+}
+
+PROMPT='$(_oc_status)%F{white}%B[%b%f %F{208}%D{%H:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
 PROMPT_EOL_MARK=' ⮐'
 
 export CLICOLOR=1
@@ -15,14 +20,25 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 eval "$(batman --export-env)"
 
-alias ccsetup="claude --resume f4991b44-2ec6-4acd-8097-d69367e86621"
+# alias ccsetup="claude --resume f4991b44-2ec6-4acd-8097-d69367e86621" - doesn't work when terminal session is closed and reopened
 
-alias oc1="openclaw gateway start"
-alias oc0="openclaw gateway stop"
+unalias rm 2>/dev/null
+oc1() {
+  touch /tmp/.openclaw_running
+  nohup openclaw gateway run &>/tmp/openclaw.log &
+  disown
+  echo "🦞 Gateway started"
+}
+
+oc0() {
+  pkill -f "openclaw gateway run"
+  /bin/rm -f /tmp/.openclaw_running
+  echo "Gateway stopped"
+}
 alias ochat="openclaw tui"
+alias rm="rm -i"
 
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
-alias rm="rm -i"
 alias ll="ls --color=auto -lah"
 
 alias h="code ~/.zsh_history"
@@ -306,4 +322,4 @@ export PATH="$PATH:/Users/q/.lmstudio/bin"
 # End of LM Studio CLI section
 
 # OpenClaw Completion
-source "/Users/q/.openclaw/completions/openclaw.zsh"
+autoload -Uz compinit && compinit -C 2>/dev/null
