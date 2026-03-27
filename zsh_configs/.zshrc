@@ -15,6 +15,12 @@ export LSCOLORS=dxfxcxdxbxegedabagacad
 
 eval "$(batman --export-env)"
 
+alias ccsetup="claude --resume f4991b44-2ec6-4acd-8097-d69367e86621"
+
+alias oc1="openclaw gateway start"
+alias oc0="openclaw gateway stop"
+alias ochat="openclaw tui"
+
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
 alias rm="rm -i"
 alias ll="ls --color=auto -lah"
