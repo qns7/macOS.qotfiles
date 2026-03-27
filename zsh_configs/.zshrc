@@ -27,7 +27,7 @@ oc1() {
   touch /tmp/.openclaw_running
   nohup openclaw gateway run &>/tmp/openclaw.log &
   disown
-  echo "🦞 Gateway started"
+  echo "Gateway started"
 }
 
 oc0() {
