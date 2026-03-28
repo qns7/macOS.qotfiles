@@ -23,19 +23,27 @@ eval "$(batman --export-env)"
 # alias ccsetup="claude --resume f4991b44-2ec6-4acd-8097-d69367e86621" - doesn't work when terminal session is closed and reopened
 
 unalias rm 2>/dev/null
-oc1() {
-  touch /tmp/.openclaw_running
-  nohup openclaw gateway run &>/tmp/openclaw.log &
-  disown
-  echo "Gateway started"
-}
+# oc1() {
+#   touch /tmp/.openclaw_running
+#   nohup openclaw gateway run &>/tmp/openclaw.log &
+#   disown
+#   echo "Gateway started"
+# }
 
 oc0() {
   pkill -f "openclaw gateway run"
   /bin/rm -f /tmp/.openclaw_running
   echo "Gateway stopped"
 }
-alias ochat="openclaw tui"
+# alias ochat="openclaw tui"
+
+oc() {
+  touch /tmp/.openclaw_running
+  openclaw gateway run &>/tmp/openclaw.log &
+  echo "🦞 Gateway started"
+  openclaw tui
+  oc0
+}
 alias rm="rm -i"
 
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'
