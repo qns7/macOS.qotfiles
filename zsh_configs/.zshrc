@@ -263,14 +263,21 @@ qs() {
         return 1
     }
 
-    echo "Fixing vulnerabilities and installing dependencies..."
-    npm install || {
+    echo "Installing dependencies..."
+    npm install --no-audit || {
         echo "npm install failed. Regenerating lockfile..."
         rm -f package-lock.json
-        npm install
+        npm install --no-audit
     }
 
-    npm audit fix || echo "npm audit fix encountered issues."
+    echo "Fixing vulnerabilities..."
+    npm audit fix
+    REMAINING=$(npm audit --json 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('metadata',{}).get('vulnerabilities',{}).get('total',0))" 2>/dev/null)
+    if [ "${REMAINING:-0}" -gt 0 ] 2>/dev/null; then
+        echo "Warning: $REMAINING vulnerabilities remain after audit fix (may require --force for breaking changes)."
+    else
+        echo "No vulnerabilities found."
+    fi
 
     echo "Starting development server..."
     npm run dev
