@@ -8,11 +8,8 @@ SAVEHIST=100000
 
 setopt PROMPT_SUBST
 
-_oc_status() {
-  [[ -f /tmp/.openclaw_running ]] && echo "🦞 " || echo ""
-}
 
-PROMPT='$(_oc_status)%F{white}%B[%b%f %F{208}%D{%H:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
+PROMPT='%F{white}%B[%b%f %F{208}%D{%H:%M:%S}%f %F{white}macBooq%f %U%F{217}%~%f%u%F{white} %B] %b$%f '
 PROMPT_EOL_MARK=' ⮐'
 
 export CLICOLOR=1
