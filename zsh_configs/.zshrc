@@ -41,6 +41,29 @@ oc() {
   openclaw tui
   oc0
 }
+
+# fb() {
+#   # Refresh music index
+#   find /Volumes/macData/MyMusic -mindepth 2 -maxdepth 3 -type d \
+#     > /Volumes/macData/MyMusic/music_index.txt
+#   echo "🎵 Music index updated"
+#   # Start gateway if not running, then open TUI on dedicated 'fb' session with Haiku
+#   touch /tmp/.openclaw_running
+#   openclaw gateway run &>/tmp/openclaw.log &
+# #  openclaw tui --session fb --message "/model anthropic/claude-haiku-4-5"
+#   oc0
+# }
+
+fb() {
+  find /Volumes/macData/MyMusic -mindepth 2 -maxdepth 3 -type d \
+    > /Volumes/macData/MyMusic/music_index.txt
+  echo "🎵 Music index updated"
+  touch /tmp/.openclaw_running
+  openclaw gateway run &>/tmp/openclaw.log &
+  openclaw tui --session fb
+  oc0
+}
+
 alias rm="rm -i"
 
 alias path='echo; tr ":" "\n" <<< "$PATH"; echo;'

@@ -388,6 +388,22 @@
                         ]
                     },
                     {
+                        "description": "Spacebar: tap = space, hold = fn/globe",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "spacebar",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_alone_timeout_milliseconds": 250 },
+                                "to": [{ "key_code": "fn" }],
+                                "to_if_alone": [{ "key_code": "spacebar" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Keypad 3 → Enter; Control+Keypad 3 → Mouse Button 7",
                         "enabled": false,
                         "manipulators": [
