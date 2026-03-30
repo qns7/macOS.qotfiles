@@ -24,7 +24,7 @@ unalias rm 2>/dev/null
 #   touch /tmp/.openclaw_running
 #   nohup openclaw gateway run &>/tmp/openclaw.log &
 #   disown
-#   echo "Gateway started"
+#   echo "🦞 Gateway started"
 # }
 
 oc0() {
@@ -35,6 +35,7 @@ oc0() {
 # alias ochat="openclaw tui"
 
 oc() {
+  oc0  # kill any stale gateway first
   touch /tmp/.openclaw_running
   openclaw gateway run &>/tmp/openclaw.log &
   echo "🦞 Gateway started"
@@ -42,19 +43,8 @@ oc() {
   oc0
 }
 
-# fb() {
-#   # Refresh music index
-#   find /Volumes/macData/MyMusic -mindepth 2 -maxdepth 3 -type d \
-#     > /Volumes/macData/MyMusic/music_index.txt
-#   echo "🎵 Music index updated"
-#   # Start gateway if not running, then open TUI on dedicated 'fb' session with Haiku
-#   touch /tmp/.openclaw_running
-#   openclaw gateway run &>/tmp/openclaw.log &
-# #  openclaw tui --session fb --message "/model anthropic/claude-haiku-4-5"
-#   oc0
-# }
-
 fb() {
+  oc0  # kill any stale gateway first
   find /Volumes/macData/MyMusic -mindepth 2 -maxdepth 3 -type d \
     > /Volumes/macData/MyMusic/music_index.txt
   echo "🎵 Music index updated"
@@ -63,6 +53,36 @@ fb() {
   openclaw tui --session fb
   oc0
 }
+
+# oc() {
+#   touch /tmp/.openclaw_running
+#   openclaw gateway run &>/tmp/openclaw.log &
+#   echo "🦞 Gateway started"
+#   openclaw tui
+#   oc0
+# }
+
+# # fb() {
+# #   # Refresh music index
+# #   find /Volumes/macData/MyMusic -mindepth 2 -maxdepth 3 -type d \
+# #     > /Volumes/macData/MyMusic/music_index.txt
+# #   echo "🎵 Music index updated"
+# #   # Start gateway if not running, then open TUI on dedicated 'fb' session with Haiku
+# #   touch /tmp/.openclaw_running
+# #   openclaw gateway run &>/tmp/openclaw.log &
+# # #  openclaw tui --session fb --message "/model anthropic/claude-haiku-4-5"
+# #   oc0
+# # }
+
+# fb() {
+#   find /Volumes/macData/MyMusic -mindepth 2 -maxdepth 3 -type d \
+#     > /Volumes/macData/MyMusic/music_index.txt
+#   echo "🎵 Music index updated"
+#   touch /tmp/.openclaw_running
+#   openclaw gateway run &>/tmp/openclaw.log &
+#   openclaw tui --session fb
+#   oc0
+# }
 
 alias rm="rm -i"
 
@@ -105,6 +125,9 @@ alias st='clear; (while true; do for var in / - \\ \|; do echo -en "\r$var"; sle
 #                 while true; do for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done; done
 
 alias aw='yabai -m query --windows | jq ".[].app"' # or other yabai / sketchybar queries for debugging
+
+alias fbplay='~/bin/foobar_play; sleep 0.1; skhd -k "ctrl - t"'
+
 ct() {
     curl "cheat.sh/$1"
 }

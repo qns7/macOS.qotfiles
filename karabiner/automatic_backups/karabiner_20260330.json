@@ -572,29 +572,6 @@
                                 "type": "basic"
                             }
                         ]
-                    },
-                    {
-                        "description": "Ctrl+T → iTerm2 hotkey + move mouse to hotkey window center",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f12",
-                                        "modifiers": ["control"]
-                                    },
-                                    { "shell_command": "for i in {1..6}; do eval $(osascript <<'EOF'\n tell application \"iTerm2\"\n  try\n   tell current window\n    set {x1, y1, x2, y2} to bounds\n    set cx to (x1 + x2) / 2\n    set cy to (y1 + y2) / 2\n   end tell\n   return \"CX=\" & cx & \";CY=\" & cy\n  on error\n   return \"CX=0;CY=0\"\n  end try\n end tell\nEOF\n); if [[ \"$CX\" != \"0\" && \"$CY\" != \"0\" ]]; then /opt/homebrew/bin/cliclick m:${CX},${CY}; break; fi; sleep 0.04; done" }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
                     }
                 ]
             },
