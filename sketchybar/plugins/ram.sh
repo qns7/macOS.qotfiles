@@ -21,12 +21,23 @@ RAM="$(memory_pressure | grep "System-wide memory free percentage:" | awk '{ pri
 # CHARGING="$(pmset -g batt | grep 'AC Power')"
 
 # Memory pressure color
-PRESSURE="$(sysctl -n kern.memorystatus_vm_pressure_level)"
-case "$PRESSURE" in
-    2) ICON_COLOR="icon.color=0xFFFDBC40" ;;  # 🟡 apple yellow #FDBC40
-    4) ICON_COLOR="icon.color=0xFFFC5753" ;;  # 🔴 apple red #FC5753
-    *) ICON_COLOR="icon.color=0xffc7c7c7" ;;  # 🟢 apple green : 0xFF28C840, default: 0xffc7c7c7 #36C84B real, claude got it wrong - yellow and red already refined..
-esac
+# if Activity Monitor is open, skip pressure check and use fixed color
+if pgrep -xq "Activity Monitor"; then
+    ICON_COLOR="icon.color=0xff4e4e4e"
+else
+    PRESSURE="$(sysctl -n kern.memorystatus_vm_pressure_level)"
+    case "$PRESSURE" in
+        2) ICON_COLOR="icon.color=0xFFFDBC40" ;;  # 🟡 apple yellow #FDBC40
+        4) ICON_COLOR="icon.color=0xFFFC5753" ;;  # 🔴 apple red #FC5753
+        *) ICON_COLOR="icon.color=0xffc7c7c7" ;;  # 🟢 apple green : 0xFF28C840, default: 0xffc7c7c7 #36C84B real, claude got it wrong - yellow and red already refined..
+    esac
+fi
+# PRESSURE="$(sysctl -n kern.memorystatus_vm_pressure_level)"
+# case "$PRESSURE" in
+#     2) ICON_COLOR="icon.color=0xFFFDBC40" ;;  # 🟡 apple yellow #FDBC40
+#     4) ICON_COLOR="icon.color=0xFFFC5753" ;;  # 🔴 apple red #FC5753
+#     *) ICON_COLOR="icon.color=0xffc7c7c7" ;;  # 🟢 apple green : 0xFF28C840, default: 0xffc7c7c7 #36C84B real, claude got it wrong - yellow and red already refined..
+# esac
 
 sketchybar --set ram $ICON_COLOR icon="${SWAP}S.${RAM}R"
 
