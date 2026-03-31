@@ -54,6 +54,7 @@ ctrl - o : open_or_focus "OBS" # insert a new line after the insertion point (st
     # hyper - o : SHOTTR!
 ctrl - p : open_or_focus "PDFGear" # move up one line (stock)
     ctrl + cmd - p : open_or_focus "Passwords" # removed from menubar again
+    ctrl + alt - p : open_or_focus "Pixelmator Pro"
     # ctrl + alt + cmd - p : skhd -k "hyper - l" # launchpad, cf. 'skhdrc' : deprecated in Tahoe then...
 # ctrl - 0x21 : up-left-quarter, cf. 'window_space_and_display_management'
 # ctrl - 0x1E : up-right-quarter, cf. 'window_space_and_display_management'
