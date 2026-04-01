@@ -11,4 +11,11 @@
 # echo "$COM" > ~/Desktop/yabai_debug.txt
 
 # COM=$(yabai -m space --create)
-bash -x ~/bin/quit_script > ~/Desktop/yabai_debug.txt 2>&1 # echo $focus_next_window > ~/Desktop/yabai_debug.txt
+# bash -x { yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; ~/bin/cliclick_focus } > ~/Desktop/yabai_debug.txt 2>&1 # echo $focus_next_window > ~/Desktop/yabai_debug.txt
+# bash -x -c "yabai -m window --grid 1:2:1:1:1:2; sleep 0.01; $HOME/bin/cliclick_focus" > "$HOME/Desktop/yabai_debug.txt" 2>&1
+# exec > "$HOME/Desktop/yabai_debug.txt" 2>&1
+# set -x
+# yabai -m window --grid 1:2:1:1:1:2
+# sleep 0.01
+# "$HOME/bin/cliclick_focus"
+yabai -m query --windows --window 2>&1 > ~/Desktop/yabai_debug.txt

@@ -31,7 +31,7 @@ fn - o : return
   fn - 0x1E : skhd -k "alt - n" # +, ~
 
 fn - a : return # show or hide the dock (stock)
-fn - s : return
+fn - s : return # ~/bin/yabai_debug # return
 fn - d : skhd -k "shift + ctrl - d" # return # start or stop dictation (stock)
   fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
 fn - g : return
@@ -42,9 +42,10 @@ fn - h : return # show desktop (stock?)
 # fn - 0x29 : cf. 'window_space_and_display_management' # ö
 # fn - 0x27 : cf. 'window_space_and_display_management' # ä
 # fn - 0x2A : cf. 'q1_specific', #
-0x4C : 0x4C : screencapture -m "/Volumes/Screenshots/Screenshot $(date '+\%Y-\%m-\%d at \%H.\%M.\%S').png" # jpg?
+# # # # # # # 
+# 0x4C : 0x4C : ~/bin/yabai_debug # screencapture -m "/Volumes/Screenshots/Screenshot $(date '+\%Y-\%m-\%d at \%H.\%M.\%S').png" # jpg?
   # screencapture -m ~/Desktop/screen_$(date +%Y%m%d_%H%M%S).jpg # ~/bin/yabai_debug # 
-  # karabiner: fn - return : 0x4C (penter), because skhd has a problem with fn - return
+  # karabiner: fn - return : 0x4C (penter), because skhd has a problem with fn - return - doesn't work... weird... WHY?
 
   fn - 0x32 : skhd -k "alt - 7" # <, |
 fn - y : /opt/homebrew/bin/yabai --restart-service # /opt/homebrew/bin/yabai -m config focus_follows_mouse autoraise # --restart-service # yabai -m config focus_follows_mouse autofocus
@@ -58,7 +59,7 @@ fn - b : skhd -k "ctrl - t"; sleep 0.37; osascript -e 'tell application "iTerm" 
   # fn - 0x2B : sysdiagnose tailspin (stock), ,
   # fn - 0x2F : sysdiagnose (stock), .
   # fn + cmd - 0x2F : skhd -k "space" # hmmm....
-fn - 0x2C : return # -
+fn - 0x2C : ~/bin/yabai_debug # return # -
 
   fn - space : skhd -k "space"
   # fn - arrows : home/pageup/pagedown/end (stock)
