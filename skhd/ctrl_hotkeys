@@ -31,6 +31,7 @@ ctrl - r : open_or_focus Reaper
     ctrl + cmd - r : open_or_focus "DaVinci Resolve" # swap character in text (stock)
     ctrl + alt - r : return
     ctrl + alt + cmd - r : return
+# ctrl - t : skhd -k "hyper - t"; sleep 0.1; skhd -k "ctrl + cmd - y"
 # ctrl - t : iterm hotkey window (restart? spotlight), swap the character behind the insertion point with the character in front of the insertion point (stock) (Tippfehler)
 ### ctrl - t : skhd -k "ctrl - f12"; sleep 0.1; /bin/cliclick_focus ---> Karabiner!!!
     ctrl + cmd - t : open_or_focus "texmaker" # add the selected item to the sidebar (stock?), Underleaf? Overleaf?
