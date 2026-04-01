@@ -24,7 +24,7 @@
                                         "key_code": "t",
                                         "modifiers": ["left_command", "left_control", "left_option", "left_shift"]
                                     },
-                                    { "shell_command": "sleep 0.1; /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }
+                                    { "shell_command": "sleep 0.73; /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }
                                 ],
                                 "type": "basic"
                             }
