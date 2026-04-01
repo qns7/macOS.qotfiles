@@ -18,4 +18,5 @@
 # yabai -m window --grid 1:2:1:1:1:2
 # sleep 0.01
 # "$HOME/bin/cliclick_focus"
-yabai -m query --windows --window 2>&1 > ~/Desktop/yabai_debug.txt
+# yabai -m query --windows --window 2>&1 > ~/Desktop/yabai_debug.txt
+# /opt/homebrew/bin/skhd -k 'ctrl + cmd - y' 2>&1 > ~/Desktop/yabai_debug.txt

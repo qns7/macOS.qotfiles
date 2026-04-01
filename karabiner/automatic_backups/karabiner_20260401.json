@@ -9,28 +9,6 @@
                 },
                 "rules": [
                     {
-                        "description": "ctrl+t → hyper+t (iTerm2 hotkey window) + yabai_focus_mouse",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "t",
-                                        "modifiers": ["left_command", "left_control", "left_option", "left_shift"]
-                                    },
-                                    { "shell_command": "sleep 0.1; /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "f19 : keyboard_backlight(+none) & fn - f19 : sleepnow(+none) & alt - f19 : toggle_brightness(+none)",
                         "manipulators": [
                             {
