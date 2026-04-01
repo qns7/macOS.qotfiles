@@ -46,6 +46,7 @@ fn - h : return # show desktop (stock?)
 # 0x4C : 0x4C : ~/bin/yabai_debug # screencapture -m "/Volumes/Screenshots/Screenshot $(date '+\%Y-\%m-\%d at \%H.\%M.\%S').png" # jpg?
   # screencapture -m ~/Desktop/screen_$(date +%Y%m%d_%H%M%S).jpg # ~/bin/yabai_debug # 
   # karabiner: fn - return : 0x4C (penter), because skhd has a problem with fn - return - doesn't work... weird... WHY?
+0x4C : ~/bin/yabai_debug # I FUCKED UP xD double 0x4C xD xD xD
 
   fn - 0x32 : skhd -k "alt - 7" # <, |
 fn - y : /opt/homebrew/bin/yabai --restart-service # /opt/homebrew/bin/yabai -m config focus_follows_mouse autoraise # --restart-service # yabai -m config focus_follows_mouse autofocus
