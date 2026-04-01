@@ -8,15 +8,15 @@ if [ -z "$BOQ" ]; then
     yabai -m space --create # changed from using create_and_focus_new_space because if ctrl is held down still, cliclick c:. will open context menu; but still: if ctrl is held, thunderbird is buggy: doesn't show emails..
     yabai -m space --focus "$(yabai -m query --spaces --display | jq 'map(select(.["is-native-fullscreen"] == false))[-1].index')"
     sleep 0.1
-    open_or_focus "thunderbird"
+#    open_or_focus "thunderbird"
     # open -a "thunderbird"
     # sleep 0.73
     # cliclick_focus
     # sleep 1
 
-    sleep 0.37
-    killall "thunderbird"
-    sleep 1.37 # 0.1
+#    sleep 0.37
+#    killall "thunderbird"
+#    sleep 1.37 # 0.1
     open_or_focus "thunderbird"
 
     sleep 2
