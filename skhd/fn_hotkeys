@@ -33,7 +33,8 @@ fn - o : return
 fn - a : return # show or hide the dock (stock)
 fn - s : return # ~/bin/yabai_debug # return
 fn - d : skhd -k "shift + ctrl - d" # return # start or stop dictation (stock)
-  fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
+#  fn - f : skhd -k "ctrl + cmd - f" # 'native fullscreen' (stock), ctrl + cmd - f works more universal and reliable than fn - f (also stock)
+  # weird: fn - f now only works in apple tv, the other one doesn't... WTF??!?!?!?!?!!?
 fn - g : return
 fn - h : return # show desktop (stock?)
 # fn - j : cf. 'window_space_and_display_management'
