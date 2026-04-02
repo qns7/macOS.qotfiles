@@ -40,8 +40,8 @@ ctrl - r : open_or_focus Reaper
     #     * : open ~/.Trash; sleep 0.37; ~/bin/cliclick_focus
     #     ]
     ctrl + alt - t [
-        "Finder" : skhd -k "shift + cmd - g"; sleep 0.37; osascript -e 'tell application "System Events" to keystroke "Trash"'; sleep 0.73; skhd -k "return"
-        * : skhd -k "ctrl - e"; sleep 1.37; skhd -k "ctrl + cmd  - e"; skhd -k "shift + cmd - g"; sleep 0.37; osascript -e 'tell application "System Events" to keystroke "Trash"'; sleep 0.73; skhd -k "return"
+        "Finder" : skhd -k "shift + cmd - g"; sleep 0.37; osascript -e 'tell application "System Events"' -e 'repeat with c in {"T", "R", "A", "S", "H"}' -e 'keystroke c' -e 'delay 0.05' -e 'end repeat' -e 'end tell'; sleep 0.73; skhd -k "return"
+        * : skhd -k "ctrl - e"; sleep 1.37; skhd -k "ctrl + cmd  - e"; skhd -k "shift + cmd - g"; sleep 0.37; osascript -e 'tell application "System Events"' -e 'repeat with c in {"T", "R", "A", "S", "H"}' -e 'keystroke c' -e 'delay 0.05' -e 'end repeat' -e 'end tell'; sleep 0.73; skhd -k "return"
         ] 
     # ctrl + alt - t [
     #     "Finder" : skhd -k "shift + cmd - g"; sleep 0.37; skhd -t "Trash"; sleep 0.73; skhd -k "return"
