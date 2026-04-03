@@ -1,0 +1,565 @@
+#!/usr/bin/env node
+'use strict';
+
+/**
+ * qdl — Qobuz Download CLI
+ * Reads credentials from ~/Qobuz-DL/.env (same source as the web app).
+ *
+ * Usage:
+ *   qdl [search query] [--quality 27|7|6|5] [--limit N]
+ *
+ * Quality codes:
+ *   27  Hi-Res FLAC  (24-bit / up to 192 kHz)   [default]
+ *    7  Hi-Res FLAC  (24-bit / up to  96 kHz)
+ *    6  FLAC         (16-bit / 44.1 kHz)
+ *    5  MP3          (320 kbps)
+ */
+
+const fs      = require('fs');
+const path    = require('path');
+const https   = require('https');
+const http    = require('http');
+const crypto  = require('crypto');
+const readline = require('readline');
+const os      = require('os');
+const { spawnSync } = require('child_process');
+
+// ─── Load .env ────────────────────────────────────────────────────────────────
+
+const ENV_PATH = path.join(os.homedir(), 'Qobuz-DL', '.env');
+
+function loadEnv(envPath) {
+    if (!fs.existsSync(envPath)) {
+        fatal(`Could not find .env at: ${envPath}\nPlease ensure ~/Qobuz-DL/.env exists.`);
+    }
+    const env = {};
+    for (const line of fs.readFileSync(envPath, 'utf8').split('\n')) {
+        const t = line.trim();
+        if (!t || t.startsWith('#')) continue;
+        const eq = t.indexOf('=');
+        if (eq === -1) continue;
+        env[t.slice(0, eq).trim()] = t.slice(eq + 1).trim();
+    }
+    return env;
+}
+
+const env     = loadEnv(ENV_PATH);
+const API_BASE = (env.QOBUZ_API_BASE || 'https://www.qobuz.com/api.json/0.2/').replace(/\/?$/, '/');
+const APP_ID   = env.QOBUZ_APP_ID;
+const SECRET   = env.QOBUZ_SECRET;
+let   TOKENS;
+try { TOKENS = JSON.parse(env.QOBUZ_AUTH_TOKENS || '[]'); } catch { TOKENS = []; }
+
+if (!APP_ID || !SECRET || !TOKENS.length) {
+    fatal('Missing QOBUZ_APP_ID, QOBUZ_SECRET, or QOBUZ_AUTH_TOKENS in .env');
+}
+
+// ─── CLI args ─────────────────────────────────────────────────────────────────
+
+const QUALITY_LABELS = {
+    '27': 'Hi-Res FLAC 24-bit/192kHz',
+    '7':  'Hi-Res FLAC 24-bit/96kHz',
+    '6':  'FLAC 16-bit/44.1kHz',
+    '5':  'MP3 320kbps',
+};
+
+const args = process.argv.slice(2);
+let queryArg = '';
+let quality  = '27';
+let limit    = 20;
+let musicDir = path.join(os.homedir(), 'Music', 'Qobuz');
+
+for (let i = 0; i < args.length; i++) {
+    if ((args[i] === '--quality' || args[i] === '-q') && args[i + 1]) {
+        quality = args[++i];
+    } else if ((args[i] === '--limit' || args[i] === '-l') && args[i + 1]) {
+        limit = parseInt(args[++i], 10);
+    } else if ((args[i] === '--dir' || args[i] === '-d') && args[i + 1]) {
+        musicDir = args[++i];
+    } else if (args[i] === '--help' || args[i] === '-h') {
+        printHelp();
+        process.exit(0);
+    } else {
+        queryArg += (queryArg ? ' ' : '') + args[i];
+    }
+}
+
+if (!Object.keys(QUALITY_LABELS).includes(quality)) {
+    fatal(`Invalid quality "${quality}". Choose from: 27, 7, 6, 5`);
+}
+
+const EXT = quality === '5' ? 'mp3' : 'flac';
+
+// ─── Check for system ffmpeg ──────────────────────────────────────────────────
+
+const FFMPEG = (() => {
+    for (const candidate of ['ffmpeg', '/opt/homebrew/bin/ffmpeg', '/usr/local/bin/ffmpeg']) {
+        const r = spawnSync('which', [candidate.startsWith('/') ? candidate : candidate], { encoding: 'utf8' });
+        if (r.status === 0) return candidate;
+        // also try direct path
+        if (candidate.startsWith('/') && fs.existsSync(candidate)) return candidate;
+    }
+    return null;
+})();
+
+if (!FFMPEG) {
+    console.warn('\nWarning: ffmpeg not found. Metadata and cover art will NOT be embedded.');
+    console.warn('Install via: brew install ffmpeg\n');
+}
+
+// ─── HTTP helpers ─────────────────────────────────────────────────────────────
+
+function getToken() {
+    return TOKENS[Math.floor(Math.random() * TOKENS.length)];
+}
+
+function apiGet(endpoint, params = {}) {
+    return new Promise((resolve, reject) => {
+        const url = new URL(API_BASE + endpoint);
+        for (const [k, v] of Object.entries(params)) url.searchParams.set(k, String(v));
+
+        const req = https.get(url.toString(), {
+            headers: {
+                'x-app-id': APP_ID,
+                'x-user-auth-token': getToken(),
+            },
+        }, (res) => {
+            let raw = '';
+            res.on('data', c => raw += c);
+            res.on('end', () => {
+                try { resolve(JSON.parse(raw)); }
+                catch { reject(new Error('Bad JSON from API: ' + raw.slice(0, 200))); }
+            });
+        });
+        req.on('error', reject);
+        req.setTimeout(30_000, () => { req.destroy(); reject(new Error('Request timed out')); });
+    });
+}
+
+// Stream a URL to a local file with a two-line progress display.
+// Line 1: label (printed once, never overwritten)
+// Line 2: progress bar (overwritten in-place)
+function downloadFile(url, destPath, label) {
+    return new Promise((resolve, reject) => {
+        const proto = url.startsWith('https') ? https : http;
+        fs.mkdirSync(path.dirname(destPath), { recursive: true });
+
+        const tmp  = destPath + '.tmp';
+        const file = fs.createWriteStream(tmp);
+
+        // Print the label line once up front
+        process.stdout.write(`  ${label}\n`);
+
+        proto.get(url, (res) => {
+            // Follow redirect
+            if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                file.close(() => fs.unlink(tmp, () => {}));
+                // Erase the label line we just wrote so it isn't doubled
+                process.stdout.write(`\x1B[1A\x1B[2K`);
+                return downloadFile(res.headers.location, destPath, label).then(resolve, reject);
+            }
+            if (res.statusCode !== 200) {
+                file.close(() => fs.unlink(tmp, () => {}));
+                process.stdout.write('\n');
+                return reject(new Error(`HTTP ${res.statusCode}`));
+            }
+
+            const total      = parseInt(res.headers['content-length'] || '0', 10);
+            let   downloaded = 0;
+
+            res.on('data', chunk => {
+                downloaded += chunk.length;
+                file.write(chunk);
+                renderBar(downloaded, total);
+            });
+
+            res.on('end', () => {
+                file.close(() => {
+                    process.stdout.write('\n');
+                    fs.rename(tmp, destPath, err => err ? reject(err) : resolve());
+                });
+            });
+
+            res.on('error', err => {
+                file.close(() => fs.unlink(tmp, () => reject(err)));
+            });
+        }).on('error', err => {
+            file.close(() => { try { fs.unlinkSync(tmp); } catch {} });
+            reject(err);
+        });
+    });
+}
+
+function renderBar(done, total) {
+    const COLS  = 28;
+    const pct   = total > 0 ? Math.min(100, Math.floor((done / total) * 100)) : 0;
+    const filled = Math.floor((pct / 100) * COLS);
+    const bar   = '█'.repeat(filled) + '░'.repeat(COLS - filled);
+    const info  = total > 0
+        ? `${pct}%  ${fmtBytes(done)} / ${fmtBytes(total)}`
+        : fmtBytes(done);
+    process.stdout.write(`\r  [${bar}] ${info}   `);
+}
+
+// Download a file to a Buffer (for cover art we need it as bytes for ffmpeg)
+function fetchBuffer(url) {
+    return new Promise((resolve, reject) => {
+        const proto = url.startsWith('https') ? https : http;
+        proto.get(url, (res) => {
+            if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                return fetchBuffer(res.headers.location).then(resolve, reject);
+            }
+            const chunks = [];
+            res.on('data', c => chunks.push(c));
+            res.on('end', () => resolve(Buffer.concat(chunks)));
+            res.on('error', reject);
+        }).on('error', reject);
+    });
+}
+
+// ─── Format helpers (mirrors web app logic exactly) ──────────────────────────
+
+function formatTitle(item) {
+    // matches: `${title}${version ? ' (' + version + ')' : ''}`.trim()
+    const title   = item.title || item.name || '';
+    const version = item.version ? ` (${item.version})` : '';
+    return (title + version).trim();
+}
+
+function formatArtists(album, separator = ', ') {
+    // matches: album.artists?.length > 0 ? artists.map(a => a.name).join(sep) : performer?.name || 'Various Artists'
+    if (album.artists && album.artists.length > 0) {
+        return album.artists.map(a => a.name).join(separator);
+    }
+    return 'Various Artists';
+}
+
+function getFullResImageUrl(album) {
+    const large = album.image?.large;
+    if (!large) return null;
+    // matches web app: strip last 7 chars ("_600.jpg") → "org.jpg"
+    return large.slice(0, large.length - 7) + 'org.jpg';
+}
+
+// Mirrors cleanFileName in utils.ts
+function cleanName(s) {
+    // On macOS, only / and : are truly problematic in filenames.
+    // ? * " < > | are legal on APFS — keeping them as-is.
+    const banned = ['/', '\\', ':'];
+    let out = s || 'Unknown';
+    for (const c of banned) out = out.split(c).join('_');
+    return out;
+}
+
+// ─── Qobuz API ────────────────────────────────────────────────────────────────
+
+async function search(query, n = 20) {
+    return apiGet('catalog/search', { query, limit: n, offset: 0 });
+}
+
+async function getAlbumInfo(albumId) {
+    return apiGet('album/get', { album_id: albumId, extra: 'track_ids' });
+}
+
+async function getDownloadURL(trackId, q) {
+    const ts   = Math.floor(Date.now() / 1000);
+    const sig  = `trackgetFileUrlformat_id${q}intentstreamtrack_id${trackId}${ts}${SECRET}`;
+    const hash = crypto.createHash('md5').update(sig).digest('hex');
+    const data = await apiGet('track/getFileUrl', {
+        format_id:   q,
+        intent:      'stream',
+        track_id:    trackId,
+        request_ts:  ts,
+        request_sig: hash,
+    });
+    if (!data.url) throw new Error(data.message || JSON.stringify(data));
+    return data.url;
+}
+
+// ─── Metadata via system ffmpeg ───────────────────────────────────────────────
+
+// Mirrors applyMetadata() in ffmpeg-functions.tsx exactly — two separate passes,
+// same as the web app:
+//   Pass 1: inject text metadata via a metadata file  (-map_metadata 1 -codec copy)
+//   Pass 2: attach cover art                          (-map 0 -map 1 -disposition:v:0 attached_pic)
+function applyMetadata(trackPath, track, albumData, coverPath) {
+    if (!FFMPEG) return;
+
+    const album   = albumData;
+    const artists = album.artists !== undefined ? album.artists : (track.performer ? [track.performer] : []);
+
+    const artistTag    = formatArtists(album);
+    const albumArtist  = artists[0]?.name || track.performer?.name || 'Various Artists';
+    const titleTag     = formatTitle(track);
+    const albumTag     = formatTitle(album);
+    const genreTag     = album.genre?.name || '';
+    const dateTag      = album.release_date_original || '';
+    const yearTag      = dateTag ? String(new Date(dateTag).getFullYear()) : '';
+    const labelTag     = album.label?.name || '';
+    const copyrightTag = track.copyright || '';
+    const isrcTag      = track.isrc || '';
+    const upcTag       = album.upc || '';
+    const trackNumTag  = String(track.track_number || '');
+
+    // Escape a value for the ffmetadata file format:
+    // \ → \\,  = → \=,  newlines → \\\n  (per ffmpeg metadata spec)
+    const esc = v => String(v).replace(/\\/g, '\\\\').replace(/=/g, '\\=').replace(/\n/g, '\\\n');
+
+    // Build the ffmetadata file (same format the web app writes to metadata.txt)
+    let metadataFile = ';FFMETADATA1';
+    metadataFile += `\ntitle=${esc(titleTag)}`;
+    metadataFile += `\nartist=${esc(artistTag)}`;
+    metadataFile += `\nalbum_artist=${esc(artistTag)}`;
+    metadataFile += `\nalbum_artist=${esc(albumArtist)}`;   // second write wins, mirrors web app
+    metadataFile += `\nalbum=${esc(albumTag)}`;
+    metadataFile += `\ngenre=${esc(genreTag)}`;
+    metadataFile += `\ndate=${esc(dateTag)}`;
+    metadataFile += `\nyear=${esc(yearTag)}`;
+    metadataFile += `\nlabel=${esc(labelTag)}`;
+    metadataFile += `\ncopyright=${esc(copyrightTag)}`;
+    if (isrcTag)     metadataFile += `\nisrc=${esc(isrcTag)}`;
+    if (upcTag)      metadataFile += `\nbarcode=${esc(upcTag)}`;
+    if (trackNumTag) metadataFile += `\ntrack=${esc(trackNumTag)}`;
+
+    // Preserve the original extension (.flac/.mp3) on temp files so ffmpeg
+    // can determine the output format — it uses the file extension for this.
+    const ext      = path.extname(trackPath);
+    const metaTxt  = trackPath + '.ffmeta';
+    const pass1Out = trackPath + '.pass1' + ext;
+    const pass2Out = trackPath + '.pass2' + ext;
+
+    try {
+        fs.writeFileSync(metaTxt, metadataFile, 'utf8');
+
+        // ── Pass 1: text metadata ─────────────────────────────────────────────
+        // mirrors: ffmpeg.run('-i', 'input.flac', '-i', 'metadata.txt',
+        //                     '-map_metadata', '1', '-codec', 'copy', 'secondInput.flac')
+        const r1 = spawnSync(FFMPEG, [
+            '-y', '-i', trackPath, '-i', metaTxt,
+            '-map_metadata', '1',
+            '-codec', 'copy',
+            pass1Out,
+        ], { stdio: 'pipe' });
+
+        if (r1.status !== 0) {
+            console.error(`\n  ffmpeg pass 1 failed on "${path.basename(trackPath)}":`);
+            console.error('  ' + (r1.stderr?.toString().split('\n').filter(l => l.includes('Error') || l.includes('Invalid') || l.includes('error')).join('\n  ') || r1.stderr?.toString().slice(-300) || 'unknown error'));
+            return;
+        }
+
+        // ── Pass 2: cover art ─────────────────────────────────────────────────
+        if (coverPath && fs.existsSync(coverPath)) {
+            // Exact match of the web app's second ffmpeg.run call:
+            //   -c copy -map 0 -map 1 -disposition:v:0 attached_pic
+            // Confirmed by inspecting web-app output with ffprobe:
+            //   stream 1 is mjpeg, disposition.attached_pic = 1, tags.comment = "Other"
+            const artArgs = [
+                '-y', '-i', pass1Out, '-i', coverPath,
+                '-c', 'copy',
+                '-map', '0',
+                '-map', '1',
+                '-disposition:v:0', 'attached_pic',
+                pass2Out,
+            ];
+
+            const r2 = spawnSync(FFMPEG, artArgs, { stdio: 'pipe' });
+
+            if (r2.status !== 0) {
+                process.stdout.write('\n');
+                process.stderr.write(`  [ffmpeg cover art] ${r2.stderr?.toString().split('\n').slice(-4).join(' ') || 'unknown error'}\n`);
+                // Art failed — keep the tagged-but-no-art version rather than losing the download
+                fs.renameSync(pass1Out, trackPath);
+                return;
+            }
+
+            fs.renameSync(pass2Out, trackPath);
+        } else {
+            fs.renameSync(pass1Out, trackPath);
+        }
+    } finally {
+        try { fs.unlinkSync(metaTxt);  } catch {}
+        try { fs.unlinkSync(pass1Out); } catch {}
+        try { fs.unlinkSync(pass2Out); } catch {}
+    }
+}
+
+// ─── Utilities ────────────────────────────────────────────────────────────────
+
+function fmtBytes(b) {
+    if (b < 1024)        return b + ' B';
+    if (b < 1024 ** 2)   return (b / 1024).toFixed(1) + ' KB';
+    return (b / 1024 ** 2).toFixed(1) + ' MB';
+}
+
+function prompt(q) {
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    return new Promise(resolve => rl.question(q, a => { rl.close(); resolve(a.trim()); }));
+}
+
+function fatal(msg) {
+    console.error('\nError:', msg);
+    process.exit(1);
+}
+
+function printHelp() {
+    console.log(`
+qdl — Qobuz Download CLI
+
+Usage:
+  qdl [search query] [options]
+
+Options:
+  --quality, -q  27|7|6|5   Source quality (default: 27)
+  --limit,   -l  N           Number of search results to show (default: 20)
+  --dir,     -d  /path       Output directory (default: ~/Music/Qobuz)
+  --help,    -h              Show this help
+
+Quality codes:
+  27  Hi-Res FLAC  24-bit / up to 192 kHz  (default)
+   7  Hi-Res FLAC  24-bit / up to  96 kHz
+   6  FLAC         16-bit / 44.1 kHz
+   5  MP3          320 kbps
+
+Folder naming:  {artists} - {album}         (matches web app default)
+File naming:    {nn} {artists} - {title}     (matches web app default)
+Metadata + embedded cover art via system ffmpeg (brew install ffmpeg).
+
+Credentials are read from ~/Qobuz-DL/.env
+`);
+}
+
+// ─── Main ─────────────────────────────────────────────────────────────────────
+
+async function main() {
+    const query = queryArg || await prompt('Search: ');
+    if (!query) fatal('No search query provided.');
+
+    // ── Search ──────────────────────────────────────────────────────────────
+    process.stdout.write(`\nSearching "${query}"...\n`);
+    const results = await search(query, limit);
+    const albums  = results.albums?.items || [];
+
+    if (!albums.length) {
+        console.log('No albums found.');
+        return;
+    }
+
+    console.log(`\n${results.albums.total} results found (showing ${albums.length}):\n`);
+
+    albums.forEach((album, i) => {
+        const year    = (album.release_date_original || '????').slice(0, 4);
+        const depth   = album.maximum_bit_depth    || '?';
+        const rate    = album.maximum_sampling_rate || '?';
+        const hires   = album.hires
+            ? ` · Hi-Res ${depth}-bit/${rate}kHz`
+            : ` · ${depth}-bit/${rate}kHz`;
+        const version = album.version ? ` (${album.version})` : '';
+        const xpl     = album.parental_warning ? ' [E]' : '';
+        const num     = String(i + 1).padStart(2);
+        console.log(`  ${num}. ${album.artist.name} — ${album.title}${version} [${year}]${xpl}`);
+        console.log(`      ${album.tracks_count} tracks${hires} · ${album.label?.name || ''}`);
+    });
+
+    // ── Selection ────────────────────────────────────────────────────────────
+    const sel = await prompt('\nEnter number (0 to cancel): ');
+    const idx = parseInt(sel, 10) - 1;
+
+    if (isNaN(idx) || sel === '0') { console.log('Cancelled.'); return; }
+    if (idx < 0 || idx >= albums.length) fatal('Invalid selection.');
+
+    const chosen = albums[idx];
+
+    // ── Album details ────────────────────────────────────────────────────────
+    process.stdout.write(`\nFetching track list for "${chosen.title}"...\n`);
+    const albumData = await getAlbumInfo(chosen.id);
+    const tracks    = albumData.tracks?.items || [];
+
+    if (!tracks.length) fatal('No tracks returned for this album.');
+
+    // Folder name matches web app default zipName: "{artists} - {name}"
+    const folderName = cleanName(formatArtists(albumData) + ' - ' + formatTitle(albumData));
+    const albumDir   = path.join(musicDir, folderName);
+
+    // Track number padding: Math.max(String(tracks.length - 1).length, 2)  (matches web app)
+    const pad = Math.max(String(tracks.length - 1).length, 2);
+    const qualityLabel = QUALITY_LABELS[quality];
+
+    console.log(`\nDownloading ${tracks.length} tracks  [${qualityLabel}]`);
+    console.log(`Destination: ${albumDir}\n`);
+
+    fs.mkdirSync(albumDir, { recursive: true });
+
+    // ── Cover art ────────────────────────────────────────────────────────────
+    const coverPath = path.join(albumDir, 'cover.jpg');
+    if (!fs.existsSync(coverPath)) {
+        const coverUrl = getFullResImageUrl(albumData);
+        if (coverUrl) {
+            try {
+                await downloadFile(coverUrl, coverPath, 'cover.jpg');
+            } catch (err) {
+                console.error(`  Could not download cover art: ${err.message}`);
+            }
+        }
+    }
+
+    // ── Download loop ────────────────────────────────────────────────────────
+    let ok = 0, skipped = 0, errors = 0;
+    let currentDisc = null;
+
+    for (const track of tracks) {
+        // Multi-disc: subdirectory per disc (matches web app track offset logic)
+        const discDir = albumData.media_count > 1
+            ? path.join(albumDir, `Disc ${track.media_number}`)
+            : albumDir;
+
+        if (albumData.media_count > 1 && track.media_number !== currentDisc) {
+            currentDisc = track.media_number;
+            console.log(`\n  ── Disc ${currentDisc} ──`);
+            fs.mkdirSync(discDir, { recursive: true });
+        }
+
+        // File name matches web app default trackName: "{nn} {artists} - {name}"
+        const trackArtists = formatArtists(albumData);
+        const trackTitle   = formatTitle(track);
+        const num          = String(track.track_number).padStart(pad, '0');
+        const filename     = cleanName(`${num} ${trackArtists} - ${trackTitle}`) + `.${EXT}`;
+        const destPath     = path.join(discDir, filename);
+
+        if (fs.existsSync(destPath)) {
+            console.log(`  ${filename} — already exists, skipping`);
+            skipped++;
+            continue;
+        }
+
+        if (!track.streamable) {
+            console.log(`  ${filename} — not streamable, skipping`);
+            skipped++;
+            continue;
+        }
+
+        try {
+            const dlUrl = await getDownloadURL(track.id, quality);
+            await downloadFile(dlUrl, destPath, filename);
+
+            if (FFMPEG) {
+                process.stdout.write(`  Applying metadata...`);
+                // Inject metadata + embed cover art
+                applyMetadata(destPath, track, albumData, coverPath);
+                // Clear the "Applying metadata..." line
+                process.stdout.write(`\r\x1B[2K`);
+            }
+
+            ok++;
+        } catch (err) {
+            process.stdout.write('\n');
+            console.error(`  Error on "${track.title}": ${err.message}`);
+            errors++;
+        }
+    }
+
+    // ── Summary ──────────────────────────────────────────────────────────────
+    console.log(`\n✓ Done.  ${ok} downloaded, ${skipped} skipped, ${errors} errors`);
+    console.log(`  ${albumDir}`);
+}
+
+main().catch(err => fatal(err.message));
