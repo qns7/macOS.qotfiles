@@ -67,7 +67,7 @@ const args = process.argv.slice(2);
 let queryArg = '';
 let quality  = '27';
 let limit    = 20;
-let musicDir = path.join(os.homedir(), 'Music', 'Qobuz');
+let musicDir = '/Volumes/macData/MyMusic/LUCIDA&QDL';
 
 for (let i = 0; i < args.length; i++) {
     if ((args[i] === '--quality' || args[i] === '-q') && args[i + 1]) {
@@ -411,7 +411,7 @@ Usage:
 Options:
   --quality, -q  27|7|6|5   Source quality (default: 27)
   --limit,   -l  N           Number of search results to show (default: 20)
-  --dir,     -d  /path       Output directory (default: ~/Music/Qobuz)
+  --dir,     -d  /path       Output directory (default: /Volumes/macData/MyMusic/LUCIDA&QDL)
   --help,    -h              Show this help
 
 Quality codes:
@@ -435,7 +435,8 @@ async function main() {
     if (!query) fatal('No search query provided.');
 
     // ── Search ──────────────────────────────────────────────────────────────
-    process.stdout.write(`\nSearching "${query}"...\n`);
+    console.log(`\nDownload location: ${musicDir}`);
+    process.stdout.write(`Searching "${query}"...\n`);
     const results = await search(query, limit);
     const albums  = results.albums?.items || [];
 
