@@ -197,17 +197,6 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": ["option", "command", "shift", "control"],
-                                        "optional": []
-                                    }
-                                },
-                                "to": [{ "shell_command": "/Users/q/bin/foobar_play" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": ["option", "command", "shift", "control"],
