@@ -24,6 +24,38 @@ const readline = require('readline');
 const os      = require('os');
 const { spawnSync } = require('child_process');
 
+// ─── Credential refresh ───────────────────────────────────────────────────────
+// Runs both update scripts before reading .env, so every qdl invocation
+// starts with fully fresh credentials — no need to run qs() first.
+//
+//   update_qobuz_env   → scrapes app_id + secret from Qobuz bundle.js
+//   update_qobuz_token → logs into firehawk52.com, fetches QOBUZ_AUTH_TOKENS
+
+function runUpdateScript(scriptPath, label) {
+    if (!fs.existsSync(scriptPath)) {
+        process.stderr.write(`Warning: ${scriptPath} not found — skipping.\n`);
+        return;
+    }
+    process.stdout.write(`${label}... `);
+    const result = spawnSync(scriptPath, [], { encoding: 'utf8', stdio: 'pipe' });
+    if (result.status === 0) {
+        const line = (result.stdout || '').split('\n').find(l => l.trim()) || 'done';
+        console.log(line.trim());
+        if (result.stderr && result.stderr.trim()) {
+            process.stderr.write('  ' + result.stderr.trim() + '\n');
+        }
+    } else {
+        process.stdout.write('\n');
+        process.stderr.write(`Warning: ${label} failed — using existing .env value.\n`);
+        if (result.stderr) process.stderr.write(result.stderr + '\n');
+    }
+}
+
+function refreshCredentials() {
+    runUpdateScript(path.join(os.homedir(), 'bin', 'update_qobuz_env'),   'Refreshing app credentials');
+    runUpdateScript(path.join(os.homedir(), 'bin', 'update_qobuz_token'), 'Refreshing auth token');
+}
+
 // ─── Load .env ────────────────────────────────────────────────────────────────
 
 const ENV_PATH = path.join(os.homedir(), 'Qobuz-DL', '.env');
@@ -43,6 +75,7 @@ function loadEnv(envPath) {
     return env;
 }
 
+refreshCredentials();   // update .env first, then read it
 const env     = loadEnv(ENV_PATH);
 const API_BASE = (env.QOBUZ_API_BASE || 'https://www.qobuz.com/api.json/0.2/').replace(/\/?$/, '/');
 const APP_ID   = env.QOBUZ_APP_ID;

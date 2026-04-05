@@ -1,0 +1,13 @@
+#!/bin/bash
+# Fetches the latest Qobuz auth token from firehawk52.com
+# and updates QOBUZ_AUTH_TOKENS in ~/Qobuz-DL/.env
+# Mirrors the pattern of ~/bin/update_qobuz_env
+
+PROJECT_DIR="$HOME/Qobuz-DL"
+VENV_DIR="$PROJECT_DIR/venv"
+
+source "$VENV_DIR/bin/activate"
+python3 "$PROJECT_DIR/update_token.py"
+EXIT_CODE=$?
+deactivate
+exit $EXIT_CODE
