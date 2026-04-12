@@ -193,7 +193,9 @@ ctrl + shift - p : open_or_focus "Photos" # "Pixelmator Pro" :-) buy?!... 15:45,
 # ctrl + shift - s : type-to-siri ('changed' in systemSettings/AppleIntelligence&Siri from fn/globe - s)
 ctrl + shift - d : ~/bin/show_desktop # also remember feature not bug: hold ctrl :-)
 ### ctrl + shift + cmd - d : ~/bin/ma_vers_auto # WEIRD BEHAVIOR!!!
-ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yta \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download // 20:55, 26.11.25, WED : now yta statt yt !!
+### ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "ctrl - t"; sleep 0.1; skhd -t "yta \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download // 20:55, 26.11.25, WED : now yta statt yt !!
+    # see karabiner!
+    ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "hyper - t"; sleep 0.1; skhd -t "yta \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download // 20:55, 26.11.25, WED : now yta statt yt !!
 # ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s ---> to ctrl - cmd - c
 ctrl + shift - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
 ctrl + shift - b : ~/bin/macos_background_noise # "native" still unreliable

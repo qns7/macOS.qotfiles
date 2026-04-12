@@ -28,28 +28,53 @@ unalias rm 2>/dev/null
 # }
 
 oc0() {
-  pkill -f "openclaw gateway run"
-  /bin/rm -f /tmp/.openclaw_running
+  if [[ -f ~/.openclaw/.gateway.pid ]]; then
+    kill "$(cat ~/.openclaw/.gateway.pid)" 2>/dev/null
+    /bin/rm -f ~/.openclaw/.gateway.pid
+  fi
+  /bin/rm -f ~/.openclaw/.gateway_running
   echo "Gateway stopped"
 }
 # alias ochat="openclaw tui"
 
 oc() {
-  oc0  # kill any stale gateway first
-  touch /tmp/.openclaw_running
-  openclaw gateway run &>/tmp/openclaw.log &
+  oc0
+  _mem_diff=$(git -C ~/.openclaw/workspace diff MEMORY.md)
+  if [[ -n "$_mem_diff" ]]; then
+    echo "⚠️  MEMORY.md has uncommitted changes:"
+    echo "$_mem_diff"
+    echo ""
+    read "?Commit and continue? [y/N] " _confirm
+    [[ "$_confirm" =~ ^[Yy]$ ]] || { echo "Aborted."; return 1; }
+    git -C ~/.openclaw/workspace add MEMORY.md
+    git -C ~/.openclaw/workspace commit -m "session update $(date +%Y-%m-%dT%H:%M)"
+  fi
+  touch ~/.openclaw/.gateway_running
+  openclaw gateway run &>~/.openclaw/logs/gateway-session.log &
+  echo $! > ~/.openclaw/.gateway.pid
   echo "🦞 Gateway started"
   openclaw tui
   oc0
 }
 
 fb() {
-  oc0  # kill any stale gateway first
+  oc0
+  _mem_diff=$(git -C ~/.openclaw/workspace diff MEMORY.md)
+  if [[ -n "$_mem_diff" ]]; then
+    echo "⚠️  MEMORY.md has uncommitted changes:"
+    echo "$_mem_diff"
+    echo ""
+    read "?Commit and continue? [y/N] " _confirm
+    [[ "$_confirm" =~ ^[Yy]$ ]] || { echo "Aborted."; return 1; }
+    git -C ~/.openclaw/workspace add MEMORY.md
+    git -C ~/.openclaw/workspace commit -m "session update $(date +%Y-%m-%dT%H:%M)"
+  fi
   find /Volumes/macData/MyMusic -mindepth 2 -maxdepth 3 -type d \
     > /Volumes/macData/MyMusic/music_index.txt
   echo "🎵 Music index updated"
-  touch /tmp/.openclaw_running
-  openclaw gateway run &>/tmp/openclaw.log &
+  touch ~/.openclaw/.gateway_running
+  openclaw gateway run &>~/.openclaw/logs/gateway-session.log &
+  echo $! > ~/.openclaw/.gateway.pid
   openclaw tui --session fb
   oc0
 }
