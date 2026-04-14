@@ -21,4 +21,11 @@ else
     # ~/bin/cliclick_focus
     # sleep 0.1
     # osascript -e 'tell application "System Events" to set frontmost of (first process whose frontmost is true) to true'
+    # sleep 0.1
+    # osascript -e 'tell application "System Events" to set visible of process "Mouseless" to false'
+    # sleep 0.05
+    # osascript -e 'tell application "System Events" to set visible of process "Mouseless" to true'
+    # sleep 0.1
+    # osascript -e 'tell application "Mouseless" to activate' -e 'delay 0.05' -e 'tell application "System Events" to set frontmost of (first process whose frontmost is true) to true'
+    # open -g -a "Mouseless"
 fi
