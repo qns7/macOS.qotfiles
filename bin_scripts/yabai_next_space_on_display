@@ -19,4 +19,6 @@ else
     # del_empty_spaces
     # sleep 0.1
     # ~/bin/cliclick_focus
+    # sleep 0.1
+    # osascript -e 'tell application "System Events" to set frontmost of (first process whose frontmost is true) to true'
 fi
