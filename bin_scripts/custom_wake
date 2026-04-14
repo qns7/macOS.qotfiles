@@ -44,5 +44,7 @@ sudo killall coreaudiod # what's systemsoundserverd doing?
 sleep 0.1
 /opt/homebrew/bin/yabai --restart-service
 /opt/homebrew/bin/skhd -k "ctrl + shift - m" # restart mouseless
-sleep 3.7 # 1.73 # 3.7 # 7.3
+sleep 1.73 # 3.7 # 7.3
+/opt/homebrew/bin/sketchybar --reload
+sleep 1
 /opt/homebrew/bin/sketchybar --reload
