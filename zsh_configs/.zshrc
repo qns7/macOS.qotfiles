@@ -153,6 +153,8 @@ alias aw='yabai -m query --windows | jq ".[].app"' # or other yabai / sketchybar
 
 alias fbplay='~/bin/foobar_play; sleep 0.1; skhd -k "ctrl - t"'
 
+alias clipstrip='pbpaste | tr "\n" " " | sed "s/  */ /g" | pbcopy'
+
 ct() {
     curl "cheat.sh/$1"
 }
