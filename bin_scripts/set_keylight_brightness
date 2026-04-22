@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# IP of your Elgato Key Light
+LIGHT_IP="192.168.178.42"
+
+# Ask user for brightness percentage
+read -p "Enter brightness percentage (0-100): " BRIGHTNESS
+
+# Validate input
+if ! [[ "$BRIGHTNESS" =~ ^[0-9]+$ ]] || [ "$BRIGHTNESS" -lt 0 ] || [ "$BRIGHTNESS" -gt 100 ]; then
+    echo "Please enter a valid number between 0 and 100."
+    exit 1
+fi
+
+# Send the brightness command, suppress all output
+curl -s -X PUT "http://$LIGHT_IP:9123/elgato/lights" \
+    -d "{\"lights\":[{\"brightness\":$BRIGHTNESS,\"on\":1}]}" \
+    -H "Content-Type: application/json" >/dev/null 2>&1
+
+# #!/bin/bash
+
+# # IP of your Elgato Key Light
+# LIGHT_IP="192.168.178.42"
+
+# # Ask user for brightness via macOS dialog
+# BRIGHTNESS=$(osascript -e 'Tell application "System Events" to display dialog "Enter brightness percentage (0-100):" default answer ""' -e 'text returned of result')
+
+# # Validate input
+# if ! [[ "$BRIGHTNESS" =~ ^[0-9]+$ ]] || [ "$BRIGHTNESS" -lt 0 ] || [ "$BRIGHTNESS" -gt 100 ]; then
+#     osascript -e 'Tell application "System Events" to display alert "Please enter a valid number between 0 and 100."'
+#     exit 1
+# fi
+
+# # Send the brightness command
+# curl -s -X PUT "http://$LIGHT_IP:9123/elgato/lights" \
+#     -d "{\"lights\":[{\"brightness\":$BRIGHTNESS,\"on\":1}]}" \
+#     -H "Content-Type: application/json"
+
+# # Show confirmation
+# osascript -e "Tell application \"System Events\" to display notification \"Brightness set to $BRIGHTNESS%\" with title \"Elgato Key Light\""
+
+# #!/bin/bash
+
+# # IP of your Elgato Key Light
+# LIGHT_IP="192.168.178.42"
+
+# # Ask user for brightness percentage
+# read -p "Enter brightness percentage (0-100): " BRIGHTNESS
+
+# # Validate input
+# if ! [[ "$BRIGHTNESS" =~ ^[0-9]+$ ]] || [ "$BRIGHTNESS" -lt 0 ] || [ "$BRIGHTNESS" -gt 100 ]; then
+#     echo "Please enter a valid number between 0 and 100."
+#     exit 1
+# fi
+
+# # Send the brightness command
+# curl -s -X PUT "http://$LIGHT_IP:9123/elgato/lights" \
+#     -d "{\"lights\":[{\"brightness\":$BRIGHTNESS,\"on\":1}]}" \
+#     -H "Content-Type: application/json"
+
+# echo "Brightness set to $BRIGHTNESS%."

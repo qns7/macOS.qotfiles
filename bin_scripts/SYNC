@@ -63,3 +63,11 @@ rsync -a /Users/q/bin/paste_time_n_date.scpt /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/paste_shortened_url.scpt /Users/q/.config/bin_scripts/
 
 # # # UP-TO-DATE?
+
+# ------- 2026-04-22 ------- #
+
+# rsync -a /Users/q/bin/ma_vers_auto /Users/q/.config/bin_scripts/  # thesis versioning helper (MA_X folders + .tex files) — no longer needed, master's done
+rsync -a /Users/q/bin/set_keylight_brightness /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/open_in_new_window.scpt /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/focused_finder_path.scpt /Users/q/.config/bin_scripts/
+rsync -a /Users/q/bin/razpatch /Users/q/.config/bin_scripts/

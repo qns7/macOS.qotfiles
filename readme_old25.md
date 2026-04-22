@@ -1,5 +1,26 @@
+<!-- # My Custom macOS Setup (Sequoia 15.4+)
+
+## General Information & Philosophy
+
+- This description/readme is just an overview. For all the details please check the dotfiles directly. Which get updated very often. 😬
+- The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
+- I only used Windows and Linux all my life - until April 2024. Back then I bought my first MacBook; and since then I am continuously work on my setup, which now I want to share here.
+- I do not use macOS' hiding or minimizing at all, which is why I 'deactivated' the correspoding hotkeys completely ([see below](#anchor1)).
+- I use my Dock at the left side with nothing in there beside the two not-removable stock items Finder and Trash. It is set to autohide with no delay ([Onyx](https://titanium-software.fr/en/onyx.html) or using a terrminal command).
+- For my mouse setup I use [Yabai](https://github.com/koekeishiya/yabai)'s [mouse support features[(https://github.com/koekeishiya/yabai/wiki/Configuration#mouse-support) as well as [Linearmouse](https://linearmouse.app/). Every mouse with the widely available "5 buttons layout" will work.
+- Everywhere I can I use cable versions of my peripherals or even devices in general, since personally the general wireless hype makes mostly no sense to me: Batteries die, are bad for the environment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the according device(s) involved. As long as all cables are well managed I am happy. Honestly.. I like the look of well organized cables more than no cables.
+- I don't like using [Raycast](https://www.raycast.com/) or [Alfred](https://www.alfredapp.com/) or something similar since the corresponding inbuilt features like Spotlight and macOS' own Emoji Picker etc are good enough for me.  
+  Tipp: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by clicking `cmd - b` it will open your default brwoser with the corresponding results on Youtube. There are many such "shebangs" for DuckDuckGo.  
+  Another tipp: macOS' Emoji Picker is faster if you use it with the stock hotkey `ctrl + cmd - space` or any other custom hotkey other than macOS' "**Press 🌐 key to**" function. My guess is, that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs this slight delay so many are annoyed by. Using it with another dedicated hotkey isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker, but fast enough for me.
+
+## Keyboard Setup
+
+I use a Keychron Q1 (V1, ISO Germany) as my external keyboard beside my laptop when I'm at home since 2022. The qmk keymap I use for macOS (slightly adjusted for readability) is  -->
+
 # "maqOS/macOSmax" : My Custom macOS Setup (Sequoia 15.4+)
 ---
+
+VERY BIG UNDER CONSTRUCTION !! all over the place and messy for a few days now 10:37, 07.05.25, WED
 
 ## General Information & Philosophy
 ---
@@ -11,16 +32,18 @@
 - I use my Dock at the left side with no permanent item in there besides the two non-removable stock items Finder and Trash. It is set to autohide with no delay ([OnyX](https://titanium-software.fr/en/onyx.html) or using the according terminal command).
 - For my mouse setup I use [Yabai](https://github.com/koekeishiya/yabai)'s [mouse support features](https://github.com/koekeishiya/yabai/wiki/Configuration#mouse-support) as well as [LinearMouse](https://linearmouse.app/). Every mouse with the widely available "5 buttons layout" will work.
 - Everywhere I can I use cable versions of my peripherals (or even of all my devices in general), since personally the general wireless hype makes mostly no sense to me: Batteries die, are bad for the environment and the performance is always worse than with their cable counterparts. And I don't care if there is a cable from my keyboard, mouse, speaker, headphones or ... to my computer or the corresponding device(s) involved. As long as all cables are well managed I am happy. Honestly... I like the look of well-organized cables more than no cables.
-- I don't like using [Raycast](https://www.raycast.com/), [Alfred](https://www.alfredapp.com/) or some similar "launcher" since the corresponding inbuilt macOS' features like Spotlight and the Emoji Picker are good enough for me.  
+- I don't like using [Raycast](https://www.raycast.com/), [Alfred](https://www.alfredapp.com/) or some similar "launcher" since the corresponding inbuilt macOS' features like Spotlight and the Emoji Picker <!-- etc. -->are good enough for me.  
   First Tip: Spotlight in use with DuckDuckGo as your default search engine gives you the ability to write for example "yt! Queens of the Stone Age Paper Machete" and by pressing `cmd - b` it will open your default browser with the corresponding results on YouTube. There are many such "shebangs" for DuckDuckGo.  
-  Second Tip: macOS' Emoji Picker is faster if you use it with the stock hotkey `ctrl + cmd - space` or any other custom hotkey other than macOS' "**Press 🌐 key to**" function. My guess is that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs this slight delay so many are annoyed by. Using it with another dedicated hotkey isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker or [Rocket](https://matthewpalmer.net/rocket/) for example, but fast enough for me.
-- Many people praise the use of the so called hyper key (`ctrl + shift + alt + cmd`) for app launching and other stuff, where they use [BetterTouchTool](https://folivora.ai/), [Keyboard Maestro](https://www.keyboardmaestro.com/main/), [Karabiner Elements](https://karabiner-elements.pqrs.org/), [Skhd](https://github.com/koekeishiya/skhd) or similar tools to remap the Capslock key to this hyper key and open/focus apps with it. I use the Control key for this instead, while reserving the hyper key for special cases.  
+  Second Tip: macOS' Emoji Picker is faster if you use it with the stock hotkey `ctrl + cmd - space` or any other custom hotkey other than macOS' "**Press 🌐 key to**" function. My guess is that the system needs time to check if you are holding or pressing Globe/fn and therefore there occurs this slight delay so many are annoyed by. Using it with another dedicated hotkey isn't as fast as [Raycast](https://www.raycast.com/)'s Emoji Picker of [Rocket](https://matthewpalmer.net/rocket/) for example, but fast enough for me.
+- Many people praise the use of the so called hyper key (=`ctrl + shift + alt + cmd`) for app launching and other stuff, where they use [BetterTouchTool](https://folivora.ai/), [Keyboard Maestro](https://www.keyboardmaestro.com/main/), [Karabiner Elements](https://karabiner-elements.pqrs.org/), [Skhd](https://github.com/koekeishiya/skhd) or ... to remap the _Capslock_ key to this hyper key and open/focus apps with it. I use the _Control_ key for this, cf. ..., and the hyper key I use for different special cases and other stuf. _Something about the use of the "hyper" key in my setup.._ to react to the many guys praising this one.. : Use-example: hyper - tab : "macOS' next window" and then my version: alt + cmd - tab : skhd -k "hyper - tab"; cliclick_focus. Perhaps this not here but placing it at the hotkeys chapter.
   Another tip: Check out [Rcmd](https://lowtechguys.com/rcmd/) which seems to be a cool solution too.
-- I also use(d) [Keysmith](https://www.keysmith.app/) quite a bit for quick debugging and testing, since it's super convenient, but in the end I can implement all the stuff I came across within a year via bash or osascript (AppleScript) using jq, cliclick and all these awesome Homebrew formulae. Most of the time it's even faster this way.
-- I want to have my setup quite minimal in the sense that I want to use as few apps as possible and consume as few resources as possible. That said, I DO use quite a few apps to get my setup to the state I want it to be. 😂 It would be cool to have ONE all-in-one app, preferably just a "formula" like [Skhd](https://github.com/koekeishiya/skhd) + [Yabai](https://github.com/koekeishiya/yabai), with no UI but a very clean way to manage the config in dedicated dotfiles.
-- [Sketchybar](https://github.com/FelixKratz/SketchyBar) replaces the stock menubar and shows the system information I want to see up there while also having some other important "active"/clickable features I like. The stock menubar is set to autohide and also made invisible using Yabai. The visibility is quickly toggleable so that the menubar is still usable if needed. Also: 1. the "System Status Bar" is only visible on the inbuilt screen, while the external screen has no permanent bar at all. 2. Additionally you gain a few pixels under the notch on the inbuilt screen.
-- For hiding menubar icons I use Thaw (switched from [Ice](https://github.com/jordanbaird/Ice), which appears to no longer be actively developed).
-- BatFi handles battery charge management / charge limiting.
+- I also use(d) [Keysmith](https://www.keysmith.app/) quite a bit for quick debugging and testing, since it's super convenient, but in the end I can implement all stuff I came across within a year via bash or osascript (Applescript) using jq, cliclick and all these awesome Homebrew formulaes. Most of the time it's even faster this way. _THE SAME WILL PROBABLY BE TRUE FOR ONLYSWITCH IN THE FUTURE. ICE DANN JEDOCH ALS MENUBAR-HIDER._
+- I want to have my setup quite minimal in the sense that I want to use as few as possible apps<!--programs --> and ressources. That said, I DO use quite a few of apps to get my setup to the state I want it to be. 😂 It would be cool to have ONE all-in-one app, preferably just a "formulae" like [Skhd](https://github.com/koekeishiya/skhd) + [Yabai](https://github.com/koekeishiya/yabai), which has no UI, but a very clean way to manage the config in dedicated dotfiles. That would be awesome.. // add LIST: ... AND merge it with the dependencies at the end...
+- Mentioning unpresent clock in sketchybar and hotkey window etc...
+- [Sketchybar](https://github.com/FelixKratz/SketchyBar) replaces the stock menubar and shows the system information I want to see up there while also having some other important "active"/clickable features I like. The stock menubar is set to autohide and also made invisable using yabai. The visability is quickly toggleable so that the menubar is still usable if needed. ... Also: 1. the "System Status Bar" is only visable on the inbuilt screen, while the external screen has no permanent bar at all. 2. Additionally you gain a few pixels under the notch on the inbuilt screen. ...
+- ice ersetzung durch onlyswitch etc... mentioning. Und wie onylswitch eine app ist, die viele andere ersetzt. vielleicht selbst aktiv werden und eine traumapp bauen? macOS+/macOSmax(like q4max?). 20:04, 06.05.25, TUE: NO, switched back to ice and custom solutions for the rest!
+- Mention BatFi and other apps?
+- ...
 
 ## Keyboard Setup
 ---
@@ -88,7 +111,9 @@ which is meant to mimic the inbuilt keyboard with its layout as best as possible
 
    ---
     
-    `fn + alt - f13` = `shift + alt - f13` : open/close digital audio mixer RME TotalMix FX (Babyface Pro)
+    `fn + alt - f13` = `shift + alt - f13` : open/close digital audio mixer RME TotalMix FX (Babyface Pro) <!-- show/hide menubar ([Yabai](https://github.com/koekeishiya/yabai)) -->
+    
+    `fn + alt - f14` = `shift + alt - f14` : ... tmx mute?
     
     `fn + alt - f15` = `shift + alt - f15` : turn guitar setup on (RME TotalMix FX)
     
@@ -122,15 +147,15 @@ One main feature of the whole setup is that the mouse follows the focus and also
 
 <a id="anchor1"></a>  
 
-Many of the stock macOS' hotkeys I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...` or (in case of the ones that are "stock" and not changeable UI-wise) I overwrote them with [Skhd](https://github.com/koekeishiya/skhd) either with new functions or with `return`, e.g.: `alt + cmd - h : return # hide others`
+Many of the stock macOS' hotkeys I have either deactivated directly in `System Settings > Keyboard > Keyboard Shortcuts...` or (in case of the ones that are "stock" and not changeable UI-wise) I overwrote them with [Skhd](https://github.com/koekeishiya/skhd) either with new functions or with `return`, e.g.: `alt + cmd - h : return # hide others` <!-- `fn + shift - a : return # show launchpad` -->
 
 I will now list some important hotkey-categories with a selection of their according hotkeys - to get an idea of the "system" - where I deliberately don't list all the ones (and/or the intricacies behind the ones shown) you can find in the dotfiles, because they are mostly too specific to me and my peculiar setup.  
 Features that are basically stock in macOS but mostly remapped I will write **Capitalized And Bold**.  
-All this (obviously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some scripting; if other apps are used to achieve the desired function/feature/behavior they are mentioned in parentheses.  
+All this (obviously) heavily relies and is based on [Skhd](https://github.com/koekeishiya/skhd) and [Yabai](https://github.com/koekeishiya/yabai) as well as some <!--bash -->scripting; if other apps are used to achieve the desired function/feature/behavior they are mentioned in parentheses.  
 
 #### Remark
 
-I don't use [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature, instead I just use the floating window management.  
+I don't use  [Yabai](https://github.com/koekeishiya/yabai)'s tiling feature, instead I just use the floating window management.  
 
 > Why don't you use the newly available inbuilt window management features of macOS then?
 
@@ -201,7 +226,7 @@ CTRL                             ...         ä        #
 
 `alt + cmd - w` : create and focus new space on current display ([Yabai](https://github.com/koekeishiya/yabai))
 
-`ctrl + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window ([Yabai](https://github.com/koekeishiya/yabai))
+`<!--shift-->ctrl + alt + cmd - w` : create new space on current display and move current window to newly created space and focus that window ([Yabai](https://github.com/koekeishiya/yabai))
 
 `alt + cmd - e` : change and focus display ([Yabai](https://github.com/koekeishiya/yabai))
 
@@ -234,7 +259,7 @@ TAB      Q        W
 
 `ctrl - e` : open and focus new **Finder** window at stock folder
 
-`ctrl + cmd - e` : focus any background app to be able to use Skhd's hotkeys while in a blacklisted app (**Shortcuts w/Applescript**)
+`ctrl + cme - e` : focus any background app to be able to use Skhd's hotkeys while in a blacklisted app (**Shortcuts w/Applescript**)
 
 `ctrl + alt - e` : focus **Finder**
 
@@ -244,7 +269,7 @@ TAB      Q        W
 
 `ctrl - p` : open and/or focus **Passwords**
 
-`ctrl - s` : open and/or focus **Safari**
+`ctrl - s` : open and/of focus **Safari**
 
 `ctrl + cmd - s` : open and focus new **Finder** window at Screenshots
 
@@ -284,13 +309,17 @@ TAB      Q        W
 
 ---
 
-`fn - esc` : toggle keyboard backlight ([mac-brightnessctl](https://github.com/rakalex/mac-brightnessctl))
+`fn - esc` : toggle keyboard backlight ([mac-brightnessctl](https://github.com/rakalex/mac-brightnessctl))<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
 `fn - f*` : **F\* / Special Function**
 
 `fn - backspace` : **(Forward) Delete**
 
-`fn - r` : toggle favorite radio station ([mpv](https://mpv.io/installation/))
+<!-- `fn - w` : executes custom bash script: adjustments to changes triggered by setup changes (desk / mobile) (also cf. yabai signals...) -->
+
+`fn - r` : toggle favorite radio station ([mpv](https://mpv.io/installation/)<!-- or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)-->)
+
+`fn - t` : SHOW CLOCK ... <!-- pomodoro timer 25/5 (x4) (DIFFERENT! --- [OnlySwitch](https://github.com/jacklandrin/OnlySwitch)) -->
 
 `fn - s` : sleep immediately (**Pmset**)
 
@@ -302,11 +331,12 @@ TAB      Q        W
 
 `fn - c` : **Show/Hide Control Center**
 
-`fn - b` : toggle **Background Sounds (Rain)** ([mpv](https://mpv.io/installation/))
+`fn - b` : toggle **Backgruound Sounds (Rain)** ([mpv](https://mpv.io/installation/) <!--open and/or focus **Safari Webapp** w/[rain.today](https://rain.today/)--> <!--start/stop background noise (**defaults** & **launchctl** or [OnlySwitch](https://github.com/jacklandrin/OnlySwitch))-->
 
 `fn - n` : **Show/Hide Notification Center**
 
 `fn - left/up/down/right` : **Home/PageUp/PageDown/End**
+<!-- `fn - *_arrow` : **Home, PageUp, PageDown, End** -->
 
 ---
 
@@ -316,9 +346,9 @@ TAB      Q        W
 
 `cmd - f8` : dedicated global play/pause button for favorite audio player ([cliclick](https://github.com/BlueM/cliclick) & [Foobar2000](https://www.foobar2000.org/mac))
 
-`alt - f10` : mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
+`alt - f10` :  mute ([Switchaudio-OSX](https://github.com/deweller/switchaudio-osx))
 
-`alt - f11` : `volume_down`
+`alt - f11` : `vulome_down`
 
 `alt - f12` : `volume_up`
 
@@ -328,7 +358,9 @@ TAB      Q        W
 
 `cmd - delete` = `cmd + fn - backspace` : effectively "reversing" `cmd - backspace` (which should be stock)
 
-`space` : In Finder: "pimped" quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$)
+`space` : In Finder: "pimped" quick look ([Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12), 2$, new since 18:32, 03.05.25, SAT)
+
+_ADD THE REST OF THE KEPT MACOS HOTKEYS TOO! perhaps even more from other programs/apps?_
 
 ---
 ### Mouse and Trackpad Actions & Gestures
@@ -344,19 +376,19 @@ TAB      Q        W
 
 `shift + scrolling` : horizontal scrolling
 
-`alt (+ shift) + scrolling` : faster (horizontal) scrolling ([LinearMouse](https://linearmouse.app/))
+`alt (+ shift) + scrolling` : faster (horizontal) scrolling ([Linearmouse](https://linearmouse.app/))
 
-`forwards_button / backwards_button` : "universal back and forward" ([LinearMouse](https://linearmouse.app/))
+`forwards_button / backwards_button` : "universal back and forward" ([Linearmouse](https://linearmouse.app/))
 
-`alt - forwards_button` : smart zoom ([LinearMouse](https://linearmouse.app/)) (only mouse)
+`alt - forwards_button` : smart zoom ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`alt - backwards_button` : `cmd - 0` = often zooms out ([LinearMouse](https://linearmouse.app/)) (only mouse)
+`alt - backwards_button` : `cmd - 0` = often zooms out ([Linearmouse](https://linearmouse.app/))  (only mouse)
 
-`alt + cmd - left_button` = `alt + cmd - left_arrow` : often moves to the tab on the left ([LinearMouse](https://linearmouse.app/)) (only mouse)
+`alt + cmd - left_button` = `alt + cmd - left_arrow` : often moves to the tab on the left ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`alt + cmd - right_button` = `alt + cmd - right_arrow` : often moves to the tab on the right ([LinearMouse](https://linearmouse.app/)) (only mouse)
+`alt + cmd - right_button` = `alt + cmd - right_arrow` : often moves to the tab on the right ([Linearmouse](https://linearmouse.app/)) (only mouse)
 
-`alt + cmd - forwards_button` : toggle stock menubar visibility (cf. [last Sketchybar item](#anchor3)) ([Yabai](https://github.com/koekeishiya/yabai)) (only mouse)
+`alt + cmd - forwards_button` <!--= `alt + cmd - forwards_button` -->: toggle stock menubar visibility (cf. [last Sketchybar item](#anchor3)) ([Yabai](https://github.com/koekeishiya/yabai)) (only mouse)
 
 `three_finger_up` : **Mission Control** (only trackpad)
 
@@ -367,16 +399,15 @@ TAB      Q        W
 ---
 
 - **Display/Monitor-Setups** : only designed for maximal two displays, the internal and one external display with 27"1440p (to the left); and a new or different external monitor would need a few adaptions and/or changes.
-- **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via [Homebrew](https://brew.sh/). They are all free except [Menuwhere](https://manytricks.com/menuwhere/) (3$) and [Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12) (2$).
+- **Dependencies** : many Apps are needed and mentioned all over this readme. Most of them can comfortably be downloaded via [Homebrew](https://brew.sh/). They are all free except of [Menuwhere](https://manytricks.com/menuwhere/) (3$) and [Folder Preview](https://apps.apple.com/de/app/folder-preview/id6698876601?l=en-GB&mt=12) (2$). <!-- cliclick, jq, ... [all available on Homebrew] ... yabai, skhd, keysmith, onlyswitch, menuwhere, linearmouse, alttab, ... (check references again), -->
 - [Brightness](https://github.com/nriley/brightness) has to be ["installed from source"](https://github.com/nriley/brightness/pull/36#issuecomment-2835998750) to work. Installing it via Homebrew the normal way doesn't work.
-- **`razpatch`** : A helper script that patches `yabai.osax`'s capability flags (`0x81` → `0x80`) and re-signs the binary. Run this after macOS updates if Yabai's scripting addition stops working.
 
 ## System Status Bar ([Sketchybar](https://github.com/FelixKratz/SketchyBar))
 ---
 
-Screenshot-Example (may not reflect current state):
+Screenshot-Example (17:25, 01.05.25, THU):
 ![Screenshot 2025-05-01 at 17 24 59](https://github.com/user-attachments/assets/d9ab624a-3599-446c-871a-c95dfa9fd40e)
-
+<!-- ![Screenshot 2025-05-01 at 17 21 50](https://github.com/user-attachments/assets/3b09eec3-1714-45f8-bcd3-dbe89d019a28) <!-- ![Screenshot 2025-03-27 at 14 20 28](https://github.com/user-attachments/assets/2f9a8f46-c15a-4720-adca-d1534a5c2351) -->
 ---
 ### Explanation of [Sketchybar](https://github.com/FelixKratz/SketchyBar) items (left to right)
 ---
@@ -395,3 +426,16 @@ Screenshot-Example (may not reflect current state):
 - **CFW**: [Cloudflare Warp](https://formulae.brew.sh/cask/cloudflare-warp) [clickable: openAndConnect/quit]
 - **VPN**: [Viscosity](https://formulae.brew.sh/cask/viscosity#default) [clickable: openAndConnect/quit]
 - <a id="anchor3"></a>**Numbers**: date [clickable: toggle date/time] : day of the week : week of the year [clickable: toggle yabai -m config menubar_opacity (0.00/1.00)]
+
+<!-- 
+### Indication: ...
+
+## Always & Quickly Available Terminal ---iTerm2
+
+### Hotkey Window
+
+![Screenshot 2025-03-29 at 11 50 01](https://github.com/user-attachments/assets/df4c5621-4fc6-40e6-ac33-6e41be3383cc)
+
+### Customized btop
+
+-->
