@@ -1,4 +1,4 @@
-# "maqOS/macOSmax" : My Custom macOS Setup (Sequoia 15.4+)
+# "maqOS/macOSmax" : My Custom macOS Setup (Sequoia 15.4+) 13:47, 23.04.26, THU : NOT UP TO DATE (readme) ... 
 ---
 
 ## General Information & Philosophy
