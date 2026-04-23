@@ -404,8 +404,7 @@
                         ]
                     },
                     {
-                        "description": "Left Command tap → show Mouseless overlay",
-                        "enabled": false,
+                        "description": "Left CMD tap → Mouseless overlay toggle",
                         "manipulators": [
                             {
                                 "from": {
@@ -413,7 +412,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "left_command" }],
-                                "to_if_alone": [{ "shell_command": "open -g 'mouseless://toggle-overlay'" }],
+                                "to_if_alone": [{ "shell_command": "open mouseless://toggle-overlay && /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }],
                                 "type": "basic"
                             }
                         ]

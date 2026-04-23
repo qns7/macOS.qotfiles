@@ -16,6 +16,12 @@ else
         set -- $ALLSPA
         yabai -m space --focus $1
     fi
+    # sleep 0.1
+    # open "mouseless://hide-overlay"
+    # sleep 0.1
+    # open "mouseless://show-overlay"
+    # sleep 0.1
+    # open "mouseless://hide-overlay"
     # del_empty_spaces
     # sleep 0.1
     # ~/bin/cliclick_focus
