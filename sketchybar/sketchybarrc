@@ -23,6 +23,7 @@ sketchybar --default "${default[@]}"
 source $ITEM_DIR/space_info.sh
 source $ITEM_DIR/front_app.sh
 
+source $ITEM_DIR/batt.sh
 source $ITEM_DIR/percentages.sh
 source $ITEM_DIR/ram.sh
 source $ITEM_DIR/bar_q_0.sh
