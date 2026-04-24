@@ -1,14 +1,19 @@
 #!/bin/bash
 
 if ! /opt/homebrew/bin/cliclick "$(/opt/homebrew/bin/yabai -m query --windows --window | /opt/homebrew/bin/jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')"; then
-    DISPLAYS=$(/opt/homebrew/bin/yabai -m query --displays)
-    NUM_DISPLAYS=$(echo "$DISPLAYS" | /opt/homebrew/bin/jq length)
-    CURRENT_DISPLAY=$(echo "$DISPLAYS" | /opt/homebrew/bin/jq -r '.[] | select(.["has-focus"] == true) | .uuid')
-    if [[ $NUM_DISPLAYS -eq 1 ]]; then
-        /opt/homebrew/bin/cliclick m:900,603
-    elif [[ $CURRENT_DISPLAY == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
-        /opt/homebrew/bin/cliclick m:3460,603
-    else
-        /opt/homebrew/bin/cliclick m:1280,720
-    fi
+    # FIX: was hardcoded UUID check + hardcoded per-display coordinates.
+    # Replaced with dynamic center computation from the focused display frame —
+    # works regardless of display count, arrangement, or UUID changes.
+    # DISPLAYS=$(/opt/homebrew/bin/yabai -m query --displays)
+    # NUM_DISPLAYS=$(echo "$DISPLAYS" | /opt/homebrew/bin/jq length)
+    # CURRENT_DISPLAY=$(echo "$DISPLAYS" | /opt/homebrew/bin/jq -r '.[] | select(.["has-focus"] == true) | .uuid')
+    # if [[ $NUM_DISPLAYS -eq 1 ]]; then
+    #     /opt/homebrew/bin/cliclick m:900,603
+    # elif [[ $CURRENT_DISPLAY == "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]]; then
+    #     /opt/homebrew/bin/cliclick m:3460,603
+    # else
+    #     /opt/homebrew/bin/cliclick m:1280,720
+    # fi
+    /opt/homebrew/bin/cliclick "$(/opt/homebrew/bin/yabai -m query --displays --display \
+        | /opt/homebrew/bin/jq -r '.frame | "m:\(.x + (.w/2) | floor),\(.y + (.h/2) | floor)"')"
 fi

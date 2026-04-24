@@ -7,19 +7,32 @@ if [ -f "$POS_FILE" ]; then
     cliclick m:$SAVED_POS
     rm -f "$POS_FILE"
     if [ -f "$WATCHER_PID_FILE" ]; then
-        kill "$(cat "$WATCHER_PID_FILE")" 2>/dev/null
+        # FIX: added -0 check before kill to avoid noise if watcher already exited
+        # kill "$(cat "$WATCHER_PID_FILE")" 2>/dev/null
+        WATCHER_PID=$(cat "$WATCHER_PID_FILE")
+        kill -0 "$WATCHER_PID" 2>/dev/null && kill "$WATCHER_PID" 2>/dev/null
         rm -f "$WATCHER_PID_FILE"
     fi
     cliclick m:+0,+1 && cliclick m:+0,-1
 else
     OPOS=$(cliclick p)
-    echo "$OPOS" > "$POS_FILE"
+    # FIX: moved cliclick before echo to POS_FILE to prevent a race condition
+    # where a quick second press restores before the cursor has reached the dock,
+    # causing press 1's dock-move to fire last and leave the cursor stranded there.
+    # echo "$OPOS" > "$POS_FILE"
+    # cliclick m:0,$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor') / 2))
     cliclick m:0,$(($(yabai -m query --displays | jq -r 'min_by(.index) | .frame.h | floor') / 2)) # not in the middle of the dock on internal display, but that's ok..
+    echo "$OPOS" > "$POS_FILE"
     # move a bit left to get dock in fullscreen
     (
         PREV_POS=$(cliclick p)
+
+        # FIX: date +%s.%N is Linux-only; %N is rendered literally on macOS BSD date.
+        # Replaced with perl for sub-second precision. Threshold lowered 1.37 -> 1.
         # START_TIME=$(date +%s)
-        START_TIME=$(date +%s.%N)
+        # START_TIME=$(date +%s.%N)
+        START_TIME=$(perl -MTime::HiRes=time -e 'printf "%.6f\n", time')
+
         while [ -f "$POS_FILE" ]; do
             sleep 0.1
             CURR_POS=$(cliclick p)
@@ -29,12 +42,15 @@ else
                 cliclick m:+0,+1 && cliclick m:+0,-1
                 exit 0
             fi
+
+            # FIX: was date +%s.%N (broken on macOS) then piped through bc.
+            # Now uses perl for both timestamps; awk does the comparison in one step.
             # CURRENT_TIME=$(date +%s)
-            # if (( CURRENT_TIME - START_TIME >= 3 )); then
-            CURRENT_TIME=$(date +%s.%N)
-            ELAPSED=$(awk "BEGIN {print $CURRENT_TIME - $START_TIME}")
-            # from 1.37 to 1
-            if (( $(echo "$ELAPSED >= 1" | bc -l) )); then
+            # CURRENT_TIME=$(date +%s.%N)
+            # ELAPSED=$(awk "BEGIN {print $CURRENT_TIME - $START_TIME}")
+            # if (( $(echo "$ELAPSED >= 1" | bc -l) )); then
+            CURRENT_TIME=$(perl -MTime::HiRes=time -e 'printf "%.6f\n", time')
+            if awk "BEGIN { exit !($CURRENT_TIME - $START_TIME >= 1) }"; then
                 SAVED_POS=$(cat "$POS_FILE")
                 cliclick m:$SAVED_POS
                 rm -f "$POS_FILE"

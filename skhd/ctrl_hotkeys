@@ -72,7 +72,7 @@ ctrl - a : pgrep "foobar2000" >/dev/null && open_or_focus "foobar2000" || { open
 #ctrl - a : pgrep "foobar2000" >/dev/null && open_or_focus "foobar2000" || { open -a "foobar2000"; sleep 0.37; skhd -k "cmd - q"; sleep 0.21; open -a "foobar2000"; sleep 1.37; open_or_focus "foobar2000"; } # pgrep-yabai_query>cliclick-workaround-fix, move to the beginning of the line or paragraph (stock)
 #ctrl - a : open_or_focus "foobar2000"
     # ctrl + cmd - a : make an alias of the selected item (stock) : perhaps just in finder and something different otherwise?
-    ctrl + alt - a : return #/opt/homebrew/bin/nowplaying-cli togglePlayPause #~/bin/foobar_play
+    ctrl + alt - a : ~/bin/foobar_play #return #/opt/homebrew/bin/nowplaying-cli togglePlayPause #~/bin/foobar_play
     ctrl + alt + cmd - a : return
 ctrl - s : open_or_focus "Safari"
     ctrl + cmd - s : open_folder /Volumes/Screenshots
@@ -94,7 +94,7 @@ ctrl - d : mouse_dock # feature-request: handle native-fullscreens, forward dele
         # "Finder" : skhd -k "alt + cmd - l" # go to downloads folder (stock), shift + alt - d is desktop
         # * : open_folder ~/Downloads
         # ]
-ctrl - f : open_or_focus "Firefox"; sleep 0.37; open_or_focus "Firefox" # move one character forward (stock)
+ctrl - f : open_or_focus "Firefox"; sleep 0.07; open_or_focus "Firefox" # move one character forward (stock)
     # ctrl + cmd - f : 'native fullscreen' (stock)
     ctrl + cmd - f [
         "TV" : skhd -k "fn - f" # cf. 'fn_hotkeys'
