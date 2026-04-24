@@ -21,10 +21,16 @@ fi
 
 CHARGING="$(pmset -g batt | grep 'AC Power')"
 
-if [[ "$CHARGING" != "" ]]; then
-    sketchybar --set percentages icon="$:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}C"
+if pgrep -xq "Disk Utility"; then
+    ICON_COLOR="icon.color=0xff4e4e4e"
 else
-    sketchybar --set percentages icon="$:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}B"
+    ICON_COLOR="icon.color=0xffc7c7c7"
+fi
+
+if [[ "$CHARGING" != "" ]]; then
+    sketchybar --set percentages $ICON_COLOR icon="$:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}C"
+else
+    sketchybar --set percentages $ICON_COLOR icon="$:${DISK1}I.${DISK2}E.${DISK3}S:${BATTERY}B"
 fi
 
 # if [[ "$CHARGING" != "" ]]; then

@@ -2,6 +2,7 @@
 
 sketchybar --add item percentages q \
            --set percentages script="$PLUGIN_DIR/percentages.sh" \
+                             click_script="$PLUGIN_DIR/click_percentages.sh" \
                              icon.padding_right=3 \
                              icon.width=182 \
                              icon.align=right \
