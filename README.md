@@ -4,6 +4,7 @@
 ## General Information & Philosophy
 ---
 
+- ADD COST OVERVIEW - ALL APPS IN USE AND WHICH ARE FREE AND/OR PURCHASED
 - This description/readme is just an overview. For all the details please check the dotfiles directly, which get updated very often 😬
 - The following applies throughout: `alt = opt(ion)` and hotkeys = shortcuts.
 - I only used Windows and Linux all my life - until April 2024. Back then I bought my first MacBook; and since then I am continuously working on my setup, which I now want to share here.
