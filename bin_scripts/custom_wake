@@ -24,7 +24,7 @@ else
     sleep 4.9 # 4.2 # 3.7
     # /opt/homebrew/bin/SwitchAudioSource -s "SoundID Reference" &> /dev/null
     /Users/q/bin/open_or_focus "SoundID Reference"
-    sleep 0.1
+    sleep 0.37
     /Users/q/bin/close_soundid
     sleep 0.37 # 1
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
