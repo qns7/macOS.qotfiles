@@ -8,6 +8,7 @@ if [ -f "$PID_FILE" ]; then
     rm "$PID_FILE"
     sketchybar --set kb icon.color=0xff4e4e4e
     "$KARABINER" --select-profile 'q'
+    sleep 0.37
     open -a "mouseless"
 else
     sketchybar --set kb icon.color=0xffff9500
