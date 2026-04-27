@@ -9,8 +9,8 @@ if [ -f "$PID_FILE" ]; then
     rm "$PID_FILE"
     "$KARABINER" --select-profile 'q'
     killall karabiner_grabber
-    sleep 3
     open -a "mouseless"
+    sleep 3
     sketchybar --set kb icon.color=0xff4e4e4e
 else
     sketchybar --set kb icon.color=0xffff9500
