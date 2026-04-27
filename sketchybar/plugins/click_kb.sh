@@ -4,12 +4,14 @@ KARABINER="/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabine
 PID_FILE="/tmp/keyboard_block.pid"
 
 if [ -f "$PID_FILE" ]; then
+    sketchybar --set kb icon.color=0xFFFC5753
     kill "$(cat "$PID_FILE")" 2>/dev/null
     rm "$PID_FILE"
-    sketchybar --set kb icon.color=0xff4e4e4e
     "$KARABINER" --select-profile 'q'
-    sleep 0.37
+    killall karabiner_grabber
+    sleep 3
     open -a "mouseless"
+    sketchybar --set kb icon.color=0xff4e4e4e
 else
     sketchybar --set kb icon.color=0xffff9500
     killall mouseless
@@ -17,6 +19,26 @@ else
     /Users/q/Developer/APPS/keyboardcleaner/keyboardcleaner &
     echo $! > "$PID_FILE"
 fi
+
+# #!/bin/bash
+
+# KARABINER="/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
+# PID_FILE="/tmp/keyboard_block.pid"
+
+# if [ -f "$PID_FILE" ]; then
+#     kill "$(cat "$PID_FILE")" 2>/dev/null
+#     rm "$PID_FILE"
+#     sketchybar --set kb icon.color=0xff4e4e4e
+#     "$KARABINER" --select-profile 'q'
+#     sleep 0.37
+#     open -a "mouseless"
+# else
+#     sketchybar --set kb icon.color=0xffff9500
+#     killall mouseless
+#     "$KARABINER" --select-profile 'OFF'
+#     /Users/q/Developer/APPS/keyboardcleaner/keyboardcleaner &
+#     echo $! > "$PID_FILE"
+# fi
 
 # #!/bin/bash
 
