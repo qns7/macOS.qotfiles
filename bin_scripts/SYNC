@@ -71,3 +71,5 @@ rsync -a /Users/q/bin/set_keylight_brightness /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/open_in_new_window.scpt /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/focused_finder_path.scpt /Users/q/.config/bin_scripts/
 rsync -a /Users/q/bin/razpatch /Users/q/.config/bin_scripts/
+
+rsync -a /Users/q/Library/Containers/net.sonuscape.mouseless/Data/.mouseless/configs/config.yaml /Users/q/.config/mouseless/
