@@ -27,7 +27,7 @@ custom_mouse_screen_offset_scaling: 1.0
 custom_overlay_scaling: 1.0
 debug_options: {}
 display_input: none
-event_tap_location: annotated_head
+event_tap_location: hid_head
 general_settings:
   automatically_check_for_updates: true
   check_for_preview_releases: true
