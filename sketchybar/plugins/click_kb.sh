@@ -10,7 +10,7 @@ if [ -f "$PID_FILE" ]; then
     "$KARABINER" --select-profile 'q'
     launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
     open -a "mouseless"
-    sleep 3
+    sleep 4.9
     sketchybar --set kb icon.color=0xff4e4e4e
 else
     sketchybar --set kb icon.color=0xffff9500
