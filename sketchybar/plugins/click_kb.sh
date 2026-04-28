@@ -8,7 +8,7 @@ if [ -f "$PID_FILE" ]; then
     kill "$(cat "$PID_FILE")" 2>/dev/null
     rm "$PID_FILE"
     "$KARABINER" --select-profile 'q'
-    killall karabiner_grabber
+    launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
     open -a "mouseless"
     sleep 3
     sketchybar --set kb icon.color=0xff4e4e4e
