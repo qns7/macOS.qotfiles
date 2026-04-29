@@ -703,6 +703,7 @@
                 }
             ],
             "name": "q",
+            "selected": true,
             "simple_modifications": [
                 {
                     "from": { "key_code": "escape" },
@@ -725,7 +726,6 @@
         },
         {
             "name": "OFF",
-            "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
         }
     ]
