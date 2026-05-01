@@ -1,9 +1,23 @@
 #!/bin/bash
 
-osascript -e 'tell application "Finder" to make new Finder window to (POSIX file "'"$1"'")'
-open_or_focus "Finder" && sleep 0.37 && yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
-# sleep 0.73
-# yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus --- see above - is this the way in general perhaps? time tells - testing..!
-# open $1
-# sleep 0.1
-# ~/bin/cliclick_focus
+yabai -m signal --add \
+  event=window_created \
+  app="Finder" \
+  label="finder_open_once" \
+  action='yabai -m signal --remove finder_open_once; \
+          yabai -m window --focus $YABAI_WINDOW_ID; \
+          yabai -m window $YABAI_WINDOW_ID --grid 1:2:0:0:1:1; \
+          $HOME/bin/cliclick_focus'
+
+osascript -e "tell application \"Finder\" to make new Finder window to (POSIX file \"$1\")"
+open_or_focus "Finder"
+
+# #!/bin/bash
+
+# osascript -e 'tell application "Finder" to make new Finder window to (POSIX file "'"$1"'")'
+# open_or_focus "Finder" && sleep 0.37 && yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus
+# # sleep 0.73
+# # yabai -m window --grid 1:2:0:0:1:1; sleep 0.01; ~/bin/cliclick_focus --- see above - is this the way in general perhaps? time tells - testing..!
+# # open $1
+# # sleep 0.1
+# # ~/bin/cliclick_focus
