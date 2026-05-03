@@ -1,9 +1,30 @@
 #!/bin/bash
 
-# trap 'yabai -m config mouse_follows_focus off' EXIT
-# yabai -m config mouse_follows_focus on
-open -a "$1"
-sleep 0.1
-~/bin/cliclick_focus
-# sleep 0.27
+APP="$1"
+
+WIN_COUNT=$(yabai -m query --windows | jq --arg app "$APP" '[.[] | select(.app == $app)] | length')
+
+if [ "$WIN_COUNT" -eq 0 ]; then
+  yabai -m signal --add \
+    event=window_created \
+    app="$APP" \
+    label="open_or_focus_once" \
+    action='yabai -m signal --remove open_or_focus_once; \
+            yabai -m window --focus $YABAI_WINDOW_ID; \
+            $HOME/bin/cliclick_focus'
+  open -a "$APP"
+else
+  open -a "$APP"
+  sleep 0.1
+  ~/bin/cliclick_focus
+fi
+
+# #!/bin/bash
+
+# # trap 'yabai -m config mouse_follows_focus off' EXIT
+# # yabai -m config mouse_follows_focus on
+# open -a "$1"
+# sleep 0.1
 # ~/bin/cliclick_focus
+# # sleep 0.27
+# # ~/bin/cliclick_focus

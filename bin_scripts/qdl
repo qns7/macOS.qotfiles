@@ -25,11 +25,9 @@ const os      = require('os');
 const { spawnSync } = require('child_process');
 
 // ─── Credential refresh ───────────────────────────────────────────────────────
-// Runs both update scripts before reading .env, so every qdl invocation
-// starts with fully fresh credentials — no need to run qs() first.
-//
-//   update_qobuz_env   → scrapes app_id + secret from Qobuz bundle.js
-//   update_qobuz_token → logs into firehawk52.com, fetches QOBUZ_AUTH_TOKENS
+// update_qobuz_env  → scrapes app_id + secret from Qobuz bundle.js
+// Token refresh via firehawk52.com is blocked by Cloudflare — refresh manually
+// when downloads fail: log in at firehawk52.com and update QOBUZ_AUTH_TOKENS in .env
 
 function runUpdateScript(scriptPath, label) {
     if (!fs.existsSync(scriptPath)) {
@@ -41,19 +39,15 @@ function runUpdateScript(scriptPath, label) {
     if (result.status === 0) {
         const line = (result.stdout || '').split('\n').find(l => l.trim()) || 'done';
         console.log(line.trim());
-        if (result.stderr && result.stderr.trim()) {
-            process.stderr.write('  ' + result.stderr.trim() + '\n');
-        }
     } else {
         process.stdout.write('\n');
         process.stderr.write(`Warning: ${label} failed — using existing .env value.\n`);
-        if (result.stderr) process.stderr.write(result.stderr + '\n');
     }
 }
 
 function refreshCredentials() {
-    runUpdateScript(path.join(os.homedir(), 'bin', 'update_qobuz_env'),   'Refreshing app credentials');
-    runUpdateScript(path.join(os.homedir(), 'bin', 'update_qobuz_token'), 'Refreshing auth token');
+    runUpdateScript(path.join(os.homedir(), 'bin', 'update_qobuz_env'), 'Refreshing app credentials');
+    console.log('Note: if downloads fail, refresh your token manually at firehawk52.com → update QOBUZ_AUTH_TOKENS in ~/Qobuz-DL/.env');
 }
 
 // ─── Load .env ────────────────────────────────────────────────────────────────
@@ -129,7 +123,6 @@ const FFMPEG = (() => {
     for (const candidate of ['ffmpeg', '/opt/homebrew/bin/ffmpeg', '/usr/local/bin/ffmpeg']) {
         const r = spawnSync('which', [candidate.startsWith('/') ? candidate : candidate], { encoding: 'utf8' });
         if (r.status === 0) return candidate;
-        // also try direct path
         if (candidate.startsWith('/') && fs.existsSync(candidate)) return candidate;
     }
     return null;
@@ -169,9 +162,6 @@ function apiGet(endpoint, params = {}) {
     });
 }
 
-// Stream a URL to a local file with a two-line progress display.
-// Line 1: label (printed once, never overwritten)
-// Line 2: progress bar (overwritten in-place)
 function downloadFile(url, destPath, label) {
     return new Promise((resolve, reject) => {
         const proto = url.startsWith('https') ? https : http;
@@ -180,14 +170,11 @@ function downloadFile(url, destPath, label) {
         const tmp  = destPath + '.tmp';
         const file = fs.createWriteStream(tmp);
 
-        // Print the label line once up front
         process.stdout.write(`  ${label}\n`);
 
         proto.get(url, (res) => {
-            // Follow redirect
             if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
                 file.close(() => fs.unlink(tmp, () => {}));
-                // Erase the label line we just wrote so it isn't doubled
                 process.stdout.write(`\x1B[1A\x1B[2K`);
                 return downloadFile(res.headers.location, destPath, label).then(resolve, reject);
             }
@@ -234,7 +221,6 @@ function renderBar(done, total) {
     process.stdout.write(`\r  [${bar}] ${info}   `);
 }
 
-// Download a file to a Buffer (for cover art we need it as bytes for ffmpeg)
 function fetchBuffer(url) {
     return new Promise((resolve, reject) => {
         const proto = url.startsWith('https') ? https : http;
@@ -250,17 +236,15 @@ function fetchBuffer(url) {
     });
 }
 
-// ─── Format helpers (mirrors web app logic exactly) ──────────────────────────
+// ─── Format helpers ───────────────────────────────────────────────────────────
 
 function formatTitle(item) {
-    // matches: `${title}${version ? ' (' + version + ')' : ''}`.trim()
     const title   = item.title || item.name || '';
     const version = item.version ? ` (${item.version})` : '';
     return (title + version).trim();
 }
 
 function formatArtists(album, separator = ', ') {
-    // matches: album.artists?.length > 0 ? artists.map(a => a.name).join(sep) : performer?.name || 'Various Artists'
     if (album.artists && album.artists.length > 0) {
         return album.artists.map(a => a.name).join(separator);
     }
@@ -270,14 +254,10 @@ function formatArtists(album, separator = ', ') {
 function getFullResImageUrl(album) {
     const large = album.image?.large;
     if (!large) return null;
-    // matches web app: strip last 7 chars ("_600.jpg") → "org.jpg"
     return large.slice(0, large.length - 7) + 'org.jpg';
 }
 
-// Mirrors cleanFileName in utils.ts
 function cleanName(s) {
-    // On macOS, only / and : are truly problematic in filenames.
-    // ? * " < > | are legal on APFS — keeping them as-is.
     const banned = ['/', '\\', ':'];
     let out = s || 'Unknown';
     for (const c of banned) out = out.split(c).join('_');
@@ -311,10 +291,6 @@ async function getDownloadURL(trackId, q) {
 
 // ─── Metadata via system ffmpeg ───────────────────────────────────────────────
 
-// Mirrors applyMetadata() in ffmpeg-functions.tsx exactly — two separate passes,
-// same as the web app:
-//   Pass 1: inject text metadata via a metadata file  (-map_metadata 1 -codec copy)
-//   Pass 2: attach cover art                          (-map 0 -map 1 -disposition:v:0 attached_pic)
 function applyMetadata(trackPath, track, albumData, coverPath) {
     if (!FFMPEG) return;
 
@@ -334,16 +310,13 @@ function applyMetadata(trackPath, track, albumData, coverPath) {
     const upcTag       = album.upc || '';
     const trackNumTag  = String(track.track_number || '');
 
-    // Escape a value for the ffmetadata file format:
-    // \ → \\,  = → \=,  newlines → \\\n  (per ffmpeg metadata spec)
     const esc = v => String(v).replace(/\\/g, '\\\\').replace(/=/g, '\\=').replace(/\n/g, '\\\n');
 
-    // Build the ffmetadata file (same format the web app writes to metadata.txt)
     let metadataFile = ';FFMETADATA1';
     metadataFile += `\ntitle=${esc(titleTag)}`;
     metadataFile += `\nartist=${esc(artistTag)}`;
     metadataFile += `\nalbum_artist=${esc(artistTag)}`;
-    metadataFile += `\nalbum_artist=${esc(albumArtist)}`;   // second write wins, mirrors web app
+    metadataFile += `\nalbum_artist=${esc(albumArtist)}`;
     metadataFile += `\nalbum=${esc(albumTag)}`;
     metadataFile += `\ngenre=${esc(genreTag)}`;
     metadataFile += `\ndate=${esc(dateTag)}`;
@@ -354,8 +327,6 @@ function applyMetadata(trackPath, track, albumData, coverPath) {
     if (upcTag)      metadataFile += `\nbarcode=${esc(upcTag)}`;
     if (trackNumTag) metadataFile += `\ntrack=${esc(trackNumTag)}`;
 
-    // Preserve the original extension (.flac/.mp3) on temp files so ffmpeg
-    // can determine the output format — it uses the file extension for this.
     const ext      = path.extname(trackPath);
     const metaTxt  = trackPath + '.ffmeta';
     const pass1Out = trackPath + '.pass1' + ext;
@@ -364,9 +335,6 @@ function applyMetadata(trackPath, track, albumData, coverPath) {
     try {
         fs.writeFileSync(metaTxt, metadataFile, 'utf8');
 
-        // ── Pass 1: text metadata ─────────────────────────────────────────────
-        // mirrors: ffmpeg.run('-i', 'input.flac', '-i', 'metadata.txt',
-        //                     '-map_metadata', '1', '-codec', 'copy', 'secondInput.flac')
         const r1 = spawnSync(FFMPEG, [
             '-y', '-i', trackPath, '-i', metaTxt,
             '-map_metadata', '1',
@@ -380,12 +348,7 @@ function applyMetadata(trackPath, track, albumData, coverPath) {
             return;
         }
 
-        // ── Pass 2: cover art ─────────────────────────────────────────────────
         if (coverPath && fs.existsSync(coverPath)) {
-            // Exact match of the web app's second ffmpeg.run call:
-            //   -c copy -map 0 -map 1 -disposition:v:0 attached_pic
-            // Confirmed by inspecting web-app output with ffprobe:
-            //   stream 1 is mjpeg, disposition.attached_pic = 1, tags.comment = "Other"
             const artArgs = [
                 '-y', '-i', pass1Out, '-i', coverPath,
                 '-c', 'copy',
@@ -400,7 +363,6 @@ function applyMetadata(trackPath, track, albumData, coverPath) {
             if (r2.status !== 0) {
                 process.stdout.write('\n');
                 process.stderr.write(`  [ffmpeg cover art] ${r2.stderr?.toString().split('\n').slice(-4).join(' ') || 'unknown error'}\n`);
-                // Art failed — keep the tagged-but-no-art version rather than losing the download
                 fs.renameSync(pass1Out, trackPath);
                 return;
             }
@@ -458,6 +420,7 @@ File naming:    {nn} {artists} - {title}     (matches web app default)
 Metadata + embedded cover art via system ffmpeg (brew install ffmpeg).
 
 Credentials are read from ~/Qobuz-DL/.env
+Token refresh: log in at firehawk52.com and update QOBUZ_AUTH_TOKENS in ~/Qobuz-DL/.env
 `);
 }
 
@@ -467,7 +430,6 @@ async function main() {
     const query = queryArg || await prompt('Search: ');
     if (!query) fatal('No search query provided.');
 
-    // ── Search ──────────────────────────────────────────────────────────────
     console.log(`\nDownload location: ${musicDir}`);
     process.stdout.write(`Searching "${query}"...\n`);
     const results = await search(query, limit);
@@ -494,7 +456,6 @@ async function main() {
         console.log(`      ${album.tracks_count} tracks${hires} · ${album.label?.name || ''}`);
     });
 
-    // ── Selection ────────────────────────────────────────────────────────────
     const sel = await prompt('\nEnter number (0 to cancel): ');
     const idx = parseInt(sel, 10) - 1;
 
@@ -503,18 +464,14 @@ async function main() {
 
     const chosen = albums[idx];
 
-    // ── Album details ────────────────────────────────────────────────────────
     process.stdout.write(`\nFetching track list for "${chosen.title}"...\n`);
     const albumData = await getAlbumInfo(chosen.id);
     const tracks    = albumData.tracks?.items || [];
 
     if (!tracks.length) fatal('No tracks returned for this album.');
 
-    // Folder name matches web app default zipName: "{artists} - {name}"
     const folderName = cleanName(formatArtists(albumData) + ' - ' + formatTitle(albumData));
     const albumDir   = path.join(musicDir, folderName);
-
-    // Track number padding: Math.max(String(tracks.length - 1).length, 2)  (matches web app)
     const pad = Math.max(String(tracks.length - 1).length, 2);
     const qualityLabel = QUALITY_LABELS[quality];
 
@@ -523,7 +480,6 @@ async function main() {
 
     fs.mkdirSync(albumDir, { recursive: true });
 
-    // ── Cover art ────────────────────────────────────────────────────────────
     const coverPath = path.join(albumDir, 'cover.jpg');
     if (!fs.existsSync(coverPath)) {
         const coverUrl = getFullResImageUrl(albumData);
@@ -536,12 +492,10 @@ async function main() {
         }
     }
 
-    // ── Download loop ────────────────────────────────────────────────────────
     let ok = 0, skipped = 0, errors = 0;
     let currentDisc = null;
 
     for (const track of tracks) {
-        // Multi-disc: subdirectory per disc (matches web app track offset logic)
         const discDir = albumData.media_count > 1
             ? path.join(albumDir, `Disc ${track.media_number}`)
             : albumDir;
@@ -552,7 +506,6 @@ async function main() {
             fs.mkdirSync(discDir, { recursive: true });
         }
 
-        // File name matches web app default trackName: "{nn} {artists} - {name}"
         const trackArtists = formatArtists(albumData);
         const trackTitle   = formatTitle(track);
         const num          = String(track.track_number).padStart(pad, '0');
@@ -577,9 +530,7 @@ async function main() {
 
             if (FFMPEG) {
                 process.stdout.write(`  Applying metadata...`);
-                // Inject metadata + embed cover art
                 applyMetadata(destPath, track, albumData, coverPath);
-                // Clear the "Applying metadata..." line
                 process.stdout.write(`\r\x1B[2K`);
             }
 
@@ -591,7 +542,6 @@ async function main() {
         }
     }
 
-    // ── Summary ──────────────────────────────────────────────────────────────
     console.log(`\n✓ Done.  ${ok} downloaded, ${skipped} skipped, ${errors} errors`);
     console.log(`  ${albumDir}`);
 }
