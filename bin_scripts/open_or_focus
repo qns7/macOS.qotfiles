@@ -1,10 +1,33 @@
 #!/bin/bash
+APP="${1:-Firefox}"
 
-APP="$1"
+WIN_ID=$(yabai -m query --windows | jq -r --arg app "$APP" \
+  'map(select(.app == $app and ."is-minimized" == false)) | .[0].id // empty')
 
-WIN_COUNT=$(yabai -m query --windows | jq --arg app "$APP" '[.[] | select(.app == $app)] | length')
+wait_for_focus() {
+  local expected="$1"
+  for _ in $(seq 1 10); do
+    local current
+    current=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
+    [ "$current" = "$expected" ] && return 0
+    sleep 0.05
+  done
+  return 1
+}
 
-if [ "$WIN_COUNT" -eq 0 ]; then
+cliclick_with_fallback() {
+  ~/bin/cliclick_focus
+  (sleep 0.3 && ~/bin/cliclick_focus) &
+}
+
+if [ -n "$WIN_ID" ]; then
+  FOCUSED_ID=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
+  if [ "$WIN_ID" != "$FOCUSED_ID" ]; then
+    yabai -m window --focus "$WIN_ID"
+    wait_for_focus "$WIN_ID"
+  fi
+  cliclick_with_fallback
+else
   yabai -m signal --add \
     event=window_created \
     app="$APP" \
@@ -13,11 +36,116 @@ if [ "$WIN_COUNT" -eq 0 ]; then
             yabai -m window --focus $YABAI_WINDOW_ID; \
             $HOME/bin/cliclick_focus'
   open -a "$APP"
-else
-  open -a "$APP"
-  sleep 0.1
-  ~/bin/cliclick_focus
 fi
+
+# #!/bin/bash
+# APP="${1:-Firefox}"
+
+# WIN_ID=$(yabai -m query --windows | jq -r --arg app "$APP" \
+#   'map(select(.app == $app and ."is-minimized" == false)) | .[0].id // empty')
+
+# wait_for_focus() {
+#   local expected="$1"
+#   for _ in $(seq 1 10); do
+#     local current
+#     current=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
+#     [ "$current" = "$expected" ] && return 0
+#     sleep 0.05
+#   done
+#   return 1
+# }
+
+# if [ -n "$WIN_ID" ]; then
+#   FOCUSED_ID=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
+#   if [ "$WIN_ID" != "$FOCUSED_ID" ]; then
+#     yabai -m window --focus "$WIN_ID"
+#     wait_for_focus "$WIN_ID"
+#   fi
+#   ~/bin/cliclick_focus
+# else
+#   yabai -m signal --add \
+#     event=window_created \
+#     app="$APP" \
+#     label="open_or_focus_once" \
+#     action='yabai -m signal --remove open_or_focus_once; \
+#             yabai -m window --focus $YABAI_WINDOW_ID; \
+#             $HOME/bin/cliclick_focus'
+#   open -a "$APP"
+# fi
+
+# #!/bin/bash
+# APP="${1:-Firefox}"
+
+# WIN_ID=$(yabai -m query --windows | jq -r --arg app "$APP" \
+#   'map(select(.app == $app and ."is-minimized" == false)) | .[0].id // empty')
+
+# if [ -n "$WIN_ID" ]; then
+#   FOCUSED_ID=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
+#   if [ "$WIN_ID" != "$FOCUSED_ID" ]; then
+#     yabai -m window --focus "$WIN_ID"
+#   fi
+#   ~/bin/cliclick_focus
+# else
+#   yabai -m signal --add \
+#     event=window_created \
+#     app="$APP" \
+#     label="open_or_focus_once" \
+#     action='yabai -m signal --remove open_or_focus_once; \
+#             yabai -m window --focus $YABAI_WINDOW_ID; \
+#             $HOME/bin/cliclick_focus'
+#   open -a "$APP"
+# fi
+
+# #!/bin/bash
+
+# APP="$1"
+
+# WIN_COUNT=$(yabai -m query --windows | jq --arg app "$APP" '[.[] | select(.app == $app)] | length')
+
+# if [ "$WIN_COUNT" -eq 0 ]; then
+#   yabai -m signal --add \
+#     event=window_created \
+#     app="$APP" \
+#     label="open_or_focus_once" \
+#     action='yabai -m signal --remove open_or_focus_once; \
+#             yabai -m window --focus $YABAI_WINDOW_ID; \
+#             $HOME/bin/cliclick_focus'
+#   open -a "$APP"
+# else
+#   open -a "$APP"
+#   sleep 0.3
+#   # FIX: replaced cliclick_focus with yabai window focus — handles cross-space raising
+#   WIN_ID=$(yabai -m query --windows | jq --arg app "$APP" \
+#     '[.[] | select(.app == $app and ."is-minimized" == false)] | .[0].id // empty')
+#   if [ -n "$WIN_ID" ]; then
+#     yabai -m window --focus "$WIN_ID"
+#     ~/bin/cliclick_focus
+#   else
+#     # fallback: all windows minimized or query failed
+#     osascript -e "tell application \"$APP\" to activate"
+#   fi
+# fi
+
+# #!/bin/bash
+
+# APP="$1"
+
+# WIN_COUNT=$(yabai -m query --windows | jq --arg app "$APP" '[.[] | select(.app == $app)] | length')
+
+# if [ "$WIN_COUNT" -eq 0 ]; then
+#   yabai -m signal --add \
+#     event=window_created \
+#     app="$APP" \
+#     label="open_or_focus_once" \
+#     action='yabai -m signal --remove open_or_focus_once; \
+#             yabai -m window --focus $YABAI_WINDOW_ID; \
+#             $HOME/bin/cliclick_focus'
+#   open -a "$APP"
+# else
+#   open -a "$APP"
+#   sleep 0.1
+#   ~/bin/cliclick_focus
+# fi
 
 # #!/bin/bash
 
