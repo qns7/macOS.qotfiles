@@ -51,13 +51,14 @@ if [ "$STATUS" = "" ]; then
     '/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'OFF'
     open -a "KeyboardCleanTool"
 else
-    # sketchybar --set kb icon.color=0xFFFC5753 # added
-    sketchybar --set kb icon.color=0xff4e4e4e
-    sleep 0.37
+    #sketchybar --set kb icon.color=0xff4e4e4e
+    #sleep 0.37
     osascript -e 'tell application "KeyboardCleanTool" to quit'
+    /Users/q/Developer/APPS/capslock_off/capslock_off
     '/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'q'
-    # launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server # added
+    sketchybar --set kb icon.color=0xFFFC5753
+    launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
     open -a "mouseless"
-    # sleep 3
-    # sketchybar --set kb icon.color=0xff4e4e4e
+    sleep 4.9
+    sketchybar --set kb icon.color=0xff4e4e4e
 fi
