@@ -174,7 +174,7 @@ ctrl - 0x2B : return
 ctrl - 0x2F : return
 # ctrl - 0x2C : yabai--restart-service, cf. 'window_space_and_display_management'
 
-ctrl - space : skhd -k "space" # "0xB1" # spotlight
+# ctrl - space : typewhisper # skhd -k "space" # "0xB1" # spotlight
     # ctrl + cmd - space : show the character viewer, from which you can choose emoji and other symbols (stock) (faster than 'Press *globe* key to')
     ctrl + alt - space : skhd -k "0xB1" # spotlight --- return # show finder search window (deactivated in systemSettings/Keyboard/KeyboardShortcuts/.. like many others not mentioned specifically)
     ctrl + alt + cmd - space : return
@@ -201,6 +201,7 @@ ctrl + shift - d : ~/bin/show_desktop # also remember feature not bug: hold ctrl
     # see karabiner!
     ctrl + shift - y : skhd -k "cmd - l"; sleep 0.1; skhd -k "cmd - c"; sleep 0.1; skhd -k "escape"; sleep 0.1; skhd -k "hyper - t"; sleep 0.1; skhd -t "yta \""; sleep 0.1; skhd -k "cmd - v"; sleep 0.1; skhd -t "\""; skhd -k "return" # yt-download // 20:55, 26.11.25, WED : now yta statt yt !!
 # ctrl + shift - c : ~/.config/sketchybar/plugins/click_date.sh # show clock for 3.7s ---> to ctrl - cmd - c
+# ctrl + shift - x : typewhisper ---> NO! CHANGED TO ctrl & SPACE
 ctrl + shift - v : osascript ~/bin/paste_shortened_url.scpt; skhd -k "cmd - v"
 ctrl + shift - b : ~/bin/macos_background_noise # "native" still unreliable
 ctrl + shift - m : killall mouseless; sleep 0.37; open -g -a Mouseless
