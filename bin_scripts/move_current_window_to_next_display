@@ -5,3 +5,5 @@ sleep 0.1
 yabai -m window --grid 1:1:0:0:1:1
 sleep 0.1
 ~/bin/cliclick_focus
+sleep 0.21
+~/bin/cliclick_focus
