@@ -49,6 +49,11 @@ case "$CURRENT_APP_ALT" in
         sleep 2 # 1.37
         open_or_focus "Mouseless"
         ;;
+    "AltTab")
+        killall AltTab &> /dev/null
+        sleep 1
+        open_or_focus "AltTab"
+        ;;    
     *) 
         if [[ "$CURRENT_APP" == *WhatsApp* ]]; then
             killall WhatsApp &> /dev/null
