@@ -20,3 +20,5 @@
 # "$HOME/bin/cliclick_focus"
 # yabai -m query --windows --window 2>&1 > ~/Desktop/yabai_debug.txt
 # /opt/homebrew/bin/skhd -k 'ctrl + cmd - y' 2>&1 > ~/Desktop/yabai_debug.txt
+
+~/.config/sketchybar/plugins/click_audio.sh > ~/Desktop/yabai_debug.txt
