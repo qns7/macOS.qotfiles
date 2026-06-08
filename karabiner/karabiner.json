@@ -405,6 +405,7 @@
                     },
                     {
                         "description": "Left CMD tap → Mouseless overlay toggle",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

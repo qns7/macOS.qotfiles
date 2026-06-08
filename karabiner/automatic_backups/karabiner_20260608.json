@@ -356,7 +356,12 @@
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "key_code": "left_control" }],
+                                "to": [
+                                    {
+                                        "key_code": "left_control",
+                                        "lazy": true
+                                    }
+                                ],
                                 "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
@@ -399,8 +404,7 @@
                         ]
                     },
                     {
-                        "description": "Left Command tap → show Mouseless overlay",
-                        "enabled": false,
+                        "description": "Left CMD tap → Mouseless overlay toggle",
                         "manipulators": [
                             {
                                 "from": {
@@ -408,7 +412,7 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "left_command" }],
-                                "to_if_alone": [{ "shell_command": "open -g 'mouseless://toggle-overlay'" }],
+                                "to_if_alone": [{ "shell_command": "open mouseless://toggle-overlay && /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }],
                                 "type": "basic"
                             }
                         ]
@@ -659,6 +663,23 @@
                         {
                             "from": { "pointing_button": "button4" },
                             "to": [{ "pointing_button": "button2" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_game_pad": true,
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 57382,
+                        "vendor_id": 6790
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "s" },
+                            "to": [{ "key_code": "f20" }]
                         }
                     ]
                 }
