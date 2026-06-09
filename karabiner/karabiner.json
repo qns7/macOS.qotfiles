@@ -48,6 +48,7 @@
                     },
                     {
                         "description": "rcmd - n/m/,/. : mousebuttons (lcmd not recognized as optional on internal..)",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -414,6 +415,22 @@
                                 },
                                 "to": [{ "key_code": "left_command" }],
                                 "to_if_alone": [{ "shell_command": "open mouseless://toggle-overlay && /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "rcmd - n := ctrl - <",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [{ "shell_command": "/Users/q/bin/cliclick_focus" }],
                                 "type": "basic"
                             }
                         ]
