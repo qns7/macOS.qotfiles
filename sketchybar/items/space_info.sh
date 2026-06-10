@@ -2,7 +2,7 @@
 
 sketchybar --add item space_info left \
            --set space_info script="$PLUGIN_DIR/space_info.sh" \
-                            click_script="skhd -k 'fn - y'" \
+                            click_script="skhd -k 'fn - y' && skhd -k 'ctrl + shift - m'" \
                             icon.font.size="21" \
                             icon.width=24 \
                             icon.align=center \

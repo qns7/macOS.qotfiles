@@ -15,6 +15,8 @@ PROMPT_EOL_MARK=' ⮐'
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
+export HOMEBREW_NO_INSTALL_UPGRADE_CONFIRM=1
+
 eval "$(batman --export-env)"
 
 # alias ccsetup="claude --resume f4991b44-2ec6-4acd-8097-d69367e86621" - doesn't work when terminal session is closed and reopened
