@@ -47,8 +47,7 @@
                         ]
                     },
                     {
-                        "description": "rcmd - n/m/,/. : mousebuttons (lcmd not recognized as optional on internal..)",
-                        "enabled": false,
+                        "description": "rcmd - n/m/,/. : mousebuttons | -/ö/ä/# : mouse cursor",
                         "manipulators": [
                             {
                                 "from": {
@@ -92,6 +91,50 @@
                                     }
                                 },
                                 "to": [{ "shell_command": "/Users/q/bin/cliclick_focus" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "y": 173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "y": -173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": -173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": 173 } }],
                                 "type": "basic"
                             }
                         ]
@@ -421,6 +464,7 @@
                     },
                     {
                         "description": "rcmd - n := ctrl - <",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {

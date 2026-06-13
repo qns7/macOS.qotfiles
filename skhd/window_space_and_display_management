@@ -43,10 +43,11 @@ ctrl + alt - down : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus # 
     # fn + alt - j : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus
     fn + alt - k : skhd -k "ctrl + fn - c"; sleep 0.37; ~/bin/cliclick_focus
 
-alt + cmd - 0x12 : yabai_prev_space_on_display; del_empty_spaces; sleep 0.1; ~/bin/cliclick_focus #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
-    ctrl + alt + cmd - 0x12 : yabai_prev_space_on_display; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
-alt + cmd - 0x13 : yabai_next_space_on_display; del_empty_spaces; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
-    ctrl + alt + cmd - 0x13 : yabai_next_space_on_display; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
+alt + cmd - 0x12 : yabai_prev_space_on_display; del_empty_spaces; ~/bin/cliclick_focus # ; sleep 0.1; ~/bin/cliclick_focus #  ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
+# alt + cmd - 0x12 : yabai_prev_space_on_display; del_empty_spaces; open -g "mouseless://enter-free-mode"; open -g "mouseless://exit-free-mode"; open -g "mouseless://show-overlay"; ~/bin/cliclick_focus
+    ctrl + alt + cmd - 0x12 : yabai_prev_space_on_display; ~/bin/cliclick_focus # ; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x12 : move left a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - left), 1
+alt + cmd - 0x13 : yabai_next_space_on_display; del_empty_spaces; ~/bin/cliclick_focus # ; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
+    ctrl + alt + cmd - 0x13 : yabai_next_space_on_display; ~/bin/cliclick_focus # ; sleep 0.1; ~/bin/cliclick_focus # ctrl + alt + cmd - 0x13 : move right a space (changed in systemSettings/Keyboard/KeyboardShortcuts/.. from ctrl - right), 2
 
 alt + cmd - w : create_and_focus_new_space
 ctrl + alt + cmd - w [

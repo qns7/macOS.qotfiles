@@ -5,5 +5,5 @@ FULLSCREEN_COUNT=$(echo "$SPACES" | jq '[.[] | select(."is-native-fullscreen")] 
 if [[ "$FULLSCREEN_COUNT" -eq 0 ]]; then
     echo "$SPACES" | jq -r '.[] | select(.windows == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
 fi
-sleep 0.1
+# sleep 0.1
 sketchybar --update
