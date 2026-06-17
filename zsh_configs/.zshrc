@@ -15,7 +15,7 @@ PROMPT_EOL_MARK=' ⮐'
 export CLICOLOR=1
 export LSCOLORS=dxfxcxdxbxegedabagacad
 
-export HOMEBREW_NO_INSTALL_UPGRADE_CONFIRM=1
+# export HOMEBREW_NO_INSTALL_UPGRADE_CONFIRM=1 # seems to not exist
 
 eval "$(batman --export-env)"
 

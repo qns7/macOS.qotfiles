@@ -47,7 +47,7 @@
                         ]
                     },
                     {
-                        "description": "rcmd - n/m/,/. : mousebuttons (lcmd not recognized as optional on internal..)",
+                        "description": "rcmd - n/m/,/. : mousebuttons | -/ö/ä/# : mouse cursor",
                         "manipulators": [
                             {
                                 "from": {
@@ -91,6 +91,50 @@
                                     }
                                 },
                                 "to": [{ "shell_command": "/Users/q/bin/cliclick_focus" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "y": 173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "y": -173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": -173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": 173 } }],
                                 "type": "basic"
                             }
                         ]
@@ -405,6 +449,7 @@
                     },
                     {
                         "description": "Left CMD tap → Mouseless overlay toggle",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -413,6 +458,23 @@
                                 },
                                 "to": [{ "key_code": "left_command" }],
                                 "to_if_alone": [{ "shell_command": "open mouseless://toggle-overlay && /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "rcmd - n := ctrl - <",
+                        "enabled": false,
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [{ "shell_command": "/Users/q/bin/cliclick_focus" }],
                                 "type": "basic"
                             }
                         ]

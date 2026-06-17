@@ -136,6 +136,17 @@
                                 },
                                 "to": [{ "mouse_key": { "x": 173 } }],
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "non_us_pound",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": 173 } }],
+                                "type": "basic"
                             }
                         ]
                     },

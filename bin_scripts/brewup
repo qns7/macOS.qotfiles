@@ -31,7 +31,8 @@ if [ -d "$BREW_REPO_DIR/.git" ]; then
   cd "$ORIG_DIR" || exit
 fi
 printf "${TEXTCOLOR1}brew upgrade..\n"
-brew upgrade --greedy
+# brew upgrade --greedy
+yes | brew upgrade --greedy
 #brew upgrade $(brew outdated --quiet) # for sqlite : not necessary and yeah... fuck it...
 printf "${TEXTCOLOR1}brew cleanup..\n"
 brew cleanup
