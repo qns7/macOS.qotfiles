@@ -1,4 +1,5 @@
 f13 : curl -s "http://192.168.178.42:9123/elgato/lights" | grep -q '"on":1' && curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":0}]}' -H "Content-Type: application/json" || curl -X PUT "http://192.168.178.42:9123/elgato/lights" -d '{"lights":[{"on":1}]}' -H "Content-Type: application/json"
+    shift - f13 : ~/bin/elgato_boost
 f14 : SwitchAudioSource -m toggle
 0x53 : sendmidi dev "IAC Driver SID" cc 1 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127 # auch tmx profil wechseln? vorallem um feedback zu verhindern?
 0x54 : sendmidi dev "IAC Driver SID" cc 2 1; sleep 3; sendmidi dev "IAC Driver SID" cc 0 127 # auch tmx profil wechseln?

@@ -1,3 +1,35 @@
+# #!/bin/bash
+
+# if [ -f /tmp/mission_control.open ]; then
+#     skhd -k "hyper - 0x12"
+# else
+#     SPASPA=$(yabai -m query --spaces --space)
+#     CURDIS=$(yabai -m query --displays --display | jq '.index')
+#     CURSPA=$(echo "$SPASPA" | jq '.index')
+#     SPACES=$(yabai -m query --spaces --display "$CURDIS")
+#     ALLSPA=$(echo "$SPACES" | jq ".[].index")
+#     LOWSPA=$(echo "$SPACES" | jq ".[] | select(.index < $CURSPA) | .index")
+
+#     if [ ! -z "$LOWSPA" ]; then
+#         set -- $LOWSPA
+#         TARGET_SPACE="${@: -1}"
+#     else
+#         set -- $ALLSPA
+#         TARGET_SPACE="${@: -1}"
+#     fi
+
+#     WIN_ID=$(yabai -m query --windows 2>/dev/null | jq -r --argjson space "$TARGET_SPACE" \
+#         '[.[] | select(.space == $space and ."is-minimized" == false)] | .[0].id // empty')
+
+#     if [ -n "$WIN_ID" ]; then
+#         yabai -m window --focus "$WIN_ID"
+#     else
+#         yabai -m space --focus "$TARGET_SPACE"
+#     fi
+# fi
+
+
+
 #!/bin/bash
 
 if [ -f /tmp/mission_control.open ]; then
