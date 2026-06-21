@@ -33,6 +33,7 @@ fi
 
 printf "${TEXTCOLOR1}brew upgrade..\n"
 brew upgrade --greedy < /dev/null
+# yes | brew upgrade --greedy 2>&1 | grep -v '^y$'
 
 printf "${TEXTCOLOR1}brew cleanup..\n"
 brew cleanup
