@@ -2,21 +2,24 @@
 
 LOCK=/tmp/custom_wake.lock
 
+cleanup() {
+    rm -rf "$LOCK"
+    /opt/homebrew/bin/yabai -m config mouse_follows_focus off
+}
+
 mkdir "$LOCK" 2>/dev/null || exit 0
-trap 'rmdir "$LOCK"' EXIT
+trap cleanup EXIT
 
-ACTIVE_USER="$(stat -f '%Su' /dev/console)"
-
-[[ "$ACTIVE_USER" == "$USER" ]] || exit 0
+if [[ "$(stat -f '%Su' /dev/console)" == "loginwindow" ]]; then
+    exit 0
+fi
 
 sleep 3.7
 
-trap 'yabai -m config mouse_follows_focus off' EXIT
-
 /opt/homebrew/bin/yabai -m config mouse_follows_focus on
-/opt/homebrew/bin/yabai -m display --focus next || yabai -m display --focus prev
+/opt/homebrew/bin/yabai -m display --focus next || /opt/homebrew/bin/yabai -m display --focus prev
 sleep 0.1
-/opt/homebrew/bin/yabai -m display --focus next || yabai -m display --focus prev
+/opt/homebrew/bin/yabai -m display --focus next || /opt/homebrew/bin/yabai -m display --focus prev
 sleep 0.1
 
 /opt/homebrew/bin/sketchybar --set audio drawing=off
@@ -30,14 +33,19 @@ else
     sleep 0.1
     open -a "SoundID Reference" &>/dev/null
     sleep 4.9
+
     /Users/q/bin/open_or_focus "SoundID Reference"
     sleep 0.37
+
     /Users/q/bin/close_soundid
     sleep 0.37
+
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
     sleep 0.37
+
     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
     sleep 0.37
+
     osascript -e 'set volume output volume 100'
 fi
 
