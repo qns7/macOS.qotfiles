@@ -2,7 +2,7 @@
 
 sketchybar --add item space_info left \
            --set space_info script="$PLUGIN_DIR/space_info.sh" \
-                            click_script="skhd -k 'fn - y' && skhd -k 'ctrl + shift - m'" \
+                            click_script="/opt/homebrew/bin/skhd -k 'fn - y' && /opt/homebrew/bin/skhd -k 'ctrl + shift - m' && /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server" \
                             icon.font.size="21" \
                             icon.width=24 \
                             icon.align=center \
