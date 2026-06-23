@@ -1,24 +1,10 @@
 #!/bin/bash
 
-LOCK=/tmp/custom_wake.lock
-
-cleanup() {
-    rm -rf "$LOCK"
-    /opt/homebrew/bin/yabai -m config mouse_follows_focus off
-}
-
-mkdir "$LOCK" 2>/dev/null || exit 0
-trap cleanup EXIT
-
-if [[ "$(stat -f '%Su' /dev/console)" == "loginwindow" ]]; then
-    exit 0
-fi
-
-sleep 3.7
-
 /opt/homebrew/bin/yabai -m config mouse_follows_focus on
+
 /opt/homebrew/bin/yabai -m display --focus next || /opt/homebrew/bin/yabai -m display --focus prev
 sleep 0.1
+
 /opt/homebrew/bin/yabai -m display --focus next || /opt/homebrew/bin/yabai -m display --focus prev
 sleep 0.1
 
@@ -31,6 +17,7 @@ if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.
 else
     killall "SoundID Reference" &>/dev/null
     sleep 0.1
+
     open -a "SoundID Reference" &>/dev/null
     sleep 4.9
 
@@ -72,6 +59,85 @@ sleep 1
 /opt/homebrew/bin/sketchybar --reload
 
 /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
+
+/opt/homebrew/bin/yabai -m config mouse_follows_focus off
+
+# --------------------------------------------------------------------- MANUAL ONLY FROM NOW!
+
+# #!/bin/bash
+
+# LOCK=/tmp/custom_wake.lock
+
+# cleanup() {
+#     rm -rf "$LOCK"
+#     /opt/homebrew/bin/yabai -m config mouse_follows_focus off
+# }
+
+# mkdir "$LOCK" 2>/dev/null || exit 0
+# trap cleanup EXIT
+
+# if [[ "$(stat -f '%Su' /dev/console)" == "loginwindow" ]]; then
+#     exit 0
+# fi
+
+# sleep 3.7
+
+# /opt/homebrew/bin/yabai -m config mouse_follows_focus on
+# /opt/homebrew/bin/yabai -m display --focus next || /opt/homebrew/bin/yabai -m display --focus prev
+# sleep 0.1
+# /opt/homebrew/bin/yabai -m display --focus next || /opt/homebrew/bin/yabai -m display --focus prev
+# sleep 0.1
+
+# /opt/homebrew/bin/sketchybar --set audio drawing=off
+
+# if [ "$(/opt/homebrew/bin/yabai -m query --displays | /opt/homebrew/bin/jq -r '.[0].uuid')" = "37D8832A-2D66-02CA-B9F7-8F30A301B230" ]; then
+#     /opt/homebrew/bin/SwitchAudioSource -s "MacBook Pro Speakers" &>/dev/null
+#     sleep 0.37
+#     osascript -e 'set volume output volume 50'
+# else
+#     killall "SoundID Reference" &>/dev/null
+#     sleep 0.1
+#     open -a "SoundID Reference" &>/dev/null
+#     sleep 4.9
+
+#     /Users/q/bin/open_or_focus "SoundID Reference"
+#     sleep 0.37
+
+#     /Users/q/bin/close_soundid
+#     sleep 0.37
+
+#     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 1 1
+#     sleep 0.37
+
+#     /opt/homebrew/bin/sendmidi dev "IAC Driver SID" cc 0 127
+#     sleep 0.37
+
+#     osascript -e 'set volume output volume 100'
+# fi
+
+# sleep 1.73
+
+# if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; then
+#     /Users/q/bin/tmx_hotkey "f6"
+#     /usr/local/bin/brightness 0.470000
+# fi
+
+# sleep 1
+
+# sudo killall coreaudiod
+# sleep 0.1
+
+# /opt/homebrew/bin/yabai --restart-service
+
+# sleep 1
+
+# /opt/homebrew/bin/skhd -k "ctrl + shift - m"
+
+# sleep 1
+
+# /opt/homebrew/bin/sketchybar --reload
+
+# /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
 
 #-----------------------------------------------------------------------------------------------------------------------
 
