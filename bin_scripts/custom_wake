@@ -58,7 +58,8 @@ sleep 1
 
 /opt/homebrew/bin/sketchybar --reload
 
-/bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
+# /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
+/opt/homebrew/bin/skhd -k 'fn - y' && /opt/homebrew/bin/skhd -k 'ctrl + shift - m' && /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
 
 /opt/homebrew/bin/yabai -m config mouse_follows_focus off
 
