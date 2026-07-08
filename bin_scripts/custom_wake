@@ -63,7 +63,8 @@ sleep 1
 
 /opt/homebrew/bin/yabai -m config mouse_follows_focus off
 
-sleep 0.73
+sleep 1 #sleep 0.73
+u
 /opt/homebrew/bin/sketchybar --reload
 
 # --------------------------------------------------------------------- MANUAL ONLY FROM NOW!
