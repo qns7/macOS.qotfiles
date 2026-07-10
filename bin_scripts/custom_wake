@@ -48,13 +48,13 @@ sleep 1
 sudo killall coreaudiod
 sleep 0.1
 
-/opt/homebrew/bin/yabai --restart-service
-
-sleep 1
-
-/opt/homebrew/bin/skhd -k "ctrl + shift - m"
-
-sleep 1
+# /opt/homebrew/bin/yabai --restart-service
+# 
+# sleep 1
+# 
+# /opt/homebrew/bin/skhd -k "ctrl + shift - m"
+# 
+# sleep 1
 
 # /opt/homebrew/bin/sketchybar --reload # unten!
 
@@ -66,7 +66,7 @@ sleep 1
 
 /opt/homebrew/bin/yabai -m config mouse_follows_focus off
 
-sleep 3 #sleep 0.73
+sleep 1 #sleep 0.73
 
 /opt/homebrew/bin/sketchybar --reload
 
