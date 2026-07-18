@@ -57,21 +57,25 @@ sudo killall coreaudiod
 # 
 # /opt/homebrew/bin/skhd -k "ctrl + shift - m"
 # 
-sleep 1
-
-# /opt/homebrew/bin/sketchybar --reload # unten!
-
-# /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
-# /opt/homebrew/bin/skhd -k 'fn - y' && /opt/homebrew/bin/skhd -k 'ctrl + shift - m' && /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
-/opt/homebrew/bin/skhd -k 'fn - y' && \
-/opt/homebrew/bin/skhd -k 'ctrl + shift - m' && \
-/bin/launchctl kickstart -k "gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server"
+###   sleep 1
+###   
+###   # /opt/homebrew/bin/sketchybar --reload # unten!
+###   
+###   # /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
+###   # /opt/homebrew/bin/skhd -k 'fn - y' && /opt/homebrew/bin/skhd -k 'ctrl + shift - m' && /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
+###   /opt/homebrew/bin/skhd -k 'fn - y' && \
+###   /opt/homebrew/bin/skhd -k 'ctrl + shift - m' && \
+###   /bin/launchctl kickstart -k "gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server"
 
 /opt/homebrew/bin/yabai -m config mouse_follows_focus off
 
 sleep 1 #sleep 0.73
 
 /opt/homebrew/bin/sketchybar --reload
+
+sleep 3
+
+/opt/homebrew/bin/skhd -k 'fn - y' && /opt/homebrew/bin/skhd -k 'ctrl + shift - m' && /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
 
 # --------------------------------------------------------------------- MANUAL ONLY FROM NOW!
 
