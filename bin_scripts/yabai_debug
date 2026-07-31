@@ -29,4 +29,5 @@
 
 # yabai -m query --windows | jq -r '[.[] | select(.["is-visible"] == true and .["has-focus"] == true)] | .[0].app' > ~/Desktop/yabai_debug.txt
 
- ~/bin/custom_wake > ~/Desktop/yabai_debug.txt
+ ~/bin/create_and_focus_new_space > ~/Desktop/yabai_debug.txt
+# ~/bin/custom_wake > ~/Desktop/yabai_debug.txt
