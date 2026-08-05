@@ -50,6 +50,7 @@ sleep 0.1
 
 sudo killall coreaudiod
 #sleep 0.1
+sleep 1
 
 # /opt/homebrew/bin/yabai --restart-service
 # 
