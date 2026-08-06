@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 
 # KARABINER="/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli"
 # PID_FILE="/tmp/keyboard_block.pid"
@@ -40,7 +40,7 @@
 #     echo $! > "$PID_FILE"
 # fi
 
-#!/bin/bash
+# #!/bin/bash
 
 STATUS=$(pgrep -x KeyboardCleanTool)
 
