@@ -12,28 +12,70 @@ source "$VENV_DIR/bin/activate"
 CREDS=$(python3 "$PROJECT_DIR/main.py")
 # Example output: {'app_id': '798273057', 'secret': 'abb21364945c0583309667d13ca3d93a'}
 
-# Extract values using sed
-NEW_APP_ID=$(echo "$CREDS" | sed -n "s/.*'app_id': '\([0-9]\+\)'.*/\1/p")
-NEW_SECRET=$(echo "$CREDS" | sed -n "s/.*'secret': '\([a-z0-9]\+\)'.*/\1/p")
+if [ -z "$CREDS" ]; then
+    echo "Error: main.py returned no output. Aborting update."
+    deactivate
+    exit 1
+fi
 
-# Read current values from .env
-CURRENT_APP_ID=$(sed -n "s/^QOBUZ_APP_ID\s*=\s*\([0-9]\+\)/\1/p" "$ENV_FILE")
-CURRENT_SECRET=$(sed -n "s/^QOBUZ_SECRET\s*=\s*\([a-z0-9]\+\)/\1/p" "$ENV_FILE")
+# Parse the Python dict output with Python itself (avoids sed regex-flavor
+# differences between GNU sed and macOS's BSD sed, which caused this to
+# silently break)
+NEW_APP_ID=$(python3 -c "
+import ast, sys
+try:
+    d = ast.literal_eval(sys.argv[1])
+    print(d.get('app_id', ''))
+except Exception:
+    print('')
+" "$CREDS")
+
+NEW_SECRET=$(python3 -c "
+import ast, sys
+try:
+    d = ast.literal_eval(sys.argv[1])
+    print(d.get('secret', ''))
+except Exception:
+    print('')
+" "$CREDS")
+
+if [ -z "$NEW_APP_ID" ] || [ -z "$NEW_SECRET" ]; then
+    echo "Error: Failed to extract new credentials from scraper output: $CREDS"
+    echo "Aborting update to avoid blanking out existing credentials."
+    deactivate
+    exit 1
+fi
+
+# Read current values from .env using portable bash string handling
+get_env_value() {
+    local key="$1"
+    local line
+    line=$(grep -E "^${key}[[:space:]]*=" "$ENV_FILE" | head -n1)
+    local val="${line#*=}"
+    val="${val#"${val%%[![:space:]]*}"}"   # trim leading whitespace
+    val="${val%"${val##*[![:space:]]}"}"   # trim trailing whitespace
+    echo "$val"
+}
+
+CURRENT_APP_ID=$(get_env_value "QOBUZ_APP_ID")
+CURRENT_SECRET=$(get_env_value "QOBUZ_SECRET")
 
 # Compare
 if [[ "$NEW_APP_ID" == "$CURRENT_APP_ID" && "$NEW_SECRET" == "$CURRENT_SECRET" ]]; then
     echo "No update needed. .env is up to date."
 else
     echo "Updating .env with new credentials..."
-    # Use sed to replace the values
-    sed -i.bak -E "s/^(QOBUZ_APP_ID\s*=\s*).*/\1$NEW_APP_ID/" "$ENV_FILE"
-    sed -i.bak -E "s/^(QOBUZ_SECRET\s*=\s*).*/\1$NEW_SECRET/" "$ENV_FILE"
+    cp "$ENV_FILE" "$ENV_FILE.bak"
+    awk -v id="$NEW_APP_ID" -v secret="$NEW_SECRET" '
+        /^QOBUZ_APP_ID[[:space:]]*=/ { print "QOBUZ_APP_ID = " id; next }
+        /^QOBUZ_SECRET[[:space:]]*=/ { print "QOBUZ_SECRET = " secret; next }
+        { print }
+    ' "$ENV_FILE.bak" > "$ENV_FILE"
     echo ".env updated. Backup saved as .env.bak"
 fi
 
 # Deactivate virtual environment
 deactivate
-
 
 # #!/bin/bash
 
@@ -49,13 +91,13 @@ deactivate
 # CREDS=$(python3 "$PROJECT_DIR/main.py")
 # # Example output: {'app_id': '798273057', 'secret': 'abb21364945c0583309667d13ca3d93a'}
 
-# # Extract values using grep + sed
-# NEW_APP_ID=$(echo "$CREDS" | grep -oP "'app_id': '\K[0-9]+")
-# NEW_SECRET=$(echo "$CREDS" | grep -oP "'secret': '\K[a-z0-9]+")
+# # Extract values using sed
+# NEW_APP_ID=$(echo "$CREDS" | sed -n "s/.*'app_id': '\([0-9]\+\)'.*/\1/p")
+# NEW_SECRET=$(echo "$CREDS" | sed -n "s/.*'secret': '\([a-z0-9]\+\)'.*/\1/p")
 
 # # Read current values from .env
-# CURRENT_APP_ID=$(grep -oP '^QOBUZ_APP_ID\s*=\s*\K[0-9]+' "$ENV_FILE")
-# CURRENT_SECRET=$(grep -oP '^QOBUZ_SECRET\s*=\s*\K[a-z0-9]+' "$ENV_FILE")
+# CURRENT_APP_ID=$(sed -n "s/^QOBUZ_APP_ID\s*=\s*\([0-9]\+\)/\1/p" "$ENV_FILE")
+# CURRENT_SECRET=$(sed -n "s/^QOBUZ_SECRET\s*=\s*\([a-z0-9]\+\)/\1/p" "$ENV_FILE")
 
 # # Compare
 # if [[ "$NEW_APP_ID" == "$CURRENT_APP_ID" && "$NEW_SECRET" == "$CURRENT_SECRET" ]]; then
@@ -70,3 +112,40 @@ deactivate
 
 # # Deactivate virtual environment
 # deactivate
+
+
+# # #!/bin/bash
+
+# # # Path to your project
+# # PROJECT_DIR="$HOME/Qobuz-DL"
+# # ENV_FILE="$PROJECT_DIR/.env"
+# # VENV_DIR="$PROJECT_DIR/venv"
+
+# # # Activate virtual environment
+# # source "$VENV_DIR/bin/activate"
+
+# # # Fetch current APP_ID and SECRET using Python script
+# # CREDS=$(python3 "$PROJECT_DIR/main.py")
+# # # Example output: {'app_id': '798273057', 'secret': 'abb21364945c0583309667d13ca3d93a'}
+
+# # # Extract values using grep + sed
+# # NEW_APP_ID=$(echo "$CREDS" | grep -oP "'app_id': '\K[0-9]+")
+# # NEW_SECRET=$(echo "$CREDS" | grep -oP "'secret': '\K[a-z0-9]+")
+
+# # # Read current values from .env
+# # CURRENT_APP_ID=$(grep -oP '^QOBUZ_APP_ID\s*=\s*\K[0-9]+' "$ENV_FILE")
+# # CURRENT_SECRET=$(grep -oP '^QOBUZ_SECRET\s*=\s*\K[a-z0-9]+' "$ENV_FILE")
+
+# # # Compare
+# # if [[ "$NEW_APP_ID" == "$CURRENT_APP_ID" && "$NEW_SECRET" == "$CURRENT_SECRET" ]]; then
+# #     echo "No update needed. .env is up to date."
+# # else
+# #     echo "Updating .env with new credentials..."
+# #     # Use sed to replace the values
+# #     sed -i.bak -E "s/^(QOBUZ_APP_ID\s*=\s*).*/\1$NEW_APP_ID/" "$ENV_FILE"
+# #     sed -i.bak -E "s/^(QOBUZ_SECRET\s*=\s*).*/\1$NEW_SECRET/" "$ENV_FILE"
+# #     echo ".env updated. Backup saved as .env.bak"
+# # fi
+
+# # # Deactivate virtual environment
+# # deactivate
