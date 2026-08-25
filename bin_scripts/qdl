@@ -69,7 +69,11 @@ function loadEnv(envPath) {
     return env;
 }
 
-refreshCredentials();   // update .env first, then read it
+// Disabled: this was silently overwriting manually-entered QOBUZ_APP_ID/QOBUZ_SECRET
+// in .env on every run. We made the same call in qs() (~/.zshrc) manual too, for the
+// same reason — credentials are now entered by hand until the auto-refresh workflow
+// is revisited.
+// refreshCredentials();
 const env     = loadEnv(ENV_PATH);
 const API_BASE = (env.QOBUZ_API_BASE || 'https://www.qobuz.com/api.json/0.2/').replace(/\/?$/, '/');
 const APP_ID   = env.QOBUZ_APP_ID;
@@ -315,7 +319,6 @@ function applyMetadata(trackPath, track, albumData, coverPath) {
     let metadataFile = ';FFMETADATA1';
     metadataFile += `\ntitle=${esc(titleTag)}`;
     metadataFile += `\nartist=${esc(artistTag)}`;
-    metadataFile += `\nalbum_artist=${esc(artistTag)}`;
     metadataFile += `\nalbum_artist=${esc(albumArtist)}`;
     metadataFile += `\nalbum=${esc(albumTag)}`;
     metadataFile += `\ngenre=${esc(genreTag)}`;

@@ -269,6 +269,8 @@ pcb() {
 #     npm run dev
 # }
 
+# REMOVED THE CREDENTIALS UPDATING STUFF::
+
 qs() {
     echo "Checking npm version..."
     CURRENT=$(npm -v)
@@ -278,12 +280,6 @@ qs() {
         npm install -g npm@latest
     else
         echo "npm is up to date ($CURRENT)."
-    fi
-    echo "Updating Qobuz credentials..."
-    if [ -f ~/bin/update_qobuz_env ]; then
-        ~/bin/update_qobuz_env
-    else
-        echo "Warning: update_qobuz_env script not found."
     fi
     echo "Updating project repository..."
     cd ~/Qobuz-DL || { echo "Directory ~/Qobuz-DL not found!"; return 1; }
@@ -355,6 +351,93 @@ qs() {
     echo "Starting development server..."
     npm run dev
 }
+
+# qs() {
+#     echo "Checking npm version..."
+#     CURRENT=$(npm -v)
+#     LATEST=$(npm view npm version)
+#     if [ "$CURRENT" != "$LATEST" ]; then
+#         echo "Updating npm from $CURRENT to $LATEST..."
+#         npm install -g npm@latest
+#     else
+#         echo "npm is up to date ($CURRENT)."
+#     fi
+#     echo "Updating Qobuz credentials..."
+#     if [ -f ~/bin/update_qobuz_env ]; then
+#         ~/bin/update_qobuz_env
+#     else
+#         echo "Warning: update_qobuz_env script not found."
+#     fi
+#     echo "Updating project repository..."
+#     cd ~/Qobuz-DL || { echo "Directory ~/Qobuz-DL not found!"; return 1; }
+#     # Ensure .env exists
+#     if [ ! -f .env ]; then
+#         if [ -f .env.example ]; then
+#             cp .env.example .env
+#             echo ".env file created from .env.example."
+#         else
+#             echo "Warning: No .env or .env.example found."
+#         fi
+#     fi
+#     # Abort any unfinished merge
+#     if git merge --abort 2>/dev/null; then
+#         echo "Aborted unfinished merge."
+#     fi
+#     # Backup package.json and package-lock.json with timestamp
+#     TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
+#     if [ -f package.json ]; then
+#         cp package.json package.json.backup.$TIMESTAMP
+#         echo "Backed up package.json -> package.json.backup.$TIMESTAMP"
+#     fi
+#     if [ -f package-lock.json ]; then
+#         cp package-lock.json package-lock.json.backup.$TIMESTAMP
+#         echo "Backed up package-lock.json -> package-lock.json.backup.$TIMESTAMP"
+#     fi
+#     # Keep only latest 3 backups for each file
+#     for file in package.json package-lock.json; do
+#         backups=( $(ls -1t $file.backup.* 2>/dev/null) )
+#         if [ ${#backups[@]} -gt 3 ]; then
+#             old_backups=( "${backups[@]:3}" )
+#             for old in "${old_backups[@]}"; do
+#                 rm -f "$old"
+#                 echo "Deleted old backup $old"
+#             done
+#         fi
+#     done
+#     # Only reset the lockfile if it's actually in a conflicted/unmerged state
+#     # (previously this ran unconditionally, which discarded npm's resolved
+#     # lockfile from the prior run every single time — causing npm to
+#     # re-resolve and re-report the same "added/removed/changed" diff forever)
+#     if git status --porcelain package-lock.json 2>/dev/null | grep -q '^UU'; then
+#         git restore package-lock.json
+#         echo "package-lock.json was in a conflicted state — reset it."
+#     fi
+#     # Pull safely with merge
+#     git pull --no-rebase || {
+#         echo "Git pull failed. Resolve conflicts manually."
+#         return 1
+#     }
+#     echo "Installing dependencies..."
+#     npm install --no-audit || {
+#         echo "npm install failed. Regenerating lockfile..."
+#         rm -f package-lock.json
+#         npm install --no-audit
+#     }
+#     npm install-scripts approve fsevents @tsparticles/engine --silent 2>/dev/null
+#     echo "Fixing vulnerabilities..."
+#     npm audit fix
+#     REMAINING=$(npm audit --json 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('metadata',{}).get('vulnerabilities',{}).get('total',0))" 2>/dev/null)
+#     if [ "${REMAINING:-0}" -gt 0 ] 2>/dev/null; then
+#         echo "Warning: $REMAINING vulnerabilities remain after audit fix (likely require a breaking/major version bump)."
+#         echo "Review with: npm audit"
+#         echo "  - To fix without a major bump (if transitive), consider adding an \"overrides\" entry in package.json."
+#         echo "  - To force the breaking fix, run manually: npm audit fix --force"
+#     else
+#         echo "No vulnerabilities found."
+#     fi
+#     echo "Starting development server..."
+#     npm run dev
+# }
 
 # qs() {
 #     echo "Checking npm version..."
