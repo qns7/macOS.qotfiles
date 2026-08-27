@@ -80,7 +80,8 @@ sleep 3
 
 sleep 1
 
-osascript -e 'quit app "foobar2000"' &>/dev/null
+# osascript -e 'quit app "foobar2000"' &>/dev/null
+killall foobar2000 &> /dev/null
 
 killall AltTab &> /dev/null
 sleep 1
