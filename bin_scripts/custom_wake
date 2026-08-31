@@ -83,6 +83,8 @@ sleep 1
 # osascript -e 'quit app "foobar2000"' &>/dev/null
 killall foobar2000 &> /dev/null
 
+sleep 1
+
 killall AltTab &> /dev/null
 sleep 1
 open_or_focus "AltTab"
