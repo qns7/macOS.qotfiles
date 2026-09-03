@@ -100,6 +100,9 @@ sleep 0.37 # sleep 1 # # #
 # sleep 0.1
 sleep 0.37
 safe_cliclick_focus
+
+/opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true
+
 # sleep 0.1
 sketchybar --update
 # instead of change_display_... needed: when closing last app in space!
