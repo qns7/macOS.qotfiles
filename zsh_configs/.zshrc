@@ -138,7 +138,8 @@ alias up="brewup"
 alias uy='echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai; sleep 0.37; yabai --restart-service'
 
 alias ug="cd ~/.config; git pull origin main; sleep 0.37; ~/bin/SYNC; sleep 0.37; git add skhd karabiner yabai sketchybar linearmouse btop bin_scripts zsh_configs .gitignore README.md readme_old25.md mouseless_gh-backup && git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\" && git push origin main" # ; sleep 0.37; git pull origin main"
-alias ugw="cd ~/.config; git pull origin main; sleep 0.37; ~/bin/SYNC; sleep 0.37; git add skhd karabiner yabai sketchybar linearmouse btop bin_scripts zsh_configs .gitignore README.md readme_old25.md mouseless_gh-backup && git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\" && git push origin main; cd ~/qns7.github.io && git pull origin main && git add . && git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\" && git push origin main"
+alias ugw="cd ~/qns7.github.io; git pull origin main; git add .; git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\"; git push origin main" # website-only alias, split out of the old combined ugw; uses ; not && between steps so a "nothing to commit" exit code (which git returns as non-zero) doesn't skip the push — the old combined version's && chain meant this could silently no-op depending on unrelated .config state
+# alias ugw="cd ~/.config; git pull origin main; sleep 0.37; ~/bin/SYNC; sleep 0.37; git add skhd karabiner yabai sketchybar linearmouse btop bin_scripts zsh_configs .gitignore README.md readme_old25.md mouseless_gh-backup && git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\" && git push origin main; cd ~/qns7.github.io && git pull origin main && git add . && git commit -m \"\$(date +'%Y-%m-%d %H:%M:%S')\" && git push origin main"
 # alias pg="git pull origin main"
 
 alias lun="launchctl unload ~/Library/LaunchAgents/com.q.custom_start.plist"
