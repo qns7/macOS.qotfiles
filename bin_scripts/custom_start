@@ -14,6 +14,8 @@ sleep 0.73 # 13.7 # Karabiner Update Agent is done also after this time - for su
 /Users/q/bin/cliclick_focus
 /opt/homebrew/bin/cliclick c:. # to "remove" iTerm focus
 
+# what's with audio? never there ir removed? or because custom_wake was REAL WAKE AND START script back then?
+
 # /Users/*/Library/LaunchAgents/com.*.custom_start.plist
 #
 # <?xml version="1.0" encoding="UTF-8"?>
