@@ -46,6 +46,7 @@ ctrl - r : open_or_focus Reaper
     #     "Finder" : skhd -k "shift + cmd - g"; sleep 0.37; osascript -e 'tell application "System Events"' -e 'repeat with c in {"T", "R", "A", "S", "H"}' -e 'keystroke c' -e 'delay 0.05' -e 'end repeat' -e 'end tell'; sleep 0.73; skhd -k "return"
     #     * : skhd -k "ctrl - e"; sleep 1.37; skhd -k "ctrl + cmd  - e"; skhd -k "shift + cmd - g"; sleep 0.37; osascript -e 'tell application "System Events"' -e 'repeat with c in {"T", "R", "A", "S", "H"}' -e 'keystroke c' -e 'delay 0.05' -e 'end repeat' -e 'end tell'; sleep 0.73; skhd -k "return"
     #     ] 
+        # WEIRD: centering the cursor isn't working reliably here for some reason... check and fix some time... 
     ctrl + alt - t : open_folder ~/.Trash # works now... Trash also in the sidebar : since when is this a thing? some update in the last months I guess. 20:59, 05.09.26, SAT 
     # ctrl + alt - t [
     #     "Finder" : skhd -k "shift + cmd - g"; sleep 0.37; skhd -t "Trash"; sleep 0.73; skhd -k "return"
