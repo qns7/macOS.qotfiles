@@ -168,44 +168,107 @@ ct() {
 # }
 # alias wtt="wt 'Zeiskam?format=%l:+%C+%t,+Sunset+%s'" # Zeiskam?format=3 # Zeiskam?format=%l:+%C+%t # Zeiskam?0
 # alias wtt="curl -s 'wttr.in/Zeiskam?format=%l:+%C+%t,+Wind:+%w,+Pressure:+%P,+Sunset:+%S" | sed 's/\([↑↓←→↖↗↘↙]\)/\1 /' | sed -E 's/(Sunset:[ ]?[0-9]{2}:[0-9]{2}):[0-9]{2}/\1/''
+
 wth() {
   (
+    local coords="${1:?usage: wth "lat,lon"}"
+    local lat="${coords%%,*}"
+    local lon="${coords##*,}"
+
+    local current_hour
     current_hour=$(date +%H)
     current_hour=$(( current_hour - current_hour % 3 ))
-    while true; do
-      for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done
-    done & SPINNER_PID=$!
-    WEATHER_OUTPUT=$(curl -s "https://wttr.in/${1}?format=j1&m" | jq -r --argjson current_hour "$current_hour" '
-      .weather[0].hourly as $today |
-      .weather[1].hourly as $tomorrow |
-      ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
-      ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
-      .[] | [
-        ( ((.time|tonumber)/100|floor|tostring) | if length == 1 then "0" + . else . end + ":00" ),  # padded time
-        (.tempC + "°C"),
-        (.windspeedKmph + " km/h"),
-        (.precipMM + " mm"),
-        (.chanceofrain + "%"),
-        .weatherDesc[0].value
-      ] | @tsv
-    ')
-    kill $SPINNER_PID 2>/dev/null
-    wait $SPINNER_PID 2>/dev/null
-    echo -en "\r\033[K"
-    lines=()
+
+    local spinner_pid=""
+    stop_spinner() {
+      [[ -n "$spinner_pid" ]] && kill "$spinner_pid" 2>/dev/null && wait "$spinner_pid" 2>/dev/null
+      spinner_pid=""
+      echo -en "\r\033[K"
+    }
+    trap stop_spinner EXIT
+
+    ( while true; do for c in / - \\ \|; do echo -en "\r$c"; sleep .1; done; done ) &
+    spinner_pid=$!
+
+    local raw
+    raw=$(curl -sf --max-time 8 --retry 2 --retry-delay 1 --retry-connrefused \
+      "https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,precipitation,precipitation_probability,windspeed_10m,weathercode&timezone=auto&forecast_days=2")
+    local curl_status=$?
+
+    if [[ $curl_status -ne 0 || -z "$raw" ]]; then
+      stop_spinner
+      echo "wth: couldn't reach open-meteo (curl exit $curl_status)" >&2
+      return 1
+    fi
+
+    if ! jq -e '.hourly.time and .hourly.temperature_2m' <<< "$raw" >/dev/null 2>&1; then
+      stop_spinner
+      echo "wth: unexpected response from open-meteo" >&2
+      return 1
+    fi
+
+    local WEATHER_OUTPUT
+    WEATHER_OUTPUT=$(jq -r --argjson current_hour "$current_hour" '
+      def wdesc:
+        {
+          "0":"Clear sky","1":"Mainly clear","2":"Partly cloudy","3":"Overcast",
+          "45":"Fog","48":"Rime fog",
+          "51":"Light drizzle","53":"Moderate drizzle","55":"Dense drizzle",
+          "56":"Freezing drizzle","57":"Dense freezing drizzle",
+          "61":"Slight rain","63":"Moderate rain","65":"Heavy rain",
+          "66":"Freezing rain","67":"Heavy freezing rain",
+          "71":"Slight snow","73":"Moderate snow","75":"Heavy snow","77":"Snow grains",
+          "80":"Slight rain showers","81":"Moderate rain showers","82":"Violent rain showers",
+          "85":"Slight snow showers","86":"Heavy snow showers",
+          "95":"Thunderstorm","96":"Thunderstorm w/ hail","99":"Severe thunderstorm"
+        }[tostring] // "Unknown";
+      .hourly as $h |
+      [range(0; ($h.time | length))]
+      | map({
+          time: $h.time[.],
+          hour: ($h.time[.] | .[11:13] | tonumber),
+          temp: $h.temperature_2m[.],
+          wind: $h.windspeed_10m[.],
+          precip: $h.precipitation[.],
+          chance: $h.precipitation_probability[.],
+          code: $h.weathercode[.]
+        })
+      | map(select(.hour % 3 == 0))
+      | .[0:8]
+      | .[] | [
+          (.hour | tostring | if length == 1 then "0" + . else . end) + ":00",
+          (.temp | tostring) + "°C",
+          (.wind | tostring) + " km/h",
+          (.precip | tostring) + " mm",
+          (.chance | tostring) + "%",
+          (.code | wdesc)
+        ] | @tsv
+    ' <<< "$raw")
+
+    stop_spinner
+
+    if [[ -z "$WEATHER_OUTPUT" ]]; then
+      echo "wth: no hourly data returned" >&2
+      return 1
+    fi
+
+    local lines=()
     while IFS= read -r line; do
       lines+=("$line")
     done <<< "$WEATHER_OUTPUT"
-    widths=( 0 0 0 0 0 0 )
+
+    local widths=(0 0 0 0 0 0 0)
+    local t tmp w p r desc
     for line in "${lines[@]}"; do
       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
-      [[ ${#t}    -gt ${widths[1]} ]] && widths[1]=${#t}
-      [[ ${#tmp}  -gt ${widths[2]} ]] && widths[2]=${#tmp}
-      [[ ${#w}    -gt ${widths[3]} ]] && widths[3]=${#w}
-      [[ ${#p}    -gt ${widths[4]} ]] && widths[4]=${#p}
-      [[ ${#r}    -gt ${widths[5]} ]] && widths[5]=${#r}
-      [[ ${#desc} -gt ${widths[6]} ]] && widths[6]=${#desc}
+      (( ${#t}    > widths[1] )) && widths[1]=${#t}
+      (( ${#tmp}  > widths[2] )) && widths[2]=${#tmp}
+      (( ${#w}    > widths[3] )) && widths[3]=${#w}
+      (( ${#p}    > widths[4] )) && widths[4]=${#p}
+      (( ${#r}    > widths[5] )) && widths[5]=${#r}
+      (( ${#desc} > widths[6] )) && widths[6]=${#desc}
     done
+
     for line in "${lines[@]}"; do
       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
       printf "%*s | %*s | %*s | %*s | %*s | %-*s\n" \
@@ -218,7 +281,139 @@ wth() {
     done
   )
 }
+
 alias wt='clear; wth "49.2303,8.2505"'
+
+# wth() {
+#   (
+#     local location="${1:-}"
+#     local current_hour
+#     current_hour=$(date +%H)
+#     current_hour=$(( current_hour - current_hour % 3 ))
+
+#     local spinner_pid=""
+#     trap '[[ -n "$spinner_pid" ]] && kill "$spinner_pid" 2>/dev/null; echo -en "\r\033[K"' EXIT
+
+#     ( while true; do for c in / - \\ \|; do echo -en "\r$c"; sleep .1; done; done ) &
+#     spinner_pid=$!
+
+#     local raw
+#     raw=$(curl -sf --max-time 8 --retry 2 --retry-delay 1 --retry-connrefused \
+#       "https://wttr.in/${location}?format=j1&m")
+#     if [[ $? -ne 0 || -z "$raw" ]]; then
+#       echo "wth: couldn't reach wttr.in" >&2
+#       return 1
+#     fi
+
+#     if ! jq -e '.weather[0].hourly and .weather[1].hourly' <<< "$raw" >/dev/null 2>&1; then
+#       echo "wth: unexpected response from wttr.in" >&2
+#       return 1
+#     fi
+
+#     local WEATHER_OUTPUT
+#     WEATHER_OUTPUT=$(jq -r --argjson current_hour "$current_hour" '
+#       .weather[0].hourly as $today |
+#       .weather[1].hourly as $tomorrow |
+#       ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
+#       ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
+#       .[] | [
+#         ( ((.time|tonumber)/100|floor|tostring) | if length == 1 then "0" + . else . end + ":00" ),
+#         (.tempC + "°C"),
+#         (.windspeedKmph + " km/h"),
+#         (.precipMM + " mm"),
+#         (.chanceofrain + "%"),
+#         .weatherDesc[0].value
+#       ] | @tsv
+#     ' <<< "$raw")
+
+#     if [[ -z "$WEATHER_OUTPUT" ]]; then
+#       echo "wth: no hourly data returned" >&2
+#       return 1
+#     fi
+
+#     local lines=()
+#     while IFS= read -r line; do
+#       lines+=("$line")
+#     done <<< "$WEATHER_OUTPUT"
+
+#     local widths=(0 0 0 0 0 0 0)
+#     local t tmp w p r desc
+#     for line in "${lines[@]}"; do
+#       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+#       (( ${#t}    > widths[1] )) && widths[1]=${#t}
+#       (( ${#tmp}  > widths[2] )) && widths[2]=${#tmp}
+#       (( ${#w}    > widths[3] )) && widths[3]=${#w}
+#       (( ${#p}    > widths[4] )) && widths[4]=${#p}
+#       (( ${#r}    > widths[5] )) && widths[5]=${#r}
+#       (( ${#desc} > widths[6] )) && widths[6]=${#desc}
+#     done
+
+#     for line in "${lines[@]}"; do
+#       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+#       printf "%*s | %*s | %*s | %*s | %*s | %-*s\n" \
+#         "${widths[1]}" "$t" \
+#         "${widths[2]}" "$tmp" \
+#         "${widths[3]}" "$w" \
+#         "${widths[4]}" "$p" \
+#         "${widths[5]}" "$r" \
+#         "${widths[6]}" "$desc"
+#     done
+#   )
+# }
+
+# alias wt='clear; wth "49.2303,8.2505"'
+
+# wth() {
+#   (
+#     current_hour=$(date +%H)
+#     current_hour=$(( current_hour - current_hour % 3 ))
+#     while true; do
+#       for var in / - \\ \|; do echo -en "\r$var"; sleep .1; done
+#     done & SPINNER_PID=$!
+#     WEATHER_OUTPUT=$(curl -s "https://wttr.in/${1}?format=j1&m" | jq -r --argjson current_hour "$current_hour" '
+#       .weather[0].hourly as $today |
+#       .weather[1].hourly as $tomorrow |
+#       ($today | map(select((.time | tonumber)/100 >= $current_hour))) +
+#       ($tomorrow | map(select((.time | tonumber)/100 < $current_hour))) |
+#       .[] | [
+#         ( ((.time|tonumber)/100|floor|tostring) | if length == 1 then "0" + . else . end + ":00" ),  # padded time
+#         (.tempC + "°C"),
+#         (.windspeedKmph + " km/h"),
+#         (.precipMM + " mm"),
+#         (.chanceofrain + "%"),
+#         .weatherDesc[0].value
+#       ] | @tsv
+#     ')
+#     kill $SPINNER_PID 2>/dev/null
+#     wait $SPINNER_PID 2>/dev/null
+#     echo -en "\r\033[K"
+#     lines=()
+#     while IFS= read -r line; do
+#       lines+=("$line")
+#     done <<< "$WEATHER_OUTPUT"
+#     widths=( 0 0 0 0 0 0 )
+#     for line in "${lines[@]}"; do
+#       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+#       [[ ${#t}    -gt ${widths[1]} ]] && widths[1]=${#t}
+#       [[ ${#tmp}  -gt ${widths[2]} ]] && widths[2]=${#tmp}
+#       [[ ${#w}    -gt ${widths[3]} ]] && widths[3]=${#w}
+#       [[ ${#p}    -gt ${widths[4]} ]] && widths[4]=${#p}
+#       [[ ${#r}    -gt ${widths[5]} ]] && widths[5]=${#r}
+#       [[ ${#desc} -gt ${widths[6]} ]] && widths[6]=${#desc}
+#     done
+#     for line in "${lines[@]}"; do
+#       IFS=$'\t' read -r t tmp w p r desc <<< "$line"
+#       printf "%*s | %*s | %*s | %*s | %*s | %-*s\n" \
+#         "${widths[1]}" "$t" \
+#         "${widths[2]}" "$tmp" \
+#         "${widths[3]}" "$w" \
+#         "${widths[4]}" "$p" \
+#         "${widths[5]}" "$r" \
+#         "${widths[6]}" "$desc"
+#     done
+#   )
+# }
+# alias wt='clear; wth "49.2303,8.2505"'
 # alias wt='clear; wth "49.2303485,8.2504211"'
 # alias wt='clear; wth "49.23031918078996,8.250524609839939"'
 # alias wt='clear; wth "Zeiskam"'
