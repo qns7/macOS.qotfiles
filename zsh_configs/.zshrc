@@ -177,7 +177,7 @@ wth() {
 
     local current_hour
     current_hour=$(date +%H)
-    current_hour=$(( current_hour - current_hour % 3 ))
+    current_hour=$((10#$current_hour))          # strip leading zero, avoid octal parsing
 
     local spinner_pid=""
     stop_spinner() {
@@ -208,7 +208,7 @@ wth() {
     fi
 
     local WEATHER_OUTPUT
-    WEATHER_OUTPUT=$(jq -r --argjson current_hour "$current_hour" '
+    WEATHER_OUTPUT=$(jq -r --argjson start "$current_hour" '
       def wdesc:
         {
           "0":"Clear sky","1":"Mainly clear","2":"Partly cloudy","3":"Overcast",
@@ -223,7 +223,8 @@ wth() {
           "95":"Thunderstorm","96":"Thunderstorm w/ hail","99":"Severe thunderstorm"
         }[tostring] // "Unknown";
       .hourly as $h |
-      [range(0; ($h.time | length))]
+      [range($start; $start + 24)]
+      | map(select(. < ($h.time | length)))
       | map({
           time: $h.time[.],
           hour: ($h.time[.] | .[11:13] | tonumber),
@@ -233,8 +234,6 @@ wth() {
           chance: $h.precipitation_probability[.],
           code: $h.weathercode[.]
         })
-      | map(select(.hour % 3 == 0))
-      | .[0:8]
       | .[] | [
           (.hour | tostring | if length == 1 then "0" + . else . end) + ":00",
           (.temp | tostring) + "°C",
