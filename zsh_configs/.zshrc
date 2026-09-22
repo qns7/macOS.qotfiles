@@ -118,6 +118,7 @@ alias ll="ls --color=auto -lah"
 
 alias h="code ~/.zsh_history"
 alias c="clear"
+alias clean="mole clean"
 alias t="tty-clock -c -C 7 -D" # "clear && sleep $(echo "1 - $(date +%s.%N | cut -d'.' -f2) / 1000000000" | bc -l) && tty-clock -c -s -C 7 -D" # -s
 alias k="clear; cat ~/keyboard_info.txt"
 alias a="clear; alias"
