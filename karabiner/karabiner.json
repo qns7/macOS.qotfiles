@@ -459,6 +459,27 @@
                         ]
                     },
                     {
+                        "description": "fn+v -> OBS hyper-V (bypass skhd for OBS global hotkey)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": ["left_control", "left_option", "left_shift", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Left CMD tap → Mouseless overlay toggle",
                         "enabled": false,
                         "manipulators": [
