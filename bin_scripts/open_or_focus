@@ -5,65 +5,168 @@ is_running() {
   osascript -e "application \"$APP\" is running" 2>/dev/null | grep -q "true"
 }
 
-wait_for_focus() {
-  local expected="$1"
-  for _ in $(seq 1 10); do
-    local current
-    current=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
-    [ "$current" = "$expected" ] && return 0
-    sleep 0.05
+win_field() {
+  yabai -m query --windows --window "$1" 2>/dev/null | jq -r "$2"
+}
+
+is_ready() {
+  [ "$(win_field "$1" '."has-focus" and ."is-visible"')" = "true" ]
+}
+
+wait_until() {
+  local i
+  for i in $(seq 1 60); do
+    "$@" && return 0
+    sleep 0.025
   done
   return 1
 }
 
-cliclick_with_fallback() {
-  ~/bin/cliclick_focus
-  (sleep 0.3 && ~/bin/cliclick_focus) &
+space_is_current() {
+  [ "$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index')" = "$1" ]
 }
 
-# Query all non-minimized windows for the app
-WINDOWS=$(yabai -m query --windows 2>/dev/null | jq -r --arg app "$APP" \
-  '[.[] | select(.app == $app and ."is-minimized" == false)]')
+focus_window() {
+  local id="$1" space
+  space=$(win_field "$id" '.space')
 
-# Prefer a window on the current space, fall back to any window
+  if [ -n "$space" ] && ! space_is_current "$space"; then
+    yabai -m space --focus "$space" 2>/dev/null
+    wait_until space_is_current "$space"
+    sleep 0.15
+  fi
+
+  yabai -m window --focus "$id" 2>/dev/null
+  wait_until is_ready "$id"
+  sleep 0.1
+
+  if ! is_ready "$id"; then
+    yabai -m window --focus "$id" 2>/dev/null
+    wait_until is_ready "$id"
+  fi
+
+  ~/bin/cliclick_focus
+
+  (
+    sleep 0.3
+    if ! is_ready "$id"; then
+      yabai -m window --focus "$id" 2>/dev/null
+      wait_until is_ready "$id"
+      ~/bin/cliclick_focus
+    fi
+  ) &
+}
+
+ALL=$(yabai -m query --windows 2>/dev/null)
+
 CURRENT_SPACE=$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index // empty')
-WIN_ID=$(echo "$WINDOWS" | jq -r --argjson space "${CURRENT_SPACE:-0}" \
-  '(map(select(.space == $space)) + .) | .[0].id // empty')
+WIN_ID=$(echo "$ALL" | jq -r --arg app "$APP" --argjson space "${CURRENT_SPACE:-0}" \
+  '[.[] | select(.app == $app and ."is-minimized" == false)]
+   | (map(select(.space == $space)) + .) | .[0].id // empty')
 
-# Check for minimized windows as last resort
-MINIMIZED_ID=$(yabai -m query --windows 2>/dev/null | jq -r --arg app "$APP" \
+MINIMIZED_ID=$(echo "$ALL" | jq -r --arg app "$APP" \
   '[.[] | select(.app == $app and ."is-minimized" == true)] | .[0].id // empty')
 
 if [ -n "$WIN_ID" ]; then
-  FOCUSED_ID=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
-  if [ "$WIN_ID" != "$FOCUSED_ID" ]; then
-    yabai -m window --focus "$WIN_ID"
-    wait_for_focus "$WIN_ID"
-  fi
-  cliclick_with_fallback
+  focus_window "$WIN_ID"
 elif [ -n "$MINIMIZED_ID" ]; then
-  # Unminimize and focus
   yabai -m window "$MINIMIZED_ID" --deminimize
-  sleep 0.1
-  yabai -m window --focus "$MINIMIZED_ID"
-  wait_for_focus "$MINIMIZED_ID"
-  cliclick_with_fallback
+  sleep 0.15
+  focus_window "$MINIMIZED_ID"
 elif is_running; then
-  # App running but yabai can't see its windows (e.g. Electron, hidden window)
   osascript -e "tell application \"$APP\" to activate"
-  cliclick_with_fallback
+  sleep 0.2
+  ~/bin/cliclick_focus
 else
-  # App not running — open it and focus when its first window appears
   yabai -m signal --remove "open_or_focus_once" 2>/dev/null
   yabai -m signal --add \
     event=window_created \
     app="$APP" \
     label="open_or_focus_once" \
     action='yabai -m signal --remove open_or_focus_once; \
+            sleep 0.15; \
             yabai -m window --focus $YABAI_WINDOW_ID; \
+            sleep 0.1; \
             $HOME/bin/cliclick_focus'
   open -a "$APP"
 fi
+
+
+
+
+
+
+# #!/bin/bash
+# APP="${1:-Firefox}"
+
+# is_running() {
+#   osascript -e "application \"$APP\" is running" 2>/dev/null | grep -q "true"
+# }
+
+# wait_for_focus() {
+#   local expected="$1"
+#   for _ in $(seq 1 10); do
+#     local current
+#     current=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
+#     [ "$current" = "$expected" ] && return 0
+#     sleep 0.05
+#   done
+#   return 1
+# }
+
+# cliclick_with_fallback() {
+#   ~/bin/cliclick_focus
+#   (sleep 0.3 && ~/bin/cliclick_focus) &
+# }
+
+# # Query all non-minimized windows for the app
+# WINDOWS=$(yabai -m query --windows 2>/dev/null | jq -r --arg app "$APP" \
+#   '[.[] | select(.app == $app and ."is-minimized" == false)]')
+
+# # Prefer a window on the current space, fall back to any window
+# CURRENT_SPACE=$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index // empty')
+# WIN_ID=$(echo "$WINDOWS" | jq -r --argjson space "${CURRENT_SPACE:-0}" \
+#   '(map(select(.space == $space)) + .) | .[0].id // empty')
+
+# # Check for minimized windows as last resort
+# MINIMIZED_ID=$(yabai -m query --windows 2>/dev/null | jq -r --arg app "$APP" \
+#   '[.[] | select(.app == $app and ."is-minimized" == true)] | .[0].id // empty')
+
+# if [ -n "$WIN_ID" ]; then
+#   FOCUSED_ID=$(yabai -m query --windows --window 2>/dev/null | jq -r '.id // empty')
+#   if [ "$WIN_ID" != "$FOCUSED_ID" ]; then
+#     yabai -m window --focus "$WIN_ID"
+#     wait_for_focus "$WIN_ID"
+#   fi
+#   cliclick_with_fallback
+# elif [ -n "$MINIMIZED_ID" ]; then
+#   # Unminimize and focus
+#   yabai -m window "$MINIMIZED_ID" --deminimize
+#   sleep 0.1
+#   yabai -m window --focus "$MINIMIZED_ID"
+#   wait_for_focus "$MINIMIZED_ID"
+#   cliclick_with_fallback
+# elif is_running; then
+#   # App running but yabai can't see its windows (e.g. Electron, hidden window)
+#   osascript -e "tell application \"$APP\" to activate"
+#   cliclick_with_fallback
+# else
+#   # App not running — open it and focus when its first window appears
+#   yabai -m signal --remove "open_or_focus_once" 2>/dev/null
+#   yabai -m signal --add \
+#     event=window_created \
+#     app="$APP" \
+#     label="open_or_focus_once" \
+#     action='yabai -m signal --remove open_or_focus_once; \
+#             yabai -m window --focus $YABAI_WINDOW_ID; \
+#             $HOME/bin/cliclick_focus'
+#   open -a "$APP"
+# fi
+
+
+
+
+
 
 # #!/bin/bash
 # APP="${1:-Firefox}"
