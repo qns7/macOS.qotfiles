@@ -27,10 +27,11 @@ space_is_current() {
 }
 
 focus_window() {
-  local id="$1" space
+  local id="$1" space sticky
   space=$(win_field "$id" '.space')
+  sticky=$(win_field "$id" '."is-sticky"')
 
-  if [ -n "$space" ] && ! space_is_current "$space"; then
+  if [ "$sticky" != "true" ] && [ -n "$space" ] && ! space_is_current "$space"; then
     yabai -m space --focus "$space" 2>/dev/null
     wait_until space_is_current "$space"
     sleep 0.15
@@ -45,15 +46,15 @@ focus_window() {
     wait_until is_ready "$id"
   fi
 
-  ~/bin/cliclick_focus
+  is_ready "$id" && ~/bin/cliclick_focus "$id"
 
   (
     sleep 0.3
     if ! is_ready "$id"; then
       yabai -m window --focus "$id" 2>/dev/null
       wait_until is_ready "$id"
-      ~/bin/cliclick_focus
     fi
+    is_ready "$id" && ~/bin/cliclick_focus "$id"
   ) &
 }
 
@@ -62,7 +63,7 @@ ALL=$(yabai -m query --windows 2>/dev/null)
 CURRENT_SPACE=$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index // empty')
 WIN_ID=$(echo "$ALL" | jq -r --arg app "$APP" --argjson space "${CURRENT_SPACE:-0}" \
   '[.[] | select(.app == $app and ."is-minimized" == false)]
-   | (map(select(.space == $space)) + .) | .[0].id // empty')
+   | (map(select(.space == $space or ."is-sticky")) + .) | .[0].id // empty')
 
 MINIMIZED_ID=$(echo "$ALL" | jq -r --arg app "$APP" \
   '[.[] | select(.app == $app and ."is-minimized" == true)] | .[0].id // empty')
@@ -87,9 +88,216 @@ else
             sleep 0.15; \
             yabai -m window --focus $YABAI_WINDOW_ID; \
             sleep 0.1; \
-            $HOME/bin/cliclick_focus'
+            $HOME/bin/cliclick_focus $YABAI_WINDOW_ID'
   open -a "$APP"
 fi
+
+
+
+
+
+
+
+
+
+
+
+
+# #!/bin/bash
+# APP="${1:-Firefox}"
+
+# is_running() {
+#   osascript -e "application \"$APP\" is running" 2>/dev/null | grep -q "true"
+# }
+
+# win_field() {
+#   yabai -m query --windows --window "$1" 2>/dev/null | jq -r "$2"
+# }
+
+# is_ready() {
+#   [ "$(win_field "$1" '."has-focus" and ."is-visible"')" = "true" ]
+# }
+
+# wait_until() {
+#   local i
+#   for i in $(seq 1 60); do
+#     "$@" && return 0
+#     sleep 0.025
+#   done
+#   return 1
+# }
+
+# space_is_current() {
+#   [ "$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index')" = "$1" ]
+# }
+
+# focus_window() {
+#   local id="$1" space
+#   space=$(win_field "$id" '.space')
+
+#   if [ -n "$space" ] && ! space_is_current "$space"; then
+#     yabai -m space --focus "$space" 2>/dev/null
+#     wait_until space_is_current "$space"
+#     sleep 0.15
+#   fi
+
+#   yabai -m window --focus "$id" 2>/dev/null
+#   wait_until is_ready "$id"
+#   sleep 0.1
+
+#   if ! is_ready "$id"; then
+#     yabai -m window --focus "$id" 2>/dev/null
+#     wait_until is_ready "$id"
+#   fi
+
+#   is_ready "$id" && ~/bin/cliclick_focus "$id"
+
+#   (
+#     sleep 0.3
+#     if ! is_ready "$id"; then
+#       yabai -m window --focus "$id" 2>/dev/null
+#       wait_until is_ready "$id"
+#     fi
+#     is_ready "$id" && ~/bin/cliclick_focus "$id"
+#   ) &
+# }
+
+# ALL=$(yabai -m query --windows 2>/dev/null)
+
+# CURRENT_SPACE=$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index // empty')
+# WIN_ID=$(echo "$ALL" | jq -r --arg app "$APP" --argjson space "${CURRENT_SPACE:-0}" \
+#   '[.[] | select(.app == $app and ."is-minimized" == false)]
+#    | (map(select(.space == $space)) + .) | .[0].id // empty')
+
+# MINIMIZED_ID=$(echo "$ALL" | jq -r --arg app "$APP" \
+#   '[.[] | select(.app == $app and ."is-minimized" == true)] | .[0].id // empty')
+
+# if [ -n "$WIN_ID" ]; then
+#   focus_window "$WIN_ID"
+# elif [ -n "$MINIMIZED_ID" ]; then
+#   yabai -m window "$MINIMIZED_ID" --deminimize
+#   sleep 0.15
+#   focus_window "$MINIMIZED_ID"
+# elif is_running; then
+#   osascript -e "tell application \"$APP\" to activate"
+#   sleep 0.2
+#   ~/bin/cliclick_focus
+# else
+#   yabai -m signal --remove "open_or_focus_once" 2>/dev/null
+#   yabai -m signal --add \
+#     event=window_created \
+#     app="$APP" \
+#     label="open_or_focus_once" \
+#     action='yabai -m signal --remove open_or_focus_once; \
+#             sleep 0.15; \
+#             yabai -m window --focus $YABAI_WINDOW_ID; \
+#             sleep 0.1; \
+#             $HOME/bin/cliclick_focus $YABAI_WINDOW_ID'
+#   open -a "$APP"
+# fi
+
+
+
+
+
+
+
+
+
+
+
+# #!/bin/bash
+# APP="${1:-Firefox}"
+
+# is_running() {
+#   osascript -e "application \"$APP\" is running" 2>/dev/null | grep -q "true"
+# }
+
+# win_field() {
+#   yabai -m query --windows --window "$1" 2>/dev/null | jq -r "$2"
+# }
+
+# is_ready() {
+#   [ "$(win_field "$1" '."has-focus" and ."is-visible"')" = "true" ]
+# }
+
+# wait_until() {
+#   local i
+#   for i in $(seq 1 60); do
+#     "$@" && return 0
+#     sleep 0.025
+#   done
+#   return 1
+# }
+
+# space_is_current() {
+#   [ "$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index')" = "$1" ]
+# }
+
+# focus_window() {
+#   local id="$1" space
+#   space=$(win_field "$id" '.space')
+
+#   if [ -n "$space" ] && ! space_is_current "$space"; then
+#     yabai -m space --focus "$space" 2>/dev/null
+#     wait_until space_is_current "$space"
+#     sleep 0.15
+#   fi
+
+#   yabai -m window --focus "$id" 2>/dev/null
+#   wait_until is_ready "$id"
+#   sleep 0.1
+
+#   if ! is_ready "$id"; then
+#     yabai -m window --focus "$id" 2>/dev/null
+#     wait_until is_ready "$id"
+#   fi
+
+#   ~/bin/cliclick_focus
+
+#   (
+#     sleep 0.3
+#     if ! is_ready "$id"; then
+#       yabai -m window --focus "$id" 2>/dev/null
+#       wait_until is_ready "$id"
+#       ~/bin/cliclick_focus
+#     fi
+#   ) &
+# }
+
+# ALL=$(yabai -m query --windows 2>/dev/null)
+
+# CURRENT_SPACE=$(yabai -m query --spaces --space 2>/dev/null | jq -r '.index // empty')
+# WIN_ID=$(echo "$ALL" | jq -r --arg app "$APP" --argjson space "${CURRENT_SPACE:-0}" \
+#   '[.[] | select(.app == $app and ."is-minimized" == false)]
+#    | (map(select(.space == $space)) + .) | .[0].id // empty')
+
+# MINIMIZED_ID=$(echo "$ALL" | jq -r --arg app "$APP" \
+#   '[.[] | select(.app == $app and ."is-minimized" == true)] | .[0].id // empty')
+
+# if [ -n "$WIN_ID" ]; then
+#   focus_window "$WIN_ID"
+# elif [ -n "$MINIMIZED_ID" ]; then
+#   yabai -m window "$MINIMIZED_ID" --deminimize
+#   sleep 0.15
+#   focus_window "$MINIMIZED_ID"
+# elif is_running; then
+#   osascript -e "tell application \"$APP\" to activate"
+#   sleep 0.2
+#   ~/bin/cliclick_focus
+# else
+#   yabai -m signal --remove "open_or_focus_once" 2>/dev/null
+#   yabai -m signal --add \
+#     event=window_created \
+#     app="$APP" \
+#     label="open_or_focus_once" \
+#     action='yabai -m signal --remove open_or_focus_once; \
+#             sleep 0.15; \
+#             yabai -m window --focus $YABAI_WINDOW_ID; \
+#             sleep 0.1; \
+#             $HOME/bin/cliclick_focus'
+#   open -a "$APP"
+# fi
 
 
 
