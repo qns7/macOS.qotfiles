@@ -151,9 +151,9 @@ ctrl - y : skhd -k "ctrl + alt - y"; sleep 0.73; skhd -k "escape"
 ## SHOTTR    ctrl + alt - x : open_or_focus "texmaker" # sleep 0.37; cliclick c:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
     ctrl + alt + cmd - x : open_or_focus "texmaker" # open_or_focus "Ipe" # sleep 0.37; cliclick dc:+0,+0; cliclick m:+0,+7 && cliclick m:+0,-7
 ## SHOTTR
-ctrl - c : skhd -k "hyper - o" #c" # trex (ocr)
+ctrl - c : skhd -k "hyper - o" #c" # trex (ocr) ### 20:08, 01.10.26, THU : O IST SHOTTR, C IST TREX (OCR) 
     ctrl + cmd - c : ~/.config/sketchybar/plugins/click_date.sh
-    ctrl + alt - c : skhd -k "hyper - c" # trex (ocr) # open_or_focus Calculator
+    ctrl + alt - c : skhd -k "hyper - c" # trex (ocr) # open_or_focus Calculator ### 20:09, 01.10.26, THU : SIEHE OBEN!
     ctrl + alt + cmd - c : open_or_focus Calculator # return
 ctrl - v : open_or_focus "Visual Studio Code"
     ctrl + cmd - v : open_or_focus "IINA"
