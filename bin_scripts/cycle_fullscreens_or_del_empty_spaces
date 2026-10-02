@@ -1,10 +1,11 @@
 #!/bin/bash
 
 SPACES=$(yabai -m query --spaces)
+IGNORED=$(yabai -m query --windows | jq '[.[] | select(."is-sticky" or .app == "Shottr") | .id]')
 CURRENT_SPACE_INDEX=$(echo "$SPACES" | jq '.[] | select(."has-focus") | .index')
 FULLSCREENS=$(echo "$SPACES" | jq '[.[] | select(."is-native-fullscreen")]')
 if [[ -z "$FULLSCREENS" || "$(echo "$FULLSCREENS" | jq 'length')" -eq 0 ]]; then
-    echo "$SPACES" | jq -r '.[] | select(.windows == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
+    echo "$SPACES" | jq -r --argjson ign "$IGNORED" '.[] | select((.windows - $ign) == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
     sleep 0.1
     ~/bin/cliclick_focus
     sleep 0.1
@@ -20,3 +21,26 @@ sleep 0.1
 ~/bin/cliclick_focus
 sleep 0.1
 cliclick m:+0,+137
+
+# #!/bin/bash
+
+# SPACES=$(yabai -m query --spaces)
+# CURRENT_SPACE_INDEX=$(echo "$SPACES" | jq '.[] | select(."has-focus") | .index')
+# FULLSCREENS=$(echo "$SPACES" | jq '[.[] | select(."is-native-fullscreen")]')
+# if [[ -z "$FULLSCREENS" || "$(echo "$FULLSCREENS" | jq 'length')" -eq 0 ]]; then
+#     echo "$SPACES" | jq -r '.[] | select(.windows == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
+#     sleep 0.1
+#     ~/bin/cliclick_focus
+#     sleep 0.1
+#     sketchybar --update
+#     exit 0
+# fi
+# NEXT_FULLSCREEN_INDEX=$(echo "$FULLSCREENS" | jq --argjson current "$CURRENT_SPACE_INDEX" 'map(select(.index > $current))[0].index // map(.index)[0]')
+# if [[ -z "$NEXT_FULLSCREEN_INDEX" || "$NEXT_FULLSCREEN_INDEX" == "null" ]]; then
+#     exit 0
+# fi
+# yabai -m space --focus "$NEXT_FULLSCREEN_INDEX"
+# sleep 0.1
+# ~/bin/cliclick_focus
+# sleep 0.1
+# cliclick m:+0,+137

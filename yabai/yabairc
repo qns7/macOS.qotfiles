@@ -52,7 +52,7 @@ yabai -m rule --add app="SoundID Reference" display=last
 yabai -m rule --add app="thunderbird" display=first
 yabai -m rule --add app="TextEdit" display=first
 
-# yabai -m rule --add app="^Shottr$" sticky=on manage=off # with this deleting spaces doesn't work anymore... is there a fix for this?
+yabai -m rule --add app="^Shottr$" sticky=on manage=off # with this deleting spaces doesn't work anymore... is there a fix for this? ---> 13:18, 02.10.26, FRI : changed cycle_fullscreens_or_del_empty_spaces : now nice?
 
 # yabai -m rule --add app="Passwords" display=first
 # yabai -m rule --add app="rain.today" space=first
