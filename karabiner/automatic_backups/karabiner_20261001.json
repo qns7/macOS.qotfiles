@@ -47,8 +47,7 @@
                         ]
                     },
                     {
-                        "description": "rcmd - n/m/,/. : mousebuttons (lcmd not recognized as optional on internal..)",
-                        "enabled": false,
+                        "description": "rcmd - n/m/,/. : mousebuttons | -/ö/ä/# : mouse cursor",
                         "manipulators": [
                             {
                                 "from": {
@@ -92,6 +91,61 @@
                                     }
                                 },
                                 "to": [{ "shell_command": "/Users/q/bin/cliclick_focus" }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "y": 173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "y": -173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": -173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "backslash",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": 173 } }],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "non_us_pound",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": 173 } }],
                                 "type": "basic"
                             }
                         ]
@@ -405,6 +459,27 @@
                         ]
                     },
                     {
+                        "description": "fn+v -> OBS hyper-V (bypass skhd for OBS global hotkey)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": ["left_control", "left_option", "left_shift", "left_command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Left CMD tap → Mouseless overlay toggle",
                         "enabled": false,
                         "manipulators": [
@@ -421,6 +496,7 @@
                     },
                     {
                         "description": "rcmd - n := ctrl - <",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
