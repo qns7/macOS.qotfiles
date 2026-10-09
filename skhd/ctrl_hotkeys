@@ -11,6 +11,11 @@ ctrl + cmd - 3 : /opt/homebrew/bin/nowplaying-cli next #open_or_focus "/Users/q/
 ctrl - 4 : open_or_focus "texmaker"
 ctrl + cmd - 4 : open_or_focus "DiffChecker"
 ctrl - 5 : skhd -k "ctrl - p"
+ctrl + cmd - 5 : return # to deactivate default "sort by"-shortcuts in Finder
+ctrl + cmd - 6 : return # to deactivate default "sort by"-shortcuts in Finder
+ctrl + cmd - 7 : return # to deactivate default "sort by"-shortcuts in Finder
+ctrl + cmd - 8 : return # to deactivate default "sort by"-shortcuts in Finder
+
 
 
 
