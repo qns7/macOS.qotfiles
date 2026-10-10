@@ -1,5 +1,18 @@
 #!/bin/bash
 
+# sleep 1
+
+# osascript -e 'quit app "foobar2000"' &>/dev/null
+killall foobar2000 &> /dev/null
+
+# sleep 1
+
+killall AltTab &> /dev/null
+sleep 1
+open_or_focus "AltTab"
+
+# from below
+
 /opt/homebrew/bin/yabai -m config mouse_follows_focus on
 
 /opt/homebrew/bin/yabai -m display --focus next || /opt/homebrew/bin/yabai -m display --focus prev
@@ -78,16 +91,16 @@ sleep 3
 
 /opt/homebrew/bin/skhd -k 'fn - y' && /opt/homebrew/bin/skhd -k 'ctrl + shift - m' && /bin/launchctl kickstart -k gui/$(id -u)/org.pqrs.service.agent.karabiner_console_user_server
 
-sleep 1
+# sleep 1
 
-# osascript -e 'quit app "foobar2000"' &>/dev/null
-killall foobar2000 &> /dev/null
+# # osascript -e 'quit app "foobar2000"' &>/dev/null
+# killall foobar2000 &> /dev/null
 
-sleep 1
+# sleep 1
 
-killall AltTab &> /dev/null
-sleep 1
-open_or_focus "AltTab"
+# killall AltTab &> /dev/null
+# sleep 1
+# open_or_focus "AltTab"
 
 sleep 1
 
