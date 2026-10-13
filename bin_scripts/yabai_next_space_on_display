@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 
 # if [ -f /tmp/mission_control.open ]; then
 #     skhd -k "hyper - 0x13"
@@ -29,8 +29,6 @@
 # fi
 
 
-
-#!/bin/bash
 
 if [ -f /tmp/mission_control.open ]; then
     skhd -k "hyper - 0x13"

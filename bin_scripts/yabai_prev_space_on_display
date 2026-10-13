@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 
 # if [ -f /tmp/mission_control.open ]; then
 #     skhd -k "hyper - 0x12"
@@ -30,7 +30,7 @@
 
 
 
-#!/bin/bash
+
 
 if [ -f /tmp/mission_control.open ]; then
     skhd -k "hyper - 0x12"

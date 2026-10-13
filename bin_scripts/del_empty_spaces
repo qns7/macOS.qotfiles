@@ -1,13 +1,24 @@
 #!/bin/bash
 
 SPACES=$(yabai -m query --spaces)
-IGNORED=$(yabai -m query --windows | jq '[.[] | select(."is-sticky" or .app == "Shottr") | .id]')
+IGNORED=$(yabai -m query --windows | jq '[.[] | select(."is-sticky" or .app == "Shottr" or .role == "AXHelpTag") | .id]')
 FULLSCREEN_COUNT=$(echo "$SPACES" | jq '[.[] | select(."is-native-fullscreen")] | length')
 if [[ "$FULLSCREEN_COUNT" -eq 0 ]]; then
     echo "$SPACES" | jq -r --argjson ign "$IGNORED" '.[] | select((.windows - $ign) == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
 fi
 # sleep 0.1
 sketchybar --update
+
+# #!/bin/bash
+
+# SPACES=$(yabai -m query --spaces)
+# IGNORED=$(yabai -m query --windows | jq '[.[] | select(."is-sticky" or .app == "Shottr") | .id]')
+# FULLSCREEN_COUNT=$(echo "$SPACES" | jq '[.[] | select(."is-native-fullscreen")] | length')
+# if [[ "$FULLSCREEN_COUNT" -eq 0 ]]; then
+#     echo "$SPACES" | jq -r --argjson ign "$IGNORED" '.[] | select((.windows - $ign) == []) | .index' | sort -nr | xargs -I {} yabai -m space {} --destroy
+# fi
+# # sleep 0.1
+# sketchybar --update
 
 # #!/bin/bash
 
