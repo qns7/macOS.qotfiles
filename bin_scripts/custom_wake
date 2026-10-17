@@ -58,7 +58,7 @@ if [[ "$(/opt/homebrew/bin/SwitchAudioSource -c)" == "SoundID Reference" ]]; the
     /usr/local/bin/brightness 0.470000
 fi
 
-sleep 1
+sleep 3 # 1
 
 # osascript -e 'quit app "foobar2000"' &>/dev/null
 # sleep 0.1
