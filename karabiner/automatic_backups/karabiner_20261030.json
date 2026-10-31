@@ -136,6 +136,17 @@
                                 },
                                 "to": [{ "mouse_key": { "x": 173 } }],
                                 "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "non_us_pound",
+                                    "modifiers": {
+                                        "mandatory": ["right_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "mouse_key": { "x": 173 } }],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -442,6 +453,27 @@
                                         "modifiers": ["left_command", "left_control", "left_option", "left_shift"]
                                     },
                                     { "shell_command": "sleep 0.37; /opt/homebrew/bin/yabai -m window --focus mouse >/dev/null 2>&1 || true" }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn+v -> OBS hyper-V (bypass skhd for OBS global hotkey)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": ["fn"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "v",
+                                        "modifiers": ["left_control", "left_option", "left_shift", "left_command"]
+                                    }
                                 ],
                                 "type": "basic"
                             }
